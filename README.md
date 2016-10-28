@@ -2,27 +2,27 @@
 This repository is for the open development of the:
 
 * Certificate Policy, and
-* Certificate Practices Statement (redacted)
+* Certification Practice Statement (non-redacted portions)
 
-for the US Federal Government and our efforts on a new Public Trust Root.
+for the US Federal Government and our efforts on a new Public Trust Root and Issuing CA infrastructure. 
 
 ## Scope
 The scope of the effort will include:
 
 * TLS certificates only
   * To continue support for Memorandum 15-13 HTTPS Everywhere (https://https.cio.gov)
-  * For websites on the internet
-* Certificate Transparency
-  * CT logging and support will be included
+  * For webservices on the Internet
+* Certificate Transparency (CT)
+  * CT logging and support 
 * Name Constraints
   * Issuing certificates for US government properties
   * Name constraints will include .gov and .mil at a minimum
 * Name Redaction
-  * Name redaction is not expected to be included
+  * Allowing for name redaction is not expected to be included
 
 ## Contributing
 
-For information on how to contribute to the site, review [Contributing](CONTRIBUTING.md/). The source repository exists [here](https://github.com/uspki/policies/).
+For information on how to contribute to the site, review [How to Comment](HOWTOCOMMENT.md/). The source repository exists [here](https://github.com/uspki/policies/).
 
 Direct changes and line edits to the content may be submitted through a pull request or by opening Issues for discussion. You do not need to install any software to submit content.
 
