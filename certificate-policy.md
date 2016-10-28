@@ -1,8 +1,7 @@
-**CA/Browser Forum**
+**U.S. PKI**
 
 
 
-**Baseline Requirements**
 **Certificate Policy**
 **for the**
 **Issuance and Management of**
@@ -11,15 +10,11 @@
 
 
 
-**CA/Browser Forum**
+**Version 0.0.1**
 
-**Version 1.4.1**
+**October 28, 2016**
 
-**September 7, 2016**
-
-**www.cabforum.org**
-
-This work is licensed under the Creative Commons Attribution 4.0 International license.
+For details on copyright and license information for this doucment, see section 1.1.
 
 
 # 1. INTRODUCTION
@@ -38,6 +33,10 @@ These Requirements only address Certificates intended to be used for authenticat
 These Requirements do not address the issuance, or management of Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, and for which the Root Certificate is not distributed by any Application Software Supplier.
 
 These Requirements are applicable to all Certification Authorities within a chain of trust. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
+
+This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/.
+
+All original additions and modifications made to create this document are in the public domain, and copyright and related rights in the work are waived worldwide through the CC0 1.0 Universal public domain dedication. To view a copy of this public domain dedication, visit https://creativecommons.org/publicdomain/zero/1.0/.
 
 ## 1.2 Document name and identification
 This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum.
