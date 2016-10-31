@@ -4,7 +4,7 @@ This repository is for the open development of the:
 * Certificate Policy, and
 * Certification Practice Statement (non-redacted portions)
 
-for the US Federal Government and our efforts on a new Public Trust Root and Issuing CA infrastructure. 
+for the US Federal Government and our efforts on a new Public Trust Root and Issuing CA infrastructure.
 
 ## Scope
 The scope of the effort will include:
@@ -13,7 +13,7 @@ The scope of the effort will include:
   * To continue support for Memorandum 15-13 HTTPS Everywhere (https://https.cio.gov)
   * For webservices on the Internet
 * Certificate Transparency (CT)
-  * CT logging and support 
+  * CT logging and support
 * Name Constraints
   * Issuing certificates for US government properties
   * Name constraints will include .gov and .mil at a minimum
@@ -34,9 +34,9 @@ Please contact eric.mill at gsa dot gov or lachelle.levan at gsa dot gov with qu
 
 ### Public domain
 
-This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the [Creative Commons Attribution-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nd/4.0/).
+This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-All contributions to this project waive copyright and related rights in the work worldwide through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/.). Any original contributions by United States government employees are automatically in the public domain within the United States.
+All contributions to this project waive copyright and related rights in the work worldwide through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/). Any original contributions by United States government employees are automatically in the public domain within the United States.
 
 As stated in [CONTRIBUTING](CONTRIBUTING.md):
 
