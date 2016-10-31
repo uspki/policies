@@ -1,6 +1,6 @@
-This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the [Creative Commons Attribution-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nd/4.0/).
+This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-All contributions to this project waive copyright and related rights in the work worldwide through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/.). Any original contributions by United States government employees are automatically in the public domain within the United States.
+All contributions to this project waive copyright and related rights in the work worldwide through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/). Any original contributions by United States government employees are automatically in the public domain within the United States.
 
 A summary of CC0 1.0 is below.
 
