@@ -1,46 +1,43 @@
-**U.S. PKI**
+** This is a DRAFT work in progress.  Please see the source repository [here](https://github.com/uspki/policies) This is being developed in the open and contributions are welcome.**
 
-
+**Federal PKI**
 
 **Certificate Policy**
 **for the**
 **Issuance and Management of**
-**Publicly-Trusted Certificates**
+**Publicly-Trusted Non-Person Entity (NPE) Certificates**
 
 
 
 
 **Version 0.0.1**
 
-**October 28, 2016**
+**TODO: DATE**
 
-For details on copyright and license information for this doucment, see section 1.1.
+For details on copyright and license information for this document, see section 1.1.
 
 
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying-party Application Software Suppliers.
+This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of US Federal issued Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying-party Application Software Suppliers.
 
 **Notice to Readers**
 
-The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Baseline Requirements and to provide guidance and requirements for what a CA should include in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+The CP for the Issuance and Management of US Federal issued Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Federal PKI requirements and to provide guidance and requirements for what a CA must address in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
 
-These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework. However, rather than beginning with a "no stipulation" comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of "no stipulation" is made. The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security. In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
+These Requirements do not address all of the issues relevant to the issuance and management of US Federal issued Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework.  The Federal PKI Policy Authority may update these Requirements from time to time, in order to address both existing and emerging threats to online security and to maintain alignment with the CAB Forum Baseline Requirements. ~~ In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.~~
 
-These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet. Similar requirements for code signing, S/MIME, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
+These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet. Similar requirements for code signing, ~~S/MIME~~, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
 
-These Requirements do not address the issuance, or management of Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, and for which the Root Certificate is not distributed by any Application Software Supplier.
-
-These Requirements are applicable to all Certification Authorities within a chain of trust. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
+These Requirements are applicable to all Certification Authorities within a chain of trust under the **Federal Device Root CA (FDRCA)**. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
 
 This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/.
 
 All original additions and modifications made to create this document are in the public domain, and copyright and related rights in the work are waived worldwide through the CC0 1.0 Universal public domain dedication. To view a copy of this public domain dedication, visit https://creativecommons.org/publicdomain/zero/1.0/.
 
 ## 1.2 Document name and identification
-This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum.
-
+This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum and tailored for use within the US Federal Government.
 
 The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
 
@@ -54,43 +51,9 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 ### 1.2.1.Revisions
 
-| **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
+| **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective\*** |
 | --- | --- | --- | --- | --- |
-| 1.0.0 | 62 | Version 1.0 of the Baseline Requirements Adopted | 22-Nov-11 | 01-Jul-12 |
-| 1.0.1 | 71 | Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
-| 1.0.2 | 75 | Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
-| 1.0.3 | 78 | Revised Domain/IP Address Validation, High Risk Requests, and Data Sources | 22-Jun-12 | 22-Jun-12 |
-| 1.0.4 | 80 | OCSP responses for non-issued certificates | 02-Aug-12 | 01-Feb-13 01-Aug-13 |
-| -- | 83 | Network and Certificate System Security Requirements adopted | 03-Aug-13 | 01-Jan-13 |
-| 1.0.5 | 88 | User-assigned country code of XX allowed | 12-Sep-12 | 12-Sep-12 |
-| 1.1.0 | -- | Published as Version 1.1 with no changes from 1.0.5 | 14-Sep-12 | 14-Sep-12 |
-| 1.1.1 | 93 | Reasons for Revocation and Public Key Parameter checking | 07-Nov-12 | 07-Nov-12 01-Jan-13 |
-| 1.1.2 | 96 | Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-13 01-Sep-13 |
-| 1.1.3 | 97 | Prevention of Unknown Certificate Contents | 21-Feb-13 | 21-Feb-13 |
-| 1.1.4 | 99 | Add DSA Keys (BR v.1.1.4) | 3-May-2013 | 3-May-2013 |
-| 1.1.5 | 102 | Revision to subject domainComponent language in section 9.2.3 | 31-May-2013 | 31-May-2013 |
-| 1.1.6 | 105 | Technical Constraints for Subordinate Certificate Authorities | 29-July-2013 | 29-July-2013 |
-| 1.1.7 | 112 | Replace Definition of "Internal Server Name" with "Internal Name" | 3-April-2014 | 3-April-2014 |
-| 1.1.8 | 120 | Affiliate Authority to Verify Domain | 5-June-2014 | 5-June-2014 |
-| 1.1.9 | 129 | Clarification of PSL mentioned in Section 11.1.3 | 4-Aug-2014 | 4-Aug-2014 |
-| 1.2.0 | 125 | CAA Records | 14-Oct-2014 | 15-Apr-2015 |
-| 1.2.1 | 118 | SHA-1 Sunset | 16-Oct-2014 | 16-Jan-2015 1-Jan-2016 1-Jan-2017 |
-| 1.2.2 | 134 | Application of RFC 5280 to Pre-certificates | 16-Oct-2014 | 16-Oct-2014 |
-| 1.2.3 | 135 | ETSI Auditor Qualifications | 16-Oct-2014 | 16-Oct-2014 |
-| 1.2.4 | 144 | Validation Rules for .onion Names | 18-Feb-2015 | 18-Feb-2015 |
-| 1.2.5 | 148 | Issuer Field Correction | 2-April-2015 | 2-April-2015 |
-| 1.3.0 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 16-Apr-2015 | 16-Apr-2015 |
-| 1.3.1 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28-Sep-2015 | 28-Sep-2015 |
-| 1.3.2 | 156 | Amend Sections 1 and 2 of Baseline Requirements | 3-Dec-2015 | 3-Dec-2016 |
-| 1.3.3 | 160 | Amend Section 4 of Baseline Requirements | 4-Feb-2016 | 4-Feb-2016 |
-| 1.3.4 | 162 | Sunset of Exceptions | 15-Mar-2016 | 15-Mar-2016 |
-| 1.3.5 | 168 | Baseline Requirements Corrections (Revised) | 10-May-2016 | 10-May-2016 |
-| 1.3.6 | 171 | Updating ETSI Standards in CABF documents | 1-July-2016 | 1-July-2016 |
-| 1.3.7 | 164 | Certificate Serial Number Entropy | 8-July-2016 | 30-Sep-2016 |
-| 1.3.8 | 169 | Revised Validation Requirements | 5-Aug-2016 | 1-Mar-2017 |
-| 1.3.9 | 174 | Reform of Requirements Relating to Conflicts with Local Law | 29-Aug-2016 | 27-Nov-2016 |
-| 1.4.0 | 173 | Removal of requirement to cease use of public key due to incorrect info | 28-July-2016 | 11-Sept-2016 |
-| 1.4.1 | 175 | Addition of givenName and surname | 7-Sept-2016 | 7-Sept-2016 |
+| 1.0.0 | TBD | Version 1.0 of the Certificate Policy Adopted | TBD | TBD |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -98,35 +61,17 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
-| 2013-01-01 | 6.1.6 | For RSA public keys, CAs SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. |
-| 2013-01-01 | 4.9.10 | CAs SHALL support an OCSP capability using the GET method. |
-| 2013-01-01 | 5 | CAs SHALL comply with the Network and Certificate System Security Requirements. |
-| 2013-08-01 | 4.9.10 | OCSP Responders SHALL NOT respond "Good" for Unissued Certificates. |
-| 2013-09-01 | 3.2.2.6 | CAs SHALL revoke any certificate where wildcard character occurs in the first label position immediately to the left of a "registry-controlled" label or "public suffix". |
-| 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521. A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
-| 2015-01-16 | 7.1.3 | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017. |
-| 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months, except under certain circumstances. |
-| 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully Qualified Domain Names. |
-| 2015-11-01 | 7.1.4.2.1 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited. |
-| 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
-| 2016-06-30 | 6.1.7 | CAs MUST NOT issue Subscriber Certificates directly from Root CAs. |
-| 2016-06-30 | 6.3.2 | CAs MUST NOT issue Subscriber Certificates with validity periods longer than 39 months, regardless of circumstance. |
-| 2016‐09‐30 | 7.1 | CAs SHALL generate Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG |
-| 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
-| 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
-| 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
-| 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
-
+| yyyy-mm-dd | TBD | Description |
 
 
 ## 1.3 PKI Participants
-The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
+This Certificate Policy has been developed for use by the US Federal Public Key Infrastructure for the issuance and management of Public Trust non-person entity certificates.
 
 ### 1.3.1 Certification Authorities
-Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: https://cabforum.org/members.
+Certification Authority (CA) is defined in Section 1.6. 
 
 ### 1.3.2 Registration Authorities
-The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
+The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Sections 3.2 and 8.
 
 Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
 
@@ -134,6 +79,7 @@ Before the CA authorizes a Delegated Third Party to perform a delegated function
 2. Retain documentation in accordance with Section 5.5.2;
 3. Abide by the other provisions of these Requirements that are applicable to the delegated function; and
 4. Comply with (a) the CA's Certificate Policy/Certification Practice Statement or (b) the Delegated Third Party's practice statement that the CA has verified complies with these Requirements.
+5. Agree on which party is responsible for the annual audit of the delegated functions.
 
 The CA MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
 The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
@@ -150,7 +96,7 @@ As defined in Section 1.6.1.
 
 
 ### 1.3.4 Relying Parties
-"Relying Party" and "Application Software Supplier" are defined in Section 1.6.1. Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here: https://cabforum.org/members.
+"Relying Party" and "Application Software Supplier" are defined in Section 1.6.1. 
 
 
 ### 1.3.5 Other Participants
@@ -171,16 +117,22 @@ This Certificate Policy for Baseline Requirements for the Issuance and Managemen
 
 
 ### 1.5.1 Organization Administering the Document
-No stipulation.
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a group of U.S. Federal Government Agencies and is chartered by the US Federal CIO Council.  The FPKIPA owns this policy and represents the interest of the Federal CIOs.  The FPKIPA is responsible for:  
+* Maintaining this CP, and
+* Approving the CPS for each CA that issues certificates under this policy, and
+* Approving the compliance audit report for each CA issuing certificates under this policy, and
+* Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
+* Ensuring compliance with CAB Forum Baseline Requirements
+
 
 ### 1.5.2 Contact Person
-Contact information for the CA/Browser Forum is available here:  https://cabforum.org/leadership/.  In this section of a CA's CPS, the CA shall provide a link to a web page or an email address for contacting the person or persons responsible for operation of the CA.
+Contact information for the Federal Public Key Infrastructure Policy Authority is **TODO: Insert Contact Info**. 
 
 ### 1.5.3 Person Determining CPS suitability for the policy
-No stipulation.
+Federal Public Key Infrastructure Policy Authority
 
 ### 1.5.4 CPS approval procedures
-No stipulation.
+Independent Auditors conduct assessments of CPS conformance to the CP requirements.  The results of these audits are submitted and approved by the Federal Public Key Infrastructure Policy Authority.
 
 ## 1.6 Definitions and Acronyms
 
