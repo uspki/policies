@@ -433,23 +433,24 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The CA SHALL develop, implement, enforce, and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements.
+The Federal PKI Policy Authority SHALL annually update this CP to ensure compliance with CAB Forum Baseline requirements.
+
+The CA SHALL develop, implement, enforce, and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
 ## 2.2 Publication of information
-The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 2527 or RFC 3647, and MUST be structured in accordance with either RFC 2527 or RFC 3647. Effective as of 15 April 2015, section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement (section 4.1 for CAs still conforming to RFC 2527) SHALL state whether the CA reviews CAA Records, and if so, the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
 
-The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
-
-> [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
-
+The CA SHALL publicly disclose its redacted Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by ~~RFC 2527 or~~ RFC 3647, and MUST be structured in accordance with ~~either RFC 2527~~ or RFC 3647. The Certification Practice Statement SHALL state whether the CA reviews CAA Records, and if so, the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practices Statement that describes in detail how the CA implements the latest version of these Requirements.
+The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practices Statement that describes how the CA implements the latest version of these Requirements.
+
+Each CA SHALL develop, implement, enforce and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
 
 ## 2.4 Access controls on repositories
 The CA shall make its Repository publicly available in a read-only manner.
