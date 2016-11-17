@@ -12,7 +12,7 @@
 
 **Version 0.0.1**
 
-**November 16, 2016**
+**November 17, 2016**
 
 For details on copyright and license information for this doucment, see section 1.1.
 
