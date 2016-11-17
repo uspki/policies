@@ -14,7 +14,7 @@
 
 **November 17, 2016**
 
-For details on copyright and license information for this doucment, see section 1.1.
+For details on copyright and license information for this document, see section 1.1.
 
 
 # 1. INTRODUCTION
