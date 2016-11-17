@@ -12,7 +12,7 @@
 
 **Version 0.0.1**
 
-**TODO: DATE**
+**November 17, 2016**
 
 For details on copyright and license information for this document, see section 1.1.
 
