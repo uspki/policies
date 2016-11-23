@@ -106,18 +106,18 @@ Other groups that have participated in the development of these Requirements inc
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates.
+The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates. This Certificate Policy and requirements for US Federal Government (USG) are limited to publicly trusted Device certificates encompassing Transport Layer Security (TLS), code signing and timestamping services.  
 
 
 ### 1.4.2 Prohibited Certificate Uses
-No stipulation.
+All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption. 
 
 ## 1.5 Policy administration
-This Certificate Policy for Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum. Because one of the primary beneficiaries of this CP is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at questions@cabforum.org. The Forum members value all input, regardless of source, and will seriously consider all such input.
+This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure. 
 
 
 ### 1.5.1 Organization Administering the Document
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a group of U.S. Federal Government Agencies and is chartered by the US Federal CIO Council.  The FPKIPA owns this policy and represents the interest of the Federal CIOs.  The FPKIPA is responsible for:  
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a group of U.S. Federal Government Agencies and is chartered by the U.S. Federal CIO Council.  The FPKIPA owns this policy and represents the interest of the Federal CIOs.  The FPKIPA is responsible for:  
 * Maintaining this CP, and
 * Approving the CPS for each CA that issues certificates under this policy, and
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
