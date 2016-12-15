@@ -1138,37 +1138,35 @@ DSA: Although FIPS 800-57 says that domain parameters may be made available at s
 ECC: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
-Root CA Private Keys MUST NOT be used to sign Certificates except in the following cases:
+Root CA Private Keys SHALL NOT be used to sign Certificates except in the following cases:
 
 1. Self-signed Certificates to represent the Root CA itself;
 2. Certificates for Subordinate CAs and Cross Certificates;
 3. Certificates for infrastructure purposes (e.g. administrative role certificates, internal CA operational device certificates, and OCSP Response verification Certificates);
-4. Certificates issued solely for the purpose of testing products with Certificates issued by a Root CA; and
-5. Subscriber Certificates, provided that:
-
-    a. The Root CA uses a 1024-bit RSA signing key that was created prior to the Effective Date;
-
-    b. The Applicant's application was deployed prior to the Effective Date;
-
-    c. The Applicant's application is in active use by the Applicant or the CA uses a documented process to establish that the Certificate's use is required by a substantial number of Relying Parties;
-
-    d. The CA follows a documented process to determine that the Applicant's application poses no known security risks to Relying Parties;
-
-    e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay;
-
-    f. The CA signs the Subscriber Certificate on or before June 30, 2016; and
-
-    g. The notBefore field in the Subscriber Certificate has a date on or before June 30, 2016.
+4. Certificates issued solely for the purpose of testing products with Certificates issued by the Root CA.
 
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
+The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules [FIPS 140-2]. Cryptographic modules shall be validated to a FIPS 140 level identified in this section.
+
+- Cryptographic modules for CAs and OCSP responders SHALL be hardware modules validated as meeting FIPS 140-2 Level 3 or above
+- Cryptographic modules for Subscribers SHALL be FIPS 140-2 Level 1 or above
+
 
 ### 6.2.2 Private key (n out of m) multi-person control
+For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA:
+
+- A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key. 
+- CA signature keys may be backed up only under at least two-person control. 
+- Access to CA signing keys backed up for disaster recovery shall be under at least two-person control. 
+- The names of the parties used for two-person control shall be maintained on a list that shall be made available for inspection during by Qualified Auditors.
 
 ### 6.2.3 Private key escrow
+For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA:
+- The CA private keys SHALL never be escrowed
 
 ### 6.2.4 Private key backup
 See Section 5.2.2.
@@ -1180,7 +1178,7 @@ Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Priva
 If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
 ### 6.2.7 Private key storage on cryptographic module
-The CA SHALL protect its Private Key in a system or device that has been validated as meeting at least FIPS 140 level 3 or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
+All CAs SHALL protect its Private Key in a system or device that has been validated as meeting at least FIPS 140 level 3 or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
 
 ### 6.2.8 Activating Private Keys
 
