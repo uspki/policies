@@ -1106,34 +1106,27 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 
 (1) Root CA Certificates
 
-||Validity period beginning on or before 31 Dec 2010|Validity period beginning after 31 Dec 2010|
-|---|---|---|
-|Digest algorithm|MD5 (NOT RECOMMENDED), SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|2048\*\*|2048|
-|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|L= 2048 N= 224 or L= 2048 N= 256|
+|---|---|
+|Digest algorithm|SHA-256, SHA-384 or SHA-512|
+|Minimum RSA modulus size (bits)|4096|
+|ECC curve|NIST P-256, P-384, or P-521|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|
 
 (2) Subordinate CA Certificates
 
-||Validity period beginning on or before 31 Dec 2010 and ending on or before 31 Dec 2013|Validity period beginning after 31 Dec 2010 or ending after 31 Dec 2013|
-|---|---|---|
-|Digest algorithm|SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|1024|2048|
-|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048, N= 224 or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
+|---|---|
+|Digest algorithm|SHA-256, SHA-384 or SHA-512|
+|Minimum RSA modulus size (bits)|2048|
+|ECC curve|NIST P-256, P-384, or P-521|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|
 
 (3) Subscriber Certificates
 
-||Validity period *ending* on or before 31 Dec 2013|Validity period *ending* after 31 Dec 2013|
-|---|---|---|
-|Digest algorithm|SHA1\*, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|1024|2048|
-|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)|L= 2048, N= 224  or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
-
-\* SHA-1 MAY be used with RSA keys until SHA-256 is supported widely by browsers used by a substantial portion of relying-parties worldwide.
-
-\*\* A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor for Subscriber Certificates issued in accordance with these Requirements.
+|---|---|
+|Digest algorithm|SHA-256, SHA-384 or SHA-512|
+|Minimum RSA modulus size (bits)|2048|
+|ECC curve|NIST P-256, P-384, or P-521|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|
 
 \*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
