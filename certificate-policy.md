@@ -1206,7 +1206,12 @@ See Section 6.2.1
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
 Root CA Certificates SHALL have a Validity Period no greater than 20 years.
-Subordinate CA Certificates SHALL have a Validitory Period no greater than 10 years. 
+Subordinate CA Certificates SHALL have a Validity Period no greater than 10 years, AND 
+- The CA private key may be used to sign certificates for no greater than four years, but may
+be used to sign CRLs and OCSP responder certificates for the entire usage period. 
+- All certificates signed by a specific CA key pair must expire before the end of that key pair’s usage
+period.
+
 Subscriber Certificates SHALL have a Validity Period no greater than 36 months. 
 
 ## 6.4 Activation data
