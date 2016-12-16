@@ -1169,10 +1169,16 @@ For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs
 - The CA private keys SHALL never be escrowed
 
 ### 6.2.4 Private key backup
+For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA:
+- The CA private signature keys SHALL be backed up under the same multiperson control as the original signature key. 
+- At least one copy of the private signature key shall be stored off-site. 
+- All copies of the CA private signature key shall be accounted for and protected in the same manner as the original. 
+- Backup procedures shall be included in the CA’s CPS
+
 See Section 5.2.2.
 
 ### 6.2.5 Private key archival
-Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys without authorization by the Subordinate CA.
+Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
 If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
@@ -1183,26 +1189,25 @@ All CAs SHALL protect its Private Key in a system or device that has been valida
 ### 6.2.8 Activating Private Keys
 
 ### 6.2.9 Deactivating Private Keys
+Cryptographic modules that have been activated shall not be available to unauthorized access.
+After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS. 
+CA cryptographic modules SHALL be removed and stored in a secure container when not in use.
 
 ### 6.2.10 Destroying Private Keys
 
+
 ### 6.2.11 Cryptographic Module Capabilities
+See Section 6.2.1
 
 ## 6.3 Other aspects of key pair management
 
 ### 6.3.1 Public key archival
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-Subscriber Certificates issued after the Effective Date MUST have a Validity Period no greater than 60 months.
-Except as provided for below, Subscriber Certificates issued after 1 April 2015 MUST have a Validity Period no greater than 39 months.
 
-Until 30 June 2016, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
-
-a. was in use prior to the Effective Date;
-b. is currently in use by either the Applicant or a substantial number of Relying Parties;
-c. fails to operate if the Validity Period is shorter than 60 months;
-d. does not contain known security risks to Relying Parties; and
-e. is difficult to patch or replace without substantial economic outlay.
+Root CA Certificates SHALL have a Validity Period no greater than 20 years.
+Subordinate CA Certificates SHALL have a Validitory Period no greater than 10 years. 
+Subscriber Certificates SHALL have a Validity Period no greater than 36 months. 
 
 ## 6.4 Activation data
 
