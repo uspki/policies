@@ -1074,24 +1074,20 @@ The business continuity plan MUST include:
 ### 6.1.1 Key pair generation
 
 #### 6.1.1.1 CA Key Pair Generation
-For Root CA Key Pairs created after the Effective Date that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, the CA SHALL:
+For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA, the CA SHALL:
 
 1. prepare and follow a Key Generation Script,
-2. have a Qualified Auditor witness the Root CA Key Pair generation process or record a video of the entire Root CA Key Pair generation process, and
+2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process, and
 3. have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair.
-
-For other CA Key Pairs created after the Effective Date that are for the operator of the Root CA or an Affiliate of the Root CA, the CA SHOULD:
-
-1. prepare and follow a Key Generation Script and
-2. have a Qualified Auditor witness the Root CA Key Pair generation process or record a video of the entire Root CA Key Pair generation process.
 
 In all cases, the CA SHALL:
 
 1. generate the keys in a physically secured environment as described in the CA's Certification Practice Statement;
 2. generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
-3. generate the CA keys within cryptographic modules meeting the applicable technical and business requirements as disclosed in the CA's Certificate Policy and/or Certification Practice Statement;
+3. generate the CA keys within cryptographic modules meeting the applicable technical and business requirements as disclosed in the Certificate Policy and Certification Practice Statement;
 4. log its CA key generation activities; and
-5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in its Certificate Policy and/or Certification Practice Statement and (if applicable) its Key Generation Script.
+5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in the Certificate Policy and Certification Practice Statement and its Key Generation Script.
+
 
 #### 6.1.1.2 RA Key Pair Generation
 
@@ -1114,34 +1110,27 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 
 (1) Root CA Certificates
 
-||Validity period beginning on or before 31 Dec 2010|Validity period beginning after 31 Dec 2010|
-|---|---|---|
-|Digest algorithm|MD5 (NOT RECOMMENDED), SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|2048\*\*|2048|
-|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|L= 2048 N= 224 or L= 2048 N= 256|
+|---|---|
+|Digest algorithm|SHA-256, SHA-384 or SHA-512|
+|Minimum RSA modulus size (bits)|4096|
+|ECC curve|NIST P-256, P-384, or P-521|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|
 
 (2) Subordinate CA Certificates
 
-||Validity period beginning on or before 31 Dec 2010 and ending on or before 31 Dec 2013|Validity period beginning after 31 Dec 2010 or ending after 31 Dec 2013|
-|---|---|---|
-|Digest algorithm|SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|1024|2048|
-|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048, N= 224 or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
+|---|---|
+|Digest algorithm|SHA-256, SHA-384 or SHA-512|
+|Minimum RSA modulus size (bits)|2048|
+|ECC curve|NIST P-256, P-384, or P-521|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|
 
 (3) Subscriber Certificates
 
-||Validity period *ending* on or before 31 Dec 2013|Validity period *ending* after 31 Dec 2013|
-|---|---|---|
-|Digest algorithm|SHA1\*, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|1024|2048|
-|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)|L= 2048, N= 224  or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
-
-\* SHA-1 MAY be used with RSA keys until SHA-256 is supported widely by browsers used by a substantial portion of relying-parties worldwide.
-
-\*\* A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor for Subscriber Certificates issued in accordance with these Requirements.
+|---|---|
+|Digest algorithm|SHA-256, SHA-384 or SHA-512|
+|Minimum RSA modulus size (bits)|2048|
+|ECC curve|NIST P-256, P-384, or P-521|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|
 
 \*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
@@ -1153,73 +1142,83 @@ DSA: Although FIPS 800-57 says that domain parameters may be made available at s
 ECC: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
-Root CA Private Keys MUST NOT be used to sign Certificates except in the following cases:
+Root CA Private Keys SHALL NOT be used to sign Certificates except in the following cases:
 
 1. Self-signed Certificates to represent the Root CA itself;
 2. Certificates for Subordinate CAs and Cross Certificates;
 3. Certificates for infrastructure purposes (e.g. administrative role certificates, internal CA operational device certificates, and OCSP Response verification Certificates);
-4. Certificates issued solely for the purpose of testing products with Certificates issued by a Root CA; and
-5. Subscriber Certificates, provided that:
 
-    a. The Root CA uses a 1024-bit RSA signing key that was created prior to the Effective Date;
-
-    b. The Applicant's application was deployed prior to the Effective Date;
-
-    c. The Applicant's application is in active use by the Applicant or the CA uses a documented process to establish that the Certificate's use is required by a substantial number of Relying Parties;
-
-    d. The CA follows a documented process to determine that the Applicant's application poses no known security risks to Relying Parties;
-
-    e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay;
-
-    f. The CA signs the Subscriber Certificate on or before June 30, 2016; and
-
-    g. The notBefore field in the Subscriber Certificate has a date on or before June 30, 2016.
 
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
+The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules [FIPS 140-2]. Cryptographic modules shall be validated to a FIPS 140 level identified in this section.
+
+- Cryptographic modules for CAs and OCSP responders SHALL be hardware modules validated as meeting FIPS 140-2 Level 3 or above
+- Cryptographic modules for Subscribers SHALL be FIPS 140-2 Level 1 or above
+
 
 ### 6.2.2 Private key (n out of m) multi-person control
+For all CAs:
+
+- A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key. 
+- CA signature keys may be backed up only under at least two-person control. 
+- Access to CA signing keys backed up for disaster recovery shall be under at least two-person control. 
+- The names of the parties used for two-person control shall be made available for inspection during Qualified Audits.
 
 ### 6.2.3 Private key escrow
+For all CAs:
+
+- The CA private keys SHALL never be escrowed
 
 ### 6.2.4 Private key backup
+For all CAs:
+
+- The CA private signature keys SHALL be backed up under the same multiperson control as the original signature key. 
+- At least one copy of the private signature key shall be stored off-site. 
+- All copies of the CA private signature key shall be accounted for and protected in the same manner as the original. 
+- Backup procedures shall be included in the CA’s CPS
+
 See Section 5.2.2.
 
 ### 6.2.5 Private key archival
-Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys without authorization by the Subordinate CA.
+Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
 If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
 ### 6.2.7 Private key storage on cryptographic module
-The CA SHALL protect its Private Key in a system or device that has been validated as meeting at least FIPS 140 level 3 or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
+All CAs SHALL protect their Private Keys in a system or device that has been validated as meeting at least FIPS 140 level 3 or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
 
 ### 6.2.8 Activating Private Keys
 
 ### 6.2.9 Deactivating Private Keys
+Cryptographic modules that have been activated shall not be available to unauthorized access.
+After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS. 
+CA cryptographic modules SHALL be removed and stored in a secure container when not in use.
 
 ### 6.2.10 Destroying Private Keys
 
+
 ### 6.2.11 Cryptographic Module Capabilities
+See Section 6.2.1
 
 ## 6.3 Other aspects of key pair management
 
 ### 6.3.1 Public key archival
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-Subscriber Certificates issued after the Effective Date MUST have a Validity Period no greater than 60 months.
-Except as provided for below, Subscriber Certificates issued after 1 April 2015 MUST have a Validity Period no greater than 39 months.
 
-Until 30 June 2016, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
+Root CA Certificates SHALL have a Validity Period no greater than 20 years.
+Subordinate CA Certificates SHALL have a Validity Period no greater than 10 years, AND 
+- The CA private key may be used to sign certificates for no greater than four years, but may
+be used to sign CRLs and OCSP responder certificates for the entire usage period. 
+- All certificates signed by a specific CA key pair must expire before the end of that key pair’s usage
+period.
 
-a. was in use prior to the Effective Date;
-b. is currently in use by either the Applicant or a substantial number of Relying Parties;
-c. fails to operate if the Validity Period is shorter than 60 months;
-d. does not contain known security risks to Relying Parties; and
-e. is difficult to patch or replace without substantial economic outlay.
+Subscriber Certificates SHALL have a Validity Period no greater than 36 months. 
 
 ## 6.4 Activation data
 
