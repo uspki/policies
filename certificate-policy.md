@@ -1074,20 +1074,21 @@ The business continuity plan MUST include:
 ### 6.1.1 Key pair generation
 
 #### 6.1.1.1 CA Key Pair Generation
-For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA, the CA SHALL:
+In all cases, the CA SHALL: 
 
 1. prepare and follow a Key Generation Script,
 2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process, and
 3. have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair.
 
-In all cases, the CA SHALL:
+The CA keys SHALL be:
 
-1. generate the keys in a physically secured environment as described in the CA's Certification Practice Statement;
-2. generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
-3. generate the CA keys within cryptographic modules meeting the applicable technical and business requirements as disclosed in the Certificate Policy and Certification Practice Statement;
-4. log its CA key generation activities; and
-5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in the Certificate Policy and Certification Practice Statement and its Key Generation Script.
+1. Generated in a physically secured environment as described in the CA's Certification Practice Statement;
+2. Using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
+3. Generated within cryptographic modules that meet or exceed FIPS 140 Level 3 validation;;
+4. CA key generation activities shall be logged; and
+5. Effective controls shall be maintained to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in the Certificate Policy and Certification Practice Statement and its Key Generation Script.
 
+The documentation of the procedure must be detailed enough to show that appropriate role separation was used and the CA key pair generation must create a verifiable audit trail that the security requirements for procedures were followed.
 
 #### 6.1.1.2 RA Key Pair Generation
 
