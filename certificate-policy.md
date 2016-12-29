@@ -1143,7 +1143,7 @@ Root CA Private Keys SHALL NOT be used to sign Certificates except in the follow
 1. Self-signed Certificates to represent the Root CA itself;
 2. Certificates for Subordinate CAs and Cross Certificates;
 3. Certificates for infrastructure purposes (e.g. administrative role certificates, internal CA operational device certificates, and OCSP Response verification Certificates);
-4. Certificates issued solely for the purpose of testing products with Certificates issued by the Root CA.
+
 
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
@@ -1157,19 +1157,21 @@ The relevant standard for cryptographic modules is Security Requirements for Cry
 
 
 ### 6.2.2 Private key (n out of m) multi-person control
-For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA:
+For all CAs:
 
 - A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key. 
 - CA signature keys may be backed up only under at least two-person control. 
 - Access to CA signing keys backed up for disaster recovery shall be under at least two-person control. 
-- The names of the parties used for two-person control shall be maintained on a list that shall be made available for inspection during by Qualified Auditors.
+- The names of the parties used for two-person control shall be made available for inspection during Qualified Audits.
 
 ### 6.2.3 Private key escrow
-For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA:
+For all CAs:
+
 - The CA private keys SHALL never be escrowed
 
 ### 6.2.4 Private key backup
-For CA Key Pairs that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, or (iii) Key Pairs for the operator of the Root CA or an Affiliate of the Root CA:
+For all CAs:
+
 - The CA private signature keys SHALL be backed up under the same multiperson control as the original signature key. 
 - At least one copy of the private signature key shall be stored off-site. 
 - All copies of the CA private signature key shall be accounted for and protected in the same manner as the original. 
