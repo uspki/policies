@@ -1501,11 +1501,6 @@ If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST
 A Root CA Certificate SHOULD NOT contain the certificatePolicies extension.
 
 #### 7.1.6.3 Subordinate CA Certificates
-A Certificate issued after the Effective Date to a Subordinate CA that is not an Affiliate of the Issuing CA:
-
-1. MUST include one or more explicit policy identifiers that indicates the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum reserved identifiers or identifiers defined by the CA in its Certificate Policy and/or Certification Practice Statement) and
-2. MUST NOT contain the "anyPolicy" identifier (2.5.29.32.0).
-
 A Certificate issued after the Effective Date to a Subordinate CA that is an affiliate of the Issuing CA:
 
 1. MAY include the CA/Browser Forum reserved identifiers or an identifier defined by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
@@ -1519,20 +1514,25 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
 
 ### 7.1.7 Usage of Policy Constraints extension
+The CAs MAY assert policy constraints in CA certificates.
 
 ### 7.1.8 Policy qualifiers syntax and semantics
+Certificates issued under this CP SHALL NOT contain policy qualifiers.
 
 ### 7.1.9 Processing semantics for the critical Certificate Policies extension
+Certificates issued under this policy SHALL NOT contain a critical certificate policies extension.
 
 ## 7.2 CRL profile
 
 ### 7.2.1 Version number(s)
+The CAs SHALL issue X.509 Version two (2) CRLs.
 
 ### 7.2.2 CRL and CRL entry extensions
 
 ## 7.3 OCSP profile
 
 ### 7.3.1 Version number(s)
+OCSP Responders operated under this policy shall use OCSP version 1.
 
 ### 7.3.2 OCSP extensions
 
