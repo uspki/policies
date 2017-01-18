@@ -642,7 +642,7 @@ No stipulation.
 ## 4.4 Certificate acceptance
 
 ### 4.4.1 Conduct constituting certificate acceptance
-No stipulation.
+Failure to object to the certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
 No stipulation.
