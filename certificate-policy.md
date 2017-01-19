@@ -665,25 +665,26 @@ It is recommended that relying parties process and comply with this information 
 ## 4.6 Certificate renewal
 
 ### 4.6.1 Circumstance for certificate renewal
-No stipulation.
+CA and Subscriber certificates issued under the policy SHALL NOT be renewed.
+On-Line Certificate Status Protocol (OCSP) Delegated responder certificates MAY be renewed.
 
 ### 4.6.2 Who may request renewal
-No stipulation.
+TODO
 
 ### 4.6.3 Processing certificate renewal requests
-No stipulation.
+TODO
 
 ### 4.6.4 Notification of new certificate issuance to subscriber
-No stipulation.
+See Section 4.3.2.
 
 ### 4.6.5 Conduct constituting acceptance of a renewal certificate
-No stipulation.
+See Section 4.4.1.
 
 ### 4.6.6 Publication of the renewal certificate by the CA
-No stipulation.
+See Section 4.4.2.
 
 ### 4.6.7 Notification of certificate issuance by the CA to other entities
-No stipulation.
+See Section 4.4.3.
 
 ## 4.7 Certificate re-key
 
