@@ -687,24 +687,29 @@ See Section 4.4.2.
 See Section 4.4.3.
 
 ## 4.7 Certificate re-key
+Once a certificate has been rekeyed, the superseded certificate MAY or MAY NOT be revoked, but SHALL NOT be further re-keyed or modified.
+Subscribers SHALL identify themselves for the purpose of re-keying as required in Section 3.3.
 
 ### 4.7.1 Circumstance for certificate re-key
-No stipulation.
+TODO 
 
 ### 4.7.2 Who may request certification of a new public key
-No stipulation.
+Requests for certification of a new public key SHALL be considered as follows:  
+•	Subscribers with a currently valid certificate MAY request certification of a new public key  
+•	Authorized organization representative, CAs and RAs MAY request certification of a new public key on behalf of a subscriber.  
+
 
 ### 4.7.3 Processing certificate re-keying requests
-No stipulation.
+The CA SHALL process the certificate application according to the certificate requesting protocol used by the device (this may be automated).  All Subscriber related data (e.g., DN, Subject Alternate Name) SHALL be identical to the original certificate.
 
 ### 4.7.4 Notification of new certificate issuance to subscriber
-No stipulation.
+See Section 4.3.2.
 
 ### 4.7.5 Conduct constituting acceptance of a re-keyed certificate
-No stipulation.
+See Section 4.4.1.
 
 ### 4.7.6 Publication of the re-keyed certificate by the CA
-No stipulation.
+See Section 4.4.2.
 
 ### 4.7.7 Notification of certificate issuance by the CA to other entities
 No stipulation.
