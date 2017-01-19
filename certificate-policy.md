@@ -823,7 +823,7 @@ For the status of Subordinate CA Certificates:
 
 The CA SHALL update information provided via an Online Certificate Status Protocol at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
-If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder SHOULD NOT respond with a "good" status. The CA SHOULD monitor the responder for such requests as part of its security response procedures.
+If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder SHALL NOT respond with a "good" status. The CA SHALL monitor the responder for such requests as part of its security response procedures.
 
 OCSP responders for CAs which are not Technically Constrained in line with Section 7.1.5 MUST NOT respond with a "good" status for such certificates.
 
