@@ -656,7 +656,11 @@ No stipulation.
 See Section 9.6.3, provisions 2. and 4.
 
 ### 4.5.2 Relying party public key and certificate usage
-No stipulation.
+Certificates may specify restrictions on use through critical certificate extensions, including the basic constraints and key usage extensions. 
+
+All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9. 
+
+It is recommended that relying parties process and comply with this information whenever using certificates in a transaction.
 
 ## 4.6 Certificate renewal
 
@@ -789,7 +793,7 @@ No stipulation.
 
 (Note: Following certificate issuance, a certificate may be revoked for reasons stated in Section 4.9.1. Therefore, relying parties should check the revocation status of all certificates that contain a CDP or OCSP pointer.)
 
-### 4.9.7 CRL issuance frequency (if applicable)
+### 4.9.7 CRL issuance frequency
 
 For the status of Subscriber Certificates:
 
