@@ -637,7 +637,7 @@ Certificate applications SHALL be processed and a certificate issued within 30 d
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
-No stipulation.
+The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized organizational representative of the issuance.
 
 ## 4.4 Certificate acceptance
 
