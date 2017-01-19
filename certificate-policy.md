@@ -774,7 +774,7 @@ The CA SHALL provide a process for Subscribers to request revocation of their ow
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means.
 
 ### 4.9.4 Revocation request grace period
-No stipulation.
+There is no revocation grace period. Responsible parties must request revocation as soon as they identify the need for revocation.
 
 ### 4.9.5 Time within which CA must process the revocation request
 The CA SHALL begin investigation of a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
