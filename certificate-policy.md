@@ -1504,7 +1504,7 @@ If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST
 A Root CA Certificate SHOULD NOT contain the certificatePolicies extension.
 
 #### 7.1.6.3 Subordinate CA Certificates
-A Certificate issued after the Effective Date to a Subordinate CA that is an affiliate of the Issuing CA:
+A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 
 1. MAY include the CA/Browser Forum reserved identifiers or an identifier defined by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
 2. MAY contain the "anyPolicy" identifier (2.5.29.32.0) in place of an explicit policy identifier.
