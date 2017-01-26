@@ -1509,7 +1509,7 @@ A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 1. MAY include the CA/Browser Forum reserved identifiers or an identifier defined by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
 2. MAY contain the "anyPolicy" identifier (2.5.29.32.0) in place of an explicit policy identifier.
 
-A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
+A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
 A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the reserved policy OIDs in such Certificates.
