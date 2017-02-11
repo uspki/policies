@@ -23,6 +23,6 @@
     6. If you want to keep up with others comments through email and monitor future changes, make sure you choose to “Watch” the project!  
     ![Watch project](assets/watch_project.png)
 
-If you are familiar with github, you are also welcome to provide changes as a pull request.  
+If you are familiar with GitHub, you are also welcome to provide changes as a pull request.  
 
 We request that changes be submitted separately by Section (Section 1 and 1.1, Section 2 and 2.1, etc) to help encourage discussion on individual sections and direct changes. 
