@@ -4,7 +4,7 @@
 | **Field** |       |       | **Value**                             |
 | :-------- | :---: | :---: | :-------------------------------     |
 | Version   |       |       | V3 (2)                                 |
-| Serial Number   |       |       | Must be a unique positive integer with a minimum of 64 bits  |
+| Serial Number   |       |       | Must be a unique positive integer with a minimum of 64 bits (minimum of 8 octets), not to exceed 20 octets  |
 | Issuer Signature Algorithm   |       |       |  sha256 WithRSAEncryption {1 2 840 113549 1 1 11}  |
 | Issuer Distinguished Name   |       |       |  Unique X.500 Issuing CA DN as specified in Section 7.1.4 of this CP |
 | Validity Period   |       |       |  Expressed in UTC Time for dates until end of 2049 and Generalized Time for dates thereafter <br> No longer than 36 months from date of issue |
