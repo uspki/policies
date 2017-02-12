@@ -13,8 +13,8 @@
 | Issuer Signature   |       |       |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
 |               |                 |              |                                       |
 | **Extension** |  **Required**   | **Critical** | **Value**                             |
-| Authority Key Identifier  | Mandatory | False |  Octet String: Derived using the SHA-1 hash of the Issuer’s public key.  Must match SKI of issuing CA Certificate|
-| basicConstraints   | Optional | True |  If present: <br>C=yes, cA=False|
+| Authority Key Identifier  | Mandatory | False |  Octet String: Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Must match SKI of issuing CA Certificate|
+| basicConstraints   | Mandatory | True | cA=False (Reference Section 7.1.2.3 sub-part d)|
 | Subject Key Identifier   | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
 | Key Usage   | Mandatory | True | **Required Key Usage:** <br> Digital Signature <br><br> **Optional Key Usage:** <br> Key Encipherment for RSA Keys <br> Key Agreement for Elliptic Curve <br><br>**Prohibited Key Usage:** <br> keyCertSign and cRLSign |
 | Extended Key Usage   |       | False | **Required Extended Key Usage:** <br> Server Authentication id-kp-serverAuth {1.3.6.1.5.5.7.3.1} <br><br> **Optional Extended Key Usage:** <br> Client Authentication id-kp-clientAuth {1.3.6.1.5.5.7.3.2} <br> Additional EKUs may be included that are consistent with Server authentication <br><br>**Prohibited Extended Key Usage:** <br> anyEKU EKU {2.5.29.37.0} <br> all others |
