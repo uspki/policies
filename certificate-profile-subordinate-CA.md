@@ -8,7 +8,7 @@
 | Serial Number   |       |       | Must be a unique positive integer with a minimum of 64 bits (minimum of 8 octets), not to exceed 20 octets  |
 | Issuer Signature Algorithm   |       |       |  sha256 WithRSAEncryption {1 2 840 113549 1 1 11}  |
 | Issuer Distinguished Name   |       |       |  Unique X.500 Issuing CA DN as specified in Section 7.1.4 of this CP |
-| Validity Period   |       |       |  Expressed in UTC Time for dates until end of 2049 and Generalized Time for dates thereafter <br> No longer than 10 years from date of issue  |
+| Validity Period   |       |       |  Encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> No longer than 10 years from date of issue  |
 | Subject Distinguished Name   |       |       | Unique X.500 CA DN as specified in Section 7.1.4 of this CP <br> X.500 Distinguished Name of the owner of the subject public key in the certificate. Subject name should be encoded exactly as it is encoded in the issuer field of certificates issued by the subject. |
 | Subject Public Key Information   |       |       |   At least 2048 bit modulus, rsaEncryption {1 2 840 113549 1 1 1}   |
 | Issuer Signature   |       |       |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
