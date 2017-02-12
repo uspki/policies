@@ -22,10 +22,10 @@
 | Subject Alternative Name   | Mandatory | False  | Each entry MUST be dNSName containing the Fully-Qualified Domain NameReference. <br> (Reference Section 7.1.4.2.1)  | 
 | Authority Information Access   | Mandatory | False | **Required AIA Fields** <br> **OCSP** <br> Publicly accessible URI of Issuing CA's OCSP responder accessMethod = {1.3.6.1.5.5.7.48.1} <br><br> **Id-ad-caIssuers** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> At least one instance of this access method shall include the URI name form to specify the certificate artifacts. The certificate artifact(s) served by this HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. This extension is required to assist in monitoring and discovery and path building. <br>LDAP access methods shall not be included.|
 | CRL Distribution Points   | Mandatory | False | At least one HTTP URI to the location of a publicly accessible CRL. The reasons and cRLIssuer fields must be omitted. |
-| nameConstraints           | Optional | False | If present, any combination of permitted and excluded subtrees may appear.  If permitted and excluded subtrees overlap the excluded take precedence.<br> Permitted dnsNames should be included. <br> IP addresses should all be excluded.  |
-| IssuerAltName             | Optional | False |  |
+| nameConstraints           |  | False | Not present |
+| IssuerAltName             |  | False | Not present |
 | Subject Directory Attributes | Optional | False |  |
-| Private Extensions        | Optional | False | Must not cause interoperability issues. Only extensions that have context for use on the public Internet. CA must be aware of reason for including in the certificate. |
+| Private Extensions        | Optional | False | Must not cause interoperability issues. Only extensions that have context for use on the public Internet. CA must be aware of and defend reason for including in the certificate, and use of Private Extensions shall be approved by the Policy Authority |
 | Private Key Usage Period  | Optional | False |  |
 | Transparency Information  | Mandatory | False | Must include one or more SCTs or inclusion proofs. <br> From RFC 6962-bis (1.3.101.75) contains one or more. <br> "TransItem" structures in a "TransItemList" |
 
