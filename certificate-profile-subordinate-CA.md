@@ -7,9 +7,9 @@
 | Version   |       |       | V3 (2)                                 |
 | Serial Number   |       |       | Must be a unique positive integer with a minimum of 64 bits (minimum of 8 octets), not to exceed 20 octets  |
 | Issuer Signature Algorithm   |       |       |  sha256 WithRSAEncryption {1 2 840 113549 1 1 11}  |
-| Issuer Distinguished Name   |       |       |  Unique X.500 Issuing CA DN as specified in Section 7.1.4 of this CP |
+| Issuer Distinguished Name   |       |       |  Unique X.500 issuing CA DN as specified in Section 7.1.4 of this CP |
 | Validity Period   |       |       |  Encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> No longer than 10 years from date of issue  |
-| Subject Distinguished Name   |       |       | Unique X.500 CA DN as specified in Section 7.1.4 of this CP <br> X.500 Distinguished Name of the owner of the subject public key in the certificate. Subject name should be encoded exactly as it is encoded in the issuer field of certificates issued by the subject. |
+| Subject Distinguished Name   |       |       | Unique X.500 CA DN as specified in Section 7.1.4 of this CP. <br> X.500 Distinguished Name of the owner of the subject public key in the certificate. Distinguished Name shall conform to PrintableString string type in ASN.1 notation. <br>CN value shall not include designations such as "root" or "Root" or other similar designations.  DN shall include o=U.S. Government, c=US <br>Example: cn=US Federal Device Issuing CA1, o=U.S. Government, c=US<br>Subject name should be encoded exactly as it is encoded in the issuer field of certificates issued by the subject. |
 | Subject Public Key Information   |       |       |   At least 2048 bit modulus, rsaEncryption {1 2 840 113549 1 1 1}   |
 | Issuer Signature   |       |       |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
 |               |                 |              |                                       |
