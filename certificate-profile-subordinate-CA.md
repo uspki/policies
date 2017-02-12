@@ -27,7 +27,7 @@
 | nameConstraints           | Mandatory | False | dnsNames only shall be included.  IPAddress, Email, Directory or other shall not be included. <br>Any combination of permitted and excluded subtrees may appear. Permitted dnsNames should be included. <br>If permitted and excluded subtrees overlap, the excluded take precedence. <br>dnsNames shall only include values resolveable on the public Internet |
 | IssuerAltName             | Optional | False |  |
 | Subject Directory Attributes | Optional | False |  |
-| Private Extensions        | Optional | False | Must not cause interoperability issues. Only extensions that have context for use on the public Internet. CA must be aware of reason for including in the certificate. |
+| Private Extensions        | Optional | False | Must not cause interoperability issues. Only extensions that have context for use on the public Internet. CA must be aware of and defend reason for including in the certificate, and use of Private Extensions shall be approved by the Policy Authority. |
 | Private Key Usage Period  | Optional | False |  |
 | policyConstraints         | Optional | False |  |
 | inhibitAnyPolicy          | Optional | False |  |
