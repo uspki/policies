@@ -8,7 +8,7 @@ OCSP Responders under this profile are expected operate using the Static Respons
 | Version | V1 (0x0) |
 | Responder ID | By Key &nbsp;&nbsp;*(Identical to subject key identifier in Responder Certificate)* |
 | Produced At | The time at which the response was encoded and signed |
-| Responses | Sequence of one or more [Single Response](#Single-Response-1) as further specified below
+| Responses | Sequence of one or more [Single Response](#Single-Response) as further specified below
 | Signature Algorithm | sha256 WithRSAEncryption {1 2 840 113549 1 1 11} |
 | Certificates | Most recent certificate issued to the OCSP Responder by the CA identified by the issuerNameHash and issuerKeyHash in the Single Responses included in the response |
 
