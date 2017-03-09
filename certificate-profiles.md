@@ -8,6 +8,6 @@ Five certificate profiles covered by this CP are outlined:
 - [Server Authentication Certificate Profile](/certificate-profile-server-authentication.md)
 - [Delegated OCSP Responder Certificate Profile](/certificate-profile-OCSP-responder.md)
 - [CRL Profile](/crl-profile.md)
-
+- [OCSP Response Profile](/ocsp-response-profile.md)
 
 
