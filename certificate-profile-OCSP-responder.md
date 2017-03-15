@@ -13,13 +13,13 @@
 | Issuer Signature   |       |       |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
 |               |                 |              |                                       |
 | **Extension** |  **Required**   | **Critical** | **Value**                             |
-| Authority Key Identifier  | Mandatory | False |  Octet String: Derived using the SHA-1 hash of the Issuer’s public key.  Must match SKI of issuing CA Certificate|
-| basicConstraints   | Optional | True |  If present: <br>cA=False|
-| Subject Key Identifier   | Mandatory | False |  Octet String <br> 20 byte SHA-1 hash of the binary DER encoding of the OCSP Responder public Key  |
+| Authority Key Identifier  | Mandatory | False |  Octet String: Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Must match SKI of issuing CA Certificate|
+| basicConstraints   |  | False |  Not Present |
+| Subject Key Identifier   | Mandatory | False |  Octet String <br> 20 byte SHA-1 hash of the binary DER encoding of the OCSP responder public key in accordance with RFC 5280  |
 | Key Usage   | Mandatory | True | **Required Key Usage:** <br> Digital Signature <br><br>**Prohibited Key Usage:** <br> All others |
 | id-pkix-ocsp-nocheck {1.3.6.1.5.5.7.48.1.5} | Mandatory | False | Null |
-| Extended Key Usage   |       | False | **Required Extended Key Usage:** <br> id-kp-OCSPSigning {1.3.6.1.5.5.7.3.9} <br> **Prohibited Extended Key Usage:** <br> All others, including anyEKU EKU {2.5.29.37.0} |
-| Certificate Policies   |  Mandatory  | False | **Required Certificate Policy Fields:** <br>At least one certificate policy OID defined or listed in Section 1.2 of the CP <br><br>**Optional Certificate Policy Fields:** <br> certificatePolicies:policyQualifiers <br> policyQualifierId   id-qt 1 <br> qualifier:cPSuri |
+| Extended Key Usage   |   Mandatory  | True | **Required Extended Key Usage:** <br> id-kp-OCSPSigning {1.3.6.1.5.5.7.3.9} <br> **Prohibited Extended Key Usage:** <br> All others, including anyEKU EKU {2.5.29.37.0} |
+| Certificate Policies   |  Mandatory  | False | **Required Certificate Policy Fields:** <br>At least one certificate policy OID defined or listed in Section 1.2 of the CP.  Must include all the certificate policy OIDs for all certificates issued by the Issuing CA and covered by the OCSP responses. <br><br>**Optional Certificate Policy Fields:** <br> certificatePolicies:policyQualifiers <br> policyQualifierId   id-qt 1 <br> qualifier:cPSuri |
 | Subject Alternative Name   | Optional | False  |  | 
 | Authority Information Access   | Mandatory | False | **Required AIA Fields** <br><br> ** Id-ad-caIssuers** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> Shall include at least 1 instance of an HTTP URL containing the Issuing CA’s certificate|
 | CRL Distribution Points   | Optional | False | At least one HTTP URI to the location of a publicly accessible CRL. The reasons and cRLIssuer fields must be omitted. |
