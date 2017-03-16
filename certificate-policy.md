@@ -666,7 +666,8 @@ It is recommended that relying parties process and comply with this information 
 
 ### 4.6.1 Circumstance for certificate renewal
 CA and Subscriber certificates issued under the policy SHALL NOT be renewed.
-On-Line Certificate Status Protocol (OCSP) Delegated responder certificates MAY be renewed.
+Online Certificate Status Protocol (OCSP) Delegated responder certificates MAY be renewed.
+
 
 ### 4.6.2 Who may request renewal
 TODO
@@ -827,7 +828,7 @@ The CA SHALL support an OCSP capability using the GET method for Certificates is
 
 For the status of Subscriber Certificates:
 
-The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
+The CA SHALL update information provided via an Online Certificate Status Protocol at least every 24 hours. OCSP responses from this service MUST have a maximum expiration time of seven days.
 
 For the status of Subordinate CA Certificates:
 
@@ -1205,7 +1206,7 @@ See Section 5.2.2.
 Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
-All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6. 
+All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4.1. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport must be protected from disclosure.
 
 If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
@@ -1236,7 +1237,9 @@ Subordinate CA Certificates SHALL have a Validity Period no greater than 10 year
 All certificates signed by a specific CA key pair must expire before the end of that key pair’s usage
 period.
 
-Subscriber Certificates SHALL have a Validity Period no greater than 36 months. 
+All Subscriber Certificates SHALL have a Validity Period no greater than 36 months. 
+Subscriber Certificates issued for delegated OCSP responders SHALL have a Validity Period no greater than 45 days.
+
 
 ## 6.4 Activation data
 
