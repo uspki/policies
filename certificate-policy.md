@@ -1378,9 +1378,9 @@ c. authorityInformationAccess
 
     The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
 
-d. basicConstraints (optional)
+d. basicConstraints (required)
 
-    The cA field MUST NOT be true.
+    This extension SHALL be present. The cA field MUST NOT be true.
 
 e. keyUsage (required)
 
