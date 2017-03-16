@@ -1476,7 +1476,7 @@ The Subordinate CA Certificate MUST include at least one dNSName in permittedSub
 
 The permittedSubtrees for dNSName MUST NOT contain any other dnsName ranges outside of the the "gov" or "mil" top-level domains. 
 
-b. For ipAddress, Subordinate CA Certificate SHALL NOT issue certificates with an iPAddress.  The Subordinate CA Certificate SHALL specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate SHALL include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate SHALL also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). 
+b. For ipAddress, Subordinate CAs SHALL NOT issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate SHALL specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate SHALL include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate SHALL also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). 
 
 A decoded example for issuance to the domain and sub domains of www.army.mil by organization:- Example US Army, DoD would be:-
 
@@ -1487,8 +1487,8 @@ A decoded example for issuance to the domain and sub domains of www.army.mil by 
 >   Excluded:
 >       IP:0.0.0.0/0.0.0.0
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
-
-
+  
+c. For DirectoryName, Subordinate CAs SHALL NOT issue subscriber certificates with DirectoryName. 
 
 ### 7.1.6 Certificate policy object identifier
 
