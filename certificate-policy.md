@@ -1230,7 +1230,8 @@ After use, the cryptographic module shall be deactivated, e.g., via a manual log
 CA cryptographic modules SHALL be removed and stored in a secure container when not in use.
 
 ### 6.2.10 Destroying Private Keys
-
+Individuals in trusted roles shall destroy all CA and OCSP private signature keys when the keys are no longer needed.
+All CAs operating under this policy shall document the private key destruction methods in their Certificate Practices Statement.
 
 ### 6.2.11 Cryptographic Module Capabilities
 See Section 6.2.1
@@ -1238,6 +1239,7 @@ See Section 6.2.1
 ## 6.3 Other aspects of key pair management
 
 ### 6.3.1 Public key archival
+No stipulation.
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
