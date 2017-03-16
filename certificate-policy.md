@@ -1268,7 +1268,7 @@ This section specifies the additional requirements for Certificate content and e
 
 #### 7.1.2.1 Root CA Certificate
 a. basicConstraints
-This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
+This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field MUST NOT be present.
 
 b. keyUsage
 This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
@@ -1286,7 +1286,7 @@ The Certificate Subject MUST contain the following:
 
 - organizationName (OID 2.5.4.10): This field SHALL be present and SHALL contain O=U.S. GOVERNMENT
 
-- •	Subject Distinguished Name will be the same as the Issuer Distinguished Name
+- Subject Distinguished Name will be the same as the Issuer Distinguished Name
 
 #### 7.1.2.2 Subordinate CA Certificate
 a. certificatePolicies
@@ -1297,17 +1297,15 @@ a. certificatePolicies
 
 b. cRLDistributionPoints
 
-    This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
+    This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.  The HTTP URL included must be publicly accessible on the Internet.   
 
 c. authorityInformationAccess
 
-    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
-
-    The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
+    This extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It MUST also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  At least one instance of the Id-ad-caIssuers accessMethod (accessMethod = 1.3.6.1.5.5.7.48.2) must be publicly accessible on the Internet and the artifacts served shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]
 
 d. basicConstraints
 
-    This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
+    This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MUST NOT be present.
 
 e. keyUsage
 
@@ -1315,24 +1313,26 @@ e. keyUsage
 
 f. nameConstraints
 
-    If present, this extension SHALL be marked critical.
+    This extension MUST be present.  This extension SHALL be marked critical. See section 7.1.5. 
 
 
-g. extkeyUsage (optional)
+g. extkeyUsage
 
-    For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present.
+    This extension MUST be present.  This extension SHALL be marked non-critical.
+    
+    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
 
     Other values MAY be present.
-
-    If present, this extension SHALL be marked non-critical.
 
 
 h. Subject Information / Subject Distinguished Name
 
 The Certificate Subject MUST contain the following:
-- countryName (OID 2.5.4.6). This field SHALL contain C=US.
+- countryName (OID 2.5.4.6). This field SHALL contain C=US.  
 
-- organizationName (OID 2.5.4.10): This field MUST be present and the contents MUST contain either the Subject CA’s name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name".
+- organizationName (OID 2.5.4.10): This field SHALL be present and SHALL contain U.S. Government (o=U.S. Government)  
+
+- Examples of Subject Distinguished Names: cn=U.S. Federal Device Issuing CA1, o=U.S. Government, c=US  
 
 #### 7.1.2.3 Subscriber Certificate
 a. certificatePolicies
@@ -1378,7 +1378,7 @@ f. extKeyUsage (required)
     This extension SHALL be marked non-critical.
 
 #### 7.1.2.4 All Certificates
-All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
+All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate and receives approval from the Policy Authority.
 
 CAs SHALL NOT issue a Certificate with:
 
@@ -1523,7 +1523,7 @@ The issuing CA SHALL document in its Certification Practice Statement that the C
 The CAs MAY assert policy constraints in CA certificates.
 
 ### 7.1.8 Policy qualifiers syntax and semantics
-Certificates issued under this CP SHALL NOT contain policy qualifiers.
+Certificates issued under this CP MAY contain policy qualifiers.
 
 ### 7.1.9 Processing semantics for the critical Certificate Policies extension
 Certificates issued under this policy SHALL NOT contain a critical certificate policies extension.
