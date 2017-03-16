@@ -1255,19 +1255,66 @@ Subscriber Certificates issued for delegated OCSP responders SHALL have a Validi
 
 The CA SHALL enforce multi-factor authentication for all accounts capable of directly causing certificate issuance.
 
+For all CAs operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The CA and its ancillary parts shall include the following functionality:  
+
+- authenticate the identity of users before permitting access to the system or applications;  
+- manage privileges of users to limit users to their assigned roles;  
+- generate and archive audit records for all transactions; (see section 5.4)  
+- enforce domain integrity boundaries for security critical processes; and  
+- support recovery from key or system failure.  
+
+For certificate status servers operating under this policy, the computer security functions listed below are required:  
+
+- authenticate the identity of users before permitting access to the system or applications;  
+- manage privileges of users to limit users to their assigned roles;  
+- enforce domain integrity boundaries for security critical processes; and  
+- support recovery from key or system failure.  
+
+For remote workstations used to administer the CAs, the computer security functions listed below are required: 
+
+- authenticate the identity of users before permitting access to the system or applications;  
+- manage privileges of users to limit users to their assigned roles;  
+- generate and archive audit records for all transactions; (see section 5.4)  
+- enforce domain integrity boundaries for security critical processes; and  
+- support recovery from key or system failure.  
+
+All communications between any PKI trusted role and the CA shall be authenticated and protected from modification.
+
 ### 6.5.2 Computer security rating
+No Stipulation.
 
 ## 6.6 Life cycle technical controls
 
 ### 6.6.1 System development controls
+The system development controls for all CAs and any Registration Authority functions listed below are required:
+
+- The CA hardware and software shall be dedicated to performing one task: the CA. There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation. Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs.
 
 ### 6.6.2 Security management controls
+The security management controls for all CAs and any Registration Authority functions listed below are required:
+
+- The configuration of the CA system, in addition to any modifications and upgrades, shall be documented and controlled. 
+- There shall be a mechanism for detecting unauthorized modification to the software or configuration.
 
 ### 6.6.3 Life cycle security controls
+No stipulation.
 
 ## 6.7 Network security controls
+The network security controls for all CAs and any Registration Authority functions listed below are required:
+
+- A network guard, firewall, or filtering router must protect network access to CA equipment. 
+- The network guard, firewall, or filtering router shall limit services allowed to and from the CA equipment to those required to perform CA functions.
+- Protection of CA equipment shall be provided against known network attacks. 
+- All unused network ports and services shall be turned off. Any network software present on the CA equipment shall be necessary to the functioning of the CA application.
+- Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
+- Repositories, certificate status servers, and remote workstations used to administer the CAs shall employ appropriate network security controls. 
+- Networking equipment shall turn off unused network ports and services. 
+- Any network software present shall be necessary to the functioning of the equipment.
+- The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA.
 
 ## 6.8 Time-stamping
+
+Asserted times shall be accurate to within three minutes. Electronic or manual procedures may be used to maintain system time. Clock adjustments are auditable events (see section 5.4.1).
 
 # 7. CERTIFICATE, CRL, AND OCSP PROFILES
 
