@@ -1283,7 +1283,7 @@ This section specifies the additional requirements for Certificate content and e
 
 #### 7.1.2.1 Root CA Certificate
 a. basicConstraints
-This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
+This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field MUST NOT be present.
 
 b. keyUsage
 This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
@@ -1301,7 +1301,7 @@ The Certificate Subject MUST contain the following:
 
 - organizationName (OID 2.5.4.10): This field SHALL be present and SHALL contain O=U.S. GOVERNMENT
 
-- •	Subject Distinguished Name will be the same as the Issuer Distinguished Name
+- Subject Distinguished Name will be the same as the Issuer Distinguished Name
 
 #### 7.1.2.2 Subordinate CA Certificate
 a. certificatePolicies
@@ -1312,17 +1312,15 @@ a. certificatePolicies
 
 b. cRLDistributionPoints
 
-    This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
+    This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.  The HTTP URL included must be publicly accessible on the Internet.   
 
 c. authorityInformationAccess
 
-    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
-
-    The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
+    This extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It MUST also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  At least one instance of the Id-ad-caIssuers accessMethod (accessMethod = 1.3.6.1.5.5.7.48.2) must be publicly accessible on the Internet and the artifacts served shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]
 
 d. basicConstraints
 
-    This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
+    This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MUST NOT be present.
 
 e. keyUsage
 
@@ -1330,24 +1328,26 @@ e. keyUsage
 
 f. nameConstraints
 
-    If present, this extension SHALL be marked critical.
+    This extension MUST be present.  This extension SHALL be marked critical. See section 7.1.5. 
 
 
-g. extkeyUsage (optional)
+g. extkeyUsage
 
-    For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present.
+    This extension MUST be present.  This extension SHALL be marked non-critical.
+    
+    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
 
     Other values MAY be present.
-
-    If present, this extension SHALL be marked non-critical.
 
 
 h. Subject Information / Subject Distinguished Name
 
 The Certificate Subject MUST contain the following:
-- countryName (OID 2.5.4.6). This field SHALL contain C=US.
+- countryName (OID 2.5.4.6). This field SHALL contain C=US.  
 
-- organizationName (OID 2.5.4.10): This field MUST be present and the contents MUST contain either the Subject CA’s name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name".
+- organizationName (OID 2.5.4.10): This field SHALL be present and SHALL contain U.S. Government (o=U.S. Government)  
+
+- Examples of Subject Distinguished Names: cn=U.S. Federal Device Issuing CA1, o=U.S. Government, c=US  
 
 #### 7.1.2.3 Subscriber Certificate
 a. certificatePolicies
@@ -1393,7 +1393,7 @@ f. extKeyUsage (required)
     This extension SHALL be marked non-critical.
 
 #### 7.1.2.4 All Certificates
-All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
+All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate and receives approval from the Policy Authority.
 
 CAs SHALL NOT issue a Certificate with:
 
@@ -1417,74 +1417,81 @@ CAs SHALL NOT issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
 The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
 
 #### 7.1.4.2 Subject Information for Standard Server Authentication certificates
-By issuing the Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate. CAs SHALL NOT include a Domain Name or IP Address in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
+By issuing the Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate. 
+
+CAs SHALL NOT include IP Address in a Subject attribute.
+CAs SHALL NOT include a Domain Name in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
 Certificate Field: extensions:subjectAltName
 Required/Optional: Required
-Contents: This extension MUST contain at least one entry. Each entry MUST be either a dNSName containing the Fully-Qualified Domain Name or an iPAddress containing the IP address of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate.
+Contents: This extension MUST contain at least one entry. Each entry MUST be a dNSName containing the Fully-Qualified Domain Name of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or has been granted the right to use it by the Domain Name Registrant, as appropriate.  This extension SHALL NOT include IP Address.
 
 Wildcard FQDNs are permitted.
 
-#### 7.1.4.2.2. Subject Distinguished Name Fields
-a. Certificate Field: subject:commonName (OID 2.5.4.3)
-Required/Optional: Deprecated (Discouraged, but not prohibited)
-Contents: If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).
+#### 7.1.4.2.2. Subject Distinguished Name Fields  
+a. Certificate Field: subject:commonName (OID 2.5.4.3)  
+Required/Optional/Prohibited: Optional (Discouraged, but not prohibited)  
+Contents: If present, this field MUST contain a Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).  
 
-b. Certificate Field: subject:organizationName (OID 2.5.4.10)
-Optional.
-Contents: If present, the subject:organizationName field MUST contain either the Subject's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the subject:organizationName field to convey a natural person Subject's name or DBA.
+b. Certificate Field: subject:organizationName (OID 2.5.4.10)  
+Required/Optional/Prohibited: Required  
+Contents: The subject:organizationName field SHALL contain U.S. Government (o=U.S. Government).  
 
-c. Certificate Field: subject:givenName (2.5.4.42) and subject:surname (2.5.4.4)
-Optional.
-Contents: If present, the subject:givenName field and subject:surname field MUST contain an natural person Subject’s name as verified under Section 3.2.3. A Certificate containing a subject:givenName field or subject:surname field MUST contain the (2.23.140.1.2.3) Certificate Policy OID.
+c. Certificate Field: subject:givenName (2.5.4.42) and subject:surname (2.5.4.4)  
+Required/Optional/Prohibited: Prohibited  
 
-d. Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9)
-Optional if the subject:organizationName field, subject: givenName field, or subject:surname field are present.
-Prohibited if the subject:organizationName field, subject:givenName, and subject:surname field are absent.
-Contents: If present, the subject:streetAddress field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
 
-e. Certificate Field: subject:localityName (OID: 2.5.4.7)
-Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and the subject:stateOrProvinceName field is absent.
-Optional if the subject:stateOrProvinceName field and the subject:organizationName field, subject:givenName field, or subject:surname field are present.
-Prohibited if the subject:organizationName field, subject:givenName, and subject:surname field are absent.
-Contents: If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the localityName field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.
+d. Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9)  
+Required/Optional/Prohibited: Optional  
+Contents: If present, the subject:streetAddress field MUST contain the Subject's street address information as verified under Section 3.2.2.1.  
 
-f. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)
-Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and subject:localityName field is absent.
-Optional if the subject:localityName field and the subject:organizationName field, the subject:givenName field, or the subject:surname field are present.
-Prohibited if the subject:organizationName field, the subject:givenName field, or subject:surname field are absent.
-Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
+e. Certificate Field: subject:localityName (OID: 2.5.4.7)  
+Required/Optional/Prohibited:   
+  Required if the subject:stateOrProvinceName field is absent.  
+  Optional if the subject:stateOrProvinceName field is present.  
+Contents: If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of US in accordance with Section 7.1.4.2.2(h), the localityName field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.  
 
-g. Certificate Field: subject:postalCode (OID: 2.5.4.17)
-Optional if the subject:organizationName, subject:givenName field, or subject:surname fields are present.
-Prohibited if the subject:organizationName field, subject:givenName field, or subject:surname field are absent.
+f. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)  
+Required/Optional/Prohibited:  
+  Required if the subject:localityName field is absent.  
+  Optional if the subject:localityName field is present.  
+Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of US in accordance with Section 7.1.4.2.2(g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
+
+g. Certificate Field: subject:postalCode (OID: 2.5.4.17)  
+Required/Optional/Prohibited: Optional  
 Contents: If present, the subject:postalCode field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
 
-h. Certificate Field: subject:countryName (OID: 2.5.4.6)
-Required if the subject:organizationName field, subject:givenName, or subject:surname field are present.
-Optional if the subject:organizationName field, subject:givenName field, and subject:surname field are absent.
-Contents: If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the subject:organizationName field is absent, the subject:countryName field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
+h. Certificate Field: subject:countryName (OID: 2.5.4.6)  
+Required/Optional/Prohibited: Required  
+Contents: If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1. 
 
-i. Certificate Field: subject:organizationalUnitName
-Optional.
-The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains subject:organizationName, subject:givenName, subject:surname, subject:localityName, and subject:countryName attributes, also verified in accordance with Section 3.2.2.1.
+i. Certificate Field: subject:organizationalUnitName  
+Required/Optional/Prohibited: Optional.  
+Contents: If the subject:organizationalUnitName field is present, the subject:organizationalUnitNam SHALL contain OU= < U.S. GOVERNMENT Agency > which controls the server to which the certificate is issued. The value is verified in accordance with Section 3.2.2.1.  
 
-j. Other Subject Attributes
-All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+j. Other Subject Attributes  
+All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.  
 
 #### 7.1.4.3. Subject Information - Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 ### 7.1.5 Name constraints
+All Subordinate CA Certificates shall be Technically Constrained.
+
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
 
-If the Subordinate CA Certificate includes the id-kp-serverAuth extended key usage, then the Subordinate CA Certificate MUST include the Name Constraints X.509v3 extension with constraints on dNSName, iPAddress and DirectoryName as follows:
+If the Subordinate CA Certificate includes the id-kp-serverAuth extended key usage, then the Subordinate CA Certificate MUST include the Name Constraints X.509v3 extension with constraints on dNSName as follows:
 
 a. For each dNSName in permittedSubtrees, the CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
-b. For each DirectoryName in permittedSubtrees the CA MUST confirm the Applicants and/or Subsidiary's Organizational name and location such that end entity certificates issued from the subordinate CA Certificate will be in compliancy with section 7.1.2.4 and 7.1.2.5.
+The Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.  The permittedSubtrees for dNSName MUST be within the constraints of the top-level domains for: 
 
-Subordinate CA Certificate SHALL NOT issue certificates with an iPAddress.  The Subordinate CA Certificate SHALL specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate SHALL include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate SHALL also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). 
+ - gov
+ - mil
+
+The permittedSubtrees for dNSName MUST NOT contain any other dnsName ranges outside of the the "gov" or "mil" top-level domains. 
+
+b. For ipAddress, Subordinate CAs SHALL NOT issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate SHALL specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate SHALL include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate SHALL also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). 
 
 A decoded example for issuance to the domain and sub domains of www.army.mil by organization:- Example US Army, DoD would be:-
 
@@ -1495,8 +1502,8 @@ A decoded example for issuance to the domain and sub domains of www.army.mil by 
 >   Excluded:
 >       IP:0.0.0.0/0.0.0.0
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
-
-If the Subordinate CA is not allowed to issue certificates with dNSNames, then the Subordinate CA Certificate MUST include a zero-length dNSName in excludedSubtrees. Otherwise, the Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.
+  
+c. For DirectoryName, Subordinate CAs SHALL NOT issue subscriber certificates with DirectoryName. 
 
 ### 7.1.6 Certificate policy object identifier
 
@@ -1505,37 +1512,33 @@ This section describes the content requirements for the Root CA, Subordinate CA,
 
 The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with these Requirements as follows:
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1), if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
-
-If the Certificate asserts the policy identifier of 2.23.140.1.2.1, then it MUST NOT include organizationName, givenName, surname, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.
-
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2), if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3), if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST also include organizationName, localityName (to the extent such field is required under Section 7.1.4.2.2), stateOrProvinceName (to the extent such field is required under Section 7.1.4.2.2), and countryName in the Subject field.  If the Certificate asserts the policy identifier of 2.23.140.1.2.3, then it MUST also include (i) either organizationName or givenName and surname, (ii) localityName (to the extent such field is required under Section 7.1.4.2.2), (iii) stateOrProvinceName (to the extent required under Section 7.1.4.2.2), and (iv) countryName in the Subject field.
+If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST also include organizationName, localityName (to the extent such field is required under Section 7.1.4.2.2), stateOrProvinceName (to the extent such field is required under Section 7.1.4.2.2), and countryName in the Subject field.  If the Certificate asserts the policy identifier of 2.23.140.1.2.3, then it MUST also include (i) either organizationName, (ii) localityName (to the extent such field is required under Section 7.1.4.2.2), (iii) stateOrProvinceName (to the extent required under Section 7.1.4.2.2), and (iv) countryName in the Subject field.
 
 #### 7.1.6.2. Root CA Certificates
 A Root CA Certificate SHOULD NOT contain the certificatePolicies extension.
 
 #### 7.1.6.3 Subordinate CA Certificates
-A Certificate issued after the Effective Date to a Subordinate CA that is an affiliate of the Issuing CA:
+A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 
 1. MAY include the CA/Browser Forum reserved identifiers or an identifier defined by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
 2. MAY contain the "anyPolicy" identifier (2.5.29.32.0) in place of an explicit policy identifier.
 
-A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
+A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
 A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the reserved policy OIDs in such Certificates.
 
-The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
+The issuing CA SHALL document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
 
 ### 7.1.7 Usage of Policy Constraints extension
 The CAs MAY assert policy constraints in CA certificates.
 
 ### 7.1.8 Policy qualifiers syntax and semantics
-Certificates issued under this CP SHALL NOT contain policy qualifiers.
+Certificates issued under this CP MAY contain policy qualifiers.
 
 ### 7.1.9 Processing semantics for the critical Certificate Policies extension
 Certificates issued under this policy SHALL NOT contain a critical certificate policies extension.
