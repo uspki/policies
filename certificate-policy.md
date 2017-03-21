@@ -1343,11 +1343,17 @@ The security management controls for all CAs and any Registration Authority func
 No stipulation.
 
 ## 6.7 Network security controls
-The CA shall implement network segments (secure zones) to secure Certificate Systems based on functional, logical, and physical (including location) relationships. Issuing Systems, Certificate Systems, and Security Support Systems SHALL be maintained in a Secure Zone. The same security controls SHALL be applied to all systems co-located in the same Zone with a Certificate System. A Root CA SHALL be operated in a High Security Zone and in an offline or air-gapped state from all other networks. Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each stone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones. Security support systems SHALL be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as with non-Certificate Systems to Delegated Third Parties, Public Networks, and other business partners. Only trusted roles SHALL have access to Secure and High Security Zones.
+Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
 
-The network security controls for all CAs and any Registration Authority functions listed below are required:
+For the Root CA, the CA SHALL be operated in a High Security Zone and in an offline or air-gapped state from all other networks.
 
-- A network guard, firewall, or filtering router must protect network access to CA equipment. 
+For all CAs and any Registration Authority functions, the network security controls listed below are required:
+
+- Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
+- The same security controls SHALL be applied to all systems co-located in the same Zone with a Certificate System.
+- Security support systems SHALL be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as with non-Certificate Systems to Delegated Third Parties, Public Networks, and other business partners. 
+- Only trusted roles SHALL have access to Secure and High Security Zones.
+- A network guard, firewall, or filtering router shall protect network access to CA equipment. 
 - The network guard, firewall, or filtering router shall limit services allowed to and from the CA equipment to those required to perform CA functions.
 - Protection of CA equipment shall be provided against known network attacks. 
 - All unused network ports and services shall be turned off. Any network software present on the CA equipment shall be necessary to the functioning of the CA application.
