@@ -1853,6 +1853,7 @@ Notwithstanding any limitations on its liability to Subscribers and Relying Part
 ### 9.10.3 Effect of termination and survival
 
 ## 9.11 Individual notices and communications with participants
+The FPKIPA will be notified of any change in management or operational control of a CA.
 
 ## 9.12 Amendments
 
