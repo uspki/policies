@@ -140,6 +140,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
+**Air-Gapped** - Certificate Systems or components that are physcially and logically disconnected from the public internet.
+
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
 
 **Applicant Representative**: A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
@@ -229,6 +231,10 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 **Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
 **OCSP Responder**: An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests. See also, Online Certificate Status Protocol.
+
+**Offline**: An air-gapped Certificate System or component that is only turned on to conduct certificate activity (i.e. issue / revoke a certificate, issue certificate revocation list, etc).
+
+**Online**: Certificate Systems or components that are physcially and logically connected to the public and/or a private internet.
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
 
@@ -351,7 +357,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | OID | Object Identifier |
 | PKI | Public Key Infrastructure |
 | RA | Registration Authority |
-| S/MIME | Secure MIME (Multipurpose Internet Mail Extensions) |
+| S/MIME | Secure MIME (purpose Internet Mail Extensions) |
 | SSL | Secure Sockets Layer |
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
@@ -1276,7 +1282,7 @@ Subscriber Certificates issued for delegated OCSP responders SHALL have a Validi
 
 ### 6.5.1 Specific computer security technical requirements
 
-Administrator privileges to all Certificate System components SHALL only be granted to the Administrator trusted role. The CA SHALL enforce multi-factor authentication using a unique credential created by or assigned to the trusted role for all accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. Multifactor authentication SHALL be implemented on all Certificate System components. If multifactor authentication is not supported or is not technically feasible to implement, the following username and password controls, where technically feasible, SHALL be implemented:
+Administrator privileges to all Certificate System components SHALL only be granted to the Administrator trusted role. Online CAs SHALL implement multifactor authentication and enforce it through using a unique credential created by or assigned to the trusted role for all accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. Offline CAs MAY implement multifactor authentication, but SHALL enforce multi-party for system access. If multifactor authentication is not supported, is not technically feasible to implement, or is an offline CA, the following username and password controls, where technically feasible, SHALL be implemented:
 
 - For accounts that are not publicly accessible (accessible only within a Secure or High Security Zone), require passwords have at leaast twelve (12) characters.
 - For accounts that are publicly accessible (accessible from outside a Secure or High Security Zone), require passwrods have the following:
