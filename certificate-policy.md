@@ -140,6 +140,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
+**Air-Gapped** - Certificate Systems or components that are physcially and logically disconnected from the public internet.
+
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
 
 **Applicant Representative**: A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
@@ -169,6 +171,10 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 **Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
+
+**Certificate System**: A system used by a CA or Delegated Third Party to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
+
+**Certificate System Component**: A individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certficiate management.
 
 **Certification Authority**: An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs.
 
@@ -208,6 +214,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **High Risk Certificate Request**: A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
+**High Security Zone**: An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of the CA's or Delegated Third Party Private Key or cryptographic hardware.
+
 **Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
@@ -223,6 +231,10 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 **Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
 **OCSP Responder**: An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests. See also, Online Certificate Status Protocol.
+
+**Offline**: An air-gapped Certificate System or component that is only turned on to conduct certificate activity (i.e. issue / revoke a certificate, issue certificate revocation list, etc).
+
+**Online**: Certificate Systems or components that are physcially and logically connected to the public and/or a private internet.
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
 
@@ -282,6 +294,10 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
+**Secure Zone**: An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of Certificate Systems.
+
+**Security Support Systems**: A system used to provide security support functions, such as authentication, network boundary control, audit logging, audit log reduction and analysis, vulnerability scanning, and anti-virus.
+
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
 **Subject**: The natural person, device, system, unit, or Legal Entity identified in a Certificate as the Subject. The Subject is either the Subscriber or a device under the control and operation of the Subscriber.
@@ -314,6 +330,8 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Wildcard Certificate**: A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
 
+**Zone**: A subset of Certificate Systems created by the logical or physical partitioning of systems from other Certificate Systems.
+
 ### 1.6.2 Acronyms
 
 | **Acronym** | **Meaning** |
@@ -339,7 +357,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | OID | Object Identifier |
 | PKI | Public Key Infrastructure |
 | RA | Registration Authority |
-| S/MIME | Secure MIME (Multipurpose Internet Mail Extensions) |
+| S/MIME | Secure MIME (purpose Internet Mail Extensions) |
 | SSL | Secure Sockets Layer |
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
@@ -1264,15 +1282,28 @@ Subscriber Certificates issued for delegated OCSP responders SHALL have a Validi
 
 ### 6.5.1 Specific computer security technical requirements
 
-The CA SHALL enforce multi-factor authentication for all accounts capable of directly causing certificate issuance.
+Administrator privileges to all Certificate System components SHALL only be granted to the Administrator trusted role. Online CAs SHALL implement multifactor authentication and enforce it through using a unique credential created by or assigned to the trusted role for all accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. Offline CAs MAY implement multifactor authentication, but SHALL enforce multi-party for system access. If multifactor authentication is not supported, is not technically feasible to implement, or is an offline CA, the following username and password controls, where technically feasible, SHALL be implemented:
 
-For all CAs operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The CA and its ancillary parts shall include the following functionality:  
+- For accounts that are not publicly accessible (accessible only within a Secure or High Security Zone), require passwords have at leaast twelve (12) characters.
+- For accounts that are publicly accessible (accessible from outside a Secure or High Security Zone), require passwrods have the following:
+  - At least twelve (12) charactes,
+  - Be changed every 90 days,
+  - Use a combination of numeric, alphanumeric, and special characters
+  - Are not a dictionary word or on a list of previously disclosed human-generated passwords
+  - Not be the same password used in the previous four passwords,
+  - Implement a lockout for failed access attempts after three (3) failed access attempts
+  OR
+  - Implement a documented password management and account lockout policy that the CA has evidence provides at least the same level of protection as the above listed requirements for publicly accessible accounts.
+  
+For all CAs operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The CA and its ancillary parts SHALL include the following functionality:  
 
+- be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's or Delegated Third Party's operations;
 - authenticate the identity of users before permitting access to the system or applications;  
 - manage privileges of users to limit users to their assigned roles;  
 - generate and archive audit records for all transactions; (see section 5.4)  
-- enforce domain integrity boundaries for security critical processes; and  
-- support recovery from key or system failure.  
+- enforce domain integrity boundaries for security critical processes;
+- support recovery from key or system failure; and
+- configure workstations with inactivity time-outs to enforce account log out or lock the workstation when no longer in use;
 
 For certificate status servers operating under this policy, the computer security functions listed below are required:  
 
@@ -1287,7 +1318,11 @@ For remote workstations used to administer the CAs, the computer security functi
 - manage privileges of users to limit users to their assigned roles;  
 - generate and archive audit records for all transactions; (see section 5.4)  
 - enforce domain integrity boundaries for security critical processes; and  
-- support recovery from key or system failure.  
+- support recovery from key or system failure; and
+
+For Delegated Third Party access, the computer security functions listed below are required:
+- require multifactor authentication prior to the Delegated Third Party approving issuance of a Certificate; and
+- be restricted against approving certificate issuance outside of the Delegated Third Party limited set of domain names.
 
 All communications between any PKI trusted role and the CA shall be authenticated and protected from modification.
 
@@ -1302,18 +1337,29 @@ The system development controls for all CAs and any Registration Authority funct
 - The CA hardware and software shall be dedicated to performing one task: the CA. There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation. Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs.
 
 ### 6.6.2 Security management controls
-The security management controls for all CAs and any Registration Authority functions listed below are required:
+The security management controls for all CAs and any Registration Authority functions listed below SHALL be enforced:
 
 - The configuration of the CA system, in addition to any modifications and upgrades, shall be documented and controlled. 
 - There shall be a mechanism for detecting unauthorized modification to the software or configuration.
+- All system and trusted role accounts be reviewed at least every ninety (90) days. Any account that is no longer in use or necessary for operations be deactivated.
+- Implement a process that disables physical and logical access to a Certificate System by either a privileged user or a trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA or Delegated Third Party.
+- Change authentication keys and passwords for any account or trusted role ona Certificate System whenever authorization to access the account is changed or revoked.
 
 ### 6.6.3 Life cycle security controls
 No stipulation.
 
 ## 6.7 Network security controls
-The network security controls for all CAs and any Registration Authority functions listed below are required:
+Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
 
-- A network guard, firewall, or filtering router must protect network access to CA equipment. 
+For the Root CA, the CA SHALL be operated in a High Security Zone and in an offline or air-gapped state from all other networks.
+
+For all CAs and any Registration Authority functions, the network security controls listed below are required:
+
+- Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
+- The same security controls SHALL be applied to all systems co-located in the same Zone with a Certificate System.
+- Security support systems SHALL be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as with non-Certificate Systems to Delegated Third Parties, Public Networks, and other business partners. 
+- Only trusted roles SHALL have access to Secure and High Security Zones.
+- A network guard, firewall, or filtering router shall protect network access to CA equipment. 
 - The network guard, firewall, or filtering router shall limit services allowed to and from the CA equipment to those required to perform CA functions.
 - Protection of CA equipment shall be provided against known network attacks. 
 - All unused network ports and services shall be turned off. Any network software present on the CA equipment shall be necessary to the functioning of the CA application.
@@ -1321,7 +1367,13 @@ The network security controls for all CAs and any Registration Authority functio
 - Repositories, certificate status servers, and remote workstations used to administer the CAs shall employ appropriate network security controls. 
 - Networking equipment shall turn off unused network ports and services. 
 - Any network software present shall be necessary to the functioning of the equipment.
-- The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA.
+- The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:
+  - the remote connection originates from a device owned by the CA or Delegated Third Party and from a pre-approved IP address;
+  - the connection is through a temporary, non-persistent and encrypted channel that is supported by multifactor authentication;
+  - only allow connections through a designated intermediary device when the devce is:
+    - located within the CA's network;
+    - secured according to this CP; and
+    - mediates the remote connection.
 
 ## 6.8 Time-stamping
 
@@ -1801,6 +1853,7 @@ Notwithstanding any limitations on its liability to Subscribers and Relying Part
 ### 9.10.3 Effect of termination and survival
 
 ## 9.11 Individual notices and communications with participants
+The FPKIPA will be notified of any change in management or operational control of a CA.
 
 ## 9.12 Amendments
 
