@@ -1030,6 +1030,7 @@ Log entries MUST include the following elements:
 The CA SHALL retain any audit logs generated for at least seven years. The CA SHALL make these audit logs available to its Qualified Auditor upon request.
 
 ### 5.4.4 Protection of Audit Log
+The CA SHALL ensure audit logs are unalterable or maintain an integrity mechanism to identify any changes.
 
 ### 5.4.5 Audit Log Backup Procedures
 
@@ -1087,6 +1088,12 @@ The business continuity plan MUST include:
 13. How frequently backup copies of essential business information and software are taken;
 14. The distance of recovery facilities to the CA's main site; and
 15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
+
+In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
+1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
+2. Revoke any mis-issued certificates;
+3. Publish a notice of the revocation on a publicly accessible website; and
+4. Conduct a full post-mortem and publicly publish the findings on a publicly accessible website.
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 
