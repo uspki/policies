@@ -39,15 +39,13 @@ All original additions and modifications made to create this document are in the
 ## 1.2 Document name and identification
 This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum and tailored for use within the US Federal Government.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
+The following Certificate Policy identifiers are reserved for use by CAs in asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1); and
-
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2); and
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
-
 
 ### 1.2.1.Revisions
 
@@ -110,7 +108,7 @@ The primary goal of these Requirements is to enable efficient and secure electro
 
 
 ### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption. 
+All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption. Trusted Role certificates MAY be issued from either the Root or Subordinate CA.
 
 ## 1.5 Policy administration
 This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure. 
@@ -618,6 +616,9 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 ### 4.1.1 Who can submit a certificate application
 In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
 
+#### 4.1.1.1 Code Signing Certificates
+Certificates asserting the id-kp-codeSigning EKU SHALL use a time stamp authority that complies with RFC 3161.
+
 ### 4.1.2 Enrollment process and responsibilities
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
@@ -1067,6 +1068,7 @@ The CA SHALL retain all documentation relating to certificate requests and the v
 ### 5.5.7 Procedures to obtain and verify archive information
 
 ## 5.6 Key changeover
+The Root CA SHALL not reuse private keys or subject names when conducting a key changeover. The Root CAs SHALL generate a new key and apply a new subject name when generating a new root certificate.
 
 ## 5.7 Compromise and disaster recovery
 
@@ -1505,7 +1507,10 @@ g. extkeyUsage
 
     This extension MUST be present.  This extension SHALL be marked non-critical.
     
-    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present if issuing server authentication certificates in the certificate chain, and the id-kp-clientAuth [RFC5280] MAY be present. Subordinate CA Certificates issuing code signing certificates in the certificate chain, SHALL not assert the id-ip-serverAuth value. 
+    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. and assert either the server authentication, code signing, or time stamping EKU. A separate subordinate CA chain is required for each of the three EKUs. The following values SHALL be asserted in each type of subordinate CA.
+    - Server Authentication Chains SHALL assert the value id-kp-serverAuth [RFC5280] and the id-kp-clientAuth [RFC5280] MAY be present.
+    - Code Signing Chains SHALL assert the value id-kp-codeSigning [RFC5280] and no other EKU.
+    - Time Stamping Chains SHALL assert the value id-kp-timeStamping [RFC5280] and no other EKU.
 
     Other values MAY be present.
 
@@ -1647,7 +1652,7 @@ All other optional attributes, when present within the subject field, MUST conta
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 ### 7.1.5 Name constraints
-All Subordinate CA Certificates shall be Technically Constrained.
+All Subordinate CA Certificates SHALL be Technically Constrained. All OCSP Responders SHALL either be technically contrained to only assert the OCSP Signing EKU (1.3.6.1.5.5.7.3.9) or not issue SHA-1 based OCSP responses.
 
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
 
@@ -1765,13 +1770,17 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 All CAs SHALL undergo an audit in accordance with one of the following schemes:
 
 WebTrust Option
+Required for all WebTrust and Time Stamping
 1. WebTrust for Certification Authorities v2.0 w/ Federal PKI Addendum Letter
-2. WebTrust for Certification Authorities - SSL Baseline with Network Security V2.2
+
+Additional
+2. WebTrust for Certification Authorities - SSL Baseline with Network Security V2.2 (Required for Server Authentication)
+3. WebTrust for Certification Authorities - Code Signing Certificates v1.0 (Required for Code Signing)
 
 Federal PKI Option
 1. Federal PKI Annual Audit Requirements
 
-**Note**: If the CA chooses the Federal PKI Audit option the issuing CAs SHALL be constrained to only issue certificates to only U.S. Government controlled domains.
+**Note**: If the CA chooses the Federal PKI Audit option the issuing CAs SHALL be constrained to issue certificates only to U.S. Government controlled domains.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme. The scope of the audit must include the following:
 1. Root CAs 
