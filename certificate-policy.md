@@ -1139,7 +1139,7 @@ In coordination with the CA, the FPKIPA may conduct the following activities as 
 
 The FPKIPA shall notify the CA, in writing, of its intentions in response to the security incident seven (7) days prior to the action by the FPKIPA except under exceptional circumstances (as defined in the glossary) where the FPKIPA will make reasonable efforts to communicate with the CA prior to taking action. The  CA may propose an alternate course of action and the FPKIPA may consider reasonable alternatives but reserves the right to reject any proposed course of action not in the government’s best interest.
 
-**Note**: The amount of communication and public disclosure is proportional to the impact. The FPKIPA will follow individual Application Trusted Root Program requirements to report security concerns.
+**Note**: The FPKIPA will follow individual Application Trusted Root Program requirements to report security concerns.
 
 In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
 1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
