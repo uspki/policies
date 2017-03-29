@@ -108,7 +108,7 @@ The primary goal of these Requirements is to enable efficient and secure electro
 
 
 ### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption unless issued for specific infrastructure purposes as outlined in sectino 6.1.7.
+All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption unless issued for specific infrastructure purposes as outlined in section 6.1.7.
 
 ## 1.5 Policy administration
 This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure. 
