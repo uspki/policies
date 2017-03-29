@@ -39,15 +39,13 @@ All original additions and modifications made to create this document are in the
 ## 1.2 Document name and identification
 This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum and tailored for use within the US Federal Government.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
+The following Certificate Policy identifiers are reserved for use by CAs in asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1); and
-
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2); and
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
-
 
 ### 1.2.1.Revisions
 
@@ -68,7 +66,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 This Certificate Policy has been developed for use by the US Federal Public Key Infrastructure for the issuance and management of Public Trust non-person entity certificates.
 
 ### 1.3.1 Certification Authorities
-Certification Authority (CA) is defined in Section 1.6. 
+Certification Authority (CA) is defined in Section 1.6.
 
 ### 1.3.2 Registration Authorities
 The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Sections 3.2 and 8.
@@ -110,7 +108,7 @@ The primary goal of these Requirements is to enable efficient and secure electro
 
 
 ### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption. 
+All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption. Trusted Role certificates MAY be issued from either the Root or Subordinate CA.
 
 ## 1.5 Policy administration
 This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure. 
@@ -186,6 +184,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **Country**: Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
 
+**Compromise**: A direct or indirect incident, affecting either the CA or any of the CA’s sub-roots that result in an actual or potential degradation of the security stature of the PKI, which includes hardware, software, or physical building issues.
+
 **Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
 
 **CSPRNG**: A random number generator intended for use in cryptographic system.
@@ -209,6 +209,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 **Embedded SCT**: An SCT delivered via an X.509v3 extension within the certificate.
 
 **Enterprise RA**: An employee or agent of an organization unaffiliated with the CA who authorizes issuance of Certificates to that organization.
+
+**Exceptional Circumstances**: an incident(s) in which the FKIPA believes the CA is compromised; as to affect the security posture of a large number of the U.S. Government.
 
 **Expiry Date**: The "Not After" date in a Certificate that defines the end of a Certificate's validity period.
 
@@ -619,6 +621,9 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ### 4.1.1 Who can submit a certificate application
 In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
+
+#### 4.1.1.1 Code Signing Certificates
+Certificates asserting the id-kp-codeSigning EKU SHALL use a time stamp authority that complies with RFC 3161.
 
 ### 4.1.2 Enrollment process and responsibilities
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
@@ -1073,6 +1078,7 @@ The CA SHALL retain all documentation relating to certificate requests and the v
 ### 5.5.7 Procedures to obtain and verify archive information
 
 ## 5.6 Key changeover
+The Root CA SHALL not reuse private keys or subject names when conducting a key changeover. The Root CAs SHALL generate a new key and apply a new subject name when generating a new root certificate.
 
 ## 5.7 Compromise and disaster recovery
 
@@ -1098,6 +1104,52 @@ The business continuity plan MUST include:
 13. How frequently backup copies of essential business information and software are taken;
 14. The distance of recovery facilities to the CA's main site; and
 15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
+
+The FPKIPA shall be notified by the CAs operating under this policy of any security incident. A security incident or incident is defined as a violation or imminent threat of violation of the NPE CP, CPS, subscriber agreements, MOA, or any other document that governs the operations of the CA. A security incident may include but is not limited to the following:
+- Suspected or detected compromise of Certificate Systems
+- Suspected or detected compromise of a certificate status server (CSS) if:
+  - The CSS certificate has a lifetime of more than 72 hours and
+  - The CSS certificate cannot be revoked (e.g., an OCSP responder certificate with the id-pkix-ocsp-nocheck extension)
+- Physical or electronic penetration of the Certificate Systems
+- Successful denial of service attacks on the Certificate System components
+- Any incident preventing the CA from issuing a CRL within 48 hours of the issuance of the previous CRL
+- Suspected or detected issuance of fraudulent certificates used for unethical purposes such as but not limited to promoting malware or illegal software.
+- Any certificate issuance not in compliance with NPE CP, CPS, or NPE Certificate Profiles.
+- CA private key compromise.
+- A known or reasonably known, publicly reported compromise of Certificate Systems
+- Any other issue that the FPKIPA identifies as calling into question the CAs integrity or trustworthiness
+
+In the event of a CA or certificate compromise or fraudulent mis-issuance, the CA shall notify the FPKIPA as soon as possible, but no later than 24 hours from the time the incident was discovered. An initial security incident report shall be submitted to the FPKI@GSA.gov email or communicated directly to the FPKIPA and include the following sections:
+1. Which Certificate Systems or components were affected by the incident
+2. The CA's interpretation of the incident.
+3. Was the incident detected as part of normal operations. If not, explain why.
+4. Who detected the incident or perpetrated if known
+5. When the incident was discovered
+6. Physical location of the incident, if applicable.
+7. A partial or complete list of all certificates that were either mis-issued or not compliant with the CP/CPS as a result of the incident.
+
+A final security incident report shall be submitted at a date specified by the FPKIPA to the same location as the initial incident report and include all sections identified below.
+1. A complete timeline of events.
+2. If a compromise, a detailed description of the exploit and what and how infrastructure was compromised.
+3. If the CA did not detect the incident, why not.
+4. What specific remedial measures were taken or will take to address the underlying cause including specific CP/CPS updates.
+5. Other information appropriate to understand the incident such as system or vendor documentation or other material.
+6. Proof the mis-issued certificates were revoked.
+7. Who detected or perpetrated the incident.
+8. If requested, log files.
+9. Detailed description of how the incident was closed.
+
+In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response.
+- Communicate with affected parties or directly with affected organizations
+- Publish notice of revocation
+- Publicly publish a final security incident report on an approved government website.
+- Require the CA to employ, at the CA expense, a third party investigator to investigate the security incident and prepare a final security incident report.
+- Request specific reports at a periodic interval as determined by the FPKIPA
+- Specify a due date for the CA to submit a final security incident report.
+
+The FPKIPA shall notify the CA, in writing, of its intentions in response to the security incident seven (7) days prior to the action by the FPKIPA except under exceptional circumstances (as defined in the glossary) where the FPKIPA will make reasonable efforts to communicate with the CA prior to taking action. The  CA may propose an alternate course of action and the FPKIPA may consider reasonable alternatives but reserves the right to reject any proposed course of action not in the government’s best interest.
+
+**Note**: The amount of communication and public disclosure is proportional to the impact
 
 In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
 1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
@@ -1465,7 +1517,10 @@ g. extkeyUsage
 
     This extension MUST be present.  This extension SHALL be marked non-critical.
     
-    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
+    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. and assert either the server authentication, code signing, or time stamping EKU. A separate subordinate CA chain is required for each of the three EKUs. The following values SHALL be asserted in each type of subordinate CA.
+    - Server Authentication Chains SHALL assert the value id-kp-serverAuth [RFC5280] and the id-kp-clientAuth [RFC5280] MAY be present.
+    - Code Signing Chains SHALL assert the value id-kp-codeSigning [RFC5280] and no other EKU.
+    - Time Stamping Chains SHALL assert the value id-kp-timeStamping [RFC5280] and no other EKU.
 
     Other values MAY be present.
 
@@ -1607,7 +1662,7 @@ All other optional attributes, when present within the subject field, MUST conta
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 ### 7.1.5 Name constraints
-All Subordinate CA Certificates shall be Technically Constrained.
+All Subordinate CA Certificates SHALL be Technically Constrained. All OCSP Responders SHALL either be technically contrained to only assert the OCSP Signing EKU (1.3.6.1.5.5.7.3.9) or not issue SHA-1 based OCSP responses.
 
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
 
@@ -1688,7 +1743,7 @@ OCSP Responders operated under this policy shall use OCSP version 1.
 ### 7.3.2 OCSP extensions
 
 # 8. COMPLIANCE AUDIT AND OTHER ASSESSMENTS
-The CA SHALL at all times:
+The CA is responsible for ensuring audits are conducted for all PKI functions regardless of how or by whom the PKI components are managed and operated. The CA SHALL at all times:
 
 1. Issue Certificates and operate its PKI in accordance with all law applicable to its business and the Certificates it issues in every jurisdiction in which it operates;
 2. Comply with these Requirements;
@@ -1714,21 +1769,51 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 1. Independence from the subject of the audit;
 2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
 3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
-4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ISO 17065 applying the requirements specified in ETSI EN 319 403;
-5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
-6. Bound by law, government regulation, or professional code of ethics; and
-7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage
+4. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
+5. Bound by law, government regulation, or professional code of ethics;
+6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage; and
+7. If the CA chooses to obtain a WebTrust audit, the CA SHALL use a WebTrust licensed Auditor to perform the audit. 
 
 ## 8.3 Assessor's relationship to assessed entity
 
 ## 8.4 Topics covered by assessment
-The CA SHALL undergo an audit in accordance with one of the following schemes:
+All CAs SHALL undergo an audit in accordance with one of the following schemes:
 
-1. WebTrust for Certification Authorities v2.0;
-2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
-4. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
+WebTrust Option
+Required for all WebTrust and Time Stamping
+1. WebTrust for Certification Authorities v2.0 w/ Federal PKI Addendum Letter
 
-Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
+Additional
+2. WebTrust for Certification Authorities - SSL Baseline with Network Security V2.2 (Required for Server Authentication)
+3. WebTrust for Certification Authorities - Code Signing Certificates v1.0 (Required for Code Signing)
+
+Federal PKI Option
+1. Federal PKI Annual Audit Requirements
+
+**Note**: If the CA chooses the Federal PKI Audit option the issuing CAs SHALL be constrained to issue certificates only to U.S. Government controlled domains.
+
+Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme. The scope of the audit must include the following:
+1. Root CAs 
+2. limited and non-limited subCAs
+3. cross-certified CAs 
+
+The audit SHALL document the full PKI hierarchy and contain audit information of all Certificate System components either controlled or contracted by the CA. The audit may either be in one complete audit or individual audits for each Certificate System component, but SHALL be submitted as one complete package to the FPKIPA. A full compliance audit for CAs covers all aspects within the scope identified above.  The Auditor SHALL complete both a Qualifying Attestation Letter and Qualifying Attestation Cover Letter. The Qualifing Attestation Letter SHALL, at a minimum, contain the following elements:
+1. Clearly identify the entity being audited
+2. Name of Auditor and Auditing Firm and include the qualifications of the Auditor
+3. All Certificate Systems and/or components audited during the period including explicilty stating the CAs and other Certificate System components
+4. Audit standard used against each Certificate System Componet
+5. Versions of the CP and CPS used in the assessment 
+6. Audit period
+7. Any findings
+8. An attestation that the audit was a full audit
+
+In addition to the Qualifying Attestation Letter and Cover Letter, a CA submiting a Federal PKI audit scheme (non-WebTrust Auditor) SHALL be reviewed by the FPKIPA legal counsel. An Equivalent Audit Report will be issued with the following elements:
+1. Attest that the audit is issued by a qualified auditor or independent auditing firm / agency
+2. Lists the U.S. Government criteria for auditor qualification and certifies the auditor meets the criteria
+3. Lists the statues, rules, and/or regulations that the auditor followed in assessing the entity
+4. Certifies the CAs compliance with the statues, rules, and/or regulations
+5. Provide information how the statues, rules, and/or regulations are equivalent with WebTrust
+6. Documents the full PKI hierarchy including a list of CAs authorized to issue certificates under the root
 
 The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.3.
 
@@ -1741,7 +1826,7 @@ The audit period for the Delegated Third Party SHALL NOT exceed one year (ideall
 ## 8.5 Actions taken as a result of deficiency
 
 ## 8.6 Communication of results
-The Audit Report SHALL state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The CA SHALL make the Audit Report publicly available. The CA is not required to make publicly available any general audit findings that do not impact the overall audit opinion. For both government and commercial CAs, the CA SHOULD make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA SHALL provide an explanatory letter signed by the Qualified Auditor.
+The results of these audits SHALL be fully documented and state explicitly which relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The reports resulting from the PKI compliance audit shall be submitted to the FPKIPA within 30 calendar days of the date of their completion. If the CA cannot submit the audit within 30 days of audit completion, the CA SHALL provide an explanatory letter signed by the Qualified Auditor. The final compliance report or letter must be posted to a publicly-accessible location. If a WebTrust audit is submitted and a WebTrust seal is issued it must also be in a publicly-accessible location. All publicly accessible artifacts shall be provided to the FPKIPA with the annual compliance report.
 
 ## 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. Except for Delegated Third Parties that undergo an annual audit that meets the criteria specified in Section 8.1, the CA SHALL strictly control the service quality of Certificates issued or containing information verified by a Delegated Third Party by having a Validation Specialist employed by the CA perform ongoing quarterly audits against a randomly selected sample of at least the greater of one certificate or three percent of the Certificates verified by the Delegated Third Party in the period beginning immediately after the last sample was taken. The CA SHALL review each Delegated Third Party's practices and procedures to ensure that the Delegated Third Party is in compliance with these Requirements and the relevant Certificate Policy and/or Certification Practice Statement.
