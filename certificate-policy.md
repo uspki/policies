@@ -1526,8 +1526,8 @@ CAs SHALL NOT include IP Address in a Subject attribute.
 CAs SHALL NOT include a Domain Name in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
-Certificate Field: extensions:subjectAltName
-Required/Optional: Required
+Certificate Field: extensions:subjectAltName  
+Required/Optional: Required  
 Contents: This extension MUST contain at least one entry. Each entry MUST be a dNSName containing the Fully-Qualified Domain Name of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or has been granted the right to use it by the Domain Name Registrant, as appropriate.  This extension SHALL NOT include IP Address.
 
 Wildcard FQDNs are permitted.
@@ -1580,19 +1580,21 @@ All other optional attributes, when present within the subject field, MUST conta
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 ##### 7.1.4.3.1 Subject Distinguished Name Fields
-a. Certificate Field: subject:commonName (OID 2.5.4.3)
-Required/Optional: Required
-Contents: This field MUST be present and the contents SHALL be an identifier for the certificate such that the certificate’s Name is unique across all certificates issued by the issuing certificate.
+a. Certificate Field: subject:commonName (OID 2.5.4.3)  
+Required/Optional: Required  
+Contents: This field MUST be present and the contents SHALL be an identifier for the certificate such that the certificate’s Name is unique across all certificates issued by the issuing certificate.  
 
-b. Certificate Field: subject:organizationName (OID 2.5.4.10)
-Required/Optional: Required
-Contents: This field SHALL be present and SHALL contain U.S. Government (o=U.S. Government) 
+b. Certificate Field: subject:organizationName (OID 2.5.4.10)  
+Required/Optional: Required  
+Contents: This field SHALL be present and SHALL contain U.S. Government (o=U.S. Government)  
 
-c. Certificate Field: subject:countryName (OID: 2.5.4.6)
-Required/Optional: Required
-Contents: This field SHALL contain C=US
+c. Certificate Field: subject:countryName (OID: 2.5.4.6)  
+Required/Optional: Required  
+Contents: This field SHALL contain C=US  
 
-- Examples of Subject Distinguished Names: cn=U.S. Federal Device Issuing CA1, o=U.S. Government, c=US  
+- Examples of Subject Distinguished Names: 
+  - cn=U.S. Federal Device Root CA, o=U.S. Government, c=US  
+  - cn=U.S. Federal Device Issuing CA1, o=U.S. Government, c=US 
 
 ### 7.1.5 Name constraints
 All Subordinate CA Certificates shall be Technically Constrained.
