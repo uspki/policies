@@ -1545,28 +1545,27 @@ c. **Certificate Field:** subject:givenName (2.5.4.42) and subject:surname (2.5.
 **Required/Optional/Prohibited:** Prohibited  
 
 d. **Certificate Field:** Number and street: subject:streetAddress (OID: 2.5.4.9)  
-**Required/Optional/Prohibited:** Optional  
-**Contents:** If present, the subject:streetAddress field MUST contain the Subject's street address information as verified under Section 3.2.2.1.  
+**Required/Optional/Prohibited:** Prohibited  
+
 
 e. **Certificate Field:** subject:localityName (OID: 2.5.4.7)  
 **Required/Optional/Prohibited:**   
   Required if the subject:stateOrProvinceName field is absent.  
   Optional if the subject:stateOrProvinceName field is present.  
-**Contents:** If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of US in accordance with Section 7.1.4.2.2(h), the localityName field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.  
+**Contents:** If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. 
 
 f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)  
 **Required/Optional/Prohibited:**  
   Required if the subject:localityName field is absent.  
   Optional if the subject:localityName field is present.  
-**Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of US in accordance with Section 7.1.4.2.2(g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
+**Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. 
 
 g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)  
-**Required/Optional/Prohibited:** Optional  
-**Contents:** If present, the subject:postalCode field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
+**Required/Optional/Prohibited:** Prohibited  
 
 h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)  
 **Required/Optional/Prohibited:** Required  
-**Contents:** If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1. 
+**Contents:** The subject:countryName MUST contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1. 
 
 i. **Certificate Field:** subject:organizationalUnitName  
 **Required/Optional/Prohibited:** Optional.  
