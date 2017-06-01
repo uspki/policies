@@ -20,9 +20,9 @@
 | id-pkix-ocsp-nocheck {1.3.6.1.5.5.7.48.1.5} | Mandatory | False | Null |
 | Extended Key Usage   |   Mandatory  | True | **Required Extended Key Usage:** <br> id-kp-OCSPSigning {1.3.6.1.5.5.7.3.9} <br> **Prohibited Extended Key Usage:** <br> All others, including anyEKU EKU {2.5.29.37.0} |
 | Certificate Policies   |  Mandatory  | False | **Required Certificate Policy Fields:** <br>At least one certificate policy OID defined or listed in Section 1.2 of the CP.  Must include all the certificate policy OIDs for all certificates issued by the Issuing CA and covered by the OCSP responses. <br><br>**Optional Certificate Policy Fields:** <br> certificatePolicies:policyQualifiers <br> policyQualifierId   id-qt 1 <br> qualifier:cPSuri |
-| Subject Alternative Name   |  | False  | Not permitted | 
+| Subject Alternative Name   | Optional | False  | Each entry MUST be dNSName containing the Fully-Qualified Domain NameReference.  | 
 | Authority Information Access   | Mandatory | False | **Required AIA Fields** <br><br> ** Id-ad-caIssuers** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> At least one instance of this access method shall include the URI name form to specify the certificate artifact(s). The certificate artifact(s) served by this HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. This extension is required to assist in monitoring and discovery and path building.|
-| CRL Distribution Points   | Optional | False | At least one HTTP URI to the location of a publicly accessible CRL. The reasons and cRLIssuer fields must be omitted. |
+| CRL Distribution Points   | Optional | False | If included, at least one HTTP URI to the location of a publicly accessible CRL. The reasons and cRLIssuer fields must be omitted. |
 | IssuerAltName             | Not Used |  |  |
 | Subject Directory Attributes | Not Used |  |  |
 | Private Extensions        | Not Used | False |  |
