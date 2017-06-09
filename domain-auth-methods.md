@@ -3,7 +3,7 @@
 
 The following summarizes the options available for Domain Authorization
 
-> Document content based on CAB Forum Baseline Requirements CP 1.4.5
+> Below content based on CAB Forum Baseline Requirements CP 1.4.5
 > https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.5.pdf
 
 ## Relevant CAB Forum Baseline Requirements Changes
@@ -45,7 +45,7 @@ CAB Forum recently removed options that were previously acceptable. A summary of
 8. [ Deleted ]
 9. [ Deleted ]
 
-10. **TLS Using a Random Number (embedded in a Certificate)** - By confirming the presence of a Random Value within a Certificate on the Authorization Domain name which is accessible by the CA via TLS over an Authorized Port
+10. **TLS Using a Random Number (Embedded in a Certificate)** - By confirming the presence of a Random Value within a Certificate on the Authorization Domain name which is accessible by the CA via TLS over an Authorized Port
 
 11. **Other methods** - 
 
@@ -59,15 +59,24 @@ CAB Forum recently removed options that were previously acceptable. A summary of
 
 ## Federal Government Method Selection
 
-The newly added "Other" option is now on the table, but it's unclear exactly what we would define and if it would continue to be acceptable over time. Therefore, the clear choice is #6 **Agreed‐Upon Change to Website**. Option #5 does not work well in the Government environment because it concentrates the effort on individuals rather than distributing the it to system administrators. Option #10  is not viable as that creates additional effort and more room for error than #5.
+### Domain Authorization Document
+![domain authorization document process](assets/domain_authorization_document.png)
 
-The only decision point left is to determine exactly how to implement option #6, i.e. which request token to use. However, that decision is ultimately an implementation detail that has no effect on the 
+### Agreed‐Upon Change to Website
+![agreed upon change to website process](assets/agreed_upon_change_to_website.png)
+
+### TLS Using a Random Number (Embedded in a Certificate)
+![tls using random number process](assets/tls_using_random_number.PNG)
+
+
+### Other Methods
+The newly added "Other" option is now on the table, but it's unclear exactly what would continue to be acceptable over time. 
 
 ## Appendix 1 - Previously Permitted Domain Authorization Methods 
 
 The list below summarizes all methods permitted prior to version 1.4.2. The red lined version of the policy showing these changes can be found [here](https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.2-redlined.pdf).
 
-> *The list below are NOT the current requirements.*
+> *The list below are NOT the current requirements.* However, there is ongoing discussion about bringing some or all of these methods back.
 
 1. **Validating the Applicant as a Domain Contact**
 	-	Confirm with the Domain Name Registrar that the applicant is the Domain Contact
