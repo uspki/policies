@@ -108,7 +108,7 @@ The primary goal of these Requirements is to enable efficient and secure electro
 
 
 ### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption. Trusted Role certificates MAY be issued from either the Root or Subordinate CA.
+All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption unless issued for specific infrastructure purposes as outlined in section 6.1.7.
 
 ## 1.5 Policy administration
 This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure. 
@@ -1139,7 +1139,7 @@ In coordination with the CA, the FPKIPA may conduct the following activities as 
 
 The FPKIPA shall notify the CA, in writing, of its intentions in response to the security incident seven (7) days prior to the action by the FPKIPA except under exceptional circumstances (as defined in the glossary) where the FPKIPA will make reasonable efforts to communicate with the CA prior to taking action. The  CA may propose an alternate course of action and the FPKIPA may consider reasonable alternatives but reserves the right to reject any proposed course of action not in the government’s best interest.
 
-**Note**: The amount of communication and public disclosure is proportional to the impact
+**Note**: The FPKIPA will follow individual Application Trusted Root Program requirements to report security concerns.
 
 In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
 1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
@@ -1760,9 +1760,8 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
 3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
 4. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
-5. Bound by law, government regulation, or professional code of ethics;
-6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage; and
-7. If the CA chooses to obtain a WebTrust audit, the CA SHALL use a WebTrust licensed Auditor to perform the audit. 
+5. Bound by law, government regulation, or professional code of ethics; and
+6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
 
