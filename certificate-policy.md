@@ -180,6 +180,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **Certification Practice Statement**: One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
 
+**Certificate Transparency (CT)**: Publicly operated record of certificate issuance.
+
 **Control**: "Control" (and its correlative meanings, "controlled by" and "under common control with") means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors ; or (3) vote that portion of voting shares required for "control" under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
 
 **Country**: Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
@@ -203,6 +205,8 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 **Domain Name Registrar**: A person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assigns).
 
 **Effective Date**: 1 July 2012.
+
+**Embedded SCT**: An SCT delivered via an X.509v3 extension within the certificate.
 
 **Enterprise RA**: An employee or agent of an organization unaffiliated with the CA who authorizes issuance of Certificates to that organization.
 
@@ -297,6 +301,8 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 **Secure Zone**: An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of Certificate Systems.
 
 **Security Support Systems**: A system used to provide security support functions, such as authentication, network boundary control, audit logging, audit log reduction and analysis, vulnerability scanning, and anti-virus.
+
+**Signed Certificate Timestamp (SCT)**: A timestamp and promise from a Certificate Transparency operator to add the submitted certificate to the log within a specified time period.
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
@@ -633,6 +639,10 @@ Certificate applications SHALL be processed and a certificate issued within 30 d
 
 ### 4.3.1 CA actions during certificate issuance
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
+
+All end entity certificates asserting the id-kp-serverAuth EKU SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via a certificate extension. At a minimum, the CA SHALL request the following number of SCTs:
+- One embedded SCT from a Google CT log
+- One embedded SCT from non-Google CT log
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized organizational representative of the issuance.
@@ -1010,6 +1020,7 @@ Log entries MUST include the following elements:
 The CA SHALL retain any audit logs generated for at least seven years. The CA SHALL make these audit logs available to its Qualified Auditor upon request.
 
 ### 5.4.4 Protection of Audit Log
+The CA SHALL ensure audit logs are unalterable or maintain an integrity mechanism to identify any changes.
 
 ### 5.4.5 Audit Log Backup Procedures
 
@@ -1067,6 +1078,12 @@ The business continuity plan MUST include:
 13. How frequently backup copies of essential business information and software are taken;
 14. The distance of recovery facilities to the CA's main site; and
 15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
+
+In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
+1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
+2. Revoke any mis-issued certificates;
+3. Publish a notice of the revocation on a publicly accessible website; and
+4. Conduct a full post-mortem and publicly publish the findings on a publicly accessible website.
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 
