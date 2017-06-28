@@ -924,40 +924,143 @@ Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a se
 {:.br data-sect="16.3"}
 
 ## 5.1 PHYSICAL SECURITY CONTROLS
+CA equipment SHALL be protected from unauthorized access while the cryptographic module is installed and activated.  The CA SHALL implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  CA cryptographic tokens SHALL be protected against theft, loss, and unauthorized use.  
+
+All the physical control requirements specified below apply equally to the Root CA and subordinate CAs, and any remote workstations used to administer the CAs, except where specifically noted.
 
 ### 5.1.1 Site location and construction
+The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, SHALL be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, SHALL provide robust protection against unauthorized access to the CA equipment and records.
 
 ### 5.1.2 Physical access
+At a minimum, the physical access controls for CA equipment and Certificate Status Authority (CSA) equipment, as well as remote workstations used to administer the CAs, SHALL: 
+
+- Ensure that no unauthorized access to the hardware is permitted.
+- Ensure that all removable media and paper containing sensitive plain-text information is stored in secure containers.
+- Be manually or electronically monitored for unauthorized intrusion at all times.
+- Ensure an access log is maintained and inspected periodically.
+- Require two-person physical access control to both the cryptographic module and computer systems.  
+
+When not in use, removable cryptographic modules, activation information used to access or enable cryptographic modules, and CA equipment SHALL be placed in secure containers.  Activation data SHALL be either memorized or recorded and stored in a manner commensurate with the security afforded the cryptographic module, and SHALL not be stored with the cryptographic module or removable hardware associated with remote workstations used to administer the CA.  
+
+A security check of the facility housing the CA equipment or remote workstations used to administer the CAs SHALL occur if the facility is to be left unattended.  At a minimum, the check SHALL verify the following:  
+
+- The equipment is in a state appropriate to the current mode of operation (e.g., that cryptographic modules are in place when “open,” and secured when “closed,” and for the CA, that all equipment other than the repository is shut down).
+- Any security containers are properly secured.
+- Physical security systems (e.g., door locks, vent covers) are functioning properly.
+- The area is secured against unauthorized access.
+
+A person or group of persons SHALL be made explicitly responsible for making such checks.  When a group of persons is responsible, a log identifying the person performing a check at each instance SHALL be maintained.  If the facility is not continuously attended, the last person to depart SHALL initial a sign-out sheet that indicates the date and time and asserts that all necessary physical protection mechanisms are in place and activated.
+
+RA equipment SHALL be protected from unauthorized access while the cryptographic module is installed and activated.  The RA SHALL implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  These security mechanisms SHALL be commensurate with the level of threat in the RA equipment environment.
 
 ### 5.1.3 Power and air conditioning
+The CA SHALL have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown.  
+
+The repositories (containing CA certificates and CRLs) SHALL be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4 Water exposures
+CA equipment SHALL be installed such that it is not in danger of exposure to water (e.g., on tables or elevated floors).
+Potential water damage from fire prevention and protection measures (e.g., sprinkler systems) are excluded from this requirement.
 
 ### 5.1.5 Fire prevention and protection
+No Stipulation
 
 ### 5.1.6 Media storage
+Media SHALL be stored so as to protect them from accidental damage (e.g., water, fire, or electromagnetic) and unauthorized physical access.
 
 ### 5.1.7 Waste disposal
+Sensitive media and documentation that are no longer needed for operations SHALL be destroyed in a secure manner.  For example, sensitive paper documentation SHALL be shredded, burned, or otherwise rendered unrecoverable.
 
 ### 5.1.8 Off-site backup
+Full system backups sufficient to recover from system failure SHALL be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week.  At least one full backup copy SHALL be stored at an off-site location (separate from CA equipment).  Only the latest full backup need be retained.  The backup SHALL be stored at a site with physical and procedural controls commensurate to that of the operational CA.
 
 ## 5.2 Procedural controls
 
 ### 5.2.1 Trusted roles
+A trusted role is one whose incumbent performs functions that can introduce security problems if not carried out properly, whether accidentally or maliciously.  
+The requirements of this policy are defined in terms of four roles.   
+
+1.	Administrator – authorized to install, configure, and maintain the CA; establish and maintain system accounts; configure audit parameters; and generate component keys. 
+2.	Officer – authorized to request or approve certificate issuance and revocations. 
+3.	Auditor – authorized to review, maintain, and archive audit logs. 
+4.	Operator – authorized to perform system backup and recovery.  
+
+These four roles are employed at the CA, RA and CSA locations as appropriate.  Separation of duties SHALL comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
+
+Administrators do not issue certificates to subscribers.
+
+#### 5.2.1.1	CA Trusted Roles
+The CA shall require at least the following roles:
+
+The CA Administrator shall be responsible for:
+-  Installation, configuration, and maintenance of the CA;
+-  Establishing and maintaining CA system accounts; 
+-  Configuring certificate profiles or templates and audit parameters, and;
+-  Generating and backing up CA keys. 
+
+Administrators shall not issue certificates to subscribers.  
+
+The CA Officer shall be responsible for issuing certificates, that is:
+- Registering new subscribers and requesting the issuance of certificates;
+- Verifying the identity of subscribers and accuracy of information included in certificates;
+- Approving and executing the issuance of certificates, and;
+- Requesting, approving and executing the revocation of certificates.
+
+The CA Audit Administrator shall be responsible for:
+- Reviewing, maintaining, and archiving audit logs;
+- Performing or overseeing internal compliance audits to ensure that the CA is operating in accordance with its CPS;
+
+The CA operator shall be responsible for the routine operation of the CA equipment and operations such as system backups and recovery or changing recording media.
+
+#### 5.2.1.2	CSA Trusted Roles
+A CSA shall require at least the following roles.
+
+The CSA administrator shall be responsible for:
+- Installation, configuration, and maintenance of the CSA;
+- Establishing and maintaining CSA system accounts; 
+- Configuring CSA application and audit parameters; and
+- Generating and backing up CSA keys. 
+- The CSA Audit Administrator shall be responsible for:
+- Reviewing, maintaining, and archiving audit logs; and
+- Performing or overseeing internal compliance audits to ensure that the CSA is operating in accordance with its CPS.
+
+The CSA Operator shall be responsible for:
+- The routine operation of the CSA equipment; and
+- Operations such as system backups and recovery or changing recording media.
+
+#### 5.2.1.3	RA Trusted Roles
+An RA's responsibilities are:
+-	 Verifying identity, pursuant to section 3.2;
+-  Entering Subscriber information, and verifying correctness;
+-  Securely communicating requests to and responses from the CA;
+-  Receiving and distributing Subscriber certificates.
 
 ### 5.2.2 Number of Individuals Required per Task
 The CA Private Key SHALL be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in a physically secured environment.
 
+Where multiparty control is required, at least one of the participants SHALL be an Administrator.  All participants must serve in a trusted role as defined in section 5.2.1.  Multiparty control SHALL NOT be achieved using personnel that serve in the Auditor trusted role.
+
 ### 5.2.3 Identification and authentication for each role
+An individual SHALL identify and authenticate him/herself before being permitted to perform any actions set forth above for that role or identity.
 
 ### 5.2.4 Roles requiring separation of duties
+Individuals may only assume one of the Officer, Administrator, and Auditor roles, but any individual may assume the Operator role.  The CA software and hardware SHALL identify and authenticate its users and SHALL ensure that no user identity can assume both the Administrator and Officer roles, assume both the Administrator and Auditor roles, or assume both the Auditor and Officer roles.  
 
 ## 5.3 Personnel controls
 
 ### 5.3.1 Qualifications, experience, and clearance requirements
-Prior to the engagement of any person in the Certificate Management Process, whether as an employee, agent, or an independent contractor of the CA, the CA SHALL verify the identity and trustworthiness of such person.
+All persons filling trusted roles SHALL be selected on the basis of loyalty, trustworthiness, and integrity, and must be U.S. citizens.  The requirements governing the qualifications, selection and oversight of individuals who operate, manage, oversee, and audit the CA SHALL be set forth in the CPS.
+
 
 ### 5.3.2 Background check procedures
+Trusted role personnel SHALL, at a minimum, pass a background investigation covering the following areas:
+•	Employment;
+•	Education;
+•	Place of residence;
+•	Law Enforcement; and
+•	References.
+The period of investigation must cover at least the last five years for each area, excepting the residence check which must cover at least the last three years.  Regardless of the date of award, the highest educational degree SHALL be verified.
+Adjudication of the background investigation SHALL be performed by a competent adjudication authority using a process consistent with Executive Order 12968 August 1995, or equivalent.
 
 ### 5.3.3 Training Requirements and Procedures
 The CA SHALL provide all personnel performing information verification duties with skills-training that covers basic Public Key Infrastructure knowledge, authentication and vetting policies and procedures (including the CA's Certificate Policy and/or Certification Practice Statement), common threats to the information verification process (including phishing and other social engineering tactics), and these Requirements.
@@ -971,14 +1074,23 @@ The CA SHALL require all Validation Specialists to pass an examination provided 
 ### 5.3.4 Retraining frequency and requirements
 All personnel in Trusted roles SHALL maintain skill levels consistent with the CA's training and performance programs.
 
+All individuals responsible for PKI roles SHALL be made aware of changes in the CA operation.  Any significant change to the operations SHALL have a training (awareness) plan, and the execution of such plan SHALL be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
+
+Documentation SHALL be maintained identifying all personnel who received training and the level of training completed.
+
 ### 5.3.5 Job rotation frequency and sequence
+No Stipulation
 
 ### 5.3.6 Sanctions for unauthorized actions
+The CA SHALL take appropriate administrative and disciplinary actions against personnel who have performed actions involving the CA, CSA or RAs that are not authorized in this CP, CPSs, or other published procedures.
 
 ### 5.3.7 Independent Contractor Controls
+Delegated Third Party personnel fulfilling trusted roles are subject to all personnel requirements stipulated in this policy.
+
 The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of Section 5.3.3 and the document retention and event logging requirements of Section 5.4.1.
 
 ### 5.3.8 Documentation supplied to personnel
+Documentation sufficient to define duties and procedures for each role SHALL be provided to the personnel filling that role
 
 ## 5.4 Audit logging procedures
 
@@ -1017,18 +1129,30 @@ Log entries MUST include the following elements:
 3. Description of the entry.
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
+Review of the audit log SHALL be required at least once every two months.  
+
+Such reviews involve verifying that the log has not been tampered with and then briefly inspecting all log entries, with a more thorough investigation of any alerts or irregularities in the logs.  A statistically significant portion of the security audit data generated by the CA since the last review SHALL be examined.  This amount will be described in the CPS.
+
+All significant events SHALL be explained in an audit log summary.  Actions taken as a result of these reviews SHALL be documented.
 
 ### 5.4.3 Retention Period for Audit Logs
+Audit logs SHALL be retained on-site until reviewed, in addition to being archived as described in section 5.5.  The individual who removes audit logs from the CA system SHALL be an official different from the individuals who, in combination, command the CA signature key. 
+
 The CA SHALL retain any audit logs generated for at least seven years. The CA SHALL make these audit logs available to its Qualified Auditor upon request.
 
 ### 5.4.4 Protection of Audit Log
 The CA SHALL ensure audit logs are unalterable or maintain an integrity mechanism to identify any changes.
 
+The security audit data SHALL not be open for reading or modification by any human, or by any automated process, other than those that perform security audit processing.  CA system configuration and procedures must be implemented together to ensure that only authorized people archive or delete security audit data.  Procedures must be implemented to protect archived data from deletion or destruction before the end of the security audit data retention period (note that deletion requires modification access).  Security audit data SHALL be moved to a safe, secure storage location separate from the location where the data was generated.
+
 ### 5.4.5 Audit Log Backup Procedures
+Audit logs and audit summaries SHALL be backed up at least monthly.  A copy of the audit log SHALL be sent off-site on a monthly basis.
 
 ### 5.4.6 Audit Log Accumulation System (internal vs. external)
+The audit log collection system may or may not be external to the CA system.  Automated audit processes SHALL be invoked at system or application startup, and cease only at system or application shutdown.  Audit collection systems SHALL be configured such that security audit data is protected against loss (e.g., overwriting or overflow of automated log files).  Should it become apparent that an automated audit system has failed, and the integrity of the system or confidentiality of the information protected by the system is at risk, operations SHALL be suspended until the problem has been remedied.
 
 ### 5.4.7 Notification to event-causing subject
+There is no requirement to notify a subject that an event was audited.  Real-time alerts are neither required nor prohibited by this policy.
 
 ### 5.4.8 Vulnerability assessments
 Additionally, the CA's security program MUST include an annual Risk Assessment that:
@@ -1038,23 +1162,70 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
 
 ## 5.5 Records archival
+CAs operating under this policy must follow either the General Records Schedules established by the National Archives and Records Administration or an agency-specific schedule as applicable.
 
 ### 5.5.1 Types of records archived
+The CA SHALL retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for a minimum of 10 years and 6 months after any Certificate based on that documentation ceases to be valid.
+
+CA archive records SHALL be sufficiently detailed to determine the proper operation of the CA and the validity of any certificate - including those revoked or expired - issued by the CA.  At a minimum, the following data SHALL be recorded for archive:
+-	CA accreditation (if applicable)
+- Certificate policy
+- Certification practice statement
+- Contractual obligations and other agreements concerning operations of the CA
+- System and equipment configuration
+-	Modifications and updates to system or configuration
+-	Certificate requests
+-	All certificates issued and/or published
+-	Record of re-key
+-	Revocation requests
+-	Subscriber identity authentication data 
+-	Documentation of receipt and acceptance of certificates (if applicable)
+-	Subscriber agreements
+-	Documentation of receipt of tokens
+-	All CRLs issued and/or published
+-	Other data or applications to verify archive contents
+-	Compliance Auditor reports
+-	Any changes to the Audit parameters, e.g. audit frequency, type of event audited
+-	Any attempt to delete or modify the Audit logs
+-	Whenever the CA generates a key (Not mandatory for single session or one-time use symmetric keys)
+-	All changes to the trusted public keys, including additions and deletions
+-	The export of private and secret keys (keys used for a single session or message are excluded)
+-	The approval or rejection of a certificate status change request
+-	Appointment of an individual to a Trusted Role
+-	Destruction of cryptographic modules
+-	All certificate compromise notifications
+-	Remedial action taken as a result of violations of physical security
+-	Violations of Certificate Policy
+-	Violations of Certification Practice Statement
 
 ### 5.5.2 Retention period for archive
-The CA SHALL retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for at least seven years after any Certificate based on that documentation ceases to be valid.
+The CA SHALL retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for a minimum of 10 years and 6 months without any loss of data after any Certificate based on that documentation ceases to be valid.
 
 ### 5.5.3 Protection of archive
+No unauthorized user SHALL be permitted to write to, modify, or delete the archive.  For the CA, archived records may be moved to another medium.  The contents of the archive SHALL not be released except in accordance with the Privacy Act of 1974 (as amended) and applicable Agency policies.  Records of individual transactions may be released upon request of any subscribers involved in the transaction or their legally recognized agents.  Archive media SHALL be stored in a safe, secure storage facility separate from the CA.
+
+If the original media cannot retain the data for the required period, a mechanism to periodically transfer the archived data to new media SHALL be defined by the archive site. 
+
+Alternatively, a CA operating under this policy may retain data using whatever procedures have been approved by NARA for that category of documents.  Applications required to process the archive data SHALL be maintained for a period that equals or exceeds the archive requirements for the data.
 
 ### 5.5.4 Archive backup procedures
+No Stipulation
 
 ### 5.5.5 Requirements for time-stamping of records
+CA archive records SHALL be automatically time-stamped as they are created.  The system clocks used for time-stamping SHALL be maintained in synchrony with an authoritative time standard.
 
 ### 5.5.6 Archive collection system (internal or external)
+Archive data may be collected in any expedient manner.
 
 ### 5.5.7 Procedures to obtain and verify archive information
+Procedures, detailing how to create, verify, package, transmit, and store the CA archive information, SHALL be published in the CPS.
 
 ## 5.6 Key changeover
+To minimize risk from compromise of a CA’s private signing key, that key may be changed often.  From that time on, only the new key will be used to sign CA and subscriber certificates.  If the old private key is used to sign OCSP responder certificates or CRLs that cover certificates signed with that key, the old key must be retained and protected.  
+
+After a CA performs a Key Changeover, the CA may continue to issue CRLs with the old key until all certificates signed with that key have expired. As an alternative, after all certificates signed with that old key have been revoked, the CA may issue a final long-term CRL using the old key, with a nextUpdate time past the validity period of all issued certificates. This final CRL SHALL be available for all relying parties until the validity period of all issued certificates has passed.  Once the last CRL has been issued, the old private signing key of the CA may be destroyed.  
+
+When a CA updates its private signature key and thus generates a new public key, the CA SHALL notify all CAs, RAs, and subscribers that rely on the CA’s certificate that it has been changed.
 
 ## 5.7 Compromise and disaster recovery
 
@@ -1088,12 +1259,43 @@ In the event of a mis-issuance, the issuing CA SHALL conduct the following actio
 4. Conduct a full post-mortem and publicly publish the findings on a publicly accessible website.
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
+When computing resources, software, and/or data are corrupted, CAs operating under this policy SHALL respond as follows:
+
+- Before returning to operation, ensure that the system’s integrity has been restored.
+-	If the CA signature keys are not destroyed, CA operation SHALL be reestablished, giving priority to the ability to generate certificate status information within the CRL issuance schedule.
+- If the CA signature keys are destroyed, CA operation SHALL be reestablished as quickly as possible, giving priority to the generation of a new CA key pair.
 
 ### 5.7.3 Recovery Procedures after Key Compromise
+In the event of a CA private key compromise, the following operations must be performed. 
+
+- The FPKI Policy Authority SHALL be immediately informed, as well as any superior CAs and any entities known to be distributing the CA certificate.
+-	The CA must generate new keys.
+
+If the CA distributed the private key in a Trusted Certificate, the CA SHALL perform the following operations:  
+
+-	Generate a new Trusted Certificate.
+-	Securely distribute the new Trusted Certificate 
+-	Initiate procedures to notify subscribers of the compromise.
+
+Subscriber certificates may be renewed automatically by the CA under the new key pair, or the CA may require subscribers to repeat the initial certificate application process.  
 
 ### 5.7.4 Business continuity capabilities after a disaster
+For the Root CA, recovery procedures SHALL be in place to reconstitute the CA within six (6) hours of failure.
+
+All other CAs operating under this policy SHALL have recovery procedures in place to reconstitute the CA within 72 hours of failure.
+
+In the case of a disaster whereby the CA installation is physically damaged and all copies of the CA signature key are destroyed as a result, the FPKI Policy Authority SHALL be notified at the earliest feasible time, and the FPKI Policy Authority SHALL take whatever action it deems appropriate.
+
+Relying parties may decide of their own volition whether to continue to use certificates signed with the destroyed private key pending reestablishment of CA operation with new certificates.
 
 ## 5.8 CA or RA termination
+When a CA operating under this policy terminates operations before all certificates have expired, the CA signing keys SHALL be surrendered to the FPKI Policy Authority. 
+
+This section does not apply to CAs that have ceased issuing new certificates but are continuing to issue CRLs until all certificates have expired.  Such CAs are required to continue to conform with all relevant aspects of this policy (e.g., audit logging and archives).
+
+Any issued certificates that have not expired, SHALL be revoked and a final long term CRL with a nextUpdate time past the validity period of all issued certificates SHALL be generated.  This final CRL SHALL be available for all relying parties until the validity period of all issued certificates has passed.  Once the last CRL has been issued, the private signing key(s) of the CA to be terminated will be destroyed.
+
+Prior to CA termination, the CA SHALL provide archived data to an archive facility.  As soon as possible, the CA will advise all other organizations to which it has issued certificates of its termination.
 
 # 6. TECHNICAL SECURITY CONTROLS
 
