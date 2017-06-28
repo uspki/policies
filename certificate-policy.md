@@ -602,26 +602,32 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 ### 4.1.1 Who can submit a certificate application
 In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
 
+An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
+
+A certificate application shall be submitted to the CA by the Subscriber, an authorized organization representative, or an RA on behalf of the Subscriber. 
+
 ### 4.1.2 Enrollment process and responsibilities
+The Policy Authority approves all requests for CA certificate issuance.
+
+All communications supporting the certificate application and issuance process SHALL be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the public/private key pair SHALL be used. Out-of-band communications SHALL protect the confidentiality and integrity of the data.
+
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
 1. A certificate request, which may be electronic; and
 2. An executed Subscriber Agreement or Terms of Use, which may be electronic.
 
-The CA SHOULD obtain any additional documentation the CA determines necessary to meet these Requirements.
-
-Prior to the issuance of a Certificate, the CA SHALL obtain from the Applicant a certificate request in a form prescribed by the CA and that complies with this CP. One certificate request MAY suffice for multiple Certificates to be issued to the same Applicant, subject to the aging and updating requirement in Section 3.3.1, provided that each Certificate is supported by a valid, current certificate request signed by the appropriate Applicant Representative on behalf of the Applicant. The certificate request MAY be made, submitted and/or signed electronically.
-
-The certificate request MUST contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
+The certificate request SHALL contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
 
 ## 4.2 Certificate application processing
 
 ### 4.2.1 Performing identification and authentication functions
+The identification and authentication of the subscriber shall meet the requirements for subscriber authentication as specified in Sections 3.2 and 3.3. The components of the system - for example, the CA or a Registration Authority - that are responsible for authenticating the subscriber’s identity shall be identified in the CPS.  The CA SHALL also document its procedure for verifying all data to be included in the Certificate in the CPS.
+
 The certificate request MAY include all factual information about the Applicant to be included in the Certificate, and such additional information as is necessary for the CA to obtain from the Applicant in order to comply with these Requirements and the CA's Certificate Policy and/or Certification Practice Statement. In cases where the certificate request does not contain all the necessary information about the Applicant, the CA SHALL obtain the remaining information from the Applicant or, having obtained it from a reliable, independent, third-party data source, confirm it with the Applicant. The CA SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
-Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's SubjectAltName extension.
+Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension.
 
-Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than thirty-nine (39) months prior to issuing the Certificate.
+Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
