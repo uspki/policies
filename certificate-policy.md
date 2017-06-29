@@ -631,14 +631,15 @@ Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY 
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
-If a Delegated Third Party fulfills any of the CA's obligations under this section , the CA SHALL verify that the process used by the Delegated Third Party to identify and further verify High Risk Certificate Requests provides at least the same level of assurance as the CA's own processes
+No Delegated Third Parties are allowed under this policy. 
+
+Identification and authentication as specified in Sections 3.2 SHALL occur no more that 30 days prior to certificate issuance.
 
 ### 4.2.2 Approval or rejection of certificate applications
-CAs SHOULD NOT issue Certificates containing a new gTLD under consideration by ICANN. Prior to issuing a Certificate containing an Internal Name with a gTLD that ICANN has announced as under consideration to make operational, the CA MUST provide a warning to the applicant that the gTLD may soon become resolvable and that, at that time, the CA will revoke the Certificate unless the applicant promptly registers the Domain Name. When a gTLD is delegated by inclusion in the IANA Root Zone Database, the Internal Name becomes a Domain Name, and at such time, a Certificate with such gTLD, which may have complied with these Requirements at the time it was issued, will be in a violation of these Requirements, unless the CA has verified the Subscriber's rights in the Domain Name. The provisions below are intended to prevent such violation from happening.
+CAs SHALL NOT issue Certificates containing gTLD other than .GOV (DotGov) or .MIL (DotMil).
 
-Within 30 days after ICANN has approved a new gTLD for operation, as evidenced by publication of a contract with the gTLD operator on [www.ICANN.org] each CA MUST (1) compare the new gTLD against the CA's records of valid certificates and (2) cease issuing Certificates containing a Domain Name that includes the new gTLD until after the CA has first verified the Subscriber's control over or exclusive right to use the Domain Name in accordance with Section 3.2.2.4.
+In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests and MAY use it as the basis for rejecting a certificate request
 
-Within 120 days after the publication of a contract for a new gTLD is published on [www.icann.org], CAs MUST revoke each Certificate containing a Domain Name that includes the new gTLD unless the Subscriber is either the Domain Name Registrant or can demonstrate control over the Domain Name.
 
 ### 4.2.3 Time to process certificate applications
 Certificate applications SHALL be processed and a certificate issued within 30 days of identity verification.
@@ -646,7 +647,7 @@ Certificate applications SHALL be processed and a certificate issued within 30 d
 ## 4.3 Certificate issuance
 
 ### 4.3.1 CA actions during certificate issuance
-Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
+Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a signing CA certificate by the Root CA SHALL require written authorization by the Policy Authority. 
 
 All end entity certificates asserting the id-kp-serverAuth EKU SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via a certificate extension. At a minimum, the CA SHALL request the following number of SCTs:
 - One embedded SCT from a Google CT log
@@ -658,10 +659,12 @@ The CA SHALL issue the certificate according to the certificate requesting proto
 ## 4.4 Certificate acceptance
 
 ### 4.4.1 Conduct constituting certificate acceptance
-Failure to object to the certificate or its contents shall constitute acceptance of the certificate.
+Failure of the subscriber to object to the certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
-No stipulation.
+As specified in Section 2.1, all CA certificates SHALL be published in repositories.
+CAs SHALL publish all Subscriber certificates in two (2) Certificate Transparency Log servers.
+
 
 ### 4.4.3 Notification of certificate issuance by the CA to other entities
 No stipulation.
@@ -670,6 +673,8 @@ No stipulation.
 
 ### 4.5.1 Subscriber private key and certificate usage
 See Section 9.6.3, provisions 2. and 4.
+
+The intended scope of usage for a private key shall be specified through certificate extensions, including the key usage and extended key usage extensions, in the associated certificate and in accordance with the certificate profiles included with this Certificate Policy.
 
 ### 4.5.2 Relying party public key and certificate usage
 Certificates may specify restrictions on use through critical certificate extensions, including the basic constraints and key usage extensions. 
@@ -684,12 +689,11 @@ It is recommended that relying parties process and comply with this information 
 CA and Subscriber certificates issued under the policy SHALL NOT be renewed.
 Online Certificate Status Protocol (OCSP) Delegated responder certificates MAY be renewed.
 
-
 ### 4.6.2 Who may request renewal
-TODO
+The Policy Authority SHALL request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the OCSP Administrator.
 
 ### 4.6.3 Processing certificate renewal requests
-TODO
+The CA SHALL verify that the new certificate expiration date SHALL NOT exceed 825 days from the date of initial certificate issuance.
 
 ### 4.6.4 Notification of new certificate issuance to subscriber
 See Section 4.3.2.
@@ -701,7 +705,7 @@ See Section 4.4.1.
 See Section 4.4.2.
 
 ### 4.6.7 Notification of certificate issuance by the CA to other entities
-See Section 4.4.3.
+No Stipulation.
 
 ## 4.7 Certificate re-key
 Once a certificate has been rekeyed, the superseded certificate MAY or MAY NOT be revoked, but SHALL NOT be further re-keyed or modified.
@@ -732,24 +736,26 @@ See Section 4.4.2.
 No stipulation.
 
 ## 4.8 Certificate modification
+Subscriber certificates SHALL not be modified.
+CA certificates MAY be modified to update attributes other than the public key.
 
 ### 4.8.1 Circumstance for certificate modification
-No stipulation.
+A CA certificate SHALL NOT be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
 
 ### 4.8.2 Who may request certificate modification
-No stipulation.
+An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
 
 ### 4.8.3 Processing certificate modification requests
-No stipulation.
+Issuance of a signing CA certificate by the Root CA SHALL require written authorization by the Policy Authority.   An authorized individual (i.e. the CA system operator, system officer, or PKI administrator) SHALL be required to issue a direct command in order for the Root CA to perform the certificate signing operation.
 
 ### 4.8.4 Notification of new certificate issuance to subscriber
-No stipulation.
+See Section 4.3.2.
 
 ### 4.8.5 Conduct constituting acceptance of modified certificate
-No stipulation.
+See Section 4.4.1.
 
 ### 4.8.6 Publication of the modified certificate by the CA
-No stipulation.
+See Section 4.4.2.
 
 ### 4.8.7 Notification of certificate issuance by the CA to other entities
 No stipulation.
@@ -759,14 +765,14 @@ No stipulation.
 ### 4.9.1 Circumstances for revocation
 
 #### 4.9.1.1 Reasons for Revoking a Subscriber Certificate
-The CA SHALL revoke a Certificate within 24 hours if one or more of the following occurs:
+The CA SHALL revoke a Certificate as rapidly as possible but within 24 hours if one or more of the following occurs:
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise  or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
+6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
 8. The CA is made aware of a material change in the information contained in the Certificate;
 9. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the
@@ -795,16 +801,20 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 ### 4.9.2 Who can request revocation
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
+The Policy Authority SHALL direct any revocation of a CA certificate.
+
 ### 4.9.3 Procedure for revocation request
 The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means.
 
+A request to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated (e.g., digitally or manually signed). 
+
 ### 4.9.4 Revocation request grace period
-There is no revocation grace period. Responsible parties must request revocation as soon as they identify the need for revocation.
+There is no revocation grace period. 
 
 ### 4.9.5 Time within which CA must process the revocation request
-The CA SHALL begin investigation of a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
+The CA SHALL begin investigation of a of a Request for Revocation or a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
 
 1. The nature of the alleged problem;
 2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
@@ -844,11 +854,11 @@ The CA SHALL support an OCSP capability using the GET method for Certificates is
 
 For the status of Subscriber Certificates:
 
-The CA SHALL update information provided via an Online Certificate Status Protocol at least every 24 hours. OCSP responses from this service MUST have a maximum expiration time of seven days.
+- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests, including CA certificates. OCSP responses from this service MUST have a maximum expiration time of ten days
 
 For the status of Subordinate CA Certificates:
 
-The CA SHALL update information provided via an Online Certificate Status Protocol at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
+- The CA SHALL update information provided via an Online Certificate Status Protocol at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder SHALL NOT respond with a "good" status. The CA SHALL monitor the responder for such requests as part of its security response procedures.
 
