@@ -977,22 +977,20 @@ Full system backups sufficient to recover from system failure SHALL be made on a
 ## 5.2 Procedural controls
 
 ### 5.2.1 Trusted roles
-A trusted role is one whose incumbent performs functions that can introduce security problems if not carried out properly, whether accidentally or maliciously.  
-The requirements of this policy are defined in terms of four roles.   
+A trusted role is one whose incumbent performs functions that can introduce security problems if not carried out properly, whether accidentally or maliciously. 
 
-1.	Administrator – authorized to install, configure, and maintain the CA; establish and maintain system accounts; configure audit parameters; and generate component keys. 
-2.	Officer – authorized to request or approve certificate issuance and revocations. 
+The requirements of this policy are defined in terms of four roles. Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel or investigative records requiring protection under the Privacy Act.
+
+1.	Administrator - authorized to install, configure, and maintain the CA; establish and maintain accounts; configure profiles and audit parameters; and generate component keys. 
+2.	Officer - authorized to request or approve certificates or certificate revocations, and perform the Validation Specialist functions for quarterly reviews of issued certificates
 3.	Auditor – authorized to review, maintain, and archive audit logs. 
-4.	Operator – authorized to perform system backup and recovery.  
+4.	Operator – authorized to perform system backup and recovery.
 
-These four roles are employed at the CA, RA and CSA locations as appropriate.  Separation of duties SHALL comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
+These four roles are employed at the CA.  Separation of duties SHALL comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
 
-Administrators do not issue certificates to subscribers.
+A detailed description of the responsibilities for each role:  
 
-#### 5.2.1.1	CA Trusted Roles
-The CA shall require at least the following roles:
-
-The CA Administrator shall be responsible for:
+The Administrator shall be responsible for:
 -  Installation, configuration, and maintenance of the CA;
 -  Establishing and maintaining CA system accounts; 
 -  Configuring certificate profiles or templates and audit parameters, and;
@@ -1000,40 +998,19 @@ The CA Administrator shall be responsible for:
 
 Administrators shall not issue certificates to subscribers.  
 
-The CA Officer shall be responsible for issuing certificates, that is:
-- Registering new subscribers and requesting the issuance of certificates;
-- Verifying the identity of subscribers and accuracy of information included in certificates;
-- Approving and executing the issuance of certificates, and;
-- Requesting, approving and executing the revocation of certificates.
+The Officer (aka Registration Authority and / or Validation Specialist) shall be responsible for:   
 
-The CA Audit Administrator shall be responsible for:
+- Verifying the identity of subscribers and accuracy of information included in certificates pursuant to Section 3.2
+- Performing the Validation Specialist functions for quarterly reviews of issued certificates 
+- Approving and executing the issuance of the certificates where inspection of the validation information is required, and
+- Requesting, approving and executing the revocation of certificates 
+
+The Audit Administrator shall be responsible for:
+
 - Reviewing, maintaining, and archiving audit logs;
 - Performing or overseeing internal compliance audits to ensure that the CA is operating in accordance with its CPS;
 
-The CA operator shall be responsible for the routine operation of the CA equipment and operations such as system backups and recovery or changing recording media.
-
-#### 5.2.1.2	CSA Trusted Roles
-A CSA shall require at least the following roles.
-
-The CSA administrator shall be responsible for:
-- Installation, configuration, and maintenance of the CSA;
-- Establishing and maintaining CSA system accounts; 
-- Configuring CSA application and audit parameters; and
-- Generating and backing up CSA keys. 
-- The CSA Audit Administrator shall be responsible for:
-- Reviewing, maintaining, and archiving audit logs; and
-- Performing or overseeing internal compliance audits to ensure that the CSA is operating in accordance with its CPS.
-
-The CSA Operator shall be responsible for:
-- The routine operation of the CSA equipment; and
-- Operations such as system backups and recovery or changing recording media.
-
-#### 5.2.1.3	RA Trusted Roles
-An RA's responsibilities are:
--	 Verifying identity, pursuant to section 3.2;
--  Entering Subscriber information, and verifying correctness;
--  Securely communicating requests to and responses from the CA;
--  Receiving and distributing Subscriber certificates.
+The Operator shall be responsible for the routine operation of the CA equipment and operations such as system backups and recovery or changing recording media.
 
 ### 5.2.2 Number of Individuals Required per Task
 The CA Private Key SHALL be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in a physically secured environment.
@@ -1041,10 +1018,10 @@ The CA Private Key SHALL be backed up, stored, and recovered only by personnel i
 Where multiparty control is required, at least one of the participants SHALL be an Administrator.  All participants must serve in a trusted role as defined in section 5.2.1.  Multiparty control SHALL NOT be achieved using personnel that serve in the Auditor trusted role.
 
 ### 5.2.3 Identification and authentication for each role
-An individual SHALL identify and authenticate him/herself before being permitted to perform any actions set forth above for that role or identity.
+An individual SHALL identify and authenticate him/herself before being permitted to perform any actions set forth above for that role or identity.  All Trusted Roles SHALL use a unique credential created by or assigned to a single person for identification adn authentication.  
 
 ### 5.2.4 Roles requiring separation of duties
-Individuals may only assume one of the Officer, Administrator, and Auditor roles, but any individual may assume the Operator role.  The CA software and hardware SHALL identify and authenticate its users and SHALL ensure that no user identity can assume both the Administrator and Officer roles, assume both the Administrator and Auditor roles, or assume both the Auditor and Officer roles.  
+Individuals may only assume one of the Officer, Administrator, and Auditor roles, but any individual may assume the Operator role.  The CA software and hardware SHALL identify and authenticate its users and enforce least privilege.  The CA software and hardware SHALL ensure that no user can assume both the Administrator and Officer roles, assume both the Administrator and Auditor roles, or assume both the Auditor and Officer roles.  
 
 ## 5.3 Personnel controls
 
@@ -1059,8 +1036,7 @@ Trusted role personnel SHALL, at a minimum, pass a background investigation cove
 •	Place of residence;
 •	Law Enforcement; and
 •	References.
-The period of investigation must cover at least the last five years for each area, excepting the residence check which must cover at least the last three years.  Regardless of the date of award, the highest educational degree SHALL be verified.
-Adjudication of the background investigation SHALL be performed by a competent adjudication authority using a process consistent with Executive Order 12968 August 1995, or equivalent.
+The period of investigation must cover at least the last five years for each area, excepting the residence check which must cover at least the last three years. Adjudication of the background investigation SHALL be performed by a competent adjudication authority using a process consistent with Executive Order 13467 or equivalent.
 
 ### 5.3.3 Training Requirements and Procedures
 The CA SHALL provide all personnel performing information verification duties with skills-training that covers basic Public Key Infrastructure knowledge, authentication and vetting policies and procedures (including the CA's Certificate Policy and/or Certification Practice Statement), common threats to the information verification process (including phishing and other social engineering tactics), and these Requirements.
@@ -1082,20 +1058,20 @@ Documentation SHALL be maintained identifying all personnel who received trainin
 No Stipulation
 
 ### 5.3.6 Sanctions for unauthorized actions
-The CA SHALL take appropriate administrative and disciplinary actions against personnel who have performed actions involving the CA, CSA or RAs that are not authorized in this CP, CPSs, or other published procedures.
+The CA SHALL take appropriate administrative and disciplinary actions against personnel who have performed actions involving the CA that are not authorized in this CP, the CA CPS, or other published procedures.
 
 ### 5.3.7 Independent Contractor Controls
-Delegated Third Party personnel fulfilling trusted roles are subject to all personnel requirements stipulated in this policy.
+Delegated Third Party are not allowed under this policy. 
 
-The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of Section 5.3.3 and the document retention and event logging requirements of Section 5.4.1.
+Direct contractor personnel employed to operate any part of the CAs or perform functions pertaining to the infrastructure shall be subject to the same personnel requirements set forth in 5.3.2 of this CP. 
 
 ### 5.3.8 Documentation supplied to personnel
-Documentation sufficient to define duties and procedures for each role SHALL be provided to the personnel filling that role
+Documentation sufficient to define duties and procedures for each role SHALL be provided to the personnel filling that role.
 
 ## 5.4 Audit logging procedures
 
 ### 5.4.1 Types of events recorded
-The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA's compliance with these Requirements.
+The CA SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA's compliance with these Requirements.
 
 The CA SHALL record at least the following events:
 
@@ -1129,7 +1105,7 @@ Log entries MUST include the following elements:
 3. Description of the entry.
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
-Review of the audit log SHALL be required at least once every two months.  
+Review of the audit log SHALL be required at least once every 60 days.  
 
 Such reviews involve verifying that the log has not been tampered with and then briefly inspecting all log entries, with a more thorough investigation of any alerts or irregularities in the logs.  A statistically significant portion of the security audit data generated by the CA since the last review SHALL be examined.  This amount will be described in the CPS.
 
@@ -1223,9 +1199,9 @@ Procedures, detailing how to create, verify, package, transmit, and store the CA
 ## 5.6 Key changeover
 To minimize risk from compromise of a CA’s private signing key, that key may be changed often.  From that time on, only the new key will be used to sign CA and subscriber certificates.  If the old private key is used to sign OCSP responder certificates or CRLs that cover certificates signed with that key, the old key must be retained and protected.  
 
-After a CA performs a Key Changeover, the CA may continue to issue CRLs with the old key until all certificates signed with that key have expired. As an alternative, after all certificates signed with that old key have been revoked, the CA may issue a final long-term CRL using the old key, with a nextUpdate time past the validity period of all issued certificates. This final CRL SHALL be available for all relying parties until the validity period of all issued certificates has passed.  Once the last CRL has been issued, the old private signing key of the CA may be destroyed.  
+After a CA performs a Key Changeover, the CA may continue to issue CRLs with the old key until all certificates signed with that key have expired.  
 
-When a CA updates its private signature key and thus generates a new public key, the CA SHALL notify all CAs, RAs, and subscribers that rely on the CA’s certificate that it has been changed.
+When a CA updates its private signature key and thus generates a new public key, the CA SHALL notify the FPKI Policy Authority and subscribers of the change.  
 
 ## 5.7 Compromise and disaster recovery
 
@@ -1266,10 +1242,12 @@ When computing resources, software, and/or data are corrupted, CAs operating und
 - If the CA signature keys are destroyed, CA operation SHALL be reestablished as quickly as possible, giving priority to the generation of a new CA key pair.
 
 ### 5.7.3 Recovery Procedures after Key Compromise
-In the event of a CA private key compromise, the following operations must be performed. 
+In the event of a CA private key compromise, the following operations MUST be performed. 
 
 - The FPKI Policy Authority SHALL be immediately informed, as well as any superior CAs and any entities known to be distributing the CA certificate.
--	The CA must generate new keys.
+-	The CA MUST generate new keys.
+- The superior CA must be revoke the subordinate CA certificate within seven (7) days.
+- All subscriber certificates MUST be revoked within twenty-four (24) hours.
 
 If the CA distributed the private key in a Trusted Certificate, the CA SHALL perform the following operations:  
 
@@ -1289,9 +1267,9 @@ In the case of a disaster whereby the CA installation is physically damaged and 
 Relying parties may decide of their own volition whether to continue to use certificates signed with the destroyed private key pending reestablishment of CA operation with new certificates.
 
 ## 5.8 CA or RA termination
-When a CA operating under this policy terminates operations before all certificates have expired, the CA signing keys SHALL be surrendered to the FPKI Policy Authority. 
-
 This section does not apply to CAs that have ceased issuing new certificates but are continuing to issue CRLs until all certificates have expired.  Such CAs are required to continue to conform with all relevant aspects of this policy (e.g., audit logging and archives).
+
+When a CA operating under this policy terminates operations before all certificates have expired, the CA signing keys SHALL be surrendered to the FPKI Policy Authority. 
 
 Any issued certificates that have not expired, SHALL be revoked and a final long term CRL with a nextUpdate time past the validity period of all issued certificates SHALL be generated.  This final CRL SHALL be available for all relying parties until the validity period of all issued certificates has passed.  Once the last CRL has been issued, the private signing key(s) of the CA to be terminated will be destroyed.
 
