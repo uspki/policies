@@ -1530,7 +1530,7 @@ No stipulation.
 ## 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
 
-For the Root CA, the CA SHALL be operated in a High Security Zone and in an offline or air-gapped state from all other networks.
+For the Root CA, the CA SHALL be operated in a High Security Zone and in an offline (powered off, disconnected) or air-gapped (powered on, disconnected) state from all other networks.
 
 For all CAs and any Registration Authority functions, the network security controls listed below are required:
 
