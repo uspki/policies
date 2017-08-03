@@ -1651,12 +1651,12 @@ d. basicConstraints (required)
     This extension SHALL be present. The cA field MUST NOT be true.
 
 e. keyUsage (required)
-    This extension SHALL be present. It SHALL be marked critical.
+    This extension SHALL be present. It SHALL NOT be marked critical.
 
     Subscriber certificates used for server authentication SHALL include digitalSignature, and MAY include keyEncipherment and / or keyAgreement.
 
 f. extKeyUsage (required)
-    This extension SHALL be present. It SHALL be marked non-critical.
+    This extension SHALL be present. It SHALL NOT be marked critical.
 
     Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values SHALL be present. id-kp-emailProtection [RFC5280] and anyEKU SHALL NOT be present.
 
