@@ -1651,7 +1651,7 @@ d. basicConstraints (required)
     This extension SHALL be present. The cA field MUST NOT be true.
 
 e. keyUsage (required)
-    This extension SHALL be present. It SHALL NOT be marked critical.
+    This extension SHALL be present and SHALL be marked critical.
 
     Subscriber certificates used for server authentication SHALL include digitalSignature, and MAY include keyEncipherment and / or keyAgreement.
 
