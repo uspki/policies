@@ -1787,7 +1787,7 @@ A decoded example for issuance to the domain and sub domains of .mil (DotMil) by
 
 > X509v3 Name Constraints:  
 >   Permitted:  
->       dNSName:mil  
+>       DNS:mil  
 >   Excluded:  
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
@@ -1796,8 +1796,8 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 
 > X509v3 Name Constraints:  
 >   Permitted:  
->       dNSName:mil  
->       dNSName:gov  
+>       DNS:mil  
+>       DNS:gov  
 >   Excluded:  
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
