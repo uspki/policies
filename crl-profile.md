@@ -17,5 +17,5 @@
 |               |                 |              |                                       |
 | **CRL Entry Extension** |  **Required**   | **Critical** | **Value**  
 | Reason Code  | Mandatory | False |  Must be included when reason code = key compromise or CA compromise |
-| Hold Instruction   |  |  | Not present. |
-| Issuing Distribution Point  |  |  | Not present. |
+| Hold Instruction   |  | False | Not present. |
+| Issuing Distribution Point  |  | False | Not present. |
