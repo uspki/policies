@@ -571,7 +571,6 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CAB Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
-
 ### 3.2.3 Authentication of individual identity
 Subscriber certificates validating natural born persons or individual identity are not allowed under this Certificate Policy. 
 
@@ -600,61 +599,81 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 ## 4.1 Certificate Application
 
 ### 4.1.1 Who can submit a certificate application
-In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
+In accordance with Section 5.5.2, all CAs SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CA SHALL use this information to identify subsequent suspicious certificate requests.
 
-An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
+For the Root and Subordinate CAs:
+- An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
 
-A certificate application shall be submitted to the CA by the Subscriber, an authorized organization representative, or an RA on behalf of the Subscriber. 
+For end entity certificates:
+- A certificate application shall be submitted to the CA by the Subscriber, an authorized organization representative, or an RA on behalf of the Subscriber. 
+
 
 ### 4.1.2 Enrollment process and responsibilities
-The Policy Authority approves all requests for CA certificate issuance.
+For the Root and Subordinate CAs:
+- The Policy Authority is responsible for approving or denying requests for CA certificate issuances.
 
-All communications supporting the certificate application and issuance process SHALL be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the public/private key pair SHALL be used. Out-of-band communications SHALL protect the confidentiality and integrity of the data.
-
-Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
+For all CAs, prior to the issuance of any Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
 1. A certificate request, which may be electronic; and
 2. An executed Subscriber Agreement or Terms of Use, which may be electronic.
 
 The certificate request SHALL contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
 
+The CA SHALL be responsible for validating the information in the certificate request and the identity evidence to ensure the information is: 
+
+- properly formed
+- accurate
+- meets the requirements for the type of certificate requested: a device Domain Validation SSL end entity certificate, a device Organizational Validation SSL end entity certificate, a CA Certificate, or a Certificate Status Server (OCSP) signing certificate
+ 
+All communications supporting the certificate application and issuance process SHALL be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the public/private key pair SHALL be used. Out-of-band communications SHALL protect the confidentiality and integrity of the data.
+
+All CAs SHALL shall specify the procedures for validating information and identity evidence in the CA CPS. 
+
 ## 4.2 Certificate application processing
 
 ### 4.2.1 Performing identification and authentication functions
-The identification and authentication of the subscriber shall meet the requirements for subscriber authentication as specified in Sections 3.2 and 3.3. The components of the system - for example, the CA or a Registration Authority - that are responsible for authenticating the subscriber’s identity shall be identified in the CPS.  The CA SHALL also document its procedure for verifying all data to be included in the Certificate in the CPS.
+Identification and authentication as specified in Sections 3.2 SHALL occur no more that 30 days prior to the initial certificate issuance.  
 
-The certificate request MAY include all factual information about the Applicant to be included in the Certificate, and such additional information as is necessary for the CA to obtain from the Applicant in order to comply with these Requirements and the CA's Certificate Policy and/or Certification Practice Statement. In cases where the certificate request does not contain all the necessary information about the Applicant, the CA SHALL obtain the remaining information from the Applicant or, having obtained it from a reliable, independent, third-party data source, confirm it with the Applicant. The CA SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
+All CAs SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
-Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension.
+For end entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates: 
 
-Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate
+- The Applicant information SHALL include at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension 
+- All Fully-Qualified Domain Names to be included in the Certificate's SubjectAltName extension SHALL be verified in accordance with Section 3.2 before issuance of the certificate
+- CAA records for DotGov and DotMil domains SHALL be checked prior to issuance of any certificate and the CA SHALL act in accordance to the rules in the CAA records if present.  The CA SHALL identify in Section 4.2 of the CPS the Issuer Domain Name(s) used for CAA records.  
 
-The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
+The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.  
 
-No Delegated Third Parties are allowed under this policy. 
+All Subordinate CAs SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .GOV (DotGov) and .MIL (DotMil) assets prior to the Certificate's approval.  
 
-Identification and authentication as specified in Sections 3.2 SHALL occur no more that 30 days prior to certificate issuance.
+Delegated Third Parties are not allowed under this policy. 
+
 
 ### 4.2.2 Approval or rejection of certificate applications
-CAs SHALL NOT issue Certificates containing gTLD other than .GOV (DotGov) or .MIL (DotMil).
+This Certificate Policy is restricted to be applicable to, and technically constrained, for DotMil and DotGov assets under direct authority of the US Federal Government.  All certificate applications submitted by entities not affiliated with the US Federal Government SHALL be rejected. 
 
-In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests and MAY use it as the basis for rejecting a certificate request
+CAs SHALL NOT issue Certificates containing any Fully Qualified Domain Names that are not under the gTLDs for DotGov or DotMil.  
+
+Approval of certificate applications requires successful completion of validation per Section 3.2. 
+
+In accordance with Section 5.5.2, all CAs SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CAs SHALL use this information to identify subsequent suspicious certificate requests and MAY use it as the basis for rejecting a certificate request.
 
 
 ### 4.2.3 Time to process certificate applications
-Certificate applications SHALL be processed and a certificate issued within 30 days of identity verification.
+Certificate applications SHALL be processed and a certificate issued within 30 days of the first identity verification.
 
 ## 4.3 Certificate issuance
 
 ### 4.3.1 CA actions during certificate issuance
-Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a signing CA certificate by the Root CA SHALL require written authorization by the Policy Authority. 
+Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA SHALL require written authorization by the Policy Authority.  
 
-All end entity certificates asserting the id-kp-serverAuth EKU SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via a certificate extension. At a minimum, the CA SHALL request the following number of SCTs:
-- One embedded SCT from a Google CT log
-- One embedded SCT from non-Google CT log
+All end entity certificates for Domain Validation SSL and Organizational Validation SSL SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  The Issuing CA SHALL submit a precertificate to a minimum of two Certificate Transparency Logs.  Information included in the end entity certificates SHALL NOT be redacted prior to submission to the Certificate Transparency Logs.  At a minimum, the Issuing CA SHALL request and include two SCTs in the x509v3 certificate extension:
+- One SCT from a Google operated CT log
+- One SCT from non-Google operated CT log
+
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
-The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized organizational representative of the issuance.
+The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized representative of the issuance.
 
 ## 4.4 Certificate acceptance
 
@@ -662,38 +681,37 @@ The CA SHALL issue the certificate according to the certificate requesting proto
 Failure of the subscriber to object to the certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
-As specified in Section 2.1, all CA certificates SHALL be published in repositories.
-CAs SHALL publish all Subscriber certificates in two (2) Certificate Transparency Log servers.
-
+As specified in Section 2.1, all CA certificates SHALL be published in repositories. All CA certificates SHALL be published to the repositories within 24 hours of issuance. 
+CAs SHALL log all end entity certificates in a minimum of two (2) Certificate Transparency Log servers as outlined in Section 4.3.1.
 
 ### 4.4.3 Notification of certificate issuance by the CA to other entities
-No stipulation.
+See Section 4.4.2.
 
 ## 4.5 Key pair and certificate usage
 
 ### 4.5.1 Subscriber private key and certificate usage
 See Section 9.6.3, provisions 2. and 4.
 
-The intended scope of usage for a private key shall be specified through certificate extensions, including the key usage and extended key usage extensions, in the associated certificate and in accordance with the certificate profiles included with this Certificate Policy.
+The intended scope of usage for a private key shall be in accordance with the certificate profiles included with this Certificate Policy.
 
 ### 4.5.2 Relying party public key and certificate usage
-Certificates may specify restrictions on use through critical certificate extensions, including the basic constraints and key usage extensions. 
-
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9. 
 
 It is recommended that relying parties process and comply with this information whenever using certificates in a transaction.
 
 ## 4.6 Certificate renewal
+Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate. 
 
 ### 4.6.1 Circumstance for certificate renewal
-CA and Subscriber certificates issued under the policy SHALL NOT be renewed.
+CA certificates SHALL NOT be renewed.  End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates SHALL NOT be renewed. Certificate renewal requests SHALL be treated as new applications and information verified in accordance with Section 4.2.1  
+
 Online Certificate Status Protocol (OCSP) Delegated responder certificates MAY be renewed.
 
 ### 4.6.2 Who may request renewal
-The Policy Authority SHALL request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the OCSP Administrator.
+The Policy Authority SHALL request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
 
 ### 4.6.3 Processing certificate renewal requests
-The CA SHALL verify that the new certificate expiration date SHALL NOT exceed 825 days from the date of initial certificate issuance.
+The CA SHALL verify that the OCSP Delegated Responder certificate expiration date SHALL NOT exceed 825 days from the date of initial certificate issuance.
 
 ### 4.6.4 Notification of new certificate issuance to subscriber
 See Section 4.3.2.
@@ -705,48 +723,47 @@ See Section 4.4.1.
 See Section 4.4.2.
 
 ### 4.6.7 Notification of certificate issuance by the CA to other entities
-No Stipulation.
-
-## 4.7 Certificate re-key
-Once a certificate has been rekeyed, the superseded certificate MAY or MAY NOT be revoked, but SHALL NOT be further re-keyed or modified.
-Subscribers SHALL identify themselves for the purpose of re-keying as required in Section 3.3.
-
-### 4.7.1 Circumstance for certificate re-key
-TODO 
-
-### 4.7.2 Who may request certification of a new public key
-Requests for certification of a new public key SHALL be considered as follows:  
-•	Subscribers with a currently valid certificate MAY request certification of a new public key  
-•	Authorized organization representative, CAs and RAs MAY request certification of a new public key on behalf of a subscriber.  
-
-
-### 4.7.3 Processing certificate re-keying requests
-The CA SHALL process the certificate application according to the certificate requesting protocol used by the device (this may be automated).  All Subscriber related data (e.g., DN, Subject Alternate Name) SHALL be identical to the original certificate.
-
-### 4.7.4 Notification of new certificate issuance to subscriber
-See Section 4.3.2.
-
-### 4.7.5 Conduct constituting acceptance of a re-keyed certificate
-See Section 4.4.1.
-
-### 4.7.6 Publication of the re-keyed certificate by the CA
 See Section 4.4.2.
 
+## 4.7 Certificate re-key
+Re-key is defined as the issuance of a certificate with a new public key, no changes to the identity information, and a new validity period for the certificate. 
+
+### 4.7.1 Circumstance for certificate re-key
+All Certificates under this policy SHALL not be re-keyed.  Certificate re-key requests SHALL be treated as new applications and information verified in accordance with Section 4.2.1  
+
+### 4.7.2 Who may request certification of a new public key
+Not applicable.
+
+### 4.7.3 Processing certificate re-keying requests
+Not applicable.
+
+### 4.7.4 Notification of new certificate issuance to subscriber
+Not applicable.
+
+### 4.7.5 Conduct constituting acceptance of a re-keyed certificate
+Not applicable.
+
+### 4.7.6 Publication of the re-keyed certificate by the CA
+Not applicable.
+
 ### 4.7.7 Notification of certificate issuance by the CA to other entities
-No stipulation.
+Not applicable.
 
 ## 4.8 Certificate modification
-Subscriber certificates SHALL not be modified.
-CA certificates MAY be modified to update attributes other than the public key.
+Modification is defined as the re-issuance of a certificate with the same public key, and changes to the identity information or information in the certificate (i.e. policies, key usage) other than the validity period. 
+
 
 ### 4.8.1 Circumstance for certificate modification
-A CA certificate SHALL NOT be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
+End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates SHALL NOT be modified. 
+Online Certificate Status Protocol (OCSP) Delegated responder certificates SHALL NOT be modified.
+
+CA certificates MAY be modified to update attributes other than the public key.  A CA certificate SHALL NOT be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
 
 ### 4.8.2 Who may request certificate modification
-An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
+See Section 4.1.1.
 
 ### 4.8.3 Processing certificate modification requests
-Issuance of a signing CA certificate by the Root CA SHALL require written authorization by the Policy Authority.   An authorized individual (i.e. the CA system operator, system officer, or PKI administrator) SHALL be required to issue a direct command in order for the Root CA to perform the certificate signing operation.
+Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Modification of a CA certificate by the Root CA SHALL require written authorization by the Policy Authority. 
 
 ### 4.8.4 Notification of new certificate issuance to subscriber
 See Section 4.3.2.
@@ -758,9 +775,10 @@ See Section 4.4.1.
 See Section 4.4.2.
 
 ### 4.8.7 Notification of certificate issuance by the CA to other entities
-No stipulation.
+See Section 4.4.2.
 
 ## 4.9 Certificate revocation and suspension
+
 
 ### 4.9.1 Circumstances for revocation
 
@@ -769,14 +787,13 @@ The CA SHALL revoke a Certificate as rapidly as possible but within 24 hours if 
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise  or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
+3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
+6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked the right to use the Domain Name or the Domain Name Registrant has failed to renew the Domain Name under DotGov and/or DotMil gTLDs);
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
 8. The CA is made aware of a material change in the information contained in the Certificate;
-9. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the
-CA's Certificate Policy or Certification Practice Statement;
+9. The CA is made aware that the Certificate was not issued in accordance with this Certificate Policy or the CA's Certification Practice Statement;
 10. The CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
 11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 12. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
@@ -840,7 +857,7 @@ The CA SHALL update and reissue CRLs at least (i) once every 31 days and (ii) wi
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
 
 ### 4.9.9 On-line revocation/status checking availability
-OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
+OCSP responses SHALL conform to RFC6960 and/or RFC5019. OCSP responses SHALL either:
 
 1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
 2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose
@@ -854,7 +871,7 @@ The CA SHALL support an OCSP capability using the GET method for Certificates is
 
 For the status of Subscriber Certificates:
 
-- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests, including CA certificates. OCSP responses from this service MUST have a maximum expiration time of ten days
+- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service MUST have a maximum expiration time of ten days
 
 For the status of Subordinate CA Certificates:
 
@@ -869,7 +886,7 @@ If the Subscriber Certificate is for a high-traffic FQDN, the CA MAY rely on sta
 
 ### 4.9.12 Special requirements re key compromise
 See Section 4.9.1.
-When a CA certificate is revoked a CRL SHALL be issued within 18 hours of notification.
+When a CA certificate is revoked a CRL SHALL be issued within 24 hours of notification.
 
 ### 4.9.13 Circumstances for suspension
 Certificates issued under this policy SHALL NOT be suspended.
@@ -886,8 +903,7 @@ Not applicable.
 ## 4.10 Certificate status services
 
 ### 4.10.1 Operational characteristics
-Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked
-Certificate
+Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked Certificate
 
 ### 4.10.2 Service availability
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
