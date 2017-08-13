@@ -135,7 +135,9 @@ Contact information for the Federal Public Key Infrastructure Policy Authority i
 Federal Public Key Infrastructure Policy Authority
 
 ### 1.5.4 CPS approval procedures
-Independent Auditors conduct assessments of CPS conformance to the CP requirements.  The results of these audits are submitted and approved by the Federal Public Key Infrastructure Policy Authority.
+A CPS shall be submitted and approved by the Federal Public Key Infrastructure Policy Authority. 
+
+Prior to submitting a CPS, the CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the Policy Authority. The CA must have an approved CPS and meet all CP and CPS requirements prior to commencing operations. 
 
 ## 1.6 Definitions and Acronyms
 
@@ -433,12 +435,10 @@ The CA SHALL publicly disclose its redacted Certification Practice Statement thr
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to the publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy that describes how the CA implements the latest version of these Requirements. The Federal PKI Policy Authority will review and update this Policy at a minimum of every 365 days.  The review and update shall include any changes needed to address: 
+The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy that describes how the CA implements the latest version of these Requirements. The review and update shall include any changes needed to address: 
 
 - US Federal Government mission needs and changes to procedures to support the missions
 - CAB Forum Baseline Requirements and updates 
-
-Even if no changes are identified as needed, the minor version number will be incremented and the date of this Certificate Policy updated to notify the community, trust store owners, and CAB Forum that the policy has been reviewed and certified.
 
 Each CA SHALL develop, implement, enforce and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
 
