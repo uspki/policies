@@ -1,52 +1,56 @@
-**This is a DRAFT work in progress.  Please see the source repository [here](https://github.com/uspki/policies) This is being developed in the open and contributions are welcome.**
+**This is a DRAFT work in progress.  Please see the source repository [here](https://github.com/uspki/policies). This is being developed in the open and contributions are welcome.**
 
 **Federal PKI**
 
+**Federal Public Device PKI**
 **Certificate Policy**
-**for the**
-**Issuance and Management of**
-**Publicly-Trusted Non-Person Entity (NPE) Certificates**
-
-
 
 
 **Version 0.0.1**
 
-**November 17, 2016**
+**Updated: August 12, 2017**
 
-For details on copyright and license information for this document, see section 1.1.
 
 
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary for the issuance and management of US Federal issued Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software.
+This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet.  
 
-**Notice to Readers**
+This CP is for a hierarchical Public Key Infrastructure dedicated to identifying and authenticating services accessible on the Internet. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.   This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
 
-The CP for the Issuance and Management of US Federal issued Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Federal PKI requirements and to provide guidance and requirements for what a CA must address in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+This document serves two purposes:  
 
-These Requirements do not address all of the issues relevant to the issuance and management of US Federal issued Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework.  The Federal PKI Policy Authority may update these Requirements from time to time, in order to address both existing and emerging threats to online security and to maintain alignment with the CAB Forum Baseline Requirements.
+- to specify the Federal Public Device PKI policy and requirements, and 
+- to provide requirements for what a CA must address in its Certification Practices Statement 
 
-These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet. Similar requirements for code signing, ~~S/MIME~~, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
+The Federal Public Device PKI conforms to the TODO INSERT VERSION of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
 
-These Requirements are applicable to all Certification Authorities within a chain of trust under the **Federal Device Root CA (FDRCA)**. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
+Additional documents related the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at TODO INSERT URL HERE. 
 
-This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.
+In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
 
-All original additions and modifications made to create this document are in the public domain, and copyright and related rights in the work are waived worldwide through the CC0 1.0 Universal public domain dedication. To view a copy of this public domain dedication, visit https://creativecommons.org/publicdomain/zero/1.0/.
+The terms and provisions of these certificate policies shall be interpreted under and governed by applicable Federal law.
+
+The following Certification Authorities are covered under this CP:
+
+| **CA Type** | **Distinguished Name** | **Key Pair Type and Parameters** | **SHA-256 Key Fingerprint** | **Validity Period** |
+| --- | --- | --- | --- | --- | 
+| Root CA | C=US, O=US Government, CN=You shall be named Fred | RSA sample | really long hex value | Not Before: yesterday, Not After: today |
+| Subordinate CA | C=US, O=US Government, CN=You shall be named Alice | RSA sample | really long hex value | Not Before: today, Not After: tomorrow |
+
 
 ## 1.2 Document name and identification
-This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum and tailored for use within the US Federal Government.
+This is the Federal Public Device PKI Certificate Policy. This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted device certificates.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
+The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP as follows:
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1); and
-
-
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2); and
-
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
+| **OID Arc** | **Owner** | **OID** | **Description** | 
+| --- | --- | --- | --- | 
+| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1) | Domain Validated (DV) device certificates for the Internet | 
+| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2) | Organization Validated (OV) device certificates for the Internet |
+| 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD | 
+| 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD |
 
 
 ### 1.2.1.Revisions
@@ -54,6 +58,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective\*** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | TBD | Version 1.0 of the Certificate Policy Adopted | TBD | TBD |
+
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -65,68 +70,62 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 
 ## 1.3 PKI Participants
-This Certificate Policy has been developed for use by the US Federal Public Key Infrastructure for the issuance and management of Public Trust non-person entity certificates.
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a sub-council comprised of U.S. Federal Government Agency representatives and is chartered by the U.S. Federal CIO Council.  The FPKIPA manages this policy and represents the interests of the  U.S. Federal CIOs and CISOs.
 
 ### 1.3.1 Certification Authorities
+The Certification Authorities operated under this policy provide services to U.S. Federal Government entities which may be part of the Executive Branch, Legislative Branch and Judicial branches of the Federal Government. The services are not provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities. 
+
 Certification Authority (CA) is defined in Section 1.6.
 
 ### 1.3.2 Registration Authorities
-The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Sections 3.2 and 8.
+This Certificate Policy is focused on promoting automation, improving efficiencies, supporting operational security, and establishing trust in the U.S. Government and the digital services operated by or on behalf of U.S. Federal Government entities.  The widespread adoption of practices and protocols to support automation in certificate management have been foundational to increases in the deployment of secure protocols for webservices. 
 
-Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
+While this policy promotes automation for the Certification Authorities, there still exists a need to allow a delegation of responsibility to U.S. Federal Government entities that form part of the U.S. Federal Government enterprise.  This policy allows for Registration Authorities to be used who may not be affiliated with the same organizational unit that is operating the Certificate Authority.  
 
-1. Meet the qualification requirements of Section 5.3.1, when applicable to the delegated function;
-2. Retain documentation in accordance with Section 5.5.2;
-3. Abide by the other provisions of these Requirements that are applicable to the delegated function; and
-4. Comply with (a) the CA's Certificate Policy/Certification Practice Statement or (b) the Delegated Third Party's practice statement that the CA has verified complies with these Requirements.
-5. Agree on which party is responsible for the annual audit of the delegated functions.
+A CA MAY designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government entity.  
 
-The CA MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
 The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
-1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise
-RA's verified Domain Namespace.
-2. If the certificate request includes a Subject name of a type other than a Fully-Qualified Domain Name, the CA SHALL confirm that the name is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject. For example, the CA SHALL NOT issue a Certificate containing the Subject name of "Agency1" on the authority of "Agency2", unless the two agencies have a system sharing agreement.   This requirement applies regardless of whether the accompanying requested Subject FQDN falls within the Domain Namespace of "Agency2's" Registered Domain Name.
+1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace(s) as registered in the .GOV (DotGov) and .MIL (DotMil) gTLDs Domain Name Registrars.  
+2. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the DotGov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173. 
 
-The CA SHALL impose these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
+The CA SHALL impose these limitations through an agreement with the Authorizing Authority of the Domain Name as defined under United States Code (U.S.C.) 41 CFR Part 102-173. The CA SHALL monitor compliance by the Enterprise RA and institute technical controls, and SHOULD use both audits and alternate analytics based methods such as monitoring of Certificate Transparency Log(s) and services to ensure compliance.
 
+Delegated Third Parties are not allowed under this policy. 
 
 ### 1.3.3 Subscribers
 As defined in Section 1.6.1.
 
-
 ### 1.3.4 Relying Parties
 "Relying Party" and "Application Software Supplier" are defined in Section 1.6.1.
 
+Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 ### 1.3.5 Other Participants
-Other groups that have participated in the development of these Requirements include the AICPA/CICA WebTrust for Certification Authorities task force and ETSI ESI. Participation by such groups does not imply their endorsement, recommendation, or approval of the final product.
+
 
 
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates. This Certificate Policy and requirements for US Federal Government (USG) are limited to publicly trusted Device certificates encompassing Transport Layer Security (TLS), code signing and timestamping services.  
-
+This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet. 
 
 ### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption.
+All identity certificates for natural persons are not allowed under this policy and the Federal Public Device PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
 
 ## 1.5 Policy administration
-This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure.
-
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) manages this policy and represents the interests of the  U.S. Federal CIOs and CISOs.   
 
 ### 1.5.1 Organization Administering the Document
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a group of U.S. Federal Government Agencies and is chartered by the U.S. Federal CIO Council.  The FPKIPA owns this policy and represents the interest of the Federal CIOs.  The FPKIPA is responsible for:  
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible for:  
 * Maintaining this CP, and
 * Approving the CPS for each CA that issues certificates under this policy, and
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with CAB Forum Baseline Requirements
 
-
 ### 1.5.2 Contact Person
-Contact information for the Federal Public Key Infrastructure Policy Authority is **TODO: Insert Contact Info**.
+Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
 
 ### 1.5.3 Person Determining CPS suitability for the policy
 Federal Public Key Infrastructure Policy Authority
@@ -140,7 +139,7 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
-**Air-Gapped** - Certificate Systems or components that are physcially and logically disconnected from the public internet.
+**Air-Gapped**: Certificate Systems or components that are physcially and logically disconnected from the public internet.
 
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
 
@@ -411,25 +410,31 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The Federal PKI Policy Authority SHALL annually update this CP to ensure compliance with CAB Forum Baseline requirements.
+The Federal PKI Policy Authority SHALL review and update this CP at least every 365 days to ensure compliance with CAB Forum Baseline requirements.
 
-The CA SHALL develop, implement, enforce, and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
+The CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
 All CAs that issue certificates under this policy shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA.
+
 Posted certificates and CRLs may be replicated in additional repositories for performance enhancement. Such repositories may be operated by the CA or other parties (e.g. Federal agencies).
 
 ## 2.2 Publication of information
 The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
 
-The CA SHALL publicly disclose its redacted Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 3647, and MUST be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state whether the CA reviews CAA Records, and if so, the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+The CA SHALL publicly disclose its redacted Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 3647, and MUST be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
-The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to the publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy that describes how the CA implements the latest version of these Requirements.
+The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy that describes how the CA implements the latest version of these Requirements. The Federal PKI Policy Authority will review and update this Policy at a minimum of every 365 days.  The review and update shall include any changes needed to address: 
+
+- US Federal Government mission needs and changes to procedures to support the missions
+- CAB Forum Baseline Requirements and updates 
+
+Even if no changes are identified as needed, the minor version number will be incremented and the date of this Certificate Policy updated to notify the community, trust store owners, and CAB Forum that the policy has been reviewed and certified.
 
 Each CA SHALL develop, implement, enforce and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
 
