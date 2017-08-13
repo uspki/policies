@@ -124,6 +124,10 @@ The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible f
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with CAB Forum Baseline Requirements
 
+The Federal PKI Policy Authority SHALL review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline requirements.  After review and approval, the document version number and a dated changelog entry shall be added even if no changes were deemed necessary. 
+
+An annual self-assessment shall be conducted by any CA operating against this Certificate Policy and the accompanying CPS to show compliance with the latest version of the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment annually by incrementing the document version number and adding a dated changelog entry to the change record. 
+
 ### 1.5.2 Contact Person
 Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
 
