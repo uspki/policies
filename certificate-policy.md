@@ -632,8 +632,6 @@ All CAs SHALL shall specify the procedures for validating information and identi
 ## 4.2 Certificate application processing
 
 ### 4.2.1 Performing identification and authentication functions
-Identification and authentication as specified in Sections 3.2 SHALL occur no more that 30 days prior to the initial certificate issuance.  
-
 All CAs SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
 For end entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates: 
