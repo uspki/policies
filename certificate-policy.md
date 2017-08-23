@@ -441,16 +441,34 @@ The CA shall make its Repository publicly available in a read-only manner.
 ## 3.1 Naming
 
 ### 3.1.1 Types of names
+This policy restricts the subject names of CAs.  CAs that issue certificates under this policy SHALL have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may be used with approval by the Policy Authority.   
+
+Subscriber certificates issued under this policy SHALL use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles. 
 
 ### 3.1.2 Need for names to be meaningful
+No stipulation. 
 
 ### 3.1.3 Anonymity or pseudonymity of subscribers
+Subscribers are not identified in Domain Validation certificates. Only the country (US) and domain name is included in the subject information. 
+
+Subscribers are partially identified in Organizational Validation certificates.  The organization and location of the U.S. Government are included in the subject information. All Organizational Validation certificates only include an organization of U.S. Government and no additional organizational unit information.
+
+Relying parties should consider certificates to be issued by the U.S. Government for U.S. Government assets and all Subscribers to be affiliated with the U.S. Government.  
 
 ### 3.1.4 Rules for interpreting various name forms
+Distinguished names in certificates are interpreted using the X.500 Standard and the ASN.1 syntax.
+
+The subject name in CA certificates SHALL match the issuer name in certificates issued by the subject, as required by RFC 5280.
 
 ### 3.1.5 Uniqueness of names
+The common name attribute for Root CA(s) SHALL be unique.
+The common name attribute for Subordinate CAs SHALL be unique from all other Subordinate CAs.
+
 
 ### 3.1.6 Recognition, authentication, and role of trademarks
+CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
+
+The Policy Authority shall resolve disputes involving names and trademarks.
 
 ## 3.2 Initial identity validation
 
@@ -573,7 +591,7 @@ CAs MUST document potential issuances that were prevented by a CAA record in suf
 
 
 ### 3.2.3 Authentication of individual identity
-Subscriber certificates validating natural born persons or individual identity are not allowed under this Certificate Policy.
+Subscriber certificates identifying and authenticating natural born persons or individual identity are not allowed under this Certificate Policy.
 
 ### 3.2.4 Non-verified subscriber information
 
