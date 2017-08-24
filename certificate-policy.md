@@ -665,10 +665,16 @@ Certificate applications SHALL be processed and a certificate issued within 30 d
 ### 4.3.1 CA actions during certificate issuance
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA SHALL require written authorization by the Policy Authority.  
 
-All end entity certificates for Domain Validation SSL and Organizational Validation SSL SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  The Issuing CA SHALL submit a precertificate to a minimum of two Certificate Transparency Logs.  Information included in the end entity certificates SHALL NOT be redacted prior to submission to the Certificate Transparency Logs.  At a minimum, the Issuing CA SHALL request and include two SCTs in the x509v3 certificate extension:
-- One SCT from a Google operated CT log
-- One SCT from non-Google operated CT log
+All end entity certificates for Domain Validation SSL and Organizational Validation SSL SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  
 
+The Issuing CA SHALL submit a precertificate to a minimum of TWO Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  The Issuing CA SHALL submit a precertificate to a minimum of THREE Certificate Transparency Logs for certificates with a validity period greater than 395 days and less than or equal to 825 days. There is no limit on the maximum number of CT Logs which may be submitted to. 
+
+- At least one of the Certificate Transparency Logs SHALL be a CT Log operated by Google.
+- At least one of the Certificate Transparenty Logs SHALL be a CT Log NOT operated by Google.
+ 
+The Issuing CA SHALL include at least the same number and variety of SCTs in the x509v3 certificate extension for the end entity certificate issued.
+
+Information included in the end entity certificates SHALL NOT be redacted prior to submission to the Certificate Transparency Logs.  
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized representative of the issuance.
