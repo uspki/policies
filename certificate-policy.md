@@ -648,9 +648,9 @@ Delegated Third Parties are not allowed under this policy.
 
 
 ### 4.2.2 Approval or rejection of certificate applications
-This Certificate Policy is restricted to be applicable to, and technically constrained, for DotMil and DotGov assets under direct authority of the US Federal Government.  All certificate applications submitted by entities not affiliated with the US Federal Government SHALL be rejected. 
+This Certificate Policy is restricted to be applicable to, and technically constrained, for DotMil and DotGov assets. 
 
-CAs SHALL NOT issue Certificates containing any Fully Qualified Domain Names that are not under the gTLDs for DotGov or DotMil.  
+CAs SHALL reject all certificate applications containing any FQDNs that are not under the gTLDs for DotGov and DotMil. 
 
 Approval of certificate applications requires successful completion of validation per Section 3.2. 
 
