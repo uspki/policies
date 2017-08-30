@@ -605,7 +605,7 @@ For the Root and Subordinate CAs:
 - An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
 
 For end entity certificates:
-- A certificate application shall be submitted to the CA by the Subscriber, an authorized organization representative, or an RA on behalf of the Subscriber. 
+- A certificate application shall be submitted to the CA by the Subscriber or an RA on behalf of the Subscriber.  
 
 
 ### 4.1.2 Enrollment process and responsibilities
