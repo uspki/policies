@@ -15,18 +15,20 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet.  
-
-This CP is for a hierarchical Public Key Infrastructure dedicated to identifying and authenticating services accessible on the Internet. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.   This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
+This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet.  This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
 
 This document serves two purposes:  
 
-- to specify the Federal Public Device PKI policy and requirements, and 
-- to provide requirements for what a CA must address in its Certification Practices Statement 
+- to specify the Federal Public Device PKI Certificate Policy and requirements, and 
+- to provide requirements for what each Certification Authority must address in its Certification Practices Statement 
+
+This CP is for a hierarchical Public Key Infrastructure dedicated to identifying and authenticating services accessible on the Internet. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
+
+This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
 
 The Federal Public Device PKI conforms to the TODO INSERT VERSION of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
 
-Additional documents related the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at TODO INSERT URL HERE. 
+Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at TODO INSERT URL HERE. 
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
 
