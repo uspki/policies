@@ -658,7 +658,7 @@ In accordance with Section 5.5.2, all CAs SHALL maintain an internal database of
 
 
 ### 4.2.3 Time to process certificate applications
-Certificate applications SHALL be processed and a certificate issued within 30 days of the first identity verification.
+No stipulation.
 
 ## 4.3 Certificate issuance
 
