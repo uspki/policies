@@ -108,13 +108,15 @@ Relying Parties should verify the validity of certificates via revocation servic
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet. 
+This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted Device Certificates used for identifying and authenticating devices and services.  Certificates may be used for all legal authentication and encryption purposes. 
 
-### 1.4.2 Prohibited Certificate Uses
-All identity certificates for natural persons are not allowed under this policy and the Federal Public Device PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
+## 1.4.2 Prohibited Certificate Uses
+Certificates may not be used where prohibited by law.   
+
+Certificates for identifying natural persons are not allowed under this policy and the Federal Public Device PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
 
 ## 1.5 Policy administration
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) manages this policy and represents the interests of the  U.S. Federal CIOs and CISOs.   
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) manages this policy and represents the interests of the U.S. Federal CIOs and CISOs.   
 
 ### 1.5.1 Organization Administering the Document
 The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible for:  
@@ -122,11 +124,9 @@ The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible f
 * Approving the CPS for each CA that issues certificates under this policy, and
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
-* Ensuring compliance with CAB Forum Baseline Requirements
+* Ensuring compliance with CAB Forum Baseline Requirements, and
+* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in
 
-The Federal PKI Policy Authority SHALL review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline requirements.  After review and approval, the document version number and a dated changelog entry shall be added even if no changes were deemed necessary. 
-
-An annual self-assessment shall be conducted by any CA operating against this Certificate Policy and the accompanying CPS to show compliance with the latest version of the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment annually by incrementing the document version number and adding a dated changelog entry to the change record. 
 
 ### 1.5.2 Contact Person
 Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
@@ -416,34 +416,40 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The Federal PKI Policy Authority SHALL review and update this CP at least every 365 days to ensure compliance with CAB Forum Baseline requirements.
+The Federal PKI Policy Authority will review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary. 
 
-The CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
-
-## 2.1 Repositories
-The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
-
-All CAs that issue certificates under this policy shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA.
-
-Posted certificates and CRLs may be replicated in additional repositories for performance enhancement. Such repositories may be operated by the CA or other parties (e.g. Federal agencies).
-
-## 2.2 Publication of information
-The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
-
-The CA SHALL publicly disclose its redacted Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 3647, and MUST be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
-
-The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to the publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
-
-## 2.3 Time or frequency of publication
-The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy that describes how the CA implements the latest version of these Requirements. The review and update shall include any changes needed to address: 
+The review and update shall include any changes needed to address: 
 
 - US Federal Government mission needs and changes to procedures to support the missions
 - CAB Forum Baseline Requirements and updates 
 
-Each CA SHALL develop, implement, enforce and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
+If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those timeframes and ensure all CA's and CA CPS are updated.  
+
+Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the requirements of this CP.
+
+An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record. 
+
+## 2.1 Repositories
+The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
+
+The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA SHALL also document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
+
+## 2.2 Publication of information
+The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
+
+All CAs SHALL publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures SHALL include all the material required by RFC 3647, and SHALL be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+
+The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+
+## 2.3 Time or frequency of publication
+The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practices Statements in accordance with Section 2.0.
+
+All CAs approved to issue a CA certificate SHALL post to the Repository any issued CA certificate as soon as possible after issuance but no later than 15 days after issuance.  The Federal PKI Policy Authority or designee shall disclose the CA certificate and submit the CA certificate to trust stores and applicable databases, such as the Common CA Database, within thirty (30) days of issuance. 
+
+Each CA SHALL publish CRLs in accordance with Section 4.9.7.
 
 ## 2.4 Access controls on repositories
-The CA shall make its Repository publicly available in a read-only manner.
+Each CA shall make its Repository publicly available in a read-only manner.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
