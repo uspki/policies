@@ -110,7 +110,8 @@ The primary goal of these Requirements is to enable efficient and secure electro
 
 
 ### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption.
+All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption unless issued for specific infrastructure purposes as outlined in section 6.1.7.
+
 
 ## 1.5 Policy administration
 This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure.
@@ -1264,11 +1265,52 @@ The business continuity plan MUST include:
 14. The distance of recovery facilities to the CA's main site; and
 15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
 
-In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
-1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
-2. Revoke any mis-issued certificates;
-3. Publish a notice of the revocation on a publicly accessible website; and
-4. Conduct a full post-mortem and publicly publish the findings on a publicly accessible website.
+The FPKIPA shall be notified by the CAs operating under this policy of any security incident. A security incident or incident is defined as a violation or imminent threat of violation of the NPE CP, CPS, subscriber agreements, MOA, or any other document that governs the operations of the CA. A security incident may include but is not limited to the following:
+- Suspected or detected compromise of Certificate Systems
+- Suspected or detected compromise of a certificate status server (CSS) if:
+  - The CSS certificate has a lifetime of more than 72 hours and
+  - The CSS certificate cannot be revoked (e.g., an OCSP responder certificate with the id-pkix-ocsp-nocheck extension)
+- Physical or electronic penetration of the Certificate Systems
+- Successful denial of service attacks on the Certificate System components
+- Any incident preventing the CA from issuing a CRL within 48 hours of the issuance of the previous CRL
+- Suspected or detected issuance of fraudulent certificates used for unethical purposes such as but not limited to promoting malware or illegal software.
+- Any certificate issuance not in compliance with NPE CP, CPS, or NPE Certificate Profiles.
+- CA private key compromise.
+- A known or reasonably known, publicly reported compromise of Certificate Systems
+- Any other issue that the FPKIPA identifies as calling into question the CAs integrity or trustworthiness
+
+In the event of a CA or certificate compromise or fraudulent mis-issuance, the CA shall notify the FPKIPA as soon as possible, but no later than 24 hours from the time the incident was discovered. An initial security incident report shall be submitted to the FPKI@GSA.gov email or communicated directly to the FPKIPA and include the following sections:
+1. Which Certificate Systems or components were affected by the incident
+2. The CA's interpretation of the incident.
+3. Was the incident detected as part of normal operations. If not, explain why.
+4. Who detected the incident or perpetrated if known
+5. When the incident was discovered
+6. Physical location of the incident, if applicable.
+7. A partial or complete list of all certificates that were either mis-issued or not compliant with the CP/CPS as a result of the incident.
+
+A final security incident report shall be submitted at a date specified by the FPKIPA to the same location as the initial incident report and include all sections identified below.
+1. A complete timeline of events.
+2. If a compromise, a detailed description of the exploit and what and how infrastructure was compromised.
+3. If the CA did not detect the incident, why not.
+4. What specific remedial measures were taken or will take to address the underlying cause including specific CP/CPS updates.
+5. Other information appropriate to understand the incident such as system or vendor documentation or other material.
+6. Proof the mis-issued certificates were revoked.
+7. Who detected or perpetrated the incident.
+8. If requested, log files.
+9. Detailed description of how the incident was closed.
+
+In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response.
+- Communicate with affected parties or directly with affected organizations
+- Publish notice of revocation
+- Publicly publish a final security incident report on an approved government website.
+- Require the CA to employ, at the CA expense, a third party investigator to investigate the security incident and prepare a final security incident report.
+- Request specific reports at a periodic interval as determined by the FPKIPA
+- Specify a due date for the CA to submit a final security incident report.
+
+The FPKIPA shall notify the CA, in writing, of its intentions in response to the security incident seven (7) days prior to the action by the FPKIPA except under exceptional circumstances (as defined in the glossary) where the FPKIPA will make reasonable efforts to communicate with the CA prior to taking action. The  CA may propose an alternate course of action and the FPKIPA may consider reasonable alternatives but reserves the right to reject any proposed course of action not in the government’s best interest.
+
+**Note**: The FPKIPA will follow individual Application Trusted Root Program requirements to report security concerns.
+
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 When computing resources, software, and/or data are corrupted, CAs operating under this policy SHALL respond as follows:
@@ -1968,10 +2010,9 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 1. Independence from the subject of the audit;
 2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
 3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
-4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ISO 17065 applying the requirements specified in ETSI EN 319 403;
-5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
-6. Bound by law, government regulation, or professional code of ethics; and
-7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage
+4. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
+5. Bound by law, government regulation, or professional code of ethics; and
+6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
 The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certificate practices statement. The FPKI Policy Authority shall determine whether a compliance auditor meets this requirement.
