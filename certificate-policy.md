@@ -1,52 +1,58 @@
-**This is a DRAFT work in progress.  Please see the source repository [here](https://github.com/uspki/policies) This is being developed in the open and contributions are welcome.**
+**This is a DRAFT work in progress.  Please see the source repository [here](https://github.com/uspki/policies). This is being developed in the open and contributions are welcome.**
 
 **Federal PKI**
 
+**Federal Public Device PKI**
 **Certificate Policy**
-**for the**
-**Issuance and Management of**
-**Publicly-Trusted Non-Person Entity (NPE) Certificates**
-
-
 
 
 **Version 0.0.1**
 
-**November 17, 2016**
+**Updated: August 12, 2017**
 
-For details on copyright and license information for this document, see section 1.1.
 
 
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary for the issuance and management of US Federal issued Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software.
+This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet.  This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
 
-**Notice to Readers**
+This document serves two purposes:  
 
-The CP for the Issuance and Management of US Federal issued Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Federal PKI requirements and to provide guidance and requirements for what a CA must address in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+- to specify the Federal Public Device PKI Certificate Policy and requirements, and 
+- to provide requirements for what each Certification Authority must address in its Certification Practices Statement 
 
-These Requirements do not address all of the issues relevant to the issuance and management of US Federal issued Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework.  The Federal PKI Policy Authority may update these Requirements from time to time, in order to address both existing and emerging threats to online security and to maintain alignment with the CAB Forum Baseline Requirements.
+This CP is for a hierarchical Public Key Infrastructure dedicated to identifying and authenticating services accessible on the Internet. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
 
-These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet. Similar requirements for code signing, ~~S/MIME~~, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
+This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
 
-These Requirements are applicable to all Certification Authorities within a chain of trust under the **Federal Device Root CA (FDRCA)**. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
+The Federal Public Device PKI conforms to the TODO INSERT VERSION of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
 
-This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.
+Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at TODO INSERT URL HERE. 
 
-All original additions and modifications made to create this document are in the public domain, and copyright and related rights in the work are waived worldwide through the CC0 1.0 Universal public domain dedication. To view a copy of this public domain dedication, visit https://creativecommons.org/publicdomain/zero/1.0/.
+In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
+
+The terms and provisions of these certificate policies shall be interpreted under and governed by applicable Federal law.
+
+The following Certification Authorities are covered under this CP:
+
+| **CA Type** | **Distinguished Name** | **Key Pair Type and Parameters** | **SHA-256 Key Fingerprint** | **Validity Period** |
+| --- | --- | --- | --- | --- | 
+| Root CA | C=US, O=US Government, CN=You shall be named Fred | RSA sample | really long hex value | Not Before: yesterday, Not After: today |
+| Subordinate CA | C=US, O=US Government, CN=You shall be named Alice | RSA sample | really long hex value | Not Before: today, Not After: tomorrow |
+
 
 ## 1.2 Document name and identification
-This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum and tailored for use within the US Federal Government.
+This is the Federal Public Device PKI Certificate Policy. This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted device certificates.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with this CP (OID arc 2.23.140.1.2) as follows:
+The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP as follows:
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1); and
-
-
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2); and
-
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
+| **OID Arc** | **Owner** | **OID** | **Description** | 
+| --- | --- | --- | --- | 
+| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1) | Domain Validated (DV) device certificates for the Internet | 
+| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2) | Organization Validated (OV) device certificates for the Internet |
+| 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD | 
+| 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD |
 
 
 ### 1.2.1.Revisions
@@ -54,6 +60,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective\*** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | TBD | Version 1.0 of the Certificate Policy Adopted | TBD | TBD |
+
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -65,74 +72,72 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 
 ## 1.3 PKI Participants
-This Certificate Policy has been developed for use by the US Federal Public Key Infrastructure for the issuance and management of Public Trust non-person entity certificates.
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a sub-council comprised of U.S. Federal Government Agency representatives and is chartered by the U.S. Federal CIO Council.  The FPKIPA manages this policy and represents the interests of the  U.S. Federal CIOs and CISOs.
 
 ### 1.3.1 Certification Authorities
+The Certification Authorities operated under this policy provide services to U.S. Federal Government entities which may be part of the Executive Branch, Legislative Branch and Judicial branches of the Federal Government. The services are not provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities. 
+
 Certification Authority (CA) is defined in Section 1.6.
 
 ### 1.3.2 Registration Authorities
-The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Sections 3.2 and 8.
+This Certificate Policy is focused on promoting automation, improving efficiencies, supporting operational security, and establishing trust in the U.S. Government and the digital services operated by or on behalf of U.S. Federal Government entities.  The widespread adoption of practices and protocols to support automation in certificate management have been foundational to increases in the deployment of secure protocols for webservices. 
 
-Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
+Registration Authority system functions shall be the responsibility of the Certificate Authority.  While this policy promotes automation for the Certification Authorities, there still exists a need to allow a delegation of responsibility to U.S. Federal Government entities that form part of the U.S. Federal Government enterprise.  This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certificate Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities.  
 
-1. Meet the qualification requirements of Section 5.3.1, when applicable to the delegated function;
-2. Retain documentation in accordance with Section 5.5.2;
-3. Abide by the other provisions of these Requirements that are applicable to the delegated function; and
-4. Comply with (a) the CA's Certificate Policy/Certification Practice Statement or (b) the Delegated Third Party's practice statement that the CA has verified complies with these Requirements.
-5. Agree on which party is responsible for the annual audit of the delegated functions.
+A CA MAY designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government entity.  The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
-The CA MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
-The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
+1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace(s) as registered in the .GOV (DotGov) and .MIL (DotMil) gTLDs Domain Name Registrars.  
+2. The CA SHOULD confirm that the requested Fully-Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the DotGov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173. 
 
-1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise
-RA's verified Domain Namespace.
-2. If the certificate request includes a Subject name of a type other than a Fully-Qualified Domain Name, the CA SHALL confirm that the name is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject. For example, the CA SHALL NOT issue a Certificate containing the Subject name of "Agency1" on the authority of "Agency2", unless the two agencies have a system sharing agreement.   This requirement applies regardless of whether the accompanying requested Subject FQDN falls within the Domain Namespace of "Agency2's" Registered Domain Name.
+The CA SHALL impose these limitations through an agreement with the Authorizing Authority of the Domain Name as defined under United States Code (U.S.C.) 41 CFR Part 102-173. The CA SHALL monitor compliance by the Enterprise RA and institute technical controls, and SHOULD use both audits and alternate analytics based methods such as monitoring of Certificate Transparency Log(s) and services, to ensure compliance.
 
-The CA SHALL impose these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
-
+Delegated Third Parties are not allowed under this policy. 
 
 ### 1.3.3 Subscribers
 As defined in Section 1.6.1.
 
-
 ### 1.3.4 Relying Parties
 "Relying Party" and "Application Software Supplier" are defined in Section 1.6.1.
 
+Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 ### 1.3.5 Other Participants
-Other groups that have participated in the development of these Requirements include the AICPA/CICA WebTrust for Certification Authorities task force and ETSI ESI. Participation by such groups does not imply their endorsement, recommendation, or approval of the final product.
+
 
 
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates. This Certificate Policy and requirements for US Federal Government (USG) are limited to publicly trusted Device certificates encompassing Transport Layer Security (TLS), code signing and timestamping services.  
+This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted Device Certificates used for identifying and authenticating devices and services.  Certificates may be used for all legal authentication and encryption purposes. 
 
+## 1.4.2 Prohibited Certificate Uses
+Certificates may not be used where prohibited by law.   
 
-### 1.4.2 Prohibited Certificate Uses
-All Person identity certificates including but not limited to Person certificates used for digital signature, S/MIME, person authentication, and encryption.
+Certificates for identifying natural persons are not allowed under this policy and the Federal Public Device PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
 
 ## 1.5 Policy administration
-This Certificate Policy for the Issuance and Management of Publicly-Trusted Certificates includes criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This Certificate Policy also includes criteria established by the U.S. Federal Public Key Infrastructure to comply with U.S. Federal Government requirements for U.S. Federal Government Agencies.   This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum and/or the Federal Public Key Infrastructure.
-
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) manages this policy and represents the interests of the U.S. Federal CIOs and CISOs.   
 
 ### 1.5.1 Organization Administering the Document
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a group of U.S. Federal Government Agencies and is chartered by the U.S. Federal CIO Council.  The FPKIPA owns this policy and represents the interest of the Federal CIOs.  The FPKIPA is responsible for:  
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible for:  
 * Maintaining this CP, and
 * Approving the CPS for each CA that issues certificates under this policy, and
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
-* Ensuring compliance with CAB Forum Baseline Requirements
+* Ensuring compliance with CAB Forum Baseline Requirements, and
+* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in
 
 
 ### 1.5.2 Contact Person
-Contact information for the Federal Public Key Infrastructure Policy Authority is **TODO: Insert Contact Info**.
+Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
 
 ### 1.5.3 Person Determining CPS suitability for the policy
 Federal Public Key Infrastructure Policy Authority
 
 ### 1.5.4 CPS approval procedures
-Independent Auditors conduct assessments of CPS conformance to the CP requirements.  The results of these audits are submitted and approved by the Federal Public Key Infrastructure Policy Authority.
+A CPS shall be submitted and approved by the Federal Public Key Infrastructure Policy Authority. 
+
+Prior to submitting a CPS, the CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the Policy Authority. The CA must have an approved CPS and meet all CP and CPS requirements prior to commencing operations. 
 
 ## 1.6 Definitions and Acronyms
 
@@ -140,7 +145,7 @@ Independent Auditors conduct assessments of CPS conformance to the CP requiremen
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
-**Air-Gapped** - Certificate Systems or components that are physcially and logically disconnected from the public internet.
+**Air-Gapped**: Certificate Systems or components that are physcially and logically disconnected from the public internet.
 
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
 
@@ -411,30 +416,40 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The Federal PKI Policy Authority SHALL annually update this CP to ensure compliance with CAB Forum Baseline requirements.
+The Federal PKI Policy Authority will review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary. 
 
-The CA SHALL develop, implement, enforce, and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
+The review and update shall include any changes needed to address: 
+
+- US Federal Government mission needs and changes to procedures to support the missions
+- CAB Forum Baseline Requirements and updates 
+
+If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those timeframes and ensure all CA's and CA CPS are updated.  
+
+Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the requirements of this CP.
+
+An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record. 
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
-All CAs that issue certificates under this policy shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA.
-Posted certificates and CRLs may be replicated in additional repositories for performance enhancement. Such repositories may be operated by the CA or other parties (e.g. Federal agencies).
+The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA SHALL also document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
 
 ## 2.2 Publication of information
 The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
 
-The CA SHALL publicly disclose its redacted Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 3647, and MUST be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state whether the CA reviews CAA Records, and if so, the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+All CAs SHALL publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures SHALL include all the material required by RFC 3647, and SHALL be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
-The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The Federal PKI Policy Authority SHALL develop, implement, enforce, and annually update a Certificate Policy that describes how the CA implements the latest version of these Requirements.
+The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practices Statements in accordance with Section 2.0.
 
-Each CA SHALL develop, implement, enforce and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of this CP.
+All CAs approved to issue a CA certificate SHALL post to the Repository any issued CA certificate as soon as possible after issuance but no later than 15 days after issuance.  The Federal PKI Policy Authority or designee shall disclose the CA certificate and submit the CA certificate to trust stores and applicable databases, such as the Common CA Database, within thirty (30) days of issuance. 
+
+Each CA SHALL publish CRLs in accordance with Section 4.9.7.
 
 ## 2.4 Access controls on repositories
-The CA shall make its Repository publicly available in a read-only manner.
+Each CA shall make its Repository publicly available in a read-only manner.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
@@ -638,90 +653,123 @@ See Section 3.3
 ## 4.1 Certificate Application
 
 ### 4.1.1 Who can submit a certificate application
-In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
+In accordance with Section 5.5.2, all CAs SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CA SHALL use this information to identify subsequent suspicious certificate requests.
+
+For the Root and Subordinate CAs:
+- An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
+
+For end entity certificates:
+- A certificate application shall be submitted to the CA by the Subscriber, an Applicant Representative, or an RA on behalf of the Subscriber.  
+
 
 ### 4.1.2 Enrollment process and responsibilities
-Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
+For the Root and Subordinate CAs:
+- The Policy Authority is responsible for approving or denying requests for CA certificate issuances.
+
+For all CAs, prior to the issuance of any Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
 1. A certificate request, which may be electronic; and
 2. An executed Subscriber Agreement or Terms of Use, which may be electronic.
 
-The CA SHOULD obtain any additional documentation the CA determines necessary to meet these Requirements.
+The certificate request SHALL contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
 
-Prior to the issuance of a Certificate, the CA SHALL obtain from the Applicant a certificate request in a form prescribed by the CA and that complies with this CP. One certificate request MAY suffice for multiple Certificates to be issued to the same Applicant, subject to the aging and updating requirement in Section 3.3.1, provided that each Certificate is supported by a valid, current certificate request signed by the appropriate Applicant Representative on behalf of the Applicant. The certificate request MAY be made, submitted and/or signed electronically.
+The CA SHALL be responsible for validating the information in the certificate request and the identity evidence to ensure the information is: 
 
-The certificate request MUST contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
+- properly formed
+- accurate
+- meets the requirements for the type of certificate requested: a device Domain Validation SSL end entity certificate, a device Organizational Validation SSL end entity certificate, a CA Certificate, or a Certificate Status Server (OCSP) signing certificate
+ 
+All communications supporting the certificate application and issuance process SHALL be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the public/private key pair SHALL be used. Out-of-band communications SHALL protect the confidentiality and integrity of the data.
+
+All CAs SHALL shall specify the procedures for validating information and identity evidence in the CA CPS. 
 
 ## 4.2 Certificate application processing
 
 ### 4.2.1 Performing identification and authentication functions
-The certificate request MAY include all factual information about the Applicant to be included in the Certificate, and such additional information as is necessary for the CA to obtain from the Applicant in order to comply with these Requirements and the CA's Certificate Policy and/or Certification Practice Statement. In cases where the certificate request does not contain all the necessary information about the Applicant, the CA SHALL obtain the remaining information from the Applicant or, having obtained it from a reliable, independent, third-party data source, confirm it with the Applicant. The CA SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
+All CAs SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
-Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's SubjectAltName extension.
+For end entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates: 
 
-Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than thirty-nine (39) months prior to issuing the Certificate.
+- The Applicant information SHALL include at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension 
+- All Fully-Qualified Domain Names to be included in the Certificate's SubjectAltName extension SHALL be verified in accordance with Section 3.2 before issuance of the certificate
+- CAA records for DotGov and DotMil domains SHALL be checked prior to issuance of any certificate and the CA SHALL act in accordance to the rules in the CAA records if present.  The CA SHALL identify in Section 4.2 of the CPS the Issuer Domain Name(s) used for CAA records.  
 
-The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
+The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.  
 
-If a Delegated Third Party fulfills any of the CA's obligations under this section , the CA SHALL verify that the process used by the Delegated Third Party to identify and further verify High Risk Certificate Requests provides at least the same level of assurance as the CA's own processes
+All Subordinate CAs SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .GOV (DotGov) and .MIL (DotMil) assets prior to the Certificate's approval.  
+
+Delegated Third Parties are not allowed under this policy. 
+
 
 ### 4.2.2 Approval or rejection of certificate applications
-CAs SHOULD NOT issue Certificates containing a new gTLD under consideration by ICANN. Prior to issuing a Certificate containing an Internal Name with a gTLD that ICANN has announced as under consideration to make operational, the CA MUST provide a warning to the applicant that the gTLD may soon become resolvable and that, at that time, the CA will revoke the Certificate unless the applicant promptly registers the Domain Name. When a gTLD is delegated by inclusion in the IANA Root Zone Database, the Internal Name becomes a Domain Name, and at such time, a Certificate with such gTLD, which may have complied with these Requirements at the time it was issued, will be in a violation of these Requirements, unless the CA has verified the Subscriber's rights in the Domain Name. The provisions below are intended to prevent such violation from happening.
+This Certificate Policy is restricted to be applicable to, and technically constrained, for DotMil and DotGov assets. 
 
-Within 30 days after ICANN has approved a new gTLD for operation, as evidenced by publication of a contract with the gTLD operator on [www.ICANN.org] each CA MUST (1) compare the new gTLD against the CA's records of valid certificates and (2) cease issuing Certificates containing a Domain Name that includes the new gTLD until after the CA has first verified the Subscriber's control over or exclusive right to use the Domain Name in accordance with Section 3.2.2.4.
+CAs SHALL reject all certificate applications containing any FQDNs that are not under the gTLDs for DotGov and DotMil. 
 
-Within 120 days after the publication of a contract for a new gTLD is published on [www.icann.org], CAs MUST revoke each Certificate containing a Domain Name that includes the new gTLD unless the Subscriber is either the Domain Name Registrant or can demonstrate control over the Domain Name.
+Approval of certificate applications requires successful completion of validation per Section 3.2. 
+
+In accordance with Section 5.5.2, all CAs SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CAs SHALL use this information to identify subsequent suspicious certificate requests and MAY use it as the basis for rejecting a certificate request.
+
 
 ### 4.2.3 Time to process certificate applications
-Certificate applications SHALL be processed and a certificate issued within 30 days of identity verification.
+No stipulation.
 
 ## 4.3 Certificate issuance
 
 ### 4.3.1 CA actions during certificate issuance
-Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
+Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA SHALL require written authorization by the Policy Authority.  
 
-All end entity certificates asserting the id-kp-serverAuth EKU SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via a certificate extension. At a minimum, the CA SHALL request the following number of SCTs:
-- One embedded SCT from a Google CT log
-- One embedded SCT from non-Google CT log
+All end entity certificates for Domain Validation SSL and Organizational Validation SSL SHALL assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  
+
+The Issuing CA SHALL submit a precertificate to a minimum of TWO Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  The Issuing CA SHALL submit a precertificate to a minimum of THREE Certificate Transparency Logs for certificates with a validity period greater than 395 days and less than or equal to 825 days. There is no limit on the maximum number of CT Logs which may be submitted to. 
+
+- At least one of the Certificate Transparency Logs SHALL be a CT Log operated by Google.
+- At least one of the Certificate Transparenty Logs SHALL be a CT Log NOT operated by Google.
+ 
+The Issuing CA SHALL include at least the same number and variety of SCTs in the x509v3 certificate extension for the end entity certificate issued.
+
+Information included in the end entity certificates SHALL NOT be redacted prior to submission to the Certificate Transparency Logs.  
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
-The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized organizational representative of the issuance.
+The CA SHALL issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized representative of the issuance.
 
 ## 4.4 Certificate acceptance
 
 ### 4.4.1 Conduct constituting certificate acceptance
-Failure to object to the certificate or its contents shall constitute acceptance of the certificate.
+Failure of the subscriber to object to the certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
-No stipulation.
+As specified in Section 2.1, all CA certificates SHALL be published in repositories. All CA certificates SHALL be published to the repositories within 24 hours of issuance. 
+CAs SHALL log all end entity certificates in a minimum of two (2) Certificate Transparency Log servers as outlined in Section 4.3.1.
 
 ### 4.4.3 Notification of certificate issuance by the CA to other entities
-No stipulation.
+See Section 4.4.2.
 
 ## 4.5 Key pair and certificate usage
 
 ### 4.5.1 Subscriber private key and certificate usage
 See Section 9.6.3, provisions 2. and 4.
 
-### 4.5.2 Relying party public key and certificate usage
-Certificates may specify restrictions on use through critical certificate extensions, including the basic constraints and key usage extensions.
+The intended scope of usage for a private key shall be in accordance with the certificate profiles included with this Certificate Policy.
 
-All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
+### 4.5.2 Relying party public key and certificate usage
+All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9. 
 
 It is recommended that relying parties process and comply with this information whenever using certificates in a transaction.
 
 ## 4.6 Certificate renewal
+Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate. 
 
 ### 4.6.1 Circumstance for certificate renewal
-CA and Subscriber certificates issued under the policy SHALL NOT be renewed.
+CA certificates SHALL NOT be renewed.  End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates SHALL NOT be renewed. Certificate renewal requests SHALL be treated as new applications and information verified in accordance with Section 4.2.1  
+
 Online Certificate Status Protocol (OCSP) Delegated responder certificates MAY be renewed.
 
-
 ### 4.6.2 Who may request renewal
-TODO
+The Policy Authority SHALL request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
 
 ### 4.6.3 Processing certificate renewal requests
-TODO
+The CA SHALL verify that the OCSP Delegated Responder certificate expiration date SHALL NOT exceed 825 days from the date of initial certificate issuance.
 
 ### 4.6.4 Notification of new certificate issuance to subscriber
 See Section 4.3.2.
@@ -733,76 +781,77 @@ See Section 4.4.1.
 See Section 4.4.2.
 
 ### 4.6.7 Notification of certificate issuance by the CA to other entities
-See Section 4.4.3.
-
-## 4.7 Certificate re-key
-Once a certificate has been rekeyed, the superseded certificate MAY or MAY NOT be revoked, but SHALL NOT be further re-keyed or modified.
-Subscribers SHALL identify themselves for the purpose of re-keying as required in Section 3.3.
-
-### 4.7.1 Circumstance for certificate re-key
-TODO
-
-### 4.7.2 Who may request certification of a new public key
-Requests for certification of a new public key SHALL be considered as follows:  
-•	Subscribers with a currently valid certificate MAY request certification of a new public key  
-•	Authorized organization representative, CAs and RAs MAY request certification of a new public key on behalf of a subscriber.  
-
-
-### 4.7.3 Processing certificate re-keying requests
-The CA SHALL process the certificate application according to the certificate requesting protocol used by the device (this may be automated).  All Subscriber related data (e.g., DN, Subject Alternate Name) SHALL be identical to the original certificate.
-
-### 4.7.4 Notification of new certificate issuance to subscriber
-See Section 4.3.2.
-
-### 4.7.5 Conduct constituting acceptance of a re-keyed certificate
-See Section 4.4.1.
-
-### 4.7.6 Publication of the re-keyed certificate by the CA
 See Section 4.4.2.
 
+## 4.7 Certificate re-key
+Re-key is defined as the issuance of a certificate with a new public key, no changes to the identity information, and a new validity period for the certificate. 
+
+### 4.7.1 Circumstance for certificate re-key
+All Certificates under this policy SHALL NOT be re-keyed.  Certificate re-key requests SHALL be treated as new applications and information verified in accordance with Section 4.2.1  
+
+### 4.7.2 Who may request certification of a new public key
+Not applicable.
+
+### 4.7.3 Processing certificate re-keying requests
+Not applicable.
+
+### 4.7.4 Notification of new certificate issuance to subscriber
+Not applicable.
+
+### 4.7.5 Conduct constituting acceptance of a re-keyed certificate
+Not applicable.
+
+### 4.7.6 Publication of the re-keyed certificate by the CA
+Not applicable.
+
 ### 4.7.7 Notification of certificate issuance by the CA to other entities
-No stipulation.
+Not applicable.
 
 ## 4.8 Certificate modification
+Modification is defined as the re-issuance of a certificate with the same public key, and changes to the identity information or information in the certificate (i.e. policies, key usage) other than the validity period. 
+
 
 ### 4.8.1 Circumstance for certificate modification
-No stipulation.
+End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates SHALL NOT be modified. 
+Online Certificate Status Protocol (OCSP) Delegated responder certificates SHALL NOT be modified.
+
+CA certificates MAY be modified to update attributes other than the public key.  A CA certificate SHALL NOT be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
 
 ### 4.8.2 Who may request certificate modification
-No stipulation.
+See Section 4.1.1.
 
 ### 4.8.3 Processing certificate modification requests
-No stipulation.
+Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Modification of a CA certificate by the Root CA SHALL require written authorization by the Policy Authority. 
 
 ### 4.8.4 Notification of new certificate issuance to subscriber
-No stipulation.
+See Section 4.3.2.
 
 ### 4.8.5 Conduct constituting acceptance of modified certificate
-No stipulation.
+See Section 4.4.1.
 
 ### 4.8.6 Publication of the modified certificate by the CA
-No stipulation.
+See Section 4.4.2.
 
 ### 4.8.7 Notification of certificate issuance by the CA to other entities
-No stipulation.
+See Section 4.4.2.
 
 ## 4.9 Certificate revocation and suspension
+
 
 ### 4.9.1 Circumstances for revocation
 
 #### 4.9.1.1 Reasons for Revoking a Subscriber Certificate
-The CA SHALL revoke a Certificate within 24 hours if one or more of the following occurs:
+The CA SHALL revoke a Certificate as rapidly as possible but within 24 hours if one or more of the following occurs:
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise  or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
+3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
+6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked the right to use the Domain Name or the Domain Name Registrant has failed to renew the Domain Name under DotGov and/or DotMil gTLDs);
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
 8. The CA is made aware of a material change in the information contained in the Certificate;
-9. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the
-CA's Certificate Policy or Certification Practice Statement;
+9. The CA is made aware that the Certificate was not issued in accordance with this Certificate Policy or the CA's Certification Practice Statement;
 10. The CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
 11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 12. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
@@ -827,16 +876,20 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 ### 4.9.2 Who can request revocation
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
+The Policy Authority SHALL direct any revocation of a CA certificate.
+
 ### 4.9.3 Procedure for revocation request
 The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means.
 
+A request to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated (e.g., digitally or manually signed). 
+
 ### 4.9.4 Revocation request grace period
-There is no revocation grace period. Responsible parties must request revocation as soon as they identify the need for revocation.
+There is no revocation grace period. 
 
 ### 4.9.5 Time within which CA must process the revocation request
-The CA SHALL begin investigation of a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
+The CA SHALL begin investigation of a of a Request for Revocation or a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
 
 1. The nature of the alleged problem;
 2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
@@ -862,7 +915,7 @@ The CA SHALL update and reissue CRLs at least (i) once every 31 days and (ii) wi
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
 
 ### 4.9.9 On-line revocation/status checking availability
-OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
+OCSP responses SHALL conform to RFC6960 and/or RFC5019. OCSP responses SHALL either:
 
 1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
 2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose
@@ -876,11 +929,11 @@ The CA SHALL support an OCSP capability using the GET method for Certificates is
 
 For the status of Subscriber Certificates:
 
-The CA SHALL update information provided via an Online Certificate Status Protocol at least every 24 hours. OCSP responses from this service MUST have a maximum expiration time of seven days.
+- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service MUST have a maximum expiration time of ten days
 
 For the status of Subordinate CA Certificates:
 
-The CA SHALL update information provided via an Online Certificate Status Protocol at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
+- The CA SHALL update information provided via an Online Certificate Status Protocol at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder SHALL NOT respond with a "good" status. The CA SHALL monitor the responder for such requests as part of its security response procedures.
 
@@ -891,7 +944,7 @@ If the Subscriber Certificate is for a high-traffic FQDN, the CA MAY rely on sta
 
 ### 4.9.12 Special requirements re key compromise
 See Section 4.9.1.
-When a CA certificate is revoked a CRL SHALL be issued within 18 hours of notification.
+When a CA certificate is revoked a CRL SHALL be issued within 24 hours of notification.
 
 ### 4.9.13 Circumstances for suspension
 Certificates issued under this policy SHALL NOT be suspended.
@@ -908,8 +961,7 @@ Not applicable.
 ## 4.10 Certificate status services
 
 ### 4.10.1 Operational characteristics
-Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked
-Certificate
+Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked Certificate
 
 ### 4.10.2 Service availability
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
@@ -1266,11 +1318,52 @@ The business continuity plan MUST include:
 14. The distance of recovery facilities to the CA's main site; and
 15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
 
-In the event of a mis-issuance, the issuing CA SHALL conduct the following actions:
-1. Communicate with the FPKIPA and any parties that might be affected of the mis-issuance;
-2. Revoke any mis-issued certificates;
-3. Publish a notice of the revocation on a publicly accessible website; and
-4. Conduct a full post-mortem and publicly publish the findings on a publicly accessible website.
+The FPKIPA shall be notified by the CAs operating under this policy of any security incident. A security incident or incident is defined as a violation or imminent threat of violation of the NPE CP, CPS, subscriber agreements, MOA, or any other document that governs the operations of the CA. A security incident may include but is not limited to the following:
+- Suspected or detected compromise of Certificate Systems
+- Suspected or detected compromise of a certificate status server (CSS) if:
+  - The CSS certificate has a lifetime of more than 72 hours and
+  - The CSS certificate cannot be revoked (e.g., an OCSP responder certificate with the id-pkix-ocsp-nocheck extension)
+- Physical or electronic penetration of the Certificate Systems
+- Successful denial of service attacks on the Certificate System components
+- Any incident preventing the CA from issuing a CRL within 48 hours of the issuance of the previous CRL
+- Suspected or detected issuance of fraudulent certificates used for unethical purposes such as but not limited to promoting malware or illegal software.
+- Any certificate issuance not in compliance with NPE CP, CPS, or NPE Certificate Profiles.
+- CA private key compromise.
+- A known or reasonably known, publicly reported compromise of Certificate Systems
+- Any other issue that the FPKIPA identifies as calling into question the CAs integrity or trustworthiness
+
+In the event of a CA or certificate compromise or fraudulent mis-issuance, the CA shall notify the FPKIPA as soon as possible, but no later than 24 hours from the time the incident was discovered. An initial security incident report shall be submitted to the FPKI@GSA.gov email or communicated directly to the FPKIPA and include the following sections:
+1. Which Certificate Systems or components were affected by the incident
+2. The CA's interpretation of the incident.
+3. Was the incident detected as part of normal operations. If not, explain why.
+4. Who detected the incident or perpetrated if known
+5. When the incident was discovered
+6. Physical location of the incident, if applicable.
+7. A partial or complete list of all certificates that were either mis-issued or not compliant with the CP/CPS as a result of the incident.
+
+A final security incident report shall be submitted at a date specified by the FPKIPA to the same location as the initial incident report and include all sections identified below.
+1. A complete timeline of events.
+2. If a compromise, a detailed description of the exploit and what and how infrastructure was compromised.
+3. If the CA did not detect the incident, why not.
+4. What specific remedial measures were taken or will take to address the underlying cause including specific CP/CPS updates.
+5. Other information appropriate to understand the incident such as system or vendor documentation or other material.
+6. Proof the mis-issued certificates were revoked.
+7. Who detected or perpetrated the incident.
+8. If requested, log files.
+9. Detailed description of how the incident was closed.
+
+In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response.
+- Communicate with affected parties or directly with affected organizations
+- Publish notice of revocation
+- Publicly publish a final security incident report on an approved government website.
+- Require the CA to employ, at the CA expense, a third party investigator to investigate the security incident and prepare a final security incident report.
+- Request specific reports at a periodic interval as determined by the FPKIPA
+- Specify a due date for the CA to submit a final security incident report.
+
+The FPKIPA shall notify the CA, in writing, of its intentions in response to the security incident seven (7) days prior to the action by the FPKIPA except under exceptional circumstances (as defined in the glossary) where the FPKIPA will make reasonable efforts to communicate with the CA prior to taking action. The  CA may propose an alternate course of action and the FPKIPA may consider reasonable alternatives but reserves the right to reject any proposed course of action not in the government’s best interest.
+
+**Note**: The FPKIPA will follow individual Application Trusted Root Program requirements to report security concerns.
+
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 When computing resources, software, and/or data are corrupted, CAs operating under this policy SHALL respond as follows:
@@ -1970,10 +2063,9 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 1. Independence from the subject of the audit;
 2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
 3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
-4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ISO 17065 applying the requirements specified in ETSI EN 319 403;
-5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
-6. Bound by law, government regulation, or professional code of ethics; and
-7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage
+4. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
+5. Bound by law, government regulation, or professional code of ethics; and
+6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
 The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certificate practices statement. The FPKI Policy Authority shall determine whether a compliance auditor meets this requirement.
