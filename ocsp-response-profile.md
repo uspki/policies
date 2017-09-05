@@ -17,6 +17,7 @@ OCSP Responders under this profile are expected operate using the Static Respons
 | Nonce | Not Supported | N/A | Nonce is not supported |
 
 ###Single Response
+
 | **Field** | **Value** |
 | :-------- | :------------------------------- |
 | CertID | hashAlgorithm SHALL be SHA1<br>The issuerKeyHash and issuerNameHash pair must be identical within all Single Responses appearing in an OCSP Response |
