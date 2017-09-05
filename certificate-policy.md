@@ -649,6 +649,8 @@ See Section 3.3
 See Section 3.3
 
 ## 3.4 Identification and authentication for revocation request
+No stipulation. 
+
 
 # 4. CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS
 
