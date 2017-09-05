@@ -493,23 +493,25 @@ The Policy Authority shall resolve disputes involving names and trademarks.
 
 All Domain Validation certificates issued under this Certificate Policy MAY include Subject Identity Information of countryName and SHALL NOT include any other Subject Identity Information with the exception of the required Common Name. If the Applicant requests a Domain Validation Certificate that will contain Subject Identity Information to include the the countryName field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3. 
 
-All Organization Validation certificates issued under this Certificate Policy SHALL include Subject Identity Information of countryName **and** Organization **and** State and SHALL NOT include any other Subject Identity Information with the exception of the required Common Name.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and the Organization and State, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
+All Organization Validation certificates issued under this Certificate Policy SHALL include Subject Identity Information of countryName **and** Organization **and** State and SHALL NOT include any other Subject Identity Information with the exception of the required Common Name.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and Organization and State, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
 
 Issuing CA's SHALL describe these verification processes in the Certification Practice Statement(s). 
 
 The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
 
-#### 3.2.2.1 Identity (TODO)
-If the Subject Identity Information is to include the name or address of an organization, the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation. The CA SHALL verify the identity and address of the Applicant using documentation provided by, or through communication with, at least one of the following:
+#### 3.2.2.1 Identity
+Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. as the subject.  All Organization Validation certificates SHALL include Subject Identity Information of countryName **and** Organization **and** State and SHALL NOT include any other Subject Identity Information with the exception of the required Common Name.  See Section 7.1.4.2.2.
+
+If the Subject Identity Information is to include the name of our organization (o=U.S. Government), the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  Asserting U.S. Government as the organization SHALL be verified by the CA using documentation provided by, or through communication with, at least one of the following:
 
 1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
-2. A third party database that is periodically updated and considered a Reliable Data Source;
-3. A site visit by the CA or a third party who is acting as an agent for the CA; or
+2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
+3. <not allowed>
 4. An Attestation Letter.
 
 The CA MAY use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
 
-Alternatively, the CA MAY verify the address of the Applicant (but not the identity of the Applicant) using a utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable.
+Practice Note: U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level legal and operational organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. < End Practice Note >
 
 #### 3.2.2.2 DBA/Tradename
 Subject Identity Information that includes a DBA or tradename is not allowed under this Certificate Policy. 
@@ -520,7 +522,7 @@ This Certificate Policy is restricted to the gTLDs for DotGov and DotMil, regist
 
 DotGov is sponsored by the U.S. Government's General Services Administration.  DotGov regulations are defined in 41 CFR Part 102-173. Under 41 CFR Part 102-173.30, registration in the DotGov domain is only available to official governmental organizations in the United States including Federal, State and local governments, and Native Sovereign Nations.  
 
-DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil domain exists for the exclusive use of the Department of Defense.   
+DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil domain exists for the exclusive use of the Department of Defense and is referenced in Department of Defense Issuances Informational (DoDI) 8410.   
 
 The Domain Name Registrars for both DotGov and DotMil are managed by the U.S. Government.
 
@@ -544,7 +546,7 @@ Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4
 
 The CA SHALL confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x. 
 
-Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation must have been initiated within the time period specified in the relevant requirement (Section 3.3.1 of this document) prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code (TODO reference!).
+Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation must have been initiated within the time period specified in the relevant requirement (Section 3.3.1 of this document) prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
 Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
@@ -1848,18 +1850,14 @@ d. **Certificate Field:** Number and street: subject:streetAddress (OID: 2.5.4.9
 
 
 e. **Certificate Field:** subject:localityName (OID: 2.5.4.7)  
-**Required/Optional/Prohibited:**   
-  Required if subject:organizationName is present and the subject:stateOrProvinceName field is absent.
-  Optional if subject:organizationName is present and the subject:stateOrProvinceName field is present.  
-  Prohibited if the subject:organizationName is absent.  
-**Contents:** If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1.
+**Required/Optional/Prohibited:** Prohibited
+
 
 f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)  
 **Required/Optional/Prohibited:**  
-  Required if subject:organizationName is present and the subject:localityName field is absent.  
-  Optional if subject:organizationName is present and the subject:localityName field is present.
+  Required if subject:organizationName is present.  
   Prohibited if the subject:organizationName is absent.
-**Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1.
+**Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. The subject:stateOrProvinceName field SHALL contain District of Columbia.  
 
 g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1869,11 +1867,11 @@ h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)
 **Contents:** The subject:countryName MUST contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
 
 i. **Certificate Field:** subject:organizationalUnitName  
-**Required/Optional/Prohibited:** Optional.  
-**Contents:** If the subject:organizationalUnitName field is present, the subject:organizationalUnitName SHALL contain OU= < U.S. GOVERNMENT Agency > which controls the server to which the certificate is issued. The value is verified in accordance with Section 3.2.2.1.  
+**Required/Optional/Prohibited:** Prohibited  
 
 j. **Other Subject Attributes**  
-All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.  
+All other optional attributes, for the subject field, SHALL NOT be included.
+Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.  
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
