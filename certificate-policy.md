@@ -447,7 +447,7 @@ Each CA shall make its Repository publicly available in a read-only manner.
 ## 3.1 Naming
 
 ### 3.1.1 Types of names
-This policy restricts the subject names of CAs.  CAs that issue certificates under this policy SHALL have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may be used with approval by the Policy Authority.   
+This policy restricts the subject names of CAs.  CAs that issue certificates under this policy SHALL have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the Policy Authority.   
 
 Subscriber certificates issued under this policy SHALL use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles. 
 
@@ -470,7 +470,6 @@ The subject name in CA certificates SHALL match the issuer name in certificates 
 The common name attribute for Root CA(s) SHALL be unique.
 The common name attribute for Subordinate CAs SHALL be unique from all other Subordinate CAs.
 
-
 ### 3.1.6 Recognition, authentication, and role of trademarks
 CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
 
@@ -479,6 +478,9 @@ The Policy Authority shall resolve disputes involving names and trademarks.
 ## 3.2 Initial identity validation
 
 ### 3.2.1 Method to prove possession of private key
+Issuing CA's SHALL describe the method(s) used to prove possession of private keys in the Certification Practice Statement(s).
+
+Example: The CA verifies the digital signature on a signed object.  The signed object is a PKCS#10 certification signing request. 
 
 ### 3.2.2 Authentication of Organization and Domain Identity
 
@@ -497,15 +499,15 @@ If the Subject Identity Information is to include the name of our organization (
 
 1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
 2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
-3. <not allowed>
+3. \<not allowed>
 4. An Attestation Letter.
 
 The CA MAY use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
 
-Practice Note: U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level legal and operational organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. < End Practice Note >
+Practice Note: U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
 
 #### 3.2.2.2 DBA/Tradename
-Subject Identity Information that includes a DBA or tradename is not allowed under this Certificate Policy. 
+Subject Identity Information SHALL NOT include a DBA or tradename. 
 
 
 #### 3.2.2.3 Verification of Country
@@ -542,16 +544,16 @@ Completed confirmations of Applicant authority may be valid for the issuance of 
 Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
 ##### 3.2.2.4.1 [Reserved]
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. 
 
 ##### 3.2.2.4.2 [Reserved]
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. 
 
 ##### 3.2.2.4.3 [Reserved]
-Not allowed as of the date of this Certificate Policy.   
+Not allowed as of the Effective Date of this Certificate Policy.   
 
 ##### 3.2.2.4.4 [Reserved]
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. 
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
@@ -581,11 +583,13 @@ The CA SHALL define in its CPS the format of Request Tokens it accepts and SHALL
 Confirming the Applicants control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 #### 3.2.2.5 Authentication for an IP Address
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. IP Addresses are not allowed in the certificate profiles under this Certificate Policy.
 
 
 #### 3.2.2.6 Wildcard Domain Validation
 Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA SHALL establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the DotGov and DotMil suffixes (e.g. *.gov, *.mil). If a wildcard would fall within the label immediately to the left of the DotGov and DotMil suffixes (e.g. *.gov, *.mil), CAs SHALL refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire gTLDs for DotGov and / or DotMil. 
+
+Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates SHALL require a Domain Authorization Document (3.2.2.4.5) by the Domain Contact authorizing the issuing of a certificate that includes a wildcard domain.  
 
 #### 3.2.2.7 Data Source Accuracy
 Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate the source for its reliability, accuracy, and resistance to alteration or falsification. The CA SHOULD consider the following during its evaluation:
@@ -615,15 +619,15 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 CAs SHALL document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
 ### 3.2.3 Authentication of individual identity
-Subscriber certificates identifying and authenticating natural born persons or individual identity are not allowed under this Certificate Policy.
+Subscriber certificates identifying and authenticating natural born persons or individual identity SHALL NOT be issued under this policy.  
 
 ### 3.2.4 Non-verified subscriber information
-Non-verified subscriber information is not allowed under this Certificate Policy.
+Non-verified subscriber information SHALL NOT be asserted in any certificates under this Certificate Policy.
 
 ### 3.2.5 Validation of authority
 If the Applicant for a Certificate containing Subject Identity Information is an organization, the CA SHALL use a Reliable Method of Communication to verify the authenticity of the Applicant Representative's certificate request.
 
-The CA MAY use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication. Provided that the CA uses a Reliable Method of Communication, the CA MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that the CA deems appropriate.
+The CA MAY use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication. Provided that the CA uses a Reliable Method of Communication, the CA MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices,  human resource offices, information technology offices, or other division that the CA deems appropriate.
 
 In addition, the CA SHALL establish a process that allows an Applicant to specify the individuals who may request Certificates. If an Applicant specifies, in writing, the individuals who may request a Certificate, then the CA SHALL NOT accept any certificate requests that are outside this specification. The CA SHALL provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
 
