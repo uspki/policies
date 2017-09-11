@@ -2074,11 +2074,10 @@ The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 1. WebTrust for Certification Authorities v2.0;
 2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
-4. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
 
-Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
+Whichever scheme is chosen, it SHALL incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
-The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.3.
+The audit SHALL be conducted by a Qualified Auditor, as specified in Section 8.3.
 
 There is no Delegated Third Party allowed under this Certificate Policy.     
 
