@@ -878,7 +878,7 @@ The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscri
 The Policy Authority SHALL direct any revocation of a CA certificate.
 
 ### 4.9.3 Procedure for revocation request
-The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
+The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process SHALL be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means.
 
@@ -902,13 +902,11 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency
 
-For the status of Subscriber Certificates:
-
-All CAs SHALL publish CRLs.  On-line CAs SHALL update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field MUST NOT be more than seven days beyond the value of the thisUpdate field
+For the status of Subscriber Certificates:  
+- All CAs SHALL publish CRLs.  On-line CAs SHALL update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field MUST NOT be more than seven days beyond the value of the thisUpdate field
 
 For the status of Subordinate CA Certificates:
-
-The CA SHALL update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field SHALL NOT be more than 32 days beyond the value of the thisUpdate field.
+- The CA SHALL update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field SHALL NOT be more than 32 days beyond the value of the thisUpdate field.
 
 ### 4.9.8 Maximum latency for CRLs
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
@@ -928,7 +926,7 @@ The CA SHALL support an OCSP capability using the GET method for Certificates is
 
 For the status of Subscriber Certificates:
 
-- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service MUST have a maximum expiration time of ten days
+- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service SHALL have a maximum expiration time of ten (10) days
 
 For the status of Subordinate CA Certificates:
 
@@ -960,7 +958,7 @@ Not applicable.
 ## 4.10 Certificate status services
 
 ### 4.10.1 Operational characteristics
-Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked Certificate
+Revocation entries on a CRL or OCSP Response SHALL NOT be removed until after the Expiry Date of the revoked Certificate.
 
 ### 4.10.2 Service availability
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
