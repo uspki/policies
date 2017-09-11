@@ -982,9 +982,6 @@ Private keys for certificates issued under this policy SHALL NOT be escrowed.
 Not applicable.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
-
-The CA/Browser Forum's Network and Certificate System Security Requirements are incorporated by reference as if fully set forth herein.
-
 The CA SHALL develop, implement, and maintain a comprehensive security program designed to:
 
 1. Protect the confidentiality, integrity, and availability of Certificate Data and Certificate Management Processes;
@@ -993,7 +990,7 @@ The CA SHALL develop, implement, and maintain a comprehensive security program d
 4. Protect against accidental loss or destruction of, or damage to, any Certificate Data or Certificate Management Processes; and
 5. Comply with all other security requirements applicable to the CA by law.
 
-The Certificate Management Process MUST include:
+The Certificate Management Process SHALL include:
 
 1. physical security and environmental controls;
 2. system integrity controls, including configuration management, integrity maintenance of trusted code, and malware detection/prevention;
@@ -1001,19 +998,19 @@ The Certificate Management Process MUST include:
 4. user management, separate trusted-role assignments, education, awareness, and training; and
 5. logical access controls, activity logging, and inactivity time-outs to provide individual accountability.
 
-The CA's security program MUST include an annual Risk Assessment that:
+The CA's security program SHALL include an annual Risk Assessment that:
 
 1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate Data or Certificate Management Processes;
 2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate Data and Certificate Management Processes; and
 3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
 
-Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST also take into account then-available technology and the cost of implementing the specific measures, and SHALL implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
+Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan SHALL include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan SHALL also take into account then-available technology and the cost of implementing the specific measures, and SHALL implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
 {:.br data-sect="16.3"}
 
 ## 5.1 PHYSICAL SECURITY CONTROLS
 CA equipment SHALL be protected from unauthorized access while the cryptographic module is installed and activated.  The CA SHALL implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  CA cryptographic tokens SHALL be protected against theft, loss, and unauthorized use.  
 
-All the physical control requirements specified below apply equally to the Root CA and subordinate CAs, and any remote workstations used to administer the CAs, except where specifically noted.
+All the physical control requirements specified below apply equally to the Root CA and Subordinate CAs, and any remote workstations used to administer the CAs, except where specifically noted.
 
 ### 5.1.1 Site location and construction
 The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, SHALL be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, SHALL provide robust protection against unauthorized access to the CA equipment and records.
@@ -1038,16 +1035,13 @@ A security check of the facility housing the CA equipment or remote workstations
 
 A person or group of persons SHALL be made explicitly responsible for making such checks.  When a group of persons is responsible, a log identifying the person performing a check at each instance SHALL be maintained.  If the facility is not continuously attended, the last person to depart SHALL initial a sign-out sheet that indicates the date and time and asserts that all necessary physical protection mechanisms are in place and activated.
 
-RA equipment SHALL be protected from unauthorized access while the cryptographic module is installed and activated.  The RA SHALL implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  These security mechanisms SHALL be commensurate with the level of threat in the RA equipment environment.
-
 ### 5.1.3 Power and air conditioning
 The CA SHALL have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown.  
 
 The repositories (containing CA certificates and CRLs) SHALL be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4 Water exposures
-CA equipment SHALL be installed such that it is not in danger of exposure to water (e.g., on tables or elevated floors).
-Potential water damage from fire prevention and protection measures (e.g., sprinkler systems) are excluded from this requirement.
+CA equipment SHALL be installed such that it is not in danger of exposure to water.
 
 ### 5.1.5 Fire prevention and protection
 No Stipulation
@@ -1239,10 +1233,8 @@ CA archive records SHALL be sufficiently detailed to determine the proper operat
 -	Modifications and updates to system or configuration
 -	Certificate requests
 -	All certificates issued and/or published
--	Record of re-key
 -	Revocation requests
 -	Subscriber identity authentication data
--	Documentation of receipt and acceptance of certificates (if applicable)
 -	Subscriber agreements
 -	Documentation of receipt of tokens
 -	All CRLs issued and/or published
