@@ -15,20 +15,20 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet.  This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
+This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
 
 This document serves two purposes:  
 
 - to specify the Federal Public Device PKI Certificate Policy and requirements, and 
 - to provide requirements for what each Certification Authority must address in its Certification Practices Statement 
 
-This CP is for a hierarchical Public Key Infrastructure dedicated to identifying and authenticating services accessible on the Internet. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
+This CP is for a hierarchical Public Key Infrastructure. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
 
 This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
 
-The Federal Public Device PKI conforms to the TODO INSERT VERSION of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
+The Federal Public Device PKI conforms to the \<INSERT VERSION> of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
 
-Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at TODO INSERT URL HERE. 
+Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>. 
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
 
@@ -38,12 +38,12 @@ The following Certification Authorities are covered under this CP:
 
 | **CA Type** | **Distinguished Name** | **Key Pair Type and Parameters** | **SHA-256 Key Fingerprint** | **Validity Period** |
 | --- | --- | --- | --- | --- | 
-| Root CA | C=US, O=US Government, CN=You shall be named Fred | RSA sample | really long hex value | Not Before: yesterday, Not After: today |
-| Subordinate CA | C=US, O=US Government, CN=You shall be named Alice | RSA sample | really long hex value | Not Before: today, Not After: tomorrow |
+| Root CA | \<INSERT DN> | \<INSERT RSA> | \<INSERT SHA-256 FINGERPRINT> | \<INSERT VALIDITY PERIOD> |
+| Subordinate CA | \<INSERT DN> | \<INSERT RSA> | \<INSERT SHA-256 FINGERPRINT> | \<INSERT VALIDITY PERIOD> |
 
 
 ## 1.2 Document name and identification
-This is the Federal Public Device PKI Certificate Policy. This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted device certificates.
+This is the Federal Public Device PKI Certificate Policy. 
 
 The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP as follows:
 
@@ -59,7 +59,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective\*** |
 | --- | --- | --- | --- | --- |
-| 1.0.0 | TBD | Version 1.0 of the Certificate Policy Adopted | TBD | TBD |
+| 1.0.0 | \<TBD> | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -68,7 +68,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
-| yyyy-mm-dd | TBD | Description |
+| yyyy-mm-dd | \<TBD> | Description |
 
 
 ## 1.3 PKI Participants
@@ -102,7 +102,7 @@ As defined in Section 1.6.1.
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 ### 1.3.5 Other Participants
-
+Not applicable.
 
 
 ## 1.4 Certificate Usage
@@ -125,8 +125,7 @@ The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible f
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with CAB Forum Baseline Requirements, and
-* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in
-
+* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
 
 ### 1.5.2 Contact Person
 Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
@@ -275,25 +274,19 @@ Prior to submitting a CPS, the CA shall commission a compliance analysis study c
 
 **Repository**: An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
 
-**Request Token**: A value derived in a method specified by the CA which binds this demonstration of control to the certificate request.
-
-The Request Token SHALL incorporate the key used in the certificate request.
-
-A Request Token MAY include a timestamp to indicate when it was created.
-
-A Request Token MAY include other information to ensure its uniqueness.
-
-A Request Token that includes a timestamp SHALL remain valid for no more than 30 days from the time of creation.
-
-A Request Token that includes a timestamp SHALL be treated as invalid if its timestamp is in the future.
-
-A Request Token that does not include a timestamp is valid for a single use and the CA SHALL NOT re-use it for a subsequent validation.
+**Request Token**: A value derived in a method specified by the CA which binds this demonstration of control to the certificate request.  
+- The Request Token SHALL incorporate the key used in the certificate request.
+- A Request Token MAY include a timestamp to indicate when it was created.
+- A Request Token MAY include other information to ensure its uniqueness.
+- A Request Token that includes a timestamp SHALL remain valid for no more than 30 days from the time of creation.
+- A Request Token that includes a timestamp SHALL be treated as invalid if its timestamp is in the future.
+- A Request Token that does not include a timestamp is valid for a single use and the CA SHALL NOT re-use it for a subsequent validation.
 
 The binding SHALL use a digital signature algorithm or a cryptographic hash algorithm at least as strong as that to be used in signing the certificate request.
 
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
-**Requirements**: The Baseline Requirements found in this document.
+**Requirements**: The Requirements found in this document.
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
 
@@ -375,8 +368,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
 | VOIP | Voice Over Internet Protocol |
-
-
 
 
 ### 1.6.3 References
