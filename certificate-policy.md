@@ -49,8 +49,6 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 | **OID Arc** | **Owner** | **OID** | **Description** | 
 | --- | --- | --- | --- | 
-| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1) | Domain Validated (DV) device certificates for the Internet | 
-| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2) | Organization Validated (OV) device certificates for the Internet |
 | 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD | 
 | 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD |
 
