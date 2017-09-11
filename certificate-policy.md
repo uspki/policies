@@ -1627,14 +1627,19 @@ The system development controls for all CAs and any Registration Authority funct
 ### 6.6.2 Security management controls
 The security management controls for all CAs and any Registration Authority functions listed below SHALL be implemented:
 
-- The configuration of the CA system, in addition to any modifications and upgrades, shall be documented and controlled.
-- There shall be a mechanism for detecting unauthorized modification to the software or configuration.
+- The configuration of the CA system, in addition to any modifications and upgrades, SHALL be documented and controlled.
+- Configurations	SHALL be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
+- There SHALL be a mechanism for detecting unauthorized modification to the software or configuration.
+Configurations	SHALL be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
 - All system and trusted role accounts SHALL be reviewed at least every ninety (90) days. Any account that is no longer in use or necessary for operations SHALL be deactivated.
 - A process SHALL be implemented that disables physical and logical access to a Certificate System by either a privileged user or a trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA.
 - All authentication credentials for any account or trusted role on a Certificate System SHALL be changed whenever authorization to access the account is changed or revoked.
 
 ### 6.6.3 Life cycle security controls
-No stipulation.
+- Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
+- Critical vulnerabilities shall be patched within thirty (30) days or less
+- High vulnerabilities shall be patched within sixty (60) days or less
+- CAs including Repositories and any Registration Authority system functions shall undergo penetration testing every ninety (90) days 
 
 ## 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
