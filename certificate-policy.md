@@ -412,13 +412,13 @@ The Federal PKI Policy Authority will review and update this Certificate Policy 
 The review and update shall include any changes needed to address: 
 
 - US Federal Government mission needs and changes to procedures to support the missions
-- CAB Forum Baseline Requirements and updates 
+- CAB Forum Baseline Requirements updates 
 
-If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those timeframes and ensure all CA's and CA CPS are updated.  
+If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier which required compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and CA CPS are updated.  
 
 Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the requirements of this CP.
 
-An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record. 
+An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record. 
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
@@ -426,11 +426,11 @@ The CA SHALL make revocation information for Subordinate Certificates and Subscr
 The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA SHALL also document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
 
 ## 2.2 Publication of information
-The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
+The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
 All CAs SHALL publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures SHALL include all the material required by RFC 3647, and SHALL be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
-The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired. 
 
 ## 2.3 Time or frequency of publication
 The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practices Statements in accordance with Section 2.0.
