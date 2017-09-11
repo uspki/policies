@@ -1739,7 +1739,6 @@ g. extkeyUsage (required)
 
     Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
 
-
 h. Subject Information / Subject Distinguished Name (required)
 
     See Section 7.1.4.3.1
@@ -1810,7 +1809,10 @@ CAs SHALL NOT issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
 ### 7.1.4 Name forms
 
 #### 7.1.4.1 Issuing CA Certificate Subject
-The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+The content of the Certificate Issuer Distinguished Name field SHALL match the Subject Distinguished Name of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+
+CA Subject Distinguished Name SHALL conform to PrintableString string type in ASN.1 notation.  
+
 
 #### 7.1.4.2 Subject Information for Standard Server Authentication certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in this Certificate Policy and the CA Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
@@ -1827,8 +1829,8 @@ Wildcard FQDNs are permitted.
 
 #### 7.1.4.2.2. Subject Distinguished Name Fields  
 a. **Certificate Field:** subject:commonName (OID 2.5.4.3)  
-**Required/Optional/Prohibited:** Optional (Discouraged, but not prohibited)  
-**Contents:** If present, this field MUST contain a Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).  
+**Required/Optional/Prohibited:** Required  
+**Contents:** This field SHALL contain a Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).  
 
 b. **Certificate Field:** subject:organizationName (OID 2.5.4.10)  
 **Required/Optional/Prohibited:** Optional  
@@ -1840,10 +1842,8 @@ c. **Certificate Field:** subject:givenName (2.5.4.42) and subject:surname (2.5.
 d. **Certificate Field:** Number and street: subject:streetAddress (OID: 2.5.4.9)  
 **Required/Optional/Prohibited:** Prohibited  
 
-
 e. **Certificate Field:** subject:localityName (OID: 2.5.4.7)  
 **Required/Optional/Prohibited:** Prohibited
-
 
 f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)  
 **Required/Optional/Prohibited:**  
@@ -1855,8 +1855,10 @@ g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)
 **Required/Optional/Prohibited:** Prohibited  
 
 h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)  
-**Required/Optional/Prohibited:** Required  
-**Contents:** The subject:countryName MUST contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
+**Required/Optional/Prohibited:** 
+Required if subject:organizationName is present.  
+Optional if subject:organizationName is absent. 
+**Contents:** If present, the subject:countryName SHALL contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
 
 i. **Certificate Field:** subject:organizationalUnitName  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1885,12 +1887,18 @@ c. **Certificate Field:** subject:countryName (OID: 2.5.4.6)
 **Required/Optional:** Required  
 **Contents:** This field SHALL contain C=US  
 
+CA Certificate Subjects SHALL NOT include organizationalUnit unless approved by the Policy Authority.
+
+All other optional attributes, for the CA Certificate Subject fields, SHALL NOT be included.
+Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.  
+
+
 ### 7.1.5 Name constraints
-All Subordinate CA Certificates shall be Technically Constrained.
+All Subordinate CA Certificates SHALL be Technically Constrained.
 
-For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
+For a Subordinate CA Certificate to be considered Technically Constrained, the certificate SHALL include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId SHALL NOT appear within this extension.
 
-The Subordinate CA Certificate(s) SHALL include the id-kp-serverAuth extended key usage, then the Subordinate CA Certificate(s) SHALL include the Name Constraints X.509v3 extension with constraints on dNSName as follows:
+The Subordinate CA Certificate(s) SHALL include the id-kp-serverAuth extended key usage, and the Subordinate CA Certificate(s) SHALL include the Name Constraints X.509v3 extension with constraints on dNSName as follows:
 
 a. For each dNSName in permittedSubtrees, the CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
 The Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.  The permittedSubtrees for dNSName MUST be within the constraints of the top-level domains for:
@@ -1898,7 +1906,7 @@ The Subordinate CA Certificate MUST include at least one dNSName in permittedSub
  - gov (DotGov)
  - mil (DotMil)
 
-The permittedSubtrees for dNSName MUST NOT contain any other dnsName ranges outside of the the "gov" or "mil" top-level domains.
+The permittedSubtrees for dNSName MUST NOT contain any other dnsName ranges outside of the the DotGov or DotMil top-level domains.
 
 b. For ipAddress, Subordinate CAs SHALL NOT issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate SHALL specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate SHALL include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate SHALL also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0).
 
@@ -1928,7 +1936,7 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with these Requirements as follows:
+The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with this Policy as follows:
 
 - Domain Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
@@ -1940,9 +1948,9 @@ If the Certificate	asserts	the	policy identifier	of 2.23.140.1.2.1, then it SHAL
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2),
   - if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it SHALL also include organizationName, localityName and / or stateorProvinceName in accordance with Section 7.1.4.2.2, and countryName in the Subject field.  All information shall be verified in accordance with Section 3.2.2.1.
+If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it SHALL also include organizationName, stateorProvinceName and countryName in the Subject field in accordance with Section 7.1.4.2.2.  All information shall be verified in accordance with Section 3.2.2.1.
 
-Certificates under this policy SHALL NOT assert the Individual Validated Certificate Policy identifiers.
+Certificates under this policy SHALL NOT assert the Individual Validated Certificate Policy identifiers reserved by the CAB Forum.
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)
 
 #### 7.1.6.2. Root CA Certificates
@@ -1953,12 +1961,13 @@ All Subordinate CA's SHALL be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA:
 
-1. MUST include the CA/B Forum reserved identifiers and / or an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with these requirements
+1. SHALL include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
+2. SHALL include the an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
 
 A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber SHALL contain one or more policy identifier(s), defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the CA/B Forum reserved policy OIDs in such Certificates.
+A Certificate issued to a Subscriber SHALL contain one policy identifier, defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Policy. CAs complying with these Requirements SHALL also assert one of the CA/B Forum Reserved Policy OIDs in such Certificates.
 
 Subscriber certificates SHALL contain certificate policy identifier(s) for either domain validated policies or organization validated policies but SHALL NOT assert certificate policy identifiers for both.   
 
