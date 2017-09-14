@@ -1,10 +1,14 @@
 
 # Domain Authorization For US Federal Government Public Trust
 
-The following summarizes the options available for Domain Authorization
+The following is a summary document used during the early policy analysis and review of domain verification methods. This document summarizes the options available for Domain Authorization in 2016 through 2017.
 
-> Below content based on CAB Forum Baseline Requirements CP 1.4.5
-> https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.5.pdf
+As of September 13, 2017 - Ballot 182 has yet to be integrated back into the CA/B Forum baseline requirements. In addition, please review the IPR Exclusion noticies for the proposed Ballot 182.
+
+- https://cabforum.org/ipr-exclusion-notices/#Ballot-182
+
+The content below is based on CAB Forum Baseline Requirements CP 1.4.5
+- https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.5.pdf
 
 ## Relevant CAB Forum Baseline Requirements Changes
 
@@ -47,7 +51,7 @@ CAB Forum recently removed options that were previously acceptable. A summary of
 
 10. **TLS Using a Random Number (Embedded in a Certificate)** - By confirming the presence of a Random Value within a Certificate on the Authorization Domain name which is accessible by the CA via TLS over an Authorized Port
 
-11. **Other methods** - 
+11. **Other methods** -
 
 > "The CA SHALL confirm that, as of the date the Certificate issues,
 > either the CA or a Delegated Third Party has validated each
@@ -60,19 +64,19 @@ CAB Forum recently removed options that were previously acceptable. A summary of
 ## Federal Government Method Selection
 
 ### Domain Authorization Document
-![domain authorization document process](assets/domain_authorization_document.png)
+![domain authorization document process](../assets/domain_authorization_document.png)
 
 ### Agreed‐Upon Change to Website
-![agreed upon change to website process](assets/agreed_upon_change_to_website.png)
+![agreed upon change to website process](../assets/agreed_upon_change_to_website.png)
 
 ### TLS Using a Random Number (Embedded in a Certificate)
-![tls using random number process](assets/tls_using_random_number.PNG)
+![tls using random number process](../assets/tls_using_random_number.PNG)
 
 
 ### Other Methods
-The newly added "Other" option is now on the table, but it's unclear exactly what would continue to be acceptable over time. 
+The newly added "Other" option is now on the table, but it's unclear exactly what would continue to be acceptable over time.
 
-## Appendix 1 - Previously Permitted Domain Authorization Methods 
+## Appendix 1 - Previously Permitted Domain Authorization Methods
 
 The list below summarizes all methods permitted prior to version 1.4.2. The red lined version of the policy showing these changes can be found [here](https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.2-redlined.pdf).
 
@@ -119,7 +123,7 @@ The list below summarizes all methods permitted prior to version 1.4.2. The red 
 
 7. **DNS Change** - By confirming the presence of a Random Value or Request Token in a DNS TXT or CAA record for an Authorization Domain Name
 
-8. **IP Address** - By confirming the Applicant controls an IP address returned from a DNS lookup 
+8. **IP Address** - By confirming the Applicant controls an IP address returned from a DNS lookup
 
 9. **Test Certificate** - By confirming the Presence of a Non-expired Test Certificate issued by the CA on the Authorization Domain Name
 	-	Accessible by the CA via TLS over an Authorized Port for the purpose of issuing a certificate with the same public key as in the Test Certificate

@@ -15,20 +15,20 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating services accessible on the Internet.  This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
+This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
 
 This document serves two purposes:  
 
 - to specify the Federal Public Device PKI Certificate Policy and requirements, and 
 - to provide requirements for what each Certification Authority must address in its Certification Practices Statement 
 
-This CP is for a hierarchical Public Key Infrastructure dedicated to identifying and authenticating services accessible on the Internet. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
+This CP is for a hierarchical Public Key Infrastructure. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
 
 This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
 
-The Federal Public Device PKI conforms to the TODO INSERT VERSION of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
+The Federal Public Device PKI conforms to the \<INSERT VERSION> of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
 
-Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at TODO INSERT URL HERE. 
+Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>. 
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
 
@@ -38,19 +38,17 @@ The following Certification Authorities are covered under this CP:
 
 | **CA Type** | **Distinguished Name** | **Key Pair Type and Parameters** | **SHA-256 Key Fingerprint** | **Validity Period** |
 | --- | --- | --- | --- | --- | 
-| Root CA | C=US, O=US Government, CN=You shall be named Fred | RSA sample | really long hex value | Not Before: yesterday, Not After: today |
-| Subordinate CA | C=US, O=US Government, CN=You shall be named Alice | RSA sample | really long hex value | Not Before: today, Not After: tomorrow |
+| Root CA | \<INSERT DN> | \<INSERT RSA> | \<INSERT SHA-256 FINGERPRINT> | \<INSERT VALIDITY PERIOD> |
+| Subordinate CA | \<INSERT DN> | \<INSERT RSA> | \<INSERT SHA-256 FINGERPRINT> | \<INSERT VALIDITY PERIOD> |
 
 
 ## 1.2 Document name and identification
-This is the Federal Public Device PKI Certificate Policy. This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted device certificates.
+This is the Federal Public Device PKI Certificate Policy. 
 
 The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP as follows:
 
 | **OID Arc** | **Owner** | **OID** | **Description** | 
 | --- | --- | --- | --- | 
-| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1) | Domain Validated (DV) device certificates for the Internet | 
-| 2.23.140.1.2 | CAB Forum | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2) | Organization Validated (OV) device certificates for the Internet |
 | 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD | 
 | 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD |
 
@@ -59,7 +57,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective\*** |
 | --- | --- | --- | --- | --- |
-| 1.0.0 | TBD | Version 1.0 of the Certificate Policy Adopted | TBD | TBD |
+| 1.0.0 | \<TBD> | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -68,7 +66,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
-| yyyy-mm-dd | TBD | Description |
+| yyyy-mm-dd | \<TBD> | Description |
 
 
 ## 1.3 PKI Participants
@@ -102,7 +100,7 @@ As defined in Section 1.6.1.
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 ### 1.3.5 Other Participants
-
+Not applicable.
 
 
 ## 1.4 Certificate Usage
@@ -125,8 +123,7 @@ The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible f
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with CAB Forum Baseline Requirements, and
-* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in
-
+* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
 
 ### 1.5.2 Contact Person
 Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
@@ -275,25 +272,19 @@ Prior to submitting a CPS, the CA shall commission a compliance analysis study c
 
 **Repository**: An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
 
-**Request Token**: A value derived in a method specified by the CA which binds this demonstration of control to the certificate request.
-
-The Request Token SHALL incorporate the key used in the certificate request.
-
-A Request Token MAY include a timestamp to indicate when it was created.
-
-A Request Token MAY include other information to ensure its uniqueness.
-
-A Request Token that includes a timestamp SHALL remain valid for no more than 30 days from the time of creation.
-
-A Request Token that includes a timestamp SHALL be treated as invalid if its timestamp is in the future.
-
-A Request Token that does not include a timestamp is valid for a single use and the CA SHALL NOT re-use it for a subsequent validation.
+**Request Token**: A value derived in a method specified by the CA which binds this demonstration of control to the certificate request.  
+- The Request Token SHALL incorporate the key used in the certificate request.
+- A Request Token MAY include a timestamp to indicate when it was created.
+- A Request Token MAY include other information to ensure its uniqueness.
+- A Request Token that includes a timestamp SHALL remain valid for no more than 30 days from the time of creation.
+- A Request Token that includes a timestamp SHALL be treated as invalid if its timestamp is in the future.
+- A Request Token that does not include a timestamp is valid for a single use and the CA SHALL NOT re-use it for a subsequent validation.
 
 The binding SHALL use a digital signature algorithm or a cryptographic hash algorithm at least as strong as that to be used in signing the certificate request.
 
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
-**Requirements**: The Baseline Requirements found in this document.
+**Requirements**: The Requirements found in this document.
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
 
@@ -377,8 +368,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | VOIP | Voice Over Internet Protocol |
 
 
-
-
 ### 1.6.3 References
 
 ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers
@@ -421,13 +410,13 @@ The Federal PKI Policy Authority will review and update this Certificate Policy 
 The review and update shall include any changes needed to address: 
 
 - US Federal Government mission needs and changes to procedures to support the missions
-- CAB Forum Baseline Requirements and updates 
+- CAB Forum Baseline Requirements updates 
 
-If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those timeframes and ensure all CA's and CA CPS are updated.  
+If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier which required compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and CA CPS are updated.  
 
 Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the requirements of this CP.
 
-An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record. 
+An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record. 
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
@@ -435,11 +424,11 @@ The CA SHALL make revocation information for Subordinate Certificates and Subscr
 The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA SHALL also document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
 
 ## 2.2 Publication of information
-The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on **TBD WHAT SITE**, ensuring it is readily accessible on a 24x7 basis.
+The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
 All CAs SHALL publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures SHALL include all the material required by RFC 3647, and SHALL be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
-The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired. 
 
 ## 2.3 Time or frequency of publication
 The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practices Statements in accordance with Section 2.0.
@@ -456,7 +445,7 @@ Each CA shall make its Repository publicly available in a read-only manner.
 ## 3.1 Naming
 
 ### 3.1.1 Types of names
-This policy restricts the subject names of CAs.  CAs that issue certificates under this policy SHALL have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may be used with approval by the Policy Authority.   
+This policy restricts the subject names of CAs.  CAs that issue certificates under this policy SHALL have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the Policy Authority.   
 
 Subscriber certificates issued under this policy SHALL use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles. 
 
@@ -479,7 +468,6 @@ The subject name in CA certificates SHALL match the issuer name in certificates 
 The common name attribute for Root CA(s) SHALL be unique.
 The common name attribute for Subordinate CAs SHALL be unique from all other Subordinate CAs.
 
-
 ### 3.1.6 Recognition, authentication, and role of trademarks
 CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
 
@@ -488,6 +476,9 @@ The Policy Authority shall resolve disputes involving names and trademarks.
 ## 3.2 Initial identity validation
 
 ### 3.2.1 Method to prove possession of private key
+Issuing CA's SHALL describe the method(s) used to prove possession of private keys in the Certification Practice Statement(s).
+
+Example: The CA verifies the digital signature on a signed object.  The signed object is a PKCS#10 certification signing request. 
 
 ### 3.2.2 Authentication of Organization and Domain Identity
 
@@ -506,15 +497,15 @@ If the Subject Identity Information is to include the name of our organization (
 
 1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
 2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
-3. <not allowed>
+3. \<not allowed>
 4. An Attestation Letter.
 
 The CA MAY use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
 
-Practice Note: U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level legal and operational organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. < End Practice Note >
+Practice Note: U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
 
 #### 3.2.2.2 DBA/Tradename
-Subject Identity Information that includes a DBA or tradename is not allowed under this Certificate Policy. 
+Subject Identity Information SHALL NOT include a DBA or tradename. 
 
 
 #### 3.2.2.3 Verification of Country
@@ -551,16 +542,16 @@ Completed confirmations of Applicant authority may be valid for the issuance of 
 Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
 ##### 3.2.2.4.1 [Reserved]
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. 
 
 ##### 3.2.2.4.2 [Reserved]
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. 
 
 ##### 3.2.2.4.3 [Reserved]
-Not allowed as of the date of this Certificate Policy.   
+Not allowed as of the Effective Date of this Certificate Policy.   
 
 ##### 3.2.2.4.4 [Reserved]
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. 
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
@@ -590,11 +581,13 @@ The CA SHALL define in its CPS the format of Request Tokens it accepts and SHALL
 Confirming the Applicants control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 #### 3.2.2.5 Authentication for an IP Address
-Not allowed as of the date of this Certificate Policy. 
+Not allowed as of the Effective Date of this Certificate Policy. IP Addresses are not allowed in the certificate profiles under this Certificate Policy.
 
 
 #### 3.2.2.6 Wildcard Domain Validation
 Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA SHALL establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the DotGov and DotMil suffixes (e.g. *.gov, *.mil). If a wildcard would fall within the label immediately to the left of the DotGov and DotMil suffixes (e.g. *.gov, *.mil), CAs SHALL refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire gTLDs for DotGov and / or DotMil. 
+
+Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates SHALL require a Domain Authorization Document (3.2.2.4.5) by the Domain Contact authorizing the issuing of a certificate that includes a wildcard domain.  
 
 #### 3.2.2.7 Data Source Accuracy
 Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate the source for its reliability, accuracy, and resistance to alteration or falsification. The CA SHOULD consider the following during its evaluation:
@@ -624,15 +617,15 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 CAs SHALL document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
 ### 3.2.3 Authentication of individual identity
-Subscriber certificates identifying and authenticating natural born persons or individual identity are not allowed under this Certificate Policy.
+Subscriber certificates identifying and authenticating natural born persons or individual identity SHALL NOT be issued under this policy.  
 
 ### 3.2.4 Non-verified subscriber information
-Non-verified subscriber information is not allowed under this Certificate Policy.
+Non-verified subscriber information SHALL NOT be asserted in any certificates under this Certificate Policy.
 
 ### 3.2.5 Validation of authority
 If the Applicant for a Certificate containing Subject Identity Information is an organization, the CA SHALL use a Reliable Method of Communication to verify the authenticity of the Applicant Representative's certificate request.
 
-The CA MAY use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication. Provided that the CA uses a Reliable Method of Communication, the CA MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that the CA deems appropriate.
+The CA MAY use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication. Provided that the CA uses a Reliable Method of Communication, the CA MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices,  human resource offices, information technology offices, or other division that the CA deems appropriate.
 
 In addition, the CA SHALL establish a process that allows an Applicant to specify the individuals who may request Certificates. If an Applicant specifies, in writing, the individuals who may request a Certificate, then the CA SHALL NOT accept any certificate requests that are outside this specification. The CA SHALL provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
 
@@ -883,7 +876,7 @@ The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscri
 The Policy Authority SHALL direct any revocation of a CA certificate.
 
 ### 4.9.3 Procedure for revocation request
-The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
+The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process SHALL be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means.
 
@@ -907,13 +900,11 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency
 
-For the status of Subscriber Certificates:
-
-All CAs SHALL publish CRLs.  On-line CAs SHALL update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field MUST NOT be more than seven days beyond the value of the thisUpdate field
+For the status of Subscriber Certificates:  
+- All CAs SHALL publish CRLs.  On-line CAs SHALL update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field MUST NOT be more than seven days beyond the value of the thisUpdate field
 
 For the status of Subordinate CA Certificates:
-
-The CA SHALL update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field SHALL NOT be more than 32 days beyond the value of the thisUpdate field.
+- The CA SHALL update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field SHALL NOT be more than 32 days beyond the value of the thisUpdate field.
 
 ### 4.9.8 Maximum latency for CRLs
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
@@ -933,7 +924,7 @@ The CA SHALL support an OCSP capability using the GET method for Certificates is
 
 For the status of Subscriber Certificates:
 
-- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service MUST have a maximum expiration time of ten days
+- The OCSP Responder SHALL update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service SHALL have a maximum expiration time of ten (10) days
 
 For the status of Subordinate CA Certificates:
 
@@ -965,7 +956,7 @@ Not applicable.
 ## 4.10 Certificate status services
 
 ### 4.10.1 Operational characteristics
-Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked Certificate
+Revocation entries on a CRL or OCSP Response SHALL NOT be removed until after the Expiry Date of the revoked Certificate.
 
 ### 4.10.2 Service availability
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
@@ -989,9 +980,6 @@ Private keys for certificates issued under this policy SHALL NOT be escrowed.
 Not applicable.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
-
-The CA/Browser Forum's Network and Certificate System Security Requirements are incorporated by reference as if fully set forth herein.
-
 The CA SHALL develop, implement, and maintain a comprehensive security program designed to:
 
 1. Protect the confidentiality, integrity, and availability of Certificate Data and Certificate Management Processes;
@@ -1000,7 +988,7 @@ The CA SHALL develop, implement, and maintain a comprehensive security program d
 4. Protect against accidental loss or destruction of, or damage to, any Certificate Data or Certificate Management Processes; and
 5. Comply with all other security requirements applicable to the CA by law.
 
-The Certificate Management Process MUST include:
+The Certificate Management Process SHALL include:
 
 1. physical security and environmental controls;
 2. system integrity controls, including configuration management, integrity maintenance of trusted code, and malware detection/prevention;
@@ -1008,19 +996,19 @@ The Certificate Management Process MUST include:
 4. user management, separate trusted-role assignments, education, awareness, and training; and
 5. logical access controls, activity logging, and inactivity time-outs to provide individual accountability.
 
-The CA's security program MUST include an annual Risk Assessment that:
+The CA's security program SHALL include an annual Risk Assessment that:
 
 1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate Data or Certificate Management Processes;
 2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate Data and Certificate Management Processes; and
 3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
 
-Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST also take into account then-available technology and the cost of implementing the specific measures, and SHALL implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
+Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan SHALL include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan SHALL also take into account then-available technology and the cost of implementing the specific measures, and SHALL implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
 {:.br data-sect="16.3"}
 
 ## 5.1 PHYSICAL SECURITY CONTROLS
 CA equipment SHALL be protected from unauthorized access while the cryptographic module is installed and activated.  The CA SHALL implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  CA cryptographic tokens SHALL be protected against theft, loss, and unauthorized use.  
 
-All the physical control requirements specified below apply equally to the Root CA and subordinate CAs, and any remote workstations used to administer the CAs, except where specifically noted.
+All the physical control requirements specified below apply equally to the Root CA and Subordinate CAs, and any remote workstations used to administer the CAs, except where specifically noted.
 
 ### 5.1.1 Site location and construction
 The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, SHALL be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, SHALL provide robust protection against unauthorized access to the CA equipment and records.
@@ -1045,16 +1033,13 @@ A security check of the facility housing the CA equipment or remote workstations
 
 A person or group of persons SHALL be made explicitly responsible for making such checks.  When a group of persons is responsible, a log identifying the person performing a check at each instance SHALL be maintained.  If the facility is not continuously attended, the last person to depart SHALL initial a sign-out sheet that indicates the date and time and asserts that all necessary physical protection mechanisms are in place and activated.
 
-RA equipment SHALL be protected from unauthorized access while the cryptographic module is installed and activated.  The RA SHALL implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  These security mechanisms SHALL be commensurate with the level of threat in the RA equipment environment.
-
 ### 5.1.3 Power and air conditioning
 The CA SHALL have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown.  
 
 The repositories (containing CA certificates and CRLs) SHALL be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4 Water exposures
-CA equipment SHALL be installed such that it is not in danger of exposure to water (e.g., on tables or elevated floors).
-Potential water damage from fire prevention and protection measures (e.g., sprinkler systems) are excluded from this requirement.
+CA equipment SHALL be installed such that it is not in danger of exposure to water.
 
 ### 5.1.5 Fire prevention and protection
 No Stipulation
@@ -1246,10 +1231,8 @@ CA archive records SHALL be sufficiently detailed to determine the proper operat
 -	Modifications and updates to system or configuration
 -	Certificate requests
 -	All certificates issued and/or published
--	Record of re-key
 -	Revocation requests
 -	Subscriber identity authentication data
--	Documentation of receipt and acceptance of certificates (if applicable)
 -	Subscriber agreements
 -	Documentation of receipt of tokens
 -	All CRLs issued and/or published
@@ -1642,14 +1625,19 @@ The system development controls for all CAs and any Registration Authority funct
 ### 6.6.2 Security management controls
 The security management controls for all CAs and any Registration Authority functions listed below SHALL be implemented:
 
-- The configuration of the CA system, in addition to any modifications and upgrades, shall be documented and controlled.
-- There shall be a mechanism for detecting unauthorized modification to the software or configuration.
+- The configuration of the CA system, in addition to any modifications and upgrades, SHALL be documented and controlled.
+- Configurations	SHALL be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
+- There SHALL be a mechanism for detecting unauthorized modification to the software or configuration.
+Configurations	SHALL be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
 - All system and trusted role accounts SHALL be reviewed at least every ninety (90) days. Any account that is no longer in use or necessary for operations SHALL be deactivated.
 - A process SHALL be implemented that disables physical and logical access to a Certificate System by either a privileged user or a trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA.
 - All authentication credentials for any account or trusted role on a Certificate System SHALL be changed whenever authorization to access the account is changed or revoked.
 
 ### 6.6.3 Life cycle security controls
-No stipulation.
+- Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
+- Critical vulnerabilities shall be patched within thirty (30) days or less
+- High vulnerabilities shall be patched within sixty (60) days or less
+- CAs including Repositories and any Registration Authority system functions shall undergo penetration testing every ninety (90) days 
 
 ## 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
@@ -1749,7 +1737,6 @@ g. extkeyUsage (required)
 
     Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
 
-
 h. Subject Information / Subject Distinguished Name (required)
 
     See Section 7.1.4.3.1
@@ -1820,7 +1807,10 @@ CAs SHALL NOT issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
 ### 7.1.4 Name forms
 
 #### 7.1.4.1 Issuing CA Certificate Subject
-The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+The content of the Certificate Issuer Distinguished Name field SHALL match the Subject Distinguished Name of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+
+CA Subject Distinguished Name SHALL conform to PrintableString string type in ASN.1 notation.  
+
 
 #### 7.1.4.2 Subject Information for Standard Server Authentication certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in this Certificate Policy and the CA Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
@@ -1837,8 +1827,8 @@ Wildcard FQDNs are permitted.
 
 #### 7.1.4.2.2. Subject Distinguished Name Fields  
 a. **Certificate Field:** subject:commonName (OID 2.5.4.3)  
-**Required/Optional/Prohibited:** Optional (Discouraged, but not prohibited)  
-**Contents:** If present, this field MUST contain a Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).  
+**Required/Optional/Prohibited:** Required  
+**Contents:** This field SHALL contain a Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).  
 
 b. **Certificate Field:** subject:organizationName (OID 2.5.4.10)  
 **Required/Optional/Prohibited:** Optional  
@@ -1850,10 +1840,8 @@ c. **Certificate Field:** subject:givenName (2.5.4.42) and subject:surname (2.5.
 d. **Certificate Field:** Number and street: subject:streetAddress (OID: 2.5.4.9)  
 **Required/Optional/Prohibited:** Prohibited  
 
-
 e. **Certificate Field:** subject:localityName (OID: 2.5.4.7)  
 **Required/Optional/Prohibited:** Prohibited
-
 
 f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)  
 **Required/Optional/Prohibited:**  
@@ -1865,8 +1853,10 @@ g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)
 **Required/Optional/Prohibited:** Prohibited  
 
 h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)  
-**Required/Optional/Prohibited:** Required  
-**Contents:** The subject:countryName MUST contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
+**Required/Optional/Prohibited:** 
+Required if subject:organizationName is present.  
+Optional if subject:organizationName is absent. 
+**Contents:** If present, the subject:countryName SHALL contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
 
 i. **Certificate Field:** subject:organizationalUnitName  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1895,12 +1885,18 @@ c. **Certificate Field:** subject:countryName (OID: 2.5.4.6)
 **Required/Optional:** Required  
 **Contents:** This field SHALL contain C=US  
 
+CA Certificate Subjects SHALL NOT include organizationalUnit unless approved by the Policy Authority.
+
+All other optional attributes, for the CA Certificate Subject fields, SHALL NOT be included.
+Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.  
+
+
 ### 7.1.5 Name constraints
-All Subordinate CA Certificates shall be Technically Constrained.
+All Subordinate CA Certificates SHALL be Technically Constrained.
 
-For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
+For a Subordinate CA Certificate to be considered Technically Constrained, the certificate SHALL include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId SHALL NOT appear within this extension.
 
-The Subordinate CA Certificate(s) SHALL include the id-kp-serverAuth extended key usage, then the Subordinate CA Certificate(s) SHALL include the Name Constraints X.509v3 extension with constraints on dNSName as follows:
+The Subordinate CA Certificate(s) SHALL include the id-kp-serverAuth extended key usage, and the Subordinate CA Certificate(s) SHALL include the Name Constraints X.509v3 extension with constraints on dNSName as follows:
 
 a. For each dNSName in permittedSubtrees, the CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
 The Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.  The permittedSubtrees for dNSName MUST be within the constraints of the top-level domains for:
@@ -1908,7 +1904,7 @@ The Subordinate CA Certificate MUST include at least one dNSName in permittedSub
  - gov (DotGov)
  - mil (DotMil)
 
-The permittedSubtrees for dNSName MUST NOT contain any other dnsName ranges outside of the the "gov" or "mil" top-level domains.
+The permittedSubtrees for dNSName MUST NOT contain any other dnsName ranges outside of the the DotGov or DotMil top-level domains.
 
 b. For ipAddress, Subordinate CAs SHALL NOT issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate SHALL specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate SHALL include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate SHALL also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0).
 
@@ -1938,7 +1934,7 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with these Requirements as follows:
+The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with this Policy as follows:
 
 - Domain Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
@@ -1950,9 +1946,9 @@ If the Certificate	asserts	the	policy identifier	of 2.23.140.1.2.1, then it SHAL
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2),
   - if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it SHALL also include organizationName, localityName and / or stateorProvinceName in accordance with Section 7.1.4.2.2, and countryName in the Subject field.  All information shall be verified in accordance with Section 3.2.2.1.
+If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it SHALL also include organizationName, stateorProvinceName and countryName in the Subject field in accordance with Section 7.1.4.2.2.  All information shall be verified in accordance with Section 3.2.2.1.
 
-Certificates under this policy SHALL NOT assert the Individual Validated Certificate Policy identifiers.
+Certificates under this policy SHALL NOT assert the Individual Validated Certificate Policy identifiers reserved by the CAB Forum.
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)
 
 #### 7.1.6.2. Root CA Certificates
@@ -1963,12 +1959,13 @@ All Subordinate CA's SHALL be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA:
 
-1. MUST include the CA/B Forum reserved identifiers and / or an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with these requirements
+1. SHALL include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
+2. SHALL include the an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
 
 A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber SHALL contain one or more policy identifier(s), defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the CA/B Forum reserved policy OIDs in such Certificates.
+A Certificate issued to a Subscriber SHALL contain one policy identifier, defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Policy. CAs complying with these Requirements SHALL also assert one of the CA/B Forum Reserved Policy OIDs in such Certificates.
 
 Subscriber certificates SHALL contain certificate policy identifier(s) for either domain validated policies or organization validated policies but SHALL NOT assert certificate policy identifiers for both.   
 
@@ -2077,11 +2074,10 @@ The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 1. WebTrust for Certification Authorities v2.0;
 2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
-4. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
 
-Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
+Whichever scheme is chosen, it SHALL incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
-The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.3.
+The audit SHALL be conducted by a Qualified Auditor, as specified in Section 8.3.
 
 There is no Delegated Third Party allowed under this Certificate Policy.     
 
