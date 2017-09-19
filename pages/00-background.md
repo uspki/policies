@@ -2,7 +2,7 @@
 layout: base
 
 title: Background
-permalink: /background/
+permalink: /
 ---
 
 The browser community, commercial trust stores, and standards development organizations have rapidly been defining and adopting emerging technology requirements for the public Internet and Hypertext Transfer Protocol (HTTPS).  These requirements are intended to protect consumers, protect website operators from spoofing incidents, and promote an open and transparent trust model across the globe.   These requirements include:

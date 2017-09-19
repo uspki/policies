@@ -2,7 +2,7 @@
 layout: base
 
 title: Submit Comment
-permalink: /submit-comment/
+permalink: /submitcomment/
 ---
 
 Comments should be submitted via **[this web form]({{ site.repo }}/issues/new){:target="_blank"}** (GitHub account required) or sent to: **[USPKI-ROOT@listserv.gsa.gov](mailto:USPKI-ROOT@listserv.gsa.gov)**.

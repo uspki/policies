@@ -1,16 +1,16 @@
-## Server Authentication Certificate Profile (Public TLS Certificates)
+## Server Authentication Certificate Profile
 
-This profile for server authentication certificates contains two (2) options for devices:
+This profile for server authentication certificates for public trust TLS contains two (2) options for devices:
 
 - Domain Validation (DV)
 - Organization Validation (OV)
 
-There are two (2) differences in the certificate profile implementations between Domain Validation and Organization Validation. The differences are in the _Subject Identity Information_ and the _Certificate Policies_. 
+There are two (2) differences in the certificate profile implementations between Domain Validation and Organization Validation. The differences are in the _Subject Identity Information_ and the _Certificate Policies_.
 
-| **Field or Extension** | **Domain Validation** | **Organization Validation**  | 
-| :-------- | :---: | :---: | 
-| Subject Identity Information  | cn=\<one domain name> | cn=\<one domain name>,S=District of Columbia,O=U.S.Government,c=US | 
-| Certificate Policies   | Asserts both the CA/B Forum and the US Government policy oid for Domain Validation      | Asserts both the CA/B Forum and the US Government policy oid for Organization Validation  | 
+| **Field or Extension** | **Domain Validation** | **Organization Validation**  |
+| :-------- | :---: | :---: |
+| Subject Identity Information  | cn=\<one domain name> | cn=\<one domain name>,S=District of Columbia,O=U.S.Government,c=US |
+| Certificate Policies   | Asserts both the CA/B Forum and the US Government policy oid for Domain Validation      | Asserts both the CA/B Forum and the US Government policy oid for Organization Validation  |
 
 Below is the full server authentication certificate profile with _all_ fields and extensions.
 

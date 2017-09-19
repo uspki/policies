@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Request for Comment
-permalink: /
+permalink: /requestcomment/
 ---
 
 **Key questions:**

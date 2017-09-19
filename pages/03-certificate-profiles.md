@@ -1,15 +1,15 @@
 ---
 layout: base
 title: Certificate Profiles
-permalink: /certificate-profiles/
+permalink: /certificateprofiles/
 
 subnav:
   - text: Self-Signed Root CA
     href: "#self-signed-root-ca-certificate-profile"
   - text: Subordinate CA
-    href: "#subordinate-ca-certificate-profile"
+    href: "#intermediate-or-subordinate-ca-certificate-profile"
   - text: Server Authentication
-    href: "#server-authentication-public-tls-certificate-profile"
+    href: "#server-authentication-certificate-profile"
   - text: Delegated OCSP Responder
     href: "#delegated-ocsp-responder-certificate-profile"
   - text: OCSP Response Profile
@@ -24,8 +24,8 @@ These profiles are in draft and will be added as an Appendix to the Certificate 
 Four certificate profiles covered by this Certificate Policy are defined.  
 
 - [Self-Signed Root CA Certificate Profile](#self-signed-root-ca-certificate-profile)
-- [Intermediate or Subordinate CA Certificate Profile](#subordinate-ca-certificate-profile)
-- [Server Authentication Certificate Profile](#server-authentication-public-tls-certificate-profile)
+- [Intermediate or Subordinate CA Certificate Profile](#intermediate-or-subordinate-ca-certificate-profile)
+- [Server Authentication Certificate Profile](#server-authentication-certificate-profile)
 - [Delegated OCSP Responder Certificate Profile](#delegated-ocsp-responder-certificate-profile)
 
 In addition, there are two profiles covering the OCSP _Responses_ and the Certificate Revocation Lists.

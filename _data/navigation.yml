@@ -1,28 +1,28 @@
 
 primary:
   - text: "Background"
-    href: /background/
-  - text: "Request For Comment"
     href: /
+  - text: "Request For Comment"
+    href: /requestcomment/
   - text: "Certificate Policy"
-    href: /certificate-policy/
+    href: /certificatepolicy/
   - text: "Certificate Profiles"
-    href: /certificate-profiles/
+    href: /certificateprofiles/
   - text: "Submit Comment"
-    href: /submit-comment/
+    href: /submitcomment/
 
 
 mobile:
   - text: "Background"
-    href: /background/
-  - text: "Request For Comment"
     href: /
+  - text: "Request For Comment"
+    href: /requestcomment/
   - text: "Certificate Policy"
-    href: /certificate-policy/
+    href: /certificatepolicy/
   - text: "Certificate Profiles"
-    href: /certificate-profiles/
+    href: /certificateprofiles/
   - text: "Submit Comment"
-    href: /submit-comment/
+    href: /submitcomment/
 
 secondary:
   - text: "IDmanagement.gov"
