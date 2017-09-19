@@ -1,0 +1,48 @@
+title: Federal Device Public Trust PKI Certificate Policy (Draft)
+small_title: Federal Device Public Trust PKI
+smallest_title: Federal Device Public Trust PKI
+description: Certificate Policy for a proposed new Public Trust infrastructure for DotGov and DotMil websites.
+email: fpki@gsa.gov
+author:
+    name: FICAM
+repo_url: https://github.com/uspki/policies
+baseurl: ''
+branch: federalist-pages
+# Federalist overwrites the site.branch value when deploying
+# the site.branch was used in dynamic link generation for objects including Edit Page
+# we want the dynamic links to send users to the staging branch.  New site variable to ensure Edit Page sends users to the correct branch for pull requests.
+editbranch: master
+
+report_url: ""
+
+google_analytics_ua:
+repo: https://github.com/uspki/policies
+
+uswds_path: assets/uswds
+# Links
+# List links that you would like to appear on the top navigation bar here
+
+exclude:
+- CONTRIBUTING.md
+- _config.yml
+- .travis.yml
+- .gitignore
+- Gemfile
+- Gemfile.lock
+- LICENSE.md
+- README.md
+- manifest.yml
+- Staticfile
+- Staticfile.auth
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "base"
+
+collections:
+  pages:
+    output: true
+    #permalink: /:path/
