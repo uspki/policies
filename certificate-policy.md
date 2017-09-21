@@ -1674,102 +1674,109 @@ Certificates SHALL be of type X.509 v3.
 This section specifies the additional requirements for Certificate content and extensions for Certificates generated after the Effective Date.
 
 #### 7.1.2.1 Root CA Certificate
-a. basicConstraints (required)
+**a. basicConstraints (required)**  
+**Required/Optional:** Required  
 This extension SHALL appear as a critical extension. The cA field SHALL be set true. The pathLenConstraint field SHALL NOT be present.
 
-b. keyUsage (required)
+**b. keyUsage (required)**  
+**Required/Optional:** Required  
 This extension SHALL be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign SHALL be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 
-c. certificatePolicies
+**c. certificatePolicies**  
+**Required/Optional/Prohibited:** Prohibited  
 This extension SHALL NOT be present.
 
-d. extendedKeyUsage
+**d. extendedKeyUsage**  
+**Required/Optional/Prohibited:** Prohibited  
 This extension SHALL NOT be present.
 
-e. Subject Information / Subject Distinguished Name (required)
-
+**e. Subject Information / Subject Distinguished Name (required)**  
+**Required/Optional:** Required
 See Section 7.1.4.3.1
 
 #### 7.1.2.2 Subordinate CA Certificate
-a. certificatePolicies (required)
+**a. certificatePolicies (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present and SHOULD NOT be marked critical.  
 
-- This extension SHALL be present and SHOULD NOT be marked critical.
-- certificatePolicies:policyIdentifier (required)
+  **certificatePolicies:policyIdentifier (required)**  
+  **Required/Optional:** Required
 
-b. cRLDistributionPoints (required)
+**b. cRLDistributionPoints (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present and SHALL NOT be marked critical. It SHALL contain the HTTP URL of the CA's CRL service.  The HTTP URL included must be publicly accessible on the Internet.   
 
-- This extension SHALL be present and SHALL NOT be marked critical. It SHALL contain the HTTP URL of the CA's CRL service.  The HTTP URL included must be publicly accessible on the Internet.   
+**c. authorityInformationAccess (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  At least one instance of the Id-ad-caIssuers accessMethod (accessMethod = 1.3.6.1.5.5.7.48.2) must be publicly accessible on the Internet and the artifacts served shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]
 
-c. authorityInformationAccess (required)
+**d. basicConstraints (required)**
+**Required/Optional:** Required   
+This extension SHALL be present and SHALL be marked critical. The cA field SHALL be set true. The pathLenConstraint field SHALL NOT be present.
 
-- This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  At least one instance of the Id-ad-caIssuers accessMethod (accessMethod = 1.3.6.1.5.5.7.48.2) must be publicly accessible on the Internet and the artifacts served shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]
+**e. keyUsage (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present and SHALL be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 
-d. basicConstraints (required)
+**f. nameConstraints (required)**
+**Required/Optional:** Required  
+This extension SHALL be present.  This extension SHALL be marked critical. See section 7.1.5.
 
-- This extension SHALL be present and SHALL be marked critical. The cA field SHALL be set true. The pathLenConstraint field SHALL NOT be present.
+**g. extkeyUsage (required)**
+**Required/Optional:** Required   
+This extension SHALL be present.  This extension SHALL be marked non-critical.
 
-e. keyUsage (required)
+All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
 
-- This extension SHALL be present and SHALL be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
 
-f. nameConstraints (required)
-
-- This extension SHALL be present.  This extension SHALL be marked critical. See section 7.1.5.
-
-g. extkeyUsage (required)
-
-- This extension SHALL be present.  This extension SHALL be marked non-critical.
-
-- All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
-
-- Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
-
-h. Subject Information / Subject Distinguished Name (required)
-
-- See Section 7.1.4.3.1
+**h. Subject Information / Subject Distinguished Name (required)**  
+**Required/Optional:** Required  
+See Section 7.1.4.3.1
 
 #### 7.1.2.3 Subscriber Certificate
-a. certificatePolicies (required)
+**a. certificatePolicies (required)**
+**Required/Optional:** Required  
+This extension SHALL be present and SHOULD NOT be marked critical.
 
-- This extension SHALL be present and SHOULD NOT be marked critical.
+**certificatePolicies:policyIdentifier (required)**  
+**Required/Optional:** Required  
+A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
 
-    *   certificatePolicies:policyIdentifier (Required)
+**certificatePolicies:policyQualifiers:policyQualifierId (optional)**
+**Required/Optional:** Optional  
+The extension SHOULD be present and is Recommended.  
+  - id-qt 1 [RFC 5280].
 
-        A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
+**certificatePolicies:policyQualifiers:qualifier:cPSuri (optional)**  
+**Required/Optional:** Optional  
+HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
-        The following extensions MAY be present:
+**b. cRLDistributionPoints (required)**
+**Required/Optional:** Required   
+This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's CRL service.
 
-        *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
+**c. authorityInformationAccess (required)**  
+**Required/Optional:** Required   
+This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 
-            *   id-qt 1 [RFC 5280].
+**d. basicConstraints (required)**
+**Required/Optional:** Required  
+This extension SHALL be present. The cA field SHALL NOT be true.
 
-        *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
+**e. keyUsage (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present and SHALL be marked critical.  
 
-            HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
+Subscriber certificates used for server authentication SHALL include digitalSignature, and MAY include keyEncipherment and / or keyAgreement.
 
-b. cRLDistributionPoints (required)
+**f. extKeyUsage (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present. It SHALL NOT be marked critical.
 
-- This extension SHALL be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's CRL service.
+Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values SHALL be present. id-kp-emailProtection [RFC5280] and anyEKU SHALL NOT be present.  
 
-c. authorityInformationAccess (required)
-
-    This extension SHALL be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
-
-d. basicConstraints (required)
-
-    This extension SHALL be present. The cA field MUST NOT be true.
-
-e. keyUsage (required)
-    This extension SHALL be present and SHALL be marked critical.
-
-    Subscriber certificates used for server authentication SHALL include digitalSignature, and MAY include keyEncipherment and / or keyAgreement.
-
-f. extKeyUsage (required)
-    This extension SHALL be present. It SHALL NOT be marked critical.
-
-    Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values SHALL be present. id-kp-emailProtection [RFC5280] and anyEKU SHALL NOT be present.
-
-    Other values SHOULD NOT be present. Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
+Other values SHOULD NOT be present. Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
 
 
 #### 7.1.2.4 All Certificates
@@ -1777,16 +1784,15 @@ All other fields and extensions SHALL be set in accordance with RFC 5280. The CA
 
 CAs SHALL NOT issue a Certificate with:
 
-a. Extensions that do not apply in the context of the public Internet (such as an extendedKeyUsage value for a service that is only valid in the context of a privately managed network), unless:
-
-    i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
-    ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
+a. Extensions that do not apply in the context of the public Internet (such as an extendedKeyUsage value for a service that is only valid in the context of a privately managed network), unless:  
+i. such value falls within an OID arc for which the Applicant demonstrates ownership, or  
+ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
 
 
 b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including extendedKeyUsage value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
 
 #### 7.1.2.5 Application of RFC 5280
-For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under these Baseline Requirements.
+For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under this Certificate Policy and the CAB Forum Baseline Requirements.
 
 ### 7.1.3 Algorithm object identifiers
 CAs SHALL NOT issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
@@ -1807,7 +1813,7 @@ CAs SHALL NOT include a Domain Name in a Subject attribute except as specified i
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
 **Certificate Field:** extensions:subjectAltName  
-**Required/Optional:** Required  
+**Required/Optional/Prohibited:** Required  
 **Contents:** This extension MUST contain at least one entry. Each entry MUST be a dNSName containing the Fully-Qualified Domain Name of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or has been granted the right to use it by the Domain Name Registrant, as appropriate.  This extension SHALL NOT include IP Address.  This exentsion SHALL NOT include any Internal Name values.  
 
 Wildcard FQDNs are permitted.
@@ -1833,7 +1839,7 @@ e. **Certificate Field:** subject:localityName (OID: 2.5.4.7)
 f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)  
 **Required/Optional/Prohibited:**  
   Required if subject:organizationName is present.  
-  Prohibited if the subject:organizationName is absent.
+  Prohibited if the subject:organizationName is absent.  
 **Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. The subject:stateOrProvinceName field SHALL contain District of Columbia.  
 
 g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)  
@@ -1842,7 +1848,7 @@ g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)
 h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)  
 **Required/Optional/Prohibited:**
 Required if subject:organizationName is present.  
-Optional if subject:organizationName is absent.
+Optional if subject:organizationName is absent.  
 **Contents:** If present, the subject:countryName SHALL contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
 
 i. **Certificate Field:** subject:organizationalUnitName  
@@ -1921,13 +1927,13 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with this Policy as follows:
+The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with the CAB Forum Baseline Requirements as follows:
 
 - Domain Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
   - if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
-If the Certificate	asserts	the	policy identifier	of 2.23.140.1.2.1, then it SHALL NOT	include	organizationName,	givenName, surname, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.	 
+If the Certificate asserts	the	policy identifier	of 2.23.140.1.2.1, then it SHALL NOT	include	organizationName,	givenName, surname, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.	 
 
 - Organization Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2),
@@ -1947,16 +1953,16 @@ All Subordinate CA's SHALL be an Affiliate as defined in this CP.
 A Certificate issued to a Subordinate CA:
 
 1. SHALL include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
-2. SHALL include the an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
+2. SHALL include an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
 
-A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
+A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with the CAB Forum Baseline Requirements are issued and managed in accordance with the CAB Forum Baseline Requirements. A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with this Certificate Policy are issued and managed in accordance with this Certificate Policy.
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber SHALL contain one policy identifier, defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Policy. CAs complying with these Requirements SHALL also assert one of the CA/B Forum Reserved Policy OIDs in such Certificates.
+A Certificate issued to a Subscriber SHALL contain one policy identifier, defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Certificate Policy. CAs SHALL also assert one of the CA/B Forum Reserved Policy OIDs in such Certificates.
 
-Subscriber certificates SHALL contain certificate policy identifier(s) for either domain validated policies or organization validated policies but SHALL NOT assert certificate policy identifiers for both.   
+Subscriber certificates SHALL contain certificate policy identifier(s) for either domain validated policies or organization validated policies but SHALL NOT assert certificate policy identifiers for both.
 
-The issuing CA SHALL document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
+The issuing CA SHALL document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this Certificate Policy.
 
 ### 7.1.7 Usage of Policy Constraints extension
 Subordinate CAs MAY assert policy constraints in the CA certificates.
@@ -1973,9 +1979,9 @@ Certificates issued under this policy SHALL NOT contain a critical certificate p
 The CAs SHALL issue X.509 Version two (2) CRLs.
 
 ### 7.2.2 CRL and CRL entry extensions
-a. reasonCode (required)
-
-    This entry extension SHALL be present. The reasonCode value SHALL be populated in accordance with Section 4.9.1 for revocation reasons encompassing Key Compromise (reasonCode: keyCompromise) or CA Compromise (reasonCode: cACompromise).
+**a. reasonCode (required)**  
+**Required/Optional:** Required  
+This entry extension SHALL be present. The reasonCode value SHALL be populated in accordance with Section 4.9.1 for revocation reasons encompassing Key Compromise (reasonCode: keyCompromise) or CA Compromise (reasonCode: cACompromise).
 
 ## 7.3 OCSP profile
 
@@ -1985,45 +1991,48 @@ OCSP Responders operated under this policy shall use OCSP version 1.
 ### 7.3.2 OCSP extensions
 This section specifies the additional requirements for Certificate contents for Online Certificate Status Protocol certificates, and extensions for OCSP status server extension and responses.
 
-a. certificatePolicies (required)
+**a. certificatePolicies (required)**
+**Required/Optional:** Required  
 
-    This extension SHALL be present and SHALL NOT be marked critical.
+This extension SHALL be present and SHALL NOT be marked critical.
 
-    *   certificatePolicies:policyIdentifier (Required)
+**certificatePolicies:policyIdentifier (required)**  
+**Required/Optional:** Required  
+The certificate SHALL include at least one certificate policy OID defined or listed in Section 1.2 of this CP and SHALL include all the certificate policy OIDs for all certificates issued by the Issuing CA and covered by the OCSP responses
 
-        The certificate SHALL include at least one certificate policy OID defined or listed in Section 1.2 of this CP and SHALL include all the certificate policy OIDs for all certificates issued by the Issuing CA and covered by the OCSP responses
 
-        The following extensions MAY be present:
+**certificatePolicies:policyQualifiers:policyQualifierId (optional)**  
+**Required/Optional:** Optional  
+The extension SHOULD be present and is Recommended.  
+  - id-qt 1 [RFC 5280].
 
-        *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
+**certificatePolicies:policyQualifiers:qualifier:cPSuri (optional)**  
+**Required/Optional:** Optional  
+HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
-            *   id-qt 1 [RFC 5280].
+**b. authorityInformationAccess (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 
-        *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
+**c. basicConstraints**  
+**Required/Optional/Prohibited:** Prohibited  
+This extension SHALL NOT be present.
 
-            HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
+**d. keyUsage (required)**  
+**Required/Optional:** Required  
+This extension SHALL be present. It SHALL be marked critical.
 
-b. authorityInformationAccess (required)
+Certificates used for signing certificate status services (online certificate status protocol) SHALL include the value digitalSignature.
 
-    This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
+Other values SHALL NOT be present.
 
-c. basicConstraints
+**e. extKeyUsage (required)**  
+**Required/Optional:** Required
+This extension SHALL be present. It SHALL be marked critical.  
 
-    This extension SHALL NOT be present.
+It SHALL contain the value id-kp-OCSPSigning {1 3 6 1 5 5 7 3 9}.  
 
-d. keyUsage (required)
-    This extension SHALL be present. It SHALL be marked critical.
-
-    Certificates used for signing certificate status services (online certificate status protocol) SHALL include the value digitalSignature.
-
-    Other values SHALL NOT be present.
-
-e. extKeyUsage (required)
-    This extension SHALL be present. It SHALL be marked critical.
-
-    It SHALL contain the value id-kp-OCSPSigning {1 3 6 1 5 5 7 3 9}.
-
-    Other values SHALL NOT be present.
+Other values SHALL NOT be present.  
 
 # 8. COMPLIANCE AUDIT AND OTHER ASSESSMENTS
 The CA SHALL at all times:
@@ -2089,6 +2098,7 @@ There is no Delegated Third Party allowed under this Certificate Policy.
 
 
 # 9. OTHER BUSINESS AND LEGAL MATTERS
+{% include alert-info.html content="This section contains the CA / Browser Forum Baseline Requirements and has not been modified.  Additions to Business and Legal Matters to address Application Trusted Root Program requirements and U.S. Government provisions to meet public law requirements are under review and not included in this draft." %}
 
 ## 9.1 Fees
 

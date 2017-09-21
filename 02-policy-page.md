@@ -20,8 +20,6 @@ subnav:
     href: "#7-certificate-crl-and-ocsp-profiles"
   - text: 8. Compliance Audit and Other Assessments
     href: "#8-compliance-audit-and-other-assessments"
-  - text: 9. Other Business and Legal Matters
-    href: "#9-other-business-and-legal-matters"
 ---
 
 <!-- include fpki-document-header.html -->
