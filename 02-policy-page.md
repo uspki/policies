@@ -1,6 +1,5 @@
 ---
 layout: base
-title: Certificate Policy
 permalink: /certificatepolicy/
 
 subnav:
@@ -22,7 +21,7 @@ subnav:
     href: "#8-compliance-audit-and-other-assessments"
 ---
 
-<!-- include fpki-document-header.html -->
+{% include fpki-document-header.html %}
 <!-- TODO fix markdown -->
 
 {% include_relative certificate-policy.md %}

@@ -20,7 +20,6 @@ subnav:
 ---
 {% capture certprofile %}{{ site.repo_url }}/certificate-profile-root-CA.md{% endcapture %}
 
-# Certificate Profiles
 These profiles are in draft and will be added as an Appendix to the Certificate Policy.  In cases where the profiles and Section 7 of the Certificate Policy are in conflict, Section 7 takes precedence and is authoritative.
 
 Four certificate profiles covered by this Certificate Policy are defined.  
