@@ -1,6 +1,5 @@
 ---
 layout: base
-title: Certificate Policy
 permalink: /certificatepolicy/
 
 subnav:
@@ -24,7 +23,7 @@ subnav:
     href: "#9-other-business-and-legal-matters"
 ---
 
-<!-- include fpki-document-header.html -->
+{% include fpki-document-header.html %}
 <!-- TODO fix markdown -->
 
 {% include_relative certificate-policy.md %}
