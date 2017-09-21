@@ -185,7 +185,13 @@ hr {
  * Contain overflow in all browsers.
  */
 pre {
-  overflow: auto; }
+  overflow: auto;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;
+  max-width: 56em; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
@@ -3580,10 +3586,12 @@ input.usa-input-medium {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0.2em;
-    padding-bottom: 0px; }
+    padding-bottom: 0px;
+    max-width: 21em !important; }
   .main-content h2 {
     margin-top: 0em;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+    max-width: 26em !important; }
   .main-content h2 {
     color: #205493; }
 
