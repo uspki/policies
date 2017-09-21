@@ -1,24 +1,31 @@
 # Overview
-This repository is for the open development of the:
+This repository is for the open development of an x509 Certificate Policy for the US Federal Government.  This repository supports the efforts to establish a new Public Trust Device Root and an issuing certification authority infrastructure focused on .gov and .mil websites.
 
-* Certificate Policy, and
-* Certification Practice Statement (non-redacted portions)
-
-for the US Federal Government and our efforts on a new Public Trust Root and Issuing CA infrastructure.
+For information on US Federal Executive Branch policy for websites and HTTPS, please review the Memorandum 15-13 HTTPS Everywhere documentation. (https://https.cio.gov).
 
 ## Scope
-The scope of the effort will include:
+The scope of the effort includes:
 
 * TLS certificates only
-  * To continue support for Memorandum 15-13 HTTPS Everywhere (https://https.cio.gov)
-  * For webservices on the Internet
+* Webservices on the Internet
 * Certificate Transparency (CT)
-  * CT logging and support
-* Name Constraints
-  * Issuing certificates for US government properties
-  * Name constraints will include .gov and .mil at a minimum
-* Name Redaction
-  * Allowing for name redaction is not expected to be included
+* No Name Redaction
+* Name Constraints for .gov and .mil
+
+## Repository organization
+This repository supports the development and version control for the Certificate Policy and Certificate Profiles, and the distribution of the policy and profiles digitally on a website.  The Certificate Policy and Certificate Profiles are located in this top folder.  All other folders contain information for the website.  
+
+- [Certificate Policy](certificate-policy.md)
+
+Certificate profiles:
+- [Self-Signed Root CA Certificate Profile](certificate-profile-root-CA.md)
+- [Intermediate or Subordinate CA Certificate Profile](certificate-profile-subordinate-CA.md)
+- [Server Authentication Certificate Profile](certificate-profile-server-authentication.md)
+- [Delegated OCSP Responder Certificate Profile](certificate-profile-OCSP-responder.md)
+
+Profiles for the OCSP _Responses_ and the Certificate Revocation Lists.
+- [OCSP Response Profile](ocsp-response-profile.md)
+- [CRL Profile](crl-profile.md)
 
 ## Contributing
 
@@ -34,7 +41,7 @@ Please contact eric.mill at gsa dot gov or lachelle.levan at gsa dot gov with qu
 
 ### Public domain
 
-This work is based on the CA/Browser Forum Baseline Requirements v1.4.1,  which is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+This work is based on the CA/Browser Forum Baseline Requirements,  which is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 All contributions to this project waive copyright and related rights in the work worldwide through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/). Any original contributions by United States government employees are automatically in the public domain within the United States.
 
