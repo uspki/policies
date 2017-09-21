@@ -13,6 +13,7 @@ html {
  */
 html {
   font-family: sans-serif;
+  background-color: #f1f1f1;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -184,7 +185,13 @@ hr {
  * Contain overflow in all browsers.
  */
 pre {
-  overflow: auto; }
+  overflow: auto;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;
+  max-width: 56em; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
@@ -1446,7 +1453,10 @@ p + ol {
 table {
   border-spacing: 0;
   margin: 2em 0;
-  min-width: 100%; }
+  /* min-width: 100%; */
+  max-width: 56em;
+  display: block;
+  overflow: auto; }
   table thead th,
   table thead td {
     background-color: #f1f1f1; }
@@ -2186,7 +2196,10 @@ dfn {
   padding-top: 2rem; }
 
 .usa-footer-primary-section {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  min-height:150px;
+  padding: 20px 0 0 93px;
+  margin-top: 20px; }
   .usa-footer-primary-section .usa-footer-primary-content {
     padding-left: 2.5rem;
     padding-right: 2.5rem; }
@@ -3524,8 +3537,8 @@ input.usa-input-medium {
     .sidenav {
       display: block;
       float: left;
-      height: 100vh;
-      margin-bottom: 525px;
+      /* height: 100vh; */
+      margin-bottom: 150px;
       margin-top: 0px;
       padding-right: 1rem;
       padding-left: 3rem;
@@ -3554,11 +3567,12 @@ input.usa-input-medium {
   .main-content p, .main-content li {
     line-height: 1.7; }
   .main-content p, .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6, .main-content ul, .main-content ol {
-    max-width: 66ch !important; }
+    max-width: 86ch !important; }
   @media screen and (min-width: 951px) {
     .main-content {
       width: calc(100% - 250px);
-      top: 0; } }
+      top: 0;
+      min-height: 220px;} }
   .lt-ie9 .main-content {
     width: 75%; }
   @media screen and (max-width: 481px) {
@@ -3572,10 +3586,12 @@ input.usa-input-medium {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0.2em;
-    padding-bottom: 0px; }
+    padding-bottom: 0px;
+    max-width: 21em !important; }
   .main-content h2 {
     margin-top: 0em;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+    max-width: 26em !important; }
   .main-content h2 {
     color: #205493; }
 
