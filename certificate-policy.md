@@ -1,24 +1,24 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure and the issuance and management of U.S. Federal Publicly Trusted Device Certificates used for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
+This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure, and the issuance and management of U.S. Federal Publicly Trusted Device Certificates.  The certificates under this policy are for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
 
 This document serves two purposes:  
 
 - to specify the Federal Public Device PKI Certificate Policy and requirements, and
 - to provide requirements for what each Certification Authority must address in its Certification Practices Statement
 
-This CP is for a hierarchical Public Key Infrastructure. This hierarchical Public Key Infrastructure is restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the Federal Public Device PKI in this document.  
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Device PKI** in this document.  
 
-This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.  
+This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  The requirements are to be flowed down from the Root Certification Authority through all Subordinate Certification Authorities.  
 
-The Federal Public Device PKI conforms to the \<INSERT VERSION> of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government and copyright and related rights in the work are waived.
+The Federal Public Device PKI conforms to the \<INSERT VERSION> of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
 
 Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
 
-The terms and provisions of these certificate policies shall be interpreted under and governed by applicable Federal law.
+The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law.
 
 The following Certification Authorities are covered under this CP:
 
@@ -31,7 +31,7 @@ The following Certification Authorities are covered under this CP:
 ## 1.2 Document name and identification
 This is the Federal Public Device PKI Certificate Policy.
 
-The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP as follows:
+The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP:
 
 | **OID Arc** | **Owner** | **OID** | **Description** |
 | --- | --- | --- | --- |
@@ -59,21 +59,23 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a sub-council comprised of U.S. Federal Government Agency representatives and is chartered by the U.S. Federal CIO Council.  The FPKIPA manages this policy and represents the interests of the  U.S. Federal CIOs and CISOs.
 
 ### 1.3.1 Certification Authorities
-The Certification Authorities operated under this policy provide services to U.S. Federal Government entities which may be part of the Executive Branch, Legislative Branch and Judicial branches of the Federal Government. The services are not provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities.
+The Certification Authorities operated under this policy provide services to U.S. Federal Government entities which may be part of the Executive Branch, Legislative Branch and Judicial Branch of the Federal Government. The services are not provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities.
 
 Certification Authority (CA) is defined in Section 1.6.
 
 ### 1.3.2 Registration Authorities
 This Certificate Policy is focused on promoting automation, improving efficiencies, supporting operational security, and establishing trust in the U.S. Government and the digital services operated by or on behalf of U.S. Federal Government entities.  The widespread adoption of practices and protocols to support automation in certificate management have been foundational to increases in the deployment of secure protocols for webservices.
 
-Registration Authority system functions shall be the responsibility of the Certificate Authority.  While this policy promotes automation for the Certification Authorities, there still exists a need to allow a delegation of responsibility to U.S. Federal Government entities that form part of the U.S. Federal Government enterprise.  This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certificate Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities.  
+While this policy promotes automation for the Certification Authorities, there still exists a need to allow a delegation of responsibility to U.S. Federal Government entities that form part of the U.S. Federal Government enterprise.  
+
+This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certificate Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities as a role.  Registration Authority system functions shall be the responsibility of the Certificate Authority.
 
 A CA MAY designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government entity.  The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
 1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace(s) as registered in the .GOV (DotGov) and .MIL (DotMil) gTLDs Domain Name Registrars.  
 2. The CA SHOULD confirm that the requested Fully-Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the DotGov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173.
 
-The CA SHALL impose these limitations through an agreement with the Authorizing Authority of the Domain Name as defined under United States Code (U.S.C.) 41 CFR Part 102-173. The CA SHALL monitor compliance by the Enterprise RA and institute technical controls, and SHOULD use both audits and alternate analytics based methods such as monitoring of Certificate Transparency Log(s) and services, to ensure compliance.
+The CA SHALL impose these limitations through an agreement with the Authorizing Authority of the Domain Name as defined under United States Code (U.S.C.) 41 CFR Part 102-173. The CA SHALL monitor compliance by the Enterprise RA and institute technical controls.  The CA SHOULD use both audits and analytics based methods such as monitoring of Certificate Transparency Log(s) and services to ensure compliance.
 
 Delegated Third Parties are not allowed under this policy.
 
@@ -398,16 +400,16 @@ The review and update shall include any changes needed to address:
 - US Federal Government mission needs and changes to procedures to support the missions
 - CAB Forum Baseline Requirements updates
 
-If changes to CAB Forum Baseline requirements are made and have applicable requirements earlier which required compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and CA CPS are updated.  
+If changes to CAB Forum Baseline requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
 
-Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement that describes in detail how the CA implements the requirements of this CP.
+Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement (CPS) that describes in detail how the CA implements the requirements of this CP.
 
 An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record.
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
-The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA SHALL also document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
+The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA SHALL document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
 
 ## 2.2 Publication of information
 The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
@@ -1691,46 +1693,45 @@ See Section 7.1.4.3.1
 #### 7.1.2.2 Subordinate CA Certificate
 a. certificatePolicies (required)
 
-    This extension SHALL be present and SHOULD NOT be marked critical.
-
-    certificatePolicies:policyIdentifier (Required)
+- This extension SHALL be present and SHOULD NOT be marked critical.
+- certificatePolicies:policyIdentifier (required)
 
 b. cRLDistributionPoints (required)
 
-    This extension SHALL be present and SHALL NOT be marked critical. It SHALL contain the HTTP URL of the CA's CRL service.  The HTTP URL included must be publicly accessible on the Internet.   
+- This extension SHALL be present and SHALL NOT be marked critical. It SHALL contain the HTTP URL of the CA's CRL service.  The HTTP URL included must be publicly accessible on the Internet.   
 
 c. authorityInformationAccess (required)
 
-    This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  At least one instance of the Id-ad-caIssuers accessMethod (accessMethod = 1.3.6.1.5.5.7.48.2) must be publicly accessible on the Internet and the artifacts served shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]
+- This extension SHALL be present. It SHALL NOT be marked critical, and it SHALL contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHALL also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  At least one instance of the Id-ad-caIssuers accessMethod (accessMethod = 1.3.6.1.5.5.7.48.2) must be publicly accessible on the Internet and the artifacts served shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]
 
 d. basicConstraints (required)
 
-    This extension SHALL be present and SHALL be marked critical. The cA field SHALL be set true. The pathLenConstraint field SHALL NOT be present.
+- This extension SHALL be present and SHALL be marked critical. The cA field SHALL be set true. The pathLenConstraint field SHALL NOT be present.
 
 e. keyUsage (required)
 
-    This extension SHALL be present and SHALL be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+- This extension SHALL be present and SHALL be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 
 f. nameConstraints (required)
 
-    This extension SHALL be present.  This extension SHALL be marked critical. See section 7.1.5.
+- This extension SHALL be present.  This extension SHALL be marked critical. See section 7.1.5.
 
 g. extkeyUsage (required)
 
-    This extension SHALL be present.  This extension SHALL be marked non-critical.
+- This extension SHALL be present.  This extension SHALL be marked non-critical.
 
-    All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
+- All Subordinate CA Certificates are to be Technically constrained in accordance with section 7.1.5. The value id-kp-serverAuth [RFC5280] MUST be present, and the id-kp-clientAuth [RFC5280] MAY be present.
 
-    Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
+- Other values MAY be present consistent with use for server authentication, with approval by the FPKI PA.
 
 h. Subject Information / Subject Distinguished Name (required)
 
-    See Section 7.1.4.3.1
+- See Section 7.1.4.3.1
 
 #### 7.1.2.3 Subscriber Certificate
 a. certificatePolicies (required)
 
-    This extension SHALL be present and SHOULD NOT be marked critical.
+- This extension SHALL be present and SHOULD NOT be marked critical.
 
     *   certificatePolicies:policyIdentifier (Required)
 
@@ -1748,7 +1749,7 @@ a. certificatePolicies (required)
 
 b. cRLDistributionPoints (required)
 
-    This extension SHALL be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's CRL service.
+- This extension SHALL be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's CRL service.
 
 c. authorityInformationAccess (required)
 
