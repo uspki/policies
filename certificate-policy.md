@@ -12,7 +12,7 @@ This policy is for a hierarchical Public Key Infrastructure restricted to servic
 
 This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  The requirements are to be flowed down from the Root Certification Authority through all Subordinate Certification Authorities.  
 
-The Federal Public Device PKI conforms to the \<INSERT VERSION> of the guidelines adopted by the Certification Authority/Browser Forum (“CAB Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
+The Federal Public Device PKI conforms to the Version 1.4.9 of the guidelines adopted by the Certification Authority/Browser Forum (“CA/Browser Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
 
 Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
@@ -110,7 +110,7 @@ The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible f
 * Approving the CPS for each CA that issues certificates under this policy, and
 * Approving the compliance audit report for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
-* Ensuring compliance with CAB Forum Baseline Requirements, and
+* Ensuring compliance with CA/Browser Forum Baseline Requirements, and
 * Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
 
 ### 1.5.2 Contact Person
@@ -393,18 +393,18 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The Federal PKI Policy Authority will review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
+The Federal PKI Policy Authority will review and update this Certificate Policy at least every 365 days to ensure compliance with CA/Browser Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
 
 The review and update shall include any changes needed to address:
 
 - US Federal Government mission needs and changes to procedures to support the missions
-- CAB Forum Baseline Requirements updates
+- CA/Browser Forum Forum Baseline Requirements updates
 
-If changes to CAB Forum Baseline requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
+If changes to CA/Browser Forum Forum Baseline requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
 
 Each CA SHALL develop, implement, enforce, and update at least every 365 days a Certification Practice Statement (CPS) that describes in detail how the CA implements the requirements of this CP.
 
-An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record.
+An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CA/Browser Forum Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record.
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
@@ -490,7 +490,7 @@ If the Subject Identity Information is to include the name of our organization (
 
 The CA MAY use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
 
-Practice Note: U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
+_Practice Note:_ U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) SHOULD suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
 
 #### 3.2.2.2 DBA/Tradename
 Subject Identity Information SHALL NOT include a DBA or tradename.
@@ -573,7 +573,7 @@ Not allowed as of the Effective Date of this Certificate Policy. IP Addresses ar
 
 
 #### 3.2.2.6 Wildcard Domain Validation
-Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA SHALL establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the DotGov and DotMil suffixes (e.g. *.gov, *.mil). If a wildcard would fall within the label immediately to the left of the DotGov and DotMil suffixes (e.g. *.gov, *.mil), CAs SHALL refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire gTLDs for DotGov and / or DotMil.
+Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA SHALL establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the DotGov and DotMil suffixes (e.g. \*.gov, \*.mil). If a wildcard would fall within the label immediately to the left of the DotGov and DotMil suffixes (e.g. \*.gov, \*.mil), CAs SHALL refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire gTLDs for DotGov and / or DotMil.
 
 Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates SHALL require a Domain Authorization Document (3.2.2.4.5) by the Domain Contact authorizing the issuing of a certificate that includes a wildcard domain.  
 
@@ -1792,7 +1792,7 @@ ii. the Applicant can otherwise demonstrate the right to assert the data in a pu
 b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including extendedKeyUsage value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
 
 #### 7.1.2.5 Application of RFC 5280
-For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under this Certificate Policy and the CAB Forum Baseline Requirements.
+For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under this Certificate Policy and the CA/Browser Forum Baseline Requirements.
 
 ### 7.1.3 Algorithm object identifiers
 CAs SHALL NOT issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
@@ -1927,7 +1927,7 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with the CAB Forum Baseline Requirements as follows:
+The following Certificate Policy identifiers are registered under the CA/Browser Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with the CA/Browser Forum Baseline Requirements as follows:
 
 - Domain Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
@@ -1941,7 +1941,7 @@ If the Certificate asserts	the	policy identifier	of 2.23.140.1.2.1, then it SHAL
 
 If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it SHALL also include organizationName, stateorProvinceName and countryName in the Subject field in accordance with Section 7.1.4.2.2.  All information shall be verified in accordance with Section 3.2.2.1.
 
-Certificates under this policy SHALL NOT assert the Individual Validated Certificate Policy identifiers reserved by the CAB Forum.
+Certificates under this policy SHALL NOT assert the Individual Validated Certificate Policy identifiers reserved by the CA/Browser Forum.
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)
 
 #### 7.1.6.2. Root CA Certificates
@@ -1952,17 +1952,17 @@ All Subordinate CA's SHALL be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA:
 
-1. SHALL include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
+1. SHALL include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CA/Browser Forum Baseline Requirements, and
 2. SHALL include an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
 
-A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with the CAB Forum Baseline Requirements are issued and managed in accordance with the CAB Forum Baseline Requirements. A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with this Certificate Policy are issued and managed in accordance with this Certificate Policy.
+A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with the CA/Browser Forum Baseline Requirements are issued and managed in accordance with the CA/Browser Forum Baseline Requirements. A Subordinate CA SHALL represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with this Certificate Policy are issued and managed in accordance with this Certificate Policy.
 
 #### 7.1.6.4 Subscriber Certificates
 A Certificate issued to a Subscriber SHALL contain one policy identifier, defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Certificate Policy. CAs SHALL also assert one of the CA/B Forum Reserved Policy OIDs in such Certificates.
 
 Subscriber certificates SHALL contain certificate policy identifier(s) for either domain validated policies or organization validated policies but SHALL NOT assert certificate policy identifiers for both.
 
-The issuing CA SHALL document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this Certificate Policy.
+The issuing CA SHALL document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CA/Browser Forum Baseline Requirements and this Certificate Policy.
 
 ### 7.1.7 Usage of Policy Constraints extension
 Subordinate CAs MAY assert policy constraints in the CA certificates.

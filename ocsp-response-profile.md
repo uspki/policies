@@ -8,7 +8,7 @@ OCSP Responders under this profile are expected operate using the Static Respons
 | Version | V1 (0x0) |
 | Responder ID | By Key &nbsp;&nbsp;*(Identical to subject key identifier in Responder Certificate)* |
 | Produced At | The time at which the response was encoded and signed |
-| Responses | Sequence of one or more [Single Response](#Single-Response) as further specified below
+| Responses | Sequence of one or more [Single Response](#single-response) as further specified below
 | Signature Algorithm | sha256 WithRSAEncryption {1 2 840 113549 1 1 11} |
 | Certificates | Most recent certificate issued to the OCSP Responder by the CA identified by the issuerNameHash and issuerKeyHash in the Single Responses included in the response |
 
@@ -16,7 +16,7 @@ OCSP Responders under this profile are expected operate using the Static Respons
 | :-------- | :-----: | :-----: | :------------------------------- |
 | Nonce | Not Supported | N/A | Nonce is not supported |
 
-###Single Response
+### Single Response
 
 | **Field** | **Value** |
 | :-------- | :------------------------------- |
@@ -24,4 +24,4 @@ OCSP Responders under this profile are expected operate using the Static Respons
 | Certificate Status | Determined by CRL<br>If revoked, revocationReason is included if present on the CRL |
 | This Update | Identical to the thisUpdate of the CRL used for determining revocation status |
 | Next Update | Before or identical to the nextUpdate field of the CRL used for determining revocation status |
-| Single Extensions | OPTIONAL: &nbsp;Transparency Information X.509v3 Extension {1 3 101 75} |
+| Single Extensions | Optional: <br>Transparency Information X.509v3 Extension {1 3 101 75} |

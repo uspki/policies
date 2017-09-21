@@ -1,6 +1,5 @@
 ---
 layout: base
-title: Certificate Profiles
 permalink: /certificateprofiles/
 
 subnav:
@@ -18,9 +17,8 @@ subnav:
     href: "#crl-profile"
 
 ---
-{% capture certprofile %}{{ site.repo_url }}/certificate-profile-root-CA.md{% endcapture %}
-
-These profiles are in draft and will be added as an Appendix to the Certificate Policy.  In cases where the profiles and Section 7 of the Certificate Policy are in conflict, Section 7 takes precedence and is authoritative.
+## Certificate Profiles
+This section specifies the X.509 version 3 certificate and version 2 certificate revocation list (CRL) profiles for the Federal Public Trust Device PKI Certificate Policy.  In cases where the profiles and Section 7 of the Certificate Policy are in conflict, Section 7 takes precedence and is authoritative.
 
 Four certificate profiles covered by this Certificate Policy are defined.  
 
