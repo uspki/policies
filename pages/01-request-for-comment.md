@@ -14,7 +14,7 @@ Comments received will be publicly posted [to this repository]({{ site.repo }}/i
 1. Certificate Transparency is required in the proposed Certificate Policy and architecture.  
   - Are the requirements and policy statements for certificate transparency clear and accurate?
 
-2. The draft [CA / Browser Forum Baseline Requirements Version 1.5.2](https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.5.2-redlined.pdf){:target="_blank"} _re-introduces_ the additional seven methods for Section 3.2.2.4 - Validation of Domain Authorization or Control. Adopting automation and reducing the direct and indirect costs of manual procedures is _one_ our goals.
+2. The draft [CA / Browser Forum Baseline Requirements Version 1.5.2](https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.5.2-redlined.pdf){:target="_blank"} _re-introduces_ the additional seven methods for Section 3.2.2.4 - Validation of Domain Authorization or Control. Adopting automation and reducing the direct and indirect costs of manual procedures is _one_ of our goals.
   - Which of the additional seven additional methods should be considered for the Federal Public Device PKI Certificate Policy and CAs?
   - Which of the additional seven additional methods should _not_ be considered for the Federal Public Device PKI Certificate Policy and CAs?
 
