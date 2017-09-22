@@ -5,9 +5,9 @@ title: Background
 permalink: /
 ---
 
-Securing Federal Government web services and delivering information to our consumers and partners in a trusted and privacy-enhancing manner is a priority for Federal Government teams across all our missions.
+Securing Federal Government web services, and delivering information to our consumers and partners in a trusted and privacy-enhancing manner, is a priority for Federal Government teams across all our missions.
 
- - [Office of Management and Budget M-15-13, “A Policy to Require Secure Connections across Federal Websites and Web Services”](https://https.cio.gov/){:target="_blank"}
+ - Office of Management and Budget M-15-13, [“A Policy to Require Secure Connections across Federal Websites and Web Services”](https://https.cio.gov/){:target="_blank"}
 
 Federal Government teams are working to ensure our missions have secure, cost-effective, and stable _services_ to secure these web services.   We have developed this proposed [Certificate Policy]({{site.baseurl}}/certificatepolicy) to address emerging Internet requirements and to support the establishment of a **new** Public Trust Device Public Key Infrastructure (PKI) for .mil and .gov websites.
 
@@ -38,12 +38,13 @@ This Certificate Policy was scoped to encompass:
 
 
 ## Relationship to Federal Public Key Infrastructure
-The U.S. Government currently manages the Federal Public Key Infrastructure, a trust framework of over one hundred (100) certification authorities used to issue and manage person identity and enterprise device identity certificates for U.S. Federal Government and mission partners. The current Federal Public Key Infrastructure (FPKI) is managed and operated as a _mesh_ public key infrastructure originally intended to establish trust across related communities of interest.
+The Federal Government currently manages the Federal Public Key Infrastructure, a trust framework of over one hundred (100) certification authorities used to issue and manage person identity and enterprise device identity certificates for Federal Government and mission partners. The current Federal Public Key Infrastructure (FPKI) is managed and operated as a _mesh_ public key infrastructure originally intended to establish trust across related communities of interest.
 
-Government teams recognized the need to create a _new_ Certificate Policy and proposed infrastructure focused on Internet PKI requirements.  This draft Certificate Policy and proposed infrastructure will not have cross-certificates with the existing Federal Public Key Infrastructure.  This draft Certificate Policy and proposed infrastructure is one step towards new services intended to support the mission needs, and:
+Government teams recognized the need to create a _new_ Certificate Policy and proposed infrastructure focused on Internet PKI requirements.  This draft Certificate Policy and proposed infrastructure will not have cross-certificates with the existing Federal Public Key Infrastructure.  This is one step towards new services intended to support the mission needs, and:
 
-- Remove dependencies between the certificate policies and infrastructures for person identity, government enterprise device identity, government code signing, government time stamping, and public trust (Internet) web services
-- Support automation for the missions
-- Improve customer experience and public transparency for US Government Internet Services
+- Remove dependencies between the certificate policies and infrastructures,
+- Clearly separate person identity, government enterprise device identity, government code signing, government time stamping, and public trust (Internet) web services,
+- Support automation for the missions, and
+- Improve customer experience and public transparency for Federal Government Internet Services.
 
 The Federal Public Key Infrastructure Policy Authority will maintain the governance and voting rights to the management of this draft Certificate Policy.   
