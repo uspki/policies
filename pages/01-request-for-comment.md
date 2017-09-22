@@ -3,11 +3,11 @@ layout: base
 title: Request for Comment
 permalink: /requestcomment/
 ---
-Comments should be submitted via **[this web form]({{ site.repo }}/issues/new){:target="_blank"}** (GitHub account required) or sent to: **[USPKI-ROOT@listserv.gsa.gov](mailto:USPKI-ROOT@listserv.gsa.gov)**.
+Comments should be submitted via **[this web form]({{ site.repo }}/issues/new){:target="_blank"}** (GitHub account required) or sent to: **[devicepki@gsa.gov](mailto:devicepki@gsa.gov)**.
 
 Comments received will be publicly posted [to this repository]({{ site.repo }}/issues){:target="_blank"} (along with any included names or affiliations), and comments will be accepted until **October 30, 2017**.
 
-{% include alert-info.html content="A Certificate Policy contains technical, operational, and legal terms intended for a particular audience of readers.  We recognize that a Certificate Policy written to comply with the required format may not incorporate plain language or promote ease of reading.  If you have questions or think the intent of any policy statements are not clear, please do not hesitate to add an issue or comment. Your comments may help us or others in the community improve all certificate policies and practices." %}
+{% include alert-info.html content="A Certificate Policy contains technical, operational, and legal terms intended for a particular audience of readers.  We recognize that a Certificate Policy may not incorporate plain language.  If you have questions or think the intent of any policy statement is not clear, please add an issue or comment. Your comments may help us improve all certificate policies and practices." %}
 
 ## Key Questions
 
@@ -15,8 +15,8 @@ Comments received will be publicly posted [to this repository]({{ site.repo }}/i
   - Are the requirements and policy statements for certificate transparency clear and accurate?
 
 2. The draft [CA / Browser Forum Baseline Requirements Version 1.5.2](https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.5.2-redlined.pdf){:target="_blank"} _re-introduces_ the additional seven methods for Section 3.2.2.4 - Validation of Domain Authorization or Control. Adopting automation and reducing the direct and indirect costs of manual procedures is _one_ of our goals.
-  - Which of the additional seven additional methods should be considered for the Federal Public Device PKI Certificate Policy and CAs?
-  - Which of the additional seven additional methods should _not_ be considered for the Federal Public Device PKI Certificate Policy and CAs?
+  - Which of the seven additional methods should be considered for the Federal Public Device PKI Certificate Policy and CAs?
+  - Which of the seven additional methods should _not_ be considered for the Federal Public Device PKI Certificate Policy and CAs?
 
 3.  The policy was developed for Federal Government and the operation of a new root and issuing certification authorities. This policy attempts to address Internet PKI requirements defined and governed by five (5) [communities](#references).
   - Are there requirements for transport layer security (TLS) certificates that we have missed?
