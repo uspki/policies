@@ -1,13 +1,13 @@
-title: Federal Device Public Trust PKI Certificate Policy (Draft)
-small_title: Federal Device Public Trust PKI
-smallest_title: Federal Device Public Trust PKI
-description: Certificate Policy for a proposed new Public Trust infrastructure for DotGov and DotMil websites.
+title: Federal Public Trust Device PKI Certificate Policy (Draft)
+small_title: Federal Public Trust Device PKI
+smallest_title: Federal Public Trust Device PKI
+description: Certificate Policy for a proposed new device public key infrastructure for the public trust of DotGov and DotMil websites.
 email: fpki@gsa.gov
 author:
     name: FICAM
 repo_url: https://github.com/uspki/policies
 baseurl: ''
-branch: federalist-pages
+branch: policy-pages
 # Federalist overwrites the site.branch value when deploying
 # the site.branch was used in dynamic link generation for objects including Edit Page
 # we want the dynamic links to send users to the staging branch.  New site variable to ensure Edit Page sends users to the correct branch for pull requests.

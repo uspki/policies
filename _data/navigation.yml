@@ -8,8 +8,6 @@ primary:
     href: /certificatepolicy/
   - text: "Certificate Profiles"
     href: /certificateprofiles/
-  - text: "Submit Comment"
-    href: /submitcomment/
 
 
 mobile:
@@ -21,8 +19,6 @@ mobile:
     href: /certificatepolicy/
   - text: "Certificate Profiles"
     href: /certificateprofiles/
-  - text: "Submit Comment"
-    href: /submitcomment/
 
 secondary:
   - text: "IDmanagement.gov"
