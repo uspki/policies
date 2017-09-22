@@ -13,7 +13,7 @@ branch: policy-pages
 # we want the dynamic links to send users to the staging branch.  New site variable to ensure Edit Page sends users to the correct branch for pull requests.
 editbranch: master
 
-report_url: ""
+report_url: "https://devicepki.idmanagement.gov/assets/docs/Federal_Public_Trust_Device_PKI_Certificate_Policy_Draft_v0_1_September2017.pdf"
 
 google_analytics_ua:
 repo: https://github.com/uspki/policies
