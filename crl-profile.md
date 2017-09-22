@@ -1,4 +1,3 @@
-
 ## CRL Profile
 
 | **Field** |       |       | **Value**                             |
@@ -16,6 +15,6 @@
 | Authority Key Identifier   | Mandatory | False | Octet String: Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Must match SKI of issuing CA Certificate |
 |               |                 |              |                                       |
 | **CRL Entry Extension** |  **Required**   | **Critical** | **Value**  
-| Reason Code  | Mandatory | False |  Must be included when reason code = key compromise or CA compromise |
-| Hold Instruction   |  | False | Not present. |
-| Issuing Distribution Point  |  | False | Not present. |
+| Reason Code  | Mandatory | False |  Must be included when reason code is equal to _key compromise_ or _CA compromise_ |
+| Hold Instruction   |  | False | Not present |
+| Issuing Distribution Point  |  | False | Not present |
