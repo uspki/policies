@@ -196,7 +196,7 @@ Prior to submitting a CPS, the CA shall commission a compliance analysis study c
 
 **Domain Name Registrar**: A person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assigns).
 
-**Effective Date**: 1 July 2012.
+**Effective Date**: The date, as specified in Section 1.2.1, by which entites need to conform to the specified revision of this policy.
 
 **Embedded SCT**: An SCT delivered via an X.509v3 extension within the certificate.
 
