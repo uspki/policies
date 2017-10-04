@@ -1840,7 +1840,7 @@ f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)
 **Required/Optional/Prohibited:**  
   Required if subject:organizationName is present.  
   Prohibited if the subject:organizationName is absent.  
-**Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. The subject:stateOrProvinceName field SHALL contain District of Columbia.  
+**Contents:** If present, subject:stateOrProvinceName field SHALL contain District of Columbia.  
 
 g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1849,7 +1849,7 @@ h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)
 **Required/Optional/Prohibited:**
 Required if subject:organizationName is present.  
 Optional if subject:organizationName is absent.  
-**Contents:** If present, the subject:countryName SHALL contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
+**Contents:** If present, the subject:countryName field SHALL contain US.
 
 i. **Certificate Field:** subject:organizationalUnitName  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1876,7 +1876,7 @@ b. **Certificate Field:** subject:organizationName (OID 2.5.4.10)
 
 c. **Certificate Field:** subject:countryName (OID: 2.5.4.6)  
 **Required/Optional:** Required  
-**Contents:** This field SHALL contain C=US  
+**Contents:** This field SHALL be present and SHALL contain US.
 
 CA Certificate Subjects SHALL NOT include organizationalUnit unless approved by the Policy Authority.
 
