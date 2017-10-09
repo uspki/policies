@@ -234,8 +234,6 @@ Prior to submitting a CPS, the CA shall commission a compliance analysis study c
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
 
-**Parent Company**: A company that Controls a Subsidiary Company.
-
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
 **Public Key**: The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used by a Relying Party to verify Digital Signatures created with the holder's corresponding Private Key and/or to encrypt messages so that they can be decrypted only with the holder's corresponding Private Key.
@@ -302,8 +300,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Subscriber Agreement**: An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
 
-**Subsidiary Company**: A company that is controlled by a Parent Company.
-
 **Technically Constrained Subordinate CA Certificate**: A Subordinate CA certificate which uses a combination of Extended Key Usage settings and Name Constraint settings to limit the scope within which the Subordinate CA Certificate may issue Subscriber or additional Subordinate CA Certificates.
 
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
@@ -311,8 +307,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 **Test Certificate**: A Certificate with a maximum validity period of 30 days and which: (i) includes a critical extension with the specified Test Certificate CABF OID, or (ii) is issued under a CA where there are no certificate paths/chains to a root certificate subject to these Requirements.
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
-
-**Unregistered Domain Name**: A Domain Name that is not a Registered Domain Name.
 
 **Valid Certificate**: A Certificate that passes the validation procedure specified in RFC 5280.
 
@@ -328,11 +322,9 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 | **Acronym** | **Meaning** |
 | --- | --- |
-| AICPA | American Institute of Certified Public Accountants |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
-| CICA | Canadian Institute of Chartered Accountants |
 | CP | Certificate Policy |
 | CPS | Certification Practice Statement |
 | CRL | Certificate Revocation List |
@@ -340,7 +332,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | DNS | Domain Name System |
 | FIPS | (US Government) Federal Information Processing Standard |
 | FQDN | Fully Qualified Domain Name |
-| IM | Instant Messaging |
 | IANA | Internet Assigned Numbers Authority |
 | ICANN | Internet Corporation for Assigned Names and Numbers |
 | ISO | International Organization for Standardization |
@@ -353,7 +344,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | SSL | Secure Sockets Layer |
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
-| VOIP | Voice Over Internet Protocol |
 
 
 ### 1.6.3 References
