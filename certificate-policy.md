@@ -1465,7 +1465,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 \*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
 ### 6.1.6 Public key parameters generation and quality checking
-RSA: The CA SHALL confirm that the value of the public exponent _e_ shall be an odd positive integer such that:  
+RSA: The CA SHALL confirm that the value of the public exponent _e_ is an odd positive integer such that:  
 
 - 2<sup>16</sup> < e < 2<sup>256</sup>  
 
