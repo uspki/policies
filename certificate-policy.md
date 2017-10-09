@@ -349,7 +349,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | OID | Object Identifier |
 | PKI | Public Key Infrastructure |
 | RA | Registration Authority |
-| S/MIME | Secure MIME (purpose Internet Mail Extensions) |
+| S/MIME | Secure MIME (Multipurpose Internet Mail Extensions) |
 | SSL | Secure Sockets Layer |
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
