@@ -6,7 +6,7 @@ This Certificate Policy (CP) outlines the policy and requirements for the U.S. F
 This document serves two purposes:  
 
 - to specify the Federal Public Device PKI Certificate Policy and requirements, and
-- to provide requirements for what each Certification Authority must address in its Certification Practices Statement
+- to provide requirements for what each Certification Authority must address in its Certification Practice Statement
 
 This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Device PKI** in this document.  
 
@@ -14,7 +14,7 @@ This policy and requirements are applicable to all Certification Authorities wit
 
 The Federal Public Device PKI conforms to the Version 1.4.9 of the guidelines adopted by the Certification Authority/Browser Forum (“CA/Browser Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
 
-Additional documents related to the Federal Public Device PKI, such as Certification Practices Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
+Additional documents related to the Federal Public Device PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
 
@@ -68,7 +68,7 @@ This Certificate Policy is focused on promoting automation, improving efficienci
 
 While this policy promotes automation for the Certification Authorities, there still exists a need to allow a delegation of responsibility to U.S. Federal Government entities that form part of the U.S. Federal Government enterprise.  
 
-This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certificate Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities as a role.  Registration Authority system functions shall be the responsibility of the Certificate Authority.
+This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certification Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities as a role.  Registration Authority system functions shall be the responsibility of the Certification Authority.
 
 A CA MAY designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government entity.  The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
@@ -234,8 +234,6 @@ Prior to submitting a CPS, the CA shall commission a compliance analysis study c
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
 
-**Parent Company**: A company that Controls a Subsidiary Company.
-
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
 **Public Key**: The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used by a Relying Party to verify Digital Signatures created with the holder's corresponding Private Key and/or to encrypt messages so that they can be decrypted only with the holder's corresponding Private Key.
@@ -302,8 +300,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Subscriber Agreement**: An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
 
-**Subsidiary Company**: A company that is controlled by a Parent Company.
-
 **Technically Constrained Subordinate CA Certificate**: A Subordinate CA certificate which uses a combination of Extended Key Usage settings and Name Constraint settings to limit the scope within which the Subordinate CA Certificate may issue Subscriber or additional Subordinate CA Certificates.
 
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
@@ -311,8 +307,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 **Test Certificate**: A Certificate with a maximum validity period of 30 days and which: (i) includes a critical extension with the specified Test Certificate CABF OID, or (ii) is issued under a CA where there are no certificate paths/chains to a root certificate subject to these Requirements.
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
-
-**Unregistered Domain Name**: A Domain Name that is not a Registered Domain Name.
 
 **Valid Certificate**: A Certificate that passes the validation procedure specified in RFC 5280.
 
@@ -328,11 +322,9 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 | **Acronym** | **Meaning** |
 | --- | --- |
-| AICPA | American Institute of Certified Public Accountants |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
-| CICA | Canadian Institute of Chartered Accountants |
 | CP | Certificate Policy |
 | CPS | Certification Practice Statement |
 | CRL | Certificate Revocation List |
@@ -340,7 +332,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | DNS | Domain Name System |
 | FIPS | (US Government) Federal Information Processing Standard |
 | FQDN | Fully Qualified Domain Name |
-| IM | Instant Messaging |
 | IANA | Internet Assigned Numbers Authority |
 | ICANN | Internet Corporation for Assigned Names and Numbers |
 | ISO | International Organization for Standardization |
@@ -349,11 +340,10 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | OID | Object Identifier |
 | PKI | Public Key Infrastructure |
 | RA | Registration Authority |
-| S/MIME | Secure MIME (purpose Internet Mail Extensions) |
+| S/MIME | Secure MIME (Multipurpose Internet Mail Extensions) |
 | SSL | Secure Sockets Layer |
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
-| VOIP | Voice Over Internet Protocol |
 
 
 ### 1.6.3 References
@@ -414,12 +404,12 @@ The CA shall post all CA certificates and CRLs issued by the CA in a repository 
 ## 2.2 Publication of information
 The Federal PKI Policy Authority SHALL publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
-All CAs SHALL publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures SHALL include all the material required by RFC 3647, and SHALL be structured in accordance with or RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+All CAs SHALL publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures SHALL include all the material required by RFC 3647, and SHALL be structured in accordance with RFC 3647. The Certification Practice Statement SHALL state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
 The Federal PKI Policy Authority and/or a designee and/or the CAs SHALL publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages SHALL be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practices Statements in accordance with Section 2.0.
+The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practice Statements in accordance with Section 2.0.
 
 All CAs approved to issue a CA certificate SHALL post to the Repository any issued CA certificate as soon as possible after issuance but no later than 15 days after issuance.  The Federal PKI Policy Authority or designee shall disclose the CA certificate and submit the CA certificate to trust stores and applicable databases, such as the Common CA Database, within thirty (30) days of issuance.
 
@@ -505,7 +495,7 @@ DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil 
 
 The Domain Name Registrars for both DotGov and DotMil are managed by the U.S. Government.
 
-This Certificate Policy asserts for all Certificate Authorities operating under this policy that the inclusion of subject:countryName in any Subscriber certificate is verified by:
+This Certificate Policy asserts for all Certification Authorities operating under this policy that the inclusion of subject:countryName in any Subscriber certificate is verified by:
 
 - Section 3.2.2.3 of the CA/B Forum Baseline Requirements, option (c): information provided by the Domain Name Registrar
 - Section 3.2.2.3 of the CA/B Forum Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparable controls for the sTLDs operated by the U.S. Government.  
@@ -591,7 +581,7 @@ Databases maintained by the CA or affiliated government agencies do not qualify 
 #### 3.2.2.8 CAA Records
 When processing CAA records, CAs SHALL process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but SHALL NOT conflict with or supersede the mandatory property tags set out in this document. CAs SHALL respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set.
 
-RFC 6844 requires that CAs “MUST NOT issue a certificate unless either (1) the certificate request is consistent with the applicable CAA Resource Record set or (2) an exception specified in the relevant Certification Practices Statement applies.”
+RFC 6844 requires that CAs “MUST NOT issue a certificate unless either (1) the certificate request is consistent with the applicable CAA Resource Record set or (2) an exception specified in the relevant Certification Practice Statement applies.”
 
 For issuances conforming to this Certificate Policy, CAs SHALL NOT rely on any exceptions specified in their respective CPS unless they are one of the following:  
 -  CAA checking is optional for certificates for which a Certificate Transparency pre-certificate was created and logged in at least two public logs, and for which CAA was checked.
@@ -1465,7 +1455,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 \*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
 ### 6.1.6 Public key parameters generation and quality checking
-RSA: The CA SHALL confirm that the value of the public exponent _e_ shall be an odd positive integer such that:  
+RSA: The CA SHALL confirm that the value of the public exponent _e_ is an odd positive integer such that:  
 
 - 2<sup>16</sup> < e < 2<sup>256</sup>  
 
@@ -1534,7 +1524,7 @@ CA cryptographic modules SHALL be removed and stored in a secure container when 
 
 ### 6.2.10 Destroying Private Keys
 Individuals in trusted roles shall destroy all CA and OCSP private signature keys when the keys are no longer needed.
-All CAs operating under this policy shall document the private key destruction methods in their Certificate Practices Statement.
+All CAs operating under this policy shall document the private key destruction methods in their Certification Practice Statement.
 
 ### 6.2.11 Cryptographic Module Capabilities
 See Section 6.2.1
@@ -1840,7 +1830,7 @@ f. **Certificate Field:** subject:stateOrProvinceName (OID: 2.5.4.8)
 **Required/Optional/Prohibited:**  
   Required if subject:organizationName is present.  
   Prohibited if the subject:organizationName is absent.  
-**Contents:** If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. The subject:stateOrProvinceName field SHALL contain District of Columbia.  
+**Contents:** If present, subject:stateOrProvinceName field SHALL contain District of Columbia.  
 
 g. **Certificate Field:** subject:postalCode (OID: 2.5.4.17)  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1849,7 +1839,7 @@ h. **Certificate Field:** subject:countryName (OID: 2.5.4.6)
 **Required/Optional/Prohibited:**
 Required if subject:organizationName is present.  
 Optional if subject:organizationName is absent.  
-**Contents:** If present, the subject:countryName SHALL contain the two-letter ISO 3166-1 country code of "US" associated with the location of the Subject verified under Section 3.2.2.1.
+**Contents:** If present, the subject:countryName field SHALL contain US.
 
 i. **Certificate Field:** subject:organizationalUnitName  
 **Required/Optional/Prohibited:** Prohibited  
@@ -1876,7 +1866,7 @@ b. **Certificate Field:** subject:organizationName (OID 2.5.4.10)
 
 c. **Certificate Field:** subject:countryName (OID: 2.5.4.6)  
 **Required/Optional:** Required  
-**Contents:** This field SHALL contain C=US  
+**Contents:** This field SHALL be present and SHALL contain US.
 
 CA Certificate Subjects SHALL NOT include organizationalUnit unless approved by the Policy Authority.
 
@@ -2043,7 +2033,7 @@ The CA SHALL at all times:
 4. Be licensed as a CA in each jurisdiction where it operates, if licensing is required by the law of such jurisdiction for the issuance of Certificates.
 
 ## 8.1 Frequency or circumstances of assessment
-The Certificate Authorities (X.509v3 basicConstraints extension, with the cA boolean set to true) operated under this Certificate Policy are Technically Constrained in line with section 7.1.5.  They are audited in line with section 8.7.
+The Certification Authorities (X.509v3 basicConstraints extension, with the cA boolean set to true) operated under this Certificate Policy are Technically Constrained in line with section 7.1.5.  They are audited in line with section 8.7.
 
 The period during which the CA issues Certificates SHALL be divided into an unbroken sequence of audit periods.
 An audit period MUST NOT exceed one year in duration.
@@ -2061,7 +2051,7 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
-The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certificate practices statement. The FPKI Policy Authority shall determine whether a compliance auditor meets this requirement.
+The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certification practices statement. The FPKI Policy Authority shall determine whether a compliance auditor meets this requirement.
 
 The operating Agency and Management Authority of each CA is responsible for identifying and engaging a qualified auditor.
 
