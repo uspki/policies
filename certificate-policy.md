@@ -1,18 +1,18 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the U.S. Federal Public Key Infrastructure, and the issuance and management of U.S. Federal Publicly Trusted Device Certificates.  The certificates under this policy are for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
+This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
 
 This document serves two purposes:  
 
-- to specify the Federal Public Device PKI Certificate Policy and requirements, and
+- to specify the Federal Public Trust TLS PKI Certificate Policy and requirements, and
 - to provide requirements for what each Certification Authority must address in its Certification Practice Statement
 
-This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Device PKI** in this document.  
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Trust TLS PKI** in this document.  
 
-This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Device Root CA**.  The requirements are to be flowed down from the Root Certification Authority through all Subordinate Certification Authorities.  
+This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Public Trust TLS Root CA**.    
 
-The Federal Public Device PKI conforms to the Version 1.4.9 of the guidelines adopted by the Certification Authority/Browser Forum (“CA/Browser Forum”) when issuing publicly trusted certificates, including the Baseline Requirements for the Issuance and Management of Publicly Trusted Certificates (“Baseline Requirements”). This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
+This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
 
 Additional documents related to the Federal Public Device PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
@@ -20,13 +20,11 @@ In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 
 
 The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law.
 
-The following Certification Authorities are covered under this CP:
-
-| **CA Type** | **Distinguished Name** | **Key Pair Type and Parameters** | **SHA-256 Key Fingerprint** | **Validity Period** |
-| --- | --- | --- | --- | --- |
-| Root CA | \<INSERT DN> | \<INSERT RSA> | \<INSERT SHA-256 FINGERPRINT> | \<INSERT VALIDITY PERIOD> |
-| Subordinate CA | \<INSERT DN> | \<INSERT RSA> | \<INSERT SHA-256 FINGERPRINT> | \<INSERT VALIDITY PERIOD> |
-
+## 1.1.1 Compliance
+This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and
+Management of Publicly-Trusted Certificates published at http://www.cabforum.org (http://
+www.cabforum.org). In the event of any inconsistency between this document and those Requirements, those
+Requirements take precedence over this document.
 
 ## 1.2 Document name and identification
 This is the Federal Public Device PKI Certificate Policy.
