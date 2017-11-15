@@ -27,30 +27,21 @@ www.cabforum.org). In the event of any inconsistency between this document and t
 Requirements take precedence over this document.
 
 ## 1.2 Document name and identification
-This is the Federal Public Device PKI Certificate Policy.
+This is the Federal Public Trust TLS PKI Certificate Policy.
 
 The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP:
 
 | **OID Arc** | **Owner** | **OID** | **Description** |
 | --- | --- | --- | --- |
-| 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD |
-| 2.16.840.1.101.3.2.1 | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1) | TBD |
+| 2.16.840.1.101.3.2.1.M | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | TBD |
+| 2.16.840.1.101.3.2.1.N | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | TBD |
 
 
 ### 1.2.1.Revisions
 
-| **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective\*** |
+| **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date*** |
 | --- | --- | --- | --- | --- |
-| 1.0.0 | \<TBD> | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
-
-
-\* Effective Date and Additionally Relevant Compliance Date(s)
-
-### 1.2.2.Relevant Dates
-
-| **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
-| --- | --- | --- |
-| yyyy-mm-dd | \<TBD> | Description |
+| 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
 
 
 ## 1.3 PKI Participants
