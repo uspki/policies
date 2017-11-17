@@ -118,14 +118,14 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The Federal PKI Policy Authority will review and update this Certificate Policy at least every 365 days to ensure compliance with CA/Browser Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
+The FPKIPA will review and update this Certificate Policy at least every 365 days to ensure compliance with CA/Browser Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
 
 The review and update shall include any changes needed to address:
 
 - US Federal Government mission needs and changes to procedures to support the missions
 - CA/Browser Forum Baseline Requirements updates
 
-If changes to CA/Browser Forum Baseline requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the Federal PKI Policy Authority will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
+If changes to CA/Browser Forum Baseline requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the FPKIPA will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
 
 Each CA shall develop, implement, enforce, and update at least every 365 days a Certification Practice Statement (CPS) that describes in detail how the CA implements the requirements of this CP.
 
@@ -137,16 +137,16 @@ The CA shall make revocation information for Subordinate Certificates and Subscr
 The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA shall document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
 
 ## 2.2 Publication of information
-The Federal PKI Policy Authority shall publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
+The FPKIPA shall publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
 All CAs shall publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA shall publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures shall include all the material required by RFC 3647, and shall be structured in accordance with RFC 3647. The Certification Practice Statement shall state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA shall log all actions taken, if any, consistent with its processing practice.
 
-The Federal PKI Policy Authority and/or a designee and/or the CAs shall publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages shall be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The FPKIPA and/or a designee and/or the CAs shall publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages shall be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The Federal PKI Policy Authority and CAs shall update and publish the Certificate Policy and Certification Practice Statements in accordance with Section 2.0.
+The FPKIPA and CAs shall update and publish the Certificate Policy and Certification Practice Statements in accordance with Section 2.0.
 
-All CAs approved to issue a CA certificate shall post to the Repository any issued CA certificate as soon as possible after issuance but no later than 15 days after issuance.  The Federal PKI Policy Authority or designee shall disclose the CA certificate and submit the CA certificate to trust stores and applicable databases, such as the Common CA Database, within thirty (30) days of issuance.
+All CAs approved to issue a CA certificate shall post to the Repository any issued CA certificate as soon as possible after issuance but no later than 15 days after issuance.  The FPKIPA or designee shall disclose the CA certificate and submit the CA certificate to trust stores and applicable databases, such as the Common CA Database, within thirty (30) days of issuance.
 
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
@@ -158,7 +158,7 @@ Each CA shall make its Repository publicly available in a read-only manner.
 ## 3.1 Naming
 
 ### 3.1.1 Types of names
-This policy restricts the subject names of CAs.  CAs that issue certificates under this policy shall have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the Policy Authority.   
+This policy restricts the subject names of CAs.  CAs that issue certificates under this policy shall have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the FPKIPA.   
 
 Subscriber certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles.
 
@@ -184,7 +184,7 @@ The common name attribute for Subordinate CAs shall be unique from all other Sub
 ### 3.1.6 Recognition, authentication, and role of trademarks
 CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
 
-The Policy Authority shall resolve disputes involving names and trademarks.
+The FPKIPA shall resolve disputes involving names and trademarks.
 
 ## 3.2 Initial identity validation
 
@@ -343,7 +343,7 @@ The CA may use the sources listed in section 3.2.2.1 to verify the Reliable Meth
 In addition, the CA shall establish a process that allows an Applicant to specify the individuals who may request Certificates. If an Applicant specifies, in writing, the individuals who may request a Certificate, then the CA shall not accept any certificate requests that are outside this specification. The CA shall provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
 
 ### 3.2.6 Criteria for Interoperation or Certification
-CAs shall not have Cross Certificate(s) that identify the CA as the Subject without explicit written permission of the Policy Authority.  Any Cross Certificates shall be disclosed publicly, submitted to one or more Certificate Transparency Logs, published to the Repository, and identified in the update to the CPS.
+CAs shall not have Cross Certificate(s) that identify the CA as the Subject without explicit written permission of the FPKIPA.  Any Cross Certificates shall be disclosed publicly, submitted to one or more Certificate Transparency Logs, published to the Repository, and identified in the update to the CPS.
 
 ## 3.3 Identification and authentication for re-key requests
 Re-key requests are not allowed under this policy.  All requests are treated as new certificate requests.
@@ -374,7 +374,7 @@ For end entity certificates:
 
 ### 4.1.2 Enrollment process and responsibilities
 For the Root and Subordinate CAs:
-- The Policy Authority is responsible for approving or denying requests for CA certificate issuances.
+- The FPKIPA is responsible for approving or denying requests for CA certificate issuances.
 
 For all CAs, prior to the issuance of any Certificate, the CA shall obtain the following documentation from the Applicant:
 
@@ -427,7 +427,7 @@ No stipulation.
 ## 4.3 Certificate issuance
 
 ### 4.3.1 CA actions during certificate issuance
-Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA shall require written authorization by the Policy Authority.  
+Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA shall require written authorization by the FPKIPA.  
 
 All end entity certificates for Domain Validation SSL and Organizational Validation SSL shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  
 
@@ -476,7 +476,7 @@ CA certificates shall not be renewed.  End entity Domain Validation SSL certific
 Online Certificate Status Protocol (OCSP) Delegated responder certificates may be renewed.
 
 ### 4.6.2 Who may request renewal
-The Policy Authority shall request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
+The FPKIPA shall request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
 
 ### 4.6.3 Processing certificate renewal requests
 The CA shall verify that the OCSP Delegated Responder certificate expiration date shall not exceed 825 days from the date of initial certificate issuance.
@@ -531,7 +531,7 @@ CA certificates may be modified to update attributes other than the public key. 
 See Section 4.1.1.
 
 ### 4.8.3 Processing certificate modification requests
-Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Modification of a CA certificate by the Root CA shall require written authorization by the Policy Authority.
+Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Modification of a CA certificate by the Root CA shall require written authorization by the FPKIPA.
 
 ### 4.8.4 Notification of new certificate issuance to subscriber
 See Section 4.3.2.
@@ -567,7 +567,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 12. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
 14. Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement; or
-15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKI Policy Authority or CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
+15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -581,12 +581,12 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement; or
-10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKI Policy Authority or CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
+10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
 
 ### 4.9.2 Who can request revocation
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
-The Policy Authority shall direct any revocation of a CA certificate.
+The FPKIPA shall direct any revocation of a CA certificate.
 
 ### 4.9.3 Procedure for revocation request
 The CA shall provide a process for Subscribers to request revocation of their own Certificates. The process shall be described in the CA's Certificate Policy or Certification Practice Statement. The CA shall maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
@@ -991,7 +991,7 @@ To minimize risk from compromise of a CA’s private signing key, that key may b
 
 After a CA performs a Key Changeover, the CA may continue to issue CRLs with the old key until all certificates signed with that key have expired.  
 
-When a CA updates its private signature key and thus generates a new public key, the CA shall notify the FPKI Policy Authority and subscribers of the change.  
+When a CA updates its private signature key and thus generates a new public key, the CA shall notify the FPKIPA and subscribers of the change.  
 
 ## 5.7 Compromise and disaster recovery
 
@@ -1075,7 +1075,7 @@ When computing resources, software, and/or data are corrupted, CAs operating und
 ### 5.7.3 Recovery Procedures after Key Compromise
 In the event of a CA private key compromise, the following operations shall be performed.
 
-- The FPKI Policy Authority shall be immediately informed, as well as any superior CAs and any entities known to be distributing the CA certificate.
+- The FPKIPA shall be immediately informed, as well as any superior CAs and any entities known to be distributing the CA certificate.
 -	The CA shall generate new keys.
 - The superior CA shall be revoke the subordinate CA certificate within seven (7) days.
 - All subscriber certificates shall be revoked within twenty-four (24) hours.
@@ -1093,14 +1093,14 @@ For the Root CA, recovery procedures shall be in place to reconstitute the CA wi
 
 All other CAs operating under this policy shall have recovery procedures in place to reconstitute the CA within 72 hours of failure.
 
-In the case of a disaster whereby the CA installation is physically damaged and all copies of the CA signature key are destroyed as a result, the FPKI Policy Authority shall be notified at the earliest feasible time, and the FPKI Policy Authority shall take whatever action it deems appropriate.
+In the case of a disaster whereby the CA installation is physically damaged and all copies of the CA signature key are destroyed as a result, the FPKIPA shall be notified at the earliest feasible time, and the FPKIPA shall take whatever action it deems appropriate.
 
 Relying parties may decide of their own volition whether to continue to use certificates signed with the destroyed private key pending reestablishment of CA operation with new certificates.
 
 ## 5.8 CA or RA termination
 This section does not apply to CAs that have ceased issuing new certificates but are continuing to issue CRLs until all certificates have expired.  Such CAs are required to continue to conform with all relevant aspects of this policy (e.g., audit logging and archives).
 
-When a CA operating under this policy terminates operations before all certificates have expired, the CA signing keys shall be surrendered to the FPKI Policy Authority.
+When a CA operating under this policy terminates operations before all certificates have expired, the CA signing keys shall be surrendered to the FPKIPA.
 
 Any issued certificates that have not expired, shall be revoked and a final long term CRL with a nextUpdate time past the validity period of all issued certificates shall be generated.  This final CRL shall be available for all relying parties until the validity period of all issued certificates has passed.  Once the last CRL has been issued, the private signing key(s) of the CA to be terminated will be destroyed.
 
@@ -1505,7 +1505,7 @@ Other values should not be present. Other values may be present consistent with 
 
 
 #### 7.1.2.4 All Certificates
-All other fields and extensions shall be set in accordance with RFC 5280. The CA shall not issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate and receives approval from the Policy Authority.
+All other fields and extensions shall be set in accordance with RFC 5280. The CA shall not issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate and receives approval from the FPKIPA.
 
 CAs shall not issue a Certificate with:
 
@@ -1603,7 +1603,7 @@ c. **Certificate Field:** subject:countryName (OID: 2.5.4.6)
 **Required/Optional:** Required  
 **Contents:** This field shall be present and shall contain US.
 
-CA Certificate Subjects shall not include organizationalUnit unless approved by the Policy Authority.
+CA Certificate Subjects shall not include organizationalUnit unless approved by the FPKIPA.
 
 All other optional attributes, for the CA Certificate Subject fields, shall not be included.
 Optional attributes shall not contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.  
@@ -1786,7 +1786,7 @@ The CA's audit shall be performed by a Qualified Auditor. A Qualified Auditor me
 6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
-The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certification practices statement. The FPKI Policy Authority shall determine whether a compliance auditor meets this requirement.
+The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certification practices statement. The FPKIPA shall determine whether a compliance auditor meets this requirement.
 
 The operating Agency and Management Authority of each CA is responsible for identifying and engaging a qualified auditor.
 
@@ -1806,9 +1806,9 @@ There is no Delegated Third Party allowed under this Certificate Policy.
 When the compliance auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:
 •	The compliance auditor shall note the discrepancy;
 •	The compliance auditor shall notify the responsible party promptly; and
-•	The party responsible for correcting the discrepancy will propose a remedy, including expected time for completion, to the FPKI Policy Authority.
+•	The party responsible for correcting the discrepancy will propose a remedy, including expected time for completion, to the FPKIPA.
 
-Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKI Policy Authority may decide to temporarily halt operation of the CA or RA, to revoke a certificate issued to the CA or RA, or take other actions it deems appropriate. A compliance audit may be required to confirm the implementation and effectiveness of the remedy.
+Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA or RA, to revoke a certificate issued to the CA or RA, or take other actions it deems appropriate. A compliance audit may be required to confirm the implementation and effectiveness of the remedy.
 
 
 ## 8.6 Communication of results
