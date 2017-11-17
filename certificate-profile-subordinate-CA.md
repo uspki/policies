@@ -1,4 +1,4 @@
-## Intermediate or Subordinate CA Certificate Profile
+## Subordinate CA Certificate Profile
 
 | **Field** |       |       | **Value**                             |
 | :-------- | :---: | :---: | :-------------------------------     |
@@ -23,9 +23,5 @@
 | Authority Information Access   | Mandatory | False | **Required AIA Fields** <br> **OCSP:** <br> Publicly accessible URI of Issuing CA's OCSP responder accessMethod = {1.3.6.1.5.5.7.48.1} <br><br> **id-ad-caIssuers:** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> At least one instance of this access method that includes the URI name form to specify the certificate artifacts. The certificate artifact(s) served by the HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. This extension is required to assist in monitoring and discovery |
 | CRL Distribution Points   | Mandatory | False | At least one HTTP URI to the location of a publicly accessible CRL. The reasons and cRLIssuer fields must be omitted. |
 | nameConstraints           | Mandatory | True | dnsNames only shall be allowed in end entity certificates.  IPAddress, Email, Directory or other shall not be included. <br>See Section 7.1.5<br><br>**For IPAddress:** <br>The Subordinate CA Certificate shall specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate shall include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate shall also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). <br><br>**For dnsNames:** <br>Permitted dnsNames shall be included and shall include at least one dNSName in permittedSubtrees. Any additional combination of permitted and excluded subtrees may appear. <br>If permitted and excluded subtrees overlap, the excluded take precedence. <br>dnsNames shall only include values resolveable on the public Internet |
-| IssuerAltName             |  | False | Not present |
-| Subject Directory Attributes |  | False | Not present |
-| Private Extensions        | Optional | False | Only extensions that have context for use on the public Internet may be allowed.  Private extensions must not cause interoperability issues.  CA must be aware of and defend reason for including in the certificate, and use of Private Extensions shall be approved by the Policy Authority. |
-| Private Key Usage Period  | Optional | False |  |
 | policyConstraints         | Optional | False |  |
 | inhibitAnyPolicy          | Optional | False |  |
