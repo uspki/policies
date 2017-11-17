@@ -9,7 +9,7 @@ There are two (2) differences in the certificate profile implementations between
 
 | **Field or Extension** | **Domain Validation** | **Organization Validation**  |
 | :-------- | :---: | :---: |
-| Subject Identity Information  | cn=\<one domain name> | cn=\<one domain name>,S=District of Columbia,O=U.S.Government,c=US |
+| Subject Identity Information  | cn=\<one domain name>[,c=US] | cn=\<one domain name>,S=District of Columbia,O=U.S.Government,c=US |
 | Certificate Policies   | Asserts both the CA/B Forum and the US Government policy oid for Domain Validation      | Asserts both the CA/B Forum and the US Government policy oid for Organization Validation  |
 
 Below is the full server authentication certificate profile with _all_ fields and extensions.
