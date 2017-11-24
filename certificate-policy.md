@@ -1563,7 +1563,7 @@ No stipulation.
 
 Administrator privileges to all Certificate System components SHALL only be granted to the Administrator trusted role.
 
-All CAs SHALL implement multifactor authentication for all Trusted Role accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. All Trusted Roles SHALL use a unique credential created by or assigned to a single person for identification and authentication.   
+All CAs SHALL implement multifactor or multiparty authentication for all Trusted Role accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. All Trusted Roles SHALL use a unique credential created by or assigned to a single person for identification and authentication.   
 
 All CAs SHALL implement multifactor authentication for all access to component systems including operating system and software.
 
