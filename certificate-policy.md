@@ -1,41 +1,62 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating government services. This policy incorporates Certificate Transparency as a key component in promoting publicly accessible and accountable services.  
+This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services. 
+
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Trust TLS PKI** in this document. 
 
 This document serves two purposes:  
 
 - to specify the Federal Public Trust TLS PKI Certificate Policy and requirements, and
 - to provide requirements for what each Certification Authority shall address in its Certification Practice Statement
 
-This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Trust TLS PKI** in this document.  
+This policy promotes automation to improve U.S. Federal Government efficiencies.  This policy also incorporates Certificate Transparency as a key component in for publicly accessible and accountable services operated by the U.S. Federal Government.   
 
-This policy and requirements are applicable to all Certification Authorities within a chain of trust under the **US Federal Public Trust TLS Root CA**.    
-
-This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
-
-Additional documents related to the Federal Public Device PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
-
-In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.    
+This policy is applicable to all Certification Authorities within a chain of trust under the **US Federal Public Trust TLS Root CA**.    
 
 The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law.
 
-## 1.1.1 Compliance
-This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and
-Management of Publicly-Trusted Certificates published at http://www.cabforum.org (http://
-www.cabforum.org). In the event of any inconsistency between this document and those Requirements, those
-Requirements take precedence over this document.
+## 1.1.1 Scope
+[TBD - statements for scoping to TLS server authentication certificates]
+[TBD - statements for enterprise trust versus public trust and definition]
+
+## 1.1.2 Compliance
+This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org (http://
+www.cabforum.org). In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
+
+## 1.1.3 Certificate Types
+This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates. 
+
+### 1.1.2.1 CA Certificates
+
+### 1.1.2.1.1 Root CA Certificates
+
+### 1.1.2.1.2 Subordinate CA Certificates
+
+### 1.1.2.2 End-Entity Certificates
+
+### 1.1.2.2.1 Domain Validation TLS Server Authentication Certificates
+
+### 1.1.2.2.2 Organization Validation TLS Server Authentication Certificates
+
+### 1.1.2.2.3 OCSP Signing Certificates
+
 
 ## 1.2 Document name and identification
 This is the Federal Public Trust TLS PKI Certificate Policy.
 
 The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP:
 
-| **OID Arc** | **Owner** | **OID** | **Description** |
-| --- | --- | --- | --- |
-| 2.16.840.1.101.3.2.1.M | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | TBD |
-| 2.16.840.1.101.3.2.1.N | NIST Computer Security Objects Register (CSOR), Public Key Infrastructure (PKI) Objects Registration | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | TBD |
+|  |  |  |   
+| :--- | :--- | :--- |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | | Domain Validation TLS Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | | Organization Validation TLS Server Authentication Certificates |  
 
+Additional documents related to the Federal Public Trust TLS PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
+
+In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
+
+This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
 
 ### 1.2.1.Revisions
 
@@ -53,10 +74,6 @@ The Certification Authorities operated under this policy provide services to U.S
 Certification Authority (CA) is defined in Section 1.6.
 
 ### 1.3.2 Registration Authorities
-This Certificate Policy is focused on promoting automation, improving efficiencies, supporting operational security, and establishing trust in the U.S. Government and the digital services operated by or on behalf of U.S. Federal Government entities.  The widespread adoption of practices and protocols to support automation in certificate management have been foundational to increases in the deployment of secure protocols for webservices.
-
-While this policy promotes automation for the Certification Authorities, there still exists a need to allow a delegation of responsibility to U.S. Federal Government entities that form part of the U.S. Federal Government enterprise.  
-
 This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certification Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities as a role.  Registration Authority system functions shall be the responsibility of the Certification Authority.
 
 A CA may designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government entity.  The CA shall not accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
@@ -85,7 +102,7 @@ Not applicable.
 ### 1.4.1 Appropriate Certificate Uses
 This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted TLS Certificates used for identifying and authenticating devices and services.  Certificates may be used for all legal authentication and encryption purposes.
 
-## 1.4.2 Prohibited Certificate Uses
+### 1.4.2 Prohibited Certificate Uses
 Certificates may not be used where prohibited by law.   
 
 Certificates for identifying natural persons are not allowed under this policy and the Federal Public Trust TLS PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
@@ -2002,7 +2019,7 @@ Any modification to CA practice enabled under this section shall be discontinued
 
 **Authorization Domain Name**: The Domain Name used to obtain authorization for certificate issuance for a given FQDN. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If the FQDN contains a wildcard character, then the CA shall remove all wildcard labels from the left most portion of requested FQDN. The CA may prune zero or more labels from left to right until encountering a Base Domain Name and may use any one of the intermediate values for the purpose of domain validation.
 
-**Authorized Port**: One of the following ports: 80 (http), 443 (https), 115 (sftp), 25 (smtp), 22 (ssh).
+**Authorized Port**: One of the following ports: 80 (http), 443 (https), 115 (sftp), 25 (smtp), 22 (ssh).  The procedures for the Validation of Domain Authorization or Control (Section 3.2.2.4) reference Authorized Port.
 
 **Base Domain Name**: The portion of an applied-for FQDN that is the first domain name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most domain name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
 
