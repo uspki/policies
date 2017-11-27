@@ -130,8 +130,19 @@ A CPS shall be submitted and approved by the Federal Public Key Infrastructure P
 
 Prior to submitting a CPS, the CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the Policy Authority. The CA shall have an approved CPS and meet all CP and CPS requirements prior to commencing operations.
 
+## 1.6 Definitions and Acronyms
+
+### 1.6.1 Definitions
+Capitalized terms used in this CP shall have the meanings defined in Appendix A.
+
+### 1.6.2 Acronyms
+See Appendix B for a complete list of acronyms and abbreviations used in this CP. 
+
+### 1.6.3 References
+See Appendix C for a complete list of standards referenced in this CP.
+
 ### 1.6.4 Conventions
-The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
+The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this CP shall be interpreted in accordance with RFC 2119.
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
@@ -1997,9 +2008,7 @@ Any modification to CA practice enabled under this section shall be discontinued
 ## 9.17 Other provisions
 
 
-# Appendix A: Definitions, Acronyms and References
-
-## A-1 Definitions
+# Appendix A: Definitions
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
@@ -2191,7 +2200,7 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 
 **Zone**: A subset of Certificate Systems created by the logical or physical partitioning of systems from other Certificate Systems.
 
-### A-2 Acronyms
+# Appendix B: Acronyms
 
 | **Acronym** | **Meaning** |
 | --- | --- |
@@ -2223,7 +2232,7 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 | TLS | Transport Layer Security |
 
 
-## A-2 References
+# Appendix C: References
 
 FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.
 
