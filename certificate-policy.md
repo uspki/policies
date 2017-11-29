@@ -10,7 +10,7 @@ This document serves two purposes:
 - To specify the U.S. Federal Public Trust TLS PKI Certificate Policy and requirements, and
 - To provide requirements for what each Certification Authority shall address in its Certification Practice Statement
 
-This policy promotes automation to improve U.S. Federal Government efficiencies.  This policy also incorporates Certificate Transparency as a key component in for publicly accessible and accountable services operated by the U.S. Federal Government.   
+This policy promotes automation to improve U.S. Federal Government efficiencies.  This policy also incorporates Certificate Transparency as a key component for publicly accessible and accountable services operated by the U.S. Federal Government.   
 
 This policy is applicable to all Certification Authorities within a chain of trust under the **US Federal Public Trust TLS Root CA**.    
 
@@ -21,8 +21,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 [TBD - statements for enterprise trust versus public trust and definition]
 
 ## 1.1.2 Compliance
-This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org (http://
-www.cabforum.org). In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
+This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
 This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates. 
@@ -82,12 +81,13 @@ The FPKIPA is responsible for:
 * Approving the CPS for each CA that issues certificates under this policy, and
 * Reviewing and approving the compliance audits for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
-* Ensuring compliance with CA/Browser Forum Baseline Requirements, and
-* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
+* Ensuring compliance with The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by CAB Forum, and
+* Ensuring compliance with any additional trust store operator requirements that the US Federal Public Trust TLS Root CA pursues or has inclusion in, and
+* Ensuring compliance with any additional browser requirements that are defined by the browser operators 
 
 
 ### 1.3.3 Certification Authorities
-The U.S. Federal Public Trust TLS PKI Certification Authorities are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including: 
+The U.S. Federal Public Trust TLS PKI CAs are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including: 
 
 * Publication of certificates 
 * Revocation of certificates
@@ -112,12 +112,12 @@ Delegated Third Parties are not allowed as Registration Authorities.
 ### 1.3.3 Subscribers
 A Subscriber is the entity identified in a Certificate, capable of using the Private Key that corresponds to the Public Key listed in the certificate, and has agreed to the terms of the Subscriber Agreement with the CA.  Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant.
 
-For this policy, Subscribers are limited to: 1) devices operated by or on behalf of Federal agencies, and 2) Domain Names within the .GOV and .MIL Domain Namespace(s).
+For this policy, Subscribers are limited to: 1) web services operated by or on behalf of Federal agencies, and 2) Domain Names within the .GOV and .MIL Domain Namespace(s).
 
 ### 1.3.4 Relying Parties
 A Relying Party is any individual or entity that relies on a U.S. Federal Public Trust TLS PKI Certificate, the information included in the certificate, and the digital signature by a CA.   
 
-For this CP, Relying Parties may include individuals or entities accessing U.S. Government webservices available on the Internet.    
+For this CP, Relying Parties may include individuals or entities accessing U.S. Government web services available on the Internet.    
 
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
@@ -128,35 +128,29 @@ Relying Parties should verify the validity of certificates via revocation servic
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted TLS Certificates used for identifying and authenticating devices.  Certificates may be used for all legal authentication and encryption purposes.
+This Certificate Policy (CP) is limited to Publicly Trusted TLS Certificates used for identifying and authenticating U.S. Government web services.  Certificates may be used for all legal authentication and encryption purposes.
 
 ### 1.4.2 Prohibited Certificate Uses
-Certificates may not be used where prohibited by law.   
+Certificates may not be used where prohibited by law.  
 
 Certificates for identifying natural persons are not allowed under this policy and the U.S. Federal Public Trust TLS PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
 
 ## 1.5 Policy administration
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) manages this policy and represents the interests of the U.S. Federal CIOs and CISOs.   
+  
 
 ### 1.5.1 Organization Administering the Document
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible for:  
-* Maintaining this CP, and
-* Approving the CPS for each CA that issues certificates under this policy, and
-* Approving the compliance audit report for each CA issuing certificates under this policy, and
-* Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
-* Ensuring compliance with CA/Browser Forum Baseline Requirements, and
-* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible for administering this document.
 
 ### 1.5.2 Contact Person
-Contact information for the FPKIPA is fpki@gsa.gov.
+Contact information for the FPKIPA fpki@gsa.gov.
 
 ### 1.5.3 Person Determining CPS suitability for the policy
-Federal Public Key Infrastructure Policy Authority
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) shall affirm the suitability of any CPS to this policy.
 
 ### 1.5.4 CPS approval procedures
-A CPS shall be submitted and approved by the Federal Public Key Infrastructure Policy Authority.
+A CPS shall be submitted and approved by the FPKIPA.
 
-Prior to submitting a CPS, the CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the Policy Authority. The CA shall have an approved CPS and meet all CP and CPS requirements prior to commencing operations.
+Prior to submitting a CPS, the CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
 
 ## 1.6 Definitions and Acronyms
 
@@ -2054,13 +2048,16 @@ Any modification to CA practice enabled under this section shall be discontinued
 
 **Audit Period**: In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in section 8.1.
 
-**Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an audited entity's processes and controls comply with the mandatory provisions of these Requirements.
+**Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an audited entity's processes and controls comply with the mandatory provisions of the Baseline Requirements, this Certificate Policy and the Certification Practice(s) Statements.
 
 **Authorization Domain Name**: The Domain Name used to obtain authorization for certificate issuance for a given FQDN. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If the FQDN contains a wildcard character, then the CA shall remove all wildcard labels from the left most portion of requested FQDN. The CA may prune zero or more labels from left to right until encountering a Base Domain Name and may use any one of the intermediate values for the purpose of domain validation.
 
-**Authorized Port**: One of the following ports: 80 (http), 443 (https), 115 (sftp), 25 (smtp), 22 (ssh).  The procedures for the Validation of Domain Authorization or Control (Section 3.2.2.4) reference Authorized Port.
+**Authorized Port**: One of the following ports: 80 (http), 443 (https), 25 (smtp), 22 (ssh).  
 
 **Base Domain Name**: The portion of an applied-for FQDN that is the first domain name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most domain name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
+
+**Baseline Requirements**: The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as
+published by the CAB Forum (http://www.cabforum.org).
 
 **Certification Authority Authorization**: From RFC 6844 ([http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
@@ -2182,8 +2179,6 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
-**Requirements**: The Requirements found in this document.
-
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
 
 [http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
@@ -2216,17 +2211,17 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
-**Test Certificate**: A Certificate with a maximum validity period of 30 days and which: (i) includes a critical extension with the specified Test Certificate CABF OID, or (ii) is issued under a CA where there are no certificate paths/chains to a root certificate subject to these Requirements.
+**Test Certificate**: A Certificate with a maximum validity period of 30 days and which: (i) includes a critical extension with the specified Test Certificate CABF OID (2.23.140.2.1), or (ii) is issued under a CA where there are no Certificate paths/chains to a root Certificate subject to these Requirements.
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
 **Valid Certificate**: A Certificate that passes the validation procedure specified in RFC 5280.
 
-**Validation Specialists**: Someone who performs the information verification duties specified by these Requirements.
+**Validation Specialists**: Someone who performs the information verification duties specified by the Baseline Requirements, this Certificate Policy and the Certification Practice(s) Statements under which a CA operates.
 
 **Validity Period**: The period of time measured from the date when the Certificate is issued until the Expiry Date.
 
-**Wildcard Certificate**: A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
+**Wildcard Certificate**: A Domain Name consisting of a single asterisk character followed by a single full stop character (“*.”) followed by a Fully-Qualified Domain Name.
 
 **Zone**: A subset of Certificate Systems created by the logical or physical partitioning of systems from other Certificate Systems.
 
