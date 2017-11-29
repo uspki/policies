@@ -3,12 +3,12 @@
 ## 1.1 Overview
 This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services. 
 
-This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **Federal Public Trust TLS PKI** in this document. 
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **US Federal Public Trust TLS PKI** in this document. 
 
 This document serves two purposes:  
 
-- to specify the Federal Public Trust TLS PKI Certificate Policy and requirements, and
-- to provide requirements for what each Certification Authority shall address in its Certification Practice Statement
+- To specify the U.S. Federal Public Trust TLS PKI Certificate Policy and requirements, and
+- To provide requirements for what each Certification Authority shall address in its Certification Practice Statement
 
 This policy promotes automation to improve U.S. Federal Government efficiencies.  This policy also incorporates Certificate Transparency as a key component in for publicly accessible and accountable services operated by the U.S. Federal Government.   
 
@@ -52,7 +52,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | | Domain Validation TLS Server Authentication Certificates |  
 | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | | Organization Validation TLS Server Authentication Certificates |  
 
-Additional documents related to the Federal Public Trust TLS PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
+Additional documents related to the U.S. Federal Public Trust TLS PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
 
@@ -66,46 +66,74 @@ This document is based on the CA/Browser Forum Baseline Requirements, which is l
 
 
 ## 1.3 PKI Participants
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a sub-council comprised of U.S. Federal Government Agency representatives and is chartered by the U.S. Federal CIO Council.  The FPKIPA manages this policy and represents the interests of the  U.S. Federal CIOs and CISOs.
 
-### 1.3.1 Certification Authorities
-The Certification Authorities operated under this policy provide services to U.S. Federal Government entities which may be part of the Executive Branch, Legislative Branch and Judicial Branch of the Federal Government. The services are not provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities.
+### 1.3.1 Federal CIO Council
+The U.S. Government's Federal CIO Council was codified by the E-Government Act of 2002.  The Federal CIO Council is the principal interagency forum for improving Federal agency practices related to the design, acquisition, development, modernization, use, sharing, and performance of Federal information resources
 
-Certification Authority (CA) is defined in Section 1.6.
+The Federal CIO Council is comprised of: 1) the Chief Information Officers (CIOs) and Deputy CIOs from 28 U.S. Government Federal executive agencies; 2) liaisons from the Chief Acquisitions Officers, Chief Financial Officers, and Chief Human Capital Officers; 3) representatives from the Office of Information and Regulatory Affairs; 4) representatives from the Office of Science and Technology Policy; and 5) other groups selected by the CIO Council's Executive Committee.   
 
-### 1.3.2 Registration Authorities
-This policy allows for persons who may not be affiliated with the same organizational unit that is operating the Certification Authority to assist in the certificate application process and be designated as Enterprise Registration Authorities as a role.  Registration Authority system functions shall be the responsibility of the Certification Authority.
+The Federal CIO Council has established the framework for the Federal PKI (FPKI) and governance of the U.S. Federal Public Trust TLS PKI.
 
-A CA may designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government entity.  The CA shall not accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
+### 1.3.2 Federal Public Key Infrastructure Policy Authority
+The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a sub-council comprised of U.S. Federal Government agency representatives and is chartered under the Federal CIO Council.  
 
-1. The CA shall confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace(s) as registered in the .GOV (DotGov) and .MIL (DotMil) gTLDs Domain Name Registrars.  
-2. The CA should confirm that the requested Fully-Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the DotGov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173.
+The FPKIPA is responsible for:  
+* Maintaining this CP, and
+* Approving the CPS for each CA that issues certificates under this policy, and
+* Reviewing and approving the compliance audits for each CA issuing certificates under this policy, and
+* Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
+* Ensuring compliance with CA/Browser Forum Baseline Requirements, and
+* Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
 
-The CA shall impose these limitations through an agreement with the Authorizing Authority of the Domain Name as defined under United States Code (U.S.C.) 41 CFR Part 102-173. The CA shall monitor compliance by the Enterprise RA and institute technical controls.  The CA should use both audits and analytics based methods such as monitoring of Certificate Transparency Log(s) and services to ensure compliance.
 
-Delegated Third Parties are not allowed under this policy.
+### 1.3.3 Certification Authorities
+The U.S. Federal Public Trust TLS PKI Certification Authorities are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including: 
+
+* Publication of certificates 
+* Revocation of certificates
+* Operation of certificate status services
+* Operating automated services or procedures to perform validation of domain authorization or control as specified in Section 3.2.2.4
+* Ensuring that all aspects of the CA services, operations, and infrastructure related to certificates issued under this CP are performed in accordance with the requirements, representations, and warranties of this CP.
+
+The Certification Authorities operated under this policy provide services to U.S. Government entities which may be part of the Executive Branch, Legislative Branch and Judicial Branch of the Federal Government. The services are not provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities.
+
+### 1.3.4 Registration Authorities
+This policy allows for persons who may not be affiliated with the same U.S. Federal Government organizational unit that is operating the CA to assist in the certificate application process and be designated as an Enterprise Registration Authority.  
+
+A CA may designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government organizational unit.  The CA shall not accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
+
+1. The CA shall confirm that the requested Fully-Qualified Domain Name(s) are within the RA's affiliated U.S. Federal Government organizational unit verified Domain Namespace(s) as registered in the .GOV (DotGov) and .MIL (DotMil) gTLDs Domain Name Registrars.  
+2. The CA should confirm that the requested Fully Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the DotGov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173.
+
+The CA shall impose these limitations through an agreement with the Authorizing Authority of the Domain Namespace as defined under United States Code (U.S.C.) 41 CFR Part 102-173.  The CA shall monitor compliance by the RA and institute technical controls.  The CA shall use both audits and analytics based methods, such as monitoring of Certificate Transparency Log(s) and other services, to ensure compliance.
+
+Delegated Third Parties are not allowed as Registration Authorities.
 
 ### 1.3.3 Subscribers
-As defined in Section 1.6.1.
+A Subscriber is the entity identified in a Certificate, capable of using the Private Key that corresponds to the Public Key listed in the certificate, and has agreed to the terms of the Subscriber Agreement with the CA.  Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant.
+
+For this policy, Subscribers are limited to: 1) devices operated by or on behalf of Federal agencies, and 2) Domain Names within the .GOV and .MIL Domain Namespace(s).
 
 ### 1.3.4 Relying Parties
-"Relying Party" and "Application Software Supplier" are defined in Section 1.6.1.
+A Relying Party is any individual or entity that relies on a U.S. Federal Public Trust TLS PKI Certificate, the information included in the certificate, and the digital signature by a CA.   
+
+For this CP, Relying Parties may include individuals or entities accessing U.S. Government webservices available on the Internet.    
 
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 ### 1.3.5 Other Participants
-Not applicable.
+
 
 
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted TLS Certificates used for identifying and authenticating devices and services.  Certificates may be used for all legal authentication and encryption purposes.
+This Certificate Policy (CP) and requirements for U.S. Federal Government is limited to Publicly Trusted TLS Certificates used for identifying and authenticating devices.  Certificates may be used for all legal authentication and encryption purposes.
 
 ### 1.4.2 Prohibited Certificate Uses
 Certificates may not be used where prohibited by law.   
 
-Certificates for identifying natural persons are not allowed under this policy and the Federal Public Trust TLS PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
+Certificates for identifying natural persons are not allowed under this policy and the U.S. Federal Public Trust TLS PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
 
 ## 1.5 Policy administration
 The Federal Public Key Infrastructure Policy Authority (FPKIPA) manages this policy and represents the interests of the U.S. Federal CIOs and CISOs.   
@@ -120,7 +148,7 @@ The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible f
 * Ensuring compliance with any trust store requirements and any browser requirements that the Federal Device Root pursues or has inclusion in.
 
 ### 1.5.2 Contact Person
-Contact information for the Federal Public Key Infrastructure Policy Authority is fpki@gsa.gov.
+Contact information for the FPKIPA is fpki@gsa.gov.
 
 ### 1.5.3 Person Determining CPS suitability for the policy
 Federal Public Key Infrastructure Policy Authority
@@ -167,7 +195,9 @@ The CA shall post all CA certificates and CRLs issued by the CA in a repository 
 ## 2.2 Publication of information
 The FPKIPA shall publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
-All CAs shall publicly disclose redacted Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA shall publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures shall include all the material required by RFC 3647, and shall be structured in accordance with RFC 3647. The Certification Practice Statement shall state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA shall log all actions taken, if any, consistent with its processing practice.
+All CAs shall publicly disclose Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA shall publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures shall include all the material required by RFC 3647, and shall be structured in accordance with RFC 3647. 
+
+The Certification Practice Statement shall state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA shall log all actions taken, if any, consistent with its processing practice.
 
 The FPKIPA and/or a designee and/or the CAs shall publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages shall be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
