@@ -128,7 +128,7 @@ Relying Parties should verify the validity of certificates via revocation servic
 ## 1.4 Certificate Usage
 
 ### 1.4.1 Appropriate Certificate Uses
-This Certificate Policy (CP) is limited to Publicly Trusted TLS Certificates used for identifying and authenticating U.S. Government web services.  Certificates may be used for all legal authentication and encryption purposes.
+This Certificate Policy (CP) is limited to Publicly Trusted TLS Certificates used for identifying and authenticating U.S. Federal Government web services.  Certificates may be used for all legal authentication and encryption purposes.
 
 ### 1.4.2 Prohibited Certificate Uses
 Certificates may not be used where prohibited by law.  
@@ -139,13 +139,13 @@ Certificates for identifying natural persons are not allowed under this policy a
   
 
 ### 1.5.1 Organization Administering the Document
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) is responsible for administering this document.
+The FPKIPA is responsible for administering this document.
 
 ### 1.5.2 Contact Person
-Contact information for the FPKIPA fpki@gsa.gov.
+Contact information for the FPKIPA is fpki@gsa.gov.
 
 ### 1.5.3 Person Determining CPS suitability for the policy
-The Federal Public Key Infrastructure Policy Authority (FPKIPA) shall affirm the suitability of any CPS to this policy.
+The FPKIPA shall affirm the suitability of any CPS to this policy.
 
 ### 1.5.4 CPS approval procedures
 A CPS shall be submitted and approved by the FPKIPA.
