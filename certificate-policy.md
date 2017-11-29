@@ -3,7 +3,7 @@
 ## 1.1 Overview
 This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services. 
 
-This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Government and U.S. Federal entities.  The hierarchical PKI is referenced as the **US Federal Public Trust TLS PKI** in this document. 
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Federal Government.  The hierarchical PKI is referenced as the **U.S. Federal Public Trust TLS PKI** in this document. 
 
 This document serves two purposes:  
 
@@ -12,7 +12,7 @@ This document serves two purposes:
 
 This policy promotes automation to improve U.S. Federal Government efficiencies.  This policy also incorporates Certificate Transparency as a key component for publicly accessible and accountable services operated by the U.S. Federal Government.   
 
-This policy is applicable to all Certification Authorities within a chain of trust under the **US Federal Public Trust TLS Root CA**.    
+This policy is applicable to all Certification Authorities within a chain of trust under the **U.S. Federal Public Trust TLS Root CA**.    
 
 The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law.
 
@@ -42,7 +42,7 @@ This Certificate Policy defines five (5) different types of certificates.  Certi
 
 
 ## 1.2 Document name and identification
-This is the Federal Public Trust TLS PKI Certificate Policy.
+This is the U.S. Federal Public Trust TLS PKI Certificate Policy.
 
 The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with this CP:
 
@@ -55,7 +55,7 @@ Additional documents related to the U.S. Federal Public Trust TLS PKI, such as C
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
 
-This document is based on the CA/Browser Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
+This document is based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this document are in the public domain as works of the U.S. Government, and copyright and related rights in the work are waived.
 
 ### 1.2.1.Revisions
 
@@ -82,7 +82,7 @@ The FPKIPA is responsible for:
 * Reviewing and approving the compliance audits for each CA issuing certificates under this policy, and
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by CAB Forum, and
-* Ensuring compliance with any additional trust store operator requirements that the US Federal Public Trust TLS Root CA pursues or has inclusion in, and
+* Ensuring compliance with any additional trust store operator requirements that the U.S. Federal Public Trust TLS Root CA pursues or has inclusion in, and
 * Ensuring compliance with any additional browser requirements that are defined by the browser operators 
 
 
@@ -168,18 +168,18 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The FPKIPA will review and update this Certificate Policy at least every 365 days to ensure compliance with CA/Browser Forum Baseline requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
+The FPKIPA will review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline Requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
 
 The review and update shall include any changes needed to address:
 
-- US Federal Government mission needs and changes to procedures to support the missions
-- CA/Browser Forum Baseline Requirements updates
+- U.S. Federal Government mission needs and changes to procedures to support the missions
+- CAB Forum Baseline Requirements updates
 
-If changes to CA/Browser Forum Baseline requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the FPKIPA will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
+If changes to CAB Forum Baseline Requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the FPKIPA will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
 
 Each CA shall develop, implement, enforce, and update at least every 365 days a Certification Practice Statement (CPS) that describes in detail how the CA implements the requirements of this CP.
 
-An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CA/Browser Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record.
+An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record.
 
 ## 2.1 Repositories
 The CA shall make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
@@ -619,7 +619,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 12. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
 14. Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement; or
-15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
+15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -633,7 +633,7 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement; or
-10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
+10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
 
 ### 4.9.2 Who can request revocation
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
@@ -1569,7 +1569,7 @@ ii. the Applicant can otherwise demonstrate the right to assert the data in a pu
 b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including extendedKeyUsage value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
 
 #### 7.1.2.5 Application of RFC 5280
-For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under this Certificate Policy and the CA/Browser Forum Baseline Requirements.
+For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under this Certificate Policy and the CAB Forum Baseline Requirements.
 
 ### 7.1.3 Algorithm object identifiers
 CAs shall not issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
@@ -1704,7 +1704,7 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are registered under the CA/Browser Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with the CA/Browser Forum Baseline Requirements as follows:
+The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with the CAB Forum Baseline Requirements as follows:
 
 - Domain Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
@@ -1718,7 +1718,7 @@ If the Certificate asserts	the	policy identifier	of 2.23.140.1.2.1, then it shal
 
 If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it shall also include organizationName, stateorProvinceName and countryName in the Subject field in accordance with Section 7.1.4.2.2.  All information shall be verified in accordance with Section 3.2.2.1.
 
-Certificates under this policy shall not assert the Individual Validated Certificate Policy identifiers reserved by the CA/Browser Forum.
+Certificates under this policy shall not assert the Individual Validated Certificate Policy identifiers reserved by the CAB Forum.
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)
 
 #### 7.1.6.2. Root CA Certificates
@@ -1729,17 +1729,17 @@ All Subordinate CA's shall be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA:
 
-1. shall include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CA/Browser Forum Baseline Requirements, and
+1. shall include the CA/B Forum reserved identifiers to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
 2. shall include an identifier defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
 
-A Subordinate CA shall represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with the CA/Browser Forum Baseline Requirements are issued and managed in accordance with the CA/Browser Forum Baseline Requirements. A Subordinate CA shall represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with this Certificate Policy are issued and managed in accordance with this Certificate Policy.
+A Subordinate CA shall represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with the CAB Forum Baseline Requirements are issued and managed in accordance with the CAB Forum Baseline Requirements. A Subordinate CA shall represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with this Certificate Policy are issued and managed in accordance with this Certificate Policy.
 
 #### 7.1.6.4 Subscriber Certificates
 A Certificate issued to a Subscriber shall contain one policy identifier, defined by this CP in Section 1.2, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Certificate Policy. CAs shall also assert one of the CA/B Forum Reserved Policy OIDs in such Certificates.
 
 Subscriber certificates shall contain certificate policy identifier(s) for either domain validated policies or organization validated policies but shall not assert certificate policy identifiers for both.
 
-The issuing CA shall document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CA/Browser Forum Baseline Requirements and this Certificate Policy.
+The issuing CA shall document in its Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this Certificate Policy.
 
 ### 7.1.7 Usage of Policy Constraints extension
 Subordinate CAs may assert policy constraints in the CA certificates.
@@ -2021,9 +2021,9 @@ The FPKIPA will be notified of any change in management or operational control o
 
 In the event of a conflict between these Requirements and a law, regulation or government order (hereinafter 'Law') of any jurisdiction in which a CA operates or issues certificates, a CA may modify any conflicting requirement to the minimum extent necessary to make the requirement valid and legal in the jurisdiction. This applies only to operations or certificate issuances that are subject to that Law. In such event, the CA shall immediately (and prior to issuing a certificate under the modified requirement) include in Section 9.16.3 of the CA's CPS a detailed reference to the Law requiring a modification of these Requirements under this section, and the specific modification to these Requirements implemented by the CA.
 
-The CA shall also (prior to issuing a certificate under the modified requirement) notify the CA/Browser Forum of the relevant information newly added to its CPS by sending a message to questions@cabforum.org and receiving confirmation that it has been posted to the Public Mailing List and is indexed in the Public Mail Archives available at https://cabforum.org/pipermail/public/ (or such other email addresses and links as the Forum may designate), so that the CA/Browser Forum may consider possible revisions to these Requirements accordingly.
+The CA shall also (prior to issuing a certificate under the modified requirement) notify the CAB Forum of the relevant information newly added to its CPS by sending a message to questions@cabforum.org and receiving confirmation that it has been posted to the Public Mailing List and is indexed in the Public Mail Archives available at https://cabforum.org/pipermail/public/ (or such other email addresses and links as the Forum may designate), so that the CAB Forum may consider possible revisions to these Requirements accordingly.
 
-Any modification to CA practice enabled under this section shall be discontinued if and when the Law no longer applies, or these Requirements are modified to make it possible to comply with both them and the Law simultaneously. An appropriate change in practice, modification to the CA's CPS and a notice to the CA/Browser Forum, as outlined above, shall be made within 90 days.
+Any modification to CA practice enabled under this section shall be discontinued if and when the Law no longer applies, or these Requirements are modified to make it possible to comply with both them and the Law simultaneously. An appropriate change in practice, modification to the CA's CPS and a notice to the CAB Forum, as outlined above, shall be made within 90 days.
 
 ### 9.16.4 Enforcement (attorneys' fees and waiver of rights)
 
