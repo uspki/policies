@@ -21,7 +21,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 [TBD - statements for enterprise trust versus public trust and definition]
 
 ## 1.1.2 Compliance
-This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
+This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
 This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates. 
