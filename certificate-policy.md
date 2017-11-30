@@ -83,7 +83,7 @@ The FPKIPA is responsible for:
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by CAB Forum, and
 * Ensuring compliance with any additional trust store operator requirements that the U.S. Federal Public Trust TLS Root CA pursues or has inclusion in, and
-* Ensuring compliance with any additional browser requirements that are defined by the browser operators 
+* Ensuring compliance with any additional browser requirements that are defined by browser software vendors 
 
 
 ### 1.3.3 Certification Authorities
@@ -136,7 +136,6 @@ Certificates may not be used where prohibited by law.
 Certificates for identifying natural persons are not allowed under this policy and the U.S. Federal Public Trust TLS PKI, including but not limited to identity certificates used to identify natural persons for digital signatures, S/MIME, client authentication, and encryption.  CAs may not issue Subscriber certificates for natural persons or enter into any cross-certification with any CAs that issue certificates used to identify and authenticate natural persons.  
 
 ## 1.5 Policy administration
-  
 
 ### 1.5.1 Organization Administering the Document
 The FPKIPA is responsible for administering this document.
@@ -150,7 +149,9 @@ The FPKIPA shall affirm the suitability of any CPS to this policy.
 ### 1.5.4 CPS approval procedures
 A CPS shall be submitted and approved by the FPKIPA.
 
-Prior to submitting a CPS, the CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
+Prior to submitting a CPS, the Issuing CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The Issuing CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
+
+Issuing CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document. 
 
 ## 1.6 Definitions and Acronyms
 
@@ -168,42 +169,44 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The FPKIPA will review and update this Certificate Policy at least every 365 days to ensure compliance with CAB Forum Baseline Requirements. After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were deemed necessary.
-
-The review and update shall include any changes needed to address:
-
-- U.S. Federal Government mission needs and changes to procedures to support the missions
-- CAB Forum Baseline Requirements updates
-
-If changes to CAB Forum Baseline Requirements are made and have applicable requirements which require compliance earlier than 365 days from the last update, the FPKIPA will update the policy to meet those compliance timeframes and ensure all CA's and associated CA Certification Practice Statements are updated.  
-
-Each CA shall develop, implement, enforce, and update at least every 365 days a Certification Practice Statement (CPS) that describes in detail how the CA implements the requirements of this CP.
-
-An annual self-assessment shall be conducted by any CA operating under this Certificate Policy and the accompanying CA CPS to show compliance with the latest version of this certificate policy and the CAB Forum Baseline Requirements. The CA shall indicate the self-assessment by incrementing the CPS version number and adding a dated changelog entry to the change record.
 
 ## 2.1 Repositories
-The CA shall make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
+Each CA shall disclose the following information through a publicly accessible Repository: 
+- CA Certificates
+- Certificate Revocation Lists (CRLs)
+- Online Certificate Status Protocol responses
+- CPS documents
+- Subscriber Agreements
+- Audit Reports
 
-The CA shall post all CA certificates and CRLs issued by the CA in a repository that is publicly accessible through all Uniform Resource Identifier (URI) references asserted in valid certificates issued by that CA. The CA shall document the Uniform Resource Identifiers for CA certificates and CRLs in the CPS.
+Each CAs shall ensure that its root Certificate and the revocation data for issued Certificates are available through a Repository 24 hours a day, 7 days a week with a minimum of 99% availability overall per year with a scheduled down time that does not exceed 0.5% annually. 
 
 ## 2.2 Publication of information
-The FPKIPA shall publicly post this Certificate Policy on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
+The FPKIPA shall publicly post this CP on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
-All CAs shall publicly disclose Certification Practice Statement through a readily accessible online means that is available on a 24x7 basis. The CA shall publicly disclose its CA practices and audits to the extent required by the CA's audit scheme (see Section 8.1). The disclosures shall include all the material required by RFC 3647, and shall be structured in accordance with RFC 3647. 
+Each CA shall disclose the following information through a publicly accessible Repository: 
+- CA Certificates
+- Certificate Revocation Lists (CRLs)
+- Online Certificate Status Protocol responses
+- CPS documents
+- Subscriber Agreements
+- Audit Reports
 
-The Certification Practice Statement shall state the CA's practice on processing CAA Records for Fully Qualified Domain Names. The CA shall log all actions taken, if any, consistent with its processing practice.
+Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA can be found at:
+• https://valid. \<2nd LEVEL DOMAIN TBD>
+• https://revoked. \<2nd LEVEL DOMAIN TBD>
+• https://expired. \<2nd LEVEL DOMAIN TBD>
 
-The FPKIPA and/or a designee and/or the CAs shall publish test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates from the Issuing CAs that chain up to the publicly trusted Root Certificate. At a minimum, separate Web pages shall be published showing Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
-
+ 
 ## 2.3 Time or frequency of publication
-The FPKIPA and CAs shall update and publish the Certificate Policy and Certification Practice Statements in accordance with Section 2.0.
+The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
-All CAs approved to issue a CA certificate shall post to the Repository any issued CA certificate as soon as possible after issuance but no later than 15 days after issuance.  The FPKIPA or designee shall disclose the CA certificate and submit the CA certificate to trust stores and applicable databases, such as the Common CA Database, within thirty (30) days of issuance.
+Root CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Report(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
 ## 2.4 Access controls on repositories
-Each CA shall make its Repository publicly available in a read-only manner.
+Each CA shall make its Repository publicly available in a read-only manner.  Repository information shall be protected by unauthorized modification.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
@@ -2000,6 +2003,20 @@ The FPKIPA will be notified of any change in management or operational control o
 ## 9.12 Amendments
 
 ### 9.12.1 Procedure for amendment
+The FPKIPA shall review and update this Certificate Policy at least every 365 days.  
+
+The review and update shall include any changes needed to address source requirements, including but not limited to:
+
+- U.S. Federal Government mission needs and changes to support the missions
+- Baseline Requirements 
+- Trust store operator requirements 
+- Browser software vendor requirements
+
+The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes. 
+
+After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
+
+ 
 
 ### 9.12.2 Notification mechanism and period
 
