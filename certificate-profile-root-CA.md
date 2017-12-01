@@ -13,12 +13,7 @@
 | Issuer Signature   |       |       |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
 |               |                 |              |                                       |
 | **Extension** |  **Required**   | **Critical** | **Value**                             |
-| subjectInfoAccess  | Mandatory | False |  id-ad-caRepository (1.3.6.1.5.5.7.48.5) <br> At least one instance of this access method that includes the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found. The certificate artifact(s) served by the HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. This extension is required to assist in monitoring and discovery of, and promote transparency for, the Subordinate/Issuing CAs signed by the Root. |
+| subjectInfoAccess  | Mandatory | False |  id-ad-caRepository (1.3.6.1.5.5.7.48.5) <br> At least one instance of this access method that includes the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found. The certificate artifact(s) served by the HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC5752]. This extension is required to assist in monitoring and discovery of, and promote transparency for, the Subordinate/Issuing CAs signed by the Root. |
 | basicConstraints   | Mandatory | True |  cA=True <br> Pathlen is not present |
 | Subject Key Identifier   | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
-| Key Usage   | Mandatory | True | keyCertSign, crlSign   |
-| Extended Key Usage   |       |       | Not present |
-| Certificate Policies   |       |       | Not present |
-| Subject Alternative Name   |       |       | Not present |
-| Authority Information Access   |       |       | Not present |
-| CRL Distribution Points   |       |       | Not present |  
+| Key Usage   | Mandatory | True | keyCertSign, crlSign   |  
