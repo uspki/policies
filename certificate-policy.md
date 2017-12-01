@@ -230,8 +230,6 @@ Relying parties should consider certificates to be issued by the U.S. Government
 ### 3.1.4 Rules for interpreting various name forms
 Distinguished names in certificates are interpreted using the X.500 Standard and the ASN.1 syntax.
 
-The subject name in CA certificates shall match the issuer name in certificates issued by the subject, as required by RFC 5280.
-
 ### 3.1.5 Uniqueness of names
 The common name attribute for Root CA(s) shall be unique.
 The common name attribute for Subordinate CAs shall be unique from all other Subordinate CAs.
@@ -259,13 +257,12 @@ Issuing CA's shall describe these verification processes in the Certification Pr
 The CA shall inspect any document relied upon under this Section for alteration or falsification.
 
 #### 3.2.2.1 Identity
-Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. as the subject.  All Organization Validation certificates shall include Subject Identity Information of countryName **and** Organization **and** State and shall not include any other Subject Identity Information with the exception of the required Common Name.  See Section 7.1.4.2.2.
+Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. Government as the subject.  All Organization Validation certificates shall include Subject Identity Information of countryName **and** Organization **and** State and shall not include any other Subject Identity Information with the exception of the required Common Name.  See Section 7.1.4.2.2.
 
-If the Subject Identity Information is to include the name of our organization (o=U.S. Government), the CA shall verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  Asserting U.S. Government as the organization shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
+If the Subject Identity Information is to include the name of the organization (o=U.S. Government), the CA shall verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  Asserting U.S. Government as the organization shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
 
 1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
 2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
-3. \<not allowed>
 4. An Attestation Letter.
 
 The CA may use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
