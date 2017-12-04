@@ -215,10 +215,10 @@ Each CA shall make its Repository publicly available in a read-only manner.  Rep
 ### 3.1.1 Types of names
 This policy restricts the subject names of CAs.  CAs that issue certificates under this policy shall have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the FPKIPA.   
 
-Subscriber certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles.
+End-entity certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles.
 
 ### 3.1.2 Need for names to be meaningful
-No stipulation.
+End-entity certificates issued under this policy shall have a common name that is one of the domain names validated in accordance with Section 3.2.2.4.
 
 ### 3.1.3 Anonymity or pseudonymity of subscribers
 Subscribers are not identified in Domain Validation certificates. Only the country (US) and domain name is included in the subject information.
@@ -243,7 +243,7 @@ The FPKIPA shall resolve disputes involving names and trademarks.
 ### 3.2.1 Method to prove possession of private key
 The Issuing CA shall verify the Applicant has possession of the Private Key that corresponds to the Public Key in the certificate request.  
 
-As one method, the Issuing CA may verify the digital signature on a certificate signing request that was created using the Private Key.  The FPKIPA may allow other methods that are at least as secure as those cited here.
+As one method to verify possession of the Private Key, the Issuing CA may verify the digital signature on a certificate signing request that was created using the Private Key.  The FPKIPA may allow other methods that are at least as secure as those cited here.
 
 ### 3.2.2 Authentication of Organization and Domain Identity
 
@@ -251,19 +251,16 @@ All Domain Validation certificates issued under this Certificate Policy shall in
 
 All Organization Validation certificates issued under this Certificate Policy shall include Subject Identity Information of Common Name, countryName, Organization and State and shall not include any other Subject Identity Information.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and Organization and State, then the CA shall verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
 
-
 #### 3.2.2.1 Identity (REWRITE)
-Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. Government as the subject.  
+U.S. Government entities are in the jurisdiction of the U.S. Government.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America.  Any Organization Validation certificate issued under this Certificate Policy is for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. Government as the subject.  
 
-If the Subject Identity Information is to include the name of the organization (o=U.S. Government), the CA shall verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  Asserting U.S. Government as the organization shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
+For Organization Validation certificates, the CA shall verify that the Applicant is under authority of one of the three branches of the U.S. Government, and information shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
 
-1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
-2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
-3. An Attestation Letter.
+1. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
+2. An Attestation Letter.
 
-The CA may use the same documentation or communication described in 1 through 3 above to verify both the Applicant's identity and address.
+The CA may use the same documentation or communication described above to verify both the Applicant's identity as part of the U.S. Government (o=U.S. Government) and assert the State as District of Columbia.
 
-_Practice Note:_ U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) should suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
 
 #### 3.2.2.2 Doing Business As (DBA) and/or Tradename
 Subject Identity Information shall not include a DBA or tradename.
@@ -291,11 +288,11 @@ This Certificate Policy allows for procedures adhering to:
 
 Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates shall require a Domain Authorization Document signed by the Domain Contact authorizing the issuing of a wildcard certificate.
 
-The CA shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
+Issuing CAs shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
+
+Issuing CAs shall maintain a record of which domain validation method, including the relevant Baseline Requirements version number, that were used to validate every domain.
 
 Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section 3.3.1 of this policy prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
-
-Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
 ##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP. 
@@ -394,15 +391,8 @@ CAs shall not have Cross Certificate(s) that identify the CA as the Subject with
 ## 3.3 Identification and authentication for re-key requests
 Re-key requests are not allowed under this policy.  All requests are treated as new certificate requests.
 
-### 3.3.1 Identification and authentication for routine re-key
-See Section 3.3
-
-### 3.3.2 Identification and authentication for re-key after revocation
-See Section 3.3
-
 ## 3.4 Identification and authentication for revocation request
-No stipulation.
-
+Revocation requests shall be authenticated. Requests to revoke a certificate may be authenticated using that certificate's associated private key, regardless of whether or not the private key has been compromised.
 
 # 4. CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS
 
