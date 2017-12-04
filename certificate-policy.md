@@ -283,8 +283,6 @@ This CP asserts for all Issuing CAs operating under this policy that the inclusi
 - Section 3.2.2.3 of the Baseline Requirements, option (c): information provided by the Domain Name Registrar
   
 #### 3.2.2.4 Validation of Domain Authorization or Control
-This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
-
 This Certificate Policy allows for procedures adhering to:
 
 - 3.2.2.4.5 Domain Authorization Document
@@ -299,51 +297,54 @@ Completed confirmations of Applicant authority may be valid for the issuance of 
 
 Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
-##### 3.2.2.4.1 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.
+##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-##### 3.2.2.4.2 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.
+##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-##### 3.2.2.4.3 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.   
+##### 3.2.2.4.3 Phone Contact with Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.  
 
-##### 3.2.2.4.4 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.
+##### 3.2.2.4.4  Constructed Email to Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
 ##### 3.2.2.4.5 Domain Authorization Document
+This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. 
 
-Confirming the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
+The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .MIL or .GOV has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
-
-Confirming the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:  
+This validation method confirms the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:  
 
 1.  The presence of Required Website Content contained in the content of a file or on a web page in the form of a meta tag. The entire Required Website Content shall not appear in the request used to retrieve the file or web page, or  
 2.  The presence of the Request Token or Request Value contained in the content of a file or on a webpage in the form of a meta tag where the Request Token or Random Value shall not appear in the request.  
 
 If a Random Value is used, the CA shall provide a Random Value unique to the certificate request and shall not use the Random Value after 30 days.
 
+If a Random	Value is used, the CA shall provide a Random Value unique to the certificate request and shall not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the Certificate as defined in Section 4.2.1 of this CP.		
+
 Note: Examples of Request Tokens include, but are not limited to: (i) a hash of the public key; (ii) a hash of the Subject Public Key Info [X.509]; and (iii) a hash of a PKCS#10 CSR. A Request Token may also be concatenated with a timestamp or other data.
 
 The CA shall define in its CPS the format of Request Tokens it accepts and shall document the "/.well-known/pki-validation/" directory and any other paths registered with IANA.
 
-##### 3.2.2.4.7 [Reserved]
+##### 3.2.2.4.7 DNS Change
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-##### 3.2.2.4.8 [Reserved]
+##### 3.2.2.4.8 IP Address
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.9 [Reserved]
+##### 3.2.2.4.9 Test Certificate
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-
-Confirming the Applicants control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This validation method confirms the Applicants control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 #### 3.2.2.5 Authentication for an IP Address
-Not allowed as of the Effective Date of this Certificate Policy. IP Addresses are not allowed in the certificate profiles under this Certificate Policy.
-
+IP Addresses are not allowed in the certificate profiles under this CP.
 
 #### 3.2.2.6 Wildcard Domain Validation
-Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA shall establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the DotGov and DotMil suffixes (e.g. \*.gov, \*.mil). If a wildcard would fall within the label immediately to the left of the DotGov and DotMil suffixes (e.g. \*.gov, \*.mil), CAs shall refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire gTLDs for DotGov and / or DotMil.
+Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA shall establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the .GOV and .MIL suffixes (e.g. \*.gov, \*.mil). If a wildcard would fall within the label immediately to the left of the .GOV and .MIL suffixes (e.g. \*.gov, \*.mil), CAs shall refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire sTLDs for .GOV and .MIL.
 
 Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates shall require a Domain Authorization Document (3.2.2.4.5) by the Domain Contact authorizing the issuing of a certificate that includes a wildcard domain.  
 
@@ -2149,6 +2150,8 @@ published by the CAB Forum (http://www.cabforum.org).
 **Online**: Certificate Systems or components that are physically and logically connected to the public and/or a private internet.
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. The protocol is defined in RFC 6960. See also OCSP Responder.
+
+**Pre-Certificate: \<TBD>
 
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
