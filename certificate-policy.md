@@ -231,8 +231,7 @@ Relying parties should consider certificates to be issued by the U.S. Government
 Distinguished names in certificates are interpreted using the X.500 Standard and the ASN.1 syntax.
 
 ### 3.1.5 Uniqueness of names
-The common name attribute for Root CA(s) shall be unique.
-The common name attribute for Subordinate CAs shall be unique from all other Subordinate CAs.
+The common name attribute for Issuer CAs shall be unique from all other Issuer CAs.
 
 ### 3.1.6 Recognition, authentication, and role of trademarks
 CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
@@ -242,30 +241,27 @@ The FPKIPA shall resolve disputes involving names and trademarks.
 ## 3.2 Initial identity validation
 
 ### 3.2.1 Method to prove possession of private key
-Issuing CA's shall describe the method(s) used to prove possession of private keys in the Certification Practice Statement(s).
+The Issuing CA shall verify the Applicant has possession of the Private Key that corresponds to the Public Key in the certificate request.  
 
-Example: The CA verifies the digital signature on a signed object.  The signed object is a PKCS#10 certification signing request.
+As one method, the Issuing CA may verify the digital signature on a certificate signing request that was created using the Private Key.  The FPKIPA may allow other methods that are at least as secure as those cited here.
 
 ### 3.2.2 Authentication of Organization and Domain Identity
 
-All Domain Validation certificates issued under this Certificate Policy may include Subject Identity Information of countryName and shall not include any other Subject Identity Information with the exception of the required Common Name. If the Applicant requests a Domain Validation Certificate that will contain Subject Identity Information to include the the countryName field, then the CA shall verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3.
+All Domain Validation certificates issued under this Certificate Policy shall include Subject Identity Information of Common Name.  Domian Validation certificates may include Subject Identity Information of countryName. If the Applicant requests a Domain Validation Certificate that will contain Subject Identity Information to include countryName field, then the CA shall verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3.
 
-All Organization Validation certificates issued under this Certificate Policy shall include Subject Identity Information of countryName **and** Organization **and** State and shall not include any other Subject Identity Information with the exception of the required Common Name.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and Organization and State, then the CA shall verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
+All Organization Validation certificates issued under this Certificate Policy shall include Subject Identity Information of Common Name, countryName, Organization and State and shall not include any other Subject Identity Information.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and Organization and State, then the CA shall verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
 
-Issuing CA's shall describe these verification processes in the Certification Practice Statement(s).
 
-The CA shall inspect any document relied upon under this Section for alteration or falsification.
-
-#### 3.2.2.1 Identity
-Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. Government as the subject.  All Organization Validation certificates shall include Subject Identity Information of countryName **and** Organization **and** State and shall not include any other Subject Identity Information with the exception of the required Common Name.  See Section 7.1.4.2.2.
+#### 3.2.2.1 Identity (REWRITE)
+Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. Government as the subject.  
 
 If the Subject Identity Information is to include the name of the organization (o=U.S. Government), the CA shall verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  Asserting U.S. Government as the organization shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
 
 1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
 2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
-4. An Attestation Letter.
+3. An Attestation Letter.
 
-The CA may use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
+The CA may use the same documentation or communication described in 1 through 3 above to verify both the Applicant's identity and address.
 
 _Practice Note:_ U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) should suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
 
@@ -302,7 +298,7 @@ Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4
 
 The CA shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
 
-Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in the relevant requirement (Section 3.3.1 of this document) prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
+Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section 3.3.1 of this policy prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
 Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
