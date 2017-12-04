@@ -179,7 +179,9 @@ Each CA shall disclose the following information through a publicly accessible R
 - Subscriber Agreements
 - Audit Reports
 
-Each CAs shall ensure that its root Certificate and the revocation data for issued Certificates are available through a Repository 24 hours a day, 7 days a week with a minimum of 99% availability overall per year with a scheduled down time that does not exceed 0.5% annually. 
+CPS documents and Audit Reports shall not be redacted.  
+
+Each CAs shall ensure that its root Certificate and the revocation data for issued Certificates are available through a Repository 24 hours a day, 7 days a week with a minimum of 99.5% availability overall per year.
 
 ## 2.2 Publication of information
 The FPKIPA shall publicly post this CP on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
@@ -191,6 +193,8 @@ Each CA shall disclose the following information through a publicly accessible R
 - CPS documents
 - Subscriber Agreements
 - Audit Reports
+
+CPS documents and Audit Reports shall not be redacted.  
 
 Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA can be found at:
 • https://valid. \<2nd LEVEL DOMAIN TBD>
@@ -206,7 +210,7 @@ Root CA(s) shall post to the Repository any issued CA Certificate as soon as pos
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
 ## 2.4 Access controls on repositories
-Each CA shall make its Repository publicly available in a read-only manner.  Repository information shall be protected by unauthorized modification.
+Each CA shall make its Repository publicly available in a read-only manner.  Repository information shall be protected from unauthorized modification.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
