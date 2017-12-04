@@ -234,7 +234,7 @@ Distinguished names in certificates are interpreted using the X.500 Standard and
 The common name attribute for Issuer CAs shall be unique from all other Issuer CAs.
 
 ### 3.1.6 Recognition, authentication, and role of trademarks
-CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
+Issuing CAs shall not issue a certificate that knowingly infringes any trademark.
 
 The FPKIPA shall resolve disputes involving names and trademarks.
 
@@ -265,26 +265,23 @@ The CA may use the same documentation or communication described in 1 through 3 
 
 _Practice Note:_ U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) should suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
 
-#### 3.2.2.2 DBA/Tradename
+#### 3.2.2.2 Doing Business As (DBA) and/or Tradename
 Subject Identity Information shall not include a DBA or tradename.
 
-
 #### 3.2.2.3 Verification of Country
-This Certificate Policy is restricted to the gTLDs for DotGov and DotMil, registered as the sub-category of _sponsored_ TLDs (sTLDs) with ICANN.  
+This CP is restricted to the generic Top Level Domains (TLDs) for .GOV (DotGov) and .MIL (DotMil) which are registered as the sub-category of _sponsored_ TLDs (sTLDs) with ICANN.  
 
 DotGov is sponsored by the U.S. Government's General Services Administration.  DotGov regulations are defined in 41 CFR Part 102-173. Under 41 CFR Part 102-173.30, registration in the DotGov domain is only available to official governmental organizations in the United States including Federal, State and local governments, and Native Sovereign Nations.  
 
-DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil domain exists for the exclusive use of the Department of Defense and is referenced in Department of Defense Issuances Informational (DoDI) 8410.   
+DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil domain exists for the exclusive use of the Department of Defense and is referenced in Department of Defense Instruction (DoDI) 8410.01.   
 
 The Domain Name Registrars for both DotGov and DotMil are managed by the U.S. Government.
 
-This Certificate Policy asserts for all Certification Authorities operating under this policy that the inclusion of subject:countryName in any Subscriber certificate is verified by:
+This CP asserts for all Issuing CAs operating under this policy that the inclusion of subject:countryName in Subscriber certificates is verified by:
 
-- Section 3.2.2.3 of the CA/B Forum Baseline Requirements, option (c): information provided by the Domain Name Registrar
-- Section 3.2.2.3 of the CA/B Forum Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparable controls for the sTLDs operated by the U.S. Government.  
-
-Issuing CA's shall describe these verification processes in the Certification Practice Statement(s).
-
+- Section 3.2.2.3 of the Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparability for the .MIL and .GOV sTLDs operated by the U.S. Government.
+- Section 3.2.2.3 of the Baseline Requirements, option (c): information provided by the Domain Name Registrar
+  
 #### 3.2.2.4 Validation of Domain Authorization or Control
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
