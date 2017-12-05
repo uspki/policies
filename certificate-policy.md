@@ -474,14 +474,13 @@ The CA shall issue the certificate according to the certificate requesting proto
 ## 4.4 Certificate acceptance
 
 ### 4.4.1 Conduct constituting certificate acceptance
-Failure of the subscriber to object to the certificate or its contents shall constitute acceptance of the certificate.
+Failure of the Subscriber to object to a requested certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
-As specified in Section 2.1, all CA certificates shall be published in repositories. All CA certificates shall be published to the repositories within 24 hours of issuance.
-CAs shall log all end entity certificates in a minimum of two (2) Certificate Transparency Log servers as outlined in Section 4.3.1.
+As specified in Section 2.1, all CA certificates shall be published in repositories. 
 
 ### 4.4.3 Notification of certificate issuance by the CA to other entities
-See Section 4.4.2.
+CAs shall notify the FPKIPA of CA Certificate issuances. 
 
 ## 4.5 Key pair and certificate usage
 
