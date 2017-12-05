@@ -219,10 +219,10 @@ Each CA shall make its Repository publicly available in a read-only manner.  Rep
 ### 3.1.1 Types of names
 This policy restricts the subject names of CAs.  CAs that issue certificates under this policy shall have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the FPKIPA.   
 
-Subscriber certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles.
+End-entity certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7.1.4, and the certificate profiles.
 
 ### 3.1.2 Need for names to be meaningful
-No stipulation.
+End-entity certificates issued under this policy shall have a common name that is one of the domain names validated in accordance with Section 3.2.2.4.
 
 ### 3.1.3 Anonymity or pseudonymity of subscribers
 Subscribers are not identified in Domain Validation certificates. Only the country (US) and domain name is included in the subject information.
@@ -234,71 +234,56 @@ Relying parties should consider certificates to be issued by the U.S. Government
 ### 3.1.4 Rules for interpreting various name forms
 Distinguished names in certificates are interpreted using the X.500 Standard and the ASN.1 syntax.
 
-The subject name in CA certificates shall match the issuer name in certificates issued by the subject, as required by RFC 5280.
-
 ### 3.1.5 Uniqueness of names
-The common name attribute for Root CA(s) shall be unique.
-The common name attribute for Subordinate CAs shall be unique from all other Subordinate CAs.
+The common name attribute for Issuer CAs shall be unique from all other Issuer CAs.
 
 ### 3.1.6 Recognition, authentication, and role of trademarks
-CAs operating under this policy shall not issue a certificate that knowingly infringes any trademark.
+Issuing CAs shall not issue a certificate that knowingly infringes any trademark.
 
 The FPKIPA shall resolve disputes involving names and trademarks.
 
 ## 3.2 Initial identity validation
 
 ### 3.2.1 Method to prove possession of private key
-Issuing CA's shall describe the method(s) used to prove possession of private keys in the Certification Practice Statement(s).
+The Issuing CA shall verify the Applicant has possession of the Private Key that corresponds to the Public Key in the certificate request.  
 
-Example: The CA verifies the digital signature on a signed object.  The signed object is a PKCS#10 certification signing request.
+As one method to verify possession of the Private Key, the Issuing CA may verify the digital signature on a certificate signing request that was created using the Private Key.  The FPKIPA may allow other methods that are at least as secure as those cited here.
 
 ### 3.2.2 Authentication of Organization and Domain Identity
 
-All Domain Validation certificates issued under this Certificate Policy may include Subject Identity Information of countryName and shall not include any other Subject Identity Information with the exception of the required Common Name. If the Applicant requests a Domain Validation Certificate that will contain Subject Identity Information to include the the countryName field, then the CA shall verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3.
+All Domain Validation certificates issued under this Certificate Policy shall include Subject Identity Information of Common Name.  Domian Validation certificates may include Subject Identity Information of countryName. If the Applicant requests a Domain Validation Certificate that will contain Subject Identity Information to include countryName field, then the CA shall verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3.
 
-All Organization Validation certificates issued under this Certificate Policy shall include Subject Identity Information of countryName **and** Organization **and** State and shall not include any other Subject Identity Information with the exception of the required Common Name.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and Organization and State, then the CA shall verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
+All Organization Validation certificates issued under this Certificate Policy shall include Subject Identity Information of Common Name, countryName, Organization and State and shall not include any other Subject Identity Information.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and Organization and State, then the CA shall verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements Section 3.2.2.1.  
 
-Issuing CA's shall describe these verification processes in the Certification Practice Statement(s).
+#### 3.2.2.1 Identity (REWRITE)
+U.S. Government entities are in the jurisdiction of the U.S. Government.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America.  Any Organization Validation certificate issued under this Certificate Policy is for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. Government as the subject.  
 
-The CA shall inspect any document relied upon under this Section for alteration or falsification.
+For Organization Validation certificates, the CA shall verify that the Applicant is under authority of one of the three branches of the U.S. Government, and information shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
 
-#### 3.2.2.1 Identity
-Any Organization Validation certificates issued under this Certificate Policy are for U.S. Government mission purposes and for consumers, partners, and other relying parties to identify the U.S. as the subject.  All Organization Validation certificates shall include Subject Identity Information of countryName **and** Organization **and** State and shall not include any other Subject Identity Information with the exception of the required Common Name.  See Section 7.1.4.2.2.
+1. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
+2. An Attestation Letter.
 
-If the Subject Identity Information is to include the name of our organization (o=U.S. Government), the CA shall verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  Asserting U.S. Government as the organization shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
+The CA may use the same documentation or communication described above to verify both the Applicant's identity as part of the U.S. Government (o=U.S. Government) and assert the State as District of Columbia.
 
-1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
-2. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars;
-3. \<not allowed>
-4. An Attestation Letter.
 
-The CA may use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
-
-_Practice Note:_ U.S. Government entities are in the jurisdiction of the U.S. Government.   Verification of the domain to be part of the U.S. Government as the top level organization (o=U.S. Government) should suffice to assert the U.S. Government primary headquarter locations for address.  This Certificate Policy relies upon the establishment of three branches of the U.S. Government as defined in the U.S. Constitution.  All three branches of the U.S. Government have primary headquarters located in the city of Washington in the District of Columbia in the United States of America. _End Practice Note_
-
-#### 3.2.2.2 DBA/Tradename
+#### 3.2.2.2 Doing Business As (DBA) and/or Tradename
 Subject Identity Information shall not include a DBA or tradename.
 
-
 #### 3.2.2.3 Verification of Country
-This Certificate Policy is restricted to the gTLDs for DotGov and DotMil, registered as the sub-category of _sponsored_ TLDs (sTLDs) with ICANN.  
+This CP is restricted to the generic Top Level Domains (TLDs) for .GOV (DotGov) and .MIL (DotMil) which are registered as the sub-category of _sponsored_ TLDs (sTLDs) with ICANN.  
 
 DotGov is sponsored by the U.S. Government's General Services Administration.  DotGov regulations are defined in 41 CFR Part 102-173. Under 41 CFR Part 102-173.30, registration in the DotGov domain is only available to official governmental organizations in the United States including Federal, State and local governments, and Native Sovereign Nations.  
 
-DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil domain exists for the exclusive use of the Department of Defense and is referenced in Department of Defense Issuances Informational (DoDI) 8410.   
+DotMil is sponsored by the U.S. Government's Department of Defense.  The DotMil domain exists for the exclusive use of the Department of Defense and is referenced in Department of Defense Instruction (DoDI) 8410.01.   
 
 The Domain Name Registrars for both DotGov and DotMil are managed by the U.S. Government.
 
-This Certificate Policy asserts for all Certification Authorities operating under this policy that the inclusion of subject:countryName in any Subscriber certificate is verified by:
+This CP asserts for all Issuing CAs operating under this policy that the inclusion of subject:countryName in Subscriber certificates is verified by:
 
-- Section 3.2.2.3 of the CA/B Forum Baseline Requirements, option (c): information provided by the Domain Name Registrar
-- Section 3.2.2.3 of the CA/B Forum Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparable controls for the sTLDs operated by the U.S. Government.  
-
-Issuing CA's shall describe these verification processes in the Certification Practice Statement(s).
-
+- Section 3.2.2.3 of the Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparability for the .MIL and .GOV sTLDs operated by the U.S. Government.
+- Section 3.2.2.3 of the Baseline Requirements, option (c): information provided by the Domain Name Registrar
+  
 #### 3.2.2.4 Validation of Domain Authorization or Control
-This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
-
 This Certificate Policy allows for procedures adhering to:
 
 - 3.2.2.4.5 Domain Authorization Document
@@ -307,57 +292,60 @@ This Certificate Policy allows for procedures adhering to:
 
 Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates shall require a Domain Authorization Document signed by the Domain Contact authorizing the issuing of a wildcard certificate.
 
-The CA shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
+Issuing CAs shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
 
-Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in the relevant requirement (Section 3.3.1 of this document) prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
+Issuing CAs shall maintain a record of which domain validation method, including the relevant Baseline Requirements version number, was used to validate each domain.
 
-Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
+Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section 3.3.1 of this policy prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
-##### 3.2.2.4.1 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.
+##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-##### 3.2.2.4.2 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.
+##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-##### 3.2.2.4.3 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.   
+##### 3.2.2.4.3 Phone Contact with Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.  
 
-##### 3.2.2.4.4 [Reserved]
-Not allowed as of the Effective Date of this Certificate Policy.
+##### 3.2.2.4.4  Constructed Email to Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
 ##### 3.2.2.4.5 Domain Authorization Document
+This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. 
 
-Confirming the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
+The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .MIL or .GOV has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
-
-Confirming the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:  
+This validation method confirms the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:  
 
 1.  The presence of Required Website Content contained in the content of a file or on a web page in the form of a meta tag. The entire Required Website Content shall not appear in the request used to retrieve the file or web page, or  
 2.  The presence of the Request Token or Request Value contained in the content of a file or on a webpage in the form of a meta tag where the Request Token or Random Value shall not appear in the request.  
 
 If a Random Value is used, the CA shall provide a Random Value unique to the certificate request and shall not use the Random Value after 30 days.
 
+If a Random	Value is used, the CA shall provide a Random Value unique to the certificate request and shall not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the Certificate as defined in Section 4.2.1 of this CP.		
+
 Note: Examples of Request Tokens include, but are not limited to: (i) a hash of the public key; (ii) a hash of the Subject Public Key Info [X.509]; and (iii) a hash of a PKCS#10 CSR. A Request Token may also be concatenated with a timestamp or other data.
 
 The CA shall define in its CPS the format of Request Tokens it accepts and shall document the "/.well-known/pki-validation/" directory and any other paths registered with IANA.
 
-##### 3.2.2.4.7 [Reserved]
+##### 3.2.2.4.7 DNS Change
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-##### 3.2.2.4.8 [Reserved]
+##### 3.2.2.4.8 IP Address
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.9 [Reserved]
+##### 3.2.2.4.9 Test Certificate
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-
-Confirming the Applicants control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 #### 3.2.2.5 Authentication for an IP Address
-Not allowed as of the Effective Date of this Certificate Policy. IP Addresses are not allowed in the certificate profiles under this Certificate Policy.
-
+IP Addresses are not allowed in the certificate profiles under this CP.
 
 #### 3.2.2.6 Wildcard Domain Validation
-Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA shall establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the DotGov and DotMil suffixes (e.g. \*.gov, \*.mil). If a wildcard would fall within the label immediately to the left of the DotGov and DotMil suffixes (e.g. \*.gov, \*.mil), CAs shall refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire gTLDs for DotGov and / or DotMil.
+Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName, the CA shall establish and follow a documented procedure and technical controls that determines if the wildcard character occurs in the first label position to the left of the .GOV and .MIL suffixes (e.g. \*.gov, \*.mil). If a wildcard would fall within the label immediately to the left of the .GOV and .MIL suffixes (e.g. \*.gov, \*.mil), CAs shall refuse issuance.  All CAs are prohibited from issuing any Wildcard Certificate to the entire sTLDs for .GOV and .MIL.
 
 Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4.10.  All wildcard certificates shall require a Domain Authorization Document (3.2.2.4.5) by the Domain Contact authorizing the issuing of a certificate that includes a wildcard domain.  
 
@@ -407,15 +395,8 @@ CAs shall not have Cross Certificate(s) that identify the CA as the Subject with
 ## 3.3 Identification and authentication for re-key requests
 Re-key requests are not allowed under this policy.  All requests are treated as new certificate requests.
 
-### 3.3.1 Identification and authentication for routine re-key
-See Section 3.3
-
-### 3.3.2 Identification and authentication for re-key after revocation
-See Section 3.3
-
 ## 3.4 Identification and authentication for revocation request
-No stipulation.
-
+Revocation requests shall be authenticated. Requests to revoke a certificate may be authenticated using that certificate's associated private key, regardless of whether or not the private key has been compromised.
 
 # 4. CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS
 
@@ -2163,6 +2144,8 @@ published by the CAB Forum (http://www.cabforum.org).
 **Online**: Certificate Systems or components that are physically and logically connected to the public and/or a private internet.
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. The protocol is defined in RFC 6960. See also OCSP Responder.
+
+**Pre-Certificate: \<TBD>
 
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
