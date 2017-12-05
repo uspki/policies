@@ -399,14 +399,11 @@ Revocation requests shall be authenticated. Requests to revoke a certificate may
 ## 4.1 Certificate Application
 
 ### 4.1.1 Who can submit a certificate application
+An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
+
+An application for an end-entity certificate shall be submitted to the CA by the Applicant, an Applicant Representative, or an RA on behalf of the Applicant.  
+
 In accordance with Section 5.5.2, all CAs shall maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CA shall use this information to identify subsequent suspicious certificate requests.
-
-For the Root and Subordinate CAs:
-- An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
-
-For end entity certificates:
-- A certificate application shall be submitted to the CA by the Subscriber, an Applicant Representative, or an RA on behalf of the Subscriber.  
-
 
 ### 4.1.2 Enrollment process and responsibilities
 For the Root and Subordinate CAs:
