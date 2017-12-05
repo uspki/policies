@@ -399,17 +399,16 @@ Revocation requests shall be authenticated. Requests to revoke a certificate may
 ## 4.1 Certificate Application
 
 ### 4.1.1 Who can submit a certificate application
-An application for a CA certificate shall be submitted by an authorized representative of the applicant CA.
+An application for a CA Certificate shall be submitted by an authorized representative of the applicant CA.
 
 An application for an end-entity certificate shall be submitted to the CA by the Applicant, an Applicant Representative, or an RA on behalf of the Applicant.  
 
 In accordance with Section 5.5.2, all CAs shall maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CA shall use this information to identify subsequent suspicious certificate requests.
 
 ### 4.1.2 Enrollment process and responsibilities
-For the Root and Subordinate CAs:
-- The FPKIPA is responsible for approving or denying requests for CA certificate issuances.
+The FPKIPA is responsible for approving or denying requests for CA certificate issuances by any CA.
 
-For all CAs, prior to the issuance of any Certificate, the CA shall obtain the following documentation from the Applicant:
+Prior to the issuance of any Certificate, all CAs shall obtain the following documentation from the Applicant:
 
 1. A certificate request, which may be electronic; and
 2. An executed Subscriber Agreement or Terms of Use, which may be electronic.
@@ -418,9 +417,9 @@ The certificate request shall contain a request from, or on behalf of, the Appli
 
 The CA shall be responsible for validating the information in the certificate request and the identity evidence to ensure the information is:
 
-- properly formed
-- accurate
-- meets the requirements for the type of certificate requested: a device Domain Validation SSL end entity certificate, a device Organizational Validation SSL end entity certificate, a CA Certificate, or a Certificate Status Server (OCSP) signing certificate
+- Properly formed
+- Accurate
+- Meets the requirements for the type of certificate requested such as a Domain Validation TLS Server Authentication certificate, an Organization Validation TLS Server Authentication certificate, a Certificate Status Server (OCSP) signing certificate, or a CA Certificate
 
 All communications supporting the certificate application and issuance process shall be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the public/private key pair shall be used. Out-of-band communications shall protect the confidentiality and integrity of the data.
 
@@ -431,23 +430,23 @@ All CAs shall specify the procedures for validating information and identity evi
 ### 4.2.1 Performing identification and authentication functions
 All CAs shall establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
-For end entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates:
+For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates:
 
-- The Applicant information shall include at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension
-- All Fully-Qualified Domain Names to be included in the Certificate's SubjectAltName extension shall be verified in accordance with Section 3.2 before issuance of the certificate
-- CAA records for DotGov and DotMil domains shall be checked prior to issuance of any certificate and the CA shall act in accordance to the rules in the CAA records if present.  The CA shall identify in Section 4.2 of the CPS the Issuer Domain Name(s) used for CAA records.  
+- The Applicant information shall include at least one Fully-Qualified Domain Name.
+- All Fully-Qualified Domain Names shall be verified in accordance with Section 3.2 before issuance of the certificate.
+- CAA records for .GOV and .MIL domains shall be checked prior to issuance of any certificate and the CA shall act in accordance to the requirements in Section 3.2.2.8, and the rules in the CAA records if present.  
+
+The CA shall identify in Section 4.2 of the CPS the Issuer Domain Name(s) used for CAA records.  
 
 The CA may use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.  
 
-All Subordinate CAs shall develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .GOV (DotGov) and .MIL (DotMil) assets prior to the Certificate's approval.  
+All Subordinate CAs shall develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .GOV and .MIL assets prior to the Certificate's approval.  
 
 Delegated Third Parties are not allowed under this policy.
 
 
 ### 4.2.2 Approval or rejection of certificate applications
-This Certificate Policy is restricted to be applicable to, and technically constrained, for DotMil and DotGov assets.
-
-CAs shall reject all certificate applications containing any FQDNs that are not under the gTLDs for DotGov and DotMil.
+This CP is restricted to .MIL and .GOV assets.  CAs shall reject all certificate applications containing any FQDNs that are not under the gTLDs for .MIL and .GOV.
 
 Approval of certificate applications requires successful completion of validation per Section 3.2.
 
