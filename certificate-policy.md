@@ -442,8 +442,7 @@ The CA may use the documents and data provided in Section 3.2 to verify certific
 
 All Subordinate CAs shall develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .GOV and .MIL assets prior to the Certificate's approval.  
 
-Delegated Third Parties are not allowed under this policy.
-
+Delegated Third Parties are not allowed under this policy and shall not participate in the performance of identification functions.
 
 ### 4.2.2 Approval or rejection of certificate applications
 This CP is restricted to .MIL and .GOV assets.  CAs shall reject all certificate applications containing any FQDNs that are not under the gTLDs for .MIL and .GOV.
@@ -452,28 +451,25 @@ Approval of certificate applications requires successful completion of validatio
 
 In accordance with Section 5.5.2, all CAs shall maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CAs shall use this information to identify subsequent suspicious certificate requests and may use it as the basis for rejecting a certificate request.
 
-
 ### 4.2.3 Time to process certificate applications
 No stipulation.
 
 ## 4.3 Certificate issuance
 
 ### 4.3.1 CA actions during certificate issuance
-Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA shall require written authorization by the FPKIPA.  
+Issuance of a CA Certificate shall require an individual authorized by the CA to deliberately issue a direct command in order for the CA to perform a certificate signing operation.  Issuance of a CA certificate shall require written authorization by the FPKIPA.  
 
-All end entity certificates for Domain Validation SSL and Organizational Validation SSL shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  
+All Domain Validation TLS Server Authentication certificates and Organizational Validation TLS Server Authentication certificates shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) in the x509v3 certificate extension.  The Issuing CA shall submit a precertificate to a minimum of two (2) Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  The Issuing CA shall submit a precertificate to a minimum of three (3) Certificate Transparency Logs for certificates with a validity period greater than 395 days and less than or equal to 825 days. There is no limit on the maximum number of CT Logs which may be submitted to.
 
-The Issuing CA shall submit a precertificate to a minimum of TWO Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  The Issuing CA shall submit a precertificate to a minimum of THREE Certificate Transparency Logs for certificates with a validity period greater than 395 days and less than or equal to 825 days. There is no limit on the maximum number of CT Logs which may be submitted to.
-
-- At least one of the Certificate Transparency Logs shall be a CT Log operated by Google.
-- At least one of the Certificate Transparenty Logs shall be a CT Log not operated by Google.
+- At least one of the CT Logs shall be a log operated by Google.
+- At least one of the CT Logs shall be a Log operated by a government or business entity other than Google.
 
 The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the end entity certificate issued.
 
-Information included in the end entity certificates shall not be redacted prior to submission to the Certificate Transparency Logs.  
+Information included in the precertificates shall not be redacted prior to submission to the Certificate Transparency Logs.  
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
-The CA shall issue the certificate according to the certificate requesting protocol used by the device (this may be automated) and, if the protocol does not provide inherent notification, also notify the authorized representative of the issuance.
+The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
 
 ## 4.4 Certificate acceptance
 
