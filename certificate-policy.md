@@ -290,7 +290,7 @@ Wildcard certificates are not allowed to be validated using 3.2.2.4.6 or 3.2.2.4
 
 Issuing CAs shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
 
-Issuing CAs shall maintain a record of which domain validation method, including the relevant Baseline Requirements version number, that were used to validate every domain.
+Issuing CAs shall maintain a record of which domain validation method, including the relevant Baseline Requirements version number, was used to validate each domain.
 
 Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section 3.3.1 of this policy prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
@@ -335,7 +335,7 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-This validation method confirms the Applicants control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
