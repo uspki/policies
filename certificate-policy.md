@@ -487,7 +487,7 @@ CAs shall notify the FPKIPA of CA Certificate issuances.
 ### 4.5.1 Subscriber private key and certificate usage
 See Section 9.6.3, provisions 2. and 4.
 
-The intended scope of usage for a private key shall be in accordance with the certificate profiles included with this Certificate Policy.
+The intended scope of usage for a private key shall be in accordance with the Certificate Profiles defined in Section \<TBD> of this CP.
 
 ### 4.5.2 Relying party public key and certificate usage
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
