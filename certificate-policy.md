@@ -498,9 +498,9 @@ It is recommended that relying parties process the expiration date of the certif
 Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate.
 
 ### 4.6.1 Circumstance for certificate renewal
-CA certificates shall not be renewed.  End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates shall not be renewed. Certificate renewal requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
+CA certificates shall not be renewed.  End entity Domain Validation TLS Server Authentication and end entity Organizational Validation TLS Server Authentication certificates shall not be renewed. Certificate renewal requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
 
-Online Certificate Status Protocol (OCSP) Delegated responder certificates may be renewed.
+Online Certificate Status Protocol (OCSP) Delegated Responder certificates may be renewed.
 
 ### 4.6.2 Who may request renewal
 The FPKIPA shall request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
@@ -549,7 +549,7 @@ Modification is defined as the re-issuance of a certificate with the same public
 
 
 ### 4.8.1 Circumstance for certificate modification
-End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates shall not be modified.
+End entity Domain Validation TLS Server Authentication and end entity Organization Validation TLS Server Authentication certificates shall not be modified.
 Online Certificate Status Protocol (OCSP) Delegated responder certificates shall not be modified.
 
 CA certificates may be modified to update attributes other than the public key.  A CA certificate shall not be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
@@ -634,7 +634,7 @@ The CA shall begin investigation of a Certificate Problem Report immediately upo
 
 1. The nature of the alleged problem;
 2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
-3. The entity making the complaint (for example, a complaint from a law enforcement or Inspector General official that a Web site violates Federal regulation should carry more weight than a complaint from a user alleging that they were unable to complete their transaction); and
+3. The entity making the complaint (for example, a complaint from a law enforcement or Inspector General official that a Web site violates U.S. Federal regulation should carry more weight than a complaint from a user alleging that they were unable to complete their transaction); and
 4. Relevant legislation.
 
 ### 4.9.6 Revocation checking requirement for relying parties
@@ -642,11 +642,9 @@ See Section 4.5.2.
 
 ### 4.9.7 CRL issuance frequency
 
-For the status of Subscriber Certificates:  
-- All CAs shall publish CRLs.  On-line CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field
+For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field. 
 
-For the status of Subordinate CA Certificates:
-- The CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
+For the status of Subordinate CA Certificates, the root CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
 
 ### 4.9.8 Maximum latency for CRLs
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
@@ -662,24 +660,18 @@ In the latter case, the OCSP signing Certificate shall contain an extension of t
 defined by RFC6960.
 
 ### 4.9.10 On-line revocation checking requirements
-The CA shall support an OCSP capability using the GET method for Certificates issued in accordance with these Requirements.
+The CA shall support an OCSP capability using the GET method for Certificates.
 
-For the status of Subscriber Certificates:
+For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, the CA shall update information provided via OCSP every 24 hours. OCSP responses shall have a maximum expiration time of seven (7) days.  
 
-- The OCSP Responder shall update the information used to respond to requests within 4 hours of a new CRL being issued by the CA for all requests. OCSP responses from this service shall have a maximum expiration time of ten (10) days
-
-For the status of Subordinate CA Certificates:
-
-- The CA shall update information provided via an Online Certificate Status Protocol at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
+For the status of Subordinate CA Certificates, the root CA shall update information provided via OCSP at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status. The CA shall monitor the responder for such requests as part of its security response procedures.
 
-OCSP responders for CAs which are not Technically Constrained in line with Section 7.1.5 shall not respond with a "good" status for such certificates.
-
 ### 4.9.11 Other forms of revocation advertisements available
-If the Subscriber Certificate is for a high-traffic FQDN, the CA may rely on stapling, in accordance with [RFC4366], to distribute its OCSP responses. In this case, the CA shall ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA shall enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
+If the Subscriber Certificate is for a high-traffic FQDN, the CA may rely on stapling, in accordance with RFC4366, to distribute its OCSP responses. In this case, the CA shall ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA shall enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
 
-### 4.9.12 Special requirements re key compromise
+### 4.9.12 Special requirements Related to key compromise
 See Section 4.9.1.
 When a CA certificate is revoked a CRL shall be issued within 24 hours of notification.
 
