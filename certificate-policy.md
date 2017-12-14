@@ -712,30 +712,6 @@ Private keys for certificates issued under this policy shall not be escrowed.
 Not applicable.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
-The CA shall develop, implement, and maintain a comprehensive security program designed to:
-
-1. Protect the confidentiality, integrity, and availability of Certificate Data and Certificate Management Processes;
-2. Protect against anticipated threats or hazards to the confidentiality, integrity, and availability of the Certificate Data and Certificate Management Processes;
-3. Protect against unauthorized or unlawful access, use, disclosure, alteration, or destruction of any Certificate Data or Certificate Management Processes;
-4. Protect against accidental loss or destruction of, or damage to, any Certificate Data or Certificate Management Processes; and
-5. Comply with all other security requirements applicable to the CA by law.
-
-The Certificate Management Process shall include:
-
-1. physical security and environmental controls;
-2. system integrity controls, including configuration management, integrity maintenance of trusted code, and malware detection/prevention;
-3. network security and firewall management, including port restrictions and IP address filtering;
-4. user management, separate trusted-role assignments, education, awareness, and training; and
-5. logical access controls, activity logging, and inactivity time-outs to provide individual accountability.
-
-The CA's security program shall include an annual Risk Assessment that:
-
-1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate Data or Certificate Management Processes;
-2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate Data and Certificate Management Processes; and
-3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
-
-Based on the Risk Assessment, the CA shall develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan shall include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan shall also take into account then-available technology and the cost of implementing the specific measures, and shall implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
-{:.br data-sect="16.3"}
 
 ## 5.1 PHYSICAL SECURITY CONTROLS
 CA equipment shall be protected from unauthorized access while the cryptographic module is installed and activated.  The CA shall implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  CA cryptographic tokens shall be protected against theft, loss, and unauthorized use.  
@@ -746,7 +722,7 @@ All the physical control requirements specified below apply equally to the Root 
 The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, shall be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, shall provide robust protection against unauthorized access to the CA equipment and records.
 
 ### 5.1.2 Physical access
-At a minimum, the physical access controls for CA equipment and Certificate Status Authority (CSA) equipment, as well as remote workstations used to administer the CAs, shall:
+At a minimum, the physical access controls for CA equipment, as well as remote workstations used to administer the CAs, shall:
 
 - Ensure that no unauthorized access to the hardware is permitted.
 - Ensure that all removable media and paper containing sensitive plain-text information is stored in secure containers.
@@ -758,7 +734,7 @@ When not in use, removable cryptographic modules, activation information used to
 
 A security check of the facility housing the CA equipment or remote workstations used to administer the CAs shall occur if the facility is to be left unattended.  At a minimum, the check shall verify the following:  
 
-- The equipment is in a state appropriate to the current mode of operation (e.g., that cryptographic modules are in place when “open,” and secured when “closed,” and for the CA, that all equipment other than the repository is shut down).
+- The equipment is in a state appropriate for the current mode of operation (e.g., that cryptographic modules are in place when “open,” and secured when “closed,” and for the CA, that all equipment other than the repository is shut down).
 - Any security containers are properly secured.
 - Physical security systems (e.g., door locks, vent covers) are functioning properly.
 - The area is secured against unauthorized access.
@@ -766,9 +742,9 @@ A security check of the facility housing the CA equipment or remote workstations
 A person or group of persons shall be made explicitly responsible for making such checks.  When a group of persons is responsible, a log identifying the person performing a check at each instance shall be maintained.  If the facility is not continuously attended, the last person to depart shall initial a sign-out sheet that indicates the date and time and asserts that all necessary physical protection mechanisms are in place and activated.
 
 ### 5.1.3 Power and air conditioning
-The CA shall have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown.  
+The CA shall have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power causes a shutdown.  
 
-The repositories (containing CA certificates and CRLs) shall be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
+All Repositories shall be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4 Water exposures
 CA equipment shall be installed such that it is not in danger of exposure to water.
@@ -1006,11 +982,7 @@ Archive data may be collected in any expedient manner.
 Procedures, detailing how to create, verify, package, transmit, and store the CA archive information, shall be published in the CPS.
 
 ## 5.6 Key changeover
-To minimize risk from compromise of a CA’s private signing key, that key may be changed often.  From that time on, only the new key will be used to sign CA and subscriber certificates.  If the old private key is used to sign OCSP responder certificates or CRLs that cover certificates signed with that key, the old key shall be retained and protected.  
-
-After a CA performs a Key Changeover, the CA may continue to issue CRLs with the old key until all certificates signed with that key have expired.  
-
-When a CA updates its private signature key and thus generates a new public key, the CA shall notify the FPKIPA and subscribers of the change.  
+Not applicable.
 
 ## 5.7 Compromise and disaster recovery
 
@@ -2134,7 +2106,7 @@ published by the CAB Forum (http://www.cabforum.org).
 
 **Publicly-Trusted Certificate**: A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
 
-**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.3.
+**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.2.
 
 **Random Value**: A value specified by a CA to the Applicant that exhibits at least 112 bits of entropy.
 
