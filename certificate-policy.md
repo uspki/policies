@@ -766,38 +766,33 @@ Full system backups sufficient to recover from system failure shall be made on a
 ### 5.2.1 Trusted roles
 A trusted role is one whose incumbent performs functions that can introduce security problems if not carried out properly, whether accidentally or maliciously.
 
-The requirements of this policy are defined in terms of four roles. Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel or investigative records requiring protection under the Privacy Act.
-
-1.	Administrator - authorized to install, configure, and maintain the CA; establish and maintain accounts; configure profiles and audit parameters; and generate component keys.
-2.	Officer - authorized to request or approve certificates or certificate revocations, and perform the Validation Specialist functions for quarterly reviews of issued certificates
-3.	Auditor – authorized to review, maintain, and archive audit logs.
-4.	Operator – authorized to perform system backup and recovery.
+The requirements of this policy are defined in terms of four roles:   
+1.	Administrator 
+2.	Officer 
+3.	Audit Administrator 
+4.	Operator 
 
 These four roles are employed at the CA.  Separation of duties shall comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
 
-A detailed description of the responsibilities for each role:  
-
-The Administrator shall be responsible for:
--  Installation, configuration, and maintenance of the CA;
--  Establishing and maintaining CA system accounts;
--  Configuring certificate profiles or templates and audit parameters, and;
--  Generating and backing up CA keys.
+The Administrator shall be responsible for
+-  Installation, configuration, and maintenance of the CA
+-  Establishing and maintaining CA system accounts
+-  Configuring certificate profiles or templates and audit parameters
+-  Generating and backing up CA keys
 
 Administrators shall not issue certificates to subscribers.  
 
-The Officer (aka Registration Authority and / or Validation Specialist) shall be responsible for:   
-
-- Verifying the identity of subscribers and accuracy of information included in certificates pursuant to Section 3.2
-- Performing the Validation Specialist functions for quarterly reviews of issued certificates
-- Approving and executing the issuance of the certificates where inspection of the validation information is required, and
+The Officer shall be responsible for:   
+- Approving and executing the issuance of the certificates where inspection of the validation information is required
 - Requesting, approving and executing the revocation of certificates
 
 The Audit Administrator shall be responsible for:
-
-- Reviewing, maintaining, and archiving audit logs;
-- Performing or overseeing internal compliance audits to ensure that the CA is operating in accordance with its CPS;
+- Reviewing, maintaining, and archiving audit logs
+- Performing or overseeing internal compliance audits to ensure that the CA is operating in accordance with its CPS
 
 The Operator shall be responsible for the routine operation of the CA equipment and operations such as system backups and recovery or changing recording media.
+
+Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel records or investigative records requiring protection under the Privacy Act.
 
 ### 5.2.2 Number of Individuals Required per Task
 The CA Private Key shall be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in a physically secured environment.
