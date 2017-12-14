@@ -671,9 +671,11 @@ If the OCSP responder receives a request for status of a certificate that has no
 ### 4.9.11 Other forms of revocation advertisements available
 If the Subscriber Certificate is for a high-traffic FQDN, the CA may rely on stapling, in accordance with RFC4366, to distribute its OCSP responses. In this case, the CA shall ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA shall enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
 
-### 4.9.12 Special requirements Related to key compromise
-See Section 4.9.1.
-When a CA certificate is revoked a CRL shall be issued within 24 hours of notification.
+### 4.9.12 Special requirements related to key compromise
+See Section 4.9.1
+
+In the case of a compromise of a CA certificate, the CA must immediately notify the FPKI PA that the CA certificate has been compromised.  See Section 5.7.1 for incident handling procedures. 
+
 
 ### 4.9.13 Circumstances for suspension
 Certificates issued under this policy shall not be suspended.
