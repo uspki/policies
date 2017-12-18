@@ -1170,18 +1170,16 @@ The documentation of the procedure shall be detailed enough to show that appropr
 Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs. 
 
 #### 6.1.1.3 Subscriber Key Pair Generation
+Applicants shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
+
 The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see http://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
 
 ### 6.1.2 Private key delivery to subscriber
-Parties other than the Subscriber shall not archive the Subscriber Private Key.
-
-Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
-
-If the CA or any of its Enterprise RAs become aware that a Subscriber's Private Key has been communicated to an unauthorized person not affiliated with the Subscriber, then the CA shall revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+Applicants shall generate their own keys.  This section is not applicable.
 
 ### 6.1.3 Public key delivery to certificate issuer
 
-The public key and the subscriber’s identity shall be delivered securely to the CA for certificate issuance. The delivery mechanism shall bind the subscriber’s verified identity to the public key. If cryptography is used to achieve this binding, it shall be at least as strong as the CA keys used to sign the certificate.
+The public key shall be delivered securely to the Issuing CA for certificate issuance. The certificate request process shall ensure that the Applicant possesses the Private Key associated with the Public Key presented for certification.  The delivery mechanism shall bind the subscriber’s verified identity to the public key. If cryptography is used to achieve this binding, it shall be at least as strong as the CA keys used to sign the certificate.    
 
 ### 6.1.4 CA public key delivery to relying parties
 
