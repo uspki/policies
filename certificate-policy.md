@@ -109,19 +109,19 @@ The CA shall impose these limitations through an agreement with the Authorizing 
 
 Delegated Third Parties are not allowed as Registration Authorities.
 
-### 1.3.3 Subscribers
+### 1.3.5 Subscribers
 A Subscriber is the entity identified in a Certificate, capable of using the Private Key that corresponds to the Public Key listed in the certificate, and has agreed to the terms of the Subscriber Agreement with the CA.  Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant.
 
 For this policy, Subscribers are limited to: 1) web services operated by or on behalf of Federal agencies, and 2) Domain Names within the .GOV and .MIL Domain Namespace(s).
 
-### 1.3.4 Relying Parties
+### 1.3.6 Relying Parties
 A Relying Party is any individual or entity that relies on a U.S. Federal Public Trust TLS PKI Certificate, the information included in the certificate, and the digital signature by a CA.   
 
 For this CP, Relying Parties may include individuals or entities accessing U.S. Government web services available on the Internet.    
 
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
-### 1.3.5 Other Participants
+### 1.3.7 Other Participants
 
 
 
@@ -1167,7 +1167,7 @@ The CA shall:
 The documentation of the procedure shall be detailed enough to show that appropriate role separation was used and the CA key pair generation shall create a verifiable audit trail that the security requirements for procedures were followed.
 
 #### 6.1.1.2 RA Key Pair Generation
-RAs shall not generate key pairs.
+Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs. 
 
 #### 6.1.1.3 Subscriber Key Pair Generation
 The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key (such as a Debian weak key, see <http://wiki.debian.org/SSLkeys>).
