@@ -1173,11 +1173,11 @@ Registration Authorities as a function of the CA shall not generate Subscriber k
 The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see http://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
 
 ### 6.1.2 Private key delivery to subscriber
-Parties other than the Subscriber shall not archive the Subscriber Private Key without authorization by the Subscriber.
+Parties other than the Subscriber shall not archive the Subscriber Private Key.
 
-Subscribers shall generate their own keys in compliance with sections 6.1.5 and 6.1.6.
+Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
 
-If the CA or any of its designated RAs become aware that a Subscriber's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subscriber, then the CA shall revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+If the CA or any of its Enterprise RAs become aware that a Subscriber's Private Key has been communicated to an unauthorized person not affiliated with the Subscriber, then the CA shall revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
 ### 6.1.3 Public key delivery to certificate issuer
 
