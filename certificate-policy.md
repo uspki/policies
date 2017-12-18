@@ -1197,8 +1197,6 @@ Certificates shall meet the following requirements for algorithm type and key si
 | :---  | :------ |
 | Digest algorithm | SHA-256, SHA-384 or SHA-512  |
 | Minimum RSA modulus size (bits) | 4096 |
-| ECC curve | NIST P-256, P-384, or P-521 |
-| Minimum DSA modulus and divisor size (bits)\*\*\* | L= 2048 N= 224 or L= 2048 N= 256 |
 
 
 (2) Subordinate CA Certificates
@@ -1207,8 +1205,6 @@ Certificates shall meet the following requirements for algorithm type and key si
 | :---  | :------ |
 | Digest algorithm | SHA-256, SHA-384 or SHA-512  |
 | Minimum RSA modulus size (bits) | 2048 |
-| ECC curve | NIST P-256, P-384, or P-521 |
-| Minimum DSA modulus and divisor size (bits)\*\*\* | L= 2048 N= 224 or L= 2048 N= 256 |
 
 
 (3) Subscriber Certificates
@@ -1218,18 +1214,16 @@ Certificates shall meet the following requirements for algorithm type and key si
 | Digest algorithm | SHA-256, SHA-384 or SHA-512  |
 | Minimum RSA modulus size (bits) | 2048 |
 | ECC curve | NIST P-256, P-384, or P-521 |
-| Minimum DSA modulus and divisor size (bits)\*\*\* | L= 2048 N= 224 or L= 2048 N= 256 |
 
-\*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
 ### 6.1.6 Public key parameters generation and quality checking
-RSA: The CA shall confirm that the value of the public exponent _e_ is an odd positive integer such that:  
+For RSA modulus, the CA shall confirm that the value of the public exponent _e_ is an odd positive integer such that:  
 
 - 2<sup>16</sup> < e < 2<sup>256</sup>  
 
-The modulus shall also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: NIST SP 800-89 and NIST FIPS 186-4]
+The CA shall perform partial public key validation as specified in Section 5.3.3 of NIST SP 800-89 to confirm that the modulus is an odd number, is not the power of a prime, and has no factors smaller than 752.
 
-ECC: The CA should confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
+For ECC, the CA should confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine as specified in NIST SP 800-56A. 
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
 Root CA Private Keys shall not be used to sign Certificates except in the following cases:
@@ -1243,23 +1237,23 @@ Root CA Private Keys shall not be used to sign Certificates except in the follow
 The CA shall implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above shall consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA shall encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
-The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules [FIPS 140-2]. Cryptographic modules shall be validated to a FIPS 140 level identified in this section.
+The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules specified in FIPS 140-2. 
 
-- Cryptographic modules for CAs and OCSP responders shall be hardware modules validated as meeting FIPS 140-2 Level 3 or above
+Cryptographic modules for CAs, including any cryptographic modules used in certificate status services required of the CA Repository such as OCSP responders, shall be hardware modules validated as meeting FIPS 140-2 Level 3 or above.
 
 
 ### 6.2.2 Private key (n out of m) multi-person control
 For all CAs:
 
-- A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key.
-- CA signature keys may be backed up only under at least two-person control.
-- Access to CA signing keys backed up for disaster recovery shall be under at least two-person control.
-- The names of the parties used for two-person control shall be made available for inspection during Qualified Audits.
+- A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key
+- CA signature keys may be backed up only under at least two-person control
+- Access to CA signing keys backed up for disaster recovery shall be under at least two-person control
+- The names of the parties used for two-person control shall be made available for inspection during Qualified Audits
+- Multi-person control shall not be achieved using personnel that serve in the Audit Administrator trusted role
+  		  
 
 ### 6.2.3 Private key escrow
-For all CAs:
-
-- The CA private keys shall never be escrowed
+No private key shall be escrowed.
 
 ### 6.2.4 Private key backup
 For all CAs:
@@ -2261,6 +2255,8 @@ FIPS 140-2, Federal Information Processing Standards Publication - Security Requ
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
+
+NIST SP 800-56-A, Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography, http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar2.pdf
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
