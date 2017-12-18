@@ -1153,19 +1153,16 @@ Prior to CA termination, the CA shall provide archived data to an archive facili
 ### 6.1.1 Key pair generation
 
 #### 6.1.1.1 CA Key Pair Generation
-In all cases, the CA shall:
+The CA shall:
 
-1. prepare and follow a Key Generation Script,
-2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process, and
-3. have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair.
-
-In all cases, the CA shall:
-
-1. Generate the CA keys in a physically secured environment as described in the CA's Certification Practice Statement;
-2. Generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
-3. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation;
-4. Log its CA key generation activities;
-5. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in the Certificate Policy and Certification Practice Statement and its Key Generation Script.
+1. Prepare and follow a Key Generation Script
+1. Have a Qualified Auditor witness the CA Key Pair generation process or review a video of the entire CA Key Pair generation process
+1. Have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair
+1. Generate the CA keys in a physically secured environment as described in the CA's CPS
+1. Generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge
+1. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation
+1. Log its CA key generation activities
+1. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in this CP and CA's CPS and its Key Generation Script
 
 The documentation of the procedure shall be detailed enough to show that appropriate role separation was used and the CA key pair generation shall create a verifiable audit trail that the security requirements for procedures were followed.
 
