@@ -1257,17 +1257,18 @@ For all CAs:
 No private key shall be escrowed.
 
 ### 6.2.4 Private key backup
-For all CAs:
+For all CA Certificate private keys:
 
-- The CA private signature keys shall be backed up under the same multiperson control as the original signature key.
-- At least one copy of the private signature key shall be stored off-site.
-- All copies of the CA private signature key shall be accounted for and protected in the same manner as the original.
+- The private signature key shall be backed up under the same multi-person control as the original signature key
+- At least one copy of the CA private signature key shall be stored off-site in a secure storage facility separate from the CA
+- All copies of the CA private signature key shall be accounted for and protected in the same manner as the original
 - Backup procedures shall be included in the CA’s CPS
 
-See Section 5.2.2.
+There is no stipulation for Subscriber private keys.  
+
 
 ### 6.2.5 Private key archival
-Parties other than the Subordinate CA shall not archive the Subordinate CA Private Keys.
+Private keys may be only archived by the parties represented by the Subject identified in the corresponding public key certificate.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
 All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4.1. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
