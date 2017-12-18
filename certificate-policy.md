@@ -1179,7 +1179,7 @@ Applicants shall generate their own keys.  This section is not applicable.
 
 ### 6.1.3 Public key delivery to certificate issuer
 
-The public key shall be delivered securely to the Issuing CA for certificate issuance. The certificate request process shall ensure that the Applicant possesses the Private Key associated with the Public Key presented for certification.  The delivery mechanism shall bind the subscriber’s verified identity to the public key. If cryptography is used to achieve this binding, it shall be at least as strong as the CA keys used to sign the certificate.    
+The public key shall be delivered securely to the Issuing CA for certificate issuance. The certificate request process shall ensure that the Applicant possesses the private key associated with the public key presented for certification.  
 
 ### 6.1.4 CA public key delivery to relying parties
 
