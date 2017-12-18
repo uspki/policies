@@ -1182,13 +1182,11 @@ Applicants shall generate their own keys.  This section is not applicable.
 The public key shall be delivered securely to the Issuing CA for certificate issuance. The certificate request process shall ensure that the Applicant possesses the private key associated with the public key presented for certification.  
 
 ### 6.1.4 CA public key delivery to relying parties
-
-When a Subordinate CA updates its signature key pair, the CA shall distribute the new public key in a secure fashion.
-
-The Root CA certificate(s) shall be conveyed to relying parties in a secure fashion to preclude substitution attacks. Acceptable methods for self-signed Root CA certificate delivery are:
-- Loading a self-signed certificate onto tokens delivered to relying parties via secure mechanisms;
-- Secure distribution of self-signed certificates through secure out-of-band mechanisms;
-- Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources (note that hashes posted in-band along with the certificate are not acceptable as an authentication mechanism)
+A Root CA certificate shall be conveyed to trust store operators and relying parties in a secure fashion to preclude substitution attacks. Acceptable methods for the self-signed Root CA certificate delivery are:
+- Loading a self-signed certificate onto tokens delivered to trust store operators or relying parties via secure mechanisms
+- Secure distribution of the self-signed certificate through secure out-of-band mechanisms
+- Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources 
+- Secure mechanisms used by the trust store operators to distribute publicly trusted Root CA certificates to relying parties 
 
 ### 6.1.5 Key sizes
 Certificates shall meet the following requirements for algorithm type and key size.
