@@ -24,7 +24,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
-This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates. 
+This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates. 
 
 ### 1.1.2.1 CA Certificates
 
@@ -32,7 +32,7 @@ This Certificate Policy defines five (5) different types of certificates.  Certi
 
 ### 1.1.2.1.2 Subordinate CA Certificates
 
-### 1.1.2.2 End-Entity Certificates
+### 1.1.2.2 Subscriber Certificates
 
 ### 1.1.2.2.1 Domain Validation TLS Server Authentication Certificates
 
@@ -1170,12 +1170,12 @@ The documentation of the procedure shall be detailed enough to show that appropr
 Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs. 
 
 #### 6.1.1.3 Subscriber Key Pair Generation
-Applicants shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
+Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
 
 The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see http://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
 
 ### 6.1.2 Private key delivery to subscriber
-Applicants shall generate their own keys.  This section is not applicable.
+Subscribers shall generate their own keys.  This section is not applicable.
 
 ### 6.1.3 Public key delivery to certificate issuer
 
@@ -1193,27 +1193,27 @@ Certificates shall meet the following requirements for algorithm type and key si
 
 (1) Root CA Certificates  
 
-|  |  |
-| :---  | :------ |
-| Digest algorithm | SHA-256, SHA-384 or SHA-512  |
-| Minimum RSA modulus size (bits) | 4096 |
+|  |  |  
+| :---  | :------ |  
+| Digest algorithm | SHA-256 |  
+| Minimum RSA modulus size (bits) | 4096 |  
 
 
 (2) Subordinate CA Certificates
 
-|  |  |
-| :---  | :------ |
-| Digest algorithm | SHA-256, SHA-384 or SHA-512  |
-| Minimum RSA modulus size (bits) | 2048 |
+|  |  |  
+| :---  | :------ |  
+| Digest algorithm | SHA-256 |  
+| Minimum RSA modulus size (bits) | 2048 |  
 
 
 (3) Subscriber Certificates
 
-|  |  |
-| :---  | :------ |
-| Digest algorithm | SHA-256, SHA-384 or SHA-512  |
-| Minimum RSA modulus size (bits) | 2048 |
-| ECC curve | NIST P-256, P-384, or P-521 |
+|  |  |  
+| :---  | :------ |  
+| Digest algorithm | SHA-256, SHA-384 or SHA-512  |  
+| Minimum RSA modulus size (bits) | 2048 |  
+| ECC curve | NIST P-256, P-384, or P-521 |  
 
 
 ### 6.1.6 Public key parameters generation and quality checking
@@ -1230,9 +1230,10 @@ Root CA Private Keys shall not be used to sign Certificates except in the follow
 
 1. Self-signed Certificates to represent the Root CA itself
 2. Certificates for Subordinate CAs 
-3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device
-certificates)
+3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates)
 4. Certificates for OCSP Response verification
+
+
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA shall implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above shall consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA shall encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
@@ -1242,6 +1243,7 @@ The relevant standard for cryptographic modules is Security Requirements for Cry
 
 Cryptographic modules for CAs, including any cryptographic modules used in certificate status services required of the CA Repository such as OCSP responders, shall be hardware modules validated as meeting FIPS 140-2 Level 3 or above.
 
+Subscribers should use modules validated as meeting FIPS 140-2 Level 1 or above to generate key pairs.   
 
 ### 6.2.2 Private key (n out of m) multi-person control
 For all CAs:
@@ -1252,43 +1254,52 @@ For all CAs:
 - The names of the parties used for two-person control shall be made available for inspection during Qualified Audits
 - Multi-person control shall not be achieved using personnel that serve in the Audit Administrator trusted role
   		  
-
+There is no stipulation for Subscriber private key multi-person control.
+ 
 ### 6.2.3 Private key escrow
-No private key shall be escrowed.
+Private keys shall not be escrowed.
 
 ### 6.2.4 Private key backup
 For all CA Certificate private keys:
 
-- The private signature key shall be backed up under the same multi-person control as the original signature key
-- At least one copy of the CA private signature key shall be stored off-site in a secure storage facility separate from the CA
-- All copies of the CA private signature key shall be accounted for and protected in the same manner as the original
+- The private key shall be backed up under the same multi-person control as the original signature key
+- At least one copy of the CA private key shall be stored off-site in a secure storage facility separate from the CA
+- All copies of the CA private key shall be accounted for and protected in the same manner as the original
 - Backup procedures shall be included in the CA’s CPS
 
-There is no stipulation for Subscriber private keys.  
+Subscriber private keys may be backed up or copied by the Subscriber, but shall be held in the Subscriber’s control.  
 
 
 ### 6.2.5 Private key archival
 Private keys may be only archived by the parties represented by the Subject identified in the corresponding public key certificate.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
-All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4.1. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
+All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
 
-If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA shall revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+There is no stipulation for Subscriber private key transfers into or from a cryptographic module.
 
 ### 6.2.7 Private key storage on cryptographic module
-All CAs shall protect their Private Keys in a system or device that has been validated as meeting at least FIPS 140 level 3 which includes requirements to protect the Private Key and other assets against known threats.
+All CAs shall protect their private key in a system or device that has been validated as meeting at least FIPS 140 Level 3.
+
+There is no stipulation for Subscriber private key storage.
 
 ### 6.2.8 Activating Private Keys
-For the Root CA(s), signing key activation shall implement multiparty control as specified in Section 5.2.2.
+For all CAs, private key activation shall implement multiparty control as specified in Section 5.2.2.
+
+There is no stipulation for Subscriber private key activation.
 
 ### 6.2.9 Deactivating Private Keys
-Cryptographic modules that have been activated shall not be available to unauthorized access.
-After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS.
-CA cryptographic modules shall be removed and stored in a secure container when not in use.
+For all CAs: 
+- Cryptographic modules that have been activated shall not be available to unauthorized access.
+- After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS.
+- CA cryptographic modules shall be removed and stored in a secure container when not in use.
+
+There is no stipulation for Subscriber private key deactivation.
 
 ### 6.2.10 Destroying Private Keys
-Individuals in trusted roles shall destroy all CA and OCSP private signature keys when the keys are no longer needed.
-All CAs operating under this policy shall document the private key destruction methods in their Certification Practice Statement.
+Individuals in Trusted Roles shall destroy all CA Certificate and OCSP Responder Certificate private keys when the keys are no longer needed. All CAs shall document the private key destruction methods in the CPS.
+
+There is no stipulation for Subscriber private key destruction.
 
 ### 6.2.11 Cryptographic Module Capabilities
 See Section 6.2.1
