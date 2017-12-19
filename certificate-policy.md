@@ -1233,8 +1233,6 @@ Root CA Private Keys shall not be used to sign Certificates except in the follow
 3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates)
 4. Certificates for OCSP Response verification
 
-
-
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA shall implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above shall consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA shall encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
@@ -1260,7 +1258,7 @@ There is no stipulation for Subscriber private key multi-person control.
 Private keys shall not be escrowed.
 
 ### 6.2.4 Private key backup
-For all CA Certificate private keys:
+For all CAs:
 
 - The private key shall be backed up under the same multi-person control as the original signature key
 - At least one copy of the CA private key shall be stored off-site in a secure storage facility separate from the CA
@@ -1290,6 +1288,7 @@ There is no stipulation for Subscriber private key activation.
 
 ### 6.2.9 Deactivating Private Keys
 For all CAs: 
+
 - Cryptographic modules that have been activated shall not be available to unauthorized access.
 - After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS.
 - CA cryptographic modules shall be removed and stored in a secure container when not in use.
@@ -1297,7 +1296,7 @@ For all CAs:
 There is no stipulation for Subscriber private key deactivation.
 
 ### 6.2.10 Destroying Private Keys
-Individuals in Trusted Roles shall destroy all CA Certificate and OCSP Responder Certificate private keys when the keys are no longer needed. All CAs shall document the private key destruction methods in the CPS.
+Individuals in Trusted Roles shall destroy all CA Certificate and Delegated OCSP Responder Certificate private keys when the keys are no longer needed. All CAs shall document the private key destruction methods in the CPS.
 
 There is no stipulation for Subscriber private key destruction.
 
@@ -1314,8 +1313,7 @@ There is no stipulation for Subscriber public key archival.
 ### 6.3.2 Certificate operational periods and key pair usage periods
 Root CA Certificates shall have a Validity Period no greater than 20 years.
 Subordinate CA Certificates shall have a Validity Period no greater than 10 years.
-All certificates signed by a CA key pair shall expire before the end of that key pair’s usage
-period.
+All certificates signed by a CA key pair shall expire before the end of that key pair’s usage period.
 
 Domain Validation SSL Server Authentication Certificates and Organization Validation SSL Server Authentication Certificates shall have a Validity Period no greater than 395 days.  
 Delegated OCSP Responder Certificates shall have a Validity Period no greater than 45 days.
@@ -1339,72 +1337,74 @@ No stipulation.
 
 ### 6.5.1 Specific computer security technical requirements
 
-Administrator privileges to all Certificate System components shall only be granted to the Administrator trusted role.
+Administrator privileges to all Certificate System Components shall only be granted to the Administrator Trusted Role.  All CAs shall implement multi-factor or multi-party authentication for all Administrator Trusted Role access to Certificate System Components including operating system and software.
 
-All CAs shall implement multifactor authentication for all Trusted Role accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. All Trusted Roles shall use a unique credential created by or assigned to a single person for identification and authentication.   
+All CAs shall implement multi-factor authentication for all Trusted Role accounts capable of directly causing certificate issuance.  
 
-All CAs shall implement multifactor authentication for all access to component systems including operating system and software.
+All Trusted Roles shall use a unique credential created by or assigned to a single person for identification and authentication.   
 
-For all CAs and component systems including certificate status services operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The CA and its ancillary parts shall include the following functionality:  
+For all CAs and Certificate System Components including certificate status services operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
 
-- be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's operations;
-- authenticate the identity of users before permitting access to the system or applications;  
-- manage privileges of users to limit users to their assigned roles and implement least privilege controls;  
-- generate and archive audit records for all transactions; (see section 5.4)  
-- enforce domain integrity boundaries for security critical processes;
-- support recovery from key or system failure; and
+- Be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's operations
+- Authenticate the identity of users before permitting access to the system or applications
+- Manage privileges of users to limit users to their assigned roles and implement least privilege controls  
+- Generate and archive audit records for all transactions (see Section 5.4)  
+- Enforce domain integrity boundaries for security critical processes
+- Support recovery from key or system failure
 
 For remote workstations used to administer the CAs, the computer security functions listed below are required:
 
-- authenticate the identity of users before permitting access to the system or applications;  
-- manage privileges of users to limit users to their assigned roles;  
-- generate and archive audit records for all transactions; (see section 5.4)  
-- enforce domain integrity boundaries for security critical processes; and  
-- support recovery from key or system failure; and
-- configure workstations with inactivity time-outs to enforce account log out or lock the workstation when no longer in use;
-
-All communications between any PKI trusted role and the CA shall be authenticated and protected from modification.
+- Authenticate the identity of users before permitting access to the system or applications  
+- Manage privileges of users to limit users to their assigned roles  
+- Generate and archive audit records for all transactions (see Section 5.4)  
+- Enforce domain integrity boundaries for security critical processes
+- Configure workstations with inactivity time-outs to enforce account log out or lock the workstation when no longer in use
 
 ### 6.5.2 Computer security rating
-No Stipulation.
+No stipulation.
 
 ## 6.6 Life cycle technical controls
 
 ### 6.6.1 System development controls
-The system development controls for all CAs and any Registration Authority functions listed below are required:
+The system development controls for all CAs and Certificate System Components functions listed below are required:
 
-- The CA hardware and software shall be dedicated to performing one task: the CA. There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation. Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs.
-- Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g., by ensuring the random selection of material at time of purchase or installation).
-- Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter.
+- The CA hardware and software shall be dedicated to performing one task: the CA
+- There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation
+- Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs
+- Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g. by ensuring the random selection of material at time of purchase or installation)
+- Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter
 
 
 ### 6.6.2 Security management controls
-The security management controls for all CAs and any Registration Authority functions listed below shall be implemented:
+The security management controls for all CAs and all Certificate System Components listed below shall be implemented:
 
-- The configuration of the CA system, in addition to any modifications and upgrades, shall be documented and controlled.
-- Configurations	shall be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
-- There shall be a mechanism for detecting unauthorized modification to the software or configuration.
-Configurations	shall be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
-- All system and trusted role accounts shall be reviewed at least every ninety (90) days. Any account that is no longer in use or necessary for operations shall be deactivated.
-- A process shall be implemented that disables physical and logical access to a Certificate System by either a privileged user or a trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA.
-- All authentication credentials for any account or trusted role on a Certificate System shall be changed whenever authorization to access the account is changed or revoked.
+- Configurations, modifications, and upgrades shall be documented and controlled
+- Configurations shall be reviewed on at least a weekly	basis to determine whether any changes violated	the	CA’s security policies.
+- There shall be a mechanism for detecting unauthorized modification to the software or configuration
+- All system accounts and Trusted Role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
+- A process shall be implemented that disables physical and logical access to a Certificate Systems by any Trusted Role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
+- All authentication credentials for any account or Trusted Role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
+- All system accounts and Trusted Role accounts shall have be configured to lockout access after five (5) failed access attempts 
+- There shall be an automated mechanism to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events
 
 ### 6.6.3 Life cycle security controls
+The security management controls for all CAs and Certificate System Components listed below shall be implemented:
+
 - Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
 - Critical vulnerabilities shall be patched within thirty (30) days or less
 - High vulnerabilities shall be patched within sixty (60) days or less
-- CAs including Repositories and any Registration Authority system functions shall undergo penetration testing every ninety (90) days
+- Penetration testing shall be performed at least every 365 days, and after infrastructure of application upgrades or modifications that the CA determines are significant
 
 ## 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
 
 For the Root CA, the CA shall be operated in a High Security Zone and in an offline (powered off, disconnected) or air-gapped (powered on, disconnected) state from all other networks.
 
-For all CAs and any Registration Authority functions, the network security controls listed below are required:
+For all CAs and Certificate System Components, the network security controls listed below are required:
 
 - Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
 - The same security controls shall be applied to all systems co-located in the same Zone with a Certificate System.
-- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as with non-Certificate Systems to Delegated Third Parties, Public Networks, and other business partners.
+- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as  Public Networks, and other business partners.
 - Only trusted roles shall have access to Secure and High Security Zones.
 - A network guard, firewall, or filtering router shall protect network access to CA equipment.
 - The network guard, firewall, or filtering router shall limit services allowed to and from the CA equipment to those required to perform CA functions.
@@ -2078,9 +2078,9 @@ published by the CAB Forum (http://www.cabforum.org).
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
-**Certificate System**: A system used by a CA to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
+**Certificate System**: The system used by a CA in providing identity verification, registration and enrollment, certificate approval, issuance, validity status, support, and other PKI related services.
 
-**Certificate System Component**: A individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certficate management.
+**Certificate System Component**: A individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certificate management.
 
 **Certification Authority**: An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs.
 
