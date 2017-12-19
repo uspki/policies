@@ -34,11 +34,11 @@ This Certificate Policy defines five (5) different types of certificates.  Certi
 
 ### 1.1.2.2 Subscriber Certificates
 
-### 1.1.2.2.1 Domain Validation TLS Server Authentication Certificates
+### 1.1.2.2.1 Domain Validation SSL Server Authentication Certificates
 
-### 1.1.2.2.2 Organization Validation TLS Server Authentication Certificates
+### 1.1.2.2.2 Organization Validation SSL Server Authentication Certificates
 
-### 1.1.2.2.3 OCSP Signing Certificates
+### 1.1.2.2.3 Delegated OCSP Responder Certificates
 
 
 ## 1.2 Document name and identification
@@ -48,8 +48,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 |  |  |  |   
 | :--- | :--- | :--- |  
-| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | | Domain Validation TLS Server Authentication Certificates |  
-| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | | Organization Validation TLS Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | | Domain Validation SSL Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | | Organization Validation SSL Server Authentication Certificates |  
 
 Additional documents related to the U.S. Federal Public Trust TLS PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
@@ -1307,27 +1307,30 @@ See Section 6.2.1
 ## 6.3 Other aspects of key pair management
 
 ### 6.3.1 Public key archival
-No stipulation.
+For all CAs, the CA Certificate and public key shall be archived in accordance with Section 5.5.1.
+
+There is no stipulation for Subscriber public key archival.
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-
 Root CA Certificates shall have a Validity Period no greater than 20 years.
 Subordinate CA Certificates shall have a Validity Period no greater than 10 years.
-All certificates signed by a specific CA key pair shall expire before the end of that key pair’s usage
+All certificates signed by a CA key pair shall expire before the end of that key pair’s usage
 period.
 
-All Subscriber Certificates shall have a Validity Period no greater than 825 days.  
-Subscriber Certificates issued for delegated OCSP responders shall have a Validity Period no greater than 45 days.
+Domain Validation SSL Server Authentication Certificates and Organization Validation SSL Server Authentication Certificates shall have a Validity Period no greater than 395 days.  
+Delegated OCSP Responder Certificates shall have a Validity Period no greater than 45 days.
 
 ## 6.4 Activation data
 
 ### 6.4.1 Activation data generation and installation
-CA activation data may be user-selected by each of the multiple parties holding that activation
-data. If the activation data shall be transmitted, it shall be via an appropriately protected
-channel, and distinct in time and place from the associated cryptographic module.
+For all CAs, CA activation data may be user-selected by each of the multiple parties holding that activation data. If the activation data shall be transmitted, it shall be via a channel protected commensurate with the protection supplied by the key itself, and distinct in time and place from the associated cryptographic module.
+
+There is no stipulation for Subscriber activation data.
 
 ### 6.4.2 Activation data protection
 For all CAs, this CP makes no further stipulation beyond that specified in FIPS 140.
+
+There is no stipulation for Subscriber activation data.
 
 ### 6.4.3 Other aspects of activation data
 No stipulation.
