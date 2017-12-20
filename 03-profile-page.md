@@ -6,7 +6,7 @@ subnav:
   - text: Self-Signed Root CA
     href: "#self-signed-root-ca-certificate-profile"
   - text: Subordinate CA
-    href: "#intermediate-or-subordinate-ca-certificate-profile"
+    href: "#subordinate-ca-certificate-profile"
   - text: Server Authentication
     href: "#server-authentication-certificate-profile"
   - text: Delegated OCSP Responder
@@ -23,7 +23,7 @@ This section specifies the X.509 version 3 certificate and version 2 certificate
 Four certificate profiles covered by this Certificate Policy are defined.  
 
 - [Self-Signed Root CA Certificate Profile](#self-signed-root-ca-certificate-profile)
-- [Intermediate or Subordinate CA Certificate Profile](#intermediate-or-subordinate-ca-certificate-profile)
+- [Subordinate CA Certificate Profile](#subordinate-ca-certificate-profile)
 - [Server Authentication Certificate Profile](#server-authentication-certificate-profile)
 - [Delegated OCSP Responder Certificate Profile](#delegated-ocsp-responder-certificate-profile)
 
