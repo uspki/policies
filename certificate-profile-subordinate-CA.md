@@ -13,7 +13,6 @@
 |               |                 |              |                                       |
 | **Extension** |  **Required**   | **Critical** | **Value**                             |
 | Authority Key Identifier  | Mandatory | False |  Octet String<br> Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Must match SKI of issuing CA Certificate|
-| subjectInfoAccess  | Conditional | False |  **Conditional:** <br>1) **Not present** if the subject CA only issues subscriber certificates <br>2) **Mandatory** if the subject CA issues subordinate CA certificates <br><br> id-ad-caRepository (1.3.6.1.5.5.7.48.5):<br> At least one instance of this access method that includes the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found. The certificate artifact(s) served by the HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC5752]. This extension is required to assist in monitoring and discovery of, and promote transparency for, the Subordinate CAs. |
 | basicConstraints   | Mandatory | True |  cA=True <br> Path Length Constraint set to zero (0)  |
 | Subject Key Identifier   | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
 | Key Usage   | Mandatory | True | **Required Key Usage:** <br> keyCertSign and crlSign <br><br> **Optional Key Usage:** <br>digitalSignature and / or non-repudiation if the CA uses its key to sign OCSP responses   |
