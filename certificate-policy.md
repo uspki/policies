@@ -1402,23 +1402,18 @@ For all CAs and Certificate System Components, the network security controls lis
 
 - Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
 - The same security controls shall be applied to all systems co-located in the same Zone with a Certificate System.
-- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as  Public Networks, and other business partners.
-- Only trusted roles shall have access to Secure and High Security Zones.
-- A network guard, firewall, or filtering router shall protect network access to CA equipment.
-- The network guard, firewall, or filtering router shall limit services allowed to and from the CA equipment to those required to perform CA functions.
+- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as Public Networks, and other business partners.
+- Only Trusted Roles shall have access to Secure and High Security Zones.
+- A network guard or firewall shall protect network access to CA equipment, and limit services allowed to and from the CA equipment to those required to perform CA functions.
 - Protection of CA equipment shall be provided against known network attacks.
-- All unused network ports and services shall be turned off. Any network software present on the CA equipment shall be necessary to the functioning of the CA application.
-- Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
-- Repositories, certificate status servers, and remote workstations used to administer the CAs shall employ appropriate network security controls.
-- Networking equipment shall turn off unused network ports and services.
+- All unused network ports and services shall be turned off.
 - Any network software present shall be necessary to the functioning of the equipment.
-- The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:
-  - the remote connection originates from a device owned by the CA and from a pre-approved IP address;
-  - the connection is through a temporary, non-persistent and encrypted channel that is supported by multifactor authentication;
-  - only allow connections through a designated intermediary device when the device is:
-    - located within the CA's network;
-    - secured according to this CP; and
-    - mediates the remote connection.
+- Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
+- Repositories, certificate status services, and remote workstations used to administer the CAs shall employ appropriate network security controls.
+
+The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:
+  - The remote connection originates from a device owned by the CA and from a pre-approved IP address.
+  - The connection is through a temporary, non-persistent and encrypted channel that is supported by multi-factor authentication.
 
 ## 6.8 Time-stamping
 
