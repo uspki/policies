@@ -1,9 +1,9 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services. 
+This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services.
 
-This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Federal Government.  The hierarchical PKI is referenced as the **U.S. Federal Public Trust TLS PKI** in this document. 
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Federal Government.  The hierarchical PKI is referenced as the **U.S. Federal Public Trust TLS PKI** in this document.
 
 This document serves two purposes:  
 
@@ -24,7 +24,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
-This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates. 
+This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.
 
 ### 1.1.2.1 CA Certificates
 
@@ -83,13 +83,13 @@ The FPKIPA is responsible for:
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by CAB Forum, and
 * Ensuring compliance with any additional trust store operator requirements that the U.S. Federal Public Trust TLS Root CA pursues or has inclusion in, and
-* Ensuring compliance with any additional browser requirements that are defined by browser software vendors 
+* Ensuring compliance with any additional browser requirements that are defined by browser software vendors
 
 
 ### 1.3.3 Certification Authorities
-The U.S. Federal Public Trust TLS PKI CAs are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including: 
+The U.S. Federal Public Trust TLS PKI CAs are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including:
 
-* Publication of certificates 
+* Publication of certificates
 * Revocation of certificates
 * Operation of certificate status services
 * Operating automated services or procedures to perform validation of domain authorization or control as specified in Section 3.2.2.4
@@ -151,7 +151,7 @@ A CPS shall be submitted and approved by the FPKIPA.
 
 Prior to submitting a CPS, the Issuing CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The Issuing CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
 
-Issuing CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document. 
+Issuing CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document.
 
 ## 1.6 Definitions and Acronyms
 
@@ -159,7 +159,7 @@ Issuing CAs shall review their CPS and perform an annual self-assessment for com
 Capitalized terms used in this CP shall have the meanings defined in Appendix A.
 
 ### 1.6.2 Acronyms
-See Appendix B for a complete list of acronyms and abbreviations used in this CP. 
+See Appendix B for a complete list of acronyms and abbreviations used in this CP.
 
 ### 1.6.3 References
 See Appendix C for a complete list of standards referenced in this CP.
@@ -171,7 +171,7 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
 ## 2.1 Repositories
-Each CA shall disclose the following information through a publicly accessible Repository: 
+Each CA shall disclose the following information through a publicly accessible Repository:
 - CA Certificates
 - Certificate Revocation Lists (CRLs)
 - Online Certificate Status Protocol responses
@@ -186,7 +186,7 @@ Each CA shall ensure that its Certificate from the Root CA and the revocation da
 ## 2.2 Publication of information
 The FPKIPA shall publicly post this CP on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
-Each CA shall disclose the following information through a publicly accessible Repository: 
+Each CA shall disclose the following information through a publicly accessible Repository:
 - CA Certificates
 - Certificate Revocation Lists (CRLs)
 - Online Certificate Status Protocol responses
@@ -201,7 +201,7 @@ Web pages that allow for testing certificate validation up to the U.S. Federal P
 • https://revoked. \<2nd LEVEL DOMAIN TBD>
 • https://expired. \<2nd LEVEL DOMAIN TBD>
 
- 
+
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
@@ -282,7 +282,7 @@ This CP asserts for all Issuing CAs operating under this policy that the inclusi
 
 - Section 3.2.2.3 of the Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparability for the .MIL and .GOV sTLDs operated by the U.S. Government.
 - Section 3.2.2.3 of the Baseline Requirements, option (c): information provided by the Domain Name Registrar
-  
+
 #### 3.2.2.4 Validation of Domain Authorization or Control
 This Certificate Policy allows for procedures adhering to:
 
@@ -299,19 +299,19 @@ Issuing CAs shall maintain a record of which domain validation method, including
 Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section 3.3.1 of this policy prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
 ##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.  
 
 ##### 3.2.2.4.4  Constructed Email to Domain Contact
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.5 Domain Authorization Document
-This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. 
+This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document.
 
 The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .MIL or .GOV has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
 
@@ -330,7 +330,7 @@ Note: Examples of Request Tokens include, but are not limited to: (i) a hash of 
 The CA shall define in its CPS the format of Request Tokens it accepts and shall document the "/.well-known/pki-validation/" directory and any other paths registered with IANA.
 
 ##### 3.2.2.4.7 DNS Change
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.8 IP Address
 This validation method defined by the Baseline Requirements is not allowed under this CP.
@@ -1167,7 +1167,7 @@ The CA shall:
 The documentation of the procedure shall be detailed enough to show that appropriate role separation was used and the CA key pair generation shall create a verifiable audit trail that the security requirements for procedures were followed.
 
 #### 6.1.1.2 RA Key Pair Generation
-Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs. 
+Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs.
 
 #### 6.1.1.3 Subscriber Key Pair Generation
 Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
@@ -1185,8 +1185,8 @@ The public key shall be delivered securely to the Issuing CA for certificate iss
 A Root CA certificate shall be conveyed to trust store operators and relying parties in a secure fashion to preclude substitution attacks. Acceptable methods for the self-signed Root CA certificate delivery are:
 - Loading a self-signed certificate onto tokens delivered to trust store operators or relying parties via secure mechanisms
 - Secure distribution of the self-signed certificate through secure out-of-band mechanisms
-- Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources 
-- Secure mechanisms used by the trust store operators to distribute publicly trusted Root CA certificates to relying parties 
+- Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources
+- Secure mechanisms used by the trust store operators to distribute publicly trusted Root CA certificates to relying parties
 
 ### 6.1.5 Key sizes
 Certificates shall meet the following requirements for algorithm type and key size.
@@ -1223,13 +1223,13 @@ For RSA modulus, the CA shall confirm that the value of the public exponent _e_ 
 
 The CA shall perform partial public key validation as specified in Section 5.3.3 of NIST SP 800-89 to confirm that the modulus is an odd number, is not the power of a prime, and has no factors smaller than 752.
 
-For ECC, the CA should confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine as specified in NIST SP 800-56A. 
+For ECC, the CA should confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine as specified in NIST SP 800-56A.
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
 Root CA Private Keys shall not be used to sign Certificates except in the following cases:
 
 1. Self-signed Certificates to represent the Root CA itself
-2. Certificates for Subordinate CAs 
+2. Certificates for Subordinate CAs
 3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates)
 4. Certificates for OCSP Response verification
 
@@ -1237,7 +1237,7 @@ Root CA Private Keys shall not be used to sign Certificates except in the follow
 The CA shall implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above shall consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA shall encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
-The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules specified in FIPS 140-2. 
+The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules specified in FIPS 140-2.
 
 Cryptographic modules for CAs, including any cryptographic modules used in certificate status services required of the CA Repository such as OCSP responders, shall be hardware modules validated as meeting FIPS 140-2 Level 3 or above.
 
@@ -1251,9 +1251,9 @@ For all CAs:
 - Access to CA signing keys backed up for disaster recovery shall be under at least two-person control
 - The names of the parties used for two-person control shall be made available for inspection during Qualified Audits
 - Multi-person control shall not be achieved using personnel that serve in the Audit Administrator trusted role
-  		  
+
 There is no stipulation for Subscriber private key multi-person control.
- 
+
 ### 6.2.3 Private key escrow
 Private keys shall not be escrowed.
 
@@ -1287,7 +1287,7 @@ For all CAs, private key activation shall implement multiparty control as specif
 There is no stipulation for Subscriber private key activation.
 
 ### 6.2.9 Deactivating Private Keys
-For all CAs: 
+For all CAs:
 
 - Cryptographic modules that have been activated shall not be available to unauthorized access.
 - After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS.
@@ -1339,9 +1339,7 @@ No stipulation.
 
 Administrator privileges to all Certificate System Components shall only be granted to the Administrator Trusted Role.  All CAs shall implement multi-factor or multi-party authentication for all Administrator Trusted Role access to Certificate System Components including operating system and software.
 
-All CAs shall implement multi-factor authentication for all Trusted Role accounts capable of directly causing certificate issuance.  
-
-All Trusted Roles shall use a unique credential created by or assigned to a single person for identification and authentication.   
+All CAs shall implement multi-factor authentication for the Officer Trusted Role.
 
 For all CAs and Certificate System Components including certificate status services operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
 
@@ -1384,7 +1382,7 @@ The security management controls for all CAs and all Certificate System Componen
 - All system accounts and Trusted Role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
 - A process shall be implemented that disables physical and logical access to a Certificate Systems by any Trusted Role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
 - All authentication credentials for any account or Trusted Role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
-- All system accounts and Trusted Role accounts shall have be configured to lockout access after five (5) failed access attempts 
+- All system accounts and Trusted Role accounts shall have be configured to lockout access after five (5) failed access attempts
 - There shall be an automated mechanism to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events
 
 ### 6.6.3 Life cycle security controls
@@ -1996,15 +1994,15 @@ The FPKIPA shall review and update this Certificate Policy at least every 365 da
 The review and update shall include any changes needed to address source requirements, including but not limited to:
 
 - U.S. Federal Government mission needs and changes to support the missions
-- Baseline Requirements 
-- Trust store operator requirements 
+- Baseline Requirements
+- Trust store operator requirements
 - Browser software vendor requirements
 
-The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes. 
+The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes.
 
 After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
- 
+
 
 ### 9.12.2 Notification mechanism and period
 
@@ -2291,5 +2289,3 @@ RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
 X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
-
-
