@@ -1341,7 +1341,7 @@ Administrator privileges to all Certificate System Components shall only be gran
 
 All CAs shall implement multi-factor authentication for the Officer Trusted Role.
 
-For all CAs and Certificate System Components including certificate status services operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
+For all CAs and Certificate System Components including certificate status services, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
 
 - Be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's operations
 - Authenticate the identity of users before permitting access to the system or applications
