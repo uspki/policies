@@ -874,7 +874,8 @@ The CA shall record Security events, including:
 
 - Successful and unsuccessful PKI system access attempts  
 - PKI and security system actions performed  
-- Security profile changes  
+- Security profile changes
+- Clock adjustments   
 - System crashes, hardware failures, and other anomalies  
 - Firewall and router activities  
 - Entries to and exits from the CA facility  
