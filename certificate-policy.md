@@ -455,14 +455,15 @@ No stipulation.
 ### 4.3.1 CA actions during certificate issuance
 Issuance of a CA Certificate shall require an individual authorized by the CA to deliberately issue a direct command in order for the CA to perform a certificate signing operation.  Issuance of a CA certificate shall require written authorization by the FPKIPA.  
 
-All Domain Validation TLS Server Authentication certificates and Organizational Validation TLS Server Authentication certificates shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) in the x509v3 certificate extension.  The Issuing CA shall submit a precertificate to a minimum of two (2) Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  The Issuing CA shall submit a precertificate to a minimum of three (3) Certificate Transparency Logs for certificates with a validity period greater than 395 days and less than or equal to 825 days. There is no limit on the maximum number of CT Logs which may be submitted to.
+All Domain Validation TLS Server Authentication certificates and Organizational Validation TLS Server Authentication certificates shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) in the x509v3 certificate extension.  The Issuing CA shall submit a precertificate to a minimum of two (2) Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  Information included in the precertificates shall not be redacted prior to submission to the CT Logs.
 
 - At least one of the CT Logs shall be a log operated by Google.
-- At least one of the CT Logs shall be a Log operated by a government or business entity other than Google.
+- At least one of the CT Logs shall be a log operated by a government or business entity other than Google.
 
-The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the end entity certificate issued.
+There is no limit on the maximum number of CT Logs which may be submitted to.  
 
-Information included in the precertificates shall not be redacted prior to submission to the Certificate Transparency Logs.  
+The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
+  
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
