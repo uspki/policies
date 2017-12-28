@@ -1,9 +1,9 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services. 
+This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services.
 
-This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Federal Government.  The hierarchical PKI is referenced as the **U.S. Federal Public Trust TLS PKI** in this document. 
+This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Federal Government.  The hierarchical PKI is referenced as the **U.S. Federal Public Trust TLS PKI** in this document.
 
 This document serves two purposes:  
 
@@ -24,7 +24,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
-This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates. 
+This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates.
 
 ### 1.1.2.1 CA Certificates
 
@@ -83,13 +83,13 @@ The FPKIPA is responsible for:
 * Ensuring continued conformance of each CA that issues certificates under this policy with applicable requirements as a condition for allowing continued participation, and
 * Ensuring compliance with The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by CAB Forum, and
 * Ensuring compliance with any additional trust store operator requirements that the U.S. Federal Public Trust TLS Root CA pursues or has inclusion in, and
-* Ensuring compliance with any additional browser requirements that are defined by browser software vendors 
+* Ensuring compliance with any additional browser requirements that are defined by browser software vendors
 
 
 ### 1.3.3 Certification Authorities
-The U.S. Federal Public Trust TLS PKI CAs are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including: 
+The U.S. Federal Public Trust TLS PKI CAs are operated on behalf of the U.S. Government.  The CAs are responsible for the creation, issuance and management of Certificates including:
 
-* Publication of certificates 
+* Publication of certificates
 * Revocation of certificates
 * Operation of certificate status services
 * Operating automated services or procedures to perform validation of domain authorization or control as specified in Section 3.2.2.4
@@ -151,7 +151,7 @@ A CPS shall be submitted and approved by the FPKIPA.
 
 Prior to submitting a CPS, the Issuing CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The Issuing CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
 
-Issuing CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document. 
+Issuing CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document.
 
 ## 1.6 Definitions and Acronyms
 
@@ -159,7 +159,7 @@ Issuing CAs shall review their CPS and perform an annual self-assessment for com
 Capitalized terms used in this CP shall have the meanings defined in Appendix A.
 
 ### 1.6.2 Acronyms
-See Appendix B for a complete list of acronyms and abbreviations used in this CP. 
+See Appendix B for a complete list of acronyms and abbreviations used in this CP.
 
 ### 1.6.3 References
 See Appendix C for a complete list of standards referenced in this CP.
@@ -171,7 +171,7 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
 ## 2.1 Repositories
-Each CA shall disclose the following information through a publicly accessible Repository: 
+Each CA shall disclose the following information through a publicly accessible Repository:
 - CA Certificates
 - Certificate Revocation Lists (CRLs)
 - Online Certificate Status Protocol responses
@@ -186,7 +186,7 @@ Each CA shall ensure that its Certificate from the Root CA and the revocation da
 ## 2.2 Publication of information
 The FPKIPA shall publicly post this CP on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
 
-Each CA shall disclose the following information through a publicly accessible Repository: 
+Each CA shall disclose the following information through a publicly accessible Repository:
 - CA Certificates
 - Certificate Revocation Lists (CRLs)
 - Online Certificate Status Protocol responses
@@ -201,7 +201,7 @@ Web pages that allow for testing certificate validation up to the U.S. Federal P
 • https://revoked. \<2nd LEVEL DOMAIN TBD>
 • https://expired. \<2nd LEVEL DOMAIN TBD>
 
- 
+
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
@@ -282,7 +282,7 @@ This CP asserts for all Issuing CAs operating under this policy that the inclusi
 
 - Section 3.2.2.3 of the Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparability for the .MIL and .GOV sTLDs operated by the U.S. Government.
 - Section 3.2.2.3 of the Baseline Requirements, option (c): information provided by the Domain Name Registrar
-  
+
 #### 3.2.2.4 Validation of Domain Authorization or Control
 This Certificate Policy allows for procedures adhering to:
 
@@ -299,19 +299,19 @@ Issuing CAs shall maintain a record of which domain validation method, including
 Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section 3.3.1 of this policy prior to certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
 ##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.  
 
 ##### 3.2.2.4.4  Constructed Email to Domain Contact
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.5 Domain Authorization Document
-This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. 
+This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document.
 
 The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .MIL or .GOV has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
 
@@ -330,7 +330,7 @@ Note: Examples of Request Tokens include, but are not limited to: (i) a hash of 
 The CA shall define in its CPS the format of Request Tokens it accepts and shall document the "/.well-known/pki-validation/" directory and any other paths registered with IANA.
 
 ##### 3.2.2.4.7 DNS Change
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.8 IP Address
 This validation method defined by the Baseline Requirements is not allowed under this CP.
@@ -467,7 +467,7 @@ All Domain Validation TLS Server Authentication certificates and Organizational 
 There is no limit on the maximum number of CT Logs which may be submitted to.  
 
 The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
-  
+
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
@@ -478,10 +478,10 @@ The CA shall issue the certificate according to the certificate requesting proto
 Failure of the Subscriber to object to a requested certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
-As specified in Section 2.1, all CA certificates shall be published in repositories. 
+As specified in Section 2.1, all CA certificates shall be published in repositories.
 
 ### 4.4.3 Notification of certificate issuance by the CA to other entities
-CAs shall notify the FPKIPA of CA Certificate issuances. 
+CAs shall notify the FPKIPA of CA Certificate issuances.
 
 ## 4.5 Key pair and certificate usage
 
@@ -493,7 +493,7 @@ The intended scope of usage for a private key shall be in accordance with the Ce
 ### 4.5.2 Relying party public key and certificate usage
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
 
-It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a US Federal Public Trust PKI certificate in a transaction. 
+It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a US Federal Public Trust PKI certificate in a transaction.
 
 ## 4.6 Certificate renewal
 Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate.
@@ -596,7 +596,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
 14. Revocation is required by this CP and/or the CA's CPS; or
 15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
-16.  The CA received a lawful and binding order from a government, judicial or regulatory body to 
+16.  The CA received a lawful and binding order from a government, judicial or regulatory body to
 revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
@@ -610,9 +610,9 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 6. The Issuing CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
 7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
-9. Revocation is required by this CP and/or the Issuing CA's CPS; 
+9. Revocation is required by this CP and/or the Issuing CA's CPS;
 10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
-11. The CA received a lawful and binding order from a government, judicial or regulatory body to 
+11. The CA received a lawful and binding order from a government, judicial or regulatory body to
 revoke the Certificate.
 
 ### 4.9.2 Who can request revocation
@@ -643,7 +643,7 @@ See Section 4.5.2.
 
 ### 4.9.7 CRL issuance frequency
 
-For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field. 
+For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field.
 
 For the status of Subordinate CA Certificates, the root CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
 
@@ -675,7 +675,7 @@ If the Subscriber Certificate is for a high-traffic FQDN, the CA may rely on sta
 ### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
 
-In the case of a compromise of a CA certificate, the CA must immediately notify the FPKI PA that the CA certificate has been compromised.  See Section 5.7.1 for incident handling procedures. 
+In the case of a compromise of a CA certificate, the CA must immediately notify the FPKI PA that the CA certificate has been compromised.  See Section 5.7.1 for incident handling procedures.
 
 
 ### 4.9.13 Circumstances for suspension
@@ -1784,66 +1784,55 @@ It shall contain the value id-kp-OCSPSigning {1 3 6 1 5 5 7 3 9}.
 Other values shall not be present.  
 
 # 8. COMPLIANCE AUDIT AND OTHER ASSESSMENTS
-The CA shall at all times:
-
-1. Issue Certificates and operate its PKI in accordance with all law applicable to its business and the Certificates it issues in every jurisdiction in which it operates;
-2. Comply with these Requirements;
-3. Comply with the audit requirements set forth in this section; and
-4. Be licensed as a CA in each jurisdiction where it operates, if licensing is required by the law of such jurisdiction for the issuance of Certificates.
 
 ## 8.1 Frequency or circumstances of assessment
-The Certification Authorities (X.509v3 basicConstraints extension, with the cA boolean set to true) operated under this Certificate Policy are Technically Constrained in line with section 7.1.5.  They are audited in line with section 8.7.
+The CAs operated under this Certificate Policy are Technically Constrained (see section 7.1.5).  CAs shall be audited in accordance with section 8.7.
 
-The period during which the CA issues Certificates shall be divided into an unbroken sequence of audit periods.
-An audit period shall not exceed one year in duration.
+The period during which the CA issues Certificates shall be divided into an unbroken sequence of audit periods. An audit period shall not exceed one year in duration.
 
-Before issuing Publicly-Trusted Certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.1. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Publicly-Trusted Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate
+Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.4. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate
 
 ## 8.2 Identity/qualifications of assessor
 The CA's audit shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
 
-1. Independence from the subject of the audit;
-2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
-3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
-4. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
-5. Bound by law, government regulation, or professional code of ethics; and
+1. Independence from the subject of the audit
+2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.4)
+3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function
+4. For audits conducted in accordance with the WebTrust standard, licensed by WebTrust
+5. Bound by law, government regulation, or professional code of ethics, and
 6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
-The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certification practices statement. The FPKIPA shall determine whether a compliance auditor meets this requirement.
-
-The operating Agency and Management Authority of each CA is responsible for identifying and engaging a qualified auditor.
+The Qualified Auditor either shall be a private firm that is independent from the CA being audited, or it shall be sufficiently organizationally separated from the CA to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the Qualified Auditor may not have served the CA in developing or maintaining the CPS. The FPKIPA shall determine whether the Qualified Auditor meets the requirements for independence and objectivity.
 
 ## 8.4 Topics covered by assessment
-The CA shall undergo an audit in accordance with one of the following schemes:
+The CAs shall undergo an audit in accordance with all of the following:
 
-1. WebTrust for Certification Authorities v2.0;
-2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
+1. WebTrust for Certification Authorities, Version 2.0 or later
+2. WebTrust for Certification Authorities - SSL Baseline with Network Security, Version 2.2 or later
 
-Whichever scheme is chosen, it shall incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
+Audits shall incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
 The audit shall be conducted by a Qualified Auditor, as specified in Section 8.3.
 
-There is no Delegated Third Party allowed under this Certificate Policy.     
-
 ## 8.5 Actions taken as a result of deficiency
-When the compliance auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:
-•	The compliance auditor shall note the discrepancy;
-•	The compliance auditor shall notify the responsible party promptly; and
-•	The party responsible for correcting the discrepancy will propose a remedy, including expected time for completion, to the FPKIPA.
+When the Qualified Auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:  
 
-Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA or RA, to revoke a certificate issued to the CA or RA, or take other actions it deems appropriate. A compliance audit may be required to confirm the implementation and effectiveness of the remedy.
+-	The Qualified Auditor shall note the discrepancy  
+-	The Qualified Auditor shall notify the CA promptly  
+-	The CA will propose a remedy, including expected time for completion, to the FPKIPA  
 
+Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA, to revoke a certificate issued to the CA, or take other actions it deems appropriate.
 
 ## 8.6 Communication of results
-The Audit Report shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The CA shall make the Audit Report publicly available. The CA is not required to make publicly available any general audit findings that do not impact the overall audit opinion.  The CA should make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
+The Audit Report shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1.
+
+The CA shall make the Audit Letter publicly available. The CA is not required to make publicly available any general audit findings contained in the Audit Report that do not impact the overall audit opinion.  The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
 ## 8.7 Self-Audits
-During the period in which the CA issues Certificates, the CA shall monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
+During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
 
-During the period in which a Technically Constrained Subordinate CA issues Certificates, the CA which signed the Subordinate CA shall monitor adherence to the this Certificate Policy and the Subordinate CA's Certification Practice Statement. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
-
-There is no Delegated Third Party allowed under this Certificate Policy.    
+During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to the this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
 
 
 # 9. OTHER BUSINESS AND LEGAL MATTERS
@@ -1977,15 +1966,15 @@ The FPKIPA shall review and update this Certificate Policy at least every 365 da
 The review and update shall include any changes needed to address source requirements, including but not limited to:
 
 - U.S. Federal Government mission needs and changes to support the missions
-- Baseline Requirements 
-- Trust store operator requirements 
+- Baseline Requirements
+- Trust store operator requirements
 - Browser software vendor requirements
 
-The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes. 
+The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes.
 
 After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
- 
+
 
 ### 9.12.2 Notification mechanism and period
 
@@ -2270,5 +2259,3 @@ RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
 X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
-
-
