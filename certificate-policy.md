@@ -785,10 +785,11 @@ Administrators shall not issue certificates to Subscribers.
 The Officer shall be responsible for   
 - Approving and executing the issuance of the certificates where inspection of the validation information is required
 - Requesting, approving and executing the revocation of certificates
+- Performing internal self-audits at least every quarter in accordance with Section 8.7
 
 The Audit Administrator shall be responsible for
 - Reviewing, maintaining, and archiving audit logs
-- Performing or overseeing internal compliance audits to ensure that the CA is operating in accordance with its CPS
+- Overseeing internal compliance and self-audits to ensure that the CA is operating in accordance with its CPS
 
 Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel records or investigative records requiring protection under the Privacy Act.
 
