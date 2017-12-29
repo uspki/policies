@@ -205,7 +205,7 @@ Web pages that allow for testing certificate validation up to the U.S. Federal P
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
-Root CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Report(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
+Root CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
@@ -1793,7 +1793,7 @@ The period during which the CA issues Certificates shall be divided into an unbr
 Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.4. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate
 
 ## 8.2 Identity/qualifications of assessor
-The CA's audit shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
+CA audits shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
 
 1. Independence from the subject of the audit
 2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.4)
@@ -1811,7 +1811,7 @@ The CAs shall undergo an audit in accordance with all of the following:
 1. WebTrust for Certification Authorities, Version 2.0 or later
 2. WebTrust for Certification Authorities - SSL Baseline with Network Security, Version 2.2 or later
 
-Audits shall incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
+Audits shall incorporate periodic monitoring and/or accountability procedures to ensure that the audits continue to be conducted in accordance with the requirements of the scheme.
 
 The audit shall be conducted by a Qualified Auditor, as specified in Section 8.3.
 
@@ -1825,15 +1825,14 @@ When the Qualified Auditor finds a discrepancy between the requirements of this 
 Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA, to revoke a certificate issued to the CA, or take other actions it deems appropriate.
 
 ## 8.6 Communication of results
-The Audit Report shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1.
+The Audit Letter shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1.
 
-The CA shall make the Audit Letter publicly available. The CA is not required to make publicly available any general audit findings contained in the Audit Report that do not impact the overall audit opinion.  The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
+The CA shall make the Audit Letter publicly available. TThe CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
 ## 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
 
 During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to the this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
-
 
 # 9. OTHER BUSINESS AND LEGAL MATTERS
 {% include alert-info.html content="This section contains the CA / Browser Forum Baseline Requirements and has not been modified.  Additions to Business and Legal Matters to address Application Trusted Root Program requirements and U.S. Government provisions to meet public law requirements are under review and not included in this draft." %}
@@ -1974,8 +1973,6 @@ The FPKIPA is responsible for monitoring source requirements, and initiating nec
 
 After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
-
-
 ### 9.12.2 Notification mechanism and period
 
 ### 9.12.3 Circumstances under which OID shall be changed
@@ -2023,7 +2020,7 @@ Any modification to CA practice enabled under this section shall be discontinued
 
 **Audit Period**: In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in section 8.1.
 
-**Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an audited entity's processes and controls comply with the mandatory provisions of the Baseline Requirements, this Certificate Policy and the Certification Practice(s) Statements.
+**Audit Letter**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an audited entity's processes and controls comply with the mandatory provisions of the Baseline Requirements, this Certificate Policy and the Certification Practice(s) Statements.
 
 **Authorization Domain Name**: The Domain Name used to obtain authorization for certificate issuance for a given FQDN. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If the FQDN contains a wildcard character, then the CA shall remove all wildcard labels from the left most portion of requested FQDN. The CA may prune zero or more labels from left to right until encountering a Base Domain Name and may use any one of the intermediate values for the purpose of domain validation.
 
