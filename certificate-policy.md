@@ -24,7 +24,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
-This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates.
+This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.
 
 ### 1.1.2.1 CA Certificates
 
@@ -32,13 +32,13 @@ This Certificate Policy defines five (5) different types of certificates.  Certi
 
 ### 1.1.2.1.2 Subordinate CA Certificates
 
-### 1.1.2.2 End-Entity Certificates
+### 1.1.2.2 Subscriber Certificates
 
 ### 1.1.2.2.1 Domain Validation TLS Server Authentication Certificates
 
 ### 1.1.2.2.2 Organization Validation TLS Server Authentication Certificates
 
-### 1.1.2.2.3 OCSP Signing Certificates
+### 1.1.2.2.3 Delegated OCSP Responder Certificates
 
 
 ## 1.2 Document name and identification
@@ -109,19 +109,19 @@ The CA shall impose these limitations through an agreement with the Authorizing 
 
 Delegated Third Parties are not allowed as Registration Authorities.
 
-### 1.3.3 Subscribers
+### 1.3.5 Subscribers
 A Subscriber is the entity identified in a Certificate, capable of using the Private Key that corresponds to the Public Key listed in the certificate, and has agreed to the terms of the Subscriber Agreement with the CA.  Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant.
 
 For this policy, Subscribers are limited to: 1) web services operated by or on behalf of Federal agencies, and 2) Domain Names within the .GOV and .MIL Domain Namespace(s).
 
-### 1.3.4 Relying Parties
+### 1.3.6 Relying Parties
 A Relying Party is any individual or entity that relies on a U.S. Federal Public Trust TLS PKI Certificate, the information included in the certificate, and the digital signature by a CA.   
 
 For this CP, Relying Parties may include individuals or entities accessing U.S. Government web services available on the Internet.    
 
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
-### 1.3.5 Other Participants
+### 1.3.7 Other Participants
 
 
 
@@ -430,6 +430,8 @@ All CAs shall specify the procedures for validating information and identity evi
 ### 4.2.1 Performing identification and authentication functions
 All CAs shall establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
+For end entity Domain Validation TLS certificates and end entity Organizational Validation TLS certificates:
+
 For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates:
 
 - The Applicant information shall include at least one Fully-Qualified Domain Name.
@@ -467,7 +469,6 @@ All Domain Validation TLS Server Authentication certificates and Organizational 
 There is no limit on the maximum number of CT Logs which may be submitted to.  
 
 The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
-
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
@@ -551,6 +552,7 @@ Modification is defined as the re-issuance of a certificate with the same public
 
 ### 4.8.1 Circumstance for certificate modification
 End entity Domain Validation TLS Server Authentication and end entity Organization Validation TLS Server Authentication certificates shall not be modified.
+
 Online Certificate Status Protocol (OCSP) Delegated responder certificates shall not be modified.
 
 CA certificates may be modified to update attributes other than the public key.  A CA certificate shall not be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
@@ -717,30 +719,6 @@ Private keys for certificates issued under this policy shall not be escrowed.
 Not applicable.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
-The CA shall develop, implement, and maintain a comprehensive security program designed to:
-
-1. Protect the confidentiality, integrity, and availability of Certificate Data and Certificate Management Processes;
-2. Protect against anticipated threats or hazards to the confidentiality, integrity, and availability of the Certificate Data and Certificate Management Processes;
-3. Protect against unauthorized or unlawful access, use, disclosure, alteration, or destruction of any Certificate Data or Certificate Management Processes;
-4. Protect against accidental loss or destruction of, or damage to, any Certificate Data or Certificate Management Processes; and
-5. Comply with all other security requirements applicable to the CA by law.
-
-The Certificate Management Process shall include:
-
-1. physical security and environmental controls;
-2. system integrity controls, including configuration management, integrity maintenance of trusted code, and malware detection/prevention;
-3. network security and firewall management, including port restrictions and IP address filtering;
-4. user management, separate trusted-role assignments, education, awareness, and training; and
-5. logical access controls, activity logging, and inactivity time-outs to provide individual accountability.
-
-The CA's security program shall include an annual Risk Assessment that:
-
-1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate Data or Certificate Management Processes;
-2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate Data and Certificate Management Processes; and
-3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
-
-Based on the Risk Assessment, the CA shall develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan shall include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan shall also take into account then-available technology and the cost of implementing the specific measures, and shall implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
-{:.br data-sect="16.3"}
 
 ## 5.1 PHYSICAL SECURITY CONTROLS
 CA equipment shall be protected from unauthorized access while the cryptographic module is installed and activated.  The CA shall implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  CA cryptographic tokens shall be protected against theft, loss, and unauthorized use.  
@@ -751,7 +729,7 @@ All the physical control requirements specified below apply equally to the Root 
 The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, shall be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, shall provide robust protection against unauthorized access to the CA equipment and records.
 
 ### 5.1.2 Physical access
-At a minimum, the physical access controls for CA equipment and Certificate Status Authority (CSA) equipment, as well as remote workstations used to administer the CAs, shall:
+At a minimum, the physical access controls for CA equipment, as well as remote workstations used to administer the CAs, shall:
 
 - Ensure that no unauthorized access to the hardware is permitted.
 - Ensure that all removable media and paper containing sensitive plain-text information is stored in secure containers.
@@ -763,7 +741,7 @@ When not in use, removable cryptographic modules, activation information used to
 
 A security check of the facility housing the CA equipment or remote workstations used to administer the CAs shall occur if the facility is to be left unattended.  At a minimum, the check shall verify the following:  
 
-- The equipment is in a state appropriate to the current mode of operation (e.g., that cryptographic modules are in place when “open,” and secured when “closed,” and for the CA, that all equipment other than the repository is shut down).
+- The equipment is in a state appropriate for the current mode of operation (e.g., that cryptographic modules are in place when “open,” and secured when “closed,” and for the CA, that all equipment other than the repository is shut down).
 - Any security containers are properly secured.
 - Physical security systems (e.g., door locks, vent covers) are functioning properly.
 - The area is secured against unauthorized access.
@@ -771,9 +749,9 @@ A security check of the facility housing the CA equipment or remote workstations
 A person or group of persons shall be made explicitly responsible for making such checks.  When a group of persons is responsible, a log identifying the person performing a check at each instance shall be maintained.  If the facility is not continuously attended, the last person to depart shall initial a sign-out sheet that indicates the date and time and asserts that all necessary physical protection mechanisms are in place and activated.
 
 ### 5.1.3 Power and air conditioning
-The CA shall have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown.  
+The CA shall have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power causes a shutdown.  
 
-The repositories (containing CA certificates and CRLs) shall be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
+All Repositories shall be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4 Water exposures
 CA equipment shall be installed such that it is not in danger of exposure to water.
@@ -795,49 +773,43 @@ Full system backups sufficient to recover from system failure shall be made on a
 ### 5.2.1 Trusted roles
 A trusted role is one whose incumbent performs functions that can introduce security problems if not carried out properly, whether accidentally or maliciously.
 
-The requirements of this policy are defined in terms of four roles. Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel or investigative records requiring protection under the Privacy Act.
+The requirements of this policy are defined in terms of three roles:   
+1.	Administrator 
+2.	Officer 
+3.	Audit Administrator 
 
-1.	Administrator - authorized to install, configure, and maintain the CA; establish and maintain accounts; configure profiles and audit parameters; and generate component keys.
-2.	Officer - authorized to request or approve certificates or certificate revocations, and perform the Validation Specialist functions for quarterly reviews of issued certificates
-3.	Auditor – authorized to review, maintain, and archive audit logs.
-4.	Operator – authorized to perform system backup and recovery.
+These three roles are employed at the CA.  Separation of duties shall comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
 
-These four roles are employed at the CA.  Separation of duties shall comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
+The Administrator shall be responsible for
+-  Installation, configuration, and maintenance of the CA
+-  Establishing and maintaining CA system accounts
+-  Configuring certificate profiles or templates and audit parameters
+-  Generating and backing up CA keys
+-  Routine operation of the CA equipment and operations such as system backups and recovery or changing recording media
 
-A detailed description of the responsibilities for each role:  
+Administrators shall not issue certificates to Subscribers.  
 
-The Administrator shall be responsible for:
--  Installation, configuration, and maintenance of the CA;
--  Establishing and maintaining CA system accounts;
--  Configuring certificate profiles or templates and audit parameters, and;
--  Generating and backing up CA keys.
-
-Administrators shall not issue certificates to subscribers.  
-
-The Officer (aka Registration Authority and / or Validation Specialist) shall be responsible for:   
-
-- Verifying the identity of subscribers and accuracy of information included in certificates pursuant to Section 3.2
-- Performing the Validation Specialist functions for quarterly reviews of issued certificates
-- Approving and executing the issuance of the certificates where inspection of the validation information is required, and
+The Officer shall be responsible for   
+- Approving and executing the issuance of the certificates where inspection of the validation information is required
 - Requesting, approving and executing the revocation of certificates
+- Performing internal self-audits at least every quarter in accordance with Section 8.7
 
-The Audit Administrator shall be responsible for:
+The Audit Administrator shall be responsible for
+- Reviewing, maintaining, and archiving audit logs
+- Overseeing internal compliance and self-audits to ensure that the CA is operating in accordance with its CPS
 
-- Reviewing, maintaining, and archiving audit logs;
-- Performing or overseeing internal compliance audits to ensure that the CA is operating in accordance with its CPS;
-
-The Operator shall be responsible for the routine operation of the CA equipment and operations such as system backups and recovery or changing recording media.
+Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel records or investigative records requiring protection under the Privacy Act.
 
 ### 5.2.2 Number of Individuals Required per Task
-The CA Private Key shall be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in a physically secured environment.
+The CA Private Key shall be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in the physically secured environment described in 5.1.2.
 
-Where multiparty control is required, at least one of the participants shall be an Administrator.  All participants shall serve in a trusted role as defined in section 5.2.1.  Multiparty control shall not be achieved using personnel that serve in the Auditor trusted role.
+Where multi-party control is required, at least one of the participants shall be an Administrator.  All participants shall serve in a trusted role as defined in section 5.2.1.  Multi-party control shall not be achieved using personnel that serve in the Audit Administrator trusted role.
 
 ### 5.2.3 Identification and authentication for each role
-An individual shall identify and authenticate him/herself before being permitted to perform any actions set forth above for that role or identity.  All Trusted Roles shall use a unique credential created by or assigned to a single person for identification adn authentication.  
+An individual shall be identified and authenticated before being permitted to perform any actions set forth above for that role or identity.  All Trusted Roles shall use a unique credential created by or assigned to a single individual for identification and authentication.  CAs shall implement multi-factor or multi-party authentication for all Trusted Roles.  
 
 ### 5.2.4 Roles requiring separation of duties
-Individuals may only assume one of the Officer, Administrator, and Auditor roles, but any individual may assume the Operator role.  The CA software and hardware shall identify and authenticate its users and enforce least privilege.  The CA software and hardware shall ensure that no user can assume both the Administrator and Officer roles, assume both the Administrator and Auditor roles, or assume both the Auditor and Officer roles.  
+Individuals may only assume one of the Administrator, Officer, and Audit Administrator roles.  The CA software and hardware shall identify and authenticate its users and enforce least privilege.  The CA software and hardware shall ensure that no user can assume both the Administrator and Officer roles, assume both the Administrator and Audit Administrator roles, or assume both the Audit Administrator and Officer roles.  
 
 ## 5.3 Personnel controls
 
@@ -846,155 +818,162 @@ All persons filling trusted roles shall be selected on the basis of loyalty, tru
 
 
 ### 5.3.2 Background check procedures
-Trusted role personnel shall, at a minimum, pass a background investigation covering the following areas:
-•	Employment;
-•	Education;
-•	Place of residence;
-•	Law Enforcement; and
-•	References.
+Trusted role personnel shall, at a minimum, pass a background investigation covering
+- Employment  
+- Education  
+- Place of residence  
+- Law Enforcement  
+- References  
+
 The period of investigation shall cover at least the last five years for each area, excepting the residence check which shall cover at least the last three years. Adjudication of the background investigation shall be performed by a competent adjudication authority using a process consistent with Executive Order 13467 or equivalent.
 
 ### 5.3.3 Training Requirements and Procedures
-The CA shall provide all personnel performing information verification duties with skills-training that covers basic Public Key Infrastructure knowledge, authentication and vetting policies and procedures (including the CA's Certificate Policy and/or Certification Practice Statement), common threats to the information verification process (including phishing and other social engineering tactics), and these Requirements.
+All individuals in Trusted Roles shall receive comprehensive training. Training shall be conducted in the following areas:
+- Basic Public Key Infrastructure knowledge  
+- CA security principles and mechanisms  
+- All Trusted Role duties   
+- Disaster recovery and business continuity procedures  
+- Understanding and knowledge of this CP  
 
-The CA shall maintain records of such training and ensure that personnel entrusted with Validation Specialist duties maintain a skill level that enables them to perform such duties satisfactorily.
+The CA shall provide all Officers with additional skills-training that covers:
+- Authentication and identity verification policies and procedures including the procedures allowed by this CP and the CA's CPS
+- Common threats to the identity verification process including phishing and other social engineering tactics
 
-The CA shall document that each Validation Specialist possesses the skills required by a task before allowing the Validation Specialist to perform that task.
+The CA shall require all Officers to pass an examination provided by the CA on the information verification requirements outlined in this CP and the CA's CPS. The CA shall that ensure that individuals with Officer duties maintain a skill level that enables them to perform such duties satisfactorily.
 
-The CA shall require all Validation Specialists to pass an examination provided by the CA on the information verification requirements outlined in these Requirements.
+The CA shall maintain records of training for all individuals in Trusted Roles.  The CA shall document that each individual in a Trusted Role possesses the skills required by a task before allowing the individual to perform that task.
 
-### 5.3.4 Retraining frequency and requirements
+### 5.3.4 Retraining Frequency and Requirements
 All personnel in Trusted roles shall maintain skill levels consistent with the CA's training and performance programs.
 
-All individuals responsible for PKI roles shall be made aware of changes in the CA operation.  Any significant change to the operations shall have a training (awareness) plan, and the execution of such plan shall be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
+All personnel in Trusted Roles shall be made aware of changes in the CA operation.  Any significant change to the operations shall have a training (awareness) plan, and the execution of such plan shall be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
 
-Documentation shall be maintained identifying all personnel who received training and the level of training completed.
-
-### 5.3.5 Job rotation frequency and sequence
+### 5.3.5 Job Rotation Frequency and Sequence
 No Stipulation
 
-### 5.3.6 Sanctions for unauthorized actions
+### 5.3.6 Sanctions for Unauthorized Actions
 The CA shall take appropriate administrative and disciplinary actions against personnel who have performed actions involving the CA that are not authorized in this CP, the CA CPS, or other published procedures.
 
 ### 5.3.7 Independent Contractor Controls
-Delegated Third Party are not allowed under this policy.
-
-Direct contractor personnel employed to operate any part of the CAs or perform functions pertaining to the infrastructure shall be subject to the same personnel requirements set forth in 5.3.2 of this CP.
+Direct contractor personnel employed to operate any part of the CAs or perform functions pertaining to the infrastructure shall be subject to the same personnel requirements set forth in this CP.
 
 ### 5.3.8 Documentation supplied to personnel
-Documentation sufficient to define duties and procedures for each role shall be provided to the personnel filling that role.
+Documentation sufficient to define duties and procedures for each Trusted Role shall be provided to the personnel filling that Trusted Role.
 
-## 5.4 Audit logging procedures
+## 5.4 Audit Logging Procedures
 
 ### 5.4.1 Types of events recorded
-The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with these Requirements.
+The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
 
-The CA shall record at least the following events:
+The CA shall record CA key lifecycle management events, including:
 
-1. CA key lifecycle management events, including:
+- Key generation, backup, storage, recovery, archival, and destruction  
+- Cryptographic device lifecycle management events  
 
-  a. Key generation, backup, storage, recovery, archival, and destruction; and
-  b. Cryptographic device lifecycle management events.
+The CA shall record CA and Subscriber Certificate lifecycle management events, including:
 
-2. CA and Subscriber Certificate lifecycle management events, including:
+- Certificate requests and revocation requests  
+- All verification activities stipulated in this CP and the CA's CPS  
+- Acceptance and rejection of certificate requests  
+- Issuance of Certificates  
+- Generation of Certificate Revocation Lists and OCSP entries  
 
-  a. Certificate requests, renewal, and re-key requests, and revocation;
-  b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-  c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
-  d. Acceptance and rejection of certificate requests; Frequency of Processing Log
-  e. Issuance of Certificates; and
-  f. Generation of Certificate Revocation Lists and OCSP entries.
+The CA shall record Security events, including:
 
-3. Security events, including:
-
-  a. Successful and unsuccessful PKI system access attempts;
-  b. PKI and security system actions performed;
-  c. Security profile changes;
-  d. System crashes, hardware failures, and other anomalies;
-  e. Firewall and router activities; and
-  f. Entries to and exits from the CA facility.
+- Successful and unsuccessful PKI system access attempts  
+- PKI and security system actions performed  
+- Security profile changes
+- Clock adjustments   
+- System crashes, hardware failures, and other anomalies  
+- Firewall and router activities  
+- Entries to and exits from the CA facility  
 
 Log entries shall include the following elements:
 
-1. Date and time of entry;
-2. Identity of the person making the journal entry; and
-3. Description of the entry.
+1. Date and time of entry  
+2. Identity of the person performing the action  
+3. Description of the entry  
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
-Review of the audit log shall be required at least once every 60 days.  
+Audit logs shall be reviewed at least once every thirty (30) days.  Audit log reviews shall include verifying that the logs have not been tampered with, inspecting log entries, and performing a root cause analysis for any alerts or irregularities in the logs.  
 
-Such reviews involve verifying that the log has not been tampered with and then briefly inspecting all log entries, with a more thorough investigation of any alerts or irregularities in the logs.  A statistically significant portion of the security audit data generated by the CA since the last review shall be examined.  This amount will be described in the CPS.
-
-All significant events shall be explained in an audit log summary.  Actions taken as a result of these reviews shall be documented.
+All significant events and the root cause analysis shall be explained in an audit log summary.  Actions taken as a result of the audit log reviews shall be documented.
 
 ### 5.4.3 Retention Period for Audit Logs
-Audit logs shall be retained on-site until reviewed, in addition to being archived as described in section 5.5.  The individual who removes audit logs from the CA system shall be an official different from the individuals who, in combination, command the CA signature key.
+Audit logs shall be retained on-site until reviewed, in addition to being archived as described in Section 5.5.  The Audit Administrator Trusted Role shall be responsible for  overseeing the migration of audit logs from the CA to the archives.  
 
 The CA shall retain any audit logs generated for at least seven years. The CA shall make these audit logs available to its Qualified Auditor upon request.
 
 ### 5.4.4 Protection of Audit Log
 The CA shall ensure audit logs are unalterable or maintain an integrity mechanism to identify any changes.
 
-The security audit data shall not be open for reading or modification by any human, or by any automated process, other than those that perform security audit processing.  CA system configuration and procedures shall be implemented together to ensure that only authorized people archive or delete security audit data.  Procedures shall be implemented to protect archived data from deletion or destruction before the end of the security audit data retention period (note that deletion requires modification access).  Security audit data shall be moved to a safe, secure storage location separate from the location where the data was generated.
+The security audit data shall not be open for reading or modification by any human, or by any automated process, other than those that perform security audit processing.  CA system configuration and procedures shall be implemented to ensure that only authorized people archive or delete security audit data.  Procedures shall be implemented to protect archived data from deletion or destruction before the end of the security audit data retention period.  
 
 ### 5.4.5 Audit Log Backup Procedures
-Audit logs and audit summaries shall be backed up at least monthly.  A copy of the audit log shall be sent off-site on a monthly basis.
+Audit logs and audit summaries shall be backed up at least monthly.  Copies of the audit logs shall be sent off-site on a monthly basis.
 
 ### 5.4.6 Audit Log Accumulation System (internal vs. external)
-The audit log collection system may or may not be external to the CA system.  Automated audit processes shall be invoked at system or application startup, and cease only at system or application shutdown.  Audit collection systems shall be configured such that security audit data is protected against loss (e.g., overwriting or overflow of automated log files).  Should it become apparent that an automated audit system has failed, and the integrity of the system or confidentiality of the information protected by the system is at risk, operations shall be suspended until the problem has been remedied.
+The audit log collection system may or may not be external to the CA system.  Automated audit processes shall be invoked at system or application startup, and cease only at system or application shutdown.  Audit collection systems shall be configured such that security audit data is protected against loss (e.g. overwriting or overflow of automated log files).  Should it become apparent that an automated audit system has failed, and the integrity of the system or confidentiality of the information protected by the system is at risk, operations shall be suspended until the problem has been remedied.
 
 ### 5.4.7 Notification to event-causing subject
 There is no requirement to notify a subject that an event was audited.  Real-time alerts are neither required nor prohibited by this policy.
 
 ### 5.4.8 Vulnerability assessments
-Additionally, the CA's security program shall include an annual Risk Assessment that:
+The CA's security program shall include an annual Risk Assessment that:
 
-1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate Data or Certificate Management Processes;
-2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate Data and Certificate Management Processes; and
-3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
+1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate data or Certificate management processes
+2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate data and Certificate management processes 
+3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats
+
+The CA shall undergo or perform a Vulnerability Scan:
+- At least once per quarter, on public and private IP addresses identified as within the CA's system boundaries
+- Within one week of receiving a request from the FPKIPA or the U.S. Government Federal Information Security Modernization Act Authorizing Official for the CA
+- After any system or network changes that the CA determines are significant
+
+The CA shall undergo a Penetration Test on the CA system boundaries on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant. 
+
+The CA shall record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test. 
+
 
 ## 5.5 Records archival
-CAs operating under this policy shall follow either the General Records Schedules established by the National Archives and Records Administration or an agency-specific schedule as applicable.
+CAs shall archive records separately from the CA backups.  In addition to the archive requirements specified in this CP, archive procedures shall follow either the General Records Schedules established by the National Archives and Records Administration (NARA) or an agency-specific general records schedule as applicable.
 
 ### 5.5.1 Types of records archived
-The CA shall retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for a minimum of 10 years and 6 months after any Certificate based on that documentation ceases to be valid.
-
-CA archive records shall be sufficiently detailed to determine the proper operation of the CA and the validity of any certificate - including those revoked or expired - issued by the CA.  At a minimum, the following data shall be recorded for archive:
--	CA accreditation (if applicable)
+CA archive records shall be sufficiently detailed to determine the proper operation of the CA and the validity of any certificate issued by the CA.  At a minimum, the following data shall be recorded for archive:
+- CA accreditation 
 - Certificate policy
 - Certification practice statement
 - Contractual obligations and other agreements concerning operations of the CA
 - System and equipment configuration
--	Modifications and updates to system or configuration
--	Certificate requests
--	All certificates issued and/or published
--	Revocation requests
--	Subscriber identity authentication data
--	Subscriber agreements
--	Documentation of receipt of tokens
--	All CRLs issued and/or published
--	Other data or applications to verify archive contents
--	Compliance Auditor reports
--	Any changes to the Audit parameters, e.g. audit frequency, type of event audited
--	Any attempt to delete or modify the Audit logs
--	Whenever the CA generates a key (Not mandatory for single session or one-time use symmetric keys)
--	All changes to the trusted public keys, including additions and deletions
--	The export of private and secret keys (keys used for a single session or message are excluded)
--	The approval or rejection of a certificate status change request
--	Appointment of an individual to a Trusted Role
--	Destruction of cryptographic modules
--	All certificate compromise notifications
--	Remedial action taken as a result of violations of physical security
--	Violations of Certificate Policy
--	Violations of Certification Practice Statement
+  -	Modifications and updates to system or configuration
+- Certificate requests
+- All certificates issued 
+- Revocation requests
+- Subscriber identity authentication data
+- Subscriber agreements
+- Documentation of receipt of tokens
+- All CRLs issued 
+- Qualified Auditor reports
+- Any changes to the Audit parameters, e.g. audit frequency, type of event audited
+- Any attempt to delete or modify the Audit logs
+- Whenever the CA generates a key (Not mandatory for single session or one-time use symmetric keys)
+- All changes to the trusted public keys, including additions and deletions
+- The export of CA private and secret keys (keys used for a single session or message are excluded)
+- The approval or rejection of a certificate status change request
+- Appointment of an individual to a Trusted Role
+- Other data or applications to verify archive contents
+- Destruction of cryptographic modules
+- All certificate compromise notifications
+- Violations of Certificate Policy
+- Violations of Certification Practice Statement
 
 ### 5.5.2 Retention period for archive
-The CA shall retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for a minimum of 10 years and 6 months without any loss of data after any Certificate based on that documentation ceases to be valid.
+The CA shall retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation information thereof, for a minimum of seven years without any loss of data after any Certificate based on that documentation ceases to be valid.
 
 ### 5.5.3 Protection of archive
-No unauthorized user shall be permitted to write to, modify, or delete the archive.  For the CA, archived records may be moved to another medium.  The contents of the archive shall not be released except in accordance with the Privacy Act of 1974 (as amended) and applicable Agency policies.  Records of individual transactions may be released upon request of any subscribers involved in the transaction or their legally recognized agents.  Archive media shall be stored in a safe, secure storage facility separate from the CA.
+No unauthorized user shall be permitted to write to, modify, or delete the archive records.   Records of transactions may be released upon request of any subscribers involved in the transaction or their legally recognized agents.  
 
-If the original media cannot retain the data for the required period, a mechanism to periodically transfer the archived data to new media shall be defined by the archive site.
+Archive media shall be stored in a safe, secure storage facility separate from the CA. If the original media cannot retain the data for the required archived period, a mechanism to periodically transfer the archived data to new media shall be defined by the archive site.
 
 Alternatively, a CA operating under this policy may retain data using whatever procedures have been approved by NARA for that category of documents.  Applications required to process the archive data shall be maintained for a period that equals or exceeds the archive requirements for the data.
 
@@ -1002,133 +981,84 @@ Alternatively, a CA operating under this policy may retain data using whatever p
 No Stipulation
 
 ### 5.5.5 Requirements for time-stamping of records
-CA archive records shall be automatically time-stamped as they are created.  The system clocks used for time-stamping shall be maintained in synchrony with an authoritative time standard.
+Archive records maintained in digital format shall be time-stamped as the records are created.  The system clocks used for time-stamping shall be maintained in synchrony with an authoritative time standard.
 
 ### 5.5.6 Archive collection system (internal or external)
 Archive data may be collected in any expedient manner.
 
 ### 5.5.7 Procedures to obtain and verify archive information
-Procedures, detailing how to create, verify, package, transmit, and store the CA archive information, shall be published in the CPS.
+No Stipulation
 
 ## 5.6 Key changeover
-To minimize risk from compromise of a CA’s private signing key, that key may be changed often.  From that time on, only the new key will be used to sign CA and subscriber certificates.  If the old private key is used to sign OCSP responder certificates or CRLs that cover certificates signed with that key, the old key shall be retained and protected.  
-
-After a CA performs a Key Changeover, the CA may continue to issue CRLs with the old key until all certificates signed with that key have expired.  
-
-When a CA updates its private signature key and thus generates a new public key, the CA shall notify the FPKIPA and subscribers of the change.  
+Key changeovers are not applicable for any CAs operating under this CP and shall not be done. A new CA signing key constitutes a new CA and a new CA Subject Name shall be used. 
 
 ## 5.7 Compromise and disaster recovery
 
 ### 5.7.1 Incident and compromise handling procedures
-CA organizations shall have an Incident Response Plan and a Disaster Recovery Plan.
+CAs shall have an Incident Response Plan and a Disaster Recovery Plan.  The CA is not required to publicly disclose the Incident Response Plan and Disaster Recovery Plan but shall make the plans available to the CA's Qualified Auditor upon request. 
 
-The CA shall document a business continuity and disaster recovery procedures designed to notify and reasonably protect Application Software Suppliers, Subscribers, and Relying Parties in the event of a disaster, security compromise, or business failure. The CA is not required to publicly disclose its business continuity plans but shall make its business continuity plan and security plans available to the CA's auditors upon request. The CA shall annually test, review, and update these procedures.
+The FPKIPA shall be notified by the CAs operating under this policy of any incident. An incident is defined as a violation or imminent threat of violation of this CP, the CA's CPS, Memorandums of Agreements, or any other document that governs the operations of the CA. An incident may include but is not limited to the following:
 
-The business continuity plan shall include:
+- CA private key compromise
+- Suspected or detected compromise of the CA including the certificate status services required of the CA Repository
+- Physical or electronic penetration of the CA including the certificate status services required of the CA Repository
+- Successful denial of service attacks on the CA including the certificate status services required of the CA Repository
+- Suspected or detected issuance of certificates used for unethical purposes such as (but not limited to) promoting malware or illegal software
+- A known or reasonably known, publicly reported compromise of the CA including the certificate status services required of the CA Repository
+- Any certificate issuance not in compliance with this CP, this CP's certificate profiles, or the CA's CPS
 
-1. The conditions for activating the plan,
-2. Emergency procedures,
-3. Fallback procedures,
-4. Resumption procedures,
-5. A maintenance schedule for the plan;
-6. Awareness and education requirements;
-7. The responsibilities of the individuals;
-8. Recovery time objective (RTO);
-9. Regular testing of contingency plans.
-10. The CA's plan to maintain or restore the CA's business operations in a timely manner following interruption to or failure of critical business processes
-11. A requirement to store critical cryptographic materials (i.e., secure cryptographic device and activation materials) at an alternate location;
-12. What constitutes an acceptable system outage and recovery time
-13. How frequently backup copies of essential business information and software are taken;
-14. The distance of recovery facilities to the CA's main site; and
-15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
+The CA shall notify the FPKIPA within 24 hours from the time the incident was discovered.  An initial security incident report shall be submitted to the FPKIPA and shall include the following information:
+1. Which CA was affected by the incident
+1. When the incident was discovered
+1. How the incident was discovered 
+1. If available and applicable, any evidence of attribution for the incident
+1. The CA's interpretation of the incident
+1. A complete list of all certificates that were either mis-issued or not compliant with this CP and the CA's CPS as a result of the incident.
 
-The FPKIPA shall be notified by the CAs operating under this policy of any security incident. A security incident or incident is defined as a violation or imminent threat of violation of the NPE CP, CPS, subscriber agreements, MOA, or any other document that governs the operations of the CA. A security incident may include but is not limited to the following:
-- Suspected or detected compromise of Certificate Systems
-- Suspected or detected compromise of a certificate status server (CSS) if:
-  - The CSS certificate has a lifetime of more than 72 hours and
-  - The CSS certificate cannot be revoked (e.g., an OCSP responder certificate with the id-pkix-ocsp-nocheck extension)
-- Physical or electronic penetration of the Certificate Systems
-- Successful denial of service attacks on the Certificate System components
-- Any incident preventing the CA from issuing a CRL within 48 hours of the issuance of the previous CRL
-- Suspected or detected issuance of fraudulent certificates used for unethical purposes such as but not limited to promoting malware or illegal software.
-- Any certificate issuance not in compliance with NPE CP, CPS, or NPE Certificate Profiles.
-- CA private key compromise.
-- A known or reasonably known, publicly reported compromise of Certificate Systems
-- Any other issue that the FPKIPA identifies as calling into question the CAs integrity or trustworthiness
+A final security incident report shall be submitted at a date specified by the FPKIPA and shall include the following information:
+1. A complete timeline of events 
+1. A root cause analysis
+1. Remediation actions implemented to address the underlying root cause including specific technical or procedural changes, and any updates to the CA's CPS
+1. Proof the mis-issued certificates were revoked
+1. A statement that the incident has been fully remediated
 
-In the event of a CA or certificate compromise or fraudulent mis-issuance, the CA shall notify the FPKIPA as soon as possible, but no later than 24 hours from the time the incident was discovered. An initial security incident report shall be submitted to the FPKI@GSA.gov email or communicated directly to the FPKIPA and include the following sections:
-1. Which Certificate Systems or components were affected by the incident
-2. The CA's interpretation of the incident.
-3. Was the incident detected as part of normal operations. If not, explain why.
-4. Who detected the incident or perpetrated if known
-5. When the incident was discovered
-6. Physical location of the incident, if applicable.
-7. A partial or complete list of all certificates that were either mis-issued or not compliant with the CP/CPS as a result of the incident.
-
-A final security incident report shall be submitted at a date specified by the FPKIPA to the same location as the initial incident report and include all sections identified below.
-1. A complete timeline of events.
-2. If a compromise, a detailed description of the exploit and what and how infrastructure was compromised.
-3. If the CA did not detect the incident, why not.
-4. What specific remedial measures were taken or will take to address the underlying cause including specific CP/CPS updates.
-5. Other information appropriate to understand the incident such as system or vendor documentation or other material.
-6. Proof the mis-issued certificates were revoked.
-7. Who detected or perpetrated the incident.
-8. If requested, log files.
-9. Detailed description of how the incident was closed.
-
-In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response.
-- Communicate with affected parties or directly with affected organizations
-- Publish notice of revocation
-- Publicly publish a final security incident report on an approved government website.
-- Require the CA to employ, at the CA expense, a third party investigator to investigate the security incident and prepare a final security incident report.
-- Request specific reports at a periodic interval as determined by the FPKIPA
-- Specify a due date for the CA to submit a final security incident report.
-
-The FPKIPA shall notify the CA, in writing, of its intentions in response to the security incident seven (7) days prior to the action by the FPKIPA except under exceptional circumstances (as defined in the glossary) where the FPKIPA will make reasonable efforts to communicate with the CA prior to taking action. The  CA may propose an alternate course of action and the FPKIPA may consider reasonable alternatives but reserves the right to reject any proposed course of action not in the government’s best interest.
-
-**Note**: The FPKIPA will follow individual Application Trusted Root Program requirements to report security concerns.
+In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response:
+- Publicly publish a final incident report in one or more internet-accessible locations, with information redacted as necessary
+- Report incidents to the individual Application Trusted Root Programs
 
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
-When computing resources, software, and/or data are corrupted, CAs operating under this policy shall respond as follows:
+When computing resources, software, and/or data are corrupted, CAs shall ensure the system's integrity has been restored before returning to operation.  
 
-- Before returning to operation, ensure that the system’s integrity has been restored.
--	If the CA signature keys are not destroyed, CA operation shall be reestablished, giving priority to the ability to generate certificate status information within the CRL issuance schedule.
-- If the CA signature keys are destroyed, CA operation shall be reestablished as quickly as possible, giving priority to the generation of a new CA key pair.
+If the CA signature keys are not destroyed, CA operation shall be reestablished, giving priority to the ability to generate certificate status information.
 
 ### 5.7.3 Recovery Procedures after Key Compromise
-In the event of a CA private key compromise, the following operations shall be performed.
+In the event of a Subordinate CA private key compromise, the following operations shall be performed:
+- The FPKIPA shall be immediately notified
+- All subscriber certificates shall be revoked within twenty-four (24) hours
+- A final long term CRL with a nextUpdate time past the validity period of all issued subscriber certificates shall be generated
+- The final CRL shall be available for all relying parties until the validity period of all issued certificates has passed
+- The Root CA shall revoke the Subordinate CA certificate within seven (7) days
 
-- The FPKIPA shall be immediately informed, as well as any superior CAs and any entities known to be distributing the CA certificate.
--	The CA shall generate new keys.
-- The superior CA shall be revoke the subordinate CA certificate within seven (7) days.
-- All subscriber certificates shall be revoked within twenty-four (24) hours.
+If the Root Certificate private key is compromised, the CA notify the FPKIPA immediately.  
 
-If the CA distributed the private key in a Trusted Certificate, the CA shall perform the following operations:  
-
--	Generate a new Trusted Certificate.
--	Securely distribute the new Trusted Certificate
--	Initiate procedures to notify subscribers of the compromise.
-
-Subscriber certificates may be renewed automatically by the CA under the new key pair, or the CA may require subscribers to repeat the initial certificate application process.  
+In all cases, the CA and the FPKIPA shall initiate procedures to notify subscribers and Application Trusted Root Programs of the compromise. 
 
 ### 5.7.4 Business continuity capabilities after a disaster
-For the Root CA, recovery procedures shall be in place to reconstitute the CA within six (6) hours of failure.
+CAs disaster recovery procedures shall be in place to reconstitute the CA including the certificate status services required of the CA Repository within six (6) hours of failure.
 
-All other CAs operating under this policy shall have recovery procedures in place to reconstitute the CA within 72 hours of failure.
-
-In the case of a disaster whereby the CA installation is physically damaged and all copies of the CA signature key are destroyed as a result, the FPKIPA shall be notified at the earliest feasible time, and the FPKIPA shall take whatever action it deems appropriate.
-
-Relying parties may decide of their own volition whether to continue to use certificates signed with the destroyed private key pending reestablishment of CA operation with new certificates.
+In the case of a disaster whereby the CA installation is damaged and all copies of the CA signature key are destroyed as a result, the FPKIPA shall be notified at the earliest feasible time, and the FPKIPA shall take whatever action it deems appropriate.
 
 ## 5.8 CA or RA termination
-This section does not apply to CAs that have ceased issuing new certificates but are continuing to issue CRLs until all certificates have expired.  Such CAs are required to continue to conform with all relevant aspects of this policy (e.g., audit logging and archives).
+This section does not apply to CAs that have ceased issuing new certificates but are continuing to issue CRLs and provide OCSP responses until all certificates have expired.  Such CAs are required to continue to conform with all relevant aspects of this policy.
 
-When a CA operating under this policy terminates operations before all certificates have expired, the CA signing keys shall be surrendered to the FPKIPA.
+When a CA operating under this policy terminates operations before all certificates have expired, any issued certificates that have not expired shall be revoked.  The CA shall generate a final long term CRL with a nextUpdate time past the validity period of all issued certificates.  This final CRL shall be available for all relying parties until the validity period of all issued certificates has expired.  
 
-Any issued certificates that have not expired, shall be revoked and a final long term CRL with a nextUpdate time past the validity period of all issued certificates shall be generated.  This final CRL shall be available for all relying parties until the validity period of all issued certificates has passed.  Once the last CRL has been issued, the private signing key(s) of the CA to be terminated will be destroyed.
+Once the final CRL has been issued, the private signing key(s) of the CA to be terminated shall be destroyed.  The terminated CA certificate shall be revoked.  
 
-Prior to CA termination, the CA shall provide archived data to an archive facility.  As soon as possible, the CA will advise all other organizations to which it has issued certificates of its termination.
+If the terminated CA is the Root CA, the FPKIPA shall notify the Application Trusted Root Programs of the need to remove the Root Certificate from the applicable trust stores.
+
+Prior to CA termination, the CA shall provide archived data to an archive facility.  
 
 # 6. TECHNICAL SECURITY CONTROLS
 
@@ -1137,153 +1067,152 @@ Prior to CA termination, the CA shall provide archived data to an archive facili
 ### 6.1.1 Key pair generation
 
 #### 6.1.1.1 CA Key Pair Generation
-In all cases, the CA shall:
+The CA shall:
 
-1. prepare and follow a Key Generation Script,
-2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process, and
-3. have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair.
-
-In all cases, the CA shall:
-
-1. Generate the CA keys in a physically secured environment as described in the CA's Certification Practice Statement;
-2. Generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
-3. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation;
-4. Log its CA key generation activities;
-5. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in the Certificate Policy and Certification Practice Statement and its Key Generation Script.
+1. Prepare and follow a Key Generation Script
+1. Have a Qualified Auditor witness the CA Key Pair generation process or review a video of the entire CA Key Pair generation process
+1. Have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair
+1. Generate the CA keys in a physically secured environment as described in the CA's CPS
+1. Generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge
+1. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation
+1. Log its CA key generation activities
+1. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in this CP and CA's CPS and its Key Generation Script
 
 The documentation of the procedure shall be detailed enough to show that appropriate role separation was used and the CA key pair generation shall create a verifiable audit trail that the security requirements for procedures were followed.
 
 #### 6.1.1.2 RA Key Pair Generation
-RAs shall not generate key pairs.
+Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs.
 
 #### 6.1.1.3 Subscriber Key Pair Generation
-The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key (such as a Debian weak key, see <http://wiki.debian.org/SSLkeys>).
+Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
+
+The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see http://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
 
 ### 6.1.2 Private key delivery to subscriber
-Parties other than the Subscriber shall not archive the Subscriber Private Key without authorization by the Subscriber.
-
-Subscribers shall generate their own keys in compliance with sections 6.1.5 and 6.1.6.
-
-If the CA or any of its designated RAs become aware that a Subscriber's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subscriber, then the CA shall revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+Subscribers shall generate their own keys.  This section is not applicable.
 
 ### 6.1.3 Public key delivery to certificate issuer
 
-The public key and the subscriber’s identity shall be delivered securely to the CA for certificate issuance. The delivery mechanism shall bind the subscriber’s verified identity to the public key. If cryptography is used to achieve this binding, it shall be at least as strong as the CA keys used to sign the certificate.
+The public key shall be delivered securely to the Issuing CA for certificate issuance. The certificate request process shall ensure that the Applicant possesses the private key associated with the public key presented for certification.  
 
 ### 6.1.4 CA public key delivery to relying parties
-
-When a Subordinate CA updates its signature key pair, the CA shall distribute the new public key in a secure fashion.
-
-The Root CA certificate(s) shall be conveyed to relying parties in a secure fashion to preclude substitution attacks. Acceptable methods for self-signed Root CA certificate delivery are:
-- Loading a self-signed certificate onto tokens delivered to relying parties via secure mechanisms;
-- Secure distribution of self-signed certificates through secure out-of-band mechanisms;
-- Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources (note that hashes posted in-band along with the certificate are not acceptable as an authentication mechanism)
+A Root CA certificate shall be conveyed to trust store operators and relying parties in a secure fashion to preclude substitution attacks. Acceptable methods for the self-signed Root CA certificate delivery are:
+- Loading a self-signed certificate onto tokens delivered to trust store operators or relying parties via secure mechanisms
+- Secure distribution of the self-signed certificate through secure out-of-band mechanisms
+- Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources
+- Secure mechanisms used by the trust store operators to distribute publicly trusted Root CA certificates to relying parties
 
 ### 6.1.5 Key sizes
 Certificates shall meet the following requirements for algorithm type and key size.
 
 (1) Root CA Certificates  
 
-|  |  |
-| :---  | :------ |
-| Digest algorithm | SHA-256, SHA-384 or SHA-512  |
-| Minimum RSA modulus size (bits) | 4096 |
-| ECC curve | NIST P-256, P-384, or P-521 |
-| Minimum DSA modulus and divisor size (bits)\*\*\* | L= 2048 N= 224 or L= 2048 N= 256 |
+|  |  |  
+| :---  | :------ |  
+| Digest algorithm | SHA-256 |  
+| Minimum RSA modulus size (bits) | 4096 |  
 
 
 (2) Subordinate CA Certificates
 
-|  |  |
-| :---  | :------ |
-| Digest algorithm | SHA-256, SHA-384 or SHA-512  |
-| Minimum RSA modulus size (bits) | 2048 |
-| ECC curve | NIST P-256, P-384, or P-521 |
-| Minimum DSA modulus and divisor size (bits)\*\*\* | L= 2048 N= 224 or L= 2048 N= 256 |
+|  |  |  
+| :---  | :------ |  
+| Digest algorithm | SHA-256 |  
+| Minimum RSA modulus size (bits) | 2048 |  
 
 
 (3) Subscriber Certificates
 
-|  |  |
-| :---  | :------ |
-| Digest algorithm | SHA-256, SHA-384 or SHA-512  |
-| Minimum RSA modulus size (bits) | 2048 |
-| ECC curve | NIST P-256, P-384, or P-521 |
-| Minimum DSA modulus and divisor size (bits)\*\*\* | L= 2048 N= 224 or L= 2048 N= 256 |
+|  |  |  
+| :---  | :------ |  
+| Digest algorithm | SHA-256, SHA-384 or SHA-512  |  
+| Minimum RSA modulus size (bits) | 2048 |  
+| ECC curve | NIST P-256, P-384, or P-521 |  
 
-\*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
 ### 6.1.6 Public key parameters generation and quality checking
-RSA: The CA shall confirm that the value of the public exponent _e_ is an odd positive integer such that:  
+For RSA moduli, the CA shall confirm that the value of the public exponent _e_ is an odd positive integer such that:  
 
 - 2<sup>16</sup> < e < 2<sup>256</sup>  
 
-The modulus shall also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: NIST SP 800-89 and NIST FIPS 186-4]
+The CA shall perform partial public key validation as specified in Section 5.3.3 of NIST SP 800-89 to confirm that the modulus is an odd number, is not the power of a prime, and has no factors smaller than 752.
 
-ECC: The CA should confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
+For ECC, the CA should confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine as specified in NIST SP 800-56A.
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
 Root CA Private Keys shall not be used to sign Certificates except in the following cases:
 
-1. Self-signed Certificates to represent the Root CA itself;
-2. Certificates for Subordinate CAs and Cross Certificates;
-3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates); and
-4. Certificates for OCSP Response verification.
+1. Self-signed Certificates to represent the Root CA itself
+2. Certificates for Subordinate CAs
+3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates)
+4. Certificates for OCSP Response verification
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA shall implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above shall consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA shall encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
-The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules [FIPS 140-2]. Cryptographic modules shall be validated to a FIPS 140 level identified in this section.
+The relevant standard for cryptographic modules is Security Requirements for Cryptographic Modules specified in FIPS 140-2.
 
-- Cryptographic modules for CAs and OCSP responders shall be hardware modules validated as meeting FIPS 140-2 Level 3 or above
+Cryptographic modules for CAs, including any cryptographic modules used in certificate status services required of the CA Repository such as OCSP responders, shall be hardware modules validated as meeting FIPS 140-2 Level 3 or above.
 
+Subscribers should use modules validated as meeting FIPS 140-2 Level 1 or above to generate key pairs.   
 
 ### 6.2.2 Private key (n out of m) multi-person control
 For all CAs:
 
-- A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key.
-- CA signature keys may be backed up only under at least two-person control.
-- Access to CA signing keys backed up for disaster recovery shall be under at least two-person control.
-- The names of the parties used for two-person control shall be made available for inspection during Qualified Audits.
+- A single person shall not be permitted to activate or access any cryptographic module that contains the complete CA private signing key
+- CA signature keys may be backed up only under at least two-person control
+- Access to CA signing keys backed up for disaster recovery shall be under at least two-person control
+- The names of the parties used for two-person control shall be made available for inspection during Qualified Audits
+- Multi-person control shall not be achieved using personnel that serve in the Audit Administrator trusted role
+
+There is no stipulation for Subscriber private key multi-person control.
 
 ### 6.2.3 Private key escrow
-For all CAs:
-
-- The CA private keys shall never be escrowed
+Private keys shall not be escrowed.
 
 ### 6.2.4 Private key backup
 For all CAs:
 
-- The CA private signature keys shall be backed up under the same multiperson control as the original signature key.
-- At least one copy of the private signature key shall be stored off-site.
-- All copies of the CA private signature key shall be accounted for and protected in the same manner as the original.
+- The private key shall be backed up under the same multi-person control as the original signature key
+- At least one copy of the CA private key shall be stored off-site in a secure storage facility separate from the CA
+- All copies of the CA private key shall be accounted for and protected in the same manner as the original
 - Backup procedures shall be included in the CA’s CPS
 
-See Section 5.2.2.
+Subscriber private keys may be backed up or copied by the Subscriber, but shall be held in the Subscriber’s control.  
+
 
 ### 6.2.5 Private key archival
-Parties other than the Subordinate CA shall not archive the Subordinate CA Private Keys.
+Private keys may be only archived by the parties represented by the Subject identified in the corresponding public key certificate.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
-All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4.1. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
+All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
 
-If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA shall revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+There is no stipulation for Subscriber private key transfers into or from a cryptographic module.
 
 ### 6.2.7 Private key storage on cryptographic module
-All CAs shall protect their Private Keys in a system or device that has been validated as meeting at least FIPS 140 level 3 which includes requirements to protect the Private Key and other assets against known threats.
+All CAs shall protect their private key in a system or device that has been validated as meeting at least FIPS 140 Level 3.
+
+There is no stipulation for Subscriber private key storage.
 
 ### 6.2.8 Activating Private Keys
-For the Root CA(s), signing key activation shall implement multiparty control as specified in Section 5.2.2.
+For all CAs, private key activation shall implement multiparty control as specified in Section 5.2.2.
+
+There is no stipulation for Subscriber private key activation.
 
 ### 6.2.9 Deactivating Private Keys
-Cryptographic modules that have been activated shall not be available to unauthorized access.
-After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS.
-CA cryptographic modules shall be removed and stored in a secure container when not in use.
+For all CAs:
+
+- Cryptographic modules that have been activated shall not be available to unauthorized access.
+- After use, the cryptographic module shall be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity as defined in the CA's CPS.
+- CA cryptographic modules shall be removed and stored in a secure container when not in use.
+
+There is no stipulation for Subscriber private key deactivation.
 
 ### 6.2.10 Destroying Private Keys
-Individuals in trusted roles shall destroy all CA and OCSP private signature keys when the keys are no longer needed.
-All CAs operating under this policy shall document the private key destruction methods in their Certification Practice Statement.
+Individuals in Trusted Roles shall destroy all CA Certificate and Delegated OCSP Responder Certificate private keys when the keys are no longer needed. All CAs shall document the private key destruction methods in the CPS.
+
+There is no stipulation for Subscriber private key destruction.
 
 ### 6.2.11 Cryptographic Module Capabilities
 See Section 6.2.1
@@ -1291,27 +1220,29 @@ See Section 6.2.1
 ## 6.3 Other aspects of key pair management
 
 ### 6.3.1 Public key archival
-No stipulation.
+For all CAs, the CA Certificate and public key shall be archived in accordance with Section 5.5.1.
+
+There is no stipulation for Subscriber public key archival.
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-
 Root CA Certificates shall have a Validity Period no greater than 20 years.
 Subordinate CA Certificates shall have a Validity Period no greater than 10 years.
-All certificates signed by a specific CA key pair shall expire before the end of that key pair’s usage
-period.
+All certificates signed by a CA key pair shall expire before the end of that key pair’s usage period.
 
-All Subscriber Certificates shall have a Validity Period no greater than 825 days.  
-Subscriber Certificates issued for delegated OCSP responders shall have a Validity Period no greater than 45 days.
+Domain Validation TLS Server Authentication Certificates and Organization Validation TLS Server Authentication Certificates shall have a Validity Period no greater than 395 days.  
+Delegated OCSP Responder Certificates shall have a Validity Period no greater than 45 days.
 
 ## 6.4 Activation data
 
 ### 6.4.1 Activation data generation and installation
-CA activation data may be user-selected by each of the multiple parties holding that activation
-data. If the activation data shall be transmitted, it shall be via an appropriately protected
-channel, and distinct in time and place from the associated cryptographic module.
+For all CAs, CA activation data may be user-selected by each of the multiple parties holding that activation data. If the activation data shall be transmitted, it shall be via a channel protected commensurate with the protection supplied by the key itself, and distinct in time and place from the associated cryptographic module.
+
+There is no stipulation for Subscriber activation data.
 
 ### 6.4.2 Activation data protection
 For all CAs, this CP makes no further stipulation beyond that specified in FIPS 140.
+
+There is no stipulation for Subscriber activation data.
 
 ### 6.4.3 Other aspects of activation data
 No stipulation.
@@ -1320,88 +1251,83 @@ No stipulation.
 
 ### 6.5.1 Specific computer security technical requirements
 
-Administrator privileges to all Certificate System components shall only be granted to the Administrator trusted role.
+Administrator privileges to all Certificate System Components shall only be granted to the Administrator Trusted Role.  All CAs shall implement multi-factor or multi-party authentication for all Administrator Trusted Role access to Certificate System Components including operating system and software.
 
-All CAs shall implement multifactor authentication for all Trusted Role accounts capable of directly causing certificate issuance or authenticating to Certificate Systems. All Trusted Roles shall use a unique credential created by or assigned to a single person for identification and authentication.   
+All CAs shall implement multi-factor authentication for the Officer Trusted Role.
 
-All CAs shall implement multifactor authentication for all access to component systems including operating system and software.
+For all CAs and Certificate System Components including certificate status services, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
 
-For all CAs and component systems including certificate status services operating under this policy, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The CA and its ancillary parts shall include the following functionality:  
-
-- be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's operations;
-- authenticate the identity of users before permitting access to the system or applications;  
-- manage privileges of users to limit users to their assigned roles and implement least privilege controls;  
-- generate and archive audit records for all transactions; (see section 5.4)  
-- enforce domain integrity boundaries for security critical processes;
-- support recovery from key or system failure; and
+- Be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's operations
+- Authenticate the identity of users before permitting access to the system or applications
+- Manage privileges of users to limit users to their assigned roles and implement least privilege controls  
+- Generate and archive audit records for all transactions (see Section 5.4)  
+- Enforce domain integrity boundaries for security critical processes
+- Support recovery from key or system failure
 
 For remote workstations used to administer the CAs, the computer security functions listed below are required:
 
-- authenticate the identity of users before permitting access to the system or applications;  
-- manage privileges of users to limit users to their assigned roles;  
-- generate and archive audit records for all transactions; (see section 5.4)  
-- enforce domain integrity boundaries for security critical processes; and  
-- support recovery from key or system failure; and
-- configure workstations with inactivity time-outs to enforce account log out or lock the workstation when no longer in use;
-
-All communications between any PKI trusted role and the CA shall be authenticated and protected from modification.
+- Authenticate the identity of users before permitting access to the system or applications  
+- Manage privileges of users to limit users to their assigned roles  
+- Generate and archive audit records for all transactions (see Section 5.4)  
+- Enforce domain integrity boundaries for security critical processes
+- Configure workstations with inactivity time-outs to enforce account log out or lock the workstation when no longer in use
 
 ### 6.5.2 Computer security rating
-No Stipulation.
+No stipulation.
 
 ## 6.6 Life cycle technical controls
 
 ### 6.6.1 System development controls
-The system development controls for all CAs and any Registration Authority functions listed below are required:
+The system development controls for all CAs and Certificate System Components functions listed below are required:
 
-- The CA hardware and software shall be dedicated to performing one task: the CA. There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation. Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs.
-- Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g., by ensuring the random selection of material at time of purchase or installation).
-- Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter.
+- The CA hardware and software shall be dedicated to performing one task: the CA
+- There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation
+- Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs
+- Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g. by ensuring the random selection of material at time of purchase or installation)
+- Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter
 
 
 ### 6.6.2 Security management controls
-The security management controls for all CAs and any Registration Authority functions listed below shall be implemented:
+The security management controls for all CAs and all Certificate System Components listed below shall be implemented:
 
-- The configuration of the CA system, in addition to any modifications and upgrades, shall be documented and controlled.
-- Configurations	shall be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
-- There shall be a mechanism for detecting unauthorized modification to the software or configuration.
-Configurations	shall be reviewed	on	at	least	a	weekly	basis	to	determine	whether	any	changes	violated	the	CA’s	security	policies.
-- All system and trusted role accounts shall be reviewed at least every ninety (90) days. Any account that is no longer in use or necessary for operations shall be deactivated.
-- A process shall be implemented that disables physical and logical access to a Certificate System by either a privileged user or a trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA.
-- All authentication credentials for any account or trusted role on a Certificate System shall be changed whenever authorization to access the account is changed or revoked.
+- Configurations, modifications, and upgrades shall be documented and controlled
+- Configurations shall be reviewed on at least a weekly basis to determine whether any changes violated the CA’s security policies.
+- There shall be a mechanism for detecting unauthorized modification to the software or configuration
+- All system accounts and Trusted Role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
+- A process shall be implemented that disables physical and logical access to a Certificate Systems by any Trusted Role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
+- All authentication credentials for any account or Trusted Role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
+- All system accounts and Trusted Role accounts shall have be configured to lockout access after five (5) failed access attempts
+- There shall be an automated mechanism to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events
 
 ### 6.6.3 Life cycle security controls
+The security management controls for all CAs and Certificate System Components listed below shall be implemented:
+
 - Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
 - Critical vulnerabilities shall be patched within thirty (30) days or less
 - High vulnerabilities shall be patched within sixty (60) days or less
-- CAs including Repositories and any Registration Authority system functions shall undergo penetration testing every ninety (90) days
+- Penetration testing shall be performed at least every 365 days, and after infrastructure of application upgrades or modifications that the CA determines are significant
 
 ## 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
 
 For the Root CA, the CA shall be operated in a High Security Zone and in an offline (powered off, disconnected) or air-gapped (powered on, disconnected) state from all other networks.
 
-For all CAs and any Registration Authority functions, the network security controls listed below are required:
+For all CAs and Certificate System Components, the network security controls listed below are required:
 
 - Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
 - The same security controls shall be applied to all systems co-located in the same Zone with a Certificate System.
-- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as with non-Certificate Systems to Delegated Third Parties, Public Networks, and other business partners.
-- Only trusted roles shall have access to Secure and High Security Zones.
-- A network guard, firewall, or filtering router shall protect network access to CA equipment.
-- The network guard, firewall, or filtering router shall limit services allowed to and from the CA equipment to those required to perform CA functions.
+- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as Public Networks, and other business partners.
+- Only Trusted Roles shall have access to Secure and High Security Zones.
+- A network guard or firewall shall protect network access to CA equipment, and limit services allowed to and from the CA equipment to those required to perform CA functions.
 - Protection of CA equipment shall be provided against known network attacks.
-- All unused network ports and services shall be turned off. Any network software present on the CA equipment shall be necessary to the functioning of the CA application.
-- Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
-- Repositories, certificate status servers, and remote workstations used to administer the CAs shall employ appropriate network security controls.
-- Networking equipment shall turn off unused network ports and services.
+- All unused network ports and services shall be turned off.
 - Any network software present shall be necessary to the functioning of the equipment.
-- The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:
-  - the remote connection originates from a device owned by the CA and from a pre-approved IP address;
-  - the connection is through a temporary, non-persistent and encrypted channel that is supported by multifactor authentication;
-  - only allow connections through a designated intermediary device when the device is:
-    - located within the CA's network;
-    - secured according to this CP; and
-    - mediates the remote connection.
+- Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
+- Repositories, certificate status services, and remote workstations used to administer the CAs shall employ appropriate network security controls.
+
+The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:
+  - The remote connection originates from a device owned by the CA and from a pre-approved IP address.
+  - The connection is through a temporary, non-persistent and encrypted channel that is supported by multi-factor authentication.
 
 ## 6.8 Time-stamping
 
@@ -2045,9 +1971,9 @@ published by the CAB Forum (http://www.cabforum.org).
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
-**Certificate System**: A system used by a CA to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
+**Certificate System**: The system used by a CA in providing identity verification, registration and enrollment, certificate approval, issuance, validity status, support, and other PKI related services.
 
-**Certificate System Component**: A individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certficate management.
+**Certificate System Component**: A individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certificate management.
 
 **Certification Authority**: An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs.
 
@@ -2125,7 +2051,7 @@ published by the CAB Forum (http://www.cabforum.org).
 
 **Publicly-Trusted Certificate**: A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
 
-**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.3.
+**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.2.
 
 **Random Value**: A value specified by a CA to the Applicant that exhibits at least 112 bits of entropy.
 
@@ -2238,6 +2164,8 @@ FIPS 140-2, Federal Information Processing Standards Publication - Security Requ
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
+
+NIST SP 800-56-A, Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography, http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar2.pdf
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
