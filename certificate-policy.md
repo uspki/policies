@@ -1203,7 +1203,7 @@ Certificates shall meet the following requirements for algorithm type and key si
 
 
 ### 6.1.6 Public key parameters generation and quality checking
-For RSA modulus, the CA shall confirm that the value of the public exponent _e_ is an odd positive integer such that:  
+For RSA moduli, the CA shall confirm that the value of the public exponent _e_ is an odd positive integer such that:  
 
 - 2<sup>16</sup> < e < 2<sup>256</sup>  
 
