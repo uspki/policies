@@ -34,9 +34,9 @@ This Certificate Policy defines five (5) different types of certificates.  Certi
 
 ### 1.1.2.2 Subscriber Certificates
 
-### 1.1.2.2.1 Domain Validation SSL Server Authentication Certificates
+### 1.1.2.2.1 Domain Validation TLS Server Authentication Certificates
 
-### 1.1.2.2.2 Organization Validation SSL Server Authentication Certificates
+### 1.1.2.2.2 Organization Validation TLS Server Authentication Certificates
 
 ### 1.1.2.2.3 Delegated OCSP Responder Certificates
 
@@ -48,8 +48,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as a me
 
 |  |  |  |   
 | :--- | :--- | :--- |  
-| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | | Domain Validation SSL Server Authentication Certificates |  
-| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | | Organization Validation SSL Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | | Domain Validation TLS Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | | Organization Validation TLS Server Authentication Certificates |  
 
 Additional documents related to the U.S. Federal Public Trust TLS PKI, such as Certification Practice Statements, Audits, and Subscriber Agreement(s) can be found at \<INSERT URL HERE>.
 
@@ -427,7 +427,7 @@ The CA shall be responsible for validating the information in the certificate re
 
 - properly formed
 - accurate
-- meets the requirements for the type of certificate requested: a device Domain Validation SSL end entity certificate, a device Organizational Validation SSL end entity certificate, a CA Certificate, or a Certificate Status Server (OCSP) signing certificate
+- meets the requirements for the type of certificate requested: a device Domain Validation TLS end entity certificate, a device Organizational Validation TLS end entity certificate, a CA Certificate, or a Certificate Status Server (OCSP) signing certificate
 
 All communications supporting the certificate application and issuance process shall be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the public/private key pair shall be used. Out-of-band communications shall protect the confidentiality and integrity of the data.
 
@@ -438,7 +438,7 @@ All CAs shall specify the procedures for validating information and identity evi
 ### 4.2.1 Performing identification and authentication functions
 All CAs shall establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
-For end entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates:
+For end entity Domain Validation TLS certificates and end entity Organizational Validation TLS certificates:
 
 - The Applicant information shall include at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension
 - All Fully-Qualified Domain Names to be included in the Certificate's SubjectAltName extension shall be verified in accordance with Section 3.2 before issuance of the certificate
@@ -469,7 +469,7 @@ No stipulation.
 ### 4.3.1 CA actions during certificate issuance
 Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Issuance of a CA certificate by the Root CA shall require written authorization by the FPKIPA.  
 
-All end entity certificates for Domain Validation SSL and Organizational Validation SSL shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  
+All end entity certificates for Domain Validation TLS and Organizational Validation TLS shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) via the x509v3 certificate extension.  
 
 The Issuing CA shall submit a precertificate to a minimum of TWO Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  The Issuing CA shall submit a precertificate to a minimum of THREE Certificate Transparency Logs for certificates with a validity period greater than 395 days and less than or equal to 825 days. There is no limit on the maximum number of CT Logs which may be submitted to.
 
@@ -511,7 +511,7 @@ It is recommended that relying parties process and comply with this information 
 Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate.
 
 ### 4.6.1 Circumstance for certificate renewal
-CA certificates shall not be renewed.  End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates shall not be renewed. Certificate renewal requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
+CA certificates shall not be renewed.  End entity Domain Validation TLS certificates and end entity Organizational Validation TLS certificates shall not be renewed. Certificate renewal requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
 
 Online Certificate Status Protocol (OCSP) Delegated responder certificates may be renewed.
 
@@ -562,7 +562,7 @@ Modification is defined as the re-issuance of a certificate with the same public
 
 
 ### 4.8.1 Circumstance for certificate modification
-End entity Domain Validation SSL certificates and end entity Organizational Validation SSL certificates shall not be modified.
+End entity Domain Validation TLS certificates and end entity Organizational Validation TLS certificates shall not be modified.
 Online Certificate Status Protocol (OCSP) Delegated responder certificates shall not be modified.
 
 CA certificates may be modified to update attributes other than the public key.  A CA certificate shall not be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
@@ -1315,7 +1315,7 @@ Root CA Certificates shall have a Validity Period no greater than 20 years.
 Subordinate CA Certificates shall have a Validity Period no greater than 10 years.
 All certificates signed by a CA key pair shall expire before the end of that key pair’s usage period.
 
-Domain Validation SSL Server Authentication Certificates and Organization Validation SSL Server Authentication Certificates shall have a Validity Period no greater than 395 days.  
+Domain Validation TLS Server Authentication Certificates and Organization Validation TLS Server Authentication Certificates shall have a Validity Period no greater than 395 days.  
 Delegated OCSP Responder Certificates shall have a Validity Period no greater than 45 days.
 
 ## 6.4 Activation data
