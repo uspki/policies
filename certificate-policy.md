@@ -1363,7 +1363,7 @@ The system development controls for all CAs and Certificate System Components fu
 The security management controls for all CAs and all Certificate System Components listed below shall be implemented:
 
 - Configurations, modifications, and upgrades shall be documented and controlled
-- Configurations shall be reviewed on at least a weekly	basis to determine whether any changes violated	the	CA’s security policies.
+- Configurations shall be reviewed on at least a weekly basis to determine whether any changes violated the CA’s security policies.
 - There shall be a mechanism for detecting unauthorized modification to the software or configuration
 - All system accounts and Trusted Role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
 - A process shall be implemented that disables physical and logical access to a Certificate Systems by any Trusted Role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
