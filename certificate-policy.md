@@ -1016,7 +1016,7 @@ A final security incident report shall be submitted at a date specified by the F
 1. A statement that the incident has been fully remediated
 
 In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response:
-- Publicly publish a final redacted incident report on an approved government website
+- Publicly publish a final incident report in one or more internet-accessible locations, with information redacted as necessary
 - Report incidents to the individual Application Trusted Root Programs
 
 
