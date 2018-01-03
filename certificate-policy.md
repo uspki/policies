@@ -920,7 +920,7 @@ The CA's security program shall include an annual Risk Assessment that:
 
 The CA shall undergo or perform a Vulnerability Scan:
 - At least once per quarter, on public and private IP addresses identified as within the CA's system boundaries
-- Within one week of receiving a request from the FPKIPA or the U.S. Government Federal Information Security Modernization Act Authorizing Official for the CA system or the CA/B Forum
+- Within one week of receiving a request from the FPKIPA or the U.S. Government Federal Information Security Modernization Act Authorizing Official for the CA
 - After any system or network changes that the CA determines are significant
 
 The CA shall undergo a Penetration Test on the CA system boundaries on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant. 
