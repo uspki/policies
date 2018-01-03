@@ -205,7 +205,7 @@ Web pages that allow for testing certificate validation up to the U.S. Federal P
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
-Root CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Report(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
+Root CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
@@ -479,10 +479,10 @@ The CA shall issue the certificate according to the certificate requesting proto
 Failure of the Subscriber to object to a requested certificate or its contents shall constitute acceptance of the certificate.
 
 ### 4.4.2 Publication of the certificate by the CA
-As specified in Section 2.1, all CA certificates shall be published in repositories. 
+As specified in Section 2.1, all CA certificates shall be published in repositories.
 
 ### 4.4.3 Notification of certificate issuance by the CA to other entities
-CAs shall notify the FPKIPA of CA Certificate issuances. 
+CAs shall notify the FPKIPA of CA Certificate issuances.
 
 ## 4.5 Key pair and certificate usage
 
@@ -494,7 +494,7 @@ The intended scope of usage for a private key shall be in accordance with the Ce
 ### 4.5.2 Relying party public key and certificate usage
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
 
-It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a US Federal Public Trust PKI certificate in a transaction. 
+It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a US Federal Public Trust PKI certificate in a transaction.
 
 ## 4.6 Certificate renewal
 Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate.
@@ -598,7 +598,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
 14. Revocation is required by this CP and/or the CA's CPS; or
 15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
-16.  The CA received a lawful and binding order from a government, judicial or regulatory body to 
+16.  The CA received a lawful and binding order from a government, judicial or regulatory body to
 revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
@@ -612,9 +612,9 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 6. The Issuing CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
 7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
-9. Revocation is required by this CP and/or the Issuing CA's CPS; 
+9. Revocation is required by this CP and/or the Issuing CA's CPS;
 10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
-11. The CA received a lawful and binding order from a government, judicial or regulatory body to 
+11. The CA received a lawful and binding order from a government, judicial or regulatory body to
 revoke the Certificate.
 
 ### 4.9.2 Who can request revocation
@@ -645,7 +645,7 @@ See Section 4.5.2.
 
 ### 4.9.7 CRL issuance frequency
 
-For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field. 
+For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field.
 
 For the status of Subordinate CA Certificates, the root CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
 
@@ -677,7 +677,7 @@ If the Subscriber Certificate is for a high-traffic FQDN, the CA may rely on sta
 ### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
 
-In the case of a compromise of a CA certificate, the CA must immediately notify the FPKI PA that the CA certificate has been compromised.  See Section 5.7.1 for incident handling procedures. 
+In the case of a compromise of a CA certificate, the CA must immediately notify the FPKI PA that the CA certificate has been compromised.  See Section 5.7.1 for incident handling procedures.
 
 
 ### 4.9.13 Circumstances for suspension
@@ -1710,67 +1710,55 @@ It shall contain the value id-kp-OCSPSigning {1 3 6 1 5 5 7 3 9}.
 Other values shall not be present.  
 
 # 8. COMPLIANCE AUDIT AND OTHER ASSESSMENTS
-The CA shall at all times:
-
-1. Issue Certificates and operate its PKI in accordance with all law applicable to its business and the Certificates it issues in every jurisdiction in which it operates;
-2. Comply with these Requirements;
-3. Comply with the audit requirements set forth in this section; and
-4. Be licensed as a CA in each jurisdiction where it operates, if licensing is required by the law of such jurisdiction for the issuance of Certificates.
 
 ## 8.1 Frequency or circumstances of assessment
-The Certification Authorities (X.509v3 basicConstraints extension, with the cA boolean set to true) operated under this Certificate Policy are Technically Constrained in line with section 7.1.5.  They are audited in line with section 8.7.
+The CAs operated under this Certificate Policy are Technically Constrained (see section 7.1.5).  CAs shall be audited in accordance with section 8.7.
 
-The period during which the CA issues Certificates shall be divided into an unbroken sequence of audit periods.
-An audit period shall not exceed one year in duration.
+The period during which the CA issues Certificates shall be divided into an unbroken sequence of audit periods. An audit period shall not exceed one year in duration.
 
-Before issuing Publicly-Trusted Certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.1. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Publicly-Trusted Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate
+Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.4. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate
 
 ## 8.2 Identity/qualifications of assessor
-The CA's audit shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
+CA audits shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
 
-1. Independence from the subject of the audit;
-2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
-3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
-4. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
-5. Bound by law, government regulation, or professional code of ethics; and
+1. Independence from the subject of the audit
+2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.4)
+3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function
+4. For audits conducted in accordance with the WebTrust standard, licensed by WebTrust
+5. Bound by law, government regulation, or professional code of ethics, and
 6. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
-The compliance auditor either shall be a private firm that is independent from the entities (CA and RAs) being audited, or it shall be sufficiently organizationally separated from those entities to provide an unbiased, independent evaluation. An example of the latter situation may be an Federal agency Inspector General. To insure independence and objectivity, the compliance auditor may not have served the entity in developing or maintaining the entity’s CA Facility or certification practices statement. The FPKIPA shall determine whether a compliance auditor meets this requirement.
-
-The operating Agency and Management Authority of each CA is responsible for identifying and engaging a qualified auditor.
+The Qualified Auditor either shall be a private firm that is independent from the CA being audited, or it shall be sufficiently organizationally separated from the CA to provide an unbiased, independent evaluation. An example of the latter situation may be a Federal agency Inspector General. To insure independence and objectivity, the Qualified Auditor may not have served the CA in developing or maintaining the CPS. The FPKIPA shall determine whether the Qualified Auditor meets the requirements for independence and objectivity.
 
 ## 8.4 Topics covered by assessment
-The CA shall undergo an audit in accordance with one of the following schemes:
+The CAs shall undergo an audit in accordance with all of the following:
 
-1. WebTrust for Certification Authorities v2.0;
-2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
+1. WebTrust for Certification Authorities, Version 2.0 or later
+2. WebTrust for Certification Authorities - SSL Baseline with Network Security, Version 2.2 or later
 
-Whichever scheme is chosen, it shall incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
+Audits shall incorporate periodic monitoring and/or accountability procedures to ensure that the audits continue to be conducted in accordance with the requirements of the scheme.
 
 The audit shall be conducted by a Qualified Auditor, as specified in Section 8.3.
 
-There is no Delegated Third Party allowed under this Certificate Policy.     
-
 ## 8.5 Actions taken as a result of deficiency
-When the compliance auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:
-•	The compliance auditor shall note the discrepancy;
-•	The compliance auditor shall notify the responsible party promptly; and
-•	The party responsible for correcting the discrepancy will propose a remedy, including expected time for completion, to the FPKIPA.
+When the Qualified Auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:  
 
-Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA or RA, to revoke a certificate issued to the CA or RA, or take other actions it deems appropriate. A compliance audit may be required to confirm the implementation and effectiveness of the remedy.
+-	The Qualified Auditor shall note the discrepancy  
+-	The Qualified Auditor shall notify the CA promptly  
+-	The CA will propose a remedy, including expected time for completion, to the FPKIPA  
 
+Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA, to revoke a certificate issued to the CA, or take other actions it deems appropriate.
 
 ## 8.6 Communication of results
-The Audit Report shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The CA shall make the Audit Report publicly available. The CA is not required to make publicly available any general audit findings that do not impact the overall audit opinion.  The CA should make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
+The Audit Letter shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1.
+
+The CA shall make the Audit Letter publicly available. TThe CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
 ## 8.7 Self-Audits
-During the period in which the CA issues Certificates, the CA shall monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
+During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
 
-During the period in which a Technically Constrained Subordinate CA issues Certificates, the CA which signed the Subordinate CA shall monitor adherence to the this Certificate Policy and the Subordinate CA's Certification Practice Statement. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
-
-There is no Delegated Third Party allowed under this Certificate Policy.    
-
+During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
 
 # 9. OTHER BUSINESS AND LEGAL MATTERS
 {% include alert-info.html content="This section contains the CA / Browser Forum Baseline Requirements and has not been modified.  Additions to Business and Legal Matters to address Application Trusted Root Program requirements and U.S. Government provisions to meet public law requirements are under review and not included in this draft." %}
@@ -1911,8 +1899,6 @@ The FPKIPA is responsible for monitoring source requirements, and initiating nec
 
 After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
-
-
 ### 9.12.2 Notification mechanism and period
 
 ### 9.12.3 Circumstances under which OID shall be changed
@@ -1960,7 +1946,7 @@ Any modification to CA practice enabled under this section shall be discontinued
 
 **Audit Period**: In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in section 8.1.
 
-**Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an audited entity's processes and controls comply with the mandatory provisions of the Baseline Requirements, this Certificate Policy and the Certification Practice(s) Statements.
+**Audit Letter**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an audited entity's processes and controls comply with the mandatory provisions of the Baseline Requirements, this Certificate Policy and the Certification Practice(s) Statements.
 
 **Authorization Domain Name**: The Domain Name used to obtain authorization for certificate issuance for a given FQDN. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If the FQDN contains a wildcard character, then the CA shall remove all wildcard labels from the left most portion of requested FQDN. The CA may prune zero or more labels from left to right until encountering a Base Domain Name and may use any one of the intermediate values for the purpose of domain validation.
 
