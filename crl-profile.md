@@ -13,9 +13,8 @@
 | **CRL Extension** |  **Required**   | **Critical** | **Value**                             |
 | CRL Number  | Mandatory | False | Monotonically increasing integer (never repeated) |
 | Authority Key Identifier   | Mandatory | False | Octet String: Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Must match SKI of issuing CA Certificate |
-
 |               |                 |              |                                       |
-| **CRL Entry Extension** |  **Required**   | **Critical** | **Value**  
+| **CRL Entry Extension** |  **Required**   | **Critical** | **Value**  |
 | Reason Code  | Optional | False |  Shall be included when reason code is equal to _key compromise_ or _CA compromise_ |
 | Invalidity Date   | Optional | False |  |
 
