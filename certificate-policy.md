@@ -140,7 +140,7 @@ For this policy, Relying Parties may include individuals or entities accessing U
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 ### 1.3.7 Other Participants
-
+CAs operating under this policy require the services of Qualified Auditors to perform independent, annual assessments on the conformance of the CA's practices and procedures.  Qualified Auditor requirements are covered in Section 8. 
 
 
 ## 1.4 Certificate Usage
@@ -167,9 +167,9 @@ The FPKIPA shall affirm the suitability of any CPS to this policy.
 ### 1.5.4 CPS approval procedures
 A CPS shall be submitted and approved by the FPKIPA.
 
-Prior to submitting a CPS, the Issuing CA shall commission a compliance analysis study culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The compliance analysis shall be performed by an independent party. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The Issuing CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
+Prior to submitting a CPS, the CA shall perform a compliance analysis culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
 
-Issuing CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document.
+CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document.
 
 ## 1.6 Definitions and Acronyms
 
