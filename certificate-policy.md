@@ -2187,7 +2187,7 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 
 
 # Appendix C: References
-Automatic Certificate Management Environment (ACME), draft-ietf-acme-acme-09, https://datatracker.ietf.org/doc/draft-ietf-acme-acme/
+Automatic Certificate Management Environment (ACME), https://datatracker.ietf.org/doc/draft-ietf-acme-acme/
 
 FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.
 
