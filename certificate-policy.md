@@ -130,7 +130,7 @@ Delegated Third Parties are not allowed as Registration Authorities.
 ### 1.3.5 Subscribers
 A Subscriber is the entity identified in a Certificate, capable of using the Private Key that corresponds to the Public Key listed in the certificate, and has agreed to the terms of the Subscriber Agreement with the CA.  Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant.
 
-For this policy, Subscribers are limited to: 1) web services operated by or on behalf of Federal agencies, and 2) Domain Names within the .GOV and .MIL Domain Namespace(s).
+For this policy, Subscribers are limited to: 1) web services operated by or on behalf of Federal agencies, and 2) Domain Names within the .gov and .mil Domain Namespace(s).
 
 ### 1.3.6 Relying Parties
 A Relying Party is any individual or entity that relies on a U.S. Federal Public Trust TLS PKI Certificate, the information included in the certificate, and the digital signature by a CA.   
@@ -466,7 +466,7 @@ For Domain Validation TLS Server Authentication certificates and Organization Va
 - All Fully-Qualified Domain Names shall be verified in accordance with Section 3.2 before issuance of the certificate.
 - CAA records for .gov and .mil domains shall be checked prior to issuance of any certificate and the CA shall act in accordance to the requirements in Section 3.2.2.8.  
 
-The CA shall identify in Section 4.2 of the CPS the Issuer Domain Name to be used for CAA records.     
+The CA shall identify in Section 4.2 of the CPS the Issuer Domain Name to be used for CAA records.  For example, the CA CAA domain is 'pki.gov'.     
 
 The CA may reuse the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 395 days prior to issuing the Certificate.  
 
@@ -616,7 +616,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked the right to use the Domain Name or the Domain Name Registrant has failed to renew the Domain Name under .GOV and/or .MIL gTLDs);
+6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked the right to use the Domain Name or the Domain Name Registrant has failed to renew the Domain Name under .gov and/or .mil sTLDs);
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
 8. The CA is made aware of a material change in the information contained in the Certificate;
 9. The CA is made aware that the Certificate was not issued in accordance with this CP or the CA's Certification Practice Statement;
@@ -700,7 +700,7 @@ For the status of Subordinate CA Certificates, the root CA shall update informat
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status. The CA shall monitor the responder for such requests as part of its security response procedures.
 
 ### 4.9.11 Other forms of revocation advertisements available
-If the Subscriber Certificate is for a high-traffic FQDN, the CA may rely on stapling, in accordance with RFC4366, to distribute its OCSP responses. In this case, the CA shall ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA shall enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
+Subscribers may rely on stapling, in accordance with RFC4366, to distribute its OCSP responses. The CA is still responsible for supporting OCSP status responses even if a Subscriber decides to staple OCSP responses.  
 
 ### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
