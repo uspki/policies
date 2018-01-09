@@ -387,15 +387,17 @@ Prior to using any data source as a Reliable Data Source, the CA shall evaluate 
 
 Databases maintained by the CA or affiliated government agencies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under Section 3.2 and sub-sections.
 
-#### 3.2.2.8 CAA Records
+#### 3.2.2.8 Certification Authority Authorization (CAA) Records
+For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates, CAs shall verify CAA records. 
+
 When processing CAA records, CAs shall process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags may be supported, but shall not conflict with or supersede the mandatory property tags set out in this policy. CAs shall respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set.
 
-For issuances conforming to this Certificate Policy, CAA checking is optional for certificates only when a Certificate Transparency pre-certificate was created and logged in at least two public logs, and CAA was checked for the pre-certificate.
+CAA checking is optional for certificates only when a Certificate Transparency pre-certificate was created and logged in at least two public logs, and CAA records were checked for the pre-certificate.
 
-CAs are permitted to treat a record lookup failure as permission to issue if:  
--  the failure is outside the CA’s infrastructure;
--  the lookup has been retried at least once; and
--  the domain’s zone does not have a DNSSEC validation chain to the ICANN root.  
+CAs are permitted to treat a record lookup failure as permission to issue only if all the following are true:  
+-  the failure is outside the CA’s infrastructure
+-  the lookup has been retried at least once
+-  the domain’s zone does not have a DNSSEC validation chain to the ICANN root  
 
 CAs shall document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback on the circumstances, and should dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
