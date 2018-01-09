@@ -252,7 +252,8 @@ Relying parties should consider certificates to be issued by the U.S. Government
 Distinguished names in certificates are interpreted using the X.500 Standard and the ASN.1 syntax.
 
 ### 3.1.5 Uniqueness of names
-The common name attribute for CA Certificates shall be unique from all other CA Certificates.
+The common name attribute for CA Certificates shall be unique from all other CA Certificates.  
+There is no stipulation for the uniqueness of the Subject information in Subscriber certificates. 
 
 ### 3.1.6 Recognition, authentication, and role of trademarks
 CAs shall not issue a certificate that knowingly infringes any trademark.
