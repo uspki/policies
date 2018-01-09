@@ -431,7 +431,7 @@ Revocation requests shall be authenticated. Requests to revoke a certificate may
 ### 4.1.1 Who can submit a certificate application
 An application for a CA Certificate shall be submitted by an authorized representative of the applicant CA.
 
-An application for an end-entity certificate shall be submitted to the CA by the Applicant, an Applicant Representative, or an RA on behalf of the Applicant.  
+An application for an subscriber certificate shall be submitted to the CA by the Applicant, an Applicant Representative, or an RA on behalf of the Applicant.  
 
 In accordance with Section 5.5.2, all CAs shall maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. All CA shall use this information to identify subsequent suspicious certificate requests.
 
@@ -449,7 +449,7 @@ The CA shall be responsible for validating the information in the certificate re
 
 - Properly formed
 - Accurate
-- Meets the requirements for the type of certificate requested such as a Domain Validation TLS Server Authentication certificate, an Organization Validation TLS Server Authentication certificate, a Certificate Status Server (OCSP) signing certificate, or a CA Certificate
+- Meets the requirements for the type of certificate requested such as a Domain Validation TLS Server Authentication certificate, an Organization Validation TLS Server Authentication certificate, a OCSP Delegated Responder certificate, or a CA Certificate
 
 All communications supporting the certificate application and issuance process shall be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the requested public/private key pair shall be used. Out-of-band communications shall protect the confidentiality and integrity of the data.
 
@@ -489,14 +489,14 @@ No stipulation.
 ### 4.3.1 CA actions during certificate issuance
 Issuance of a CA Certificate shall require an individual authorized by the CA to deliberately issue a direct command in order for the CA to perform a certificate signing operation.  Issuance of a CA certificate shall require written authorization by the FPKIPA.  
 
-All Domain Validation TLS Server Authentication certificates and Organizational Validation TLS Server Authentication certificates shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) in the x509v3 certificate extension.  The Issuing CA shall submit a precertificate to a minimum of two (2) Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  Information included in the precertificates shall not be redacted prior to submission to the CT Logs.
+All Domain Validation TLS Server Authentication certificates and Organizational Validation TLS Server Authentication certificates shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) in the x509v3 certificate extension.  The CA shall submit a precertificate to a minimum of two (2) Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  Information included in the precertificates shall not be redacted prior to submission to the CT Logs.
 
 - At least one of the CT Logs shall be a log operated by Google.
 - At least one of the CT Logs shall be a log operated by a government or business entity other than Google.
 
 There is no limit on the maximum number of CT Logs which may be submitted to.  
 
-The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
+The CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
@@ -517,26 +517,26 @@ CAs shall notify the FPKIPA of CA Certificate issuances.
 ### 4.5.1 Subscriber private key and certificate usage
 See Section 9.6.3, provisions 2. and 4.
 
-The intended scope of usage for a private key shall be in accordance with the Certificate Profiles defined in Section \<TBD> of this CP.
+The intended scope of usage for a private key shall be in accordance with the Certificate Profiles defined in Section 7 of this CP.
 
 ### 4.5.2 Relying party public key and certificate usage
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
 
-It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a US Federal Public Trust PKI certificate in a transaction.
+It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a U.S. Federal Public Trust TLS PKI certificate in a transaction.
 
 ## 4.6 Certificate renewal
 Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate.
 
 ### 4.6.1 Circumstance for certificate renewal
-CA certificates shall not be renewed.  End entity Domain Validation TLS Server Authentication and end entity Organizational Validation TLS Server Authentication certificates shall not be renewed. Certificate renewal requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
+CA certificates shall not be renewed.  Domain Validation TLS Server Authentication and Organizational Validation TLS Server Authentication certificates shall not be renewed. Certificate renewal requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
 
-Online Certificate Status Protocol (OCSP) Delegated Responder certificates may be renewed.
+OCSP Delegated Responder certificates may be renewed.
 
 ### 4.6.2 Who may request renewal
 The FPKIPA shall request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
 
 ### 4.6.3 Processing certificate renewal requests
-The CA shall verify that the OCSP Delegated Responder certificate expiration date shall not exceed 825 days from the date of initial certificate issuance.
+The CA shall verify that the OCSP Delegated Responder certificate expiration date shall not exceed 395 days from the date of initial certificate issuance.
 
 ### 4.6.4 Notification of new certificate issuance to subscriber
 See Section 4.3.2.
@@ -554,7 +554,7 @@ See Section 4.4.2.
 Re-key is defined as the issuance of a certificate with a new public key, no changes to the identity information, and a new validity period for the certificate.
 
 ### 4.7.1 Circumstance for certificate re-key
-All Certificates under this policy shall not be re-keyed.  Certificate re-key requests shall be treated as new applications and information verified in accordance with Section 4.2.1  
+Certificates under this policy shall not be re-keyed.  Certificate re-key requests shall be treated as new applications and information verified in accordance with Section 4.2.1.  
 
 ### 4.7.2 Who may request certification of a new public key
 Not applicable.
@@ -579,9 +579,7 @@ Modification is defined as the re-issuance of a certificate with the same public
 
 
 ### 4.8.1 Circumstance for certificate modification
-End entity Domain Validation TLS Server Authentication and end entity Organization Validation TLS Server Authentication certificates shall not be modified.
-
-Online Certificate Status Protocol (OCSP) Delegated responder certificates shall not be modified.
+Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates shall not be modified. OCSP Delegated Responder certificates shall not be modified.
 
 CA certificates may be modified to update attributes other than the public key.  A CA certificate shall not be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
 
@@ -605,7 +603,6 @@ See Section 4.4.2.
 
 ## 4.9 Certificate revocation and suspension
 
-
 ### 4.9.1 Circumstances for revocation
 
 #### 4.9.1.1 Reasons for Revoking a Subscriber Certificate
@@ -626,8 +623,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
 14. Revocation is required by this CP and/or the CA's CPS; or
 15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
-16.  The CA received a lawful and binding order from a government, judicial or regulatory body to
-revoke the Certificate.
+16.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -646,12 +642,12 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 revoke the Certificate.
 
 ### 4.9.2 Who can request revocation
-The Subscriber, RA, or Issuing CA can initiate revocation of certificates.  The FPKIPA may also direct any revocation of a CA certificate.
+The Subscriber, RA, or CA can initiate revocation of certificates.  The FPKIPA may also direct any revocation of a CA certificate.
 
 Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the Issuing CA of reasonable cause to revoke the certificate.
 
 ### 4.9.3 Procedure for revocation request
-Issuing CAs shall provide a process for Subscribers to request revocation of their own Certificates. The process shall be described in the CA's Certification Practice Statement. The CA shall maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries. A request from Subscribers to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated.
+CAs shall provide a process for Subscribers to request revocation of their own Certificates. The process shall be described in the CA's CPS. The CA shall maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries. A request from Subscribers to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated.
 
 The CA shall provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA shall publicly disclose the instructions through a readily accessible online means.  
 
@@ -672,7 +668,6 @@ The CA shall begin investigation of a Certificate Problem Report immediately upo
 See Section 4.5.2.
 
 ### 4.9.7 CRL issuance frequency
-
 For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field.
 
 For the status of Subordinate CA Certificates, the root CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
@@ -684,11 +679,8 @@ CRLs shall be published within 4 hours of generation. Furthermore, each CRL shal
 OCSP responses shall conform to RFC6960 and/or RFC5019. OCSP responses shall either:
 
 1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
-2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose
-revocation status is being checked.
+2. Be signed by a Delegated OCSP Responder Certificate signed by the CA that issued the Certificate whose revocation status is being checked.
 
-In the latter case, the OCSP signing Certificate shall contain an extension of type id-pkix-ocsp-nocheck, as
-defined by RFC6960.
 
 ### 4.9.10 On-line revocation checking requirements
 The CA shall support an OCSP capability using the GET method for Certificates.
@@ -697,10 +689,10 @@ For the status of Domain Validation TLS Server Authentication and Organization V
 
 For the status of Subordinate CA Certificates, the root CA shall update information provided via OCSP at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
-If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status. The CA shall monitor the responder for such requests as part of its security response procedures.
+If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status and shall respond with an "unknown" status.  The CA shall monitor the responder for such requests as part of its security response procedures.
 
 ### 4.9.11 Other forms of revocation advertisements available
-Subscribers may rely on stapling, in accordance with RFC4366, to distribute its OCSP responses. The CA is still responsible for supporting OCSP status responses even if a Subscriber decides to staple OCSP responses.  
+Subscribers may rely on stapling, in accordance with RFC4366, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses even if a Subscriber decides to staple OCSP responses.  
 
 ### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
