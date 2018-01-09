@@ -120,8 +120,8 @@ This policy allows for persons who may not be affiliated with the same U.S. Fede
 
 A CA may designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government organizational unit.  The CA shall not accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
-1. The CA shall confirm that the requested Fully-Qualified Domain Name(s) are within the RA's affiliated U.S. Federal Government organizational unit verified Domain Namespace(s) as registered in the .GOV (DotGov) and .MIL (DotMil) gTLDs Domain Name Registrars.  
-2. The CA should confirm that the requested Fully Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the DotGov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173.
+1. The CA shall confirm that the requested Fully-Qualified Domain Name(s) are within the RA's affiliated U.S. Federal Government organizational unit verified Domain Namespace(s) as registered in the .gov and .mil gTLDs Domain Name Registrars.  
+2. The CA should confirm that the requested Fully Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the .gov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173.
 
 The CA shall impose these limitations through an agreement with the Authorizing Authority of the Domain Namespace as defined under United States Code (U.S.C.) 41 CFR Part 102-173.  The CA shall monitor compliance by the RA and institute technical controls.  The CA shall use both audits and analytics based methods, such as monitoring of Certificate Transparency Log(s) and other services, to ensure compliance.
 
@@ -277,7 +277,7 @@ U.S. Government entities are in the jurisdiction of the U.S. Government.  All th
 
 For Organization Validation TLS Server Authentication certificates, the CA shall verify that the Applicant is under authority of one of the three branches of the U.S. Government, and information shall be verified by the CA using documentation provided by, or through communication with, at least one of the following:
 
-1. A third party database that is periodically updated and considered a Reliable Data Source such as the DotGov and DotMil Domain Name Registrars
+1. A third party database that is periodically updated and considered a Reliable Data Source such as the .gov and .mil Domain Name Registrars
 2. An Attestation Letter
 
 The CA may use the same documentation or communication described above to verify both the Applicant's identity as part of the organizationName of the U.S. Government (o=U.S. Government) and assert the stateOrProvinceName as District of Columbia.
@@ -1587,16 +1587,16 @@ The Subordinate CA Certificate(s) shall include the id-kp-serverAuth extended ke
 a. For each dNSName in permittedSubtrees, the CA shall confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
 The Subordinate CA Certificate shall include at least one dNSName in permittedSubtrees.  The permittedSubtrees for dNSName shall be within the constraints of the top-level domains for:
 
- - gov (DotGov)
- - mil (DotMil)
+ - gov 
+ - mil 
 
-The permittedSubtrees for dNSName shall not contain any other dnsName ranges outside of the the DotGov or DotMil top-level domains.
+The permittedSubtrees for dNSName shall not contain any other dnsName ranges outside of the the .gov or .mil top-level domains.
 
 b. For ipAddress, Subordinate CAs shall not issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate shall specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate shall include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate shall also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0).
 
 c. For DirectoryName, Subordinate CAs shall not issue subscriber certificates with DirectoryName.
 
-A decoded example for issuance to the domain and sub domains of .mil (DotMil) by organization:- Example Department of Defense would be:-
+A decoded example for issuance to the domain and sub domains of .mil by organization:- Example Department of Defense would be:-
 
 > X509v3 Name Constraints:  
 >   Permitted:  
@@ -1605,7 +1605,7 @@ A decoded example for issuance to the domain and sub domains of .mil (DotMil) by
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
 
-A decoded example for issuance to the domain and sub domains of both .gov (DotGov) and .mil (DotMil) by organization:- Example Department of Defense would be:-
+A decoded example for issuance to the domain and sub domains of both .gov and .mil by organization:- Example Department of Defense would be:-
 
 > X509v3 Name Constraints:  
 >   Permitted:  
