@@ -364,7 +364,7 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.  An example of this validation method is use of the TLS with Server Name Indication challenge defined in Automated Certificate Management Environment [ACME] specifications. 
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
@@ -2154,6 +2154,7 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 
 | **Acronym** | **Meaning** |
 | --- | --- |
+| ACME | Automated Certificate Management Environment |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
@@ -2183,6 +2184,7 @@ The binding shall use a digital signature algorithm or a cryptographic hash algo
 
 
 # Appendix C: References
+Automatic Certificate Management Environment (ACME), draft-ietf-acme-acme-09, https://datatracker.ietf.org/doc/draft-ietf-acme-acme/
 
 FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.
 
