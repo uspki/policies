@@ -295,26 +295,28 @@ The .mil sTLD is sponsored by the U.S. Government's Department of Defense.  The 
 
 The Domain Name Registrars for both .gov and .mil are managed by the U.S. Government.
 
-This CP asserts for all CAs operating under this policy that the inclusion of subject:countryName in Subscriber certificates is verified by:
+All CAs shall verify the inclusion of subject:countryName in Subscriber certificates by one of the following:
 
-- Section 3.2.2.3 of the Baseline Requirements, option (b): the ccTLD of the requested Domain Name.  This CP asserts comparability with a country code top level domain for the .mil and .gov sTLDs operated by the U.S. Government.
-- Section 3.2.2.3 of the Baseline Requirements, option (c): information provided by the Domain Name Registrar
+- the requested Domain Name is within the .mil or .gov sTLD domain space 
+- information provided by the Domain Name Registrar
 
 #### 3.2.2.4 Validation of Domain Authorization or Control
 CAs shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
 
-This CP allows for procedures adhering to the Baseline Requirements and four (4) validation methods:
+This CP allows for procedures adhering to the Baseline Requirements and is limited to four (4) validation methods:
 
 - Section 3.2.2.4.5 Domain Authorization Document
 - Section 3.2.2.4.6 Agreed-Upon Change to Website
 - Section 3.2.2.4.7 DNS Change
 - Section 3.2.2.4.10 TLS Using a Random Number
 
-Wildcard FQDNs are not allowed to be validated using Section 3.2.2.4.6 Agreed Upon Change to Website or Section 3.2.2.4.10 TLS Using a Random Number.  All wildcard FQDNs included in a certificate shall require validation by Section 3.2.2.4.7 DNS Change, or Section 3.2.2.4.5 Domain Authorization Document signed by the Domain Contact authorizing the issuing of a certificate to include the wildcard FQDN.
+Wildcard FQDNs are not allowed to be validated using Section 3.2.2.4.6 Agreed Upon Change to Website or Section 3.2.2.4.10 TLS Using a Random Number.  All wildcard FQDNs included in a certificate shall require validation by either Section 3.2.2.4.7 DNS Change, or Section 3.2.2.4.5 Domain Authorization Document signed by the Domain Contact authorizing the issuing of a certificate to include the wildcard FQDN.
 
 CAs shall maintain a record of which validation of domain authorization or control method, including the relevant Baseline Requirements version number, was used to validate each domain in a certificate.
 
-Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been initiated within the time period specified in Section TBD of this policy prior to certificate issuance.  For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
+Completed confirmations of Applicant authority may be valid for the issuance of multiple certificates over time. In all cases, the confirmation shall have been completed within the time period specified in Section 4.2.1 of this policy prior to certificate issuance.  
+
+For purposes of domain validation, the term Applicant includes the Applicant's U.S. Government Department, Agency, Commission, component, or other organizational unit defined in United States Code.
 
 ##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
@@ -331,7 +333,7 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.5 Domain Authorization Document
 This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document.
 
-The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .MIL or .GOV has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
+The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .mil or .gov has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
 This validation method confirms the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:  
@@ -455,24 +457,22 @@ All CAs shall specify the procedures for validating information and identity evi
 ### 4.2.1 Performing identification and authentication functions
 All CAs shall establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
-For end entity Domain Validation TLS certificates and end entity Organizational Validation TLS certificates:
-
 For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates:
 
 - The Applicant information shall include at least one Fully-Qualified Domain Name.
 - All Fully-Qualified Domain Names shall be verified in accordance with Section 3.2 before issuance of the certificate.
-- CAA records for .GOV and .MIL domains shall be checked prior to issuance of any certificate and the CA shall act in accordance to the requirements in Section 3.2.2.8.  
+- CAA records for .gov and .mil domains shall be checked prior to issuance of any certificate and the CA shall act in accordance to the requirements in Section 3.2.2.8.  
 
 The CA shall identify in Section 4.2 of the CPS the Issuer Domain Name to be used for CAA records.     
 
-The CA may use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.  
+The CA may reuse the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 395 days prior to issuing the Certificate.  
 
-All Subordinate CAs shall develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .GOV and .MIL assets prior to the Certificate's approval.  
+All Subordinate CAs shall develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .gov and .mil assets prior to the Certificate's approval.  
 
 Delegated Third Parties are not allowed under this policy and shall not participate in the performance of identification functions.
 
 ### 4.2.2 Approval or rejection of certificate applications
-This CP is restricted to .MIL and .GOV assets.  CAs shall reject all certificate applications containing any FQDNs that are not under the gTLDs for .MIL and .GOV.
+This CP is restricted to .gov and .mil assets.  CAs shall reject all certificate applications containing any FQDNs that are not under the sTLDs for .gov and .mil.
 
 Approval of certificate applications requires successful completion of validation per Section 3.2.
 
