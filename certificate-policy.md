@@ -863,7 +863,7 @@ The CA shall require all Officers to pass an examination provided by the CA on t
 The CA shall maintain records of training for all individuals in trusted roles.  The CA shall document that each individual in a trusted role possesses the skills required by a task before allowing the individual to perform that task.
 
 ### 5.3.4 Retraining Frequency and Requirements
-All personnel in Trusted roles shall maintain skill levels consistent with the CA's training and performance programs.
+All personnel in trusted roles shall maintain skill levels consistent with the CA's training and performance programs.
 
 All personnel in trusted roles shall be made aware of changes in the CA operation.  Any significant change to the operations shall have a training (awareness) plan, and the execution of such plan shall be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
 
@@ -1121,7 +1121,6 @@ Certificates shall meet the following requirements for algorithm type and key si
 | Digest algorithm | SHA-256 |  
 | Minimum RSA modulus size (bits) | 4096 |  
 
-
 (2) Subordinate CA Certificates
 
 |  |  |  
@@ -1311,9 +1310,12 @@ The security management controls for all CAs and all Certificate System Componen
 The security management controls for all CAs and Certificate System Components listed below shall be implemented:
 
 - Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
-- Critical vulnerabilities shall be patched within thirty (30) days or less
 - High vulnerabilities shall be patched within sixty (60) days or less
-- Penetration testing shall be performed at least every 365 days, and after infrastructure of application upgrades or modifications that the CA determines are significant
+- Critical vulnerabilities shall be patched within ninety-six (96) hours of the discovery of a critical vulnerability not previously addressed
+
+If remediation of a critical vulnerability within ninety-six (96) hours is not possible, the CA shall create and implement a plan to mitigate the vulnerability or document the factual basis for a risk determination that the vulnerability does not require remediation.  
+
+For Subordinate CAs, and the Root CA Repository and system support services, penetration testing shall be performed at least every 365 days, and after infrastructure of application upgrades or modifications that the CA determines are significant.
 
 ## 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
