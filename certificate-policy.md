@@ -1335,9 +1335,9 @@ For all CAs and Certificate System Components, the network security controls lis
 - Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
 - Repositories, certificate status services, and remote workstations used to administer the CAs shall employ appropriate network security controls.
 
-The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:
-  - The remote connection originates from a device owned by the CA and from a pre-approved IP address.
-  - The connection is through a temporary, non-persistent and encrypted channel that is supported by multi-factor authentication.
+The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:  
+- The remote connection originates from a device owned by the CA and from a pre-approved IP address.
+- The connection is through a temporary, non-persistent and encrypted channel that is supported by multi-factor authentication.
 
 ## 6.8 Time-stamping
 
