@@ -761,10 +761,11 @@ When not in use, removable cryptographic modules, activation information used to
 
 A security check of the facility housing the CA equipment or remote workstations used to administer the CAs shall occur if the facility is to be left unattended.  At a minimum, the check shall verify the following:  
 
-- The equipment is in a state appropriate for the current mode of operation (e.g., that cryptographic modules are in place when “open,” and secured when “closed,” and for the CA, that all equipment other than the repository is shut down).
-- Any security containers are properly secured.
-- Physical security systems (e.g., door locks, vent covers) are functioning properly.
-- The area is secured against unauthorized access.
+- The equipment is in a state appropriate for the current mode of operation 
+- That cryptographic modules are in place when “open,” and secured when “closed” 
+- Any security containers are properly secured
+- Physical security systems are functioning properly
+- The area is secured against unauthorized access
 
 A person or group of persons shall be made explicitly responsible for making such checks.  When a group of persons is responsible, a log identifying the person performing a check at each instance shall be maintained.  If the facility is not continuously attended, the last person to depart shall initial a sign-out sheet that indicates the date and time and asserts that all necessary physical protection mechanisms are in place and activated.
 
