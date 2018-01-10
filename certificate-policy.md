@@ -775,16 +775,16 @@ The CA shall have backup capability sufficient to lock out input, finish any pen
 All Repositories shall be provided with uninterrupted power sufficient for a minimum of 6 hours operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4 Water exposures
-CA equipment shall be installed such that it is not in danger of exposure to water.
+CA equipment shall be installed such that it is not in danger of exposure to water.  Potential water damage from fire prevention and protection measures are excluded from this requirement.
 
 ### 5.1.5 Fire prevention and protection
-No Stipulation
+CA equipment shall use facilities equipped with fire suppression mechanisms.
 
 ### 5.1.6 Media storage
-Media shall be stored so as to protect them from accidental damage (e.g., water, fire, or electromagnetic) and unauthorized physical access.
+Media shall be stored so as to protect it from accidental damage, such as water, fire, or electromagnetic damage.  Media shall be stored to protect it from unauthorized physical access.
 
 ### 5.1.7 Waste disposal
-Sensitive media and documentation that are no longer needed for operations shall be destroyed in a secure manner.  For example, sensitive paper documentation shall be shredded, burned, or otherwise rendered unrecoverable.
+Sensitive media and documentation that are no longer needed for operations shall be destroyed in a secure manner.  Sensitive paper documentation shall be shredded, burned, or otherwise rendered unrecoverable.
 
 ### 5.1.8 Off-site backup
 Full system backups sufficient to recover from system failure shall be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week.  At least one full backup copy shall be stored at an off-site location (separate from CA equipment).  Only the latest full backup need be retained.  The backup shall be stored at a site with physical and procedural controls commensurate to that of the operational CA.
