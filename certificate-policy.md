@@ -1763,7 +1763,7 @@ Depending upon the nature and severity of the discrepancy, and how quickly it ca
 The Audit Letter shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1.
 
 The Audit Letter shall include: 
-- 
+
 - Name and address of the organization performing the audit
 - Name of the auditor(s)
 - Distinguished name and SHA256 fingerprint of each CA that was included in the audit
