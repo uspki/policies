@@ -1036,7 +1036,6 @@ In coordination with the CA, the FPKIPA may conduct the following activities as 
 - Publicly publish a final incident report in one or more internet-accessible locations, with information redacted as necessary
 - Report incidents to the individual Application Trusted Root Programs
 
-
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 When computing resources, software, and/or data are corrupted, CAs shall ensure the system's integrity has been restored before returning to operation.  
 
