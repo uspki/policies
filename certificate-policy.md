@@ -1326,7 +1326,7 @@ For all CAs and Certificate System Components, the network security controls lis
 
 - Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
 - The same security controls shall be applied to all systems co-located in the same Zone with a Certificate System.
-- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as Public Networks, and other business partners.
+- Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as Public Networks (Internet).
 - Only trusted roles shall have access to Secure and High Security Zones.
 - A network guard or firewall shall protect network access to CA equipment, and limit services allowed to and from the CA equipment to those required to perform CA functions.
 - Protection of CA equipment shall be provided against known network attacks.
