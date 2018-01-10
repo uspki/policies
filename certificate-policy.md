@@ -785,7 +785,7 @@ Media shall be stored so as to protect it from accidental damage, such as water,
 Sensitive media and documentation that are no longer needed for operations shall be destroyed in a secure manner.  Sensitive paper documentation shall be shredded, burned, or otherwise rendered unrecoverable.
 
 ### 5.1.8 Off-site backup
-Full system backups sufficient to recover from system failure shall be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week.  At least one full backup copy shall be stored at an off-site location separate from CA equipment.  Only the latest full backup is required to be retained.  The backup shall be stored at a site with physical and procedural controls commensurate to that of the operational CA.
+Full system backups sufficient to recover from system failure shall be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week for Subordinate CAs.  At least one full backup copy shall be stored at an off-site location separate from CA equipment.  Only the latest full backup is required to be retained.  The backup shall be stored at a site with physical and procedural controls commensurate to that of the operational CA.
 
 ## 5.2 Procedural controls
 
