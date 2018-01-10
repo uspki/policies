@@ -1093,7 +1093,7 @@ The documentation of the procedure shall be detailed enough to show that appropr
 Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in Section 1.3.4 shall not generate Subscriber key pairs.
 
 #### 6.1.1.3 Subscriber Key Pair Generation
-Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement.
+Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement or Terms of Use.
 
 The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see http://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
 
@@ -1193,12 +1193,12 @@ Subscriber private keys may be backed up or copied by the Subscriber, but shall 
 Private keys may be only archived by the parties represented by the Subject identified in the corresponding public key certificate.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
-All CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in section 6.2.4. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
+CAs shall generate their own keys in FIPS 140 validated cryptographic modules, in compliance with sections 6.1.5 and 6.1.6.  CA private keys may be exported from the cryptographic module only to perform CA key backup procedures as described in Section 6.2.4. At no time shall the CA private key exist in plaintext outside the cryptographic module. Private or symmetric keys used to encrypt other private keys for transport shall be protected from disclosure.
 
 There is no stipulation for Subscriber private key transfers into or from a cryptographic module.
 
 ### 6.2.7 Private key storage on cryptographic module
-All CAs shall protect their private key in a system or device that has been validated as meeting at least FIPS 140 Level 3.
+CAs shall protect their private key in a system or device that has been validated as meeting at least FIPS 140 Level 3.
 
 There is no stipulation for Subscriber private key storage.
 
@@ -1300,7 +1300,7 @@ The security management controls for all CAs and all Certificate System Componen
 - Configurations, modifications, and upgrades shall be documented and controlled
 - Configurations shall be reviewed on at least a weekly basis to determine whether any changes violated the CA’s security policies.
 - There shall be a mechanism for detecting unauthorized modification to the software or configuration
-- All system accounts and trusted role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
+- All system accounts and trusted role accounts shall be reviewed at least every ninety (90) days, and any account that is no longer in use or necessary for operations shall be deactivated
 - A process shall be implemented that disables physical and logical access to a Certificate Systems by any trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
 - All authentication credentials for any account or trusted role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
 - All system accounts and trusted role accounts shall have be configured to lockout access after five (5) failed access attempts
@@ -1341,7 +1341,7 @@ The CA shall establish connection with a remote workstation used to administer t
 
 ## 6.8 Time-stamping
 
-Asserted times shall be accurate to within three minutes. Electronic or manual procedures may be used to maintain system time. Clock adjustments are auditable events (see section 5.4.1).
+Asserted times shall be accurate to within three minutes. Electronic or manual procedures may be used to maintain system time. Clock adjustments are auditable events (see Section 5.4.1).
 
 # 7. CERTIFICATE, CRL, AND OCSP PROFILES
 
