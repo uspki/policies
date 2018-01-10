@@ -884,7 +884,7 @@ Documentation sufficient to define duties and procedures for each trusted role s
 ## 5.4 Audit Logging Procedures
 
 ### 5.4.1 Types of events recorded
-The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
+The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request, the time and date, any CA Officer roles involved, and the domain validation method used for each FQDN for Domain Validation TLS Server Authentication certificates and Domain Validation TLS Server Authentication certificates. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
 
 The CA shall record CA key lifecycle management events, including:
 
@@ -962,28 +962,19 @@ CAs shall archive records separately from the CA backups.  In addition to the ar
 ### 5.5.1 Types of records archived
 CA archive records shall be sufficiently detailed to determine the proper operation of the CA and the validity of any certificate issued by the CA.  At a minimum, the following data shall be recorded for archive:
 - CA accreditation
-- Certificate policy
-- Certification practice statement
+- Certificate Policy
+- Certification Practice Statement(s)
 - Contractual obligations and other agreements concerning operations of the CA
-- System and equipment configuration
-  -	Modifications and updates to system or configuration
-- Certificate requests
+- Security events, as specified in Section 5.4.1
+- CA key lifecycle management events, as specified in Section 5.4.1
+- Subscriber Certificate lifecycle management events, as specified in Section 5.4.1
+- Subscriber agreements and / or Terms of use agreements
 - All certificates issued
-- Revocation requests
-- Subscriber identity authentication data
-- Subscriber agreements
-- Documentation of receipt of tokens
 - All CRLs issued
 - Qualified Auditor reports
 - Any changes to the Audit parameters, e.g. audit frequency, type of event audited
-- Any attempt to delete or modify the Audit logs
-- Whenever the CA generates a key (Not mandatory for single session or one-time use symmetric keys)
-- All changes to the trusted public keys, including additions and deletions
-- The export of CA private and secret keys (keys used for a single session or message are excluded)
-- The approval or rejection of a certificate status change request
 - Appointment of an individual to a trusted role
 - Other data or applications to verify archive contents
-- Destruction of cryptographic modules
 - All certificate compromise notifications
 - Violations of Certificate Policy
 - Violations of Certification Practice Statement
