@@ -743,7 +743,7 @@ Not applicable.
 ## 5.1 PHYSICAL SECURITY CONTROLS
 CA equipment shall be protected from unauthorized access while the cryptographic module is installed and activated.  The CA shall implement physical access controls to reduce the risk of equipment tampering even when the cryptographic module is not installed and activated.  CA cryptographic tokens shall be protected against theft, loss, and unauthorized use.  
 
-All the physical control requirements specified below apply equally to the Root CA and Subordinate CAs, and any remote workstations used to administer the CAs, except where specifically noted.
+All the physical control requirements specified below apply equally to the Root CA and Subordinate CAs, and any remote workstations used to perform administration activities for the CAs, except where specifically noted.
 
 ### 5.1.1 Site location and construction
 The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, shall be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, shall provide robust protection against unauthorized access to the CA equipment and records.
