@@ -796,7 +796,7 @@ A trusted role is one whose incumbent performs functions that can introduce secu
 The requirements of this policy are defined in terms of three roles:   
 1.	Administrator
 2.	Officer
-3.	Audit Administrator
+3.	Security
 
 These three roles are employed at the CA.  Separation of duties shall comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
 
@@ -814,7 +814,7 @@ The Officer shall be responsible for
 - Requesting, approving and executing the revocation of certificates
 - Performing internal self-audits at least every quarter in accordance with Section 8.7
 
-The Audit Administrator shall be responsible for
+The Security trusted role shall be responsible for
 - Reviewing, maintaining, and archiving audit logs
 - Overseeing internal compliance and self-audits to ensure that the CA is operating in accordance with its CPS
 
@@ -823,13 +823,13 @@ Each CA shall maintain lists, including names, contact information, and copies o
 ### 5.2.2 Number of Individuals Required per Task
 The CA Private Key shall be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in the physically secured environment described in 5.1.2.
 
-Where multi-party control is required, at least one of the participants shall be an Administrator.  All participants shall serve in a trusted role as defined in section 5.2.1.  Multi-party control shall not be achieved using personnel that serve in the Audit Administrator trusted role.
+Where multi-party control is required, at least one of the participants shall be an Administrator.  All participants shall serve in a trusted role as defined in section 5.2.1.  Multi-party control shall not be achieved using personnel that serve in the Security trusted role.
 
 ### 5.2.3 Identification and authentication for each role
 An individual shall be identified and authenticated before being permitted to perform any actions set forth above for that role or identity.  All Trusted Roles shall use a unique credential created by or assigned to a single individual for identification and authentication.  CAs shall implement multi-factor or multi-party authentication for all Trusted Roles.  
 
 ### 5.2.4 Roles requiring separation of duties
-Individuals may only assume one of the Administrator, Officer, and Audit Administrator roles.  The CA software and hardware shall identify and authenticate its users and enforce least privilege.  The CA software and hardware shall ensure that no user can assume both the Administrator and Officer roles, assume both the Administrator and Audit Administrator roles, or assume both the Audit Administrator and Officer roles.  
+Individuals may only assume one of the Administrator, Officer, and Security roles.  The CA software and hardware shall identify and authenticate its users and enforce least privilege.  The CA software and hardware shall ensure that no user can assume both the Administrator and Officer roles, assume both the Administrator and Security roles, or assume both the Security and Officer roles.  
 
 ## 5.3 Personnel controls
 
@@ -920,7 +920,7 @@ Audit logs shall be reviewed at least once every thirty (30) days.  Audit log re
 All significant events and the root cause analysis shall be explained in an audit log summary.  Actions taken as a result of the audit log reviews shall be documented.
 
 ### 5.4.3 Retention Period for Audit Logs
-Audit logs shall be retained on-site until reviewed, in addition to being archived as described in Section 5.5.  The Audit Administrator Trusted Role shall be responsible for  overseeing the migration of audit logs from the CA to the archives.  
+Audit logs shall be retained on-site until reviewed, in addition to being archived as described in Section 5.5.  The Security Trusted Role shall be responsible for  overseeing the migration of audit logs from the CA to the archives.  
 
 The CA shall retain any audit logs generated for at least seven years. The CA shall make these audit logs available to its Qualified Auditor upon request.
 
@@ -1184,7 +1184,7 @@ For all CAs:
 - CA signature keys may be backed up only under at least two-person control
 - Access to CA signing keys backed up for disaster recovery shall be under at least two-person control
 - The names of the parties used for two-person control shall be made available for inspection during Qualified Audits
-- Multi-person control shall not be achieved using personnel that serve in the Audit Administrator trusted role
+- Multi-person control shall not be achieved using personnel that serve in the Security trusted role
 
 There is no stipulation for Subscriber private key multi-person control.
 
@@ -1200,7 +1200,6 @@ For all CAs:
 - Backup procedures shall be included in the CA’s CPS
 
 Subscriber private keys may be backed up or copied by the Subscriber, but shall be held in the Subscriber’s control.  
-
 
 ### 6.2.5 Private key archival
 Private keys may be only archived by the parties represented by the Subject identified in the corresponding public key certificate.
