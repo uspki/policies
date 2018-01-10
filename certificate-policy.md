@@ -638,8 +638,7 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 9. Revocation is required by this CP and/or the Issuing CA's CPS;
 10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
-11. The CA received a lawful and binding order from a government, judicial or regulatory body to
-revoke the Certificate.
+11. The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 ### 4.9.2 Who can request revocation
 The Subscriber, RA, or CA can initiate revocation of certificates.  The FPKIPA may also direct any revocation of a CA certificate.
@@ -698,7 +697,6 @@ Subscribers may rely on stapling, in accordance with RFC4366, to distribute OCSP
 See Section 4.9.1
 
 In the case of a compromise of a CA certificate, the CA must immediately notify the FPKI PA that the CA certificate has been compromised.  See Section 5.7.1 for incident handling procedures.
-
 
 ### 4.9.13 Circumstances for suspension
 Certificates issued under this policy shall not be suspended.
@@ -870,7 +868,7 @@ All personnel in Trusted roles shall maintain skill levels consistent with the C
 All personnel in trusted roles shall be made aware of changes in the CA operation.  Any significant change to the operations shall have a training (awareness) plan, and the execution of such plan shall be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
 
 ### 5.3.5 Job Rotation Frequency and Sequence
-No Stipulation
+No stipulation
 
 ### 5.3.6 Sanctions for Unauthorized Actions
 The CA shall take appropriate administrative and disciplinary actions against personnel who have performed actions involving the CA that are not authorized in this CP, the CA CPS, or other published procedures.
@@ -990,7 +988,7 @@ Archive media shall be stored in a safe, secure storage facility separate from t
 Alternatively, a CA operating under this policy may retain data using whatever procedures have been approved by NARA for that category of documents.  Applications required to process the archive data shall be maintained for a period that equals or exceeds the archive requirements for the data.
 
 ### 5.5.4 Archive backup procedures
-No Stipulation
+No stipulation
 
 ### 5.5.5 Requirements for time-stamping of records
 Archive records maintained in digital format shall be time-stamped as the records are created.  The system clocks used for time-stamping shall be maintained in synchrony with an authoritative time standard.
@@ -999,7 +997,7 @@ Archive records maintained in digital format shall be time-stamped as the record
 Archive data may be collected in any expedient manner.
 
 ### 5.5.7 Procedures to obtain and verify archive information
-No Stipulation
+No stipulation
 
 ## 5.6 Key changeover
 Key changeovers are not applicable for any CAs operating under this CP and shall not be done. A new CA signing key constitutes a new CA and a new CA Subject Name shall be used.
@@ -1052,7 +1050,7 @@ In the event of a Subordinate CA private key compromise, the following operation
 - The final CRL shall be available for all relying parties until the validity period of all issued certificates has passed
 - The Root CA shall revoke the Subordinate CA certificate within seven (7) days
 
-If the Root Certificate private key is compromised, the CA notify the FPKIPA immediately.  
+If the Root Certificate private key is compromised, the CA shall notify the FPKIPA immediately.  
 
 In all cases, the CA and the FPKIPA shall initiate procedures to notify subscribers and Application Trusted Root Programs of the compromise.
 
@@ -1727,7 +1725,7 @@ The CAs operated under this Certificate Policy are Technically Constrained (see 
 
 The period during which the CA issues Certificates shall be divided into an unbroken sequence of audit periods. An audit period shall not exceed one year in duration.
 
-Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.4. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate
+Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.4. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate.
 
 ## 8.2 Identity/qualifications of assessor
 CA audits shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
