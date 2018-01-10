@@ -1763,7 +1763,19 @@ Depending upon the nature and severity of the discrepancy, and how quickly it ca
 ## 8.6 Communication of results
 The Audit Letter shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1.
 
-The CA shall make the Audit Letter publicly available. TThe CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
+The Audit Letter shall include: 
+- 
+- Name and address of the organization performing the audit
+- Name of the auditor(s)
+- Distinguished name and SHA256 fingerprint of each CA that was included in the audit
+- Audit criteria, with version number, that was used to audit each of the CAs
+- A list of the CA policy documents, with version numbers, referenced during the audit
+- Whether the audit is for a period of time or a point in time
+- For a period of time audit: the start and end date of the period
+- For a point in time audit: the point-in-time date
+- The date the Audit Letter was issued 
+
+The CA shall make the Audit Letter publicly available. The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
 ## 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
