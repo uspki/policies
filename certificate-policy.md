@@ -1746,10 +1746,9 @@ The CAs shall undergo an audit in accordance with all of the following:
 
 1. WebTrust for Certification Authorities, Version 2.0 or later
 2. WebTrust for Certification Authorities - SSL Baseline with Network Security, Version 2.2 or later
+3. Compliance of the CA's CPS against this CP
 
-Audits shall incorporate periodic monitoring and/or accountability procedures to ensure that the audits continue to be conducted in accordance with the requirements of the scheme.
-
-The audit shall be conducted by a Qualified Auditor, as specified in Section 8.3.
+Audits shall incorporate periodic monitoring and/or accountability procedures to ensure that the audits continue to be conducted in accordance with the requirements of the scheme.  The audit shall be conducted by a Qualified Auditor, as specified in Section 8.3.
 
 ## 8.5 Actions taken as a result of deficiency
 When the Qualified Auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:  
