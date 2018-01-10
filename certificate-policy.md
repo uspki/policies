@@ -787,7 +787,7 @@ Media shall be stored so as to protect it from accidental damage, such as water,
 Sensitive media and documentation that are no longer needed for operations shall be destroyed in a secure manner.  Sensitive paper documentation shall be shredded, burned, or otherwise rendered unrecoverable.
 
 ### 5.1.8 Off-site backup
-Full system backups sufficient to recover from system failure shall be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week.  At least one full backup copy shall be stored at an off-site location (separate from CA equipment).  Only the latest full backup need be retained.  The backup shall be stored at a site with physical and procedural controls commensurate to that of the operational CA.
+Full system backups sufficient to recover from system failure shall be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week.  At least one full backup copy shall be stored at an off-site location separate from CA equipment.  Only the latest full backup is required to be retained.  The backup shall be stored at a site with physical and procedural controls commensurate to that of the operational CA.
 
 ## 5.2 Procedural controls
 
@@ -799,9 +799,9 @@ The requirements of this policy are defined in terms of three roles:
 2.	Officer
 3.	Security
 
-These three roles are employed at the CA.  Separation of duties shall comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of Trusted Roles.
+These three roles are employed at the CA.  Separation of duties shall comply with 5.2.4, and requirements for two-person control with 5.2.2, regardless of the titles and numbers of trusted roles.
 
-The Administrator shall be responsible for
+The Administrator shall be responsible for:
 -  Installation, configuration, and maintenance of the CA
 -  Establishing and maintaining CA system accounts
 -  Configuring certificate profiles or templates and audit parameters
@@ -810,16 +810,16 @@ The Administrator shall be responsible for
 
 Administrators shall not issue certificates to Subscribers.  
 
-The Officer shall be responsible for   
+The Officer shall be responsible for:   
 - Approving and executing the issuance of the certificates where inspection of the validation information is required
 - Requesting, approving and executing the revocation of certificates
 - Performing internal self-audits at least every quarter in accordance with Section 8.7
 
-The Security trusted role shall be responsible for
+The Security trusted role shall be responsible for:
 - Reviewing, maintaining, and archiving audit logs
 - Overseeing internal compliance and self-audits to ensure that the CA is operating in accordance with its CPS
 
-Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during compliance audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel records or investigative records requiring protection under the Privacy Act.
+Each CA shall maintain lists, including names, contact information, and copies of appointment memoranda of those who act in these trusted roles, and shall make them available during audits. The CA will make this information a part of the permanent records of the CA. However, the CA shall not maintain personnel records or investigative records requiring protection under the Privacy Act.
 
 ### 5.2.2 Number of Individuals Required per Task
 The CA Private Key shall be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in the physically secured environment described in 5.1.2.
@@ -827,7 +827,7 @@ The CA Private Key shall be backed up, stored, and recovered only by personnel i
 Where multi-party control is required, at least one of the participants shall be an Administrator.  All participants shall serve in a trusted role as defined in section 5.2.1.  Multi-party control shall not be achieved using personnel that serve in the Security trusted role.
 
 ### 5.2.3 Identification and authentication for each role
-An individual shall be identified and authenticated before being permitted to perform any actions set forth above for that role or identity.  All Trusted Roles shall use a unique credential created by or assigned to a single individual for identification and authentication.  CAs shall implement multi-factor or multi-party authentication for all Trusted Roles.  
+An individual shall be identified and authenticated before being permitted to perform any actions set forth above for that role or identity.  All trusted roles shall use a unique credential created by or assigned to a single individual for identification and authentication.  CAs shall implement multi-factor or multi-party authentication for all Administrator trusted role access to Certificate System Components including operating system and software.  All CAs shall implement multi-factor authentication for the Officer trusted role.
 
 ### 5.2.4 Roles requiring separation of duties
 Individuals may only assume one of the Administrator, Officer, and Security roles.  The CA software and hardware shall identify and authenticate its users and enforce least privilege.  The CA software and hardware shall ensure that no user can assume both the Administrator and Officer roles, assume both the Administrator and Security roles, or assume both the Security and Officer roles.  
@@ -839,7 +839,7 @@ All persons filling trusted roles shall be selected on the basis of loyalty, tru
 
 
 ### 5.3.2 Background check procedures
-Trusted role personnel shall, at a minimum, pass a background investigation covering
+Trusted role personnel shall, at a minimum, pass a background investigation covering:
 - Employment  
 - Education  
 - Place of residence  
@@ -849,10 +849,10 @@ Trusted role personnel shall, at a minimum, pass a background investigation cove
 The period of investigation shall cover at least the last five years for each area, excepting the residence check which shall cover at least the last three years. Adjudication of the background investigation shall be performed by a competent adjudication authority using a process consistent with Executive Order 13467 or equivalent.
 
 ### 5.3.3 Training Requirements and Procedures
-All individuals in Trusted Roles shall receive comprehensive training. Training shall be conducted in the following areas:
+All individuals in trusted roles shall receive comprehensive training. Training shall be conducted in the following areas:
 - Basic Public Key Infrastructure knowledge  
 - CA security principles and mechanisms  
-- All Trusted Role duties   
+- All trusted role duties   
 - Disaster recovery and business continuity procedures  
 - Understanding and knowledge of this CP  
 
@@ -862,12 +862,12 @@ The CA shall provide all Officers with additional skills-training that covers:
 
 The CA shall require all Officers to pass an examination provided by the CA on the information verification requirements outlined in this CP and the CA's CPS. The CA shall that ensure that individuals with Officer duties maintain a skill level that enables them to perform such duties satisfactorily.
 
-The CA shall maintain records of training for all individuals in Trusted Roles.  The CA shall document that each individual in a Trusted Role possesses the skills required by a task before allowing the individual to perform that task.
+The CA shall maintain records of training for all individuals in trusted roles.  The CA shall document that each individual in a trusted role possesses the skills required by a task before allowing the individual to perform that task.
 
 ### 5.3.4 Retraining Frequency and Requirements
 All personnel in Trusted roles shall maintain skill levels consistent with the CA's training and performance programs.
 
-All personnel in Trusted Roles shall be made aware of changes in the CA operation.  Any significant change to the operations shall have a training (awareness) plan, and the execution of such plan shall be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
+All personnel in trusted roles shall be made aware of changes in the CA operation.  Any significant change to the operations shall have a training (awareness) plan, and the execution of such plan shall be documented.  Examples of such changes are CA software or hardware upgrade, changes in automated security systems, and relocation of equipment.
 
 ### 5.3.5 Job Rotation Frequency and Sequence
 No Stipulation
@@ -879,7 +879,7 @@ The CA shall take appropriate administrative and disciplinary actions against pe
 Direct contractor personnel employed to operate any part of the CAs or perform functions pertaining to the infrastructure shall be subject to the same personnel requirements set forth in this CP.
 
 ### 5.3.8 Documentation supplied to personnel
-Documentation sufficient to define duties and procedures for each Trusted Role shall be provided to the personnel filling that Trusted Role.
+Documentation sufficient to define duties and procedures for each trusted role shall be provided to the personnel filling that trusted role.
 
 ## 5.4 Audit Logging Procedures
 
@@ -921,7 +921,7 @@ Audit logs shall be reviewed at least once every thirty (30) days.  Audit log re
 All significant events and the root cause analysis shall be explained in an audit log summary.  Actions taken as a result of the audit log reviews shall be documented.
 
 ### 5.4.3 Retention Period for Audit Logs
-Audit logs shall be retained on-site until reviewed, in addition to being archived as described in Section 5.5.  The Security Trusted Role shall be responsible for  overseeing the migration of audit logs from the CA to the archives.  
+Audit logs shall be retained on-site until reviewed, in addition to being archived as described in Section 5.5.  The Security trusted role shall be responsible for  overseeing the migration of audit logs from the CA to the archives.  
 
 The CA shall retain any audit logs generated for at least seven years. The CA shall make these audit logs available to its Qualified Auditor upon request.
 
@@ -981,7 +981,7 @@ CA archive records shall be sufficiently detailed to determine the proper operat
 - All changes to the trusted public keys, including additions and deletions
 - The export of CA private and secret keys (keys used for a single session or message are excluded)
 - The approval or rejection of a certificate status change request
-- Appointment of an individual to a Trusted Role
+- Appointment of an individual to a trusted role
 - Other data or applications to verify archive contents
 - Destruction of cryptographic modules
 - All certificate compromise notifications
@@ -1094,7 +1094,7 @@ The CA shall:
 1. Have a Qualified Auditor witness the CA Key Pair generation process or review a video of the entire CA Key Pair generation process
 1. Have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair
 1. Generate the CA keys in a physically secured environment as described in the CA's CPS
-1. Generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge
+1. Generate the CA keys using personnel in trusted roles under the principles of multiple person control and split knowledge
 1. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation
 1. Log its CA key generation activities
 1. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in this CP and CA's CPS and its Key Generation Script
@@ -1230,7 +1230,7 @@ For all CAs:
 There is no stipulation for Subscriber private key deactivation.
 
 ### 6.2.10 Destroying Private Keys
-Individuals in Trusted Roles shall destroy all CA Certificate and Delegated OCSP Responder Certificate private keys when the keys are no longer needed. All CAs shall document the private key destruction methods in the CPS.
+Individuals in trusted roles shall destroy all CA Certificate and Delegated OCSP Responder Certificate private keys when the keys are no longer needed. All CAs shall document the private key destruction methods in the CPS.
 
 There is no stipulation for Subscriber private key destruction.
 
@@ -1271,9 +1271,9 @@ No stipulation.
 
 ### 6.5.1 Specific computer security technical requirements
 
-Administrator privileges to all Certificate System Components shall only be granted to the Administrator Trusted Role.  All CAs shall implement multi-factor or multi-party authentication for all Administrator Trusted Role access to Certificate System Components including operating system and software.
+Administrator privileges to all Certificate System Components shall only be granted to the Administrator trusted role.  All CAs shall implement multi-factor or multi-party authentication for all Administrator trusted role access to Certificate System Components including operating system and software.
 
-All CAs shall implement multi-factor authentication for the Officer Trusted Role.
+All CAs shall implement multi-factor authentication for the Officer trusted role.
 
 For all CAs and Certificate System Components including certificate status services, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
 
@@ -1313,10 +1313,10 @@ The security management controls for all CAs and all Certificate System Componen
 - Configurations, modifications, and upgrades shall be documented and controlled
 - Configurations shall be reviewed on at least a weekly basis to determine whether any changes violated the CA’s security policies.
 - There shall be a mechanism for detecting unauthorized modification to the software or configuration
-- All system accounts and Trusted Role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
-- A process shall be implemented that disables physical and logical access to a Certificate Systems by any Trusted Role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
-- All authentication credentials for any account or Trusted Role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
-- All system accounts and Trusted Role accounts shall have be configured to lockout access after five (5) failed access attempts
+- All system accounts and trusted role accounts shall be reviewed at least every ninety (90) days.  Any account that is no longer in use or necessary for operations shall be deactivated
+- A process shall be implemented that disables physical and logical access to a Certificate Systems by any trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
+- All authentication credentials for any account or trusted role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
+- All system accounts and trusted role accounts shall have be configured to lockout access after five (5) failed access attempts
 - There shall be an automated mechanism to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events
 
 ### 6.6.3 Life cycle security controls
@@ -1337,7 +1337,7 @@ For all CAs and Certificate System Components, the network security controls lis
 - Secure Zones shall be implemented to secure Certificate Systems based on functional, logical, and physical (including location) relationships.
 - The same security controls shall be applied to all systems co-located in the same Zone with a Certificate System.
 - Security support systems shall be configured to protect systems and communications between systems inside Secure Zones and High Security Zones as well as Public Networks, and other business partners.
-- Only Trusted Roles shall have access to Secure and High Security Zones.
+- Only trusted roles shall have access to Secure and High Security Zones.
 - A network guard or firewall shall protect network access to CA equipment, and limit services allowed to and from the CA equipment to those required to perform CA functions.
 - Protection of CA equipment shall be provided against known network attacks.
 - All unused network ports and services shall be turned off.
