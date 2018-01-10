@@ -533,7 +533,7 @@ CA certificates shall not be renewed.  Domain Validation TLS Server Authenticati
 OCSP Delegated Responder certificates may be renewed.
 
 ### 4.6.2 Who may request renewal
-The FPKIPA shall request that CAs routinely process OCSP Delegated Responder certificate renewal requests at the time the original certificate is requested by the Administrator.
+No stipulation
 
 ### 4.6.3 Processing certificate renewal requests
 The CA shall verify that the OCSP Delegated Responder certificate expiration date shall not exceed 395 days from the date of initial certificate issuance.
