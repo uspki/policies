@@ -33,4 +33,4 @@ Comments received will be publicly posted [to this repository]({{ site.repo }}/i
 - [Microsoft Trust Store Program](https://technet.microsoft.com/en-us/library/cc751157.aspx){:target="_blank"}
 - [Apple Trust Store Program](https://www.apple.com/certificateauthority/ca_program.html){:target="_blank"}
 - [Mozilla Community and Trust Store Program](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/){:target="_blank"}
-- [Google Chromium Certificate Transparency Policy](https://sites.google.com/a/chromium.org/dev/Home/chromium-security/certificate-transparency){:target="_blank"}
+- [Google Chromium Certificate Transparency Policy](https://www.chromium.org/Home/chromium-security/certificate-transparency){:target="_blank"}
