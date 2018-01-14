@@ -73,7 +73,7 @@ Additional documents related to the U.S. Federal Public Trust TLS PKI, including
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
 
-This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this CP are licensed under the Creative Commons (CCO) 1.0 Universal Public Domain license.
+This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
 
 ### 1.2.1.Revisions
 
