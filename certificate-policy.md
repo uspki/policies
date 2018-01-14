@@ -641,9 +641,9 @@ The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days i
 11. The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 ### 4.9.2 Who can request revocation
-The Subscriber, RA, or CA can initiate revocation of certificates.  The FPKIPA may also direct any revocation of a CA certificate.
+The Subscriber, RA, or CA can initiate revocation of Subscriber or CA certificates.  The FPKIPA may also direct any revocation of a CA certificate.
 
-Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the Issuing CA of reasonable cause to revoke the certificate.
+Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the CA of reasonable cause to revoke the certificate.
 
 ### 4.9.3 Procedure for revocation request
 CAs shall provide a process for Subscribers to request revocation of their own Certificates. The process shall be described in the CA's CPS. The CA shall maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries. A request from Subscribers to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated.
