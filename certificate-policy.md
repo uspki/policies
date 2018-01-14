@@ -367,7 +367,7 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.  
+This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
