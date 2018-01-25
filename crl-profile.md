@@ -1,4 +1,4 @@
-## CRL Profile
+## Appendix D-6 CRL Profile
 
 | **Field** |       |       | **Value**                             |
 | :-------- | :---: | :---: | :-------------------------------     |
@@ -17,4 +17,3 @@
 | **CRL Entry Extension** |  **Required**   | **Critical** | **Value**  |
 | Reason Code  | Optional | False |  Shall be included when reason code is equal to _key compromise_ or _CA compromise_ |
 | Invalidity Date   | Optional | False |  |
-

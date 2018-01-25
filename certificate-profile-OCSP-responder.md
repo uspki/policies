@@ -1,4 +1,4 @@
-### Delegated OCSP Responder Certificate Profile
+### Appendix D-4 Delegated OCSP Responder Certificate Profile
 
 
 | **Field** |       |       | **Value**                             |
@@ -20,4 +20,4 @@
 | Extended Key Usage   |   Mandatory  | True | **Required Extended Key Usage:** <br> id-kp-OCSPSigning {1.3.6.1.5.5.7.3.9} <br><br> **Prohibited Extended Key Usage:** <br> All others, including anyEKU EKU {2.5.29.37.0} |
 | Certificate Policies   |  Mandatory  | False | **Required Certificate Policy Fields:** <br>At least one certificate policy OID defined or listed in Section 1.2 of the CP.  Must include all the certificate policy OIDs for all certificates issued by the Issuing CA and covered by the OCSP responses. <br><br>**Optional Certificate Policy Fields:** <br> certificatePolicies:policyQualifiers <br> policyQualifierId   id-qt 1 <br> qualifier:cPSuri |
 | Subject Alternative Name   | Optional | False  | If present, each entry shall be dNSName containing the Fully-Qualified Domain Name Reference for the OCSP responder(s).  |
-| Authority Information Access   | Optional | False | **Required AIA Fields:** <br><br> **Id-ad-caIssuers** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> At least one instance of this access method shall include the URI name form to specify the certificate artifacts. The certificate artifact(s) served by this HTTP accessible location shall be either a single DER encoded certificate, or a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. 
+| Authority Information Access   | Optional | False | **Required AIA Fields:** <br><br> **Id-ad-caIssuers** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> At least one instance of this access method shall include the URI name form to specify the certificate artifacts. The certificate artifact(s) served by this HTTP accessible location shall be either a single DER encoded certificate, or a BER or DER encoded "certs-only" CMS message as specified in [RFC2797].
