@@ -1829,7 +1829,7 @@ A CA shall not disclose non-certificate information to any third party unless au
 ## 9.4 Privacy of personal information
 
 ### 9.4.1 Privacy plan
-CAs shall conduct a Privacy Impact Assessment, and implement and maintain any required Privacy Plans in accordance with the requirements of the Privacy Act of 1974, as amended. 
+CAs shall conduct a Privacy Threshold Assessment, and implement and maintain any required Privacy Impact Assessments and Privacy Plans in accordance with the requirements of the Privacy Act of 1974, as amended. 
 
 ### 9.4.2 Information treated as private
 The CAs shall protect any subscriber personally identifying information from unauthorized disclosure.  
