@@ -24,11 +24,15 @@ The terms and provisions of this certificate policy shall be interpreted under a
 This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
+<<<<<<< HEAD
 <<<<<<< 971515f870f94edf1a6c16f3de4605cfd0068a70
 This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.
 =======
 This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates.
 >>>>>>> modifying section 7 to include certificate profiles directly and replacing text
+=======
+This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates.
+>>>>>>> 5fb4918c708e9513b2f768b677888a6f23d05700
 
 ### 1.1.2.1 CA Certificates
 
@@ -473,10 +477,14 @@ All Domain Validation TLS Server Authentication certificates and Organizational 
 There is no limit on the maximum number of CT Logs which may be submitted to.  
 
 The Issuing CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
+<<<<<<< HEAD
 <<<<<<< 971515f870f94edf1a6c16f3de4605cfd0068a70
 =======
 
 >>>>>>> modifying section 7 to include certificate profiles directly and replacing text
+=======
+
+>>>>>>> 5fb4918c708e9513b2f768b677888a6f23d05700
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
@@ -1722,8 +1730,11 @@ The FPKIPA is responsible for monitoring source requirements, and initiating nec
 
 After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
+<<<<<<< HEAD
 <<<<<<< 971515f870f94edf1a6c16f3de4605cfd0068a70
 =======
+=======
+>>>>>>> 5fb4918c708e9513b2f768b677888a6f23d05700
 
 
 >>>>>>> modifying section 7 to include certificate profiles directly and replacing text
