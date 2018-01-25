@@ -57,14 +57,14 @@ This is the U.S. Federal Public Trust TLS PKI Certificate Policy.
 
 The following Certificate Policy identifiers are registered by the U.S. Government and reserved for use by CAs as a means of asserting compliance with this CP:
 
-|  |  |   
+| OID | Purpose |   
 | :--- | :--- |  
 | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | Domain Validation TLS Server Authentication Certificates |  
 | {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | Organization Validation TLS Server Authentication Certificates |  
 
 The following Certificate Policy identifiers are registered by the CAB Forum and reserved for use by CAs as a means of asserting compliance with the Baseline Requirements:
 
-|  |  |   
+| OID | Purpose |   
 | :--- | :--- |  
 | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1) } (2.23.140.1.2.1) | Domain Validation TLS Server Authentication Certificates |  
 | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2) } (2.23.140.1.2.2) | Organization Validation TLS Server Authentication Certificates |  
@@ -214,10 +214,10 @@ Each CA shall disclose the following information through a publicly accessible R
 
 CPS documents and Audit Letters shall not be redacted.  
 
-Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA can be found at:
-• https://valid.pki.gov
-• https://revoked.pki.gov
-• https://expired.pki.gov
+Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA can be found at:  
+- https://valid.pki.gov  
+- https://revoked.pki.gov  
+- https://expired.pki.gov  
 
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
@@ -1782,7 +1782,6 @@ During the period in which the CA issues Certificates, the CA shall monitor adhe
 During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
 
 # 9. OTHER BUSINESS AND LEGAL MATTERS
-{% include alert-info.html content="This section contains the CA / Browser Forum Baseline Requirements and has not been modified.  Additions to Business and Legal Matters to address Application Trusted Root Program requirements and U.S. Government provisions to meet public law requirements are under review and not included in this draft." %}
 
 ## 9.1 Fees
 
