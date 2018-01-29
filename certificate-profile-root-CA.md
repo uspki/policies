@@ -1,18 +1,18 @@
 ## Appendix D-1: Self-Signed Root CA Certificate Profile
 
-| **Field** | **Value and / or Requirements**  |
+| **Field** | **Value and Requirements**  |
 | :-------- |  :-------------------------------     |
 | Serial Number   | Serial number shall be a unique positive integer with a minimum of 64 bits (minimum of 8 octets), not to exceed 20 octets. |
 | Issuer Signature Algorithm   | sha256 WithRSAEncryption {1 2 840 113549 1 1 11}  |
-| Issuer Distinguished Name   | Root CA Certificate Issuer Distiguished Name (DN) shall be a unique X.500 DN as specified in Section 7.1.4 of this CP.  Distinguished Name shall conform to PrintableString string type in ASN.1 notation. <br><br>The Root CA Certificate DN shall be: <br>cn=US Federal TLS Root CAx, o=U.S. Government, c=US <br>All non-production Root CA DNs shall include "Test" in the Common Name (cn). A non-production DN example is: <br>cn=US Federal Test TLS Root CA, o=U.S. Government, c=US <br> <br> |
+| Issuer Distinguished Name   | Root CA Certificate Issuer Distiguished Name (DN) shall be a unique X.500 DN as specified in Section 7.1.4 of this CP.  Distinguished Name shall conform to PrintableString string type in ASN.1 notation. <br><br>The Root CA Certificate DN shall be: <br>cn=US Federal TLS Root CAx, o=U.S. Government, c=US <br>where "x" is not used for the first Root CA certificate name and is a numeric value that starts at 2 and increments by 1 for any future Root CA certificate Common Names(cn). All non-production Root CA DNs shall include "Test" in the Common Name (cn). A non-production DN example is: <br>cn=US Federal Test TLS Root CA, o=U.S. Government, c=US <br> <br> |
 | Validity Period   | Validity Period dates shall be encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> Validity Period shall be no longer than 20 years from date of issue. |
 | Subject Distinguished Name   | Subject Distinguished Name (DN) shall match the Issuer DN.   |
 | Subject Public Key Information   | 4096 bit modulus, rsaEncryption {1 2 840 113549 1 1 1}   |
 | Issuer Signature   | sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
 
-| **Extension** |  **Required**   | **Critical** | **Value and / or Requirements** |
+| **Extension** |  **Required**   | **Critical** | **Value and Requirements** |
 | :-------- | :----------------|:----------------|:----------------|
-| subjectInfoAccess  | Mandatory | False |  id-ad-caRepository (1.3.6.1.5.5.7.48.5):<br>At least one instance of this access method shall be included.  All instances of this access method shall include the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found. The certificate artifact(s) shall be DER encoded "certs-only" CMS message as specified in [RFC5752]. |
+| subjectInfoAccess  | Mandatory | False |  id-ad-caRepository (1.3.6.1.5.5.7.48.5):<br>At least one instance of this access method shall be included.  All instances of this access method shall include the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found.  The certificate artifact(s) served by this HTTP accessible location shall be either a single DER encoded certificate, or a BER or DER encoded "certs-only" CMS message as specified in [RFC5752]. |
 | basicConstraints   | Mandatory | True |  cA=True <br> The pathLenConstraint field shall not be present. |
 | subjectKeyIdentifier | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
 | keyUsage   | Mandatory | True | Bit positions for keyCertSign and cRLSign shall be set. <br> If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit shall also be set.|   

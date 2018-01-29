@@ -24,15 +24,7 @@ The terms and provisions of this certificate policy shall be interpreted under a
 This Certificate Policy conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Baseline Requirements, those Baseline Requirements take precedence over this document.
 
 ## 1.1.3 Certificate Types
-<<<<<<< HEAD
-<<<<<<< 971515f870f94edf1a6c16f3de4605cfd0068a70
 This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.
-=======
-This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates.
->>>>>>> modifying section 7 to include certificate profiles directly and replacing text
-=======
-This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or End Entity Certificates.
->>>>>>> 5fb4918c708e9513b2f768b677888a6f23d05700
 
 ### 1.1.2.1 CA Certificates
 
@@ -1352,11 +1344,7 @@ Asserted times shall be accurate to within three minutes. Electronic or manual p
 # 7. CERTIFICATE, CRL, AND OCSP PROFILES
 
 ## 7.1 Certificate profile
-Certificates issued by a CA under this policy shall conform to the Certificate Profiles and Certificate Revocation List (CRL) Extensions Profile included as Appendix D.  
-
-The CA shall meet the technical requirements set forth in Section 2.2 - Publication of Information, Section 6.1.5 - Key Sizes, and Section 6.1.6 - Public Key Parameters Generation and Quality Checking.
-
-CAs shall generate non-sequential Certificate serial numbers greater than zero (0) containing at least 64 bits (minimum of 8 octets) of output from a CSPRNG, not to exceed 20 octets.
+Certificates issued by a CA under this policy shall conform to the Certificate Profiles included as Appendix D.  
 
 ### 7.1.1 Version number(s)
 Certificates shall be of type X.509 v3.
@@ -1365,14 +1353,24 @@ Certificates shall be of type X.509 v3.
 Rules for the certificate content and extensions are included as Appendix D.
 
 CAs shall not issue a Certificate with:
+- Extensions that do not apply in the context of the public Internet (such as an extendedKeyUsage value for a service that is only valid in the context of a privately managed network)
+- Semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA
 
-a. Extensions that do not apply in the context of the public Internet (such as an extendedKeyUsage value for a service that is only valid in the context of a privately managed network)
-b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA
-
-For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 under this CP.
+A Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 under this CP.
 
 ### 7.1.3 Algorithm object identifiers
-CAs shall not issue Subscriber Certificates utilizing the SHA-1 hash algorithm.
+The Certificate Profiles in Appendix D describe algorithms used in signing certificates and algorithms for the subject public key information, aligned with Section 6.1.5.  
+
+| Signature Algorithm | Object Identifier |
+|:-----------|:----------------|
+| sha256WithRSAEncryption | 1.2.840.113549.1.1.11 |
+| sha384WithRSAEncryption | 1.2.840.113549.1.1.12 |
+| sha512WithRSAEncryption | 1.2.840.113549.1.1.12 |
+
+| Public Key Algorithm | Object Identifier |
+|:-----------|:----------------|
+| rsaEncryption | 1.2.840.113549.1.1.1 |
+| ecPublicKey | 1.2.840.10045.2.1 |
 
 ### 7.1.4 Name forms
 
@@ -1384,33 +1382,29 @@ CA Subject Distinguished Name shall conform to PrintableString string type in AS
 #### 7.1.4.2 Subject Information for Standard Server Authentication certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in this CP and the CA CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
-CAs shall not include IP Address in a Subject attribute.
 CAs shall not include a Domain Name in a Subject attribute except as validated under Section 3.2.2.4.
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
-By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in this CP and the CA's Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
+By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in this CP and the CA's CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 ### 7.1.5 Name constraints
-All Subordinate CA Certificates shall be Technically Constrained.
-
-For a Subordinate CA Certificate to be considered Technically Constrained, the certificate shall include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId shall not appear within this extension.
+All Subordinate CA Certificates shall be Technically Constrained.  For a Subordinate CA Certificate to be considered Technically Constrained, the certificate shall include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId shall not appear within this extension.
 
 The Subordinate CA Certificate(s) shall include the id-kp-serverAuth extended key usage, and the Subordinate CA Certificate(s) shall include the Name Constraints X.509v3 extension with constraints on dNSName as follows:
 
-a. For each dNSName in permittedSubtrees, the CA shall confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
+- Shall include at least one dNSName in permittedSubtrees  
+- The permittedSubtrees for dNSName shall be within the constraints of the sTLDs for .gov and .mil
+- The permittedSubtrees for dNSName shall not contain any other dnsName ranges outside of the the .gov or .mil sTLDs
 
-The Subordinate CA Certificate shall include at least one dNSName in permittedSubtrees.  The permittedSubtrees for dNSName shall be within the constraints of the top-level domains for:
+For ipAddress, Subordinate CAs shall not issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate shall:
 
- - gov (DotGov)
- - mil (DotMil)
+- Specify the entire IPv4 and IPv6 address ranges in excludedSubtrees
+- Include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0)
+- Include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0)
 
-The permittedSubtrees for dNSName shall not contain any other dnsName ranges outside of the the DotGov or DotMil top-level domains.
+For DirectoryName, the Subordinate CA certificates shall not have DirectoryName present in Name Constraints.
 
-b. For ipAddress, Subordinate CAs shall not issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate shall specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate shall include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate shall also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0).
-
-c. For DirectoryName, Subordinate CAs shall not issue subscriber certificates with DirectoryName.
-
-A decoded example for issuance to the domain and sub domains of .mil (DotMil) by organization:- Example Department of Defense would be:-
+A decoded example for issuance to the domain and sub domains of .mil by a Subordinate CA would be:-
 
 > X509v3 Name Constraints:  
 >   Permitted:  
@@ -1419,7 +1413,7 @@ A decoded example for issuance to the domain and sub domains of .mil (DotMil) by
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
 
-A decoded example for issuance to the domain and sub domains of both .gov (DotGov) and .mil (DotMil) by organization:- Example Department of Defense would be:-
+A decoded example for issuance to the domain and sub domains of both .gov and .mil by a Subordinate CA would be:
 
 > X509v3 Name Constraints:  
 >   Permitted:  
@@ -1434,19 +1428,29 @@ A decoded example for issuance to the domain and sub domains of both .gov (DotGo
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a **required** means of asserting compliance with the CAB Forum Baseline Requirements as follows:
+The following Certificate Policy identifiers are registered under the National Institute of Standards and Technology (NIST) Computer Science Object Registory (CSOR) OID arc and reserved for use by the U.S. Government for this CP.  These Certificate Policy Identifiers are a required means of asserting compliance with this CP as follows:
+
+- Domain Validated:
+  - { joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) } (2.16.840.1.101.3.2.1.3.43),
+  - if the Certificate complies with this CP but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
+
+- Organization Validated:
+  - {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) organization-validated(44)} (2.16.840.1.101.3.2.1.3.43),
+  - If the Certificate complies with this CP and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
+
+The following Certificate Policy identifiers are registered under the CAB Forum and reserved for use.  These Certificate Policy Identifiers are a required means of asserting compliance with the CAB Forum Baseline Requirements as follows:
 
 - Domain Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
-  - if the Certificate complies with the Baseline Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
+  - If the Certificate complies with the Baseline Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3
 
-If the Certificate assertsthe	policy identifier	of 2.23.140.1.2.1, then it shall not include	organizationName or stateOrProvinceName in the Subject field.	 
 
 - Organization Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2),
-  - if the Certificate complies with the Baseline Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
+  - If the Certificate complies with the Baseline Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it shall also include organizationName, stateorProvinceName and countryName in the Subject field.  All information shall be verified in accordance with Section 3.2.2.1.
+
+If the Certificate asserts the policy identifiers for Domain Validated, then the certificate shall not include organizationName and stateOrProvinceName in the Subject field.  If the Certificate asserts the policy identifiers for Organization Validated, then the certificate shall include organizationName, stateOrProvinceName and countryName in the Subject field.
 
 #### 7.1.6.2. Root CA Certificates
 A Root CA Certificate shall not contain the certificatePolicies extension.
@@ -1454,24 +1458,23 @@ A Root CA Certificate shall not contain the certificatePolicies extension.
 #### 7.1.6.3 Subordinate CA Certificates
 All Subordinate CA's shall be an Affiliate as defined in this CP.
 
-A Certificate issued to a Subordinate CA:
-
-1. shall include the CAB Forum reserved policy object identifiers to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
-2. shall include one of more US Government reserved policy object identifiers defined in Section 1.2 to indicate the Subordinate CA's compliance with this Policy
-
-A Subordinate CA shall represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with the CAB Forum Baseline Requirements are issued and managed in accordance with the CAB Forum Baseline Requirements.
-
-A CA shall represent, in its Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with this Certificate Policy are issued and managed in accordance with this Certificate Policy.
+A Certificate issued to a Subordinate CA shall include:  
+1. One or more of the CAB Forum reserved policy object identifiers in Section 7.1.6.1 to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements, and
+2. One of more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber shall contain one US Government reserved policy object identifiers defined in Section 1.2 in the Certificate's certificatePolicies extension that indicates adherence to and compliance with this Certificate Policy. CAs shall also assert one of the CAB Forum reserved policy object identifiers identified in Section 1.2 in such Certificates.
+A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
+1. One US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
+1. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
 
-Subscriber certificates shall contain certificate policy identifier(s) for either Domain Validated policies or Organization Validated policies but shall not assert certificate policy identifiers for both.
+The certificates shall contain certificate policy identifier(s) for either Domain Validated policies or Organization Validated policies but shall not assert certificate policy identifiers for both.
 
-The CA shall document in its CPS that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this Certificate Policy.
+The CA shall document in its CPS that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this CP.
+
+Delegated OCSP Responder Certificates shall contain all the certificate policy OIDs defined in Section 7.1.6.1 for all certificates issued by the CA and covered by the OCSP responses.
 
 ### 7.1.7 Usage of Policy Constraints extension
-Subordinate CAs may assert policy constraints in the CA certificates.
+Subordinate CA certificates may assert policy constraints.
 
 ### 7.1.8 Policy qualifiers syntax and semantics
 Certificates issued under this CP may contain policy qualifiers.
@@ -1480,65 +1483,16 @@ Certificates issued under this CP may contain policy qualifiers.
 Certificates issued under this policy shall not contain a critical certificate policies extension.
 
 ## 7.2 CRL profile
+Certificate Revocation Lists (CRLs) created by a CA under this policy shall conform to the Certificate Revocation List extensions profile included as Appendix D.
 
 ### 7.2.1 Version number(s)
-The CAs shall issue X.509 Version Two (2) CRLs.
-
-### 7.2.2 CRL and CRL entry extensions
-**a. reasonCode (required)**  
-**Required/Optional:** Required  
-This entry extension shall be present. The reasonCode value shall be populated in accordance with Section 4.9.1 for revocation reasons encompassing Key Compromise (reasonCode: keyCompromise) or CA Compromise (reasonCode: cACompromise).
+The CAs shall issue X.509 version two (v2) CRLs.
 
 ## 7.3 OCSP profile
+OCSP Responses under this policy shall conform to the OCSP Response profile profile included as Appendix D.
 
 ### 7.3.1 Version number(s)
-OCSP Responders operated under this policy shall use OCSP version 1.
-
-### 7.3.2 OCSP extensions
-This section specifies the additional requirements for Certificate contents for Online Certificate Status Protocol certificates, and extensions for OCSP status server extension and responses.
-
-**a. certificatePolicies (required)**
-**Required/Optional:** Required  
-
-This extension shall be present and shall not be marked critical.
-
-**certificatePolicies:policyIdentifier (required)**  
-**Required/Optional:** Required  
-The certificate shall include at least one certificate policy OID defined or listed in Section 1.2 of this CP and shall include all the certificate policy OIDs for all certificates issued by the Issuing CA and covered by the OCSP responses
-
-
-**certificatePolicies:policyQualifiers:policyQualifierId (optional)**  
-**Required/Optional:** Optional  
-The extension should be present and is Recommended.  
-  - id-qt 1 [RFC 5280].
-
-**certificatePolicies:policyQualifiers:qualifier:cPSuri (optional)**  
-**Required/Optional:** Optional  
-HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
-
-**b. authorityInformationAccess (required)**  
-**Required/Optional:** Required  
-This extension shall be present. It shall not be marked critical, and it shall contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It shall also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
-
-**c. basicConstraints**  
-**Required/Optional/Prohibited:** Prohibited  
-This extension shall not be present.
-
-**d. keyUsage (required)**  
-**Required/Optional:** Required  
-This extension shall be present. It shall be marked critical.
-
-Certificates used for signing certificate status services (online certificate status protocol) shall include the value digitalSignature.
-
-Other values shall not be present.
-
-**e. extKeyUsage (required)**  
-**Required/Optional:** Required
-This extension shall be present. It shall be marked critical.  
-
-It shall contain the value id-kp-OCSPSigning {1 3 6 1 5 5 7 3 9}.  
-
-Other values shall not be present.  
+OCSP responses operated under this policy shall use OCSP version 1.
 
 # 8. COMPLIANCE AUDIT AND OTHER ASSESSMENTS
 
@@ -1730,14 +1684,6 @@ The FPKIPA is responsible for monitoring source requirements, and initiating nec
 
 After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
-<<<<<<< HEAD
-<<<<<<< 971515f870f94edf1a6c16f3de4605cfd0068a70
-=======
-=======
->>>>>>> 5fb4918c708e9513b2f768b677888a6f23d05700
-
-
->>>>>>> modifying section 7 to include certificate profiles directly and replacing text
 ### 9.12.2 Notification mechanism and period
 
 ### 9.12.3 Circumstances under which OID shall be changed
@@ -2018,6 +1964,8 @@ RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status P
 
 RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.
 
+RFC5752, Request for Comments: 5752, Multiple Signatures in Cryptographic Message Syntax (CMS), Turner et al, January 2010.
+
 RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, et al, January 2013.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
@@ -2025,28 +1973,28 @@ WebTrust for Certification Authorities, SSL Baseline with Network Security, Vers
 X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
 # Appendix D: Certificate Profiles
-This section specifies the X.509 version 3 certificate and version 2 certificate revocation list (CRL) profiles for the U.S. Federal Public Trust TLS PKI Certificate Policy.  In cases where the profiles and Section 7 of this CP are in conflict, Section 7 takes precedence and is authoritative.
+This section specifies the X.509 version 3 certificate profiles, version 2 Certificate Revocation List (CRL) profile, and Online Certificate Status Protocol (OCSP) Response profile for the U.S. Federal Public Trust TLS PKI Certificate Policy.  In cases where the profiles and Section 7 of this CP are in conflict, Section 7 takes precedence and is authoritative.
 
 Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.  This Certificate Policy defines five (5) different types of certificates (See Section 1.1.3) and four associated certificate profiles.  
 
-| **Category** | **Certificate Type**  | **Certificate Profile**  |
+| **Category** | **Certificate Type**  | **Profile**  |
 | :-------- | :----------------------- | :----------------------- |
-| CA Certificate | Root CA Certificate | Appendix D-1 Self-Signed Root CA Certificate Profile |  
-| CA Certificate | Subordinate CA Certificate | Appendix D-2 Subordinate CA Certificate Profile |
-| Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Appendix D-3 Server Authentication Certificate Profile |
-| Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Appendix D-3 Server Authentication Certificate Profile |
-| Subscriber Certificate | Delegated OCSP Responder Certificates |  Appendix D-4 Delegated OCSP Responder Certificate Profile |
+| CA Certificate | Root CA Certificate | Appendix D-1: Self-Signed Root CA Certificate Profile |  
+| CA Certificate | Subordinate CA Certificate | Appendix D-2: Subordinate CA Certificate Profile |
+| Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Appendix D-3: Server Authentication Certificate Profile |
+| Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Appendix D-3: Server Authentication Certificate Profile |
+| Subscriber Certificate | Delegated OCSP Responder Certificates |  Appendix D-4: Delegated OCSP Responder Certificate Profile |
 
-In addition, there are two profiles covering the OCSP _Responses_ and the Certificate Revocation Lists.
+There are two profiles covering the Certificate Revocation Lists and OCSP Responses.
 
 | **Type** | **Profile**  |
 | :-------- | :----------------------- |
-| Online Certificate Status Protocol (OCSP) Responses | Appendix D-5 OCSP Response Profile |  
-| Certificate Revocation List |  Appendix D-6 CRL Profile |
+| Certificate Revocation Lists |  Appendix D-5: CRL Profile |
+| Online Certificate Status Protocol (OCSP) Responses | Appendix D-6: OCSP Response Profile |
 
 {% include_relative certificate-profile-root-CA.md %}  
 {% include_relative certificate-profile-subordinate-CA.md %}  
 {% include_relative certificate-profile-server-authentication.md %}  
 {% include_relative certificate-profile-OCSP-responder.md %}
-{% include_relative ocsp-response-profile.md %}  
 {% include_relative crl-profile.md %}
+{% include_relative ocsp-response-profile.md %}
