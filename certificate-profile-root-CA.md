@@ -12,7 +12,7 @@
 
 | **Extension** |  **Required**   | **Critical** | **Value and Requirements** |
 | :-------- | :----------------|:----------------|:----------------|
-| subjectInfoAccess  | Mandatory | False |  id-ad-caRepository (1.3.6.1.5.5.7.48.5):<br>At least one instance of this access method shall be included.  All instances of this access method shall include the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found.  The certificate artifact(s) served by this HTTP accessible location shall be either a single DER encoded certificate, or a BER or DER encoded "certs-only" CMS message as specified in [RFC5752]. |
+| subjectInfoAccess  | Mandatory | False |  id-ad-caRepository (1.3.6.1.5.5.7.48.5):<br>At least one instance of this access method shall be included.  All instances of this access method shall include the HTTP URI name form to specify an HTTP accessible location containing a BER or DER encoded “certs-only” CMS message as specified in [RFC5272]. |
 | basicConstraints   | Mandatory | True |  cA=True <br> The pathLenConstraint field shall not be present. |
 | subjectKeyIdentifier | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
 | keyUsage   | Mandatory | True | Bit positions for keyCertSign and cRLSign shall be set. <br> If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit shall also be set.|   
