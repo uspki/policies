@@ -496,8 +496,7 @@ All Domain Validation TLS Server Authentication certificates and Organizational 
 
 There is no limit on the maximum number of CT Logs which may be submitted to.  
 
-The CA shall include at least the same number and variety of SCTs in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
-
+The CA shall include at least two (2) SCTs meeting the variety requirements in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
