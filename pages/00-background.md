@@ -29,7 +29,7 @@ This Certificate Policy was developed for Federal Government missions and attemp
 - [Microsoft Trust Store Program](https://technet.microsoft.com/en-us/library/cc751157.aspx){:target="_blank"}
 - [Apple Trust Store Program](https://www.apple.com/certificateauthority/ca_program.html){:target="_blank"}
 - [Mozilla Community and Trust Store Program](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/){:target="_blank"}
-- [Google Chromium](https://sites.google.com/a/chromium.org/dev/Home/chromium-security/certificate-transparency){:target="_blank"}
+- [Google Chromium](https://www.chromium.org/Home/chromium-security/certificate-transparency){:target="_blank"}
 - Federal Government security requirements, standards and missions
 
 This Certificate Policy was scoped to encompass:
