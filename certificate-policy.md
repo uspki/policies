@@ -1938,7 +1938,7 @@ Proposed changes to this CP shall be distributed electronically to FPKIPA member
 No stipulation. 
 
 ## 9.13 Dispute resolution 
-The FPKIPA shall facilitate the resolution between entities when conflicts arise as a result of the use of certificates issued under this policy.  If a dispute is between U.S. Federal government entities, and the FPKIPA is unable to facilitate resolution, dispute resolution may be escalated to the Office of Management and Budget or to the U.S. Department of Justice, Office of Legal Counsel as necessary.
+The FPKIPA shall facilitate the resolution between entities when conflicts arise as a result of the use of certificates issued under this policy.  If a dispute is between U.S. Federal government entities, and the FPKIPA is unable to facilitate resolution, dispute resolution may be escalated to the White House Office of Management and Budget or to the U.S. Department of Justice, Office of Legal Counsel as necessary.
 
 ## 9.14 Governing law
 The construction, validity, performance and effect of certificates issued under this CP for all purposes shall be governed by United States Federal law (statute, case law, or regulation).
