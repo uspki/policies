@@ -1401,7 +1401,6 @@ The Subordinate CA Certificate(s) shall include the id-kp-serverAuth extended ke
 
 For ipAddress, Subordinate CAs shall not issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate shall:
 
-
 - Specify the entire IPv4 and IPv6 address ranges in excludedSubtrees
 - Include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0)
 - Include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0)
@@ -1468,6 +1467,7 @@ A Certificate issued to a Subordinate CA shall include:
 
 #### 7.1.6.4 Subscriber Certificates
 A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
+
 1. One US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
 1. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
 
@@ -1493,7 +1493,7 @@ Certificate Revocation Lists (CRLs) created by a CA under this policy shall conf
 The CAs shall issue X.509 version two (v2) CRLs.
 
 ## 7.3 OCSP profile
-OCSP Responses under this policy shall conform to the OCSP Response profile profile included as Appendix D.
+OCSP Responses under this policy shall conform to the OCSP Response profile included as Appendix D.
 
 ### 7.3.1 Version number(s)
 OCSP responses operated under this policy shall use OCSP version 1.
