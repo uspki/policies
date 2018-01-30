@@ -31,25 +31,25 @@ This Certificate Policy conforms to the current version of the Baseline Requirem
 ## 1.1.3 Certificate Types
 This Certificate Policy defines five (5) different types of certificates.  Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.
 
-### 1.1.2.1 CA Certificates
+### 1.1.3.1 CA Certificates
 A certificate is a CA certificate if the basicConstraints extension is present and has cA:TRUE.  CA certificates allowed to be issued under this policy are categorized as Root CA certificates and Subordinate CA certificates.
 
-### 1.1.2.1.1 Root CA Certificates
-A CA certificate is a Root CA certificate if it is certificate in which the issuer and subject are the same and the digital signature may be verified by the public key bound into the certificate.  
+### 1.1.3.1.1 Root CA Certificates
+A CA certificate is a Root CA certificate if the certificate’s issuer and subject are the same and the digital signature may be verified by the public key bound into the certificate.  
 
-### 1.1.2.1.2 Subordinate CA Certificates
-A CA certificate is a Subordinate CA certificate if it a certificate in which the issuer and the subject are not the same.  Subordinate CA certificates, issued under this policy, have a Path Length Constraint set to zero (0) and Name Constraints specifying permitted dnsName sub-trees only for the .gov and .mil Top Level Domains.    
+### 1.1.3.1.2 Subordinate CA Certificates
+A CA certificate is a Subordinate CA certificate if if the certificate’s issuer and the subject are not the same.  Subordinate CA certificates, issued under this policy, have a Path Length Constraint set to zero (0) and Name Constraints specifying permitted dnsName sub-trees only for the .gov and .mil Top Level Domains.    
 
-### 1.1.2.2 Subscriber Certificates
+### 1.1.3.2 Subscriber Certificates
 A certificate is a Subscriber certificate if it is not a CA Certificate.  Subscriber certificates are end entity certificates as defined in RFC5280 and issued to subjects that are not authorized to issue certificates. Subscriber certificates allowed to be issued under this policy are categorized as Domain Validation TLS Server Authentication certificates, Organization Validation TLS Server Authentication certificates, or Delegated OCSP Responder signing certificatess.  CAs shall not issue Subscriber Certificates that simultaneously meet the criteria of more than one of these categories.  
 
-### 1.1.2.2.1 Domain Validation TLS Server Authentication Certificates
+### 1.1.3.2.1 Domain Validation TLS Server Authentication Certificates
 A Domain Validation TLS Server Authentication, issued under this policy: i) does not contain any information in the subject distinguished name other than commonName (OID 2.5.4.3) and countryName (OID 2.5.4.6), and ii) asserts a key purpose of id-kp-serverAuth (OID 1.3.6.1.5.5.7.3.1) in the Extended Key Usage certificate extension.
 
-### 1.1.2.2.2 Organization Validation TLS Server Authentication Certificates
+### 1.1.3.2.2 Organization Validation TLS Server Authentication Certificates
 An Organization Validation TLS Server Authentication certificate, issued under this policy: i) contains commonName (OID 2.5.4.3), stateOrProvinceName (OID 2.5.4.8), organizationName (OID 2.5.4.10) and countryName (OID 2.5.4.6) in the subject distinguished name, and ii) asserts a key purpose of id-kp-serverAuth (OID 1.3.6.1.5.5.7.3.1) in the Extended Key Usage certificate extension.
 
-### 1.1.2.2.3 Delegated OCSP Responder Certificates
+### 1.1.3.2.3 Delegated OCSP Responder Certificates
 A certificate is a Delegated OCSP Responder Certificate if it has a key purpose of id-kp-OCSPSigning (OID 1.3.6.1.5.5.7.3.9) in the Extended Key Usage certificate extension.
 
 ## 1.2 Document name and identification
@@ -59,8 +59,8 @@ The following Certificate Policy identifiers are registered by the U.S. Governme
 
 | OID | Purpose |   
 | :--- | :--- |  
-| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.M) | Domain Validation TLS Server Authentication Certificates |  
-| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) } (2.16.840.1.101.3.2.1.N) | Organization Validation TLS Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) } (2.16.840.1.101.3.2.1.3.43) | Domain Validation TLS Server Authentication Certificates |  
+| {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) organization-validated(44) } (2.16.840.1.101.3.2.1.3.44) | Organization Validation TLS Server Authentication Certificates |  
 
 The following Certificate Policy identifiers are registered by the CAB Forum and reserved for use by CAs as a means of asserting compliance with the Baseline Requirements:
 
@@ -215,14 +215,14 @@ Each CA shall disclose the following information through a publicly accessible R
 CPS documents and Audit Letters shall not be redacted.  
 
 Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA can be found at:  
-- https://valid.pki.gov  
-- https://revoked.pki.gov  
-- https://expired.pki.gov  
+- https://valid.tlsroot.pki.gov  
+- https://revoked.tlsroot.pki.gov  
+- https://expired.tlsroot.pki.gov  
 
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
-Root CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
+Root CA(s) and Subordinate CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
