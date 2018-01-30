@@ -1786,122 +1786,134 @@ During the period in which a Subordinate CA issues Certificates, the Root CA sha
 ## 9.1 Fees
 
 ### 9.1.1 Certificate issuance or renewal fees
+No stipulation.
 
 ### 9.1.2 Certificate access fees
+Section 2 of this policy requires that Repositories including CA Certificates are publicly available.  CAs operating under this policy shall not charge additional fees for access to CA Certificates.
 
 ### 9.1.3 Revocation or status information access fees
+Section 2 of this policy requires that Repositories including certificate status services (CRLs and OCSP) are publicly available.  CAs operating under this policy shall not charge additional fees for access to CRLs and OCSP services.
+
+CAs shall not charge Subscribers a fee to revoke a certificate. 
 
 ### 9.1.4 Fees for other services
+No stipulation.
 
 ### 9.1.5 Refund policy
+No stipulation.
 
 ## 9.2 Financial responsibility
+This CP contains no limits on the use of certificates issued by CAs under this policy.  Rather, entities, acting as relying parties, shall determine what financial limits, if any, they wish to impose for certificates used to consummate a transaction.
 
 ### 9.2.1 Insurance coverage
+No stipulation.
 
 ### 9.2.2 Other assets
+No stipulation.
 
 ### 9.2.3 Insurance or warranty coverage for end-entities
+No stipulation.
 
 ## 9.3 Confidentiality of business information
+CA information not requiring protection shall be made publicly available. 
 
 ### 9.3.1 Scope of confidential information
+No stipulation.
 
 ### 9.3.2 Information not within the scope of confidential information
+No stipulation.
 
 ### 9.3.3 Responsibility to protect confidential information
+A CA shall not disclose non-certificate information to any third party unless authorized by this policy, required by U.S. law, U.S. government rule or regulation, or order of a U.S. court of competent jurisdiction.  The contents of the archives maintained by CAs operating under this policy shall not be released except as required by this policy, required by U.S. law, U.S. government rule or regulation, or order of a U.S court of competent jurisdiction.  The FPKI Policy Authority must authenticate any request for release of information.
 
 ## 9.4 Privacy of personal information
 
 ### 9.4.1 Privacy plan
+CAs shall conduct a Privacy Threshold Assessment, and implement and maintain any required Privacy Impact Assessments and Privacy Plans in accordance with the requirements of the Privacy Act of 1974, as amended. 
 
 ### 9.4.2 Information treated as private
+The CAs shall protect any subscriber personally identifying information from unauthorized disclosure.  
+
+Records of individual transactions may be released upon request of any subscribers.  
 
 ### 9.4.3 Information not deemed private
+Information included in certificates and certificate status information are not private information and are not subject to the protections outlined in Section 9.4.2.
 
 ### 9.4.4 Responsibility to protect private information
+Sensitive information shall be stored securely, and may be released only in accordance with other stipulations in section 9.4.
 
 ### 9.4.5 Notice and consent to use private information
+The CA is not required to provide any notice or obtain the consent of the Subscriber in order to release private information in accordance with other stipulations of section 9.4.
 
 ### 9.4.6 Disclosure pursuant to judicial or administrative process
+The FPKIPA or CAs shall not disclose private information to any third party unless authorized by this policy, required by law, government rule or regulation, or order of a court of competent jurisdiction.  Any request for release of information shall be processed according to 41 CFR 105-60.605.
 
 ### 9.4.7 Other information disclosure circumstances
+None. 
 
 ## 9.5 Intellectual property rights
+The FPKIPA and CAs will not knowingly violate intellectual property rights held by others. 
 
 ## 9.6 Representations and warranties
 
 ### 9.6.1 CA representations and warranties
-By issuing a Certificate, the CA makes the certificate warranties listed herein to the following Certificate Beneficiaries:
+CAs shall warrant that their procedures are implemented in accordance with this CP and that all certificates issued were issued in accordance with the stipulations of this policy.
 
-1. The Subscriber that is a party to the Subscriber Agreement or Terms of Use for the Certificate;
-2. All Application Software Suppliers with whom the Root CA has entered into a contract for inclusion of its Root Certificate in software distributed by such Application Software Supplier; and
-3. All Relying Parties who reasonably rely on a Valid Certificate.
-The CA represents and warrants to the Certificate Beneficiaries that, during the period when the Certificate is valid, the CA has complied with these Requirements and its Certificate Policy and/or Certification Practice Statement in issuing and managing the Certificate.
+A CA that issues certificates under this policy shall conform to the stipulations of this policy, including:
 
-The Certificate Warranties specifically include, but are not limited to, the following:
-
-1. **Right to Use Domain Name or IP Address**: That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Applicant either had the right to use, or had control of, the Domain Name(s) and IP address(es) listed in the Certificate's subject field and subjectAltName extension (or, only in the case of Domain Names, was delegated such right or control by someone who had such right to use or control); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-2. **Authorization for Certificate**: That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Subject authorized the issuance of the Certificate and that the Applicant Representative is authorized to request the Certificate on behalf of the Subject; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-3. **Accuracy of Information**: That, at the time of issuance, the CA (i) implemented a procedure for verifying the accuracy of all of the information contained in the Certificate (with the exception of the subject:organizationalUnitName attribute); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-4. **No Misleading Information**: That, at the time of issuance, the CA (i) implemented a procedure for reducing the likelihood that the information contained in the Certificate's subject:organizationalUnitName attribute would be misleading; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-5. **Identity of Applicant**: That, if the Certificate contains Subject Identity Information, the CA (i) implemented a procedure to verify the identity of the Applicant in accordance with Sections 3.2 and 11.2; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-6. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative acknowledged the Terms of Use;
-7. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
-8. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
-
-The Root CA shall be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates
-
+- Providing to the FPKIPA a CPS, as well as any subsequent changes, for conformance assessment
+- Ensuring a Terms of Service or Subscriber Agreement is agreed to with the Subscribers
+- Maintaining its operations in conformance to the stipulations of the approved CPS.
+- Including only valid and appropriate information in certificates
+- Maintaining evideence that due diligence was exercised in validating the information contained in the certificates.
+- Revoking the certificates of subscribers found to have acted in a manner counter to their obligations in accordance with section 9.6.3
+ - Operating or providing for the services of an on-line repository, and informing the repository service provider of their obligations if applicable.
 
 ### 9.6.2 RA representations and warranties
-No stipulation.
+An RA, as the party described in Section 1.3.4, may perform registration functions as described in this policy.  An RA  shall comply with the stipulations of this policy, and comply with the CA CPS approved by the FPKIPA for use with this policy.  An RA who is found to have acted in a manner inconsistent with these obligations is subject to revocation of RA responsibilities.  
 
 ### 9.6.3 Subscriber representations and warranties
 The CA shall require, as part of the Subscriber Agreement or Terms of Use, that the Applicant make the commitments and warranties in this section for the benefit of the CA and the Certificate Beneficiaries.
 
-Prior to the issuance of a Certificate, the CA shall obtain, for the express benefit of the CA and the Certificate Beneficiaries, either:
+A Subscriber shall be required to sign a document containing the requirements the subscriber shall meet respecting protection of the private key and use of the certificate before being issued the certificate. The Subscriber Agreement or Terms of Use shall require the Subscriber to:
 
-1. The Applicant's agreement to the Subscriber Agreement with the CA, or
-2. The Applicant's acknowledgement of the Terms of Use.
+- Provide accurate and complete information in the transactions with the CA
+- Protect the private key(s) at all times, in accordance with this policy
+- Promptly notify the CA upon suspicion of loss or compromise of the private key(s)
+- Cease use of the private key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise
+- Abide by all the terms, conditions, and restrictions levied on the use of their private key(s) and certificate(s)
+- Use certificates provided by the CA’s only for transactions related to U.S. Government business 
 
-The CA shall implement a process to ensure that each Subscriber Agreement or Terms of Use is legally enforceable against the Applicant. In either case, the Agreement shall apply to the Certificate to be issued pursuant to the certificate request. The CA may use an electronic or "click-through" Agreement provided that the CA has determined that such agreements are legally enforceable. A separate Agreement may be used for each certificate request, or a single Agreement may be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
-
-The Subscriber Agreement or Terms of Use shall contain provisions imposing on the Applicant itself (or made by the Applicant on behalf of its principal or agent under a subcontractor or hosting service relationship) the following obligations and warranties:
-
-1. **Accuracy of Information**: An obligation and warranty to provide accurate and complete information at all times to the CA, both in the certificate request and as otherwise requested by the CA in connection with the issuance of the Certificate(s) to be supplied by the CA;
-2. **Protection of Private Key**: An obligation and warranty by the Applicant to take all reasonable measures to assure control of, keep confidential, and properly protect at all times the Private Key that corresponds to the Public Key to be included in the requested Certificate(s) (and any associated activation data or device, e.g. password or token);
-3. **Acceptance of Certificate**: An obligation and warranty that the Subscriber will review and verify the Certificate contents for accuracy;
-4. **Use of Certificate**: An obligation and warranty to install the Certificate only on servers that are accessible at the subjectAltName(s) listed in the Certificate, and to use the Certificate solely in compliance with all applicable laws and solely in accordance with the Subscriber Agreement or Terms of Use;
-5. **Reporting and Revocation**: An obligation and warranty to: (a) promptly request revocation of the Certificate, and cease using it and its associated Private Key, if there is any actual or suspected misuse or compromise of the Subscriber’s Private Key associated with the Public Key included in the Certificate, and (b) promptly request revocation of the Certificate, and cease using it, if any information in the Certificate is or becomes incorrect or inaccurate;
-6. **Termination of Use of Certificate**: An obligation and warranty to promptly cease all use of the Private Key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise.
-7. **Responsiveness**: An obligation to respond to the CA's instructions concerning Key Compromise or Certificate misuse within a specified time period.
-8. **Acknowledgment and Acceptance**: An acknowledgment and acceptance that the CA is entitled to revoke the certificate immediately if the Applicant were to violate the terms of the Subscriber Agreement or Terms of Use or if the CA discovers that the Certificate is being used to enable criminal activities such as phishing attacks, fraud, or the distribution of malware.
+The CA may use an electronic or "click-through" agreements provided that the CA has determined that such agreements are legally enforceable. A separate agreement may be used for each certificate request, or a single agreement may be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
 
 ### 9.6.4 Relying party representations and warranties
+This CP does not specify the steps a relying party should take to determine whether to rely upon a certificate.  The relying party decides, pursuant to its own policies, what steps to take. 
 
 ### 9.6.5 Representations and warranties of other participants
+No stipulation.
 
 ## 9.7 Disclaimers of warranties
+CAs operating under this policy may not disclaim any responsibilities described in this CP.
 
 ## 9.8 Limitations of liability
-For delegated tasks, the CA and any Delegated Third Party may allocate liability between themselves contractually as they determine, but the CA shall remain fully responsible for the performance of all parties in accordance with these Requirements, as if the tasks had not been delegated.
-
-If the CA has issued and managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA may disclaim liability to the Certificate Beneficiaries or any other third parties for any losses suffered as a result of use or reliance on such Certificate beyond those specified in the CA's Certificate Policy and/or Certification Practice Statement. If the CA has not issued or managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA may seek to limit its liability to the Subscriber and to Relying Parties, regardless of the cause of action or legal theory involved, for any and all claims, losses or damages suffered as a result of the use or reliance on such Certificate by any appropriate means that the CA desires. If the CA chooses to limit its liability for Certificates that are not issued or managed in compliance with these Requirements or its Certificate Policy and/or Certification Practice Statement, then the CA shall include the limitations on liability in the CA's Certificate Policy and/or Certification Practice Statement.
+The U.S. Government shall not be liable to any party, except as determined pursuant to the Federal Tort Claims Act (FTCA), 28 U.S.C. 2671-2680, or as determined through a valid express written contract between the Government and another party.
 
 ## 9.9 Indemnities
-
-Notwithstanding any limitations on its liability to Subscribers and Relying Parties, the CA understands and acknowledges that the Application Software Suppliers who have a Root Certificate distribution agreement in place with the Root CA do not assume any obligation or potential liability of the CA under these Requirements or that otherwise might exist because of the issuance or maintenance of Certificates or reliance thereon by Relying Parties or others. Thus, except in the case where the CA is a government entity, the CA shall defend, indemnify, and hold harmless each Application Software Supplier for any and all claims, damages, and losses suffered by such Application Software Supplier related to a Certificate issued by the CA, regardless of the cause of action or legal theory involved. This does not apply, however, to any claim, damages, or loss suffered by such Application Software Supplier related to a Certificate issued by the CA where such claim, damage, or loss was directly caused by such Application Software Supplier's software displaying as not trustworthy a Certificate that is still valid, or displaying as trustworthy: (1) a Certificate that has expired, or (2) a Certificate that has been revoked (but only in cases where the revocation status is currently available from the CA online, and the application software either failed to check such status or ignored an indication of revoked status).
+No stipulation. 
 
 ## 9.10 Term and termination
 
 ### 9.10.1 Term
+This CP becomes effective when approved by the FPKIPA.  This CP has no specified term.
 
 ### 9.10.2 Termination
+Termination of this CP is at the discretion of the FPKIPA. 
 
 ### 9.10.3 Effect of termination and survival
+The requirements of this CP remain in effect through the end of the archive period for the last certificate issued.
 
 ## 9.11 Individual notices and communications with participants
-The FPKIPA will be notified of any change in management or operational control of a CA.
+The FPKIPA shall establish appropriate procedures for communications with CAs operating under this policy via memoranda of agreement as applicable. 
 
 ## 9.12 Amendments
 
@@ -1915,39 +1927,44 @@ The review and update shall include any changes needed to address source require
 - Trust store operator requirements
 - Browser software vendor requirements
 
-The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes.
+The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes.  After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
-After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
+Errors, updates, or suggested changes to this CP can be communicated to the contact in Section 1.5.2.  Such communication shall include a description of the change, a change justification, and contact information for the person requesting the change. 
 
 ### 9.12.2 Notification mechanism and period
+Proposed changes to this CP shall be distributed electronically to FPKIPA members and observers in accordance with the Charter and By-laws, and posted publicly for review by any interested party.  The FPKIPA shall make any subsequent changes publicly available within 30 days of approval (see Section 2.3). 
 
 ### 9.12.3 Circumstances under which OID shall be changed
+No stipulation. 
 
-## 9.13 Dispute resolution provisions
+## 9.13 Dispute resolution 
+The FPKIPA shall facilitate the resolution between entities when conflicts arise as a result of the use of certificates issued under this policy.  If a dispute is between U.S. Federal government entities, and the FPKIPA is unable to facilitate resolution, dispute resolution may be escalated to the White House Office of Management and Budget or to the U.S. Department of Justice, Office of Legal Counsel as necessary.
 
 ## 9.14 Governing law
+The construction, validity, performance and effect of certificates issued under this CP for all purposes shall be governed by United States Federal law (statute, case law, or regulation).
 
 ## 9.15 Compliance with applicable law
+All CAs operating under this policy are required to comply with applicable law.
 
 ## 9.16 Miscellaneous provisions
 
 ### 9.16.1 Entire agreement
+No stipulation.
 
 ### 9.16.2 Assignment
+No stipulation.
 
 ### 9.16.3 Severability
-
-In the event of a conflict between these Requirements and a law, regulation or government order (hereinafter 'Law') of any jurisdiction in which a CA operates or issues certificates, a CA may modify any conflicting requirement to the minimum extent necessary to make the requirement valid and legal in the jurisdiction. This applies only to operations or certificate issuances that are subject to that Law. In such event, the CA shall immediately (and prior to issuing a certificate under the modified requirement) include in Section 9.16.3 of the CA's CPS a detailed reference to the Law requiring a modification of these Requirements under this section, and the specific modification to these Requirements implemented by the CA.
-
-The CA shall also (prior to issuing a certificate under the modified requirement) notify the CAB Forum of the relevant information newly added to its CPS by sending a message to questions@cabforum.org and receiving confirmation that it has been posted to the Public Mailing List and is indexed in the Public Mail Archives available at https://cabforum.org/pipermail/public/ (or such other email addresses and links as the Forum may designate), so that the CAB Forum may consider possible revisions to these Requirements accordingly.
-
-Any modification to CA practice enabled under this section shall be discontinued if and when the Law no longer applies, or these Requirements are modified to make it possible to comply with both them and the Law simultaneously. An appropriate change in practice, modification to the CA's CPS and a notice to the CAB Forum, as outlined above, shall be made within 90 days.
+Should it be determined that one section of this CP is incorrect or invalid, the other sections of this CP shall remain in effect until the CP is updated. The process for updating this CP is described in Section 9.12. 
 
 ### 9.16.4 Enforcement (attorneys' fees and waiver of rights)
+No stipulation.
 
 ### 9.16.5 Force Majeure
+No stipulation.
 
 ## 9.17 Other provisions
+No stipulation.
 
 
 # Appendix A: Definitions
