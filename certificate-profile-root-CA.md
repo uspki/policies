@@ -1,4 +1,4 @@
-## Appendix D-1: Self-Signed Root CA Certificate Profile
+## Self-Signed Root CA Certificate Profile
 
 | **Field** | **Value and Requirements**  |
 | :-------- |  :-------------------------------     |

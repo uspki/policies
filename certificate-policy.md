@@ -1990,18 +1990,18 @@ Certificates issued under this policy are categorized as CA Certificates or Subs
 
 | **Category** | **Certificate Type**  | **Profile**  |
 | :-------- | :----------------------- | :----------------------- |
-| CA Certificate | Root CA Certificate | Appendix D-1: Self-Signed Root CA Certificate Profile |  
-| CA Certificate | Subordinate CA Certificate | Appendix D-2: Subordinate CA Certificate Profile |
-| Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Appendix D-3: Server Authentication Certificate Profile |
-| Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Appendix D-3: Server Authentication Certificate Profile |
-| Subscriber Certificate | Delegated OCSP Responder Certificates |  Appendix D-4: Delegated OCSP Responder Certificate Profile |
+| CA Certificate | Root CA Certificate | Self-Signed Root CA Certificate Profile |  
+| CA Certificate | Subordinate CA Certificate | Subordinate CA Certificate Profile |
+| Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
+| Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
+| Subscriber Certificate | Delegated OCSP Responder Certificates |  Delegated OCSP Responder Certificate Profile |
 
 There are two profiles covering the Certificate Revocation Lists and OCSP Responses.
 
 | **Type** | **Profile**  |
 | :-------- | :----------------------- |
-| Certificate Revocation Lists |  Appendix D-5: CRL Profile |
-| Online Certificate Status Protocol (OCSP) Responses | Appendix D-6: OCSP Response Profile |
+| Certificate Revocation Lists |  CRL Profile |
+| Online Certificate Status Protocol (OCSP) Responses | OCSP Response Profile |
 
 {% include_relative certificate-profile-root-CA.md %}  
 {% include_relative certificate-profile-subordinate-CA.md %}  

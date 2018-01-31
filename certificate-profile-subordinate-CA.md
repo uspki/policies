@@ -1,4 +1,4 @@
-## Appendix D-2: Subordinate CA Certificate Profile
+## Subordinate CA Certificate Profile
 
 | **Field** |**Value**                             |
 | :-------- | :-------------------------------     |

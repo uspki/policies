@@ -1,4 +1,4 @@
-## Appendix D-6: OCSP Response Profile
+## OCSP Response Profile
 OCSP Responders under this profile are expected to operate using the Static Response model described in RFC 6960 and thus will not support nonce.
 
 | **Field** | **Value and Requirements** |
