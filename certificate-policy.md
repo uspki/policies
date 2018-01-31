@@ -222,7 +222,7 @@ Web pages that allow for testing certificate validation up to the U.S. Federal P
 ## 2.3 Time or frequency of publication
 The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
-Root CA(s) and Subordinate CA(s) shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
+Each CA shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
 Each CA shall publish CRLs in accordance with Section 4.9.7.
 
@@ -236,14 +236,12 @@ Each CA shall make its Repository publicly available in a read-only manner.  Rep
 ### 3.1.1 Types of names
 This policy restricts the subject names of CAs.  CAs that issue certificates under this policy shall have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the FPKIPA.   
 
-End-entity certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7 and the certificate profiles.
+End-entity certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7 and the certificate profiles in Appendix D.
 
 ### 3.1.2 Need for names to be meaningful
 End-entity certificates issued under this policy shall have a common name that is one of the domain names validated in accordance with Section 3.2.2.4.
 
 ### 3.1.3 Anonymity or pseudonymity of subscribers
-Subscribers are not identified in Domain Validation TLS Server Authentication certificates. Only the country (US) and domain name is included in the subject information.
-
 Subscribers are partially identified in Organization Validation TLS Server Authentication certificates.  The organization and location of the U.S. Government are included in the subject information. All Organization Validation TLS Server Authentication certificates only include an organization of U.S. Government and no additional organizational unit information.
 
 Relying parties should consider certificates to be issued by the U.S. Government for U.S. Government assets and all Subscribers to be affiliated with the U.S. Government.  
@@ -256,9 +254,7 @@ The common name attribute for CA Certificates shall be unique from all other CA 
 There is no stipulation for the uniqueness of the Subject information in Subscriber certificates. 
 
 ### 3.1.6 Recognition, authentication, and role of trademarks
-CAs shall not issue a certificate that knowingly infringes any trademark.
-
-The FPKIPA shall resolve disputes involving names and trademarks.
+CAs shall not issue a certificate that knowingly infringes any trademark.  The FPKIPA shall resolve disputes involving names and trademarks.
 
 ## 3.2 Initial identity validation
 
@@ -302,7 +298,7 @@ All CAs shall verify the inclusion of subject:countryName in Subscriber certific
 - information provided by the Domain Name Registrar
 
 #### 3.2.2.4 Validation of Domain Authorization or Control
-CAs shall confirm that, as of the date the Certificate issues, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
+CAs shall confirm that, as of the date the Certificate was issued, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in Section 3.2.2.4.x.
 
 This CP allows for procedures adhering to the Baseline Requirements and is limited to four (4) validation methods:
 
@@ -344,7 +340,9 @@ This validation method confirms the Applicant's control over the requested FQDN 
 
 If a Random Value is used, the CA shall provide a Random Value unique to the certificate request and shall not use the Random Value after 30 days.
 
-If a Random	Value is used, the CA shall provide a Random Value unique to the certificate request and shall not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the Certificate as defined in Section 4.2.1 of this CP.		
+A Request Token shall incorporate the key used in the certificate request.  A Request Token may include a timestamp to indicate when it was created and other information to ensure its uniqueness.  A Request Token that includes a timestamp shall remain valid for no more than 30 days from the time of creation.  A Request Token that includes a timestamp shall be treated as invalid if its timestamp is in the future. A Request Token that does not include a timestamp is valid for a single use and the CA shall not re-use it for a subsequent validation.
+
+The binding shall use a digital signature algorithm or a cryptographic hash algorithm at least as strong as that to be used in signing the certificate request.
 
 Examples of Request Tokens include, but are not limited to: (i) a hash of the public key; (ii) a hash of the Subject Public Key Info [X.509]; and (iii) a hash of a PKCS#10 CSR. A Request Token may also be concatenated with a timestamp or other data.
 
@@ -356,7 +354,9 @@ This validation method confirms the Applicant's control over the FQDN by confirm
 1. An Authorization Domain Name
 2. An Authorization Domain Name that is prefixed with a label that begins with an underscore character.
 
-If a Random Value is used, the CA shall provide a Random Value unique to the Certificate request and shall not use the Random Value after (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the Certificate.  
+If a Random Value is used, the CA shall provide a Random Value unique to the Certificate request and shall not use the Random Value after 30 days. 
+
+A Request Token shall incorporate the key used in the certificate request.  A Request Token may include a timestamp to indicate when it was created and other information to ensure its uniqueness.  A Request Token that includes a timestamp shall remain valid for no more than 30 days from the time of creation.  A Request Token that includes a timestamp shall be treated as invalid if its timestamp is in the future. A Request Token that does not include a timestamp is valid for a single use and the CA shall not re-use it for a subsequent validation.
 
 Once the FQDN has been validated using this method, the CA may also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  For example, a validation for the example "myapp.mydomain.gov" may be used during the timeframe permitted for reuse of validation information to issue a certificate that includes "home.myapp.mydomain.gov".   
 
@@ -368,6 +368,8 @@ This validation method defined by the Baseline Requirements is not allowed under
 
 ##### 3.2.2.4.10. TLS Using a Random Number
 This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+
+If a Random Value is used, the CA shall provide a Random Value unique to the Certificate request and shall not use the Random Value after 30 days. 
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
