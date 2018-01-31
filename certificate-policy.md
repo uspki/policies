@@ -501,7 +501,7 @@ There is no limit on the maximum number of CT Logs which may be submitted to.
 The CA shall include at least two (2) SCTs meeting the variety requirements in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
-The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify any representative of the issuance.
+The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify the Applicant of the issuance.
 
 ## 4.4 Certificate acceptance
 
@@ -522,9 +522,7 @@ See Section 9.6.3, provisions 2. and 4.
 The intended scope of usage for a private key shall be in accordance with the Certificate Profiles defined in Section 7 of this CP.
 
 ### 4.5.2 Relying party public key and certificate usage
-All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
-
-It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a U.S. Federal Public Trust TLS PKI certificate in a transaction.
+See Section 4.9.6
 
 ## 4.6 Certificate renewal
 Renewal is defined as the re-issuance of a certificate with no changes to the public key, no changes to the identity information, and a new validity period for the certificate.
@@ -541,16 +539,16 @@ No stipulation
 The CA shall verify that the OCSP Delegated Responder certificate expiration date shall not exceed 395 days from the date of initial certificate issuance.
 
 ### 4.6.4 Notification of new certificate issuance to subscriber
-See Section 4.3.2.
+No stipulation
 
 ### 4.6.5 Conduct constituting acceptance of a renewal certificate
-See Section 4.4.1.
+No stipulation
 
 ### 4.6.6 Publication of the renewal certificate by the CA
-See Section 4.4.2.
+No stipulation
 
 ### 4.6.7 Notification of certificate issuance by the CA to other entities
-See Section 4.4.2.
+No stipulation
 
 ## 4.7 Certificate re-key
 Re-key is defined as the issuance of a certificate with a new public key, no changes to the identity information, and a new validity period for the certificate.
@@ -579,14 +577,13 @@ Not applicable.
 ## 4.8 Certificate modification
 Modification is defined as the re-issuance of a certificate with the same public key, and changes to the identity information or information in the certificate (i.e. policies, key usage) other than the validity period.
 
-
 ### 4.8.1 Circumstance for certificate modification
 Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates shall not be modified. OCSP Delegated Responder certificates shall not be modified.
 
 CA certificates may be modified to update attributes other than the public key.  A CA certificate shall not be modified to add restrictions not in the original certificate unless all Subscriber certificates previously issued by the CA conform to the new restrictions.
 
 ### 4.8.2 Who may request certificate modification
-See Section 4.1.1.
+An authorized representative of either the Root CA or Subordinate CA may request certificate modifications.
 
 ### 4.8.3 Processing certificate modification requests
 Certificate issuance by the Root CA shall require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.  Modification of a CA certificate by the Root CA shall require written authorization by the FPKIPA.
@@ -601,7 +598,7 @@ See Section 4.4.1.
 See Section 4.4.2.
 
 ### 4.8.7 Notification of certificate issuance by the CA to other entities
-See Section 4.4.2.
+See Section 4.4.3.
 
 ## 4.9 Certificate revocation and suspension
 
@@ -615,7 +612,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked the right to use the Domain Name or the Domain Name Registrant has failed to renew the Domain Name under .gov and/or .mil sTLDs);
+6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted;
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
 8. The CA is made aware of a material change in the information contained in the Certificate;
 9. The CA is made aware that the Certificate was not issued in accordance with this CP or the CA's Certification Practice Statement;
@@ -623,8 +620,8 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 12. The CA's right to issue Certificates under this CP expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
-14. Revocation is required by this CP and/or the CA's CPS; or
-15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the FPKIPA or CAB Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time); or
+14. Revocation is required by this CP and/or the CA's CPS; 
+15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
 16.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
@@ -666,7 +663,9 @@ The CA shall begin investigation of a Certificate Problem Report immediately upo
 4. Relevant legislation.
 
 ### 4.9.6 Revocation checking requirement for relying parties
-See Section 4.5.2.
+All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
+
+It is recommended that relying parties process the expiration date of the certificate and perform certificate revocation checking, and comply with this information, whenever using a U.S. Federal Public Trust TLS PKI certificate in a transaction.
 
 ### 4.9.7 CRL issuance frequency
 For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish CRLs.  CAs shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field.
@@ -681,7 +680,6 @@ OCSP responses shall conform to RFC6960 and/or RFC5019. OCSP responses shall eit
 
 1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
 2. Be signed by a Delegated OCSP Responder Certificate signed by the CA that issued the Certificate whose revocation status is being checked.
-
 
 ### 4.9.10 On-line revocation checking requirements
 The CA shall support an OCSP capability using the GET method for Certificates.
@@ -784,7 +782,7 @@ CA equipment shall use facilities equipped with fire suppression mechanisms.
 Media shall be stored so as to protect it from accidental damage, such as water, fire, or electromagnetic damage.  Media shall be stored to protect it from unauthorized physical access.
 
 ### 5.1.7 Waste disposal
-Sensitive media and documentation that are no longer needed for operations shall be destroyed in a secure manner.  Sensitive paper documentation shall be shredded, burned, or otherwise rendered unrecoverable.
+Sensitive media and documentation that are no longer needed for operations shall be destroyed in a secure manner and rendered unrecoverable.
 
 ### 5.1.8 Off-site backup
 Full system backups sufficient to recover from system failure shall be made on a periodic schedule.  Backups are to be performed and stored off-site not less than once per week for Subordinate CAs.  At least one full backup copy shall be stored at an off-site location separate from CA equipment.  Only the latest full backup is required to be retained.  The backup shall be stored at a site with physical and procedural controls commensurate to that of the operational CA.
@@ -836,7 +834,6 @@ Individuals may only assume one of the Administrator, Officer, and Security role
 
 ### 5.3.1 Qualifications, experience, and clearance requirements
 All persons filling trusted roles shall be selected on the basis of loyalty, trustworthiness, and integrity, and shall be U.S. citizens.  The requirements governing the qualifications, selection and oversight of individuals who operate, manage, oversee, and audit the CA shall be set forth in the CPS.
-
 
 ### 5.3.2 Background check procedures
 Trusted role personnel shall, at a minimum, pass a background investigation covering:
@@ -912,7 +909,7 @@ The CA shall record Security events, including:
 Log entries shall include the following elements:
 
 1. Date and time of entry  
-2. Identity of the person performing the action  
+2. Identity of the person performing the action if a person is involved in the action  
 3. Description of the entry  
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
@@ -954,7 +951,6 @@ The CA shall undergo or perform a Vulnerability Scan:
 The CA shall undergo a Penetration Test on the CA system boundaries on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant.
 
 The CA shall record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test.
-
 
 ## 5.5 Records archival
 CAs shall archive records separately from the CA backups.  In addition to the archive requirements specified in this CP, archive procedures shall follow either the General Records Schedules established by the National Archives and Records Administration (NARA) or an agency-specific general records schedule as applicable.
@@ -1010,7 +1006,7 @@ Key changeovers are not applicable for any CAs operating under this CP and shall
 ### 5.7.1 Incident and compromise handling procedures
 CAs shall have an Incident Response Plan and a Disaster Recovery Plan.  The CA is not required to publicly disclose the Incident Response Plan and Disaster Recovery Plan but shall make the plans available to the CA's Qualified Auditor upon request.
 
-The FPKIPA shall be notified by the CAs operating under this policy of any incident. An incident is defined as a violation or imminent threat of violation of this CP, the CA's CPS, Memorandums of Agreements, or any other document that governs the operations of the CA. An incident may include but is not limited to the following:
+The FPKIPA shall be notified by the CAs operating under this policy of any incident. An incident is defined as a violation or imminent threat of violation of this CP, the CA's CPS, government memorandum of agreements, or any other document that governs the operations of the CA. An incident may include but is not limited to the following:
 
 - CA private key compromise
 - Suspected or detected compromise of the CA including the certificate status services required of the CA Repository
@@ -1037,7 +1033,7 @@ A final security incident report shall be submitted at a date specified by the F
 
 In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response:
 - Publicly publish a final incident report in one or more internet-accessible locations, with information redacted as necessary
-- Report incidents to the individual Application Trusted Root Programs
+- Report incidents to the individual trust store operator
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 When computing resources, software, and/or data are corrupted, CAs shall ensure the system's integrity has been restored before returning to operation.  
@@ -1054,7 +1050,7 @@ In the event of a Subordinate CA private key compromise, the following operation
 
 If the Root Certificate private key is compromised, the CA shall notify the FPKIPA immediately.  
 
-In all cases, the CA and the FPKIPA shall initiate procedures to notify subscribers and Application Trusted Root Programs of the compromise.
+In all cases, the CA and the FPKIPA shall initiate procedures to notify subscribers and trust store operator of the compromise.
 
 ### 5.7.4 Business continuity capabilities after a disaster
 CAs disaster recovery procedures shall be in place to reconstitute the CA including the certificate status services required of the CA Repository within six (6) hours of failure.
@@ -1068,7 +1064,7 @@ When a CA operating under this policy terminates operations before all certifica
 
 Once the final CRL has been issued, the private signing key(s) of the CA to be terminated shall be destroyed.  The terminated CA certificate shall be revoked.  
 
-If the terminated CA is the Root CA, the FPKIPA shall notify the Application Trusted Root Programs of the need to remove the Root Certificate from the applicable trust stores.
+If the terminated CA is the Root CA, the FPKIPA shall notify the trust store operator of the need to remove the Root Certificate from the applicable trust stores.
 
 Prior to CA termination, the CA shall provide archived data to an archive facility.  
 
@@ -1130,7 +1126,6 @@ Certificates shall meet the following requirements for algorithm type and key si
 | :---  | :------ |  
 | Digest algorithm | SHA-256 |  
 | Minimum RSA modulus size (bits) | 2048 |  
-
 
 (3) Subscriber Certificates
 
@@ -1449,11 +1444,9 @@ The following Certificate Policy identifiers are registered under the CAB Forum 
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1),
   - If the Certificate complies with the Baseline Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3
 
-
 - Organization Validated:
   - {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2),
   - If the Certificate complies with the Baseline Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
-
 
 If the Certificate asserts the policy identifiers for Domain Validated, then the certificate shall not include organizationName and stateOrProvinceName in the Subject field.  If the Certificate asserts the policy identifiers for Organization Validated, then the certificate shall include organizationName, stateOrProvinceName and countryName in the Subject field.
 
@@ -1534,9 +1527,9 @@ Audits shall incorporate periodic monitoring and/or accountability procedures to
 ## 8.5 Actions taken as a result of deficiency
 When the Qualified Auditor finds a discrepancy between the requirements of this CP or the stipulations in the CPS and the design, operation, or maintenance of the CAs, the following actions shall be performed:  
 
--	The Qualified Auditor shall note the discrepancy  
--	The Qualified Auditor shall notify the CA promptly  
--	The CA will propose a remedy, including expected time for completion, to the FPKIPA  
+- The Qualified Auditor shall note the discrepancy  
+- The Qualified Auditor shall notify the CA promptly  
+- The CA will propose a remedy, including expected time for completion, to the FPKIPA  
 
 Depending upon the nature and severity of the discrepancy, and how quickly it can be corrected, the FPKIPA may decide to temporarily halt operation of the CA, to revoke a certificate issued to the CA, or take other actions it deems appropriate.
 
@@ -1560,7 +1553,7 @@ The CA shall make the Audit Letter publicly available. The CA shall make its Aud
 ## 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
 
-During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP are met.
+During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP requirements are met.
 
 # 9. OTHER BUSINESS AND LEGAL MATTERS
 
@@ -1791,7 +1784,7 @@ published by the CAB Forum (http://www.cabforum.org).
 
 **Certificate System**: The system used by a CA in providing identity verification, registration and enrollment, certificate approval, issuance, validity status, support, and other PKI related services.
 
-**Certificate System Component**: A individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certificate management.
+**Certificate System Component**: An individual element of a larger Certificate System used to process, approve issuance of, or store certificates or certificate status information. This includes the database, database server, storage devices, certificate hosting services, registration authority systems, and any other element used in certificate management.
 
 **Certification Authority**: An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs.
 
@@ -1890,10 +1883,8 @@ published by the CAB Forum (http://www.cabforum.org).
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
-
-[http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
-
-[http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
+- [http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
+- [http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
 
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
