@@ -1886,14 +1886,6 @@ published by the CAB Forum (http://www.cabforum.org).
 **Repository**: An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
 
 **Request Token**: A value derived in a method specified by the CA which binds this demonstration of control to the certificate request.  
-- The Request Token shall incorporate the key used in the certificate request.
-- A Request Token may include a timestamp to indicate when it was created.
-- A Request Token may include other information to ensure its uniqueness.
-- A Request Token that includes a timestamp shall remain valid for no more than 30 days from the time of creation.
-- A Request Token that includes a timestamp shall be treated as invalid if its timestamp is in the future.
-- A Request Token that does not include a timestamp is valid for a single use and the CA shall not re-use it for a subsequent validation.
-
-The binding shall use a digital signature algorithm or a cryptographic hash algorithm at least as strong as that to be used in signing the certificate request.
 
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
