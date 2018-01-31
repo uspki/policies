@@ -32,6 +32,4 @@ subnav:
 ---
 
 {% include fpki-document-header.html %}
-<!-- TODO fix markdown -->
-
 {% include_relative certificate-policy.md %}
