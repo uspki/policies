@@ -407,11 +407,9 @@ Subscriber certificates identifying and authenticating natural born persons or i
 Non-verified subscriber information shall not be asserted in any certificates under this Certificate Policy.
 
 ### 3.2.5 Validation of authority
-If the Applicant for a Certificate containing Subject Identity Information is an organization, the CA shall use a Reliable Method of Communication to verify the authenticity of the Applicant Representative's certificate request.
+A CA may use the sources listed in section 3.2.2.1 to verify the Applicant is under authority of the U.S. Government and assert organizationName of U.S. Government. 
 
-The CA may use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication. Provided that the CA uses a Reliable Method of Communication, the CA may establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, human resource offices, information technology offices, or other division that the CA deems appropriate.
-
-In addition, the CA shall establish a process that allows an Applicant to specify the individuals who may request Certificates. If an Applicant specifies, in writing, the individuals who may request a Certificate, then the CA shall not accept any certificate requests that are outside this specification. The CA shall provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
+In addition, a CA may establish a process that allows an Authorizing Authority of a .gov or .mil sub-domain to specify the individuals who may request Certificates. If an Authorizing Authority specifies, in writing, the individuals who may request a Certificate, then the CA shall not accept any certificate requests that are outside this specification. The CA shall provide an Authorizing Authority with a list of its authorized certificate requesters upon the Authorizing Authority's verified written request.
 
 ### 3.2.6 Criteria for Interoperation or Certification
 CAs shall not have Cross Certificate(s) that identify the CA as the Subject without explicit written permission of the FPKIPA.  Any Cross Certificates shall be disclosed publicly, submitted to one or more Certificate Transparency Logs, published to the Repository, and identified in the update to the CPS.
@@ -1786,8 +1784,6 @@ No stipulation.
 **Certification Practice Statement**: One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
 
 **Certificate Transparency (CT)**: Publicly operated record of certificate issuance.
-
-**Control**: "Control" (and its correlative meanings, "controlled by" and "under common control with") means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors ; or (3) vote that portion of voting shares required for "control" under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
 
 **Country**: Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
 
