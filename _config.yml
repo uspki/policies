@@ -1,7 +1,7 @@
-title: Federal Public Trust Device PKI Certificate Policy (Draft)
-small_title: Federal Public Trust Device PKI
-smallest_title: Federal Public Trust Device PKI
-description: Certificate Policy for a proposed new device public key infrastructure for the public trust of DotGov and DotMil websites.
+title: U.S. Federal Public Trust TLS Certificate Policy (Final Draft)
+small_title: U.S. Federal Public Trust TLS PKI
+smallest_title: U.S. Federal Public Trust TLS PKI
+description: Certificate Policy for a new public key infrastructure for TLS certificates for public .gov and .mil websites.
 email: fpki@gsa.gov
 author:
     name: FICAM
@@ -13,7 +13,7 @@ branch: policy-pages
 # we want the dynamic links to send users to the staging branch.  New site variable to ensure Edit Page sends users to the correct branch for pull requests.
 editbranch: master
 
-report_url: "https://devicepki.idmanagement.gov/assets/docs/Federal_Public_Trust_Device_PKI_Certificate_Policy_Draft_v0_1_September2017.pdf"
+report_url: "https://devicepki.idmanagement.gov/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_2.pdf"
 
 google_analytics_ua:
 repo: https://github.com/uspki/policies

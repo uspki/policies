@@ -1,4 +1,4 @@
-## Delegated OCSP Responder Certificate Profile
+### Delegated OCSP Responder Certificate Profile
 
 
 | **Field** | **Value and Requirements**         |
