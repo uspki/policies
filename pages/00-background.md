@@ -9,7 +9,7 @@ Securing Federal Government web services and delivering information to our consu
 
 Federal Government teams are working to ensure our missions have secure, cost-effective, and stable _services_ to secure these web services.   We developed this [Certificate Policy]({{site.baseurl}}/certificatepolicy) to address Internet PKI requirements and to support the establishment of the **new** U.S. Federal Public Trust TLS Public Key Infrastructure (PKI) for .mil and .gov websites.
 
-We welcome and encourage public and community [comment]({{site.baseurl}}/requestcomment) on this Certificate Policy.  
+We welcome and encourage public and community [comment]({{site.baseurl}}/comment) on this Certificate Policy.  
 
 - [Scope](#scope)
 - [Relationship to Federal Public Key Infrastructure](#relationship-to-federal-public-key-infrastructure)
