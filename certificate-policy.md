@@ -1017,7 +1017,7 @@ Key changeovers are not applicable for any CAs operating under this CP and shall
 #### 5.7.1 Incident and compromise handling procedures
 CAs shall have an Incident Response Plan and a Disaster Recovery Plan.  The CA is not required to publicly disclose the Incident Response Plan and Disaster Recovery Plan but shall make the plans available to the CA's Qualified Auditor upon request.
 
-The FPKIPA shall be notified by the CAs operating under this policy of any incident. An incident is defined as a violation or imminent threat of violation of this CP, the CA's CPS, government memorandum of agreements, or any other document that governs the operations of the CA. An incident may include but is not limited to the following:
+The FPKIPA shall be notified by the CAs operating under this policy of any incident. An incident is defined as a violation or imminent threat of violation of this CP, the CA's CPS, government memoranda of agreements, or any other document that governs the operations of the CA. An incident may include but is not limited to the following:
 
 - CA private key compromise
 - Suspected or detected compromise of the CA including the certificate status services required of the CA Repository
