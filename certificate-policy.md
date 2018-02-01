@@ -1980,9 +1980,9 @@ FIPS 140-2, Federal Information Processing Standards Publication - Security Requ
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
-NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
+NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, https://doi.org/10.6028/NIST.SP.800-89.
 
-NIST SP 800-56-A, Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography, http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar2.pdf
+NIST SP 800-56-A, Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography, https://doi.org/10.6028/NIST.SP.800-56Ar2
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
