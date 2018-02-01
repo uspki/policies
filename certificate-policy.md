@@ -1109,7 +1109,7 @@ Registration Authorities as a function of the CA shall not generate Subscriber k
 #### 6.1.1.3 Subscriber Key Pair Generation
 Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement or Terms of Use.
 
-The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see http://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
+The CA shall reject a certificate request if the requested Public Key does not meet the requirements set forth in sections 6.1.5 and 6.1.6 or if it has a known weak Private Key due to Debian weak key (see https://wiki.debian.org/SSLkeys) or a ROCA weak key (see Common Vulnerabilities and Exposures identifier CVE-2017-15361).
 
 #### 6.1.2 Private key delivery to subscriber
 Subscribers shall generate their own keys.  This section is not applicable.
@@ -1782,9 +1782,9 @@ No stipulation.
 
 **Base Domain Name**: The portion of an applied-for FQDN that is the first domain name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most domain name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
 
-**Baseline Requirements**: The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by the CAB Forum (http://www.cabforum.org).
+**Baseline Requirements**: The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by the CAB Forum (https://cabforum.org).
 
-**Certification Authority Authorization**: From RFC 6844 ([http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
+**Certification Authority Authorization**: From RFC 6844 ([https://tools.ietf.org/html/rfc6844](https://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
 **Certificate**: An electronic document that uses a digital signature to bind a public key and an identity.
 
@@ -1848,9 +1848,9 @@ No stipulation.
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
-**Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value. A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
+**Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value. A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see https://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
 
-**Key Generation Script**: A documented plan of procedures for the generation of a CA Key Pair **.**
+**Key Generation Script**: A documented plan of procedures for the generation of a CA Key Pair.
 
 **Key Pair**: The Private Key and its associated Public Key.
 
@@ -1866,7 +1866,7 @@ No stipulation.
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. The protocol is defined in RFC 6960. See also OCSP Responder.
 
-**Pre-Certificate: An X.509 object constructed from the certificate intended to be issued and submitted to Certificate Transparency logging services, to receive a signed certificate timestamp (SCT).  A Pre-certificate is define in RFC 6962.
+**Pre-Certificate**: An X.509 object constructed from the certificate intended to be issued and submitted to Certificate Transparency logging services, to receive a signed certificate timestamp (SCT).  A Pre-certificate is define in RFC 6962.
 
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
@@ -1897,8 +1897,8 @@ No stipulation.
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
-- [http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
-- [http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
+- [https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
+- [https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
 
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
@@ -2002,7 +2002,7 @@ RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (
 
 RFC6962, Request for Comments: 6962, Certificate Transparency, Laurie, et al, June 2013.
 
-WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
+WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at https://www.webtrust.org/homepage-documents/item79806.pdf.
 
 X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
