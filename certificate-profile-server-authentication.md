@@ -1,4 +1,4 @@
-## Appendix D-3: Server Authentication Certificate Profile
+### Server Authentication Certificate Profile
 
 This profile for Server Authentication Certificates contains two (2) certificate types:
 
