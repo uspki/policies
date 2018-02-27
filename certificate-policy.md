@@ -74,7 +74,7 @@ Additional documents related to the U.S. Federal Public Trust TLS PKI, including
 
 In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
 
-This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All additions and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
+This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All adaptations and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
 
 #### 1.2.1. Revisions
 
@@ -123,9 +123,9 @@ This policy allows for persons who may not be affiliated with the same U.S. Fede
 A CA may designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government organizational unit.  The CA shall not accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
 1. The CA shall confirm that the requested Fully-Qualified Domain Name(s) are within the RA's affiliated U.S. Federal Government organizational unit verified Domain Namespace(s) as registered in the .gov and .mil gTLDs Domain Name Registrars.  
-2. The CA should confirm that the requested Fully Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the .gov Domain Name Registrar per United States Code (U.S.C.) 41 CFR Part 102-173.
+2. The CA should confirm that the requested Fully Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the .gov Domain Name Registrar per 41 CFR Part 102-173.
 
-The CA shall impose these limitations through an agreement with the Authorizing Authority of the Domain Namespace as defined under United States Code (U.S.C.) 41 CFR Part 102-173.  The CA shall monitor compliance by the RA and institute technical controls.  The CA shall use both audits and analytics based methods, such as monitoring of Certificate Transparency Log(s) and other services, to ensure compliance.
+The CA shall impose these limitations through an agreement with the Authorizing Authority of the Domain Namespace as defined under 41 CFR Part 102-173.  The CA shall monitor compliance by the RA and institute technical controls.  The CA shall use both audits and analytics based methods, such as monitoring of Certificate Transparency Log(s) and other services, to ensure compliance.
 
 Delegated Third Parties are not allowed as Registration Authorities.
 
@@ -1698,7 +1698,7 @@ No stipulation.
 This CP becomes effective when approved by the FPKIPA.  This CP has no specified term.
 
 #### 9.10.2 Termination
-Termination of this CP is at the discretion of the FPKIPA. 
+Termination of this CP is at the sole discretion of the FPKIPA. 
 
 #### 9.10.3 Effect of termination and survival
 The requirements of this CP remain in effect through the end of the archive period for the last certificate issued.
@@ -1947,6 +1947,7 @@ No stipulation.
 | ACME | Automated Certificate Management Environment |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
+| CFR | Code of Federal Regulations |
 | ccTLD | Country Code Top-Level Domain |
 | CP | Certificate Policy |
 | CPS | Certification Practice Statement |
