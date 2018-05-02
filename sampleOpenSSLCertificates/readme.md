@@ -9,6 +9,10 @@
 **_Note:_** *The goal of these certificates is to promote discussion surrounding the existing [certificate profiles](https://github.com/uspki/policies) in hopes of identifying necessary updates.*
 
 
+## Updates (05/02/2018): ##
+* A second Subordinate CA certificate (CN=US Federal Test TLS CA 101) has been issued to more closely align to the existing policy Section 7.1.5 (removes dirName name constraints as seen on CN=US Federal Test TLS CA 100.
+
+
 ## Updates (04/24/2018): ##
 * Subordinate CA Profile has been updated to include OCSP Signing EKU per feedback from Santosh.
 * The DV-TLS certificate from the first batch of test certificates inadvertantly had a serial number that exceeded 20 octets. This is now corrected.
