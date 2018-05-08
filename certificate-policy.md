@@ -304,14 +304,13 @@ All CAs shall verify the inclusion of subject:countryName in Subscriber certific
 #### 3.2.2.4 Validation of Domain Authorization or Control
 CAs shall confirm that, as of the date the Certificate was issued, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed in section 3.2.2.4.x.
 
-This CP allows for procedures adhering to the Baseline Requirements and is limited to four (4) validation methods:
+This CP allows for procedures adhering to the Baseline Requirements and is limited to three (3) validation methods:
 
-- Section 3.2.2.4.5 Domain Authorization Document
 - Section 3.2.2.4.6 Agreed-Upon Change to Website
 - Section 3.2.2.4.7 DNS Change
-- Section 3.2.2.4.10 TLS Using a Random Number
+- Section 3.2.2.4.12 Validating Applicant as a Domain Contact
 
-Wildcard FQDNs are not allowed to be validated using section 3.2.2.4.6 Agreed Upon Change to Website or section 3.2.2.4.10 TLS Using a Random Number.  All wildcard domain names included in a certificate shall require validation by either section 3.2.2.4.7 DNS Change, or section 3.2.2.4.5 Domain Authorization Document signed by the Domain Contact authorizing the issuing of a certificate to include the wildcard FQDN.
+Wildcard FQDNs are not allowed to be validated using section 3.2.2.4.6 Agreed Upon Change to Website.  All wildcard domain names included in a certificate shall require validation by either section 3.2.2.4.7 DNS Change, or section 3.2.2.4.12 Validating Applicant as a Domain Contact signed by the Domain Contact authorizing the issuing of a certificate to include the wildcard FQDN.
 
 CAs shall maintain a record of which domain validation method, including the relevant Baseline Requirements version number, was used to validate each domain in a certificate.
 
@@ -332,9 +331,7 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.5 Domain Authorization Document
-This validation method confirms the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document.
-
-The Domain Authorization Document shall substantiate that the communication came from the Domain Contact. The CA shall verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data provided by .mil or .gov has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
 This validation method confirms the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:  
@@ -371,9 +368,15 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-This validation method confirms the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
 
-If a Random Value is used, the CA shall provide a Random Value unique to the Certificate request and shall not use the Random Value after 30 days. 
+##### 3.2.2.4.11. Any Other Method
+This validation method defined by the Baseline Requirements is not allowed under this CP. 
+
+##### 3.2.2.4.12.  Validating Applicant as a Domain Contact
+This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
