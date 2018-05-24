@@ -50,7 +50,10 @@ A Domain Validation TLS Server Authentication, issued under this policy: i) does
 ##### 1.1.3.2.2 Organization Validation TLS Server Authentication Certificates
 An Organization Validation TLS Server Authentication certificate, issued under this policy: i) contains commonName (OID 2.5.4.3), stateOrProvinceName (OID 2.5.4.8), organizationName (OID 2.5.4.10) and countryName (OID 2.5.4.6) in the subject distinguished name, and ii) asserts a key purpose of id-kp-serverAuth (OID 1.3.6.1.5.5.7.3.1) in the Extended Key Usage certificate extension.
 
-##### 1.1.3.2.3 Delegated OCSP Responder Certificates
+#### 1.1.3.3 Infrastructure Certificates
+A certificate is an Infrastructure certificate if it is not a CA Certificate and issued in support of the CA System.  Infrastructure certificates are end entity certificates as defined in RFC5280 and issued to subjects that are not authorized to issue certificates. Infrastructure certificates allowed to be issued under this policy are categorized as Delegated OCSP Responder certificates.
+
+##### 1.1.3.3.1 Delegated OCSP Responder Certificates
 A certificate is a Delegated OCSP Responder Certificate if it has a key purpose of id-kp-OCSPSigning (OID 1.3.6.1.5.5.7.3.9) in the Extended Key Usage certificate extension.
 
 ### 1.2 Document name and identification
@@ -1490,6 +1493,8 @@ The certificates shall contain certificate policy identifier(s) for either Domai
 
 The CA shall document in its CPS that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this CP.
 
+#### 7.1.6.5 Infrastructure Certificates
+
 Delegated OCSP Responder Certificates shall contain all the certificate policy OIDs defined in section 7.1.6.1 for all certificates issued by the CA and covered by the OCSP responses.
 
 #### 7.1.7 Usage of Policy Constraints extension
@@ -1847,6 +1852,8 @@ No stipulation.
 
 **High Security Zone**: An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of the CA's Private Key or cryptographic hardware.
 
+**Infrastructure Certificate**: A certificate that is not a CA Certificate and issued in support of the CA System.
+
 **Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
@@ -2021,7 +2028,7 @@ Certificates issued under this policy are categorized as CA Certificates or Subs
 | CA Certificate | Subordinate CA Certificate | Subordinate CA Certificate Profile |
 | Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
 | Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
-| Subscriber Certificate | Delegated OCSP Responder Certificates |  Delegated OCSP Responder Certificate Profile |
+| Infrastructure Certificate | Delegated OCSP Responder Certificates |  Delegated OCSP Responder Certificate Profile |
 
 There are two profiles covering the Certificate Revocation Lists and OCSP Responses.
 
