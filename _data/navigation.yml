@@ -2,28 +2,20 @@
 primary:
   - text: "Background"
     href: /
-  - text: "Request For Comment"
-    href: /requestcomment/
   - text: "Certificate Policy"
     href: /certificatepolicy/
   - text: "Certificate Profiles"
     href: /certificateprofiles/
-
+  - text: "Submit Comments"
+    href: /comment/
 
 mobile:
   - text: "Background"
     href: /
-  - text: "Request For Comment"
-    href: /requestcomment/
   - text: "Certificate Policy"
     href: /certificatepolicy/
   - text: "Certificate Profiles"
     href: /certificateprofiles/
+  - text: "Submit Comments"
+    href: /comment/
 
-secondary:
-  - text: "IDmanagement.gov"
-    href: https://www.idmanagement.gov
-  - text: "Federal ICAM Architecture"
-    href: https://arch.idmanagement.gov
-  - text: "Federal PKI Guides"
-    href: https://fpki.idmanagement.gov

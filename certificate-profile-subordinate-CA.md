@@ -1,31 +1,25 @@
-## Intermediate or Subordinate CA Certificate Profile
+### Subordinate CA Certificate Profile
 
-| **Field** |       |       | **Value**                             |
-| :-------- | :---: | :---: | :-------------------------------     |
-| Version   |       |       | V3 (2)                                 |
-| Serial Number   |       |       | Must be a unique positive integer with a minimum of 64 bits (minimum of 8 octets), not to exceed 20 octets  |
-| Issuer Signature Algorithm   |       |       |  sha256 WithRSAEncryption {1 2 840 113549 1 1 11}  |
-| Issuer Distinguished Name   |       |       |  Unique X.500 issuing CA DN as specified in Section 7.1.4 of this CP |
-| Validity Period   |       |       |  Encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> No longer than 10 years from date of issue  |
-| Subject Distinguished Name   |       |       | Unique X.500 CA DN as specified in Section 7.1.4 of this CP. <br> X.500 Distinguished Name of the owner of the subject public key in the certificate. Distinguished Name shall conform to PrintableString string type in ASN.1 notation. <br>CN value shall not include designations such as "root" or "Root" or other similar designations.  DN shall include o=U.S. Government, c=US <br><br>**Example:** <br>cn=US Federal Device Issuing CA1, o=U.S. Government, c=US<br><br>Subject name should be encoded exactly as it is encoded in the issuer field of certificates issued by the subject. |
-| Subject Public Key Information   |       |       |   At least 2048 bit modulus, rsaEncryption {1 2 840 113549 1 1 1}<br>   |
-| Issuer Signature   |       |       |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
-|               |                 |              |                                       |
-| **Extension** |  **Required**   | **Critical** | **Value**                             |
-| Authority Key Identifier  | Mandatory | False |  Octet String<br> Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Must match SKI of issuing CA Certificate|
-| subjectInfoAccess  | Conditional | False |  **Conditional:** <br>1) **Not present** if the subject CA only issues subscriber certificates <br>2) **Mandatory** if the subject CA issues subordinate CA certificates <br><br> id-ad-caRepository (1.3.6.1.5.5.7.48.5):<br> At least one instance of this access method that includes the URI name form to specify the location of an HTTP accessible location where CA certificates issued by the subject of this certificate may be found. The certificate artifact(s) served by the HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. This extension is required to assist in monitoring and discovery of, and promote transparency for, the Subordinate/Issuing CAs. |
-| basicConstraints   | Mandatory | True |  cA=True <br> Pathlen is not present |
-| Subject Key Identifier   | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
-| Key Usage   | Mandatory | True | **Required Key Usage:** <br> keyCertSign and crlSign <br><br> **Optional Key Usage:** <br>digitalSignature and / or non-repudiation if the CA uses its key to sign OCSP responses   |
-| Extended Key Usage   |  Mandatory  | False | This extension is required for Technically constrained nameConstraints per Section 7.1.2.2 and Section 7.1.5 <br> **Required Extended Key Usage:** <br> Server Authentication id-kp-serverAuth {1.3.6.1.5.5.7.3.1} <br><br> **Optional Extended Key Usage:** <br> Client Authentication id-kp-clientAuth {1.3.6.1.5.5.7.3.2} <br><br> Additional EKUs shall be included for any subscriber certificates issued with those EKUs, and which are consistent with Server authentication.  |
-| Certificate Policies   |  Mandatory  | False | List of one or more policy OIDs defined or listed in Section 1.2 |
-| Subject Alternative Name   | Optional | False  |  |
-| Authority Information Access   | Mandatory | False | **Required AIA Fields** <br> **OCSP:** <br> Publicly accessible URI of Issuing CA's OCSP responder accessMethod = {1.3.6.1.5.5.7.48.1} <br><br> **id-ad-caIssuers:** <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> At least one instance of this access method that includes the URI name form to specify the certificate artifacts. The certificate artifact(s) served by the HTTP accessible location shall be in a BER or DER encoded "certs-only" CMS message as specified in [RFC2797]. This extension is required to assist in monitoring and discovery |
-| CRL Distribution Points   | Mandatory | False | At least one HTTP URI to the location of a publicly accessible CRL. The reasons and cRLIssuer fields must be omitted. |
-| nameConstraints           | Mandatory | True | dnsNames only shall be allowed in end entity certificates.  IPAddress, Email, Directory or other shall not be included. <br>See Section 7.1.5<br><br>**For IPAddress:** <br>The Subordinate CA Certificate shall specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate shall include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate shall also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). <br><br>**For dnsNames:** <br>Permitted dnsNames shall be included and shall include at least one dNSName in permittedSubtrees. Any additional combination of permitted and excluded subtrees may appear. <br>If permitted and excluded subtrees overlap, the excluded take precedence. <br>dnsNames shall only include values resolveable on the public Internet |
-| IssuerAltName             |  | False | Not present |
-| Subject Directory Attributes |  | False | Not present |
-| Private Extensions        | Optional | False | Only extensions that have context for use on the public Internet may be allowed.  Private extensions must not cause interoperability issues.  CA must be aware of and defend reason for including in the certificate, and use of Private Extensions shall be approved by the Policy Authority. |
-| Private Key Usage Period  | Optional | False |  |
-| policyConstraints         | Optional | False |  |
-| inhibitAnyPolicy          | Optional | False |  |
+| **Field** |**Value**                             |
+| :-------- | :-------------------------------     |
+| Serial Number  | Serial number shall be a unique positive integer with a minimum of 64 bits (minimum of 8 octets), not to exceed 20 octets. <br> Serial numbers shall be non-sequential.  |
+| Issuer Signature Algorithm   | sha256 WithRSAEncryption {1 2 840 113549 1 1 11}  |
+| Issuer Distinguished Name   | Unique X.500 issuing CA DN as specified in Section 7.1.4 of this CP |
+| Validity Period   | Validity Period dates shall be encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> Validity Period shall be no longer than 10 years from date of issue. |
+| Subject Distinguished Name   | Subordinate CA Certificate Subject Distiguished Name (DN) shall be a unique X.500 DN as specified in Section 7.1.4 of this CP.  Distinguished Name shall conform to PrintableString string type in ASN.1 notation. <br><br>The Subordinate CA Certificate DN shall be of the following format: <br>cn=US Federal TLS CAx, o=U.S. Government, c=US<br>Where _x_ starts at 1 and is incremented by 1 for each Subordinate CA signed by the Root CA.<br><br>All other attributes, for the CA Certificate Subject fields, shall not be included.  <br><br> Non-production Subordinate CAs signed by non-production Root CA certificates shall include "Test" in the DN. <br>A non-production DN example is: <br>cn=US Federal Test TLS CA1, o=U.S. Government, c=US<br> <br>Subject name shall be encoded exactly as it is encoded in the issuer field of certificates issued by the subject. |
+| Subject Public Key Information   | At least 2048 bit modulus, rsaEncryption {1 2 840 113549 1 1 1} |
+| Issuer Signature   | sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
+
+
+| **Extension** |  **Required**   | **Critical** | **Value and Requirements** |
+| :-------- | :----------------|:----------------|:----------------|
+| authorityKeyIdentifier | Mandatory | False |  Octet String<br> Derived using the SHA-1 hash of the Issuer’s public key in accordance with RFC 5280.  Shall match SKI of issuing CA. |
+| basicConstraints | Mandatory | True |  cA=True <br> The pathLenConstraint field shall be present and set to zero (0). |
+| subjectKeyIdentifier   | Mandatory | False |  Octet String <br> Derived using SHA-1 hash of the public key  |
+| keyUsage  | Mandatory | True | Bit positions for keyCertSign and cRLSign shall be set. <br> If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit shall also be set. |
+| extkeyUsage |  Mandatory  | False | This extension is required for Technically constrained nameConstraints per Section 7.1.2.2 and Section 7.1.5. <br> Required Extended Key Usage: <br> Server Authentication id-kp-serverAuth {1.3.6.1.5.5.7.3.1} <br><br> Optional Extended Key Usage: <br> Client Authentication id-kp-clientAuth {1.3.6.1.5.5.7.3.2} <br><br> Other values may be present consistent with use for server authentication, with approval by the FPKIPA. |
+| certificatePolicies |  Mandatory  | False | See Section 7.1.6.3. At least one US Government certificate policy OID listed in Section 7.1.6.1 asserting compliance with this CP, and one CAB Forum certificate policy OID listed in Section 7.1.6.1 asserting compliance with the CAB Forum Baseline Requirements. The certificate shall include all the certificate policy OIDs for all certificates issued by the CA.  |
+| subjectAltName | Optional | False  |  |
+| authorityInformationAccess | Mandatory | False | OCSP: <br> Publicly accessible URI of Issuing CA's OCSP responder accessMethod = {1.3.6.1.5.5.7.48.1} <br>At least one instance of the OCSP responder access method shall be included. All instances of this access method shall include the HTTP URI name form.<br><br> id-ad-caIssuers: <br> Publicly accessible URI of Issuing CA’s certificate accessMethod = {1.3.6.1.5.5.7.48.2} <br> All instances of this access method shall include the HTTP URI name form to specify an HTTP accessible location containing either a single DER encoded certificate, or a BER or DER encoded “certs-only” CMS message as specified in [RFC5272]. |
+| cRLDistributionPoints | Mandatory | False | At least one instance shall be included and shall specify a HTTP URI to the location of a publicly accessible CRL. All URIs included shall be publicly accessible and shall specify the HTTP protocol only.  The reasons and cRLIssuer fields shall be omitted. |
+| nameConstraints | Mandatory | True | See Section 7.1.5.  |
