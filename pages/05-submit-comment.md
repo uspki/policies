@@ -14,5 +14,5 @@ Comments are always welcome and can be submitted via **[this web form]({{ site.r
 - [PDF copy of Version 0.1](https://github.com/uspki/policies/blob/v0.1/assets/docs/Federal_Public_Trust_Device_PKI_Certificate_Policy_Draft_v0_1_September2017.pdf){:target="_blank"}
 - [Source files for Version 0.1 including all website content](https://github.com/uspki/policies/releases/tag/v0.1){:target="_blank"}
 
-**Version 0.2** of this Certificate Policy is for final review including reviews by General Counsel(s), and then will be submitted for final vote from the Federal PKI Policy Authority. 
+**Version 0.2** of this Certificate Policy is still open for review and modification during development of the Certification Authorities.  A final 1.0 version will be posted when available, and submitted for final vote from the Federal PKI Policy Authority. 
 
