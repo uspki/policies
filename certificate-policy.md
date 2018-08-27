@@ -755,6 +755,18 @@ All the physical control requirements specified below apply equally to the Root 
 #### 5.1.1 Site location and construction
 The location and construction of the facility housing the CA equipment, as well as sites housing remote workstations used to administer the CAs, shall be consistent with facilities used to house high-value, sensitive information.  The site location and construction, when combined with other physical security protection mechanisms such as guards, high security locks, and intrusion sensors, shall provide robust protection against unauthorized access to the CA equipment and records.
 
+When a cryptographic module housing a CA private key is physically moved to a new site location, a CA operating under this policy will comply with the following procedures.
+
+1. Prior to transfer, <br>
+  i. Notify the FPKIPA and FPKIMA of the change. <br>
+  ii. Have a transfer plan reviewed by a qualified auditor and submitted to the FPKIPA and FPKIMA for review to ensure the plan meets all CP requirements for physical and logical control of equipment, personnel access, and multi-party control. <br>
+  iii. Complete an audit in accordance with 8.1 of the existing site to confirm cryptographic module, associated key material and/or authorization key security prior to transfer.
+2. During transfer, <br>
+  i. Stop issuance of all certificates. <br>
+  ii. Have transfer ceremony witnessed by a qualified auditor and video recording of the physical exchange of the cryptographic module housing the CA private key and any associated key material and/or authorization keys.
+3. After transfer and prior to resuming issuance operations, <br>
+  i. Complete an audit in accordance with section 8.1 of the new site to confirm the cryptographic module remained secure through-out the transfer.
+
 #### 5.1.2 Physical access
 At a minimum, the physical access controls for CA equipment, as well as remote workstations used to administer the CAs, shall:
 
@@ -848,6 +860,8 @@ Individuals may only assume one of the Administrator, Officer, and Security role
 #### 5.3.1 Qualifications, experience, and clearance requirements
 All persons filling trusted roles shall be selected on the basis of loyalty, trustworthiness, and integrity, and shall be U.S. citizens.  The requirements governing the qualifications, selection and oversight of individuals who operate, manage, oversee, and audit the CA shall be set forth in the CPS.
 
+The FPKIPA shall be notified when a CA under this policy transfers ownership and/or management of the CA to a different organization by law, mandate, contract, or other means. Prior to ownership or management transfer, the new organization shall provide an audit in accordance with section 8.1 to demonstrate compliance with this CP. If the transfer includes a physical relocation of cryptographic modules, the transfer shall occur in accordance with section 5.1.1.
+
 #### 5.3.2 Background check procedures
 Trusted role personnel shall, at a minimum, pass a background investigation covering:  
 
@@ -890,6 +904,8 @@ The CA shall take appropriate administrative and disciplinary actions against pe
 
 #### 5.3.7 Independent Contractor Controls
 Direct contractor personnel employed to operate any part of the CAs or perform functions pertaining to the infrastructure shall be subject to the same personnel requirements set forth in this CP.
+
+The FPKIPA shall be notified when a contractor operating a CA under this policy transfers to a different organization by acquisition, contract, or other means. The CA owner, in coordination with the FPKIPA, shall ensure the new organization can meet the requirements of this CP.
 
 #### 5.3.8 Documentation supplied to personnel
 Documentation sufficient to define duties and procedures for each trusted role shall be provided to the personnel filling that trusted role.
@@ -1524,7 +1540,12 @@ The CAs operated under this CP are Technically Constrained (see section 7.1.5). 
 
 The period during which the CA issues Certificates shall be divided into an unbroken sequence of audit periods. An audit period shall not exceed one year in duration.
 
-Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in section 8.4. The point-in-time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate.
+An audit shall be performed under, but not limmited to the following circumstances:
+1. Before issuing Subscriber certificates or Subordinate CA certificates, any CA shall successfully complete a point-in-time readiness assessment (PITRA) performed in accordance with applicable standards under one of the audit schemes listed in section 8.4. The PITRA shall be completed no earlier than twelve (12) months prior to issuing Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate.
+2. In response to a FPKIPA request.
+3. In response to a security incident.
+2. Prior to and after a physical transfer of a cryptoraphic module housing a CA private key in accordance with section 5.1.1. The post transfer audit may be an annual or PITRA.
+3. Prior to a transfer of CA ownership.
 
 ### 8.2 Identity/qualifications of assessor
 CA audits shall be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
