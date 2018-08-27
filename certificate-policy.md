@@ -192,43 +192,32 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 ## 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
 ### 2.1 Repositories
-Each CA shall disclose the following information through a publicly accessible Repository:  
+The FPKIPA shall publicly post this CP on https://repository.pki.gov, ensuring it is readily accessible on a 24x7 basis.
 
-- CA Certificates
-- Certificate Revocation Lists (CRLs) for all issued certificates
-- Online Certificate Status Protocol responses for all issued certificates
+All CAs shall disclose the following practices and audit information on https://repository.pki.gov:  
+
 - CPS documents
-- Terms of Use Agreements
-- Audit Letters
+- Annual Audit Letters
 
 CPS documents and Audit Letters shall not be redacted.  
-
-Each CA shall ensure that its Certificate from the Root CA and the certificate status services for issued certificates are available through a Repository 24 hours a day, 7 days a week with a minimum of 99.5% availability overall per year.
 
 ### 2.2 Publication of information
-The FPKIPA shall publicly post this CP on \<INSERT URL>, ensuring it is readily accessible on a 24x7 basis.
-
-Each CA shall disclose the following information through a publicly accessible Repository:  
+Each CA shall disclose the following certificate information through a publicly accessible Repository:  
 
 - CA Certificates
 - Certificate Revocation Lists (CRLs) for all issued certificates
 - Online Certificate Status Protocol responses for all issued certificates
-- CPS documents
-- Terms of Use Agreements
-- Audit Letters
 
-CPS documents and Audit Letters shall not be redacted.  
+Each CA shall ensure that its Certificate from the Root CA and the certificate status services for issued certificates are available through a repository 24 hours a day, 7 days a week with a minimum of 99.5% availability overall per year.
 
-CAs shall publish pre-certificates for any Domain Validation TLS Server Authentication Certificates and Organization Validation TLS Server Authentication Certificates to Certificate Transparency Logs.  
-
-Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA can be found at:  
+Web pages that allow for testing certificate validation up to the U.S. Federal Public Trust TLS Root CA shall be published and maintained at:  
 
 - https://valid.tlsroot.pki.gov  
 - https://revoked.tlsroot.pki.gov  
 - https://expired.tlsroot.pki.gov  
 
 ### 2.3 Time or frequency of publication
-The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
+The FPKIPA and CAs shall update and publish the CP, CPS and Audit Letter documents within thirty (30) days after being approved.
 
 Each CA shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
