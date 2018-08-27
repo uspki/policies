@@ -50,7 +50,10 @@ A Domain Validation TLS Server Authentication, issued under this policy: i) does
 ##### 1.1.3.2.2 Organization Validation TLS Server Authentication Certificates
 An Organization Validation TLS Server Authentication certificate, issued under this policy: i) contains commonName (OID 2.5.4.3), stateOrProvinceName (OID 2.5.4.8), organizationName (OID 2.5.4.10) and countryName (OID 2.5.4.6) in the subject distinguished name, and ii) asserts a key purpose of id-kp-serverAuth (OID 1.3.6.1.5.5.7.3.1) in the Extended Key Usage certificate extension.
 
-##### 1.1.3.2.3 Delegated OCSP Responder Certificates
+#### 1.1.3.3 Infrastructure Certificates
+A certificate is an Infrastructure certificate if it is not a CA Certificate and issued in support of the CA System.  Infrastructure certificates are end entity certificates as defined in RFC5280 and issued to subjects that are not authorized to issue certificates. Infrastructure certificates allowed to be issued under this policy are categorized as Delegated OCSP Responder certificates.
+
+##### 1.1.3.3.1 Delegated OCSP Responder Certificates
 A certificate is a Delegated OCSP Responder Certificate if it has a key purpose of id-kp-OCSPSigning (OID 1.3.6.1.5.5.7.3.9) in the Extended Key Usage certificate extension.
 
 ### 1.2 Document name and identification
@@ -96,7 +99,7 @@ The Federal CIO Council has established the framework for the Federal PKI (FPKI)
 The Federal Public Key Infrastructure Policy Authority (FPKIPA) is a sub-council comprised of U.S. Federal Government agency representatives and is chartered under the Federal CIO Council.  
 
 The FPKIPA is responsible for:  
- 
+
 - Maintaining this CP  
 - Approving the CPS for each CA that issues certificates under this policy  
 - Reviewing and approving the compliance audits for each CA issuing certificates under this policy  
@@ -132,7 +135,7 @@ Delegated Third Parties are not allowed as Registration Authorities.
 #### 1.3.5 Subscribers
 A Subscriber is the entity identified in a Certificate, capable of using the Private Key that corresponds to the Public Key listed in the certificate, and has agreed to the Terms of Use with the CA.  Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant.
 
-For this policy, Subscribers are limited to: 
+For this policy, Subscribers are limited to:
 
 1. Web services operated by or on behalf of U.S. Government agencies
 2. Domain Names within the .gov and .mil Domain Namespace(s)
@@ -145,7 +148,7 @@ For this policy, Relying Parties may include individuals or entities accessing U
 Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 #### 1.3.7 Other Participants
-CAs operating under this policy require the services of Qualified Auditors to perform independent, annual assessments on the conformance of the CA's practices and procedures.  Qualified Auditor requirements are covered in section 8. 
+CAs operating under this policy require the services of Qualified Auditors to perform independent, annual assessments on the conformance of the CA's practices and procedures.  Qualified Auditor requirements are covered in section 8.
 
 
 ### 1.4 Certificate Usage
@@ -261,7 +264,7 @@ Distinguished names in certificates are interpreted using the X.500 Standard and
 
 #### 3.1.5 Uniqueness of names
 The common name attribute for CA Certificates shall be unique from all other CA Certificates.  
-There is no stipulation for the uniqueness of the Subject information in Subscriber certificates. 
+There is no stipulation for the uniqueness of the Subject information in Subscriber certificates.
 
 #### 3.1.6 Recognition, authentication, and role of trademarks
 CAs shall not issue a certificate that knowingly infringes any trademark.  The FPKIPA shall resolve disputes involving names and trademarks.
@@ -280,7 +283,7 @@ All Domain Validation TLS Server Authentication certificates issued under this C
 All Organization Validation TLS Server Authentication certificates issued under this CP shall include Subject Identity Information of commonName, countryName, organizationName and stateOrProvinceName and shall not include any other Subject Identity Information.  If the Applicant requests a Certificate that will contain Subject Identity Information comprised of the countryName field and organizationName and stateOrProvinceName, then the CA shall verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements in section 3.2.2.1.  
 
 #### 3.2.2.1 Identity
-This CP is restricted to the generic Top Level Domains (gTLDs) for .gov and .mil which are registered as the sub-category of _sponsored_ TLDs (sTLDs) with ICANN. 
+This CP is restricted to the generic Top Level Domains (gTLDs) for .gov and .mil which are registered as the sub-category of _sponsored_ TLDs (sTLDs) with ICANN.
 
 The .gov sTLD is sponsored by the U.S. Government's General Services Administration. The .gov regulations are defined in 41 CFR Part 102-173. Under 41 CFR Part 102-173.30, registration in the .gov domain is only available to official governmental organizations in the United States including Federal (U.S. Government), State and local governments, and Native Sovereign Nations.  
 
@@ -298,7 +301,7 @@ Subject Identity Information shall not include a DBA or tradename.
 #### 3.2.2.3 Verification of Country
 All CAs shall verify the inclusion of subject:countryName in Subscriber certificates by one of the following:
 
-- The requested Domain Name is within the .mil or .gov sTLD domain space 
+- The requested Domain Name is within the .mil or .gov sTLD domain space
 - Information provided by the Domain Name Registrar
 
 #### 3.2.2.4 Validation of Domain Authorization or Control
@@ -350,12 +353,12 @@ Examples of Request Tokens include, but are not limited to: (i) a hash of the pu
 The CA shall define in its CPS the format of Request Tokens it accepts and shall document the "/.well-known/pki-validation/" directory and any other paths registered with IANA.
 
 ##### 3.2.2.4.7 DNS Change
-This validation method confirms the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either: 
+This validation method confirms the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either:
 
 1. An Authorization Domain Name
 2. An Authorization Domain Name that is prefixed with a label that begins with an underscore character.
 
-If a Random Value is used, the CA shall provide a Random Value unique to the Certificate request and shall not use the Random Value after 30 days. 
+If a Random Value is used, the CA shall provide a Random Value unique to the Certificate request and shall not use the Random Value after 30 days.
 
 A Request Token shall incorporate the key used in the certificate request.  A Request Token may include a timestamp to indicate when it was created and other information to ensure its uniqueness.  A Request Token that includes a timestamp shall remain valid for no more than 30 days from the time of creation.  A Request Token that includes a timestamp shall be treated as invalid if its timestamp is in the future. A Request Token that does not include a timestamp is valid for a single use and the CA shall not re-use it for a subsequent validation.
 
@@ -368,10 +371,10 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.11. Any Other Method
-This validation method defined by the Baseline Requirements is not allowed under this CP. 
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.12.  Validating Applicant as a Domain Contact
 This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
@@ -398,7 +401,7 @@ Prior to using any data source as a Reliable Data Source, the CA shall evaluate 
 Databases maintained by the CA or affiliated government agencies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under section 3.2 and sub-sections.
 
 #### 3.2.2.8 Certification Authority Authorization (CAA) Records
-For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates, CAs shall verify CAA records. 
+For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates, CAs shall verify CAA records.
 
 When processing CAA records, CAs shall process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags may be supported, but shall not conflict with or supersede the mandatory property tags set out in this policy. CAs shall respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set.
 
@@ -419,7 +422,7 @@ Subscriber certificates identifying and authenticating natural born persons or i
 Non-verified subscriber information shall not be asserted in any certificates under this Certificate Policy.
 
 #### 3.2.5 Validation of authority
-A CA may use the sources listed in section 3.2.2.1 to verify the Applicant is under authority of the U.S. Government and assert organizationName of U.S. Government. 
+A CA may use the sources listed in section 3.2.2.1 to verify the Applicant is under authority of the U.S. Government and assert organizationName of U.S. Government.
 
 In addition, a CA may establish a process that allows an Authorizing Authority of a .gov or .mil sub-domain to specify the individuals who may request Certificates. If an Authorizing Authority specifies, in writing, the individuals who may request a Certificate, then the CA shall not accept any certificate requests that are outside this specification. The CA shall provide an Authorizing Authority with a list of its authorized certificate requesters upon the Authorizing Authority's verified written request.
 
@@ -626,7 +629,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 12. The CA's right to issue Certificates under this CP expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
-14. Revocation is required by this CP and/or the CA's CPS; 
+14. Revocation is required by this CP and/or the CA's CPS;
 15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
 16.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
@@ -765,8 +768,8 @@ When not in use, removable cryptographic modules, activation information used to
 
 A security check of the facility housing the CA equipment or remote workstations used to administer the CAs shall occur if the facility is to be left unattended.  At a minimum, the check shall verify the following:  
 
-- The equipment is in a state appropriate for the current mode of operation 
-- That cryptographic modules are in place when “open,” and secured when “closed” 
+- The equipment is in a state appropriate for the current mode of operation
+- That cryptographic modules are in place when “open,” and secured when “closed”
 - Any security containers are properly secured
 - Physical security systems are functioning properly
 - The area is secured against unauthorized access
@@ -799,7 +802,7 @@ Full system backups sufficient to recover from system failure shall be made on a
 A trusted role is one whose incumbent performs functions that can introduce security problems if not carried out properly, whether accidentally or maliciously.
 
 The requirements of this policy are defined in terms of three roles:  
- 
+
 1.	Administrator
 2.	Officer
 3.	Security
@@ -1168,8 +1171,7 @@ Root CA Private Keys shall not be used to sign Certificates except in the follow
 
 1. Self-signed Certificates to represent the Root CA itself
 2. Certificates for Subordinate CAs
-3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates)
-4. Certificates for OCSP Response verification
+3. Certificates for infrastructure purposes (Delegated OCSP Responder certificates, administrative role certificates, internal CA operational device certificates)
 
 ### 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA shall implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above shall consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA shall encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
@@ -1490,6 +1492,8 @@ The certificates shall contain certificate policy identifier(s) for either Domai
 
 The CA shall document in its CPS that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with the CAB Forum Baseline Requirements and this CP.
 
+#### 7.1.6.5 Infrastructure Certificates
+
 Delegated OCSP Responder Certificates shall contain all the certificate policy OIDs defined in section 7.1.6.1 for all certificates issued by the CA and covered by the OCSP responses.
 
 #### 7.1.7 Usage of Policy Constraints extension
@@ -1556,7 +1560,7 @@ Depending upon the nature and severity of the discrepancy, and how quickly it ca
 ### 8.6 Communication of results
 The Audit Letter shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in section 7.1.6.1.
 
-The Audit Letter shall include: 
+The Audit Letter shall include:
 
 - Name and address of the organization performing the audit
 - Name of the auditor(s)
@@ -1566,7 +1570,7 @@ The Audit Letter shall include:
 - Whether the audit is for a period of time or a point in time
 - For a period of time audit: the start and end date of the period
 - For a point in time audit: the point-in-time date
-- The date the Audit Letter was issued 
+- The date the Audit Letter was issued
 
 The CA shall make the Audit Letter publicly available. The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
@@ -1588,7 +1592,7 @@ Section 2 of this policy requires that Repositories including CA Certificates ar
 #### 9.1.3 Revocation or status information access fees
 Section 2 of this policy requires that Repositories including certificate status services (CRLs and OCSP) are publicly available.  CAs operating under this policy shall not charge additional fees for access to CRLs and OCSP services.
 
-CAs shall not charge Subscribers a fee to revoke a certificate. 
+CAs shall not charge Subscribers a fee to revoke a certificate.
 
 #### 9.1.4 Fees for other services
 No stipulation.
@@ -1609,7 +1613,7 @@ No stipulation.
 No stipulation.
 
 ### 9.3 Confidentiality of business information
-CA information not requiring protection shall be made publicly available. 
+CA information not requiring protection shall be made publicly available.
 
 #### 9.3.1 Scope of confidential information
 No stipulation.
@@ -1623,7 +1627,7 @@ A CA shall not disclose non-certificate information to any third party unless au
 ### 9.4 Privacy of personal information
 
 #### 9.4.1 Privacy plan
-CAs shall conduct a Privacy Threshold Assessment, and implement and maintain any required Privacy Impact Assessments and Privacy Plans in accordance with the requirements of the Privacy Act of 1974, as amended. 
+CAs shall conduct a Privacy Threshold Assessment, and implement and maintain any required Privacy Impact Assessments and Privacy Plans in accordance with the requirements of the Privacy Act of 1974, as amended.
 
 #### 9.4.2 Information treated as private
 The CAs shall protect any subscriber personally identifying information from unauthorized disclosure.  
@@ -1643,10 +1647,10 @@ The CA is not required to provide any notice or obtain the consent of the Subscr
 The FPKIPA or CAs shall not disclose private information to any third party unless authorized by this policy, required by law, government rule or regulation, or order of a court of competent jurisdiction.  Any request for release of information shall be processed according to 41 CFR 105-60.605.
 
 #### 9.4.7 Other information disclosure circumstances
-None. 
+None.
 
 ### 9.5 Intellectual property rights
-The FPKIPA and CAs shall not knowingly violate intellectual property rights held by others. 
+The FPKIPA and CAs shall not knowingly violate intellectual property rights held by others.
 
 ### 9.6 Representations and warranties
 
@@ -1676,12 +1680,12 @@ A Subscriber shall be required to sign a document containing the requirements th
 - Promptly notify the CA upon suspicion of loss or compromise of the private key(s)
 - Cease use of the private key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise
 - Abide by all the terms, conditions, and restrictions levied on the use of their private key(s) and certificate(s)
-- Use certificates provided by the CA’s only for transactions related to U.S. Government business 
+- Use certificates provided by the CA’s only for transactions related to U.S. Government business
 
 The CA may use an electronic or "click-through" agreements provided that the CA has determined that such agreements are legally enforceable. A separate agreement may be used for each certificate request, or a single agreement may be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
 
 #### 9.6.4 Relying party representations and warranties
-This CP does not specify the steps a relying party should take to determine whether to rely upon a certificate.  The relying party decides, pursuant to its own policies, what steps to take. 
+This CP does not specify the steps a relying party should take to determine whether to rely upon a certificate.  The relying party decides, pursuant to its own policies, what steps to take.
 
 #### 9.6.5 Representations and warranties of other participants
 No stipulation.
@@ -1693,7 +1697,7 @@ CAs operating under this policy may not disclaim any responsibilities described 
 The U.S. Government shall not be liable to any party, except as determined pursuant to the Federal Tort Claims Act (FTCA), 28 U.S.C. 2671-2680, or as determined through a valid express written contract between the Government and another party.
 
 ### 9.9 Indemnities
-No stipulation. 
+No stipulation.
 
 ### 9.10 Term and termination
 
@@ -1701,13 +1705,13 @@ No stipulation.
 This CP becomes effective when approved by the FPKIPA.  This CP has no specified term.
 
 #### 9.10.2 Termination
-Termination of this CP is at the sole discretion of the FPKIPA. 
+Termination of this CP is at the sole discretion of the FPKIPA.
 
 #### 9.10.3 Effect of termination and survival
 The requirements of this CP remain in effect through the end of the archive period for the last certificate issued.
 
 ### 9.11 Individual notices and communications with participants
-The FPKIPA shall establish appropriate procedures for communications with CAs operating under this policy via memoranda of agreement as applicable. 
+The FPKIPA shall establish appropriate procedures for communications with CAs operating under this policy via memoranda of agreement as applicable.
 
 ### 9.12 Amendments
 
@@ -1723,15 +1727,15 @@ The review and update shall include any changes needed to address source require
 
 The FPKIPA is responsible for monitoring source requirements, and initiating necessary changes to ensure continued compliance within the required timeframes.  After review and approval, the CP document version number and a dated changelog entry shall be added even if no changes were made to the document.  
 
-Errors, updates, or suggested changes to this CP can be communicated to the contact in section 1.5.2.  Such communication shall include a description of the change, a change justification, and contact information for the person requesting the change. 
+Errors, updates, or suggested changes to this CP can be communicated to the contact in section 1.5.2.  Such communication shall include a description of the change, a change justification, and contact information for the person requesting the change.
 
 #### 9.12.2 Notification mechanism and period
-Proposed changes to this CP shall be distributed electronically to FPKIPA members and observers in accordance with the Charter and By-laws, and posted publicly for review by any interested party.  The FPKIPA shall make any subsequent changes publicly available within 30 days of approval (see section 2.3). 
+Proposed changes to this CP shall be distributed electronically to FPKIPA members and observers in accordance with the Charter and By-laws, and posted publicly for review by any interested party.  The FPKIPA shall make any subsequent changes publicly available within 30 days of approval (see section 2.3).
 
 #### 9.12.3 Circumstances under which OID shall be changed
-No stipulation. 
+No stipulation.
 
-### 9.13 Dispute resolution 
+### 9.13 Dispute resolution
 The FPKIPA shall facilitate the resolution between entities when conflicts arise as a result of the use of certificates issued under this policy.  If a dispute is between U.S. Federal government entities, and the FPKIPA is unable to facilitate resolution, dispute resolution may be escalated to the White House Office of Management and Budget or to the U.S. Department of Justice, Office of Legal Counsel as necessary.
 
 ### 9.14 Governing law
@@ -1749,7 +1753,7 @@ No stipulation.
 No stipulation.
 
 #### 9.16.3 Severability
-Should it be determined that one section of this CP is incorrect or invalid, the other sections of this CP shall remain in effect until the CP is updated. The process for updating this CP is described in section 9.12. 
+Should it be determined that one section of this CP is incorrect or invalid, the other sections of this CP shall remain in effect until the CP is updated. The process for updating this CP is described in section 9.12.
 
 #### 9.16.4 Enforcement (attorneys' fees and waiver of rights)
 No stipulation.
@@ -1846,6 +1850,8 @@ No stipulation.
 **High Risk Certificate Request**: A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
 **High Security Zone**: An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of the CA's Private Key or cryptographic hardware.
+
+**Infrastructure Certificate**: A certificate that is not a CA Certificate and issued in support of the CA System.
 
 **Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
 
@@ -2013,7 +2019,7 @@ X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Informat
 ## Appendix D: Certificate Profiles
 This section specifies the X.509 version 3 certificate profiles, version 2 Certificate Revocation List (CRL) profile, and Online Certificate Status Protocol (OCSP) Response profile for the U.S. Federal Public Trust TLS PKI Certificate Policy.  In cases where the profiles and section 7 of this CP are in conflict, section 7 takes precedence and is authoritative.
 
-Certificates issued under this policy are categorized as CA Certificates or Subscriber Certificates.  This Certificate Policy defines five (5) different types of certificates (See section 1.1.3) and four associated certificate profiles.  
+Certificates issued under this policy are categorized as CA Certificates, Subscriber Certificates or Infrastructure Certificates.  This Certificate Policy defines five (5) different types of certificates (See section 1.1.3) and four associated certificate profiles.  
 
 | **Category** | **Certificate Type**  | **Profile**  |
 | :-------- | :----------------------- | :----------------------- |
@@ -2021,7 +2027,7 @@ Certificates issued under this policy are categorized as CA Certificates or Subs
 | CA Certificate | Subordinate CA Certificate | Subordinate CA Certificate Profile |
 | Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
 | Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
-| Subscriber Certificate | Delegated OCSP Responder Certificates |  Delegated OCSP Responder Certificate Profile |
+| Infrastructure Certificate | Delegated OCSP Responder Certificates |  Delegated OCSP Responder Certificate Profile |
 
 There are two profiles covering the Certificate Revocation Lists and OCSP Responses.
 
