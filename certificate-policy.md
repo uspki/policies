@@ -121,14 +121,9 @@ The U.S. Federal Public Trust TLS PKI CAs are operated on behalf of the U.S. Gov
 The CAs operated under this policy provide services to U.S. Government entities which may be part of the Executive Branch, Legislative Branch and Judicial Branch of the Federal Government. The services shall not be provided to the general public, commercial entities, U.S. State, Local, Territorial, Native Sovereign Nations, or international government entities.
 
 #### 1.3.4 Registration Authorities
-This policy allows for persons who may not be affiliated with the same U.S. Federal Government organizational unit that is operating the CA to assist in the certificate application process and be designated as an Enterprise Registration Authority.  
+This policy prohibits persons who may not be affiliated with the same U.S. Federal Government organizational unit that is operating the CA to assist in the certificate application or domain validation process.   
 
-A CA may designate an Enterprise Registration Authority (RA) to verify certificate requests from the Enterprise RA's affiliated U.S. Federal Government organizational unit.  The CA shall not accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
-
-1. The CA shall confirm that the requested Fully-Qualified Domain Name(s) are within the RA's affiliated U.S. Federal Government organizational unit verified Domain Namespace(s) as registered in the .gov and .mil gTLDs Domain Name Registrars.  
-2. The CA should confirm that the requested Fully Qualified Domain Name(s) are not within any Domain Namespace(s) for any U.S. State, Local, Territorial, Native Sovereign Nations, or any other entities identified as a _Non-Federal Agency_ in the .gov Domain Name Registrar per 41 CFR Part 102-173.
-
-The CA shall impose these limitations through an agreement with the Authorizing Authority of the Domain Namespace as defined under 41 CFR Part 102-173.  The CA shall monitor compliance by the RA and institute technical controls.  The CA shall use both audits and analytics based methods, such as monitoring of Certificate Transparency Log(s) and other services, to ensure compliance.
+Enterprise Registration Authorities are not allowed as Registration Authorities.
 
 Delegated Third Parties are not allowed as Registration Authorities.
 
@@ -1110,7 +1105,7 @@ The CA shall:
 The documentation of the procedure shall be detailed enough to show that appropriate role separation was used and the CA key pair generation shall create a verifiable audit trail that the security requirements for procedures were followed.
 
 #### 6.1.1.2 RA Key Pair Generation
-Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  Enterprise Registration Authorities as a participant as defined in section 1.3.4 shall not generate Subscriber key pairs.
+Registration Authorities as a function of the CA shall not generate Subscriber key pairs.  
 
 #### 6.1.1.3 Subscriber Key Pair Generation
 Subscribers shall generate their own keys in compliance with Sections 6.1.5 and 6.1.6 and the Subscriber Agreement or Terms of Use.
