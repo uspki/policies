@@ -170,7 +170,7 @@ The FPKIPA shall affirm the suitability of any CPS to this policy.
 #### 1.5.4 CPS approval procedures
 A CPS shall be submitted and approved by the FPKIPA.
 
-Prior to submitting a CPS, the CA shall perform a compliance analysis culminating in a written report that provides a summary of areas in which the CPS may not or does not comply with this CP. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
+Prior to submitting a CPS, the CA shall perform an analysis of the areas in which the CPS may not or does not comply with this CP. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
 
 CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document.
 
@@ -216,8 +216,9 @@ Web pages that allow for testing certificate validation up to the U.S. Federal P
 - https://revoked.tlsroot.pki.gov  
 - https://expired.tlsroot.pki.gov  
 
+
 ### 2.3 Time or frequency of publication
-The FPKIPA and CAs shall update and publish the CP, CPS and Audit Letter documents within thirty (30) days after being approved.
+The FPKIPA and CAs shall update and publish the CP and CPS documents within thirty (30) days after being approved.
 
 Each CA shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
@@ -1556,7 +1557,7 @@ The Audit Letter shall include:
 - For a point in time audit: the point-in-time date
 - The date the Audit Letter was issued
 
-The CA shall make the Audit Letter publicly available. The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
+The CA shall make the Audit Letter publicly available in accordance with Section 2.1. The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
 ### 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
