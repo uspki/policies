@@ -1407,13 +1407,16 @@ For ipAddress, Subordinate CAs shall not issue subscriber certificates with an i
 - Include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0)
 - Include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0)
 
-For DirectoryName, the Subordinate CA certificates shall not have DirectoryName present in Name Constraints.
+For DirectoryName, the Subordinate CA Certificates shall:
+
+- Include at least one DirectoryName in permittedSubtrees specifying c=US
 
 A decoded example for issuance to the domain and sub domains of .mil by a Subordinate CA would be:-
 
 > X509v3 Name Constraints:  
 >   Permitted:  
->       DNS:mil  
+>       DNS:mil
+>       DirName: C = US
 >   Excluded:  
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
@@ -1423,7 +1426,8 @@ A decoded example for issuance to the domain and sub domains of both .gov and .m
 > X509v3 Name Constraints:  
 >   Permitted:  
 >       DNS:mil  
->       DNS:gov  
+>       DNS:gov
+>       DirName: C = US  
 >   Excluded:  
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
