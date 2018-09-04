@@ -3,6 +3,8 @@ layout: base
 permalink: /certificatepolicy/
 
 subnav:
+  - text: Revision History
+    href: "#revision-history"
   - text: 1. Introduction
     href: "#introduction"
   - text: 2. Publication and Repository Responsibilities
