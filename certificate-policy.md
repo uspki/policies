@@ -17,7 +17,7 @@ This document serves two purposes:
 - To specify the U.S. Federal Public Trust TLS PKI Certificate Policy and requirements, and
 - To provide requirements for what each Certification Authority shall address in its Certification Practice Statement
 
-This policy promotes automation to improve U.S. Federal Government efficiencies.  This policy also incorporates Certificate Transparency as a key component for publicly accessible and accountable services operated by the U.S. Federal Government.   
+This policy promotes automation to improve U.S. Federal Government efficiencies.   
 
 This policy is applicable to all Certification Authorities within a chain of trust under the **U.S. Federal TLS Root CA**.    
 
@@ -234,10 +234,10 @@ Each CA shall make its Repository publicly available in a read-only manner.  Rep
 #### 3.1.1 Types of names
 This policy restricts the subject names of CAs.  CAs that issue certificates under this policy shall have distinguished names using geo-political names consisting of country, organization, and common name.  Organization units may only be used with approval by the FPKIPA.   
 
-End-entity certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7 and the certificate profiles in Appendix D.
+Subscriber certificates issued under this policy shall use distinguished names and subject alternative names that comply with Section 7 and the certificate profiles in Appendix D.
 
 #### 3.1.2 Need for names to be meaningful
-End-entity certificates issued under this policy shall have a common name that is one of the domain names validated in accordance with Section 3.2.2.4.
+Subscriber certificates issued under this policy shall have a common name that is one of the domain names validated in accordance with Section 3.2.2.4.
 
 #### 3.1.3 Anonymity or pseudonymity of subscribers
 A CA shall not issue anonymous certificates. CA certificates shall not contain anonymous or pseudonymous identities.
@@ -390,8 +390,6 @@ For Domain Validation TLS Server Authentication certificates and Organization Va
 
 When processing CAA records, CAs shall process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags may be supported, but shall not conflict with or supersede the mandatory property tags set out in this policy. CAs shall respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set. CAs may treat a non-empty CAA Resource Record Set that does not contain any issue property tags (and also does not contain any issuewild property tags when performing CAA processing for a Wildcard Domain Name) as permission to issue, provided that no records in the CAA Resource Record Set otherwise prohibit issuance.
 
-CAA checking is optional for certificates only when a Certificate Transparency pre-certificate was created and logged in at least two public logs, and CAA records were checked for the pre-certificate.
-
 CAs are permitted to treat a record lookup failure as permission to issue only if all the following are true:  
 
 -  The failure is outside the CA’s infrastructure
@@ -484,15 +482,6 @@ No stipulation.
 
 #### 4.3.1 CA actions during certificate issuance
 Issuance of a CA Certificate shall require an individual authorized by the CA to deliberately issue a direct command in order for the CA to perform a certificate signing operation.  Issuance of a CA certificate shall require written authorization by the FPKIPA.  
-
-All Domain Validation TLS Server Authentication certificates and Organizational Validation TLS Server Authentication certificates shall assert a Certificate Transparency (CT) Signed Certificate Timestamp (SCT) in the x509v3 certificate extension.  The CA shall submit a pre-certificate to a minimum of two (2) Certificate Transparency Logs for certificates with a validity period less than or equal to 395 days.  Information included in the pre-certificates shall not be redacted prior to submission to the CT Logs.
-
-- At least one of the CT Logs shall be a log operated by Google
-- At least one of the CT Logs shall be a log operated by a government or business entity other than Google
-
-There is no limit on the maximum number of CT Logs which may be submitted to.  
-
-The CA shall include at least two (2) SCTs meeting the variety requirements in the x509v3 certificate extension for the Domain Validation TLS Server Authentication certificate or the Organizational Validation TLS Server Authentication certificate issued.
 
 #### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 The CA shall issue the certificate according to the certificate requesting protocol used by the Applicant (this may be automated) and, if the protocol does not provide inherent notification, also notify the Applicant of the issuance.
