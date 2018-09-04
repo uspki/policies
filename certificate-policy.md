@@ -386,9 +386,9 @@ Prior to using any data source as a Reliable Data Source, the CA shall evaluate 
 Databases maintained by the CA or affiliated government agencies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under Section 3.2 and sub-sections.
 
 #### 3.2.2.8 Certification Authority Authorization (CAA) Records
-For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates, CAs shall verify CAA records.
+For Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates, CAs shall check and verify CAA records.  CAs shall follow the processing instructions found, for each dNSName in the subjectAltName extension of the certificate to be issued, as specified in RFC 6844 as amended by Errata 5065. If the CA issues, the CA shall issue within the Time to Live (TTL) of the CAA record, or 8 hours, whichever is greater.
 
-When processing CAA records, CAs shall process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags may be supported, but shall not conflict with or supersede the mandatory property tags set out in this policy. CAs shall respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set.
+When processing CAA records, CAs shall process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags may be supported, but shall not conflict with or supersede the mandatory property tags set out in this policy. CAs shall respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set. CAs may treat a non-empty CAA Resource Record Set that does not contain any issue property tags (and also does not contain any issuewild property tags when performing CAA processing for a Wildcard Domain Name) as permission to issue, provided that no records in the CAA Resource Record Set otherwise prohibit issuance.
 
 CAA checking is optional for certificates only when a Certificate Transparency pre-certificate was created and logged in at least two public logs, and CAA records were checked for the pre-certificate.
 
@@ -464,7 +464,7 @@ For Domain Validation TLS Server Authentication certificates and Organization Va
 
 The CA shall identify in Section 4.2 of the CPS the Issuer Domain Name to be used for CAA records.  For example, the CA CAA domain is 'pki.gov'.     
 
-The CA may reuse the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 395 days prior to issuing the Certificate.  
+With the exception of Section 3.2.2.8 CAA Record checking, the CA may reuse the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 395 days prior to issuing the Certificate.
 
 All Subordinate CAs shall develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests for .gov and .mil assets prior to the Certificate's approval.  
 
