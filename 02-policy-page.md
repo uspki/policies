@@ -6,23 +6,23 @@ subnav:
   - text: Revision History
     href: "#revision-history"
   - text: 1. Introduction
-    href: "#introduction"
+    href: "#1-introduction"
   - text: 2. Publication and Repository Responsibilities
-    href: "#publication-and-repository-responsibilities"
+    href: "#2-publication-and-repository-responsibilities"
   - text: 3. Identification and Authentication
-    href: "#identification-and-authentication"
+    href: "#3-identification-and-authentication"
   - text: 4. Certificate Life-Cycle Operational Requirements
-    href: "#certificate-life-cycle-operational-requirements"
+    href: "#4-certificate-life-cycle-operational-requirements"
   - text: 5. Management, Operational, and Physical Controls
-    href: "#management-operational-and-physical-controls"
+    href: "#5-management-operational-and-physical-controls"
   - text: 6. Technical Security Controls
-    href: "#technical-security-controls"
+    href: "#6-technical-security-controls"
   - text: 7. Certificate, CRL, and OCSP Profiles
-    href: "#certificate-crl-and-ocsp-profiles"
+    href: "#7-certificate-crl-and-ocsp-profiles"
   - text: 8. Compliance Audit and Other Assessments
-    href: "#compliance-audit-and-other-assessments"
+    href: "#8-compliance-audit-and-other-assessments"
   - text: 9. Other Business and Legal Matters
-    href: "#other-business-and-legal-matters"
+    href: "#9-other-business-and-legal-matters"
   - text: Appendix A Definitions
     href: "#appendix-a-definitions"
   - text: Appendix B Acronyms
