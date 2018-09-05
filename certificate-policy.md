@@ -1,4 +1,4 @@
-### Revision History
+## Revision History
 
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
@@ -1404,8 +1404,8 @@ A decoded example for issuance to the domain and sub domains of .mil by a Subord
 
 > X509v3 Name Constraints:  
 >   Permitted:  
->       DNS:mil
->       DirName: C = US
+>       DNS:mil  
+>       DirName: C = US  
 >   Excluded:  
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
@@ -1415,8 +1415,8 @@ A decoded example for issuance to the domain and sub domains of both .gov and .m
 > X509v3 Name Constraints:  
 >   Permitted:  
 >       DNS:mil  
->       DNS:gov
->       DirName: C = US  
+>       DNS:gov  
+>       DirName: C = US    
 >   Excluded:  
 >       IP:0.0.0.0/0.0.0.0  
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
