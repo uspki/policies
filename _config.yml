@@ -1,4 +1,4 @@
-title: U.S. Federal Public Trust TLS Certificate Policy (Version 2 Draft)
+title: U.S. Federal Public Trust TLS Certificate Policy (Version 0.3 Draft)
 small_title: U.S. Federal Public Trust TLS PKI
 smallest_title: U.S. Federal Public Trust TLS PKI
 description: Certificate Policy for a new public key infrastructure for TLS certificates for public .gov and .mil websites.
@@ -10,10 +10,10 @@ baseurl: ''
 branch: policy-pages
 # Federalist overwrites the site.branch value when deploying
 # the site.branch was used in dynamic link generation for objects including Edit Page
-# we want the dynamic links to send users to the staging branch.  New site variable to ensure Edit Page sends users to the correct branch for pull requests.
+# we want the dynamic links to send users to the the primary editing branch.  editbranch is the new site variable to ensure Edit Page sends users to the correct branch for pull requests.
 editbranch: master
 
-report_url: "https://devicepki.idmanagement.gov/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_2.pdf"
+report_url: "assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_3.pdf"
 
 google_analytics_ua:
 repo: https://github.com/uspki/policies
