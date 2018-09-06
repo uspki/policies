@@ -1398,7 +1398,7 @@ For ipAddress, Subordinate CAs shall not issue subscriber certificates with an i
 
 For DirectoryName, the Subordinate CA Certificates shall:
 
-- Include at least one DirectoryName in permittedSubtrees specifying c=US
+- Include a single DirectoryName in permittedSubtrees specifying c=US
 
 A decoded example for issuance to the domain and sub domains of .mil by a Subordinate CA would be:-
 
