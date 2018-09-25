@@ -674,7 +674,7 @@ For the status of Subordinate CA Certificates, the root CA shall update informat
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status.  The CA shall monitor the responder for such requests as part of its security response procedures.
 
 #### 4.9.11 Other forms of revocation advertisements available
-Subscribers may rely on stapling, in accordance with RFC4366, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses even if a Subscriber decides to staple OCSP responses.  
+Subscribers may rely on stapling, in accordance with RFC4366, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses.  
 
 #### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
