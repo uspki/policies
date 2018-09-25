@@ -242,10 +242,8 @@ Subscriber certificates issued under this policy shall have a common name that i
 #### 3.1.3 Anonymity or pseudonymity of subscribers
 A CA shall not issue anonymous certificates. CA certificates shall not contain anonymous or pseudonymous identities.
 
-Relying parties should consider certificates to be issued by the U.S. Government for U.S. Government assets and all Subscribers to be affiliated with the U.S. Government.  
-
 #### 3.1.4 Rules for interpreting various name forms
-Distinguished names in certificates are interpreted using the X.500 Standard and the ASN.1 syntax.
+Distinguished names in certificates are interpreted using the X.500 Standard, and URL (RFC3986) syntax.
 
 #### 3.1.5 Uniqueness of names
 The common name attribute for CA Certificates shall be unique from all other CA Certificates.  
