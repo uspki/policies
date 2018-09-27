@@ -1250,26 +1250,24 @@ No stipulation.
 
 #### 6.5.1 Specific computer security technical requirements
 
-Administrator privileges to all Certificate System Components shall only be granted to the Administrator trusted role.  All CAs shall implement multi-factor or multi-party authentication for all Administrator trusted role access to Certificate System Components including operating system and software.
-
-All CAs shall implement multi-factor authentication for the Officer trusted role.
-
 For all CAs and Certificate System Components including certificate status services, the computer security functions listed below are required. These functions may be provided by the operating system, or through a combination of operating system, software, and physical safeguards. The Certificate System Components shall include the following functionality:  
 
 - Be configured to remove or disable all accounts, applications, services, protocols, and ports that are not used in the CA's operations
 - Authenticate the identity of users before permitting access to the system or applications
-- Manage privileges of users to limit users to their assigned roles and implement least privilege controls  
+- Manage privileges of users to limit users to their assigned roles and implement least privilege controls
+- Enforce separation of duties for roles
 - Generate and archive audit records for all transactions (see Section 5.4)  
 - Enforce domain integrity boundaries for security critical processes
+- Provide process isolation
 - Support recovery from key or system failure
 
-For remote workstations used to administer the CAs, the computer security functions listed below are required:
+When CA and Certificate System Components including certificate status services, are hosted on evaluated platforms in support of computer security assurance requirements then the system (hardware, software, and operating system) shall, when possible, operate in an evaluated configuration.  At a minimum, such platforms shall use the same version of the computer operating system as received the evaluation rating.
 
-- Authenticate the identity of users before permitting access to the system or applications  
-- Manage privileges of users to limit users to their assigned roles  
-- Generate and archive audit records for all transactions (see Section 5.4)  
-- Enforce domain integrity boundaries for security critical processes
-- Configure workstations with inactivity time-outs to enforce account log out or lock the workstation when no longer in use
+Two person control shall be enforces (using physical and/or technical means) on function performed to administer the hardware, operating system, and applications.
+
+The number of accounts and personnel assigned for CA equipment and the administration thereof shall be the minimum number necesary to accomplish the required functions.  Any  management of the PKI equipment shall be performed from a single administrative domain.
+
+For CA components, remote management and login shall be disabled.  Network protocols not required for CA operation shall be disabled.  Telnet and File Transfer Protocol (FTP) shall never be enabled.
 
 #### 6.5.2 Computer security rating
 No stipulation.
