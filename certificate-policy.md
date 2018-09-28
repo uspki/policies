@@ -1282,9 +1282,6 @@ The system development controls for all CAs and Certificate System Components fu
 - The CA hardware and software shall be dedicated to performing one task: the CA
 - There shall be no other applications, hardware devices, network connections, or component software installed that are not part of the CA operation
 - Where the CA operation supports multiple CAs, the hardware platform may support multiple CAs
-- Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g. by ensuring the random selection of material at time of purchase or installation)
-- Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter
-
 
 #### 6.6.2 Security management controls
 The security management controls for all CAs and all Certificate System Components listed below shall be implemented:
@@ -1301,6 +1298,8 @@ The security management controls for all CAs and all Certificate System Componen
 #### 6.6.3 Life cycle security controls
 The security management controls for all CAs and Certificate System Components listed below shall be implemented:
 
+- Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g. by ensuring the random selection of material at time of purchase or installation)
+- Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter
 - Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
 - High vulnerabilities shall be patched within sixty (60) days or less
 - Critical vulnerabilities shall be patched within ninety-six (96) hours of the discovery of a critical vulnerability not previously addressed
@@ -1325,11 +1324,9 @@ For all CAs and Certificate System Components, the network security controls lis
 - All unused network ports and services shall be turned off.
 - Any network software present shall be necessary to the functioning of the equipment.
 - Any boundary control devices used to protect the network on which equipment is hosted shall deny all but the necessary services to the equipment.
-- Repositories, certificate status services, and remote workstations used to administer the CAs shall employ appropriate network security controls.
+- Repositories, and certificate status services shall employ appropriate network security controls.
 
-The CA shall establish connection with a remote workstation used to administer the CA only after successful authentication of the remote workstation at a level of assurance commensurate with that of the CA. Remote connections shall be restricted, except when:  
-- The remote connection originates from a device owned by the CA and from a pre-approved IP address.
-- The connection is through a temporary, non-persistent and encrypted channel that is supported by multi-factor authentication.
+The CA shall not be remotely administered.
 
 ### 6.8 Time-stamping
 
