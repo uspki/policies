@@ -19,9 +19,11 @@ This document serves two purposes:
 
 This policy promotes automation to improve U.S. Federal Government efficiencies.   
 
+In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
+
 This policy is applicable to all Certification Authorities within a chain of trust under the **U.S. Federal TLS Root CA**.    
 
-The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law.
+This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All adaptations and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
 
 #### 1.1.1 Scope
 The scope of the U.S. Federal Public Trust TLS PKI includes the Certification Authorities used for issuing and managing Transport Layer Security (TLS) certificates for U.S. Federal Government services.  The scope is limited to:  
@@ -82,9 +84,6 @@ The following Certificate Policy identifiers are registered by the CAB Forum and
 
 Additional documents related to the U.S. Federal Public Trust TLS PKI, including Certification Practice Statement(s), Audit Letter(s), and any applicable Subscriber Agreement(s) can be found at https://repository.pki.gov.
 
-In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
-
-This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All adaptations and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
 
 ### 1.3 PKI Participants
 
