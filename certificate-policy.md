@@ -82,9 +82,6 @@ The following Certificate Policy identifiers are registered by the CAB Forum and
 | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1) } (2.23.140.1.2.1) | Domain Validation TLS Server Authentication Certificates |  
 | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2) } (2.23.140.1.2.2) | Organization Validation TLS Server Authentication Certificates |  
 
-Additional documents related to the U.S. Federal Public Trust TLS PKI, including Certification Practice Statement(s), Audit Letter(s), and any applicable Subscriber Agreement(s) can be found at https://repository.pki.gov.
-
-
 ### 1.3 PKI Participants
 
 #### 1.3.1 Federal CIO Council
