@@ -870,7 +870,7 @@ Documentation sufficient to define duties and procedures for each trusted role s
 ### 5.4 Audit Logging Procedures
 
 #### 5.4.1 Types of events recorded
-The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request, the time and date, any CA Officer roles involved, and the domain validation method used for each FQDN for Domain Validation TLS Server Authentication certificates and Domain Validation TLS Server Authentication certificates. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
+The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request, the time and date, any CA Officer roles involved, and the domain validation method used for each FQDN for Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
 
 The CA shall record CA key lifecycle management events, including:
 
@@ -1455,14 +1455,14 @@ All Subordinate CA's shall be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA shall contain in the Certificate's certificatePolicies extension:  
 
-1. One of more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
+1. One or more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
 1. One or more of the CAB Forum reserved policy object identifiers in Section 7.1.6.1 to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements
 
 
 #### 7.1.6.4 Subscriber Certificates
 A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
 
-1. One US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
+1. One of the US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
 1. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
 
 The certificates shall contain certificate policy identifier(s) for either Domain Validated policies or Organization Validated policies but shall not assert certificate policy identifiers for both.
@@ -1640,7 +1640,7 @@ A CA that issues certificates under this policy shall conform to the stipulation
 - Ensuring a Terms of Service or Subscriber Agreement is agreed to with the Subscribers
 - Maintaining its operations in conformance to the stipulations of the approved CPS.
 - Including only valid and appropriate information in certificates
-- Maintaining evideence that due diligence was exercised in validating the information contained in the certificates.
+- Maintaining evidence that due diligence was exercised in validating the information contained in the certificates.
 - Revoking the certificates of subscribers found to have acted in a manner counter to their obligations in accordance with Section 9.6.3
  - Operating or providing for the services of an on-line repository, and informing the repository service provider of their obligations if applicable.
 
