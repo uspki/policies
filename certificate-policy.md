@@ -1263,7 +1263,7 @@ For all CAs and Certificate System Components including certificate status servi
 
 When CA and Certificate System Components including certificate status services, are hosted on evaluated platforms in support of computer security assurance requirements then the system (hardware, software, and operating system) shall, when possible, operate in an evaluated configuration.  At a minimum, such platforms shall use the same version of the computer operating system as received the evaluation rating.
 
-Two person control shall be enforces (using physical and/or technical means) on function performed to administer the hardware, operating system, and applications.
+Two person control shall be enforced (using physical and/or technical means) on functions performed to administer the hardware, operating system, and applications.
 
 The number of accounts and personnel assigned for CA equipment and the administration thereof shall be the minimum number necesary to accomplish the required functions.  Any  management of the PKI equipment shall be performed from a single administrative domain.
 
