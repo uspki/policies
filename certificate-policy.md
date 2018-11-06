@@ -19,9 +19,13 @@ This document serves two purposes:
 
 This policy promotes automation to improve U.S. Federal Government efficiencies.   
 
+In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
+
 This policy is applicable to all Certification Authorities within a chain of trust under the **U.S. Federal TLS Root CA**.    
 
-The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law.
+The terms and provisions of this certificate policy shall be interpreted under and governed by applicable Federal law. 
+
+This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All adaptations and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
 
 #### 1.1.1 Scope
 The scope of the U.S. Federal Public Trust TLS PKI includes the Certification Authorities used for issuing and managing Transport Layer Security (TLS) certificates for U.S. Federal Government services.  The scope is limited to:  
@@ -79,12 +83,6 @@ The following Certificate Policy identifiers are registered by the CAB Forum and
 | :--- | :--- |  
 | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1) } (2.23.140.1.2.1) | Domain Validation TLS Server Authentication Certificates |  
 | {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2) } (2.23.140.1.2.2) | Organization Validation TLS Server Authentication Certificates |  
-
-Additional documents related to the U.S. Federal Public Trust TLS PKI, including Certification Practice Statement(s), Audit Letter(s), and any applicable Subscriber Agreement(s) can be found at https://repository.pki.gov.
-
-In accordance with RFC 3647, this CP includes all nine sections of the RFC 3647 framework and an additional addendum with the certificate profiles.
-
-This document was originally based on the CAB Forum Baseline Requirements, which is licensed under the Creative Commons Attribution 4.0 International License. All adaptations and modifications made to create this CP are in the United States public domain as works of the U.S. Government, and released internationally under the Creative Commons (CCO) 1.0 Universal Public Domain dedication.
 
 ### 1.3 PKI Participants
 
@@ -672,7 +670,7 @@ For the status of Subordinate CA Certificates, the root CA shall update informat
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status.  The CA shall monitor the responder for such requests as part of its security response procedures.
 
 #### 4.9.11 Other forms of revocation advertisements available
-Subscribers may rely on stapling, in accordance with RFC4366, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses.  
+Subscribers may rely on stapling, in accordance with RFC6066, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses.  
 
 #### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
@@ -869,7 +867,7 @@ Documentation sufficient to define duties and procedures for each trusted role s
 ### 5.4 Audit Logging Procedures
 
 #### 5.4.1 Types of events recorded
-The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request, the time and date, any CA Officer roles involved, and the domain validation method used for each FQDN for Domain Validation TLS Server Authentication certificates and Domain Validation TLS Server Authentication certificates. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
+The CA shall record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request, the time and date, any CA Officer roles involved, and the domain validation method used for each FQDN for Domain Validation TLS Server Authentication certificates and Organization Validation TLS Server Authentication certificates. The CA shall make these records available to its Qualified Auditor as proof of the CA's compliance with this CP and the CA's CPS.
 
 The CA shall record CA key lifecycle management events, including:
 
@@ -1449,14 +1447,14 @@ All Subordinate CA's shall be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA shall contain in the Certificate's certificatePolicies extension:  
 
-1. One of more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
+1. One or more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
 1. One or more of the CAB Forum reserved policy object identifiers in Section 7.1.6.1 to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements
 
 
 #### 7.1.6.4 Subscriber Certificates
 A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
 
-1. One US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
+1. One of the US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
 1. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
 
 The certificates shall contain certificate policy identifier(s) for either Domain Validated policies or Organization Validated policies but shall not assert certificate policy identifiers for both.
@@ -1634,7 +1632,7 @@ A CA that issues certificates under this policy shall conform to the stipulation
 - Ensuring a Terms of Service or Subscriber Agreement is agreed to with the Subscribers
 - Maintaining its operations in conformance to the stipulations of the approved CPS.
 - Including only valid and appropriate information in certificates
-- Maintaining evideence that due diligence was exercised in validating the information contained in the certificates.
+- Maintaining evidence that due diligence was exercised in validating the information contained in the certificates.
 - Revoking the certificates of subscribers found to have acted in a manner counter to their obligations in accordance with Section 9.6.3
  - Operating or providing for the services of an on-line repository, and informing the repository service provider of their obligations if applicable.
 
@@ -1973,13 +1971,13 @@ RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: C
 
 RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.
 
-RFC4366, Request for Comments: 4366, Transport Layer Security (TLS) Extensions, Blake-Wilson, et al, April 2006.
-
 RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
 
 RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.
 
 RFC5752, Request for Comments: 5752, Multiple Signatures in Cryptographic Message Syntax (CMS), Turner et al, January 2010.
+
+RFC6066, Request for Comments: 6066, Transport Layer Security (TLS) Extensions: Extension Definitions, Eastlake 3rd, et al, January 2011.
 
 RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, et al, January 2013.
 
