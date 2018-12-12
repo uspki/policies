@@ -923,21 +923,25 @@ The audit log collection system may or may not be external to the CA system.  Au
 There is no requirement to notify a subject that an event was audited.  Real-time alerts are neither required nor prohibited by this policy.
 
 #### 5.4.8 Vulnerability assessments
-The CA's security program shall include an annual Risk Assessment that:
 
+The CA's security program shall include an annual Risk Assessment that:
 1. Identifies foreseeable internal and external threats that could result in unauthorized access, disclosure, misuse, alteration, or destruction of any Certificate data or Certificate management processes
 2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate data and Certificate management processes
 3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats
 
-All CAs shall undergo or perform a Vulnerability Scan:  
-
-- At least once per quarter, on public and private IP addresses identified as within the CA's system boundaries
+All CAs shall undergo or perform a Vulnerability Scan: 
+- At least every thirty (30) days, Hardware and software on public and private IP addresses identified as within the CA's system boundaries
 - Within one week of receiving a request from the FPKIPA or the U.S. Government Federal Information Security Modernization Act Authorizing Official for the CA
-- After any system or network changes that the CA determines are significant
+- After any system or network changes that the CA determines are significant 
 
-Subordinate CAs shall undergo a Penetration Test on the CA system boundaries on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant.
+For Subordinate CAs, and the Root CA Repository and system support services, penetration testing shall be performed at least every 365 days, and after infrastructure of application upgrades or modifications that the CA determines are significant.
 
-CAs shall record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test.
+CAs shall:
+- Record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test.
+- High vulnerabilities shall be patched within sixty (60) days or less
+- Critical vulnerabilities shall be patched within ninety-six (96) hours of the discovery of a critical vulnerability not previously addressed
+
+If remediation of a critical vulnerability within ninety-six (96) hours is not possible, the CA shall create and implement a plan to mitigate the vulnerability or document the factual basis for a risk determination that the vulnerability does not require remediation.
 
 ### 5.5 Records archival
 CAs shall archive records separately from the CA backups.  In addition to the archive requirements specified in this CP, archive procedures shall follow either the General Records Schedules established by the National Archives and Records Administration (NARA) or an agency-specific general records schedule as applicable.
@@ -1294,13 +1298,6 @@ The security management controls for all CAs and Certificate System Components l
 
 - Hardware and software procured to operate the CA shall be purchased in a fashion to reduce the likelihood that any particular component was tampered with (e.g. by ensuring the random selection of material at time of purchase or installation)
 - Hardware and software shall be similarly limited and scanned for malicious code on first use and continuously thereafter
-- Hardware and software shall be scanned for vulnerabilities at least every thirty (30) days
-- High vulnerabilities shall be patched within sixty (60) days or less
-- Critical vulnerabilities shall be patched within ninety-six (96) hours of the discovery of a critical vulnerability not previously addressed
-
-If remediation of a critical vulnerability within ninety-six (96) hours is not possible, the CA shall create and implement a plan to mitigate the vulnerability or document the factual basis for a risk determination that the vulnerability does not require remediation.  
-
-For Subordinate CAs, and the Root CA Repository and system support services, penetration testing shall be performed at least every 365 days, and after infrastructure of application upgrades or modifications that the CA determines are significant.
 
 ### 6.7 Network security controls
 Secure Zones are a physical or logical separation of Certificate Systems while a High Security Zone is a physical area where a private key or cryptographic equipment is stored. Each Zone is protected commensurate with its level of assurance. A High Security Zone may exist within a Secure Zone that is physically or logically separated from other Secure Zones.
