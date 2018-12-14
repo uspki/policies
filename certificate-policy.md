@@ -203,8 +203,7 @@ CPS documents and Audit Letters shall not be redacted.
 Each CA shall disclose the following certificate information through a publicly accessible Repository:  
 
 - CA Certificates
-- Certificate Revocation Lists (CRLs) for all issued certificates
-- Online Certificate Status Protocol responses for all issued certificates
+- Revocation status (certificate status services) for all issued certificates
 
 Each CA shall ensure that its Certificate from the Root CA and the certificate status services for issued certificates are available through a repository 24 hours a day, 7 days a week with a minimum of 99.5% availability overall per year.
 
@@ -220,7 +219,8 @@ The FPKIPA and CAs shall update and publish the CP and CPS documents within thir
 
 Each CA shall post to the Repository any issued CA Certificate as soon as possible after issuance but no later than fifteen (15) days after issuance.  The FPKIPA or designee shall disclose and submit the CA Certificate, CPS, and Audit Letter(s) to trust store operators and applicable databases, such as the Common CA Database, as required by the trust store operator policies.
 
-Each CA shall publish CRLs in accordance with Section 4.9.7.
+For publication of CRLs and frequency, see Section 4.9.7.
+For publication of OCSP responses and frequency, see Section 4.9.10.
 
 ### 2.4 Access controls on repositories
 Each CA shall make its Repository publicly available in a read-only manner.  Repository information shall be protected from unauthorized modification.
