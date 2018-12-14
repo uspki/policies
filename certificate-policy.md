@@ -997,7 +997,24 @@ Key changeovers are not applicable for any CAs operating under this CP and shall
 ### 5.7 Compromise and disaster recovery
 
 #### 5.7.1 Incident and compromise handling procedures
-CAs shall have an Incident Response Plan and a Disaster Recovery Plan.  The CA is not required to publicly disclose the Incident Response Plan and Disaster Recovery Plan but shall make the plans available to the CA's Qualified Auditor upon request.
+CAs shall have an Incident Response Plan and a Disaster Recovery Plan.  The CA shall document the business continuity and disaster recovery procedures designed to notify and reasonably protect Application Software Suppliers, Subscribers, and Relying Parties in the event of a disaster, security compromise, or business failure. The CA is not required to publicly disclose the Incident Response Plan and Disaster Recovery Plan but shall make the plans available to the CA's Qualified Auditor upon request.
+
+The CA shall test, review, and update the Disaster Recovery Plan at least once every 365 days. 
+The Disaster Recovery Plan shall include: 
+
+- Responsibilities for individuals and roles
+- The conditions for activating the plan
+- Emergency, fallback and resumption procedures
+- A maintenance schedule for the plan
+- Awareness and education requirements
+- Recovery time objective 
+- Regular testing of contingency plans
+- The CA’s plan to maintain or restore the CA’s business operations in a timely manner following interruption to or failure of critical business processes
+- A requirement to store critical cryptographic materials (i.e., secure cryptographic device and activation materials) at an alternate location
+- What constitutes an acceptable system outage and recovery time
+- How frequently backup copies of essential business information and software are taken
+- The distance of recovery facilities to the CA’s main site
+- Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site
 
 The FPKIPA shall be notified by the CAs operating under this policy of any incident. An incident is defined as a violation or imminent threat of violation of this CP, the CA's CPS, government memoranda of agreements, or any other document that governs the operations of the CA. An incident may include but is not limited to the following:
 
@@ -1034,7 +1051,7 @@ In coordination with the CA, the FPKIPA may conduct the following activities as 
 #### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 When computing resources, software, and/or data are corrupted, CAs shall ensure the system's integrity has been restored before returning to operation.  
 
-If the CA signature keys are not destroyed, CA operation shall be reestablished, giving priority to the ability to generate certificate status information.
+If the CA signature keys are not destroyed, CA operation shall be re-established, giving priority to the ability to generate certificate status information.
 
 #### 5.7.3 Recovery Procedures after Key Compromise
 In the event of a Subordinate CA private key compromise, the following operations shall be performed:  
