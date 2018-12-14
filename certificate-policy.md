@@ -1041,9 +1041,11 @@ In the event of a Subordinate CA private key compromise, the following operation
 
 - The FPKIPA shall be immediately notified
 - All subscriber certificates shall be revoked within twenty-four (24) hours
+- The Root CA shall revoke the Subordinate CA certificate within seven (7) days
+
+If the CA publishes revocation information via CRLs:
 - A final long term CRL with a nextUpdate time past the validity period of all issued subscriber certificates shall be generated
 - The final CRL shall be available for all relying parties until the validity period of all issued certificates has passed
-- The Root CA shall revoke the Subordinate CA certificate within seven (7) days
 
 If the Root Certificate private key is compromised, the CA shall notify the FPKIPA immediately.  
 
