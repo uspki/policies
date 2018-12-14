@@ -138,7 +138,7 @@ A Relying Party is any individual or entity that relies on a U.S. Federal Public
 
 For this policy, Relying Parties may include individuals or entities accessing U.S. Government web services available on the Internet.    
 
-Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
+Relying Parties should verify the validity of certificates via revocation services provided for all certificates prior to relying on certificates. Certificate Revocation List (CRL) and / or On-line Certificate Status Protocol (OCSP) service location information is provided within certificates.
 
 #### 1.3.7 Other Participants
 CAs operating under this policy require the services of Qualified Auditors to perform independent, annual assessments on the conformance of the CA's practices and procedures.  Qualified Auditor requirements are covered in Section 8.
