@@ -3,6 +3,7 @@
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
+| 1.1 | 19-01 | Update to Align with CAB Forum BR v1.6.2 for Ballot SC12 | \<TBD> | \<TBD |
 
 
 ## 1. INTRODUCTION
