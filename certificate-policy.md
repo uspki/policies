@@ -3,6 +3,7 @@
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
+| 1.3 | 19-03 | Update to align with CAB Forum BR v1.6.4 for Ballot SC 14 | \<TBD> | \<TBD> |
 
 
 ## 1. INTRODUCTION
@@ -357,10 +358,16 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.11. Any Other Method
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.12.  Validating Applicant as a Domain Contact
+##### 3.2.2.4.12. Validating Applicant as a Domain Contact
 This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.15. Phone Contact with Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.16. Phone Contact with DNS TXT Record Phone Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
@@ -1788,6 +1795,8 @@ No stipulation.
 **CSPRNG**: A random number generator intended for use in cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+
+**DNS TXT Record Phone Contact**: The phone number placed on the “_validation-contactphone” subdomain of the DNS TXT record.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
