@@ -1366,6 +1366,8 @@ By issuing the Certificate, the CA represents that it followed the procedure set
 
 CAs shall not include a Domain Name in a Subject attribute except as validated under Section 3.2.2.4.
 
+Underscore characters (“_”) shall not be present in dNSName entries of the Subject Alternative Name Extension.
+
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in this CP and the CA's CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
