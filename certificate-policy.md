@@ -362,6 +362,12 @@ This validation method confirms the Applicant's control over the FQDN by validat
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+##### 3.2.2.4.13. Email to DNS CAA Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.14. Email to DNS TXT Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
 
@@ -1788,6 +1794,10 @@ No stipulation.
 **CSPRNG**: A random number generator intended for use in cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+
+**DNS CAA Email Contact**: The email address placed in the CAA contactemail property.
+
+**DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” subdomain of the domain being validated.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
