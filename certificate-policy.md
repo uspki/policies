@@ -3,7 +3,6 @@
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
-| 1.1 | 19-01 | Update to Align with CAB Forum BR v1.6.2 for Ballot SC12 | \<TBD> | \<TBD |
 
 
 ## 1. INTRODUCTION
@@ -358,7 +357,7 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.11. Any Other Method
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.12.  Validating Applicant as a Domain Contact
+##### 3.2.2.4.12. Validating Applicant as a Domain Contact
 This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
@@ -367,6 +366,12 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.14. Email to DNS TXT Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.15. Phone Contact with Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.16. Phone Contact with DNS TXT Record Phone Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 #### 3.2.2.5 Authentication for an IP Address
@@ -1801,7 +1806,9 @@ No stipulation.
 
 **DNS CAA Email Contact**: The email address placed in the CAA contactemail property.
 
-**DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” subdomain of the domain being validated.
+**DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” of the DNS TXT record.
+
+**DNS TXT Record Phone Contact**: The phone number placed on the “_validation-contactphone” of the DNS TXT record.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
