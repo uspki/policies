@@ -3,6 +3,7 @@
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | \<TBD> | \<TBD> |
+| 1.1 | 19-01 | Update to Align with CAB Forum BR v1.6.2 for Ballot SC12 | \<TBD> | \<TBD |
 
 
 ## 1. INTRODUCTION
@@ -595,7 +596,7 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
-4. The CA obtains evidence that the Certificate was misused;
+4. The CA obtains evidence that the Certificate was misused or the validation of the domain authorization or control for any Fully-Qualified Domain name or IP address in the Certificate should not be relied upon;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
 6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted;
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
@@ -605,9 +606,10 @@ The CA shall revoke a Certificate as rapidly as possible but within 24 hours if 
 11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 12. The CA's right to issue Certificates under this CP expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
-14. Revocation is required by this CP and/or the CA's CPS;
-15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
-16.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
+14. The CA is made aware of a demonstrated or proven method that exposes the Subscriber’s Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys), or if there is clear evidence that the specific method used to generate the Private Key was flawed. 
+15. Revocation is required by this CP and/or the CA's CPS;
+16. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
+17.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -632,20 +634,20 @@ Subscribers, Relying Parties, Application Software Suppliers, and other third pa
 #### 4.9.3 Procedure for revocation request
 CAs shall provide a process for Subscribers to request revocation of their own Certificates. The process shall be described in the CA's CPS. The CA shall maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries. A request from Subscribers to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated.
 
-The CA shall provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA shall publicly disclose the instructions through a readily accessible online means.  
+The CA shall provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA shall publicly disclose the instructions through a readily accessible online means and in section 1.5.2 of the CPS.  
 
 #### 4.9.4 Revocation request grace period
 There is no revocation grace period.
 
 #### 4.9.5 Time within which CA shall process the revocation request
-CAs shall revoke certificates as quickly as practical upon receipt of a revocation request. Revocation requests shall be processed before the next CRL is published, excepting those requests received within two hours of CRL issuance. Revocation requests received within two hours of CRL issuance shall be processed before the following CRL is published.
-
 The CA shall begin investigation of a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
 
 1. The nature of the alleged problem;
 2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
 3. The entity making the complaint (for example, a complaint from a law enforcement or Inspector General official that a Web site violates U.S. Federal regulation should carry more weight than a complaint from a user alleging that they were unable to complete their transaction); and
 4. Relevant legislation.
+
+The CA shall work with the subscriber and entity who submitted the Certificate Problem Report to decide if and when a certificate shall be revoked. The period from the receipt of the Certificate Problem Report to the published revocation shall not exceed the timeline defined in Section 4.9.1.1. Within 24 hours after receiving the report, the CA shall provide a preliminary report on its findings to the FPKIPA, Subscriber, entity who filed the Certificate Problem Report (if different than the subscriber), and any external parties deemed necessary due to contractual agreements.
 
 #### 4.9.6 Revocation checking requirement for relying parties
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
@@ -1371,6 +1373,8 @@ CA Subject Distinguished Name shall conform to PrintableString string type in AS
 By issuing the Certificate, the CA represents that it followed the procedure set forth in this CP and the CA CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 CAs shall not include a Domain Name in a Subject attribute except as validated under Section 3.2.2.4.
+
+Underscore characters (“_”) shall not be present in dNSName entries of the Subject Alternative Name Extension.
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in this CP and the CA's CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
