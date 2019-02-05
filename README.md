@@ -37,7 +37,7 @@ Direct changes and line edits to the content may be submitted through a pull req
 
 This repository is for open and transparent public reviews and contributions.  The General Services Administration is supporting this effort and maintains the repository for the US Federal Government.
 
-Please contact eric.mill at gsa dot gov or lachelle.levan at gsa dot gov with questions.
+Please contact lachelle.levan at gsa dot gov with questions.
 
 ### Public domain
 
