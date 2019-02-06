@@ -1098,7 +1098,7 @@ When a CA operating under this policy terminates operations before all certifica
 
 If the CA publishes revocation information via CRLs, the CA shall generate a final long term CRL with a nextUpdate time past the validity period of all issued certificates.  This final CRL shall be available for all relying parties until the validity period of all issued certificates has expired.  Once the final CRL has been issued, the private signing key(s) of the CA to be terminated shall be destroyed.  
 
-If the CA only publishes revocation information via OCSP, the CA must operate the OCSP services for the validity period of all issued certificates.  
+If the CA only publishes revocation information via OCSP, the CA shall operate the OCSP services for the validity period of all issued certificates.  
 
 The terminated CA certificate shall be revoked.  
 
