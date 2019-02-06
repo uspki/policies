@@ -357,10 +357,22 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.11. Any Other Method
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.12.  Validating Applicant as a Domain Contact
+##### 3.2.2.4.12. Validating Applicant as a Domain Contact
 This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.13. Email to DNS CAA Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.14. Email to DNS TXT Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.15. Phone Contact with Domain Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.16. Phone Contact with DNS TXT Record Phone Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
@@ -584,24 +596,29 @@ See Section 4.4.3.
 #### 4.9.1 Circumstances for revocation
 
 #### 4.9.1.1 Reasons for Revoking a Subscriber Certificate
-The CA shall revoke a Certificate as rapidly as possible but within 24 hours if one or more of the following occurs:
+The CA shall revoke a Certificate within 24 hours if one or more of the following occurs:
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
-4. The CA obtains evidence that the Certificate was misused;
-5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
+3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise; or 
+4. The CA obtains evidence that the Certificate was misused or the validation of the domain authorization or control for any Fully-Qualified Domain name or IP address in the Certificate should not be relied upon.
+
+The CA should revoke a certificate within 24 hours and shall revoke a Certificate within 5 days if one or more of the following occurs:
+
+1. The Certificate no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
+1. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
 6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted;
 7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
 8. The CA is made aware of a material change in the information contained in the Certificate;
 9. The CA is made aware that the Certificate was not issued in accordance with this CP or the CA's Certification Practice Statement;
-10. The CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
+10. The CA determines that any of the information appearing in the Certificate is inaccurate;
 11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
 12. The CA's right to issue Certificates under this CP expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
-14. Revocation is required by this CP and/or the CA's CPS;
-15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
-16.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
+14. The CA is made aware of a demonstrated or proven method that exposes the Subscriber’s Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys), or if there is clear evidence that the specific method used to generate the Private Key was flawed;
+15. Revocation is required by this CP and/or the CA's CPS;
+16. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
+17.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -626,22 +643,23 @@ Subscribers, Relying Parties, Application Software Suppliers, and other third pa
 #### 4.9.3 Procedure for revocation request
 CAs shall provide a process for Subscribers to request revocation of their own Certificates. The process shall be described in the CA's CPS. The CA shall maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries. A request from Subscribers to revoke a certificate shall identify the certificate to be revoked, explain the reason for revocation, and allow the request to be authenticated.
 
-The CA shall provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA shall publicly disclose the instructions through a readily accessible online means.  
+The CA shall provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA shall publicly disclose the instructions through a readily accessible online means and in section 1.5.2 of the CPS.  
 
 #### 4.9.4 Revocation request grace period
 There is no revocation grace period.
 
 #### 4.9.5 Time within which CA shall process the revocation request
-CAs shall revoke certificates as quickly as practical upon receipt of a revocation request. 
-
-For CAs publishing CRLs, revocation requests shall be processed before the next CRL is published, excepting those requests received within two hours of CRL issuance. Revocation requests received within two hours of CRL issuance shall be processed before the following CRL is published.
-
 The CA shall begin investigation of a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
 
 1. The nature of the alleged problem;
+1. The consequences of revocation (direct and collateral impacts to Subscribers and Relying Parties);
 2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
 3. The entity making the complaint (for example, a complaint from a law enforcement or Inspector General official that a Web site violates U.S. Federal regulation should carry more weight than a complaint from a user alleging that they were unable to complete their transaction); and
 4. Relevant legislation.
+
+The CA shall work with the Subscriber and entity who submitted the Certificate Problem Report to decide if and when a certificate shall be revoked. Within 24 hours after receiving the report, the CA shall provide a preliminary report on its findings to the Subscriber and entity who submitted the Certificate Problem Report (if different than the subscriber). If a revocation related to the Certificate Problem Report is warranted, the period from the receipt of the Certificate Problem Report to the published revocation shall not exceed the timeline defined in Section 4.9.1.1. 
+
+All revocation requests shall be published within the timelines defined in Section 4.9.1.1 or Section 4.9.1.2.  
 
 #### 4.9.6 Revocation checking requirement for relying parties
 All CAs operating under this policy provide revocation information in accordance with Section 4.9.7 and Section 4.9.9.
@@ -1391,6 +1409,8 @@ By issuing the Certificate, the CA represents that it followed the procedure set
 
 CAs shall not include a Domain Name in a Subject attribute except as validated under Section 3.2.2.4.
 
+Underscore characters (“_”) shall not be present in dNSName entries of the Subject Alternative Name Extension.
+
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in this CP and the CA's CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
@@ -1813,6 +1833,12 @@ No stipulation.
 **CSPRNG**: A random number generator intended for use in cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+
+**DNS CAA Email Contact**: The email address placed in the CAA contactemail property.
+
+**DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” of the DNS TXT record.
+
+**DNS TXT Record Phone Contact**: The phone number placed on the “_validation-contactphone” of the DNS TXT record.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
