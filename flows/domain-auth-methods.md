@@ -64,13 +64,13 @@ CAB Forum recently removed options that were previously acceptable. A summary of
 ## Federal Government Method Selection
 
 ### Domain Authorization Document
-![domain authorization document process](../assets/domain_authorization_document.png)
+![domain authorization document process](../img/domain_authorization_document.png)
 
 ### Agreed‐Upon Change to Website
-![agreed upon change to website process](../assets/agreed_upon_change_to_website.png)
+![agreed upon change to website process](../img/agreed_upon_change_to_website.png)
 
 ### TLS Using a Random Number (Embedded in a Certificate)
-![tls using random number process](../assets/tls_using_random_number.PNG)
+![tls using random number process](../img/tls_using_random_number.PNG)
 
 
 ### Other Methods

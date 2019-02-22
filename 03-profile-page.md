@@ -6,36 +6,43 @@ subnav:
   - text: Self-Signed Root CA
     href: "#self-signed-root-ca-certificate-profile"
   - text: Subordinate CA
-    href: "#intermediate-or-subordinate-ca-certificate-profile"
+    href: "#subordinate-ca-certificate-profile"
   - text: Server Authentication
     href: "#server-authentication-certificate-profile"
   - text: Delegated OCSP Responder
     href: "#delegated-ocsp-responder-certificate-profile"
-  - text: OCSP Response Profile
-    href: "#ocsp-response-profile"
   - text: CRL Profile
     href: "#crl-profile"
+  - text: OCSP Response Profile
+    href: "#ocsp-response-profile"
 
 ---
 ## Certificate Profiles
-This section specifies the X.509 version 3 certificate and version 2 certificate revocation list (CRL) profiles for the Federal Public Trust Device PKI Certificate Policy.  In cases where the profiles and Section 7 of the Certificate Policy are in conflict, Section 7 takes precedence and is authoritative.
+{% include alert-info.html content="The certificate profiles are included as Appendix D in the Certificate Policy.  This page directly references Appendix D content." %}
 
-Four certificate profiles covered by this Certificate Policy are defined.  
+This section specifies the X.509 version 3 certificate profiles, version 2 Certificate Revocation List (CRL) profile, and Online Certificate Status Protocol (OCSP) Response profile for the U.S. Federal Public Trust TLS PKI Certificate Policy.  In cases where the profiles and Section 7 of this CP are in conflict, Section 7 takes precedence and is authoritative.
 
-- [Self-Signed Root CA Certificate Profile](#self-signed-root-ca-certificate-profile)
-- [Intermediate or Subordinate CA Certificate Profile](#intermediate-or-subordinate-ca-certificate-profile)
-- [Server Authentication Certificate Profile](#server-authentication-certificate-profile)
-- [Delegated OCSP Responder Certificate Profile](#delegated-ocsp-responder-certificate-profile)
+Certificates issued under this policy are categorized as CA Certificates, Subscriber Certificates or Infrastructure Certificates. This Certificate Policy defines five (5) different types of certificates (See Section 1.1.3) and four associated certificate profiles.  
 
-In addition, there are two profiles covering the OCSP _Responses_ and the Certificate Revocation Lists.
+| **Category** | **Certificate Type**  | **Profile**  |
+| :-------- | :----------------------- | :----------------------- |
+| CA Certificate | Root CA Certificate | Self-Signed Root CA Certificate Profile |  
+| CA Certificate | Subordinate CA Certificate | Subordinate CA Certificate Profile |
+| Subscriber Certificate | Domain Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
+| Subscriber Certificate | Organization Validation TLS Server Authentication Certificates |  Server Authentication Certificate Profile |
+| Infrastructure Certificate | Delegated OCSP Responder Certificates |  Delegated OCSP Responder Certificate Profile |
 
-- [OCSP Response Profile](#ocsp-response-profile)
-- [CRL Profile](#crl-profile)
+There are two profiles covering the Certificate Revocation Lists and OCSP Responses.
+
+| **Type** | **Profile**  |
+| :-------- | :----------------------- |
+| Certificate Revocation Lists |  CRL Profile |
+| Online Certificate Status Protocol (OCSP) Responses | OCSP Response Profile |
+
 
 {% include_relative certificate-profile-root-CA.md %}  
 {% include_relative certificate-profile-subordinate-CA.md %}  
 {% include_relative certificate-profile-server-authentication.md %}  
 {% include_relative certificate-profile-OCSP-responder.md %}  
-
-{% include_relative ocsp-response-profile.md %}  
 {% include_relative crl-profile.md %}
+{% include_relative ocsp-response-profile.md %}  

@@ -3,6 +3,8 @@ layout: base
 permalink: /certificatepolicy/
 
 subnav:
+  - text: Revision History
+    href: "#revision-history"
   - text: 1. Introduction
     href: "#1-introduction"
   - text: 2. Publication and Repository Responsibilities
@@ -19,9 +21,17 @@ subnav:
     href: "#7-certificate-crl-and-ocsp-profiles"
   - text: 8. Compliance Audit and Other Assessments
     href: "#8-compliance-audit-and-other-assessments"
+  - text: 9. Other Business and Legal Matters
+    href: "#9-other-business-and-legal-matters"
+  - text: Appendix A Definitions
+    href: "#appendix-a-definitions"
+  - text: Appendix B Acronyms
+    href: "#appendix-b-acronyms"
+  - text: Appendix C References
+    href: "#appendix-c-references"
+  - text: Appendix D Certificate Profiles
+    href: "#appendix-d-certificate-profiles"
 ---
 
 {% include fpki-document-header.html %}
-<!-- TODO fix markdown -->
-
 {% include_relative certificate-policy.md %}
