@@ -1308,7 +1308,7 @@ When CA and Certificate System Components including certificate status services,
 
 Two person control shall be enforced (using physical and/or technical means) on functions performed to administer the hardware, operating system, and applications.
 
-The number of accounts and personnel assigned for CA equipment and the administration thereof shall be the minimum number necesary to accomplish the required functions.  Any  management of the PKI equipment shall be performed from a single administrative domain.
+The number of accounts and personnel assigned for CA equipment and the administration thereof shall be the minimum number necessary to accomplish the required functions.  Any  management of the PKI equipment shall be performed from a single administrative domain.
 
 For CA components, remote management and login shall be disabled.  Network protocols not required for CA operation shall be disabled.  Telnet and File Transfer Protocol (FTP) shall never be enabled.
 
