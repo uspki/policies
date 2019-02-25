@@ -1463,7 +1463,7 @@ The following Certificate Policy identifiers are registered under the National I
 
 - Domain Validated:
   - { joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) } (2.16.840.1.101.3.2.1.3.43),
-  - if the Certificate complies with this CP but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
+  - If the Certificate complies with this CP but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
 - Organization Validated:
   - {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) organization-validated(44)} (2.16.840.1.101.3.2.1.3.44),
