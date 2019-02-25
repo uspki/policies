@@ -351,27 +351,27 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.9 Test Certificate
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.10. TLS Using a Random Number
+##### 3.2.2.4.10 TLS Using a Random Number
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.11. Any Other Method
+##### 3.2.2.4.11 Any Other Method
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.12. Validating Applicant as a Domain Contact
+##### 3.2.2.4.12 Validating Applicant as a Domain Contact
 This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.13. Email to DNS CAA Contact
+##### 3.2.2.4.13 Email to DNS CAA Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.14. Email to DNS TXT Contact
+##### 3.2.2.4.14 Email to DNS TXT Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.15. Phone Contact with Domain Contact
+##### 3.2.2.4.15 Phone Contact with Domain Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.16. Phone Contact with DNS TXT Record Phone Contact
+##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 #### 3.2.2.5 Authentication for an IP Address
