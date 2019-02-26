@@ -5,7 +5,7 @@ title: Background
 permalink: /
 ---
 
-Securing Federal Government web services and delivering information to our consumers and partners in a trusted and privacy-enhancing manner is a priority for Federal Government teams across all our missions.
+Securing Federal Government web services and delivering information to our consumers and partners in a trusted and privacy-enhancing manner is a priority for Federal Government teams across all our missions.  
 
 Federal Government teams are working to ensure our missions have secure, cost-effective, and stable _services_ to secure these web services.   We developed this [Certificate Policy]({{site.baseurl}}/certificatepolicy) to address Internet PKI requirements and to support the establishment of the **new** U.S. Federal Public Trust TLS Public Key Infrastructure (PKI) for .mil and .gov web services.
 
@@ -17,7 +17,7 @@ We welcome and encourage public and community [comment]({{site.baseurl}}/comment
 ## Scope
 The browser community, commercial and non-profit trust store owners, and Standards Development Organizations have rapidly been adopting emerging technology and new requirements for the public Internet and Hypertext Transfer Protocol (HTTPS).  These requirements are intended to protect consumers, protect website operators from spoofing incidents, and promote an open and transparent trust model across the globe.   These requirements include:
 
-- Requiring Certificate Transparency (CT) starting in April 2018
+- Requiring Certificate Transparency (CT)
 - Requiring increasingly shorter lifetimes of the validity of certificates used for publicly trusted web services
 - Public disclosure of all certificate policies, practices and procedures by all Certification Authorities
 
@@ -46,4 +46,4 @@ Government teams recognized the need to create a _new_ Certificate Policy and in
 - Support automation for the missions
 - Improve customer experience and public transparency for Federal Government public web services
 
-The Federal Public Key Infrastructure Policy Authority maintains the governance and voting rights to manage this Certificate Policy.   
+The Federal Public Key Infrastructure Policy Authority maintains the governance and voting rights to manage this Certificate Policy.  

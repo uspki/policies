@@ -20,7 +20,7 @@ OCSP Responders under this profile are expected to operate using the Static Resp
 
 | **Field** | **Value and Requirements** |
 | :-------- | :------------------------------- |
-| CertID | hashAlgorithm SHALL be SHA1<br>The issuerKeyHash and issuerNameHash pair must be identical within all Single Responses appearing in an OCSP Response |
+| CertID | hashAlgorithm shall be SHA-1<br>The issuerKeyHash and issuerNameHash pair must be identical within all Single Responses appearing in an OCSP Response |
 | Certificate Status | Determined by CRL<br>If revoked, revocationReason is included if present on the CRL |
 | This Update | Identical to the thisUpdate of the CRL used for determining revocation status |
 | Next Update | Before or identical to the nextUpdate field of the CRL used for determining revocation status |
