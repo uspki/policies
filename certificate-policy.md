@@ -351,27 +351,27 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.9 Test Certificate
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.10. TLS Using a Random Number
+##### 3.2.2.4.10 TLS Using a Random Number
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.11. Any Other Method
+##### 3.2.2.4.11 Any Other Method
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.12. Validating Applicant as a Domain Contact
+##### 3.2.2.4.12 Validating Applicant as a Domain Contact
 This validation method confirms the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.13. Email to DNS CAA Contact
+##### 3.2.2.4.13 Email to DNS CAA Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.14. Email to DNS TXT Contact
+##### 3.2.2.4.14 Email to DNS TXT Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.15. Phone Contact with Domain Contact
+##### 3.2.2.4.15 Phone Contact with Domain Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
-##### 3.2.2.4.16. Phone Contact with DNS TXT Record Phone Contact
+##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 #### 3.2.2.5 Authentication for an IP Address
@@ -1308,7 +1308,7 @@ When CA and Certificate System Components including certificate status services,
 
 Two person control shall be enforced (using physical and/or technical means) on functions performed to administer the hardware, operating system, and applications.
 
-The number of accounts and personnel assigned for CA equipment and the administration thereof shall be the minimum number necesary to accomplish the required functions.  Any  management of the PKI equipment shall be performed from a single administrative domain.
+The number of accounts and personnel assigned for CA equipment and the administration thereof shall be the minimum number necessary to accomplish the required functions.  Any  management of the PKI equipment shall be performed from a single administrative domain.
 
 For CA components, remote management and login shall be disabled.  Network protocols not required for CA operation shall be disabled.  Telnet and File Transfer Protocol (FTP) shall never be enabled.
 
@@ -1463,7 +1463,7 @@ The following Certificate Policy identifiers are registered under the National I
 
 - Domain Validated:
   - { joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) } (2.16.840.1.101.3.2.1.3.43),
-  - if the Certificate complies with this CP but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
+  - If the Certificate complies with this CP but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
 - Organization Validated:
   - {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) organization-validated(44)} (2.16.840.1.101.3.2.1.3.44),
