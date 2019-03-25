@@ -161,6 +161,7 @@ The FPKIPA is responsible for administering this document.
 
 #### 1.5.2 Contact Person
 Contact information for the FPKIPA is fpki@gsa.gov.
+Incident notification procedures are posted at https://repository.pki.gov
 
 #### 1.5.3 Person Determining CPS suitability for the policy
 The FPKIPA shall affirm the suitability of any CPS to this policy.
@@ -168,7 +169,7 @@ The FPKIPA shall affirm the suitability of any CPS to this policy.
 #### 1.5.4 CPS approval procedures
 A CPS shall be submitted and approved by the FPKIPA.
 
-Prior to submitting a CPS, the CA shall perform an analysis of the areas in which the CPS may not or does not comply with this CP. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authority to operate prior to commencing operations.
+Prior to submitting a CPS, the CA shall perform an analysis of the areas in which the CPS may not or does not comply with this CP. The CA shall resolve these discrepancies prior to submitting the CPS to the FPKIPA. The CA shall have an approved CPS, meet all CP and CPS requirements, conduct Federal Information Security Modernization Act assessment and authorization activities, and produce an authorization to operate prior to commencing operations.
 
 CAs shall review their CPS and perform an annual self-assessment for compliance with this CP at least every 365 days.  After review and approval, the CPS document version number and a dated changelog entry shall be added, even if no other changes were made to the document.
 
@@ -683,7 +684,7 @@ OCSP responses shall conform to RFC6960 and/or RFC5019. OCSP responses shall eit
 #### 4.9.10 On-line revocation checking requirements
 The CA shall support an OCSP capability using the GET method for Certificates.
 
-For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, the CA shall update information provided via OCSP every 24 hours. OCSP responses shall have a maximum expiration time of seven (7) days.  
+For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, the CA shall update information provided via OCSP every 24 hours. OCSP responses shall have a maximum expiration time of seven (7) days and the value of the nextUpdate field shall not be more than seven (7) days beyond the value of the thisUpdate field.  
 
 For the status of Subordinate CA Certificates, the root CA shall update information provided via OCSP at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
@@ -1064,7 +1065,7 @@ A final security incident report shall be submitted at a date specified by the F
 In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response:  
 
 - Publicly publish a final incident report in one or more internet-accessible locations, with information redacted as necessary
-- Report incidents to the individual trust store operator
+- Report incidents to the individual trust store operators
 
 #### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 When computing resources, software, and/or data are corrupted, CAs shall ensure the system's integrity has been restored before returning to operation.  
@@ -1171,7 +1172,7 @@ Certificates shall meet the following requirements for algorithm type and key si
 | :---  | :------ |  
 | Digest algorithm | SHA-256, SHA-384 or SHA-512  |  
 | Minimum RSA modulus size (bits) | 2048 |  
-| ECC curve | NIST P-256, P-384, or P-521 |  
+| ECC curve | NIST P-256, P-384 |  
 
 
 #### 6.1.6 Public key parameters generation and quality checking
@@ -1335,6 +1336,8 @@ The security management controls for all CAs and all Certificate System Componen
 - All authentication credentials for any account or trusted role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
 - All system accounts and trusted role accounts shall have be configured to lockout access after five (5) failed access attempts
 - There shall be an automated mechanism to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events
+- A policy that requires trusted roles to log out of or lock workstations when no longer in use 
+- A procedure to configure workstations with inactivity time-outs to log off a trusted role account or lock the workstation after a set time of inactivity  
 
 #### 6.6.3 Life cycle security controls
 The security management controls for all CAs and Certificate System Components listed below shall be implemented:
@@ -1455,6 +1458,7 @@ A decoded example for issuance to the domain and sub domains of both .gov and .m
 >       IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0  
 
 #### 7.1.6 Certificate policy object identifier
+Certificates issued under this policy shall not contain a critical certificate policies extension.
 
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
@@ -1485,7 +1489,7 @@ If the Certificate asserts the policy identifiers for Domain Validated, then the
 A Root CA Certificate shall not contain the certificatePolicies extension.
 
 #### 7.1.6.3 Subordinate CA Certificates
-All Subordinate CA's shall be an Affiliate as defined in this CP.
+All Subordinate CAs shall be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA shall contain in the Certificate's certificatePolicies extension:  
 
@@ -1513,14 +1517,8 @@ Subordinate CA certificates may assert policy constraints.
 #### 7.1.8 Policy qualifiers syntax and semantics
 Certificates issued under this CP may contain policy qualifiers.
 
-#### 7.1.9 Processing semantics for the critical Certificate Policies extension
-Certificates issued under this policy shall not contain a critical certificate policies extension.
-
 ### 7.2 CRL profile
 Certificate Revocation Lists (CRLs) created by a CA under this policy shall conform to the Certificate Revocation List extensions profile included as Appendix D.
-
-#### 7.2.1 Version number(s)
-The CAs shall issue X.509 version two (v2) CRLs.
 
 ### 7.3 OCSP profile
 OCSP Responses under this policy shall conform to the OCSP Response profile included as Appendix D.
@@ -1586,7 +1584,7 @@ The Audit Letter shall include:
 The CA shall make the Audit Letter publicly available in accordance with Section 2.1. The CA shall make its Audit Letter publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by the FPKIPA or an Application Software Supplier, the CA shall provide an explanatory letter signed by the Qualified Auditor.
 
 ### 8.7 Self-Audits
-During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
+During the period in which the CA issues Certificates, the CA shall monitor adherence to this CP and the CA's CPS and strictly control its service quality by performing self-audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken.
 
 During the period in which a Subordinate CA issues Certificates, the Root CA shall monitor adherence to this CP and the Subordinate CA's CPS. On at least a quarterly basis, against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by the Subordinate CA, during the period commencing immediately after the previous audit sample was taken, the CA shall ensure all applicable CP requirements are met.
 
@@ -1778,7 +1776,7 @@ No stipulation.
 
 ## Appendix A: Definitions
 
-**Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
+**Affiliate**: An agency, department, political subdivision, or any entity operating under the direct control of a U.S. Government Entity.
 
 **Air-Gapped**: Certificate Systems or components that are physically and logically disconnected from other networks.
 
@@ -1880,7 +1878,7 @@ No stipulation.
 
 **Key Pair**: The Private Key and its associated Public Key.
 
-**Legal Entity**: An [association](http://www.businessdictionary.com/definition/association.html), [corporation](http://www.businessdictionary.com/definition/corporation.html), [partnership](http://www.businessdictionary.com/definition/partnership.html), [proprietorship](http://www.businessdictionary.com/definition/proprietorship.html), [trust](http://www.businessdictionary.com/definition/trust.html), government entity or other entity with [legal](http://www.businessdictionary.com/definition/legal.html) [standing](http://www.investorwords.com/7216/standing.html)in a country's legal system.
+**Legal Entity**: An [association](http://www.businessdictionary.com/definition/association.html), [corporation](http://www.businessdictionary.com/definition/corporation.html), [partnership](http://www.businessdictionary.com/definition/partnership.html), [proprietorship](http://www.businessdictionary.com/definition/proprietorship.html), [trust](http://www.businessdictionary.com/definition/trust.html), government entity or other entity with [legal](http://www.businessdictionary.com/definition/legal.html) [standing](http://www.investorwords.com/7216/standing.html) in a country's legal system.
 
 **Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
