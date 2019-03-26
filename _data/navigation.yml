@@ -6,6 +6,8 @@ primary:
     href: /certificatepolicy/
   - text: "Certificate Profiles"
     href: /certificateprofiles/
+#  - text: "Frequently Asked Questions"
+#    href: /faq/
   - text: "Submit Comments"
     href: /comment/
 
@@ -16,6 +18,7 @@ mobile:
     href: /certificatepolicy/
   - text: "Certificate Profiles"
     href: /certificateprofiles/
+#  - text: "Frequently Asked Questions"
+#    href: /faq/
   - text: "Submit Comments"
     href: /comment/
-
