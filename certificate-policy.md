@@ -670,7 +670,7 @@ It is recommended that relying parties process the expiration date of the certif
 #### 4.9.7 CRL issuance frequency
 For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, CAs shall publish revocations using OCSP services and/or CRLs.  For CRLs, the CA shall update and reissue CRLs at least once every 24 hours and the value of the nextUpdate field shall not be more than seven days beyond the value of the thisUpdate field.
 
-For the status of Subordinate CA Certificates, the root CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
+For the status of Subordinate CA Certificates, the Root CA shall update and reissue CRLs at least (i) once every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field shall not be more than 32 days beyond the value of the thisUpdate field.
 
 #### 4.9.8 Maximum latency for CRLs
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
@@ -686,7 +686,7 @@ The CA shall support an OCSP capability using the GET method for Certificates.
 
 For the status of Domain Validation TLS Server Authentication and Organization Validation TLS Server Authentication certificates, the CA shall update information provided via OCSP every 24 hours. OCSP responses shall have a maximum expiration time of seven (7) days and the value of the nextUpdate field shall not be more than seven (7) days beyond the value of the thisUpdate field.  
 
-For the status of Subordinate CA Certificates, the root CA shall update information provided via OCSP at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
+For the status of Subordinate CA Certificates, the Root CA shall update information provided via OCSP at least (i) every 31 days and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status.  The CA shall monitor the responder for such requests as part of its security response procedures.
 
