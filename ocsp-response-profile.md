@@ -1,5 +1,5 @@
 ### OCSP Response Profile
-OCSP responses under this profile are expected to operate using the Static Response model described in RFC 6960 and thus will not support nonce.
+OCSP responders under this profile are expected to operate using the Static Response model described in RFC 6960 and thus will not support nonce.
 
 | **Field** | **Value and Requirements** |
 | :-------- | :------------------------------- |
