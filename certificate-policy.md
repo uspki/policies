@@ -87,7 +87,7 @@ The following Certificate Policy identifiers are registered by the CAB Forum and
 ### 1.3 PKI Participants
 
 #### 1.3.1 Federal CIO Council
-The U.S. Government's Federal CIO Council was codified by the E-Government Act of 2002.  The Federal CIO Council is the principal interagency forum for improving Federal agency practices related to the design, acquisition, development, modernization, use, sharing, and performance of Federal information resources
+The U.S. Government's Federal CIO Council was codified by the E-Government Act of 2002.  The Federal CIO Council is the principal interagency forum for improving Federal agency practices related to the design, acquisition, development, modernization, use, sharing, and performance of Federal information resources.
 
 The Federal CIO Council is comprised of: 1) the Chief Information Officers (CIOs) and Deputy CIOs from 28 U.S. Government Federal executive agencies; 2) liaisons from the Chief Acquisitions Officers, Chief Financial Officers, and Chief Human Capital Officers; 3) representatives from the Office of Information and Regulatory Affairs; 4) representatives from the Office of Science and Technology Policy; and 5) other groups selected by the CIO Council's Executive Committee.   
 
