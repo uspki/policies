@@ -53,7 +53,7 @@ A CA certificate is a Root CA certificate if the certificate’s issuer and subj
 A CA certificate is a Subordinate CA certificate if the certificate’s issuer and the subject are not the same.  Subordinate CA certificates, issued under this policy, have a Path Length Constraint set to zero (0) and Name Constraints specifying permitted dnsName sub-trees only for the .gov and .mil Top Level Domains.    
 
 ##### 1.1.3.2 Subscriber Certificates
-A certificate is a Subscriber certificate if it is not a CA Certificate.  Subscriber certificates are end entity certificates as defined in RFC5280 and issued to subjects that are not authorized to issue certificates. Subscriber certificates allowed to be issued under this policy are categorized as Domain Validation TLS Server Authentication certificates, or Organization Validation TLS Server Authentication certificates.  CAs shall not issue Subscriber Certificates that simultaneously meet the criteria of more than one of these categories.  
+A certificate is a Subscriber certificate if it is not a CA Certificate.  Subscriber certificates are end entity certificates as defined in RFC 5280 and issued to subjects that are not authorized to issue certificates. Subscriber certificates allowed to be issued under this policy are categorized as Domain Validation TLS Server Authentication certificates, or Organization Validation TLS Server Authentication certificates.  CAs shall not issue Subscriber Certificates that simultaneously meet the criteria of more than one of these categories.  
 
 ##### 1.1.3.2.1 Domain Validation TLS Server Authentication Certificates
 A Domain Validation TLS Server Authentication, issued under this policy: i) does not contain any information in the subject distinguished name other than commonName (OID 2.5.4.3) and countryName (OID 2.5.4.6), and ii) asserts a key purpose of id-kp-serverAuth (OID 1.3.6.1.5.5.7.3.1) in the Extended Key Usage certificate extension.
@@ -62,7 +62,7 @@ A Domain Validation TLS Server Authentication, issued under this policy: i) does
 An Organization Validation TLS Server Authentication certificate, issued under this policy: i) contains commonName (OID 2.5.4.3), stateOrProvinceName (OID 2.5.4.8), organizationName (OID 2.5.4.10) and countryName (OID 2.5.4.6) in the subject distinguished name, and ii) asserts a key purpose of id-kp-serverAuth (OID 1.3.6.1.5.5.7.3.1) in the Extended Key Usage certificate extension.
 
 #### 1.1.3.3 Infrastructure Certificates
-A certificate is an Infrastructure certificate if it is not a CA Certificate and issued in support of the CA System.  Infrastructure certificates are end entity certificates as defined in RFC5280 and issued to subjects that are not authorized to issue certificates. Infrastructure certificates allowed to be issued under this policy are categorized as Delegated OCSP Responder certificates.
+A certificate is an Infrastructure certificate if it is not a CA Certificate and issued in support of the CA System.  Infrastructure certificates are end entity certificates as defined in RFC 5280 and issued to subjects that are not authorized to issue certificates. Infrastructure certificates allowed to be issued under this policy are categorized as Delegated OCSP Responder certificates.
 
 ##### 1.1.3.3.1 Delegated OCSP Responder Certificates
 A certificate is a Delegated OCSP Responder Certificate if it has a key purpose of id-kp-OCSPSigning (OID 1.3.6.1.5.5.7.3.9) in the Extended Key Usage certificate extension.
@@ -242,7 +242,7 @@ Subscriber certificates issued under this policy shall have a common name that i
 A CA shall not issue anonymous certificates. CA certificates shall not contain anonymous or pseudonymous identities.
 
 #### 3.1.4 Rules for interpreting various name forms
-Distinguished names in certificates are interpreted using the X.500 Standard, and URL (RFC3986) syntax.
+Distinguished names in certificates are interpreted using the X.500 Standard, and URL (RFC 3986) syntax.
 
 #### 3.1.5 Uniqueness of names
 The common name attribute for CA Certificates shall be unique from all other CA Certificates.  
@@ -676,7 +676,7 @@ For the status of Subordinate CA Certificates, the Root CA shall update and reis
 CRLs shall be published within 4 hours of generation. Furthermore, each CRL shall be published no later than the time specified in the nextUpdate field of the previously issued CRL for same scope.
 
 #### 4.9.9 On-line revocation/status checking availability
-OCSP responses shall conform to RFC6960 and/or RFC5019. OCSP responses shall either:
+OCSP responses shall conform to RFC 6960 and/or RFC 5019. OCSP responses shall either:
 
 1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
 2. Be signed by a Delegated OCSP Responder Certificate signed by the CA that issued the Certificate whose revocation status is being checked.
@@ -691,7 +691,7 @@ For the status of Subordinate CA Certificates, the Root CA shall update informat
 If the OCSP responder receives a request for status of a certificate that has not been issued, then the responder shall not respond with a "good" status.  The CA shall monitor the responder for such requests as part of its security response procedures.
 
 #### 4.9.11 Other forms of revocation advertisements available
-Subscribers may rely on stapling, in accordance with RFC6066, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses.  
+Subscribers may rely on stapling, in accordance with RFC 6066, to distribute OCSP responses. The CA shall be responsible for supporting OCSP status responses.  
 
 #### 4.9.12 Special requirements related to key compromise
 See Section 4.9.1
@@ -2011,27 +2011,27 @@ NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Ap
 
 NIST SP 800-56-A, Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography, https://doi.org/10.6028/NIST.SP.800-56Ar2
 
-RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
+RFC 2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
-RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.
+RFC 3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.
 
-RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.
+RFC 3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.
 
-RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
+RFC 5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
 
-RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.
+RFC 5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.
 
-RFC5752, Request for Comments: 5752, Multiple Signatures in Cryptographic Message Syntax (CMS), Turner et al, January 2010.
+RFC 5752, Request for Comments: 5752, Multiple Signatures in Cryptographic Message Syntax (CMS), Turner et al, January 2010.
 
-RFC6066, Request for Comments: 6066, Transport Layer Security (TLS) Extensions: Extension Definitions, Eastlake 3rd, et al, January 2011.
+RFC 6066, Request for Comments: 6066, Transport Layer Security (TLS) Extensions: Extension Definitions, Eastlake 3rd, et al, January 2011.
 
-RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, et al, January 2013.
+RFC 6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, et al, January 2013.
 
-RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.
+RFC 6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.
 
-RFC6962, Request for Comments: 6962, Certificate Transparency, Laurie, et al, June 2013.
+RFC 6962, Request for Comments: 6962, Certificate Transparency, Laurie, et al, June 2013.
 
-RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
+RFC 7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at https://www.webtrust.org/homepage-documents/item79806.pdf.
 
