@@ -8,7 +8,7 @@
 ## 1. INTRODUCTION
 
 ### 1.1 Overview
-This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services.
+This Certificate Policy (CP) outlines the policy and requirements for the United States (U.S.) Federal Public Key Infrastructure in the issuance and management of U.S. Federal Publicly-Trusted TLS Certificates.  The certificates under this policy are for identifying and authenticating U.S. Federal Government web services.
 
 This policy is for a hierarchical Public Key Infrastructure restricted to services operated by or on behalf of the U.S. Federal Government.  The hierarchical PKI is referenced as the **U.S. Federal Public Trust TLS PKI** in this document.
 
@@ -33,7 +33,7 @@ The scope of the U.S. Federal Public Trust TLS PKI includes the Certification Au
 - Services that resolve at a registered Internet subdomain under the .gov and .mil Top Level Domains
 - Services that are accessible on the Internet
 
-U.S. Federal Government departments and agencies own and operate services that are not accessible on the Internet and are only accessible from the U.S. Government's intranets and internal networks.  These intranet only services should consider using TLS certificates from CAs used for the Federal Enterprise in lieu of the Publicly Trusted certificates covered under this policy.  The Federal Enterprise CAs could include only locally trusted CAs operated by the department or agency or a CA operated under one of the other Federal PKI certificate policies.   
+U.S. Federal Government departments and agencies own and operate services that are not accessible on the Internet and are only accessible from the U.S. Government's intranets and internal networks.  These intranet only services should consider using TLS certificates from CAs used for the Federal Enterprise in lieu of the Publicly-Trusted certificates covered under this policy.  The Federal Enterprise CAs could include only locally trusted CAs operated by the department or agency or a CA operated under one of the other Federal PKI certificate policies.   
 
 The intranet only services may apply for TLS certificates issued under this policy if: i) the identification and authentication requirements (Section 3) can be met in entirety, and ii) the information to be contained in the certificate can be publicly disclosed without any redaction.  
 
@@ -147,7 +147,7 @@ CAs operating under this policy require the services of Qualified Auditors to pe
 ### 1.4 Certificate Usage
 
 #### 1.4.1 Appropriate Certificate Uses
-This policy is limited to Publicly Trusted TLS Certificates used for identifying and authenticating U.S. Federal Government web services.  Certificates may be used for all legal authentication and encryption purposes.
+This policy is limited to Publicly-Trusted TLS Certificates used for identifying and authenticating U.S. Federal Government web services.  Certificates may be used for all legal authentication and encryption purposes.
 
 #### 1.4.2 Prohibited Certificate Uses
 Certificates may not be used where prohibited by law.  
@@ -1147,7 +1147,7 @@ A Root CA certificate shall be conveyed to trust store operators and relying par
 - Loading a self-signed certificate onto tokens delivered to trust store operators or relying parties via secure mechanisms
 - Secure distribution of the self-signed certificate through secure out-of-band mechanisms
 - Comparison of the hash of the self-signed certificate against a hash value made available via authenticated out-of-band sources
-- Secure mechanisms used by the trust store operators to distribute publicly trusted Root CA certificates to relying parties
+- Secure mechanisms used by the trust store operators to distribute Publicly-Trusted Root CA certificates to relying parties
 
 #### 6.1.5 Key sizes
 Certificates shall meet the following requirements for algorithm type and key size.
