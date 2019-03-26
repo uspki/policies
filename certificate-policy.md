@@ -607,19 +607,19 @@ The CA shall revoke a Certificate within 24 hours if one or more of the followin
 The CA should revoke a certificate within 24 hours and shall revoke a Certificate within 5 days if one or more of the following occurs:
 
 1. The Certificate no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
-1. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted;
-7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
-8. The CA is made aware of a material change in the information contained in the Certificate;
-9. The CA is made aware that the Certificate was not issued in accordance with this CP or the CA's Certification Practice Statement;
-10. The CA determines that any of the information appearing in the Certificate is inaccurate;
-11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
-12. The CA's right to issue Certificates under this CP expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
-13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
-14. The CA is made aware of a demonstrated or proven method that exposes the Subscriber’s Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys), or if there is clear evidence that the specific method used to generate the Private Key was flawed;
-15. Revocation is required by this CP and/or the CA's CPS;
-16. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
-17.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
+2. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
+3. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the Certificate is no longer legally permitted;
+4. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
+5. The CA is made aware of a material change in the information contained in the Certificate;
+6. The CA is made aware that the Certificate was not issued in accordance with this CP or the CA's Certification Practice Statement;
+7. The CA determines that any of the information appearing in the Certificate is inaccurate;
+8. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
+9. The CA's right to issue Certificates under this CP expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
+10. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
+11. The CA is made aware of a demonstrated or proven method that exposes the Subscriber’s Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys), or if there is clear evidence that the specific method used to generate the Private Key was flawed;
+12. Revocation is required by this CP and/or the CA's CPS;
+13. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties; or
+14.  The CA received a lawful and binding order from a government, judicial or regulatory body to revoke the Certificate.
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA shall revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -653,10 +653,10 @@ There is no revocation grace period.
 The CA shall begin investigation of a Certificate Problem Report immediately upon receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
 
 1. The nature of the alleged problem;
-1. The consequences of revocation (direct and collateral impacts to Subscribers and Relying Parties);
-2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
-3. The entity making the complaint (for example, a complaint from a law enforcement or Inspector General official that a Web site violates U.S. Federal regulation should carry more weight than a complaint from a user alleging that they were unable to complete their transaction); and
-4. Relevant legislation.
+2. The consequences of revocation (direct and collateral impacts to Subscribers and Relying Parties);
+3. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
+4. The entity making the complaint (for example, a complaint from a law enforcement or Inspector General official that a Web site violates U.S. Federal regulation should carry more weight than a complaint from a user alleging that they were unable to complete their transaction); and
+5. Relevant legislation.
 
 The CA shall work with the Subscriber and entity who submitted the Certificate Problem Report to decide if and when a certificate shall be revoked. Within 24 hours after receiving the report, the CA shall provide a preliminary report on its findings to the Subscriber and entity who submitted the Certificate Problem Report (if different than the subscriber). If a revocation related to the Certificate Problem Report is warranted, the period from the receipt of the Certificate Problem Report to the published revocation shall not exceed the timeline defined in Section 4.9.1.1.
 
@@ -1048,19 +1048,19 @@ The FPKIPA shall be notified by the CAs operating under this policy of any incid
 The CA shall notify the FPKIPA within 24 hours from the time the incident was discovered.  An initial security incident report shall be submitted to the FPKIPA and shall include the following information:  
 
 1. Which CA was affected by the incident
-1. When the incident was discovered
-1. How the incident was discovered
-1. If available and applicable, any evidence of attribution for the incident
-1. The CA's interpretation of the incident
-1. A complete list of all certificates that were either mis-issued or not compliant with this CP and the CA's CPS as a result of the incident.
+2. When the incident was discovered
+3. How the incident was discovered
+4. If available and applicable, any evidence of attribution for the incident
+5. The CA's interpretation of the incident
+6. A complete list of all certificates that were either mis-issued or not compliant with this CP and the CA's CPS as a result of the incident.
 
 A final security incident report shall be submitted at a date specified by the FPKIPA and shall include the following information:  
 
 1. A complete timeline of events
-1. A root cause analysis
-1. Remediation actions implemented to address the underlying root cause including specific technical or procedural changes, and any updates to the CA's CPS
-1. Proof the mis-issued certificates were revoked
-1. A statement that the incident has been fully remediated
+2. A root cause analysis
+3. Remediation actions implemented to address the underlying root cause including specific technical or procedural changes, and any updates to the CA's CPS
+4. Proof the mis-issued certificates were revoked
+5. A statement that the incident has been fully remediated
 
 In coordination with the CA, the FPKIPA may conduct the following activities as part of an incident response:  
 
@@ -1117,13 +1117,13 @@ Prior to CA termination, the CA shall provide archived data to an archive facili
 The CA shall:
 
 1. Prepare and follow a Key Generation Script
-1. Have a Qualified Auditor witness the CA Key Pair generation process or review a video of the entire CA Key Pair generation process
-1. Have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair
-1. Generate the CA keys in a physically secured environment as described in the CA's CPS
-1. Generate the CA keys using personnel in trusted roles under the principles of multiple person control and split knowledge
-1. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation
-1. Log its CA key generation activities
-1. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in this CP and the CA's CPS and its Key Generation Script
+2. Have a Qualified Auditor witness the CA Key Pair generation process or review a video of the entire CA Key Pair generation process
+3. Have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair
+4. Generate the CA keys in a physically secured environment as described in the CA's CPS
+5. Generate the CA keys using personnel in trusted roles under the principles of multiple person control and split knowledge
+6. Generate the CA keys within cryptographic modules that meet or exceed FIPS 140 Level 3 validation
+7. Log its CA key generation activities
+8. Maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in this CP and the CA's CPS and its Key Generation Script
 
 The documentation of the procedure shall be detailed enough to show that appropriate role separation was used and the CA key pair generation shall create a verifiable audit trail that the security requirements for procedures were followed.
 
@@ -1494,14 +1494,14 @@ All Subordinate CAs shall be an Affiliate as defined in this CP.
 A Certificate issued to a Subordinate CA shall contain in the Certificate's certificatePolicies extension:  
 
 1. One or more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
-1. One or more of the CAB Forum reserved policy object identifiers in Section 7.1.6.1 to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements
+2. One or more of the CAB Forum reserved policy object identifiers in Section 7.1.6.1 to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements
 
 
 #### 7.1.6.4 Subscriber Certificates
 A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
 
 1. One of the US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
-1. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
+2. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
 
 The certificates shall contain certificate policy identifier(s) for either Domain Validated policies or Organization Validated policies but shall not assert certificate policy identifiers for both.
 
