@@ -1305,7 +1305,7 @@ For all CAs and Certificate System Components including certificate status servi
 - Provide process isolation
 - Support recovery from key or system failure
 
-When CA and Certificate System Components including certificate status services, are hosted on evaluated platforms in support of computer security assurance requirements then the system (hardware, software, and operating system) shall, when possible, operate in an evaluated configuration.  At a minimum, such platforms shall use the same version of the computer operating system as received the evaluation rating.
+When CA and Certificate System Components including certificate status services, are hosted on evaluated platforms in support of computer security assurance requirements then the system (hardware, software, and operating system) shall, when possible, operate in an evaluated configuration.  At a minimum, such platforms shall use the same version of the computer operating system that received the evaluation rating.
 
 Two person control shall be enforced (using physical and/or technical means) on functions performed to administer the hardware, operating system, and applications.
 
