@@ -1689,7 +1689,7 @@ A Subscriber shall be required to sign a document containing the requirements th
 - Promptly notify the CA upon suspicion of loss or compromise of the private key(s)
 - Cease use of the private key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise
 - Abide by all the terms, conditions, and restrictions levied on the use of their private key(s) and certificate(s)
-- Use certificates provided by the CA’s only for transactions related to U.S. Government business
+- Use certificates provided by the CAs only for transactions related to U.S. Government business
 
 The CA may use an electronic or "click-through" agreements provided that the CA has determined that such agreements are legally enforceable. A separate agreement may be used for each certificate request, or a single agreement may be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
 
