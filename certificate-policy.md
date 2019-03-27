@@ -992,7 +992,7 @@ CA archive records shall be sufficiently detailed to determine the proper operat
 The CA shall retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation information thereof, for a minimum of seven years without any loss of data after any Certificate based on that documentation ceases to be valid.
 
 #### 5.5.3 Protection of archive
-No unauthorized user shall be permitted to write to, modify, or delete the archive records.   Records of transactions may be released upon request of any subscribers involved in the transaction or their legally recognized agents.  
+No unauthorized user shall be permitted to write to, modify, or delete the archive records.  Records of transactions may be released upon request of any subscribers involved in the transaction or their legally recognized agents.  
 
 Archive media shall be stored in a safe, secure storage facility separate from the CA. If the original media cannot retain the data for the required archived period, a mechanism to periodically transfer the archived data to new media shall be defined by the archive site.
 
