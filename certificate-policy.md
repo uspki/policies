@@ -1498,7 +1498,7 @@ A Certificate issued to a Subordinate CA shall contain in the Certificate's cert
 
 
 #### 7.1.6.4 Subscriber Certificates
-A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
+A Domain Validation TLS Server Authentication Certificate or Organization Validation TLS Server Authentication Certificate issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
 
 1. One of the U.S. Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
 2. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
