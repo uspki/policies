@@ -1493,14 +1493,14 @@ All Subordinate CAs shall be an Affiliate as defined in this CP.
 
 A Certificate issued to a Subordinate CA shall contain in the Certificate's certificatePolicies extension:  
 
-1. One or more of the US Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
+1. One or more of the U.S. Government reserved policy object identifiers defined in Section 7.1.6.1 to indicate the Subordinate CA's compliance with this CP, and
 2. One or more of the CAB Forum reserved policy object identifiers in Section 7.1.6.1 to indicate the Subordinate CA's compliance with the CAB Forum Baseline Requirements
 
 
 #### 7.1.6.4 Subscriber Certificates
 A Domain Validation TLS Server Authentication Certificates or Organization Validation TLS Server Authentication Certificates issued to a Subscriber shall contain in the Certificate's certificatePolicies extension:  
 
-1. One of the US Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
+1. One of the U.S. Government reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with this CP
 2. One of the CAB Forum reserved policy object identifiers defined in Section 7.1.6.1 that indicates adherence to and compliance with the CAB Forum Baseline Requirements
 
 The certificates shall contain certificate policy identifier(s) for either Domain Validated policies or Organization Validated policies but shall not assert certificate policy identifiers for both.
@@ -1981,14 +1981,14 @@ No stipulation.
 | CT | Certificate Transparency |
 | DBA | Doing Business As |
 | DNS | Domain Name System |
-| FIPS | (US Government) Federal Information Processing Standard |
+| FIPS | (U.S. Government) Federal Information Processing Standard |
 | FQDN | Fully Qualified Domain Name |
 | HTTP | Hypertext Transfer Protocol |
 | HTTPS | Hypertext Transfer Protocol Secure |
 | IANA | Internet Assigned Numbers Authority |
 | ICANN | Internet Corporation for Assigned Names and Numbers |
 | ISO | International Organization for Standardization |
-| NIST | (US Government) National Institute of Standards and Technology |
+| NIST | (U.S. Government) National Institute of Standards and Technology |
 | OCSP | Online Certificate Status Protocol |
 | OID | Object Identifier |
 | PKI | Public Key Infrastructure |
