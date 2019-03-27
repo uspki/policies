@@ -1674,7 +1674,7 @@ A CA that issues certificates under this policy shall conform to the stipulation
 - Including only valid and appropriate information in certificates
 - Maintaining evidence that due diligence was exercised in validating the information contained in the certificates.
 - Revoking the certificates of subscribers found to have acted in a manner counter to their obligations in accordance with Section 9.6.3
- - Operating or providing for the services of an on-line repository, and informing the repository service provider of their obligations if applicable.
+- Operating or providing for the services of an on-line repository, and informing the repository service provider of their obligations if applicable.
 
 #### 9.6.2 RA representations and warranties
 An RA, as the party described in Section 1.3.4, may perform registration functions as described in this policy.  An RA  shall comply with the stipulations of this policy, and comply with the CA CPS approved by the FPKIPA for use with this policy.  An RA who is found to have acted in a manner inconsistent with these obligations is subject to revocation of RA responsibilities.  
