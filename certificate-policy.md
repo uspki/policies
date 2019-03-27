@@ -1088,7 +1088,7 @@ If the Root Certificate private key is compromised, the CA shall notify the FPKI
 In all cases, the CA and the FPKIPA shall initiate procedures to notify subscribers and trust store operators of the compromise.
 
 #### 5.7.4 Business continuity capabilities after a disaster
-CAs disaster recovery procedures shall be in place to reconstitute the CA including the certificate status services required of the CA Repository within six (6) hours of failure.
+CA's disaster recovery procedures shall be in place to reconstitute the CA including the certificate status services required of the CA Repository within six (6) hours of failure.
 
 In the case of a disaster whereby the CA installation is damaged and all copies of the CA signature key are destroyed as a result, the FPKIPA shall be notified at the earliest feasible time, and the FPKIPA shall take whatever action it deems appropriate.
 
