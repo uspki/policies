@@ -1333,7 +1333,7 @@ The security management controls for all CAs and all Certificate System Componen
 - There shall be a mechanism for detecting unauthorized modification to the software or configuration
 - All system accounts and trusted role accounts shall be reviewed at least every ninety (90) days, and any account that is no longer in use or necessary for operations shall be deactivated
 - A process shall be implemented that disables physical and logical access to Certificate Systems by any trusted role within 24 hours upon termination of the individual's employment or contracting relationship with the CA
-- All authentication credentials for any account or trusted role on a Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
+- All authentication credentials for any account or trusted role on Certificate Systems shall be changed whenever authorization to access the account is changed or revoked
 - All system accounts and trusted role accounts shall have be configured to lockout access after five (5) failed access attempts
 - There shall be an automated mechanism to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events
 - A policy that requires trusted roles to log out of or lock workstations when no longer in use
