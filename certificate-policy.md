@@ -1424,7 +1424,7 @@ The Subordinate CA Certificate(s) shall include the id-kp-serverAuth extended ke
 
 - Shall include at least one dNSName in permittedSubtrees  
 - The permittedSubtrees for dNSName shall be within the constraints of the sTLDs for .gov and .mil
-- The permittedSubtrees for dNSName shall not contain any other dNSName ranges outside of the the .gov or .mil sTLDs
+- The permittedSubtrees for dNSName shall not contain any other dNSName ranges outside of the .gov or .mil sTLDs
 
 For ipAddress, Subordinate CAs shall not issue subscriber certificates with an iPAddress.  The Subordinate CA Certificate shall:
 
