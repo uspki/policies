@@ -1631,7 +1631,7 @@ No stipulation.
 No stipulation.
 
 #### 9.3.3 Responsibility to protect confidential information
-A CA shall not disclose non-certificate information to any third party unless authorized by this policy, required by U.S. law, U.S. government rule or regulation, or order of a U.S. court of competent jurisdiction.  The contents of the archives maintained by CAs operating under this policy shall not be released except as required by this policy, required by U.S. law, U.S. government rule or regulation, or order of a U.S court of competent jurisdiction.  The FPKI Policy Authority must authenticate any request for release of information.
+A CA shall not disclose non-certificate information to any third party unless authorized by this policy, required by U.S. law, U.S. government rule or regulation, or order of a U.S. court of competent jurisdiction.  The contents of the archives maintained by CAs operating under this policy shall not be released except as required by this policy, required by U.S. law, U.S. government rule or regulation, or order of a U.S. court of competent jurisdiction.  The FPKI Policy Authority must authenticate any request for release of information.
 
 ### 9.4 Privacy of personal information
 
