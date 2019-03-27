@@ -1691,7 +1691,7 @@ A Subscriber shall be required to sign a document containing the requirements th
 - Abide by all the terms, conditions, and restrictions levied on the use of their private key(s) and certificate(s)
 - Use certificates provided by the CAs only for transactions related to U.S. Government business
 
-The CA may use an electronic or "click-through" agreements provided that the CA has determined that such agreements are legally enforceable. A separate agreement may be used for each certificate request, or a single agreement may be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
+The CA may use electronic or "click-through" agreements provided that the CA has determined that such agreements are legally enforceable. A separate agreement may be used for each certificate request, or a single agreement may be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
 
 #### 9.6.4 Relying party representations and warranties
 This CP does not specify the steps a relying party should take to determine whether to rely upon a certificate.  The relying party decides, pursuant to its own policies, what steps to take.
