@@ -1088,7 +1088,7 @@ If the Root Certificate private key is compromised, the CA shall notify the FPKI
 In all cases, the CA and the FPKIPA shall initiate procedures to notify subscribers and trust store operators of the compromise.
 
 #### 5.7.4 Business continuity capabilities after a disaster
-CA's disaster recovery procedures shall be in place to reconstitute the CA including the certificate status services required of the CA Repository within six (6) hours of failure.
+CA disaster recovery procedures shall be in place to reconstitute the CA including the certificate status services required of the CA Repository within six (6) hours of failure.
 
 In the case of a disaster whereby the CA installation is damaged and all copies of the CA signature key are destroyed as a result, the FPKIPA shall be notified at the earliest feasible time, and the FPKIPA shall take whatever action it deems appropriate.
 
@@ -1436,7 +1436,7 @@ For DirectoryName, the Subordinate CA Certificates shall:
 
 - Include a single DirectoryName in permittedSubtrees specifying c=US
 
-A decoded example for issuance to the domain and subdomains of .mil by a Subordinate CA would be:-
+A decoded example for issuance to the domain and subdomains of .mil by a Subordinate CA would be:
 
 > X509v3 Name Constraints:  
 >   Permitted:  
@@ -1466,7 +1466,7 @@ This section describes the content requirements for the Root CA, Subordinate CA,
 The following Certificate Policy identifiers are registered under the National Institute of Standards and Technology (NIST) Computer Science Object Registry (CSOR) OID arc and reserved for use by the U.S. Government for this CP.  These Certificate Policy Identifiers are a required means of asserting compliance with this CP as follows:
 
 - Domain Validated:
-  - { joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) } (2.16.840.1.101.3.2.1.3.43),
+  - {joint-iso-itu-t(2) country(16) us(840) organization(1) gov(101) csor(3) pki(2) certificate-policies(1) arcfbca-policies(3) domain-validated(43) } (2.16.840.1.101.3.2.1.3.43),
   - If the Certificate complies with this CP but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
 - Organization Validated:
