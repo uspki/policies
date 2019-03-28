@@ -7,7 +7,7 @@
 | Issuer Distinguished Name  |  Distinguished Name of the CA Issuer |
 | thisUpdate   | Encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> See Section 4.9.7 for publishing intervals.  |
 | nextUpdate   | Encoded as UTCTime for dates through 2049 and GeneralizedTime for dates thereafter <br> See Section 4.9.7 for validity period intervals. |
-| Revoked Certificates List   |  0 or more 2-tuple of certificate serial number and revocation date (Expressed in UTCTime for dates until end of 2049 and GeneralizedTime for dates thereafter )  |
+| Revoked Certificates List   |  0 or more 2-tuple of certificate serial number and revocation date (Expressed in UTCTime for dates until end of 2049 and GeneralizedTime for dates thereafter)  |
 | Issuer Signature  |   sha256 WithRSAEncryption {1 2 840 113549 1 1 11}    |
 
 
