@@ -50,7 +50,7 @@ A certificate is a CA certificate if the basicConstraints extension is present a
 A CA certificate is a Root CA certificate if the certificate’s issuer and subject are the same and the digital signature may be verified by the public key bound into the certificate.  
 
 ##### 1.1.3.1.2 Subordinate CA Certificates
-A CA certificate is a Subordinate CA certificate if the certificate’s issuer and the subject are not the same.  Subordinate CA certificates, issued under this policy, have a Path Length Constraint set to zero (0) and Name Constraints specifying permitted dnsName sub-trees only for the .gov and .mil Top Level Domains.    
+A CA certificate is a Subordinate CA certificate if the certificate’s issuer and the subject are not the same.  Subordinate CA certificates, issued under this policy, have a Path Length Constraint set to zero (0) and Name Constraints specifying permitted dNSName sub-trees only for the .gov and .mil Top Level Domains.    
 
 ##### 1.1.3.2 Subscriber Certificates
 A certificate is a Subscriber certificate if it is not a CA Certificate.  Subscriber certificates are end entity certificates as defined in RFC 5280 and issued to subjects that are not authorized to issue certificates. Subscriber certificates allowed to be issued under this policy are categorized as Domain Validation TLS Server Authentication certificates, or Organization Validation TLS Server Authentication certificates.  CAs shall not issue Subscriber Certificates that simultaneously meet the criteria of more than one of these categories.  
@@ -452,7 +452,7 @@ The CA shall be responsible for validating the information in the certificate re
 
 - Properly formed
 - Accurate
-- Meets the requirements for the type of certificate requested such as a Domain Validation TLS Server Authentication certificate, an Organization Validation TLS Server Authentication certificate, a OCSP Delegated Responder certificate, or a CA Certificate
+- Meets the requirements for the type of certificate requested such as a Domain Validation TLS Server Authentication certificate, an Organization Validation TLS Server Authentication certificate, an OCSP Delegated Responder certificate, or a CA Certificate
 
 All communications supporting the certificate application and issuance process shall be authenticated and protected from modification; any electronic transmission of shared secrets shall be protected. Communications may be electronic or out-of-band. Where electronic communications are used, cryptographic mechanisms commensurate with the strength of the requested public/private key pair shall be used. Out-of-band communications shall protect the confidentiality and integrity of the data.
 
@@ -1884,7 +1884,7 @@ No stipulation.
 
 **OCSP Responder**: An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests. See also, Online Certificate Status Protocol.
 
-**Offline**: An air-gapped Certificate System or component that is only turned on to conduct certificate activity (i.e. issue / revoke a certificate, issue certificate revocation list, etc).
+**Offline**: An air-gapped Certificate System or component that is only turned on to conduct certificate activity (i.e. issue / revoke a certificate, issue certificate revocation list, etc.).
 
 **Online**: Certificate Systems or components that are physically and logically connected to the public and/or a private internet.
 
