@@ -1,5 +1,5 @@
 ### OCSP Response Profile
-OCSP Responders under this profile are expected to operate using the Static Response model described in RFC 6960 and thus will not support nonce.
+OCSP responders under this profile are expected to operate using the Static Response model described in RFC 6960 and thus will not support nonce.
 
 | **Field** | **Value and Requirements** |
 | :-------- | :------------------------------- |
@@ -21,7 +21,7 @@ OCSP Responders under this profile are expected to operate using the Static Resp
 | **Field** | **Value and Requirements** |
 | :-------- | :------------------------------- |
 | CertID | hashAlgorithm shall be SHA-1<br>The issuerKeyHash and issuerNameHash pair must be identical within all Single Responses appearing in an OCSP Response |
-| Certificate Status | Determined by CRL<br>If revoked, revocationReason is included if present on the CRL |
-| This Update | Identical to the thisUpdate of the CRL used for determining revocation status |
-| Next Update | Before or identical to the nextUpdate field of the CRL used for determining revocation status |
+| Certificate Status | See Section 4.9.10 |
+| This Update | See Section 4.9.10 for validity period intervals. <br> Status information for DV/OV Server certificates: at least once every 24 hours. <br>Status information for Subordinate CA certificates: Every 31 days, or within 24 hours of revoking a Subordinate CA certificate. |
+| Next Update | See Section 4.9.10 for validity period intervals.<br>Status information for DV/OV Server certificates: not more than seven days beyond the value of the thisUpdate field. <br>Status information for Subordinate CA certificates: not more than 32 days beyond the value of the thisUpdate field. |
 | Single Extensions | Optional: <br>Transparency Information X.509v3 Extension {1 3 101 75} |
