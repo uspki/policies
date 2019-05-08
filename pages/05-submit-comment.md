@@ -20,7 +20,6 @@ Comments are always welcome and can be submitted via **[this web form]({{ site.r
 - [Source files for Version 0.2 including all website content](https://github.com/uspki/policies/releases/tag/v0.2){:target="_blank"}
 
 **Version 0.3** of this Certificate Policy was updated for internal team reviews against the practice statements and development.  Version 0.3 was only published in a preview mode.
-
 - [PDF copy of Version 0.3](https://github.com/uspki/policies/blob/master/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_3.pdf){:target="_blank"}
 
 **Version 0.4** of this Certificate Policy was updated for team reviews against the practice statements and development.  
