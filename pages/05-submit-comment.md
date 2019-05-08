@@ -29,5 +29,5 @@ Comments are always welcome and can be submitted via **[this web form]({{ site.r
 
 **Version 1.0 DRAFT** of this Certificate Policy was posted for final vote from the Federal PKI Policy Authority and stakeholders.  
 
-- [PDF copy of Version 1.0 DRAFT](https://github.com/uspki/policies/blob/v0.4/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v1_0_draft.pdf)
+- [PDF copy of Version 1.0 DRAFT](https://github.com/uspki/policies/blob/master/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v1_0_draft.pdf){:target="_blank"}
 
