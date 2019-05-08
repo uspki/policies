@@ -1,4 +1,4 @@
-title: U.S. Federal Public Trust TLS Certificate Policy (Version 1.0 Final for Vote)
+title: U.S. Federal Public Trust TLS Certificate Policy (Version 1.0)
 small_title: U.S. Federal Public Trust TLS PKI
 smallest_title: U.S. Federal Public Trust TLS PKI
 description: Certificate Policy for a new public key infrastructure for TLS certificates for public .gov and .mil websites.
@@ -13,7 +13,7 @@ branch: policy-pages
 # we want the dynamic links to send users to the the primary editing branch.  editbranch is the new site variable to ensure Edit Page sends users to the correct branch for pull requests.
 editbranch: master
 
-report_url: "assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v1_0_draft.pdf"
+report_url: "assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v1_0.pdf"
 
 google_analytics_ua:
 repo: https://github.com/uspki/policies
