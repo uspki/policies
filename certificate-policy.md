@@ -375,6 +375,9 @@ This validation method defined by the Baseline Requirements is not allowed under
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
+##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
 #### 3.2.2.5 Authentication for an IP Address
 IP Addresses are not allowed in the certificate profiles under this CP.
 
@@ -1833,6 +1836,8 @@ No stipulation.
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
 **DNS CAA Email Contact**: The email address placed in the CAA contactemail property.
+
+**DNS CAA Phone Contact**: The pohne number place in the CAA contactphone property.
 
 **DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” of the DNS TXT record.
 
