@@ -1837,7 +1837,7 @@ No stipulation.
 
 **DNS CAA Email Contact**: The email address placed in the CAA contactemail property.
 
-**DNS CAA Phone Contact**: The pohne number place in the CAA contactphone property.
+**DNS CAA Phone Contact**: The pohne number placed in the CAA contactphone property.
 
 **DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” of the DNS TXT record.
 
