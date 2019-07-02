@@ -3,6 +3,7 @@
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | May 9, 2019 | May 9, 2019 |
+| 1.1 | 19-01 | Incororate CAB Forum Ballot SC-19 | Aug 1, 2019 | Aug 1, 2019 |
 
 
 ## 1. INTRODUCTION
