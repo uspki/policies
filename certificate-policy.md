@@ -3,6 +3,7 @@
 | **Ver.** | **Change Proposal** | **Description** | **Adopted** | **Effective Date** |
 | --- | --- | --- | --- | --- |
 | 1.0.0 | None | Version 1.0 of the Certificate Policy Adopted | May 9, 2019 | May 9, 2019 |
+| 1.1 | 19-01 | Incororate CAB Forum Ballot SC-19 | Aug 1, 2019 | Aug 1, 2019 |
 
 
 ## 1. INTRODUCTION
@@ -373,6 +374,9 @@ This validation method defined by the Baseline Requirements is not allowed under
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
+This validation method defined by the Baseline Requirements is not allowed under this CP.
+
+##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
 This validation method defined by the Baseline Requirements is not allowed under this CP.
 
 #### 3.2.2.5 Authentication for an IP Address
@@ -1833,6 +1837,8 @@ No stipulation.
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
 **DNS CAA Email Contact**: The email address placed in the CAA contactemail property.
+
+**DNS CAA Phone Contact**: The pohne number placed in the CAA contactphone property.
 
 **DNS TXT Record Email Contact**: The email address placed on the “_validation-contactemail” of the DNS TXT record.
 
