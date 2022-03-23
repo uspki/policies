@@ -22,6 +22,20 @@ uswds_path: assets/uswds
 # Links
 # List links that you would like to appear on the top navigation bar here
 
+searchgov:
+
+  # You should not change this.
+  endpoint: https://search.usa.gov
+
+  # replace this with your search.gov account
+  affiliate: idmprod
+
+  # replace with your access key
+  access_key: zCEoL5u4U5XFzfFSxy8y4Iz6vdtTjsb4U539L_rgDTM=
+
+  # this renders the results within the page instead of sending to user to search.gov
+  inline: false
+
 exclude:
 - CONTRIBUTING.md
 - _config.yml
