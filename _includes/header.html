@@ -1,10 +1,6 @@
 <header class="usa-header site-header" role="banner">
 
   {% include banner.html %}
-  
-  <div class="usa-nav__secondary">
-    {% include searchgov/form.html searchgov=site.searchgov %}
-  </div>
 
   <div class="usa-navbar site-header-navbar">
     <button class="usa-menu-btn">Menu</button>
@@ -29,6 +25,7 @@
         </a>
       </li>
     </ul>
+    {% include searchgov/form.html searchgov=site.searchgov %}
   </div>
 
 <!-- TBD horizontal nav -->
