@@ -39,8 +39,6 @@ subnav:
 
 <img src="{{site.baseurl}}/assets/img/fpkipa.png" alt="Logo for the Federal Public Key Infrastructure Policy Authority">
 
-# U.S. Federal Public Trust TLS PKI Certificate Policy
-
 **Version 1.0**
 
 **May 9, 2019**
