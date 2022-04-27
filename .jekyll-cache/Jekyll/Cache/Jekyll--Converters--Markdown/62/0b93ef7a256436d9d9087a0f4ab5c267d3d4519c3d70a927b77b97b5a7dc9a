@@ -1,0 +1,43 @@
+I"È<div class="usa-alert usa-alert--info">
+  <div class="usa-alert__body">
+    <h4 class="usa-alert__heading"></h4>
+    <p class="usa-alert__text">A Certificate Policy contains technical, operational, and legal terms intended for a particular audience of readers.  We recognize that a Certificate Policy may not incorporate plain language.  If you have questions or think the intent of any certificate policy statement is not clear, please add an issue or comment. Your comments may help us improve all certificate policies and practices.</p>
+  </div>
+</div>
+
+<p>Comments are always welcome and can be submitted via <strong><a href="https://github.com/uspki/policies/issues/new" target="_blank">this web form</a></strong> (GitHub account required) or sent to: <strong><a href="mailto:fpki@gsa.gov">fpki@gsa.gov</a></strong>.</p>
+
+<h3 id="versions">Versions</h3>
+
+<p><strong>Version 1.0 DRAFT</strong> of this Certificate Policy was posted for final vote from the Federal PKI Policy Authority and stakeholders.</p>
+
+<ul>
+  <li><a href="https://github.com/uspki/policies/blob/master/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v1_0_draft.pdf" target="_blank">PDF copy of Version 1.0 DRAFT</a></li>
+</ul>
+
+<p><strong>Version 0.4</strong> of this Certificate Policy was updated for team reviews against the practice statements and development.</p>
+
+<ul>
+  <li><a href="https://github.com/uspki/policies/blob/v0.4/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_4.pdf" target="_blank">PDF copy of Version 0.4</a></li>
+  <li><a href="https://github.com/uspki/policies/releases/tag/v0.4" target="_blank">Source files for Version 0.4 including all website content</a></li>
+</ul>
+
+<p><strong>Version 0.3</strong> of this Certificate Policy was updated for internal team reviews against the practice statements and development.  Version 0.3 was only published in a preview mode.</p>
+<ul>
+  <li><a href="https://github.com/uspki/policies/blob/master/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_3.pdf" target="_blank">PDF copy of Version 0.3</a></li>
+</ul>
+
+<p><strong>Version 0.2</strong> of this Certificate Policy was open for review and modification during initial development and some testing of the Certification Authorities.</p>
+
+<ul>
+  <li><a href="https://github.com/uspki/policies/blob/v0.2/assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v0_2.pdf" target="_blank">PDF copy of Version 0.2</a></li>
+  <li><a href="https://github.com/uspki/policies/releases/tag/v0.2" target="_blank">Source files for Version 0.2 including all website content</a></li>
+</ul>
+
+<p><strong>Version 0.1</strong> of this Certificate Policy was opened for comment in September 2017 and closed on October 31, 2017.  All comments received during the comment period were publicly posted <a href="https://github.com/uspki/policies/issues" target="_blank">to this repository</a>.</p>
+
+<ul>
+  <li><a href="https://github.com/uspki/policies/blob/v0.1/assets/docs/Federal_Public_Trust_Device_PKI_Certificate_Policy_Draft_v0_1_September2017.pdf" target="_blank">PDF copy of Version 0.1</a></li>
+  <li><a href="https://github.com/uspki/policies/releases/tag/v0.1" target="_blank">Source files for Version 0.1 including all website content</a></li>
+</ul>
+:ET

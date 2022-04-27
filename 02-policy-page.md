@@ -36,5 +36,12 @@ subnav:
     href: "#appendix-d-certificate-profiles"
 ---
 
-{% include fpki-document-header.html %}
+![Logo for the Federal Public Key Infrastructure Policy Authority](/assets/img/fpkipa.png)
+
+# U.S. Federal Public Trust TLS PKI Certificate Policy
+
+**Version 1.0**
+
+**May 9, 2019**
+
 {% include_relative certificate-policy.md %}
