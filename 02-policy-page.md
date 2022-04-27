@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /certificatepolicy/
+title: U.S. Federal Public Trust TLS PKI Certificate Policy
 sidenav: policy
 sticky_sidenav: true
 pdf: "assets/docs/us-federal-public-trust-tls-cp.pdf"
