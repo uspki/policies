@@ -20,7 +20,6 @@ subnav:
     href: "#ocsp-response-profile"
 
 ---
-## Certificate Profiles
 
 {% include alert-info.html heading="Certificate Policy Appendix D" content="The certificate profiles are included as Appendix D in the Certificate Policy.  This page directly references Appendix D content for easier navigation." %}
 
