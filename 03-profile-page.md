@@ -1,5 +1,6 @@
 ---
 layout: page
+title: U.S. Federal Public Trust TLS PKI Certificate Profiles
 permalink: /certificateprofiles/
 sidenav: profile
 sticky_sidenav: true
