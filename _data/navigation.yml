@@ -11,14 +11,10 @@ primary:
   - text: "Submit Comments"
     href: /comment/
 
-mobile:
-  - text: "Background"
-    href: /
+policy:
   - text: "Certificate Policy"
     href: /certificatepolicy/
+
+profile:
   - text: "Certificate Profiles"
     href: /certificateprofiles/
-#  - text: "Frequently Asked Questions"
-#    href: /faq/
-  - text: "Submit Comments"
-    href: /comment/

@@ -1,6 +1,8 @@
 ---
 layout: page
 permalink: /certificateprofiles/
+sidenav: profile
+sticky_sidenav: true
 
 subnav:
   - text: Self-Signed Root CA

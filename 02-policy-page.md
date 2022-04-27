@@ -1,6 +1,9 @@
 ---
 layout: page
 permalink: /certificatepolicy/
+sidenav: policy
+sticky_sidenav: true
+pdf: "assets/docs/us-federal-public-trust-tls-cp.pdf"
 
 subnav:
   - text: Revision History
