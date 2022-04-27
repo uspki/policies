@@ -1,4 +1,4 @@
-title: U.S. Federal Public Trust TLS Certificate Policy (Version 1.0)
+title: U.S. Federal Public Trust TLS Certificate Policy
 small_title: U.S. Federal Public Trust TLS PKI
 smallest_title: U.S. Federal Public Trust TLS PKI
 description: Certificate Policy for a new public key infrastructure for TLS certificates for public .gov and .mil websites.
@@ -13,14 +13,37 @@ branch: policy-pages
 # we want the dynamic links to send users to the the primary editing branch.  editbranch is the new site variable to ensure Edit Page sends users to the correct branch for pull requests.
 editbranch: master
 
+github_info:
+  organization: uspki
+  repository: policies
+  default_branch: master
+
 report_url: "assets/docs/US_Federal_Public_Trust_TLS_Certificate_Policy_v1_0.pdf"
 
 google_analytics_ua:
 repo: https://github.com/uspki/policies
 
-uswds_path: assets/uswds
-# Links
-# List links that you would like to appear on the top navigation bar here
+dap:
+  agency: GSA
+
+primary_navigation:
+  - name: Home
+    description: Background
+    url: /
+  - name: Certificate Policy
+    url: /certificatepolicy/
+  - name: Certificate Profiles
+    url: /certificateprofiles/
+  - name: Submit Comments
+    url: /comment/
+
+secondary_navigation:
+  - name: Contact Us
+    url: https://www.idmanagement.gov/contact-us/
+  - name: About Us
+    url: https://www.idmanagement.gov/about-us/
+  - name: Contribute
+    url: https://www.idmanagement.gov/contribute/
 
 searchgov:
 
@@ -48,6 +71,8 @@ exclude:
 - manifest.yml
 - Staticfile
 - Staticfile.auth
+- Dockerfile
+- docker-compose.yml
 
 defaults:
   - scope:
@@ -60,3 +85,16 @@ collections:
   pages:
     output: true
     #permalink: /:path/
+
+assets:
+  autoprefixer:
+    browsers:
+      - "> 2%"
+      - "last 2 versions"
+      - "IE 11"
+      - "not dead"
+  sources:
+    - node_modules/uswds/dist/img
+    - node_modules/uswds/dist/js
+    - node_modules/uswds/dist/scss
+    - node_modules/netlify-cms/dist

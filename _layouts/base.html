@@ -1,32 +1,25 @@
----
+{% comment %}
+This is used for just about every page. It provides the border around the content.
+The home page uses wide.html layout, since it extends full width of page
+{% endcomment %}
 
----
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-  {% include head.html %}
-</head>
 
-<body class="{{ layout.class }} {{ page.class }}">
+<html lang="en">
 
-<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+{% include meta.html %}
 
-{% include header.html %}
+<body>
 
-<aside class="sidenav sticky">
-  {% include sidenav.html links=site.data.navigation.primary %}
-</aside>
+  {% include header.html %}
 
-<main id="main-content" class="main-content">
-  <div class="usa-content">
-    <h2>{{ page.title }}</h2>
-    {{ content }}
-  </div>
-</main>
+  {% include menu.html primary_navigation=site.primary_navigation  secondary_navigation=site.secondary_navigation %}
+  
+  {{ content }}
 
-{% include footer.html %}
-{% include scripts.html %}
+  {% include footer.html %}
 
-
+  {% include scripts.html %}
 </body>
+
 </html>
