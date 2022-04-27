@@ -36,7 +36,7 @@ subnav:
     href: "#appendix-d-certificate-profiles"
 ---
 
-![Logo for the Federal Public Key Infrastructure Policy Authority](/assets/img/fpkipa.png)
+<img src="{{site.baseurl}}/assets/img/fpkipa.png" alt="Logo for the Federal Public Key Infrastructure Policy Authority">
 
 # U.S. Federal Public Trust TLS PKI Certificate Policy
 
