@@ -1,6 +1,9 @@
 ---
-layout: base
+layout: page
 permalink: /certificatepolicy/
+sidenav: policy
+sticky_sidenav: true
+pdf: "assets/docs/us-federal-public-trust-tls-cp.pdf"
 
 subnav:
   - text: Revision History
@@ -33,5 +36,12 @@ subnav:
     href: "#appendix-d-certificate-profiles"
 ---
 
-{% include fpki-document-header.html %}
+<img src="{{site.baseurl}}/assets/img/fpkipa.png" alt="Logo for the Federal Public Key Infrastructure Policy Authority">
+
+# U.S. Federal Public Trust TLS PKI Certificate Policy
+
+**Version 1.0**
+
+**May 9, 2019**
+
 {% include_relative certificate-policy.md %}

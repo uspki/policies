@@ -1,0 +1,33 @@
+{% comment %}
+Use this section to highlight key elements of your site. Some sites will only have two while others may have six to
+eight.
+{% endcomment %}
+
+
+<section class="usa-graphic-list usa-section usa-section--dark">
+  <div class="grid-container">
+    <div class="usa-graphic-list__row grid-row grid-gap">
+       <div class="usa-media-block tablet:grid-col">
+        {% asset pki-icon.png class="usa-media-block__img" alt="Certificate Policy" %}
+        <div class="usa-media-block__body">
+          <h3 class="usa-graphic-list__heading"><a href="{{site.baseurl}}/certificatepolicy/">Certificate Policy</a></h3>
+          <p>Read the policy for a federally-operated Public Trust TLS Certification Authority.</p>
+        </div>
+      </div>
+      <div class="usa-media-block tablet:grid-col">
+        {% asset playbook-icon.png class="usa-media-block__img" alt="Certificate Profiles" %}
+        <div class="usa-media-block__body">
+          <h3 class="usa-graphic-list__heading"><a href="{{site.baseurl}}/certificateprofiles/">Certificate Profiles</a></h3>
+          <p>Read the certificate profiles for a Root CA, Subordinate CA, and leaf certificates .</p>
+        </div>
+      </div>
+      <div class="usa-media-block tablet:grid-col">
+        {% asset arch-icon.png class="usa-media-block__img" alt="Submit a Comment" %}
+        <div class="usa-media-block__body">
+          <h3 class="usa-graphic-list__heading"><a href="{{site.baseurl}}/comment/">Submit a Comment</a></h3>
+          <p>Contribute a comment to maintain the certificate policy and profiles.</p>
+        </div>
+       </div>
+    </div>
+  </div>
+</section>

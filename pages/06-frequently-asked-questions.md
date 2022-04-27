@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 title: Frequently Asked Questions
 permalink: /faq/
 ---
@@ -10,11 +10,11 @@ permalink: /faq/
 - [What is the difference between Public Trust PKI versus the current Federal PKI?](#what-is-the-difference-between-public-trust-pki-versus-the-current-federal-pki)
 - [Who defines the rules for Public Trust PKI?](#who-defines-the-rules-for-public-trust-pki)
 - [Why can't US government tell the trust store programs to let us do whatever we want?](#why-cant-us-government-tell-the-trust-store-programs-to-let-us-do-whatever-we-want)
-- [What is Man in the Middle (MiTM)?](#what-is-man-in-the-middle)
+- [What is Man in the Middle?](#what-is-man-in-the-middle)
 - [Will this certification authority be used for Man in the Middle?](#will-this-certification-authority-be-used-for-man-in-the-middle)
 - [When will this service be available?](#when-will-this-service-be-available)
 - [Will we be required to use this service?](#will-we-be-required-to-use-this-service)
-- [I don't want to automate - I like forms! What should I do?](#what-if-i-dont-automate)
+- [What if I don't automate?](#what-if-i-dont-automate)
 - [Can US states and locals get a certificate?](#can-us-states-and-locals-get-a-certificate)
 - [Will the US government operate its own Certificate Transparency log?](#will-the-us-government-operate-its-own-certificate-transparency-log)
 - [What is the cost to obtain a certificate?](#what-is-the-cost-to-obtain-a-certificate)

@@ -1,6 +1,8 @@
 ---
-layout: base
+layout: page
 permalink: /certificateprofiles/
+sidenav: profile
+sticky_sidenav: true
 
 subnav:
   - text: Self-Signed Root CA
@@ -18,7 +20,8 @@ subnav:
 
 ---
 ## Certificate Profiles
-{% include alert-info.html content="The certificate profiles are included as Appendix D in the Certificate Policy.  This page directly references Appendix D content." %}
+
+{% include alert-info.html heading="Certificate Policy Appendix D" content="The certificate profiles are included as Appendix D in the Certificate Policy.  This page directly references Appendix D content for easier navigation." %}
 
 This section specifies the X.509 version 3 certificate profiles, version 2 Certificate Revocation List (CRL) profile, and Online Certificate Status Protocol (OCSP) Response profile for the U.S. Federal Public Trust TLS PKI Certificate Policy.  In cases where the profiles and Section 7 of this CP are in conflict, Section 7 takes precedence and is authoritative.
 
