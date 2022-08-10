@@ -1154,21 +1154,21 @@ Certificates shall meet the following requirements for algorithm type and key si
 
 (1) Root CA Certificates  
 
-|  |  |  
+| **Type** | **Key size** |  
 | :---  | :------ |  
 | Digest algorithm | SHA-256 |  
 | Minimum RSA modulus size (bits) | 4096 |  
 
 (2) Subordinate CA Certificates
 
-|  |  |  
+| **Type** | **Key size** |  
 | :---  | :------ |  
 | Digest algorithm | SHA-256 |  
 | Minimum RSA modulus size (bits) | 2048 |  
 
 (3) Subscriber Certificates
 
-|  |  |  
+| **Type** | **Key size** |  
 | :---  | :------ |  
 | Digest algorithm | SHA-256, SHA-384 or SHA-512  |  
 | Minimum RSA modulus size (bits) | 2048 |  
