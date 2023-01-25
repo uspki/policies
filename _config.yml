@@ -30,10 +30,6 @@ primary_navigation:
   - name: Public TLS Policy Home
     description: Background
     url: /
-  - name: Certificate Policy
-    url: /certificatepolicy/
-  - name: Certificate Profiles
-    url: /certificateprofiles/
   - name: Submit Comments
     url: /comment/
 
