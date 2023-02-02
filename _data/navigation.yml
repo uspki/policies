@@ -1,20 +1,20 @@
 
-primary:
-  - text: "Background"
-    href: /
-  - text: "Certificate Policy"
-    href: /certificatepolicy/
-  - text: "Certificate Profiles"
-    href: /certificateprofiles/
+#primary:
+#  - text: "Background"
+#    href: /
+#  - text: "Certificate Policy"
+#    href: /certificatepolicy/
+#  - text: "Certificate Profiles"
+#    href: /certificateprofiles/
 #  - text: "Frequently Asked Questions"
 #    href: /faq/
-  - text: "Submit Comments"
-    href: /comment/
+#  - text: "Submit Comments"
+#    href: /comment/
 
-policy:
-  - text: "Certificate Policy"
-    href: /certificatepolicy/
+#policy:
+#  - text: "Certificate Policy"
+#    href: /certificatepolicy/
 
-profile:
-  - text: "Certificate Profiles"
-    href: /certificateprofiles/
+#profile:
+#  - text: "Certificate Profiles"
+#    href: /certificateprofiles/
