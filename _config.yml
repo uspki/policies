@@ -26,17 +26,6 @@ repo: https://github.com/uspki/policies
 dap:
   agency: GSA
 
-primary_navigation:
-  - name: Public TLS Policy Home
-    description: Background
-    url: /
-  - name: Certificate Policy
-    url: /certificatepolicy/
-  - name: Certificate Profiles
-    url: /certificateprofiles/
-  - name: Submit Comments
-    url: /comment/
-
 secondary_navigation:
   - name: Contact Us
     url: https://www.idmanagement.gov/contact-us/
