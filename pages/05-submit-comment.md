@@ -1,11 +1,10 @@
 ---
 layout: page
 title: Submit Comments
-permalink: /comment/
 ---
 {% include alert-info.html content="A Certificate Policy contains technical, operational, and legal terms intended for a particular audience of readers.  We recognize that a Certificate Policy may not incorporate plain language.  If you have questions or think the intent of any certificate policy statement is not clear, please add an issue or comment. Your comments may help us improve all certificate policies and practices." %}
 
-Comments are always welcome and can be submitted via **[this web form]({{ site.repo }}/issues/new){:target="_blank"}** (GitHub account required) or sent to: **fpki at gsa.gov**
+Comments are always welcome and can be sent to: **fpki at gsa.gov**
 
 ### Versions
 

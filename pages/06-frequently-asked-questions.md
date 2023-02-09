@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Frequently Asked Questions
-permalink: /faq/
 ---
 
 - [What is a certificate policy?](#what-is-a-certificate-policy)
